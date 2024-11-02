@@ -22,3 +22,5 @@ tw-gifted-k12-notes 是 [Willie Shen (Willie169)](https://github.com/Willie169) 
   - [矩陣.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/矩陣.pdf)
   - [統計學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/統計學.pdf)
   - [離散數學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/離散數學.pdf)
+- 自然科學
+  - [熱力學（含物質的狀態與相、氣體動力學、化學動力學等）.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/自然科學/熱力學（含物質的狀態與相、氣體動力學、化學動力學等）.pdf)
