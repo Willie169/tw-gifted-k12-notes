@@ -5,8 +5,8 @@ tw-gifted-k12-notes 是 [Willie Shen (Willie169)](https://github.com/Willie169) 
 筆記 PDF 下載連結：
 
 - 數學
-  - [Definition-of-Number Systems.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Definition-of-Number-Systems.pdf)
-  - [Dirac-delta-function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Dirac-delta-function.pdf)
+  - [Definition of Number Systems.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Definition of Number Systems.pdf)
+  - [Dirac delta function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Dirac delta function.pdf)
   - [Inequality.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Inequality.pdf)
   - [三角形與三角函數公式定理.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/三角形與三角函數公式定理.pdf)
   - [三角比與三角函數.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/三角比與三角函數.pdf)
