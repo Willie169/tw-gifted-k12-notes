@@ -16,6 +16,7 @@ Copyright (c) 2024, Willie Shen, etc. All Rights Reserved.
   - [Definition of Number Systems.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Definition%20of%20Number%20Systems.pdf)
   - [Dirac delta function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Dirac%20delta%20function.pdf)
   - [Inequality.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Inequality.pdf)
+  - [Limit.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Limit.pdf)
   - [三角形與三角函數公式定理.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/三角形與三角函數公式定理.pdf)
   - [三角比與三角函數.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/三角比與三角函數.pdf)
   - [函數.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/函數.pdf)
