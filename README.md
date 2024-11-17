@@ -35,5 +35,6 @@ Copyright (c) 2024, Willie Shen, etc. All Rights Reserved.
   - [離散數學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/離散數學.pdf)
 - 物理與化學
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/物理與化學/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
+  - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/物理與化學/電磁學.pdf).
 - 生物
   - [生物.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/生物/生物.pdf)
