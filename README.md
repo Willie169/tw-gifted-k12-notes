@@ -8,6 +8,8 @@ tw-gifted-k12-notes 是 [Willie Shen (Willie169)](https://github.com/Willie169) 
 
 語言以中文繁體為主、英文為輔。未特別說明者，空間為歐幾里德空間、座標為笛卡爾座標、範數為歐幾里德範數、物理量依 SI 制、中文用詞於不同地區習慣有異者依臺灣用詞習慣。
 
+特別感謝：[https://github.com/ButTaiwan/iansui](https://github.com/ButTaiwan/iansui)。
+
 Copyright (c) 2024, Willie Shen, etc. All Rights Reserved.
 
 筆記 PDF 下載連結：
