@@ -4,11 +4,9 @@ tw-gifted-k12-notes 是 [Willie Shen (Willie169)](https://github.com/Willie169) 
 
 筆記之編寫參考教科書、臺北市立建國高級中學課程內容與維基百科等網路資源，如有任何權利相關問題，請著作權人或關係人以 Issue 或其他方式告知，本人將立即配合。
 
-筆記以 LaTeX 撰寫，模板皆採用自製模板 [LaTeX-ToolKit](https://github.com/Willie169/LaTeX-ToolKit)，部分圖形使用 Geogebra 繪製。
+筆記以 LaTeX 撰寫，模板皆採用自製模板 [LaTeX-ToolKit](https://github.com/Willie169/LaTeX-ToolKit)，部分圖形使用 Geogebra 繪製，中文字體使用芫荽體：[https://github.com/ButTaiwan/iansui](https://github.com/ButTaiwan/iansui)。
 
 語言以中文繁體為主、英文為輔。未特別說明者，空間為歐幾里德空間，座標為笛卡爾座標，範數、度量或距離為歐幾里德距離，物理量依 SI 制，中文用詞於不同地區習慣有異者依臺灣用詞習慣。
-
-特別感謝：[https://github.com/ButTaiwan/iansui](https://github.com/ButTaiwan/iansui)。
 
 Copyright (c) 2024, Willie Shen, etc. All Rights Reserved.
 
