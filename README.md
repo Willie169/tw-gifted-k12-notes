@@ -10,6 +10,35 @@ tw-gifted-k12-notes 是 [Willie Shen (Willie169)](https://github.com/Willie169) 
 
 Copyright (c) 2024, Willie Shen, etc. All Rights Reserved.
 
+筆記 PDF 瀏覽連結：
+
+- 數學
+  - [Definition of Number Systems.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/Definition%20of%20Number%20Systems.pdf)
+  - [Dirac delta function.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/Dirac%20delta%20function.pdf)
+  - [Inequality.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/Inequality.pdf)
+  - [Limit.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/Limit.pdf)
+  - [Newton's Method.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/Newton's%20Method.pdf)
+  - [Polynomial Interpolation.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/Polynomial%20Interpolation.pdf)
+  - [三角形與三角函數公式定理.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/三角形與三角函數公式定理.pdf)
+  - [三角比與三角函數.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/三角比與三角函數.pdf)
+  - [函數.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/函數.pdf)
+  - [區間.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/區間.pdf)
+  - [向量與向量空間.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/向量與向量空間.pdf)
+  - [圓錐曲線.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/圓錐曲線.pdf)
+  - [多項式函數與方程.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/多項式函數與方程.pdf)
+  - [拉格朗日乘數.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/拉格朗日乘數.pdf)
+  - [指數與對數.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/指數與對數.pdf)
+  - [數理邏輯.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/數理邏輯.pdf)
+  - [機率.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/機率.pdf)
+  - [矩陣.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/矩陣.pdf)
+  - [統計學.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/統計學.pdf)
+  - [離散數學.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/數學/離散數學.pdf)
+- 物理與化學
+  - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/物理與化學/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
+  - [電磁學.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/物理與化學/電磁學.pdf).
+- 生物
+  - [生物.pdf](https://github.com/Willie169/tw-gifted-k12-notes/tree/main/生物/生物.pdf)
+
 筆記 PDF 下載連結：
 
 - 數學
