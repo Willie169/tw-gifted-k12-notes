@@ -1,6 +1,6 @@
 ## tw-gifted-k12-notes
 
-tw-gifted-k12-notes 是 [Willie Shen, Willie169, or 沈威宇)](https://github.com/Willie169) 編寫的關於臺灣普通高中課程及其延伸領域之筆記。
+tw-gifted-k12-notes 是 [Willie Shen, Willie169, or 沈威宇](https://github.com/Willie169) 編寫的關於臺灣普通高中課程及其延伸領域之筆記。
 
 筆記之編寫參考教科書、臺北市立建國高級中學課程內容與維基百科等網路資源，如有任何權利相關問題，請著作權人或關係人以 Issue 或其他方式告知，本人將立即配合。
 
