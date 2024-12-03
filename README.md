@@ -8,7 +8,8 @@ tw-gifted-k12-notes 是 [Willie Shen, Willie169, or 沈威宇](https://github.co
 
 語言以中文繁體與英文為主。未特別說明者，空間為歐幾里德仿射空間或歐幾里德向量空間或使所討論之物在該處之定義有意義之最大點集合，歐幾里德仿射空間或歐幾里德向量空間中，座標為笛卡爾座標，範數、度量或距離為歐幾里德距離，點集之測度或體積或大小指勒貝格測度，域為實數域或使所討論之物在該處之定義有意義之最大純（標）量集合，物理量依 SI 制，中文用詞於不同地區習慣有異者依臺灣用詞習慣。
 
-Copyright (c) 2024, Willie Shen, etc. All Rights Reserved.
+Copyright (c) 2024, Willie Shen, etc. All Rights Reserved.<br />
+Copyright (c) 2024，沈威宇 等。保留所有權利。
 
 筆記 PDF 瀏覽連結：
 
