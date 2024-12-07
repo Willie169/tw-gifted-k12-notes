@@ -40,7 +40,9 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](物理與化學/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
   - [電磁學.pdf](物理與化學/電磁學.pdf).
 - 生物
-  - [生物.pdf](生物/生物.pdf)
+  - [細胞.pdf](生物/細胞.pdf)
+  - [演化生物學與生物分類學.pdf](生物/演化生物學與生物分類學.pdf)
+  - [遺傳學.pdf](生物/遺傳學.pdf)
 
 筆記 PDF 下載連結：
 
@@ -71,4 +73,6 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/物理與化學/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
   - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/物理與化學/電磁學.pdf).
 - 生物
-  - [生物.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/生物/生物.pdf)
+  - [細胞.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/生物/細胞.pdf)
+  - [演化生物學與生物分類學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/生物/演化生物學與生物分類學.pdf)
+  - [遺傳學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/生物/遺傳學.pdf)
