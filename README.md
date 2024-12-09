@@ -14,7 +14,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
 筆記 PDF 瀏覽連結：
 
 - 數學
-  - [Definition Gallery of Set Theory, Topology, Linear Algebra, Measure Theory, Geometry, and Calculus.pdf](數學/Definition%20Gallery%20of%20Set%20Theory,%20Topology,%20Linear%20Algebra,%20Measure%20Theory,%20Geometry,%20and%20Calculus.pdf)
+  - [Definition and Theorem Gallery of Set Theory, Topology, Linear Algebra, Measure Theory, Geometry, and Calculus.pdf](數學/Definition%20and%20Theorem%20Gallery%20of%20Set%20Theory,%20Topology,%20Linear%20Algebra,%20Measure%20Theory,%20Geometry,%20and%20Calculus.pdf)
   - [Definition of Number Systems.pdf](數學/Definition%20of%20Number%20Systems.pdf)
   - [Dirac delta function.pdf](數學/Dirac%20delta%20function.pdf)
   - [Inequality.pdf](數學/Inequality.pdf)
@@ -47,7 +47,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
 筆記 PDF 下載連結：
 
 - 數學
-  - [Definition Gallery of Set Theory, Topology, Linear Algebra, Measure Theory, Geometry, and Calculus.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Definition%20Gallery%20of%20Set%20Theory,%20Topology,%20Linear%20Algebra,%20Measure%20Theory,%20Geometry,%20and%20Calculus.pdf)
+  - [Definition and Theorem Gallery of Set Theory, Topology, Linear Algebra, Measure Theory, Geometry, and Calculus.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Definition%20and%20Theorem%20Gallery%20of%20Set%20Theory,%20Topology,%20Linear%20Algebra,%20Measure%20Theory,%20Geometry,%20and%20Calculus.pdf)
   - [Definition of Number Systems.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Definition%20of%20Number%20Systems.pdf)
   - [Dirac delta function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Dirac%20delta%20function.pdf)
   - [Inequality.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Inequality.pdf)
