@@ -14,12 +14,12 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
 筆記 PDF 瀏覽連結：
 
 - 數學
-  - [Set Theory, Topology, Linear Algebra, Measure Theory, Geometry, and Calculus.pdf](數學/Set%20Theory,%20Topology,%20Linear%20Algebra,%20Measure%20Theory,%20Geometry,%20and%20Calculus.pdf)
+  - [Calculus.pdf](數學/Calculus.pdf)
   - [Definition of Number Systems.pdf](數學/Definition%20of%20Number%20Systems.pdf)
   - [Dirac delta function.pdf](數學/Dirac%20delta%20function.pdf)
+  - [Glossary of Set Theory, Topology, Linear Algebra, Measure Theory, and Geometry.pdf](數學/Glossary%20of%20Set%20Theory,%20Topology,%20Linear%20Algebra,%20Measure%20Theory,%20Geometry,%20and%20Calculus.pdf)
   - [Inequality.pdf](數學/Inequality.pdf)
   - [Limit.pdf](數學/Limit.pdf)
-  - [Newton's Method.pdf](數學/Newton's%20Method.pdf)
   - [Polynomial Interpolation.pdf](數學/Polynomial%20Interpolation.pdf)
   - [三角形與三角函數公式定理.pdf](數學/三角形與三角函數公式定理.pdf)
   - [三角比與三角函數.pdf](數學/三角比與三角函數.pdf)
@@ -47,12 +47,12 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
 筆記 PDF 下載連結：
 
 - 數學
-  - [Set Theory, Topology, Linear Algebra, Measure Theory, Geometry, and Calculus.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Set%20Theory,%20Topology,%20Linear%20Algebra,%20Measure%20Theory,%20Geometry,%20and%20Calculus.pdf)
+  - [Calculus.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Calculus.pdf)
   - [Definition of Number Systems.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Definition%20of%20Number%20Systems.pdf)
   - [Dirac delta function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Dirac%20delta%20function.pdf)
+  - [Glossary of Set Theory, Topology, Linear Algebra, Measure Theory, and Geometry.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Glossary%20of%20Set%20Theory,%20Topology,%20Linear%20Algebra,%20Measure%20Theory,%20Geometry,%20and%20Calculus.pdf)
   - [Inequality.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Inequality.pdf)
   - [Limit.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Limit.pdf)
-  - [Newton's Method.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Newton's%20Method.pdf)
   - [Polynomial Interpolation.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/Polynomial%20Interpolation.pdf)
   - [三角形與三角函數公式定理.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/三角形與三角函數公式定理.pdf)
   - [三角比與三角函數.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/三角比與三角函數.pdf)
