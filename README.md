@@ -36,6 +36,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [統計學.pdf](數學/統計學.pdf)
   - [離散數學.pdf](數學/離散數學.pdf)
 - 物理與化學
+  - [Lagrangian Mechanics.pdf](物理與化學/Lagrangian%20Mechanics.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](物理與化學/波動、繩波、水波、聲學與光學.pdf)
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](物理與化學/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
   - [電磁學.pdf](物理與化學/電磁學.pdf).
@@ -69,6 +70,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [統計學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/統計學.pdf)
   - [離散數學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/數學/離散數學.pdf)
 - 物理與化學
+  - [Lagrangian Mechanics.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/物理與化學/Lagrangian%20Mechanics.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/物理與化學/波動、繩波、水波、聲學與光學.pdf)
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/物理與化學/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
   - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/物理與化學/電磁學.pdf).
