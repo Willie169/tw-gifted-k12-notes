@@ -38,6 +38,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [Lagrangian Mechanics.pdf](Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](Physics%20and%20Chemistry/波動、繩波、水波、聲學與光學.pdf)
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
+  - [電化學.pdf](Physics%20and%20Chemistry/電化學.pdf).
   - [電磁學.pdf](Physics%20and%20Chemistry/電磁學.pdf).
 - Biology
   - [細胞.pdf](Biology/細胞.pdf)
@@ -71,6 +72,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [Lagrangian Mechanics.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/波動、繩波、水波、聲學與光學.pdf)
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
+  - [電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電化學.pdf).
   - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電磁學.pdf).
 - Biology
   - [細胞.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/細胞.pdf)
