@@ -41,7 +41,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [電化學.pdf](Physics%20and%20Chemistry/電化學.pdf).
   - [電磁學.pdf](Physics%20and%20Chemistry/電磁學.pdf).
 - Biology
-  - [細胞.pdf](Biology/細胞.pdf)
+  - [細胞生物學.pdf](Biology/細胞生物學.pdf)
   - [演化生物學與Biology分類學.pdf](Biology/演化生物學與Biology分類學.pdf)
   - [遺傳學.pdf](Biology/遺傳學.pdf)
 
@@ -75,6 +75,6 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電化學.pdf).
   - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電磁學.pdf).
 - Biology
-  - [細胞.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/細胞.pdf)
+  - [細胞生物學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/細胞生物學.pdf)
   - [演化生物學與生物分類學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/演化生物學與生物分類學.pdf)
   - [遺傳學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/遺傳學.pdf)
