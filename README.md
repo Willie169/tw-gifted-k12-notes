@@ -41,6 +41,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [黃金比例.pdf](Mathematics/黃金比例.pdf)
 - Physics and Chemistry
   - [Lagrangian Mechanics.pdf](Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
+  - [有機化學.pdf](Physics%20and%20Chemistry/有機化學.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](Physics%20and%20Chemistry/波動、繩波、水波、聲學與光學.pdf)
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
   - [電化學.pdf](Physics%20and%20Chemistry/電化學.pdf).
@@ -78,6 +79,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [黃金比例.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/黃金比例.pdf)
 - Physics and Chemistry
   - [Lagrangian Mechanics.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
+  - [有機化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/有機化學.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/波動、繩波、水波、聲學與光學.pdf)
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
   - [電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電化學.pdf).
@@ -90,4 +92,3 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [固體地球.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/固體地球.pdf)
   - [大氣與環境.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/大氣與環境.pdf)
   - [海洋.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/海洋.pdf)
-  
