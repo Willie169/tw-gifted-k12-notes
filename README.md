@@ -26,7 +26,6 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [Glossary of Advanced Set Theory, Topology, Linear Algebra, Functional Analysis, Measure Theory, and Geometry.pdf](Mathematics/Glossary%20of%20Advanced%20Set%20Theory,%20Topology,%20Linear%20Algebra,%20Functional%20Analysis,%20Measure%20Theory,%20and%20Geometry.pdf)
   - [Inequalities.pdf](Mathematics/Inequalities.pdf)
   - [Limit and Calculus.pdf](Mathematics/Limit%20and%20Calculus.pdf)
-  - [Polynomial Interpolation.pdf](Mathematics/Polynomial%20Interpolation.pdf)
   - [三角學.pdf](Mathematics/三角學.pdf)
   - [函數.pdf](Mathematics/函數.pdf)
   - [區間.pdf](Mathematics/區間.pdf)
@@ -51,6 +50,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [演化生物學與Biology分類學.pdf](Biology/演化生物學與Biology分類學.pdf)
   - [遺傳學.pdf](Biology/遺傳學.pdf)
 - Earth Science
+  - [古氣候.pdf](Earth%20Science/古氣候.pdf)
   - [固體地球.pdf](Earth%20Science/固體地球.pdf)
   - [大氣與環境.pdf](Earth%20Science/大氣與環境.pdf)
   - [海洋.pdf](Earth%20Science/海洋.pdf)
@@ -64,7 +64,6 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [Glossary of Advanced Set Theory, Topology, Linear Algebra, Functional Analysis, Measure Theory, and Geometry.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Glossary%20of%20Advanced%20Set%20Theory,%20Topology,%20Linear%20Algebra,%20Functional%20Analysis,%20Measure%20Theory,%20and%20Geometry.pdf)
   - [Inequalities.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Inequalities.pdf)
   - [Limit and Calculus.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Limit%20and%20Calculus.pdf)
-  - [Polynomial Interpolation.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Polynomial%20Interpolation.pdf)
   - [三角學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/三角學.pdf)
   - [函數.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/函數.pdf)
   - [區間.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/區間.pdf)
@@ -89,6 +88,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [演化生物學與Biology分類學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/演化生物學與Biology分類學.pdf)
   - [遺傳學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/遺傳學.pdf)
 - Earth Science
+  - [古氣候.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/古氣候.pdf)
   - [固體地球.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/固體地球.pdf)
   - [大氣與環境.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/大氣與環境.pdf)
   - [海洋.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/海洋.pdf)
