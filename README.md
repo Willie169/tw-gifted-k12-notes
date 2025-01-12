@@ -53,6 +53,7 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [古氣候.pdf](Earth%20Science/古氣候.pdf)
   - [固體地球.pdf](Earth%20Science/固體地球.pdf)
   - [大氣與環境.pdf](Earth%20Science/大氣與環境.pdf)
+  - [天文.pdf](Earth%20Science/天文.pdf)
   - [海洋.pdf](Earth%20Science/海洋.pdf)
 
 ### 筆記 PDF 下載連結
@@ -91,4 +92,5 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [古氣候.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/古氣候.pdf)
   - [固體地球.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/固體地球.pdf)
   - [大氣與環境.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/大氣與環境.pdf)
+  - [天文.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/天文.pdf)
   - [海洋.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/海洋.pdf)
