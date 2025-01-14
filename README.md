@@ -40,12 +40,17 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [黃金比例.pdf](Mathematics/黃金比例.pdf)
 - Physics and Chemistry
   - [Lagrangian Mechanics.pdf](Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
-  - [原子物理學、核物理學與量子化學.pdf](Physics%20and%20Chemistry/原子物理學、核物理學與量子化學.pdf)
+  - [化學式.pdf](Physics%20and%20Chemistry/化學式.pdf)
   - [有機化學.pdf](Physics%20and%20Chemistry/有機化學.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](Physics%20and%20Chemistry/波動、繩波、水波、聲學與光學.pdf)
+  - [溶液.pdf](Physics%20and%20Chemistry/溶液.pdf)
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
-  - [電化學.pdf](Physics%20and%20Chemistry/電化學.pdf).
-  - [電磁學.pdf](Physics%20and%20Chemistry/電磁學.pdf).
+  - [牛頓力學、重力與常見運動.pdf](Physics%20and%20Chemistry/牛頓力學、重力與常見運動.pdf)
+  - [粒子物理學、核物理學、原子物理學與量子力學.pdf](Physics%20and%20Chemistry/粒子物理學、核物理學、原子物理學與量子力學.pdf)
+  - [酸鹼.pdf](Physics%20and%20Chemistry/酸鹼.pdf)
+  - [離子、沉澱與顏色表.pdf](Physics%20and%20Chemistry/離子、沉澱與顏色表.pdf)
+  - [電化學.pdf](Physics%20and%20Chemistry/電化學.pdf)
+  - [電磁學.pdf](Physics%20and%20Chemistry/電磁學.pdf)
 - Biology
   - [細胞生物學與分子生物學.pdf](Biology/細胞生物學與分子生物學.pdf)
   - [演化生物學與Biology分類學.pdf](Biology/演化生物學與Biology分類學.pdf)
@@ -80,12 +85,17 @@ Copyright (c) 2024，沈威宇 等。保留所有權利。
   - [黃金比例.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/黃金比例.pdf)
 - Physics and Chemistry
   - [Lagrangian Mechanics.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
-  - [原子物理學、核物理學與量子化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/原子物理學、核物理學與量子化學.pdf)
+  - [化學式.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/化學式.pdf)
   - [有機化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/有機化學.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/波動、繩波、水波、聲學與光學.pdf)
+  - [溶液.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/溶液.pdf)
   - [熱力學、化學熱力學、氣體動力學、化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、化學動力學.pdf)
-  - [電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電化學.pdf).
-  - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電磁學.pdf).
+  - [牛頓力學、重力與常見運動.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/牛頓力學、重力與常見運動.pdf)
+  - [粒子物理學、核物理學、原子物理學與量子力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/粒子物理學、核物理學、原子物理學與量子力學.pdf)
+  - [酸鹼.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/酸鹼.pdf)
+  - [離子、沉澱與顏色表.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/離子、沉澱與顏色表.pdf)
+  - [電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電化學.pdf)
+  - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電磁學.pdf)
 - Biology
   - [細胞生物學與分子生物學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/細胞生物學與分子生物學.pdf)
   - [演化生物學與Biology分類學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/演化生物學與Biology分類學.pdf)
