@@ -1,10 +1,10 @@
 ## tw-gifted-k12-notes
 
-tw-gifted-k12-notes 是 [Willie Shen, Willie169, or 沈威宇](https://github.com/Willie169) 編寫的關於臺灣普通高中課程及其延伸領域之筆記。
+tw-gifted-k12-notes 是 [**Willie Shen**, **Willie169**, or **沈威宇**](https://github.com/Willie169) 編寫的關於臺灣普通高中課程及其延伸領域之筆記。
 
 筆記之編寫參考教科書、臺北市立建國高級中學課程內容與維基百科等網路資源，如有任何權利相關問題，請著作權人或關係人以 Issue 或其他方式告知，本人將立即配合。
 
-筆記以 LaTeX 撰寫，模板採用自製模板 [LaTeX-ToolKit](https://github.com/Willie169/LaTeX-ToolKit)，部分圖形使用 Geogebra 繪製，字體使用 [TeX Gyre](https://ctan.org/pkg/tex-gyre) 、 [Noto CJK](https://github.com/notofonts/noto-cjk) 與 [XITS Math](https://github.com/aliftype/xits)。
+筆記以 [LaTeX](https://www.latex-project.org) 撰寫，以 [TeXLive](https://www.tug.org/texlive) 編譯，模板採用自製模板 [LaTeX-ToolKit](https://github.com/Willie169/LaTeX-ToolKit)，字體使用 [TeX Gyre](https://ctan.org/pkg/tex-gyre) 、 [Noto CJK](https://github.com/notofonts/noto-cjk) 與 [XITS Math](https://github.com/aliftype/xits)。
 
 Copyright (c) 2025, Willie Shen. All Rights Reserved.<br />
 Copyright (c) 2025，沈威宇。保留所有權利。
