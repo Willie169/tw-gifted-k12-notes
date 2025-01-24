@@ -47,7 +47,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [溶液、酸鹼與電化學.pdf](Physics%20and%20Chemistry/溶液、酸鹼與電化學.pdf)
   - [熱力學、化學熱力學、氣體動力學、流體力學與化學動力學.pdf](Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、流體力學與化學動力學.pdf)
   - [牛頓力學、重力與常見運動.pdf](Physics%20and%20Chemistry/牛頓力學、重力與常見運動.pdf)
-  - [粒子物理學、核物理學、原子物理學與量子力學.pdf](Physics%20and%20Chemistry/粒子物理學、核物理學、原子物理學與量子力學.pdf)
+  - [粒子物理學、核物理學、原子物理學、量子化學與量子力學.pdf](Physics%20and%20Chemistry/粒子物理學、核物理學、原子物理學、量子化學與量子力學.pdf)
   - [電磁學.pdf](Physics%20and%20Chemistry/電磁學.pdf)
 - Biology
   - [細胞生物學與分子生物學.pdf](Biology/細胞生物學與分子生物學.pdf)
@@ -90,7 +90,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [溶液、酸鹼與電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/溶液、酸鹼與電化學.pdf)
   - [熱力學、化學熱力學、氣體動力學、流體力學與化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、流體力學與化學動力學.pdf)
   - [牛頓力學、重力與常見運動.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/牛頓力學、重力與常見運動.pdf)
-  - [粒子物理學、核物理學、原子物理學與量子力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/粒子物理學、核物理學、原子物理學與量子力學.pdf)
+  - [粒子物理學、核物理學、原子物理學、量子化學與量子力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/粒子物理學、核物理學、原子物理學、量子化學與量子力學.pdf)
   - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電磁學.pdf)
 - Biology
   - [細胞生物學與分子生物學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/細胞生物學與分子生物學.pdf)
