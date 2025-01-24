@@ -42,6 +42,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
 - Physics and Chemistry
   - [Lagrangian Mechanics.pdf](Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
   - [化學式.pdf](Physics%20and%20Chemistry/化學式.pdf)
+  - [化學實驗與物質分離.pdf](Physics%20and%20Chemistry/化學實驗與物質分離.pdf)
   - [有機化學.pdf](Physics%20and%20Chemistry/有機化學.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](Physics%20and%20Chemistry/波動、繩波、水波、聲學與光學.pdf)
   - [溶液、酸鹼與電化學.pdf](Physics%20and%20Chemistry/溶液、酸鹼與電化學.pdf)
@@ -85,6 +86,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
 - Physics and Chemistry
   - [Lagrangian Mechanics.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
   - [化學式.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/化學式.pdf)
+  - [化學實驗與物質分離.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/化學實驗與物質分離.pdf)
   - [有機化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/有機化學.pdf)
   - [波動、繩波、水波、聲學與光學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/波動、繩波、水波、聲學與光學.pdf)
   - [溶液、酸鹼與電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/溶液、酸鹼與電化學.pdf)
