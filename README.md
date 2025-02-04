@@ -34,9 +34,9 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [圓錐曲線.pdf](Mathematics/圓錐曲線.pdf)
   - [多項式函數與方程.pdf](Mathematics/多項式函數與方程.pdf)
   - [數理邏輯.pdf](Mathematics/數理邏輯.pdf)
-  - [機率.pdf](Mathematics/機率.pdf)
+  - [機率論.pdf](Mathematics/機率論.pdf)
   - [統計學.pdf](Mathematics/統計學.pdf)
-  - [線性代數.pdf](Mathematics/線性代數.pdf)
+  - [線性代數與解析幾何.pdf](Mathematics/線性代數與解析幾何.pdf)
   - [離散數學.pdf](Mathematics/離散數學.pdf)
   - [黃金比例.pdf](Mathematics/黃金比例.pdf)
 - Physics and Chemistry
@@ -78,9 +78,9 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [圓錐曲線.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/圓錐曲線.pdf)
   - [多項式函數與方程.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/多項式函數與方程.pdf)
   - [數理邏輯.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/數理邏輯.pdf)
-  - [機率.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/機率.pdf)
+  - [機率論.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/機率論.pdf)
   - [統計學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/統計學.pdf)
-  - [線性代數.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/線性代數.pdf)
+  - [線性代數與解析幾何.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/線性代數與解析幾何.pdf)
   - [離散數學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/離散數學.pdf)
   - [黃金比例.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/黃金比例.pdf)
 - Physics and Chemistry
