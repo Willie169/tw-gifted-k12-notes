@@ -1,6 +1,6 @@
 ## tw-gifted-k12-notes
 
-tw-gifted-k12-notes 是 [**Willie Shen**, **Willie169**, or **沈威宇**](https://github.com/Willie169) 編寫的關於臺灣普通高中課程及其延伸領域之筆記。
+tw-gifted-k12-notes 是 [**Willie Shen**, **Willie169**, or **沈威宇**](https://github.com/Willie169) 編寫的關於臺灣普通高中課程及其他領域之筆記。
 
 筆記之編寫參考教科書、臺北市立建國高級中學課程內容與維基百科等網路資源，如有任何權利相關問題，請著作權人或關係人以 Issue 或其他方式告知，本人將立即配合。
 
@@ -25,6 +25,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [Heaviside Step Function and Dirac Delta Function.pdf](Mathematics/Heaviside%20Step%20Function%20and%20Dirac%20Delta%20Function.pdf)
   - [Inequalities.pdf](Mathematics/Inequalities.pdf)
   - [Limit and Calculus.pdf](Mathematics/Limit%20and%20Calculus.pdf)
+  - [Mathematics of Reinforcement Learning.pdf](Mathematics/Mathematics%of%Reinforcement%Learning.pdf)
   - [Measure Theory.pdf](Mathematics/Measure%20Theory.pdf)
   - [Probability Theory.pdf](Mathematics/Probability%20Theory.pdf)
   - [Topology.pdf](Mathematics/Topology.pdf)
@@ -34,7 +35,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [區間.pdf](Mathematics/區間.pdf)
   - [圓錐曲線.pdf](Mathematics/圓錐曲線.pdf)
   - [圖論.pdf](Mathematics/圖論.pdf)
-  - [多項式函數與方程.pdf](Mathematics/多項式函數與方程.pdf)
+  - [實多項式函數與方程.pdf](Mathematics/實多項式函數與方程.pdf)
   - [排列組合.pdf](Mathematics/排列組合.pdf)
   - [數理邏輯.pdf](Mathematics/數理邏輯.pdf)
   - [統計學.pdf](Mathematics/統計學.pdf)
@@ -72,6 +73,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [Heaviside Step Function and Dirac Delta Function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Heaviside%20Step%20Function%20and%20Dirac%20Delta%20Function.pdf)
   - [Inequalities.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Inequalities.pdf)
   - [Limit and Calculus.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Limit%20and%20Calculus.pdf)
+  - [Mathematics of Reinforcement Learning.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Mathematics%of%Reinforcement%Learning.pdf)
   - [Measure Theory.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Measure%20Theory.pdf)
   - [Probability Theory.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Probability%20Theory.pdf)
   - [Topology.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Topology.pdf)
@@ -81,7 +83,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [區間.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/區間.pdf)
   - [圓錐曲線.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/圓錐曲線.pdf)
   - [圖論.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/圖論.pdf)
-  - [多項式函數與方程.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/多項式函數與方程.pdf)
+  - [實多項式函數與方程.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/實多項式函數與方程.pdf)
   - [排列組合.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/排列組合.pdf)
   - [數理邏輯.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/數理邏輯.pdf)
   - [統計學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/統計學.pdf)
