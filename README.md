@@ -20,7 +20,6 @@ Copyright (c) 2025，沈威宇。保留所有權利。
 ### 筆記 PDF 瀏覽連結
 
 - Mathematics
-  - [Definition of Number Systems.pdf](Mathematics/Definition%20of%20Number%20Systems.pdf)
   - [Exponent and Logarithm.pdf](Mathematics/Exponent%20and%20Logarithm.pdf)
   - [Heaviside Step Function and Dirac Delta Function.pdf](Mathematics/Heaviside%20Step%20Function%20and%20Dirac%20Delta%20Function.pdf)
   - [Identities.pdf](Mathematics/Identities.pdf)
@@ -70,7 +69,6 @@ Copyright (c) 2025，沈威宇。保留所有權利。
 ### 筆記 PDF 下載連結
 
 - Mathematics
-  - [Definition of Number Systems.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Definition%20of%20Number%20Systems.pdf)
   - [Exponent and Logarithm.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Exponent%20and%20Logarithm.pdf)
   - [Heaviside Step Function and Dirac Delta Function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Heaviside%20Step%20Function%20and%20Dirac%20Delta%20Function.pdf)
   - [Identities.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Identities.pdf)
