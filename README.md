@@ -1,8 +1,8 @@
 ## tw-gifted-k12-notes
 
-tw-gifted-k12-notes 是 [**Willie Shen**, **Willie169**, or **沈威宇**](https://github.com/Willie169) 編寫的關於臺灣普通高中課程及其他領域之筆記。
+tw-gifted-k12-notes 是 [**Willie Shen**/**Willie169**/**沈威宇**](https://github.com/Willie169) 編寫的臺灣普通高中課程及相關領域之筆記。
 
-筆記之編寫參考教科書、臺北市立建國高級中學課程內容與維基百科等網路資源，如有任何權利相關問題，請著作權人或關係人以 Issue 或其他方式告知，本人將立即配合。
+筆記之編寫參考書籍與網路等資源，如有任何權利相關問題，請著作權人或關係人以 Issue 或其他方式告知，本人將立即配合。
 
 筆記以 [LaTeX](https://www.latex-project.org) 撰寫，以 [TeXLive](https://www.tug.org/texlive) 編譯，模板採用自製模板 [LaTeX-ToolKit](https://github.com/Willie169/LaTeX-ToolKit)，字體使用 [TeX Gyre](https://ctan.org/pkg/tex-gyre) 、 [Noto CJK](https://github.com/notofonts/noto-cjk) 與 [XITS Math](https://github.com/aliftype/xits)。
 
@@ -18,6 +18,8 @@ Copyright (c) 2025，沈威宇。保留所有權利。
 - 使用之術語如未於文件中予以定義者，通常於相關主題主文件中定義。
 
 ### 筆記 PDF 瀏覽連結
+
+若無法開啟請至[**筆記 PDF 下載連結**](#筆記-pdf-下載連結)下載檔案以開啟。
 
 - Mathematics
   - [Exponent and Logarithm.pdf](Mathematics/Exponent%20and%20Logarithm.pdf)
@@ -45,26 +47,38 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [黃金比例.pdf](Mathematics/黃金比例.pdf)
 - Physics and Chemistry
   - [Lagrangian Mechanics.pdf](Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
+  - [元素週期性.pdf](Physics%20and%20Chemistry/元素週期性.pdf)
+  - [化學動力學.pdf](Physics%20and%20Chemistry/化學動力學.pdf)
   - [化學式.pdf](Physics%20and%20Chemistry/化學式.pdf)
+  - [原子物理學.pdf](Physics%20and%20Chemistry/原子物理學.pdf)
+  - [固態物理學.pdf](Physics%20and%20Chemistry/固態物理學.pdf)
   - [實驗與物質分離.pdf](Physics%20and%20Chemistry/實驗與物質分離.pdf)
   - [有機化學.pdf](Physics%20and%20Chemistry/有機化學.pdf)
-  - [波動、繩波、水波、光學與聲學.pdf](Physics%20and%20Chemistry/波動、繩波、水波、光學與聲學.pdf)
-  - [溶液、酸鹼與電化學.pdf](Physics%20and%20Chemistry/溶液、酸鹼與電化學.pdf)
-  - [熱力學、化學熱力學、氣體動力學、流體力學與化學動力學.pdf](Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、流體力學與化學動力學.pdf)
-  - [牛頓力學、重力與常見運動.pdf](Physics%20and%20Chemistry/牛頓力學、重力與常見運動.pdf)
-  - [粒子物理學、核物理學、原子物理學與量子力學.pdf](Physics%20and%20Chemistry/粒子物理學、核物理學、原子物理學與量子力學.pdf)
+  - [核物理學.pdf](Physics%20and%20Chemistry/核物理學.pdf)
+  - [波動、光學與聲學.pdf](Physics%20and%20Chemistry/波動、光學與聲學.pdf)
+  - [流體力學.pdf](Physics%20and%20Chemistry/流體力學.pdf)
+  - [溶液.pdf](Physics%20and%20Chemistry/溶液.pdf)
+  - [熱力學.pdf](Physics%20and%20Chemistry/熱力學.pdf)
+  - [牛頓力學與重力.pdf](Physics%20and%20Chemistry/牛頓力學與重力.pdf)
+  - [物理學簡史.pdf](Physics%20and%20Chemistry/物理學簡史.pdf)
+  - [物質的分類與變化.pdf](Physics%20and%20Chemistry/物質的分類與變化.pdf)
+  - [粒子物理學.pdf](Physics%20and%20Chemistry/粒子物理學.pdf)
+  - [酸鹼.pdf](Physics%20and%20Chemistry/酸鹼.pdf)
   - [量子化學.pdf](Physics%20and%20Chemistry/量子化學.pdf)
+  - [量子物理學.pdf](Physics%20and%20Chemistry/量子物理學.pdf)
+  - [電化學.pdf](Physics%20and%20Chemistry/電化學.pdf)
   - [電磁學.pdf](Physics%20and%20Chemistry/電磁學.pdf)
 - Biology
   - [細胞生物學與分子生物學.pdf](Biology/細胞生物學與分子生物學.pdf)
   - [演化生物學與生物分類學.pdf](Biology/演化生物學與生物分類學.pdf)
   - [遺傳學.pdf](Biology/遺傳學.pdf)
 - Earth Science
-  - [古氣候.pdf](Earth%20Science/古氣候.pdf)
-  - [固體地球.pdf](Earth%20Science/固體地球.pdf)
-  - [大氣與環境.pdf](Earth%20Science/大氣與環境.pdf)
-  - [天文.pdf](Earth%20Science/天文.pdf)
-  - [海洋.pdf](Earth%20Science/海洋.pdf)
+  - [古氣候學.pdf](Earth%20Science/古氣候學.pdf)
+  - [地質學.pdf](Earth%20Science/地質學.pdf)
+  - [大氣科學.pdf](Earth%20Science/大氣科學.pdf)
+  - [天文學.pdf](Earth%20Science/天文學.pdf)
+  - [海洋學.pdf](Earth%20Science/海洋學.pdf)
+  - [環境科學.pdf](Earth%20Science/環境科學.pdf)
 
 ### 筆記 PDF 下載連結
 
@@ -94,23 +108,35 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [黃金比例.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/黃金比例.pdf)
 - Physics and Chemistry
   - [Lagrangian Mechanics.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/Lagrangian%20Mechanics.pdf)
+  - [元素週期性.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/元素週期性.pdf)
+  - [化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/化學動力學.pdf)
   - [化學式.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/化學式.pdf)
+  - [原子物理學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/原子物理學.pdf)
+  - [固態物理學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/固態物理學.pdf)
   - [實驗與物質分離.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/實驗與物質分離.pdf)
   - [有機化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/有機化學.pdf)
-  - [波動、繩波、水波、光學與聲學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/波動、繩波、水波、光學與聲學.pdf)
-  - [溶液、酸鹼與電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/溶液、酸鹼與電化學.pdf)
-  - [熱力學、化學熱力學、氣體動力學、流體力學與化學動力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/熱力學、化學熱力學、氣體動力學、流體力學與化學動力學.pdf)
-  - [牛頓力學、重力與常見運動.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/牛頓力學、重力與常見運動.pdf)
-  - [粒子物理學、核物理學、原子物理學與量子力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/粒子物理學、核物理學、原子物理學與量子力學.pdf)
+  - [核物理學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/核物理學.pdf)
+  - [波動、光學與聲學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/波動、光學與聲學.pdf)
+  - [流體力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/流體力學.pdf)
+  - [溶液.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/溶液.pdf)
+  - [熱力學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/熱力學.pdf)
+  - [牛頓力學與重力.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/牛頓力學與重力.pdf)
+  - [物理學簡史.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/物理學簡史.pdf)
+  - [物質的分類與變化.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/物質的分類與變化.pdf)
+  - [粒子物理學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/粒子物理學.pdf)
+  - [酸鹼.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/酸鹼.pdf)
   - [量子化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/量子化學.pdf)
+  - [量子物理學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/量子物理學.pdf)
+  - [電化學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電化學.pdf)
   - [電磁學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Physics%20and%20Chemistry/電磁學.pdf)
 - Biology
   - [細胞生物學與分子生物學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/細胞生物學與分子生物學.pdf)
   - [演化生物學與生物分類學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/演化生物學與生物分類學.pdf)
   - [遺傳學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Biology/遺傳學.pdf)
 - Earth Science
-  - [古氣候.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/古氣候.pdf)
-  - [固體地球.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/固體地球.pdf)
-  - [大氣與環境.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/大氣與環境.pdf)
-  - [天文.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/天文.pdf)
-  - [海洋.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/海洋.pdf)
+  - [古氣候學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/古氣候學.pdf)
+  - [地質學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/地質學.pdf)
+  - [大氣科學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/大氣科學.pdf)
+  - [天文學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/天文學.pdf)
+  - [海洋學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/海洋學.pdf)
+  - [環境科學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Earth%20Science/環境科學.pdf)
