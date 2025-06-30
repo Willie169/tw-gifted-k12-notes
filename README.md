@@ -17,8 +17,6 @@ Copyright (c) 2025，沈威宇。保留所有權利。
 
 ### 筆記 PDF 瀏覽連結
 
-若無法開啟請至 [**筆記 PDF 下載連結**](#筆記-pdf-下載連結) 下載檔案以開啟。
-
 - Mathematics
   - [Heaviside Step Function and Dirac Delta Function.pdf](Mathematics/Heaviside%20Step%20Function%20and%20Dirac%20Delta%20Function.pdf)
   - [Identities.pdf](Mathematics/Identities.pdf)
