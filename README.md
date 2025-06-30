@@ -18,6 +18,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
 ### 筆記 PDF 瀏覽連結
 
 - Mathematics
+  - [Function.pdf](Mathematics/Function.pdf)
   - [Heaviside Step Function and Dirac Delta Function.pdf](Mathematics/Heaviside%20Step%20Function%20and%20Dirac%20Delta%20Function.pdf)
   - [Identities.pdf](Mathematics/Identities.pdf)
   - [Inequalities.pdf](Mathematics/Inequalities.pdf)
@@ -31,7 +32,6 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [Topology.pdf](Mathematics/Topology.pdf)
   - [三角學.pdf](Mathematics/三角學.pdf)
   - [傅立葉分析.pdf](Mathematics/傅立葉分析.pdf)
-  - [函數.pdf](Mathematics/函數.pdf)
   - [區間.pdf](Mathematics/區間.pdf)
   - [單變數實多項式函數.pdf](Mathematics/單變數實多項式函數.pdf)
   - [圓錐曲線.pdf](Mathematics/圓錐曲線.pdf)
@@ -77,6 +77,7 @@ Copyright (c) 2025，沈威宇。保留所有權利。
 ### 筆記 PDF 下載連結
 
 - Mathematics
+  - [Function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Function.pdf)
   - [Heaviside Step Function and Dirac Delta Function.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Heaviside%20Step%20Function%20and%20Dirac%20Delta%20Function.pdf)
   - [Identities.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Identities.pdf)
   - [Inequalities.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Inequalities.pdf)
@@ -90,7 +91,6 @@ Copyright (c) 2025，沈威宇。保留所有權利。
   - [Topology.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/Topology.pdf)
   - [三角學.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/三角學.pdf)
   - [傅立葉分析.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/傅立葉分析.pdf)
-  - [函數.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/函數.pdf)
   - [區間.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/區間.pdf)
   - [單變數實多項式函數.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/單變數實多項式函數.pdf)
   - [圓錐曲線.pdf](https://raw.githubusercontent.com/Willie169/tw-gifted-k12-notes/main/Mathematics/圓錐曲線.pdf)
