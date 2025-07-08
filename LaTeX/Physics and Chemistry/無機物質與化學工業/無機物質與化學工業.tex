@@ -1,0 +1,3337 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{無機物質與化學工業}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{無機物質（Inorganic Matter）與化學工業（Chemical Industry）}
+此文件因字型問題將「金翁」（U+9393）一字寫作「金翁」二字。
+\section{物質性質表}
+未另說明時，條件均為 25°C、1 atm 下，數據可能為理論值、非 25°C、1 atm 或其他所稱條件測得、不可靠、不準確或互不相容。
+\ssc{元素性質表}
+括號內之原子量表示該元素無穩定同位素，所列數值為半衰期最長之同位素的原子量；離子半徑與標準還原電位數據後之括號內數值表示氧化數；「-」表示此性質不存在或不常見（例如焰色測試難以激發多數非金屬和貴金屬原子）。
+
+\begin{longtable}[c]{|p{0.1\textwidth}|p{0.04\textwidth}|p{0.08\textwidth}|p{0.15\textwidth}|p{0.06\textwidth}|p{0.06\textwidth}|p{0.23\textwidth}|p{0.08\textwidth}|}
+\hline
+元素 & 原子序 & 原子量 & 電子組態 & 熔點 (°C) & 沸點 (°C) & 密度 (g/cm$^3$) & 第一游離能 (kJ/mol)\\\cline{2-8}
+& 鮑林電負度 & 原子半徑 (pm) & 晶體堆積 & 離子半徑 (pm) & 主要氧化數 & 標準還原電位 (V) & 焰色測試\\\hline
+\endhead
+氫（Hydrogen, H） & 1 & 1.008 & 1s$^1$ & -259.2 & -252.9 & 0.0000899 & 1312\\\cline{2-8}
+& 2.20 & 53 & 氣態 & - & +1 (最穩定), -1 & 0.0000 (H$^+\to$H$_2$) & 淡藍\\\hline
+鋰（Lithium, Li） & 3 & 6.94 & [He]2s$^1$ & 186 & 1326 & 0.534 & 520\\\cline{2-8}
+& 0.98 & 152 & 體心立方 & 60 & +1 & -3.05 & 鮮紅\\\hline
+鈉（Sodium, Na） & 11 & 22.99 & [Ne]3s$^1$ & 97.8 & 883 & 0.968 & 496\\\cline{2-8}
+& 0.93 & 186 & 體心立方 & 95 & +1 & -2.71 & 黃\\\hline
+鉀（Potassium, K） & 19 & 39.10 & [Ar]4s$^1$ & 63.5 & 759 & 0.89 & 419\\\cline{2-8}
+& 0.82 & 227 & 體心立方 & 133 & +1 & -2.93 & 紫\\\hline
+銣（Rubidium, Rb） & 37 & 85.47 & [Kr]5s$^1$ & 39.3 & 688 & 1.532 & 403\\\cline{2-8}
+& 0.82 & 248 & 體心立方 & 148 & +1 & -2.98 & 紅紫\\\hline
+銫（Cesium, Cs） & 55 & 132.91 & [Xe]6s$^1$ & 28.4 & 671 & 1.93 & 376\\\cline{2-8}
+& 0.79 & 265 & 體心立方 & 169 & +1 & -3.03 & 藍紫\\\hline
+鍅（Francium, Fr） & 87 & (223) & [Rn]7s$^1$ & 27 & 677 & 2.46 & 393\\\cline{2-8}
+& >0.79 & 260 & 體心立方 & - & +1 & - & -\\\hline
+鈹（Beryllium, Be） & 4 & 9.01 & [He]2s$^2$ & 1287 & 2471 & 1.85 & 900\\\cline{2-8}
+& 1.57 & 112 & 六方最密 & 31 & +2 & -1.97 & 白\\\hline
+鎂（Magnesium, Mg） & 12 & 24.31 & [Ne]3s$^2$ & 650 & 1090 & 1.738 & 738\\\cline{2-8}
+& 1.31 & 160 & 六方最密 & 65 & +2 & -2.36 & 白\\\hline
+鈣（Calcium, Ca） & 20 & 40.08 & [Ar]4s$^2$ & 842 & 1484 & 1.55 & 590\\\cline{2-8}
+& 1.00 & 197 & 面心立方 & 99 & +2 & -2.87 & 磚紅\\\hline
+鍶（Strontium, Sr） & 38 & 87.62 & [Kr]5s$^2$ & 777 & 1382 & 2.64 & 550\\\cline{2-8}
+& 0.95 & 215 & 面心立方 & 113 & +2 & -2.89 & 深紅\\\hline
+鋇（Barium, Ba） & 56 & 137.33 & [Xe]6s$^2$ & 727 & 1845 & 3.51 & 503\\\cline{2-8}
+& 0.89 & 222 & 體心立方 & 135 & +2 & -2.90 & 綠\\\hline
+鐳（Radium, Ra） & 88 & (226) & [Rn]7s$^2$ & 700 & 2010 & 5.5 & 509\\\cline{2-8}
+& 0.9 & 215 & 體心立方 & - & +2 & -2.8 & -\\\hline
+硼（Boron, B） & 5 & 10.81 & [He]2s$^2$2p$^1$ & 2076 & 3927 & 2.34 & 801\\\cline{2-8}
+& 2.04 & 87 & 三方 & 27 & +3 & -0.89 (H$_3$BO$_3\to$B) & 綠\\\hline
+鋁（Aluminum, Al） & 13 & 26.98 & [Ne]3s$^2$3p$^1$ & 660.3 & 2519 & 2.70 & 578\\\cline{2-8}
+& 1.61 & 143 & 面心立方 & 53 & +3 & -1.66 & 銀白\\\hline
+鎵（Gallium, Ga） & 31 & 69.72 & [Ar]3d$^{10}$4s$^2$4p$^1$ & 29.8 & 2403 & 5.91 & 579\\\cline{2-8}
+& 1.81 & 122 & 正交 & 62 & +3 & -0.55 & -\\\hline
+銦（Indium, In） & 49 & 114.82 & [Kr]4d$^{10}$5s$^2$5p$^1$ & 156.6 & 2072 & 7.29 & 558\\\cline{2-8}
+& 1.78 & 167 & 體心四方 & 81 & +3 & -0.44 (+3$\to$+1), -0.13 (+1$\to$0) & 藍紫\\\hline
+鉈（Thallium, Tl） & 81 & 204.38 & [Xe]4f$^{14}$5d$^{10}$6s$^2$6p$^1$ & 304 & 1473 & 11.85 & 589\\\cline{2-8}
+& 1.62 & 170 & 六方最密 & 89 (+3), 150 (+1) & +1, +3 (主要) & -0.34 (+1$\to$0), 0.74 (+3$\to$0) & 綠\\\hline
+碳（Carbon, C） & 6 & 12.01 & [He]2s$^2$2p$^2$ & 3550 (鑽石) & 3650 (石墨昇華), 4830 (鑽石) & 2.26 (石墨), 3.53 (鑽石) & 1086\\\cline{2-8}
+& 2.55 & 77 & 六方 (石墨), 鑽石立方 (鑽石) & 30 (+4) & -4 至 +4 & -0.11 (CO$_2\to$CO), 0.52 (CO$\to$C), 0.13 (C$\to$CH$_4$), -1.15 (C$\to$CH$_3$OH) & -\\\hline
+矽（Silicon, Si） & 14 & 28.09 & [Ne]3s$^2$3p$^2$ & 1414 & 3265 & 2.33 & 787\\\cline{2-8}
+& 1.90 & 111 & 鑽石立方 & 54 (+4) & -4, +4 & -0.91 (SiO$_2\to$Si) & -\\\hline
+鍺（Germanium, Ge） & 32 & 72.63 & [Ar]3d$^{10}$4s$^2$4p$^2$ & 938.3 & 2833 & 5.33 & 762\\\cline{2-8}
+& 2.01 & 122 & 鑽石立方 & 53 (+4) & -4, +2, +4 & -0.29 (Ge$\to$GeH$_4$), -0.15 (GeO$_2\to$Ge) & 藍白\\\hline
+錫（Tin, Sn） & 50 & 118.71 & [Kr]4d$^{10}$5s$^2$5p$^2$ & 231.9 & 2602 & 7.31 & 709\\\cline{2-8}
+& 1.96 & 140 & 體心四方 & 69 (+4), 93 (+2) & -4, +2, +4 (最穩定) & -0.14 (+2$\to$0), 0.15 (+4$\to$+2) & 藍白\\\hline
+鉛（Lead, Pb） & 82 & 207.2 & [Xe]4f$^{14}$5d$^{10}$6s$^2$6p$^2$ & 327.5 & 1749 & 11.34 & 716\\\cline{2-8}
+& 2.33 & 175 & 面心立方 & 119 (+2), 77 (+4) & +2 (最穩定), +4 & -0.13 (+2$\to$0), 1.69 (+4$\to$+2) & 藍白\\\hline
+氮（Nitrogen, N） & 7 & 14.01 & [He]2s$^2$2p$^3$ & -209.9 & -195.8 & 0.00125 & 1402\\\cline{2-8}
+& 3.04 & 71 & 氣態 & 146 (-3), 27 (+5) & -3, +2, +3, +4, +5 & 0.09 (N$_2\to$NH$_3$), 1.25 (NO$_3^{\phantom{3}-}\to$N$_2$), 0.94 (NO$_3^{\phantom{3}-}\to$HNO$_2$), 0.96 (NO$_3^{\phantom{3}-}\to$NO), 1.03 (NO$_2\to$NO) & -\\\hline
+磷（Phosphorus, P） & 15 & 30.97 & [Ne]3s$^2$3p$^3$ & 44.2 & 280.5 & 1.82 & 1012\\\cline{2-8}
+& 2.19 & 110 & 體心立方 & 58 (+3), 52 (+5) & -3, +3, +5 & -2.05 (H$_2$PO$_2^{\phantom{2}-}\to$P), -1.71 (HPO$_3^{\phantom{3}2-}\to$P), -0.41 (H$_2$PO$_4^{\phantom{4}-}\to$P), -0.06 (P$\to$PH$_3$) & 藍綠\\\hline
+砷（Arsenic, As） & 33 & 74.92 & [Ar]3d$^{10}$4s$^2$4p$^3$ & - & 614 (昇華) & 5.73 & 947\\\cline{2-8}
+& 2.18 & 120 & 菱形 & 72 (+3), 60 (+5) & -3, +3, +5 & 0.56 (H$_3$AsO$_4\to$H$_3$AsO$_3$), 0.24 (H$_3$AsO$_3\to$As), -0.23 (As$\to$AsH$_3$) & 藍\\\hline
+銻（Antimony, Sb） & 51 & 121.76 & [Kr]4d$^{10}$5s$^2$5p$^3$ & 630.6 & 1587 & 6.69 & 834\\\cline{2-8}
+& 2.05 & 140 & 菱形 & 90 (+3), 74 (+5) & -3, +3, +5 & 0.15 (Sb$_2$O$_3\to$Sb), 0.70 (Sb$_2$O$_5\to$Sb$_2$O$_3$) & 淡綠\\\hline
+鉍（Bismuth, Bi） & 83 & 208.98 & [Xe]4f$^{14}$5d$^{10}$6s$^2$6p$^3$ & 271.4 & 1564 & 9.78 & 703\\\cline{2-8}
+& 2.02 & 160 & 菱形 & 103 (+3), 76 (+5) & -3, +3, +5 & 0.31 (Bi$^{3+}\to$Bi), -0.80 (Bi$\to$BiH$_3$), -0.45 (Bi$_2$O$_3\to$Bi) & 淡藍\\\hline
+氧（Oxygen, O） & 8 & 16.00 & [He]2s$^2$2p$^4$ & -218.8 & -183.0 & 0.00143 & 1314\\\cline{2-8}
+& 3.44 & 66 & 氣態 & 140 (-2), 22 (+6) & -2 & 1.23 (O$_2\to$H$_2$O), 1.78 (H$_2$O$_2\to$H$_2$O), 2.07 (O$_3\to$O$_2$) & -\\\hline
+硫（Sulfur, S） & 16 & 32.06 & [Ne]3s$^2$3p$^4$ & 112.8 (斜方), 119.6 (單斜, 95.3 斜方$\to$單斜) & 445 & 2.07 (斜方), 1.96 (單斜) & 1000\\\cline{2-8}
+& 2.58 & 105 & 正交 & 184 (-2), 37 (+4), 29 (+6) & -2, +2, +4, +6 & 0.14 (S$\to$H$_2$S), 0.50 (SO$_2\to$S), -0.25 (HSO$_4^{\phantom{4}-}\to$S$_2$O$_6^{\phantom{6}2-}$), 0.57 (S$_2$O$_6^{\phantom{6}2-}\to$H$_2$SO$_3$), 0.16 (HSO$_4^{\phantom{4}-}\to$SO$_2$), 0.40 (SO$_2\to$S$_2$O$_3^{\phantom{3}2-}$), 0.51 (SO$_2\to$S$_4$O$_6^{\phantom{6}2-}$) & 藍\\\hline
+硒（Selenium, Se） & 34 & 78.97 & [Ar]3d$^{10}$4s$^2$4p$^4$ & 220.9 & 685 & 4.81 & 941\\\cline{2-8}
+& 2.55 & 120 & 六方 & 198 (-2), 42 (+6) & -2, +2, +4, +6 & -0.11 (Se$\to$H$_2$Se), 0.74 (H$_2$SeO$_3\to$Se), 1.15 (HSeO$_4^{\phantom{4}-}\to$H$_2$SeO$_3$) & 淡藍\\\hline
+碲（Tellurium, Te） & 52 & 127.60 & [Kr]4d$^{10}$5s$^2$5p$^4$ & 449.5 & 988 & 6.24 & 869\\\cline{2-8}
+& 2.10 & 140 & 六方 & 221 (-2), 56 (+6) & -2, +2, +4, +6 & 0.53 (TeO$_2\to$Te), 0.74 (Te$_2^{\phantom{2}2-}\to$Te) & 淡綠\\\hline
+氟（Fluorine, F） & 9 & 19.00 & [He]2s$^2$2p$^5$ & -219.6 & -188.1 & 0.00170 & 1681\\\cline{2-8}
+& 3.98 & 50 & 氣態 & 133 & -1 & 2.87 (F$_2\to$F$^-$) & -\\\hline
+氯（Chlorine, Cl） & 17 & 35.45 & [Ne]3s$^2$3p$^5$ & -101.5 & -34.0 & 0.00321 & 1251\\\cline{2-8}
+& 3.16 & 100 & 氣態 & 181 (-1), 27 (+7) & -1 (最穩定), +1, +3, +5, +7 & 1.36 (Cl$_2\to$Cl$^-$) & -\\\hline
+溴（Bromine, Br） & 35 & 79.90 & [Ar]3d$^{10}$4s$^2$4p$^5$ & -7.2 & 58.8 & 3.12 & 1140\\\cline{2-8}
+& 2.96 & 115 & 液態 & 196 (-1), 39 (+7) & -1 (最穩定), +1, +3, +5, +7 & 1.07 (Br$_2\to$Br$^-$) & -\\\hline
+碘（Iodine, I） & 53 & 126.90 & [Kr]4d$^{10}$5s$^2$5p$^5$ & 113.7 & 184.3 & 4.93 & 1008\\\cline{2-8}
+& 2.66 & 140 & 正交 & 220 (-1), 50 (+7) & -1 (最穩定), +1, +3, +5, +7 & 0.53 (I$_2\to$I$^-$) & -\\\hline
+氦（Helium, He） & 2 & 4.00 & 1s$^2$ & - & -268.9 & 0.00018 & 2372\\\cline{2-8}
+& - & 31 & 氣態 & - & - & - & -\\\hline
+氖（Neon, Ne） & 10 & 20.18 & [He]2s$^2$2p$^6$ & -248.6 & -246.1 & 0.00090 & 2081\\\cline{2-8}
+& - & 69 & 氣態 & - & - & - & -\\\hline
+氬（Argon, Ar） & 18 & 39.95 & [Ne]3s$^2$3p$^6$ & -189.3 & -185.8 & 0.00178 & 1521\\\cline{2-8}
+& - & 97 & 氣態 & - & - & - & -\\\hline
+氪（Krypton, Kr） & 36 & 83.80 & [Ar]3d$^{10}$4s$^2$4p$^6$ & -157.4 & -153.4 & 0.00375 & 1351\\\cline{2-8}
+& 3.00 & 110 & 氣態 & - & - & - & -\\\hline
+鈧（Scandium, Sc） & 21 & 44.96 & [Ar]3d$^1$4s$^2$ & 1541 & 2836 & 2.99 & 633\\\cline{2-8}
+& 1.36 & 162 & 六方最密 & 74.5 & +3 & -2.09 & 橙\\\hline
+鈦（Titanium, Ti） & 22 & 47.87 & [Ar]3d$^2$4s$^2$ & 1668 & 3287 & 4.54 & 659\\\cline{2-8}
+& 1.54 & 147 & 六方最密 & 86 (+4), 67 (+3) & +2, +3, +4 & -1.63 (+2$\to$0), -1.37 (+3$\to$0), -1.79 (+4$\to$0) & 銀白\\\hline
+釩（Vanadium, V） & 23 & 50.94 & [Ar]3d$^3$4s$^2$ & 1910 & 3407 & 6.11 & 650\\\cline{2-8}
+& 1.63 & 134 & 體心立方 & 79 (+3), 58 (+5) & +2, +3, +4, +5 & -1.13 (+2$\to$0), -0.26 (+3$\to$+2), 0.34 (VO$^{2+}\to$V$^{3+}$), 1.00 (VO$_2^{\phantom{2}2+}\to$VO$^{2+}$) & 黃綠\\\hline
+鉻（Chromium, Cr） & 24 & 52.00 & [Ar]3d$^5$4s$^1$ & 1907 & 2671 & 7.15 & 653\\\cline{2-8}
+& 1.66 & 128 & 體心立方 & 80 (+3), 44 (+6) & +2, +3, +6 & -0.91 (+2$\to$0), -0.74 (+3$\to$0), 1.33 (Cr$_2$O$_7^{\phantom{7}2-}\to$Cr$^{3+}$) & 銀白\\\hline
+錳（Manganese, Mn） & 25 & 54.94 & [Ar]3d$^5$4s$^2$ & 1246 & 2061 & 7.44 & 717\\\cline{2-8}
+& 1.55 & 127 & 體心立方 & 67 (+2), 46 (+7) & +2, +3, +4, +6, +7 & -1.17 (+2$\to$0), 1.51 (+3$\to$+2), 1.23 (MnO$_2\to$Mn$^{2+}$), 1.51 (MnO$_4^{\phantom{4}-}\to$Mn$^{2+}$), 0.59 (MnO$_4^{\phantom{4}-}\to$MnO$_2$) & 黃綠\\\hline
+鐵（Iron, Fe） & 26 & 55.85 & [Ar]3d$^6$4s$^2$ & 1538 & 2861 & 7.87 & 762\\\cline{2-8}
+& 1.83 & 126 & 體心立方 & 78 (+2), 64.5 (+3) & +2, +3 & -0.44 (+2$\to$0), 0.77 (+3$\to$+2) & 金\\\hline
+鈷（Cobalt, Co） & 27 & 58.93 & [Ar]3d$^7$4s$^2$ & 1495 & 2927 & 8.90 & 760\\\cline{2-8}
+& 1.88 & 125 & 六方最密 & 74 (+2), 54.5 (+3) & +2, +3 & -0.28 (+2$\to$0), 1.92 (+3$\to$+2) & 銀白\\\hline
+鎳（Nickel, Ni） & 28 & 58.69 & [Ar]3d$^8$4s$^2$ & 1455 & 2913 & 8.91 & 737\\\cline{2-8}
+& 1.91 & 124 & 面心立方 & 69 (+2), 60 (+3) & +2, +3 & -0.23 (+2$\to$0), 1.59 (NiO$_2\to$Ni$^{2+}$) & 銀白\\\hline
+銅（Copper, Cu） & 29 & 63.55 & [Ar]3d$^{10}$4s$^1$ & 1085 & 2562 & 8.96 & 745\\\cline{2-8}
+& 1.90 & 128 & 面心立方 & 77 (+2), 91 (+1) & +1, +2 & 0.34 (+2$\to$0), 0.18 (+1$\to$0) & 藍綠\\\hline
+鋅（Zinc, Zn） & 30 & 65.38 & [Ar]3d$^{10}$4s$^2$ & 419.5 & 907 & 7.13 & 906\\\cline{2-8}
+& 1.65 & 134 & 六方最密 & 74 & +2 & -0.76 & 綠\\\hline
+鈀（Palladium, Pd） & 46 & 106.42 & [Kr]4d$^{10}$ & 1554.9 & 2963 & 12.01 & 804\\\cline{2-8}
+& 2.20 & 137 & 面心立方 & 100 (+2), 90 (+3), 76 (+4) & 0, +2, +3, +4 & 0.92 (+2$\to$0) & -\\\hline
+銀（Silver, Ag） & 47 & 107.87 & [Kr]4d$^{10}$5s$^1$ & 961.8 & 2162 & 10.49 & 731\\\cline{2-8}
+& 1.93 & 144 & 面心立方 & 115 & +1 & 0.80 & -\\\hline
+鎘（Cadmium, Cd） & 48 & 112.41 & [Kr]4d$^{10}$5s$^2$ & 321.1 & 767 & 8.65 & 868\\\cline{2-8}
+& 1.69 & 151 & 六方最密 & 109 & +2 & -0.4 & 磚紅\\\hline
+鈰（Cerium, Ce） & 58 & 140.12 & [Xe]4f$^1$5d$^1$6s$^2$ & 795 & 3443 & 6.69 & 534 \\\cline{2-8}
+& 1.12 & 182 & 雙六方密排 & 115 (+3), 101 (+4) & +2, +3, +4 & 1.61 (+4$\to$+3), -2.34 (+3$\to$0) & 黃\\\hline
+鉑（Platinum, Pt） & 78 & 195.08 & [Xe]4f$^{14}$5d$^9$6s$^1$ & 1768 & 3825 & 21.45 & 870\\\cline{2-8}
+& 2.28 & 139 & 面心立方 & 80 (+2), 62.5 (+4) & +2, +4 & 1.19 (+2$\to$0), 0.76 (PtCl$_4^{\phantom{4}2-}\to$Pt), 0.73 (PtCl$_6^{\phantom{6}2-}\to$PtCl$_4^{\phantom{4}2-}$) & -\\\hline
+金（Gold, Au） & 79 & 196.97 & [Xe]4f$^{14}$5d$^{10}$6s$^1$ & 1064 & 2856 & 19.32 & 890\\\cline{2-8}
+& 2.54 & 144 & 面心立方 & 137 (+1), 85 (+3) & +1, +3 & 1.42 (+3$\to$0), 1.15 (AuCl$_2^{\phantom{2}-}\to$Au), 0.93 (AuCl$_4^{\phantom{4}-}\to$Au) & -\\\hline
+汞（Mercury, Hg） & 80 & 200.59 & [Xe]4f$^{14}$5d$^{10}$6s$^2$ & -38.8 & 356.7 & 13.55 & 1007\\\cline{2-8}
+& 2.00 & 151 & 三方 & 125 (+1), 110 (+2) & +1, +2 (最穩定) & 0.80 (Hg$_2^{\phantom{2}2+}\to$2Hg), 0.85 (+2$\to$0) & 紅\\\hline
+\end{longtable}\FloatBarrier
+\ssc{氧化還原劑表}
+\sssc{氧化劑表}
+氧化力 (還原產物, 標準還原電位 (V))：\ce{F2} (\ce{F-}, 2.87) > \ce{Co^{3+}} (\ce{Co^{2+}}, 1.92) > \ce{H2O2} (\ce{H2O}, 1.78) > \ce{Ce^{4+}} (\ce{Ce^{3+}}, 1.61) > 酸中 \ce{MnO4-} (\ce{Mn^{2+}}, 1.52) > \ce{Cl2} (\ce{Cl-}, 1.36) > 酸中 \ce{Cr2O7^{2-}} (\ce{Cr^{3+}}, 1.33) > \ce{MnO2} (\ce{Mn^{2+}}, 1.21) > \ce{Br2} (\ce{Br-}, 1.07) > \ce{VO2^{2+}} (\ce{VO^{2+}}, 1.00) > \ce{NO3-} (\ce{NO}, 0.96) > \ce{Hg^{2+}} (\ce{Hg}, 0.85) > \ce{Hg2^{2+}} (\ce{Hg}, 0.80) = \ce{Ag+} (\ce{Ag}, 0.80) > \ce{Fe^{3+}} (\ce{Fe^{2+}}, 0.77) > \ce{I2} (\ce{I-}, 0.53) > \ce{Mn^{3+}} (\ce{Mn^{2+}}, 0.34) = \ce{VO^{2+}} (\ce{V^{3+}}, 0.34) > 弱鹼中 \ce{MnO4-} (\ce{MnO2}, 0.31) > \ce{Cu^{2+}} (\ce{Cu+}, 0.16)
+\sssc{還原劑}
+還原力 (氧化產物, 標準氧化電位 (V))：Li (\ce{Li+}, 3.05) > Cs (\ce{Cs+}, 3.03) > Rb (\ce{Rb+}, 2.98) > K (\ce{K+}, 2.93) > Ba (\ce{Ba^{2+}}, 2.90) > Sr (\ce{Sr^{2+}}, 2.89) > Ca (\ce{Ca^{2+}}, 2.87) > Ra (\ce{Ra^{2+}}, 2.8) > Na (\ce{Na+}, 2.71) > Mg (\ce{Mg^{2+}}, 2.36) > Ce (\ce{Ce^{3+}}, 2.34) > Sc (\ce{Sc^{3+}}, 2.09) > Be (\ce{Be^{2+}}, 1.97) > Al (\ce{Al^{3+}}, 1.66) > Ti (\ce{Ti^{3+}}, 1.37) > V (\ce{V^{2+}}, 1.13) > Mn (\ce{Mn^{2+}}, 1.17) > Si (\ce{SiO2}, 0.91) > B (\ce{H3BO3}, 0.89) > Zn (\ce{Zn^{2+}}, 0.76) > Cr (\ce{Cr^{3+}}, 0.74) > Ga (\ce{Ga^{3+}}, 0.55) > S (\ce{SO2}, 0.50) > Fe (\ce{Fe^{2+}}, 0.44) > Cd (\ce{Cd^{2+}}, 0.4) > Tl (\ce{Tl+}, 0.34) > Co (\ce{Co^{2+}}, 0.28) > Ni (\ce{Ni^{2+}}, 0.23) > Sn (\ce{Sn^{2+}}, 0.14) > Pb (\ce{Pb^{2+}}, 0.13) = In (\ce{In+}, 0.13) > C (\ce{CO2}, 0.11) > H$_2$ (\ce{H2O}, 0.0000) > \ce{Cu+} (\ce{Cu^{2+}}, -0.16) > Cu (\ce{Cu^{2+}}, -0.18) > \ce{I-} (\ce{I2}, -0.53) > \ce{Fe^{2+}} (-0.77) > Hg (\ce{Hg2^{2+}}, -0.80) > Ag (\ce{Ag+}, -0.80) > Pd (\ce{Pd^{2+}}, -0.92) > \ce{Br-} (\ce{Br2}, -1.07) > Pt (\ce{Pt^{2+}}, -1.19) > \ce{Cl-} (\ce{Cl2}, -1.36) > Au (\ce{Au^{3+}}, -1.42) > \ce{Ce^{3+}} (\ce{Ce^{4+}}, -1.61) > \ce{Co^{2+}} (\ce{Co^{3+}}, -1.92) > \ce{F-} (\ce{F2}, -2.87)
+\ssc{離子表}
+\begin{itemize}
+\item +4:\ce{Mn^{4+}}, \ce{Sn^{4+}}, \ce{Pb^{4+}}, \ce{Ti^{4+}}.
+\item +3:\ce{Al^{3+}}, \ce{Ga^{3+}}, \ce{Sc^{3+}}, \ce{V^{3+}}, \ce{Cr^{3+}}, \ce{Mn^{3+}}, \ce{Fe^{3+}}, \ce{Co^{3+}}, \ce{Ni^{3+}}, \ce{Au^{3+}}, \ce{Sc^{3+}}.
+\item +2: IIA$^{2+}$, \ce{Sn^{2+}}, \ce{Pb^{2+}}, \ce{Cr^{2+}}, \ce{Mn^{2+}}, \ce{Fe^{2+}}, \ce{Co^{2+}}, \ce{Ni^{2+}}, \ce{Cu^{2+}}, \ce{Zn^{2+}}, \ce{Cd^{2+}}, \ce{Hg^{2+}}, \ce{Hg2^{2+}}.
+\item +1: IA$^+$, \ce{NH4^+}, \ce{Tl^+}, \ce{Ag^+}, \ce{Cu^+}.
+\item -1: VIIA$^-$, 硝酸根離子\ce{NO3^-}, 亞硝酸根離子\ce{NO2^-}, 氰離子\ce{CN^-}, 氰酸根離子\ce{OCN^-}, 雷酸根離子\ce{CNO^-}, 硫氰酸根離子\ce{SCN^-}, 疊氮根離子\ce{N3^-}, 次磷酸根離子\ce{H2PO2^-}, 亞磷酸氫根離子\ce{H2PO3^-}, 磷酸二氫根離子\ce{H2PO4^-}, 過猛酸根離子\ce{MnO4^-}, 過氯酸根離子\ce{ClO4^-}, 氯酸根離子\ce{ClO3^-}, 亞氯酸根離子\ce{ClO2^-}, 次氯酸根離子\ce{ClO^-}, \ce{HCO3^-}, \ce{OH^-}, $x$烷酸根離子\ce{(CH2)$_{x-1}$HCOO^-}, 硬脂肪酸/十八烷酸\ce{C17H35COO^-}, 超氧根離子\ce{O2^-}, 氫負離子\ce{H^-}, 碳酸氫根離子\ce{HCO3^-}, 硼酸二氫根離子\ce{H2BO3^-}.
+\item -2:\ce{O^{2-}}, 過氧根離子\ce{O2^{2-}}, \ce{S^{2-}}, \ce{Se^{2-}}, 亞磷酸根離子\ce{HPO3^{2-}}, 磷酸氫根離子\ce{HPO4^{2-}}, 錳酸根離子\ce{MnO4^{2-}}, 亞硫酸根離子\ce{SO3^{2-}}, \ce{SO4^{2-}}, 過一硫酸根離子\ce{SO5^{2-}}, 硫代硫酸根離子\ce{S2O3^{2-}}, 連二亞硫酸根離子\ce{S2O4^{2-}}, 焦亞硫酸根/偏二亞硫酸根離子\ce{O3S2O2^{2-}}, 連二硫酸根離子\ce{O3S2O3^{2-}}, 焦硫酸根/連二硫酸根離子\ce{O3SOSO3^{2-}}, 過二硫酸根離子\ce{O3SOOSO3^{2-}}, 連$x$硫酸根離子\ce{O3SS$_{x-2}$SO3^{2-}}, 鉻酸根離子\ce{CrO4^{2-}}, 二鉻酸根離子\ce{Cr2O7^{2-}}, 碳酸根離子\ce{CO3^{2-}}, $x$烷二酸根離子\ce{(CH2)$_{x-2}$C2O4^{2-}}, 氰胺離子\ce{CN2^{2-}}, 硼酸氫根離子\ce{HBO3^{2-}}.
+\item -3:\ce{N^{3-}}, \ce{P^{3-}}, 硼酸根離子\ce{BO3^{3-}}, 磷酸根離子\ce{PO4^{3-}}, 砷酸根離子\ce{AsO4^{3-}}.
+\end{itemize}
+\ssc{離子化合物水溶液}
+\sssc{水中溶解性略表}
+條件：25°C、1 atm、純水。
+
+\bit
+\item 可溶（soluble）：$\geq$0.1 M
+\item 不溶（Insoluble）：<0.1 M
+\eit
+
+\begin{longtable}[c]{|p{0.4\tw}|p{0.4\tw}|}
+\hline
+陰離子 & 陽離子 \\\hline\endhead
+\ce{NO3^-}, \ce{ClO4^-}, \ce{CH3COO^-} & 皆可溶 \\\hline
+\ce{Cl^-} & 不溶：\ce{Hg2^{2+}}, \ce{Cu^+}, \ce{Pb^{2+}}, \ce{Ag^+}, \ce{Tl^+} \\\hline
+\ce{Br^-}, \ce{I^-} & 不溶：\ce{Hg2^{2+}}, \ce{Hg^{2+}}, \ce{Cu^+}, \ce{Pb^{2+}}, \ce{Ag^+}, \ce{Tl^+} \\\hline
+\ce{CN^-} & 不溶：\ce{Co^{2+}}, \ce{Ni^{2+}}, \ce{Cu^+}, \ce{Cu^{2+}}, \ce{Zn^{2+}}, \ce{Ag^+}, \ce{Hg2^{2+}} \\\hline
+\ce{SCN^-} & 不溶：\ce{Cu^{2+}}, \ce{Sn^{2+}}, \ce{Ag^+}, \ce{Hg^{2+}} \\\hline
+\ce{SO4^{2-}} & 不溶：\ce{Ca^{2+}} (微), \ce{Sr^{2+}}, \ce{Ba^{2+}}, \ce{Pb^{2+}} \\\hline
+\ce{CrO4^{2-}} & 不溶：\ce{Sr^{2+}} (微), \ce{Ba^{2+}}, \ce{Pb^{2+}}, \ce{Ag^+} \\\hline
+\ce{OH^-} & 可溶：\ce{H^+}, \ce{IA^+}, \ce{NH4^+}, \ce{Ca^{2+}}, \ce{Sr^{2+}}, \ce{Ba^{2+}} \\\hline
+\ce{S^{2-}} & 可溶：\ce{H^+}, \ce{IA^+}, \ce{NH4^+}, \ce{IIA^{2+}} \\\hline
+\ce{PO4^{3-}}, \ce{CO3^{2-}}, \ce{C2O4^{2-}}, \ce{SO3^{2-}} & 可溶：\ce{H^+}, \ce{IA^+}, \ce{NH4^+} \\\hline
+\end{longtable}\FB
+\sssc{水中溶解性詳表}
+條件：25°C、1 atm、純水。
+
+符號：
+\begin{itemize}
+\item S：可溶（soluble），即 $\geq$20 g/L
+\item T：微溶（slightly soluble），即 0.1$\sim$20 g/L
+\item I：難溶（insoluble），即 <0.1 g/L
+\item R：與水反應產生與溶解前之鹽類或分子不同的微溶或難溶於水之物質（不計水合）
+\item -：未知或無可靠資料
+\end{itemize}
+
+表：
+\begin{longtable}[c]{|p{0.08\textwidth}|p{0.08\textwidth}|p{0.08\textwidth}|p{0.08\textwidth}|p{0.08\textwidth}|p{0.08\textwidth}|p{0.08\textwidth}|p{0.08\textwidth}|p{0.08\textwidth}|p{0.08\textwidth}|}
+\hline
+Ions & \ce{F-} & \ce{Cl^-} & \ce{Br^-} & \ce{I^-} & \ce{ClO4^-} & \ce{O^{2-}} & \ce{OH^-} & \ce{S^{2-}} & \ce{SO4^{2-}} \\\cline{2-10}
+& \ce{SO3^{2-}} & \ce{NO3^-} & \ce{PO4^{3-}} & \ce{CO3^{2-}} & \ce{CN^-} & \ce{SCN^-} & \ce{CH3COO^-} & \ce{C2O4^{2-}} & \ce{CrO4^{2-}} \\\hline
+\endhead
+\ce{H^+} & S & S & S & S & S & S & S & T & S \\\cline{2-10}
+& S & S & S & S & S & S & S & S & S \\\hline
+\ce{NH4^+} & S & S & S & S & S & - & - & R & S \\\cline{2-10}
+& S & S & S & S & S & S & S & S & S \\\hline
+\ce{Li^+} & T & S & S & S & S & R & S & R & S \\\cline{2-10}
+& S & S & T & T & S & S & S & S & S \\\hline
+\ce{Na^+} & S & S & S & S & S & R & S & R & S \\\cline{2-10}
+& S & S & S & S & S & S & S & S & S \\\hline
+\ce{K^+} & S & S & S & S & S & R & S & R & S \\\cline{2-10}
+& S & S & S & S & S & S & S & S & S \\\hline
+\ce{Rb^+} & S & S & S & S & S & R & S & R & S \\\cline{2-10}
+& S & S & S & S & S & S & S & S & S \\\hline
+\ce{Cs^+} & S & S & S & S & S & R & S & R & S \\\cline{2-10}
+& S & S & S & S & S & S & S & S & S \\\hline
+\ce{Be^{2+}} & S & S & S & R & S & I & I & R & S \\\cline{2-10}
+& R & S & I & T & R & S & S & S & R \\\hline
+\ce{Mg^{2+}} & T & S & S & S & S & R & I & R & S \\\cline{2-10}
+& T & S & I & T & R & S & S & T & S \\\hline
+\ce{Ca^{2+}} & I & S & S & S & S & R & T & R & T \\\cline{2-10}
+& I & S & I & I & R & S & S & T & T \\\hline
+\ce{Sr^{2+}} & T & S & S & S & S & R & T & R & T \\\cline{2-10}
+& I & S & T & I & S & S & S & I & T \\\hline
+\ce{Ba^{2+}} & T & S & S & S & S & R & S & R & I \\\cline{2-10}
+& I & S & I & T & S & S & S & I & I \\\hline
+\ce{Al^{3+}} & T & S & S & S & S & I & I & R & S \\\cline{2-10}
+& R & S & I & R & R & S & S & I & R \\\hline
+\ce{Ga^{3+}} & I & S & S & R & S & I & I & R & T \\\cline{2-10}
+& R & S & I & R & R & S & S & - & R \\\hline
+\ce{Tl^+} & S & T & I & I & S & S & S & I & S \\\cline{2-10}
+& I & S & I & S & S & I & S & T & S \\\hline
+\ce{Sn^{2+}} & S & S & S & S & S & I & I & I & S \\\cline{2-10}
+& R & S & I & I & - & I & R & T & R \\\hline
+\ce{Pb^{2+}} & T & T & T & T & S & I & T & I & I \\\cline{2-10}
+& I & S & I & I & T & T & S & I & I \\\hline
+\ce{Cr^{3+}} & T & S & S & S & S & I & I & I & S \\\cline{2-10}
+& R & S & I & I & S & S & S & - & R \\\hline
+\ce{Mn^{2+}} & T & S & S & S & S & I & I & I & S \\\cline{2-10}
+& T & S & I & I & S & S & S & I & \\\hline
+\ce{Fe^{2+}} & T & S & S & S & S & I & I & I & S \\\cline{2-10}
+& - & S & I & I & S & S & S & T & I \\\hline
+\ce{Fe^{3+}} & S & S & S & R & S & I & I & I & S \\\cline{2-10}
+& R & S & T & R & S & S & S & T & R \\\hline
+\ce{Co^{2+}} & T & S & S & S & S & I & I & I & S \\\cline{2-10}
+& I & S & I & I & I & S & S & I & I \\\hline
+\ce{Ni^{2+}} & S & S & S & S & S & I & I & I & S \\\cline{2-10}
+& I & S & I & I & I & S & S & I & I \\\hline
+\ce{Cu^+} & - & I & I & I & S & I & - & I & - \\\cline{2-10}
+& I & S & I & I & I & I & R & - & - \\\hline
+\ce{Cu^{2+}} & T & S & S & - & S & I & I & I & S \\\cline{2-10}
+& R & S & I & I & I & I & S & I & I \\\hline
+\ce{Zn^{2+}} & T & S & S & S & S & I & I & I & S \\\cline{2-10}
+& T & S & I & I & I & S & S & I & I \\\hline
+\ce{Ag^+} & S & I & I & I & S & I & I & I & T \\\cline{2-10}
+& I & S & I & I & I & I & T & I & I \\\hline
+\ce{Cd^{2+}} & S & S & S & S & S & I & I & I & S \\\cline{2-10}
+& I & S & I & I & T & T & S & I & - \\\hline
+\ce{Au^{3+}} & R & S & T & - & - & I & I & I & - \\\cline{2-10}
+& - & - & I & I & S & - & T & - & - \\\hline
+\ce{Hg2^{2+}} & R & I & I & I & S & I & - & - & T \\\cline{2-10}
+& - & S & - & I & I & - & S & - & - \\\hline
+\ce{Hg^{2+}} & R & S & T & I & S & I & I & I & R \\\cline{2-10}
+& - & S & I & I & S & T & S & T & I \\\hline
+\end{longtable}\FloatBarrier
+
+與水反應者其反應為：
+\begin{itemize}
+\item \ce{Hg2F2(s) + H2O(l) -> Hg(l) + HgO(s) + 2HF(aq)}
+\item \ce{HgF2(s) + H2O(l) -> 2HF(aq) + HgO(s)}
+\item \ce{MI(s) + H2O(l) -> MOH(s) + HI(aq)}
+\item \ce{MO(s) + H2O(l) -> M(OH)2(s/aq)}
+\item \ce{MS(s) + 2H2O(l) -> M(OH)2(s/aq) + H2S(g/aq)}
+\item \ce{2HgSO4(s) + H2O(l) -> HgSO4$\cdot$HgO(s) + H2SO4(aq)}
+\item \ce{MSO3(s) + H2O(l) -> M(OH)2(s/aq) + SO2(g)}
+\item \ce{M2(CO3)3(s) + 3H2O(l) -> 2M(OH)3(s) + 3CO2(g)}
+\item \ce{MCN(s) + 2H2O(l) -> MHCOO(aq) + NH3(aq)}
+\item \ce{Sn(CH3COO)2(s) + 2H2O(l) -> Sn(OH)2(s) + 2CH3COOH(aq)}
+\item \ce{CuCH3COO(s) + H2O(l) -> CuOH(s) + CH3COOH(aq)}
+\item \ce{2MCrO4(s) + H2O(l) -> M(OH)2(s/aq) + MCr2O7(aq)}
+\end{itemize}
+\sssc{特定情況溶解或反應}
+\begin{itemize}
+\item 金屬氧化物與氫氧化物易溶於酸，生成金屬陽離子與水
+\item 多數非金屬氧化物易溶於鹼，生成含氧酸根根離子，不溶於水的非金屬氧化物如一氧化碳、一氧化氮。
+\item 在強酸溶液中生成金屬陽離子與水，在強鹼溶液中生成金屬陽離子與氫氧根離子的可溶性錯離子，其中除鉻(III)為\ce{Cr(OH)6^{3-}}外其餘為負一價，屬兩性物質：\ce{Be(OH)2}, \ce{Al2O3}, \ce{Al(OH)3}, \ce{Ga2O3}, \ce{Ga(OH)3}, \ce{SnO}, \ce{Sn(OH)2}, \ce{PbO}, \ce{Pb(OH)2}, \ce{Cr(H2O)3(OH)3}, \ce{Cr2O3}, \ce{ZnO}, \ce{Zn(OH)2}。
+\item 以下陰離子的幾乎所有鹽類均與酸反應：
+\bit
+\item \ce{OH^- + H^+ -> H2O}
+\item \ce{CO3^{2-} + 2H^+ -> CO2 + H2O}
+\item \ce{SO3^{2-} + 2H^+ -> SO2 + H2O}
+\item \ce{PO4^{3-} + H^+ -> HPO4^{2-}}
+\item \ce{C2O4^{2-} + H^+ -> HC2O4^-}
+\item \ce{2CrO4^{2-} + 2H^+ -> Cr2O7^{2-} + H2O}
+\eit
+\item \ce{Mn^{2+}}, \ce{Fe^{2+}}, \ce{Co^{2+}}, \ce{Ni^{2+}}, \ce{Zn^{2+}}, \ce{Cr^{3+}}, \ce{Al^{3+}}, \ce{Fe^{3+}} 的硫化物與酸反應：\ce{S- + 2H^+ -> H2S}，不包含\ce{Cu^{2+}}，常以此分離\ce{CuS}。
+\item \ce{Ag^+}, \ce{Cu^{2+}}, \ce{Zn^{2+}}, \ce{Ni^{2+}}, \ce{Cd^{3+}}, \ce{Cr^{3+}}, \ce{Co^{3+}} 的氧化物與氫氧化物不溶於水，與其他陰離子的鹽類在少量氨水或其他鹼性溶液中形成氧化物（對於\ce{Ag^+}：\ce{2Ag^+ + 2OH^- -> Ag2O + H2O}）或氫氧化物（對於其他陽離子）沉澱，但在過量氨水中形成可溶性錯離子，其中電荷數同原離子，氨數為電荷數之二倍，稱數氨某錯離子。氨水中溶解度：\ce{AgCl} 與\ce{AgCN} 可溶，\ce{AgBr} 微溶，\ce{AgI} 不溶（溶解指\ce{Ag(NH3)^{2+}}，沉澱指\ce{Ag2O}）。
+\item 所有銀鹽可溶於\ce{CN^-}水溶液中，發生\ce{Ag^+ + 2CN^- -> Ag(CN)2-}。因此可用\ce{Fe^{3+}}為指示劑、\ce{SCN^-}為滴定試劑滴定\ce{Ag^+}，生成\ce{AgSCN}沉澱，滴定終點\ce{[FeSCN]^{2+}}呈血紅色。
+\item 所有銀鹽可溶於\ce{S2O3^-}，發生\ce{Ag^+ + 2S2O3^{2-} -> Ag(S2O3)2^{3-}}。
+\item 苯胺\ce{C6H5NH2} 分子量大、極性小，難溶於水，加入鹽酸形成氯化苯胺\ce{C6H5NH3Cl}，對水溶解度增加。
+\item 草酸除鏽形成三草酸鐵(III)離子：\ce{6H2C2O4(aq) + Fe2O3(s) -> 2[Fe(C2O4)3]^{3-}(aq) + 6H^+(aq) + 3H2O(l)}
+\item \ce{PbCl2} 可溶於熱水、強鹼與濃鹽酸。
+\item \ce{HgSO4} 可溶於硫酸水溶液。
+\item \ce{Cr2(CH3COO)4(H2O)2} 微溶於水，可溶於熱水與強鹼。
+\end{itemize}
+\sssc{水溶液釋出氣體}
+\begin{itemize}
+\item 碳酸（（氫）鹽）水溶液遇酸：\ce{CO2(g) + H2O(l)}
+\item 亞硫酸（（氫）鹽）水溶液遇酸：\ce{SO2(g)}（無色、臭、有毒）+\ce{H2O(l)}
+\item 硫化氫/金屬（氫）硫化物水溶液遇酸：\ce{H2S(g)}（無色、臭、有毒）
+\item 氨（鹽）水溶液遇鹼：\ce{NH3(g)}（無色、臭）+\ce{H2O(l)}
+\item 硝酸（水溶液）照光或加熱：\ce{NO2(g)}（紅棕色、臭、有毒）+\ce{H2O(l)}
+\item 過氯酸鹽固體照光或加熱：\ce{MClO4(s) -> MCl(s) + 2O2(g)}
+\item 氯酸鹽固體照光或加熱：\ce{2MClO3(s) -> 2MCl(s) + 3O2(g)}
+\end{itemize}
+\sssc{解離常數（Dissociation constant）表}
+25°C 水溶液中（共軛酸的 p$K_a$ 與共軛鹼的 p$K_b$ 和為 14，鹼性物質為方便比較以 14 - 其 p$K_b$ 為其脫去一氫氧根離子之共軛酸的 p$K_a$）：
+\begin{longtable}[c]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.1\textwidth}|}
+\hline
+名稱 & 共軛酸 & 共軛鹼 & p$K_a$ \\\hline
+\endhead
+水合氫離子 & \ce{H3O+} & \ce{H2O} & undefined \\\hline
+過氯酸 & \ce{HClO4} & \ce{ClO4^-} & -10 \\\hline
+氫碘酸 & \ce{HI} & \ce{I^-} & -9.5 \\\hline
+氫溴酸 & \ce{HBr} & \ce{Br^-} & -8.72 \\\hline
+鹽酸 & \ce{HCl} & \ce{Cl^-} & -7.0 \\\hline
+過溴酸 & \ce{HBrO4} & \ce{BrO4^-} & -4.6 \\\hline
+硫酸 & \ce{H2SO4} & \ce{HSO4^-} & -2.8 \\\hline
+氯酸 & \ce{HClO3} & \ce{ClO3^-} & -2.7 \\\hline
+溴酸 & \ce{HBrO3} & \ce{BrO3^-} & -2 \\\hline
+硝酸 & \ce{HNO3} & \ce{NO3^-} & -1.38 \\\hline
+硫代硫酸 & \ce{H2S2O3} & \ce{HS2O3^-} & 0.60 \\\hline
+三氯乙酸 & \ce{CCl3COOH} & \ce{CCl3COO^-} & 0.66 \\\hline
+苯磺酸 & \ce{C6H5SO3H} & \ce{C6H5SO3^-} & 0.70 \\\hline
+碘酸 & \ce{HIO3} & \ce{IO3^-} & 0.75 \\\hline
+次磷酸 & \ce{H3PO2} & \ce{H2PO2^-} & 0.89 \\\hline
+異硫氰酸與硫氰酸 & \ce{HNCS} and \ce{HSCN} & \ce{SCN^-} & 0.93 \\\hline
+乙二酸 & \ce{H2C2O4} & \ce{HC2O4^-} & 1.27 \\\hline
+亞磷酸 & \ce{H3PO3} & \ce{H2PO3^-} & 1.30 \\\hline
+二氯乙酸 & \ce{CHCl2COOH} & \ce{CHCl2COO^-} & 1.35 \\\hline
+硫代硫酸氫根離子 & \ce{HS2O3^-} & \ce{S2O3^{2-}} & 1.74 \\\hline
+亞硫酸 & \ce{H2SO3} & \ce{HSO3^-} & 1.89 \\\hline
+硫酸氫根離子 & \ce{HSO4^-} & \ce{SO4^{2-}} & 1.92 \\\hline
+亞氯酸 & \ce{HClO2} & \ce{ClO2^-} & 1.94 \\\hline
+磷酸 & \ce{H3PO4} & \ce{H2PO4^-} & 2.15 \\\hline
+砷酸 & \ce{H3AsO4} & \ce{H2AsO4^-} & 2.19 \\\hline
+六水合鐵(III)離子 & \ce{Fe(H2O)6^{3+}} & \ce{Fe(H2O)5(OH)^{2+}} & 2.2 \\\hline
+碲化氫 & \ce{H2Te} & \ce{HTe^-} & 2.64 \\\hline
+溴乙酸 & \ce{CH2BrCOOH} & \ce{CH2BrCOO^-} & 2.69 \\\hline
+氯乙酸 & \ce{CH2ClCOOH} & \ce{CH2ClCOO^-} & 2.86 \\\hline
+2-苯二甲酸 & \ce{C6H4(COOH)2} & \ce{C6H4(COOH)(COO)-} & 2.89 \\\hline
+氫氟酸 & \ce{HF} & \ce{F-} & 3.17 \\\hline
+亞硝酸 & \ce{HNO2} & \ce{NO2^-} & 3.29 \\\hline
+正過碘酸 & \ce{H5IO6} & \ce{H4IO6-} & 3.29 \\\hline
+亞溴酸 & \ce{HBrO2} & \ce{BrO2^-} & 3.43 \\\hline
+3-苯二甲酸 & \ce{C6H4(COOH)2} & \ce{C6H4(COOH)(COO)-} & 3.46 \\\hline
+4-苯二甲酸 & \ce{C6H4(COOH)2} & \ce{C6H4(COOH)(COO)-} & 3.54 \\\hline
+異氰酸與氰酸 & \ce{HNCO} and \ce{HOCN} & \ce{OCN^-} & 3.7 \\\hline
+甲酸 & \ce{HCOOH} & \ce{HCOO^-} & 3.75 \\\hline
+六水合鉻(III)離子 & \ce{Cr(H2O)6^{3+}} & \ce{Cr(H2O)5(OH)^{2+}} & 3.82 \\\hline
+2-羥基丙酸 & \ce{CH3CH(OH)COOH} & \ce{CH3CH(OH)COO^-} & 3.86 \\\hline
+硒化氫 & \ce{H2Se} & \ce{HSe^-} & 3.89 \\\hline
+苯甲酸 & \ce{C6H5COOH} & \ce{C6H5COO^-} & 4.20 \\\hline
+乙二酸氫根離子 & \ce{HC2O4^-} & \ce{C2O4^{2-}} & 4.27 \\\hline
+4-苯二甲酸氫根離子 & \ce{C6H4(COOH)(COO)-} & \ce{C6H4(COO)2^{2-}} & 4.34 \\\hline
+3-苯二甲酸氫根離子 & \ce{C6H4(COOH)(COO)-} & \ce{C6H4(COO)2^{2-}} & 4.46 \\\hline
+苯胺 & \ce{C6H5NH3^+} & \ce{C6H5NH2} & 4.63 \\\hline
+亞碘酸 & \ce{HIO2} & \ce{IO2^-} & 4.7 \\\hline
+乙酸 & \ce{CH3COOH} & \ce{CH3COO^-} & 4.76 \\\hline
+正丁酸 & \ce{C3H7COOH} & \ce{C3H7COO^-} & 4.82 \\\hline
+六水合鋁(III)離子 & \ce{Al(H2O)6^{3+}} & \ce{Al(H2O)5(OH)^{2+}} & 4.85 \\\hline
+異丁酸 & \ce{(CH3)2CHCOOH} & \ce{(CH3)2CHCOO^-} & 4.86 \\\hline
+ & \ce{C2H5COOH} & \ce{C2H5COO^-} & 4.88 \\\hline
+2-苯二甲酸氫根離子 & \ce{C6H4(COOH)(COO)-} & \ce{C6H4(COO)2^{2-}} & 5.51 \\\hline
+碳酸 & \ce{H2CO3} & \ce{HCO3^-} & 6.35 \\\hline
+亞磷酸氫根離子 & \ce{H2PO3^-} & \ce{HPO3^{2-}} & 6.70 \\\hline
+砷酸氫根離子 & \ce{H2AsO4^-} & \ce{HAsO4^{2-}} & 6.94 \\\hline
+硫化氫 & \ce{H2S} & \ce{HS-} & 7.02 \\\hline
+4-硝基苯酚 & \ce{C6H4NO2OH} & \ce{C6H4NO2O^-} & 7.15 \\\hline
+磷酸二氫根離子 & \ce{H2PO4^-} & \ce{HPO4^{2-}} & 7.20 \\\hline
+亞硫酸氫根離子 & \ce{HSO3^-} & \ce{SO3^{2-}} & 7.21 \\\hline
+次氯酸 & \ce{HOCl} & \ce{ClO-} & 7.54 \\\hline
+正過碘酸四氫根離子 & \ce{H4IO6-} & \ce{H3IO6^{2-}} & 8.31 \\\hline
+次溴酸 & \ce{HOBr} & \ce{BrO-} & 8.65 \\\hline
+硼酸 & \ce{H3BO3} & \ce{H2BO3^-} & 9.24 \\\hline
+氨 & \ce{NH4^+} & \ce{NH3} & 9.25 \\\hline
+氫氰酸 & \ce{HCN} & \ce{CN^-} & 9.31 \\\hline
+N,N-二甲基甲胺 & \ce{(CH3)3NH^+} & \ce{(CH3)3N} & 9.81 \\\hline
+苯酚 & \ce{C6H5OH} & \ce{C6H5O-} & 9.95 \\\hline
+碳酸氫根離子 & \ce{HCO3^-} & \ce{CO3^{2-}} & 10.33 \\\hline
+次碘酸 & \ce{HOI} & {IO-} & 10.5 \\\hline
+甲胺 & \ce{CH3NH3^+} & \ce{CH3NH2} & 10.66 \\\hline
+N-甲基甲胺 & \ce{(CH3)2NH2^+} & \ce{(CH3)2NH} & 10.71 \\\hline
+丙胺 & \ce{C3H7NH3^+} & \ce{C3H7NH2} & 10.71 \\\hline
+N-甲基乙胺 & \ce{(CH3)(C2H5)NH2^+} & \ce{(CH3)(C2H5)NH} & 10.76 \\\hline
+碲氫根離子 & \ce{HTe^-} & \ce{Te^{2-}} & 10.79 \\\hline
+乙胺 & \ce{C2H5NH3^+} & \ce{C2H5NH2} & 10.81 \\\hline
+硒氫根離子 & \ce{HSe^-} & \ce{Se^{2-}} & 11.0 \\\hline
+砷酸氫根離子 & \ce{HAsO4^{2-}} & \ce{AsO4^{3-}} & 11.53 \\\hline
+羥基鈣離子 & \ce{Ca^{2+}} & \ce{CaOH^+} & 11.57 \\\hline
+正過碘酸三氫根離子 & \ce{H3IO6^{2-}} & \ce{H2IO6^{3-}} & 11.60 \\\hline
+過氧化氫 & \ce{H2O2} & \ce{HO2^-} & 11.65 \\\hline
+磷酸氫根離子 & \ce{HPO4^{2-}} & \ce{PO4^{3-}} & 12.32 \\\hline
+硼酸二氫根離子 & \ce{H2BO3^-} & \ce{HBO3^{2-}} & 12.4 \\\hline
+氫氧化鈣 & \ce{CaOH^+} & \ce{Ca(OH)2} & 12.63 \\\hline
+硫氫根離子 & \ce{HS-} & \ce{S^{2-}} & 12.89 \\\hline
+羥基鍶離子 & \ce{Sr^{2+}} & \ce{SrOH^+} & 13.17 \\\hline
+硼酸氫根離子 & \ce{HBO3^{2-}} & \ce{BO3^{3-}} & 13.3 \\\hline
+正過碘酸二氫根離子 & \ce{H2IO6^{3-}} & \ce{HIO6^{4-}} & 13.3 \\\hline
+羥基鋇離子 & \ce{Ba^{2+}} & \ce{BaOH^+} & 13.36 \\\hline
+氫氧化鉈(I) & \ce{Tl^+} & \ce{TlOH} & 13.36 \\\hline
+氫氧化鍶 & \ce{SrOH^+} & \ce{Sr(OH)2} & 13.7 \\\hline
+氫氧化鋰 & \ce{Li^+} & \ce{LiOH} & 13.82 \\\hline
+氫氧化鋇 & \ce{BaOH^+} & \ce{Ba(OH)2} & 13.85 \\\hline
+水 & \ce{H2O} & \ce{OH^-} & 14.00 \\\hline
+氫氧化鈉 & \ce{Na^+} & \ce{NaOH} & 14.56 \\\hline
+正過碘酸氫根離子 & \ce{HIO6^{4-}} & \ce{IO6^{5-}} & 15 \\\hline
+甲醇 & \ce{CH3OH} & \ce{CH3O-} & 15.5 \\\hline
+氫氧化鉀 & \ce{K^+} & \ce{KOH} & 15.6 \\\hline
+氫氧化銫 & \ce{Cs^+} & \ce{CsOH} & 15.76 \\\hline
+乙醇 & \ce{C2H5OH} & \ce{C2H5O^-} & 15.9 \\\hline
+\end{longtable}\FloatBarrier
+\sssc{水溶液顏色表}
+\begin{itemize}
+\item \ce{VO^{2+}}: 藍.
+\item \ce{VO2^+}: 淡黃.
+\item \ce{Cr^{2+}}: 藍.
+\item \ce{Cr^{3+}}: 綠.
+\item \ce{[Cr(H2O)6]^{3+}}: 紫.
+\item \ce{[Cr(NH4)6]^{3+}}: 紫.
+\item \ce{CrO4^{2-}}: 黃.
+\item \ce{Cr2O7^{2-}}: 橘.
+\item \ce{[Cr(OH)6]^{3-}}: 綠. 
+\item \ce{Mn^{2+}}: 粉紅.
+\item \ce{Mn^{3+}}: 桃紅.
+\item \ce{MnO4^{2-}}: 墨綠.
+\item \ce{MnO4^-}: 深紫.
+\item \ce{[Fe(H2O)6]^{2+}}: 白綠.
+\item \ce{[Fe(CN)6]^{4-}}: 淡黃.
+\item \ce{[Fe(H2O)6]^{3+}}: 黃/褐.
+\item \ce{FeSCN^{2+}}: 血紅.
+\item \ce{[Fe(CN)6]^{3-}}: 紅.
+\item \ce{[Fe(C2O4)3]^{3-}}: 黃綠.
+\item 六個苯環上氧負離子與一個鐵(III)離子錯合形成之六配位數錯離子: 紫.
+\item \ce{[Co(H2O)6]^{2+}}: 粉紅.
+\item \ce{[Co(NH3)6]^{2+}}: 黃.
+\item \ce{[CoCl4]^{2-}}: 藍.
+\item \ce{[Co(SCN)4]^{2-}}: 藍.
+\item \ce{[Co(H2O)6]^{2+}}: 淡紅.
+\item \ce{Ni^{2+}}: 綠. 
+\item \ce{[Cu(H2O)6]^{2+}}: 淡藍.
+\item \ce{[Cu(NH3)4(H2O)2]^{2+}}: 深藍.
+\item \ce{Ce^{4+}}: 黃.
+\item \ce{CrO3Cl^-}：橙黃.
+\item 多碘離子：棕.
+\item \ce{NH4^+}, \ce{Al^{3+}}, \ce{Sc^{3+}}, \ce{Cu^{+}}, \ce{Zn^{2+}}, \ce{Ag^+}, \ce{Cd^{2+}}, \ce{Ce^{3+}}, \ce{Au^{3+}}, \ce{Hg^{2+}}, 鹵素離子, 主族元素含氧酸根：無.
+\end{itemize}
+\ssc{固體顏色表}
+離子化合物者，有列出之鹽類優先於有列出之錯離子優先於有列出之過渡金屬陽離子優先於有列出之陰離子優先於有列出之非過渡金屬陽離子。
+\begin{itemize}
+\item 銀白：IA 除了\ce{H}, IIA, IIIA 除了\ce{B}, \ce{Sc}, \ce{Ti}, \ce{Ni}, \ce{Pd}, \ce{Ag}, \ce{Cd}, \ce{Ce}, \ce{Pt}, \ce{Hg}.
+\item 銀灰：\ce{V}, \ce{Cr}, \ce{Mn}, \ce{Fe}, \ce{Co}, \ce{Zn}.
+\item 白：氟化物, 氯化物, 硫酸鹽, 碳酸鹽, 乙酸鹽, 草酸鹽, 氫氧化物, 含\ce{Zn^{2+}}者, 無水\ce{CuSO4}, \ce{PbSO4}, \ce{TiO2}, \ce{HgBr2}, \ce{CaC2}.
+\item 白至灰綠：\ce{CrCl2}.
+\item 白或黃：\ce{FeCO3}.
+\item 白至淡黃：斜方晶型\ce{FeS2}.
+\item 綠：\ce{Cr(OH)3}, \ce{[Cr(H2O)3(OH)3]}, \ce{NiO}, \ce{Ni(OH)2}, \ce{Cr2O3}, 反式\ce{[Cr(NH3)3Cl3]}, 反式\ce{[Cr(NH3)4Cl2]Cl}, 反式\ce{[Co(NH3)3Cl3]}, 反式\ce{[Co(NH3)4Cl2]Cl}, \ce{Fe(SCN)2}, \ce{(NH4)2Fe(SO4)2$\cdot 6$H2O}.
+\item 翠綠：\ce{K3[Fe(C2O4)3]$\cdot$3H2O}.
+\item 深綠：\ce{FeCO3}, \ce{[Fe(H2O)4(OH)2]}, \ce{[Cr(H2O)3Cl3]}, 含\ce{[Fe(NH3)6]^{2+}}者.
+\item 藍綠：\ce{CuCO3}, \ce{Cu2(OH)2CO3}, \ce{[Co(H2O)4(OH)2]}, \ce{FeSO4$\cdot 7$H2O}.
+\item 墨綠：錳酸鹽.
+\item 淡黃：溴化物, 含\ce{VO2^+}者, \ce{Be3N2}, \ce{PbO}, 立方晶型\ce{FeS2}.
+\item 黃：鉻酸鹽, 碘化物, \ce{CdS}, \ce{As2S3}, \ce{Bi2S3}, 含\ce{Pb^{2+}}者, \ce{Mg3N2}, 含\ce{[Fe(CN6)]^{4-}}者, \ce{HgSO4$\cdot$HgO}, \ce{Hg2F2}, 含\ce{[Co(NH3)6]^{2+}}者, \ce{FeOOH$\cdot$H2O}.
+\item 金：\ce{Au}.
+\item 橙黃：\ce{[Cr(NH3)6]Cl3}, \ce{[Co(NH3)6]Cl3}.
+\item 橙：\ce{V2O5}, \ce{Ba3N2}.
+\item 橙紅：\ce{Pb3O4}, \ce{HgO}, \ce{(NH4)2Cr2O7}.
+\item 磚紅：\ce{Ag2CrO4}, \ce{HgI}, \ce{[Cr2(CH3COO)4(H2O)2]}.
+\item 紅棕：\ce{Ca3N2}, \ce{Cu2[Fe(CN)6]$\cdot$7H2O}, \ce{Fe2O3}, \ce{FeOOH}, 無定形\ce{FeOOH$\cdot x$H2O}, \ce{Fe2(CO3)3}, \ce{Cu2[Fe(CN)6]$\cdot$7H2O}.
+\item 紅：\ce{Sb2S3}, \ce{Cu}, 含\ce{Cu^+}者, \ce{K3[Fe(CN6)]}, \ce{HgI2}.
+\item 血紅：\ce{Fe(SCN)3}.
+\item 粉紅：\ce{[Co(H2O)2Cl2]}, \ce{[Cr(H2O)4Cl2]$\cdot 2$H2O}, \ce{Co(OH)2}, \ce{CoCO3}, 含\ce{Mn^{2+}}者.
+\item 紫紅：\ce{Li3N}, \ce{[Cr(H2O)2Cl2]}, \ce{[Cr(NH3)5Cl]Cl2}, \ce{[Co(NH3)5Cl]Cl2}, \ce{I2}與分支澱粉錯合物.
+\item 紫：\ce{CrO3}, \ce{CrCl3}, 順式\ce{[Cr(NH3)3Cl3]}, 順式\ce{[Cr(NH3)4Cl2]Cl}, 順式\ce{[Co(NH3)3Cl3]}, 順式\ce{[Co(NH3)4Cl2]Cl}.
+\item 深紫：過錳酸鹽.
+\item 藍紫：\ce{CoCl2$\cdot$H2O}.
+\item 深藍：\ce{Fe4[Fe(CN)6]3}, \ce{VO2}.
+\item 藍：\ce{CoCl2}, 含\ce{VO^{2+}}者, \ce{[Cr(H2O)4Cl2]}, 含\ce{Cu^{2+}}者, \ce{I2}與直鏈澱粉錯合物.
+\item 灰白：炔銀.
+\item 灰黑：\ce{VO}, \ce{Ni2O3}, \ce{B}, \ce{Si}.
+\item 黑：\ce{Co(OH)3}, \ce{Co3O4}, 硫化物, \ce{Cu2S}, \ce{CuS}, \ce{CuO}, \ce{FeO}, \ce{Fe3O4}, \ce{Ag2O}, \ce{CrO}, \ce{CrO2}, \ce{Ti2O3}, \ce{V2O3}, \ce{Mn2O3}, \ce{Sr3N2}, 石墨, 無定形碳, 鉑黑.
+\item 棕黑：\ce{MnO2}, \ce{Mn3O4}, \ce{PbO2}.
+\end{itemize}
+
+
+\section{非金屬元素及其化合物}
+\ssc{水}
+\sssc{總論}
+\bit
+\item 熔點0°C，沸點100°C，熔化焓 334 kJ/kg 或 6.02 kJ/mol，汽化焓 2266 kJ/kg 或 40.6 kJ/mol。
+\item 強極性，極安定，兩氫鍵供體每分子，一氫鍵受體每分子。
+\eit
+\sssc{重水（Heavy water）}
+\ce{D2O}，比重1.1，熔點3.82°C，沸點101.4°C，常作為中子減速劑。
+\sssc{水（蒸）氣}
+無色、無臭、無味氣體。
+\sssc{液態水}
+\bit
+\item 無臭、無味液體，常見溶劑與優良游離溶劑，薄時無色透明，厚時略帶藍色或藍綠色。
+\item 熔化時破壞部分氫鍵，使水分子填入中空處，密度增加，剛熔化的水中仍有大量的氫鍵，並隨溫度增高更多氫鍵斷裂，小於4°C時填入中空處的密度增大效應較分子間距增大的密度減小效應大，4°C時恰相等故密度最大，大於4°C時則後者效應大於前者。水體中密度愈大者在對流中沉至愈深處，這保證了冬季時淡水水體底部仍有4°C的液態水，使水中生物不至於因水結冰而死亡。
+\item 密度在4°C最大，(攝氏度,密度 (g/cm$^3$))：(0, 0.99984), (4, 0.99997), (25, 0.99705)。
+\item 25°C、1bar 下液態水之，標準莫耳生成焓為 -285.8 kJ/mol。
+\item 莫耳熱容 75.4 J mol$^{-1}$ K$^{-1}$，比熱容 4182 J kg$^{-1}$ K$^{-1}$ = 1 cal g$^{-1}$ °C$^{-1}$，甚大，可調節溫度，使海水日夜溫差小於陸地。
+\item 兩性物質，中性，p$K_a$=p$K_b$=p$K_w$。
+\item 重要營養素，占人體70\%；可供灌溉、水力發電、家用與工業用等。
+\item 水覆蓋地球表面 71.0\% 的面積，水量海洋占約 96.5\%，地下水占 1.7\%，南極洲與格陵蘭的冰川和冰蓋占 1.7\%，主要用於農業等。
+\item 常見弱單牙配體，氧鍵結。
+\eit
+\sssc{冰}
+\bit
+\item 無色或白色無味固體。
+\item 晶格中，氧原子的 l.p. 和 b.p. 排列成四面體，每個氫參與一個氫鍵配給相鄰的水分子的氧，每個氧作為兩個氫鍵的受體，氫鍵鍵能 18.8 kJ/mol，一個水分子的四個氫鍵向四面體四個方向延伸，一個氧周圍的4個氫原子不等距離地圍繞，共價鍵者 1.00\AA，氫鍵者 1.76\AA，形成類似金剛石的結構，故硬度較大，又具有六角形中空結構，邊長  2.76\AA，使得空間占有率較低，故密度較液態小。
+\item -10°C 比熱容 2030 J kg$^{-1}$ K$^{-1}$。
+\item 密度 0.9167 g/cm$^3$（0°C）。
+\item 結晶水合物中存在由氫鍵構建的類冰骨架，其中可裝入小分子或離子，如甲烷水合物。
+\eit
+\sssc{質子水溶液（Aqueous proton）}
+\bit
+\item 四種主要存在形式為\tb{水合氫離子（Hydronium or hydroxonium）/鋞（xíng）離子/氧金翁（wēng）（Oxonium）}\ce{H3O^+}、\tb{Zundel 陽離子}\ce{H^+(H2O)2}、\tb{Eigen 陽離子}\ce{H3O^+(H2O)3} 與 \tb{Stoyanov 陽離子}\ce{H^+(H2O)2(H2O)4}。
+\item 平常所稱\ce{H^+(aq)}者實指質子水溶液所有形式的當量總和。
+\item 水合氫離子之酸解離常數未定義。
+\eit
+\ssc{氫}
+\subsubsection{氫元素}
+\begin{itemize}
+\item \tb{氕（piē）（protium）}$^1_1$\rmH：最穩定、天然豐度99.985\%、原子量1.007。
+\item \tb{氘（dāo）（deuterium）}$^2_1$\rmH/D：穩定、天然豐度0.015\%、原子量2.014。
+\item \tb{氚（chuān）（tritium）}$^3_1$\rmH/T：具放射性、天然豐度極微量、原子量3.016。
+\item 含量僅占地球質量0.87\%。
+\item 宇宙中含量最高的元素。
+\end{itemize}
+\subsubsection{氫氣}
+\begin{itemize}
+\item 無色、無臭、無味氣體。熔點-259.1°C，沸點-252.5°C，僅比氦高，極難液化。難溶於水。密度最小之氣體，約空氣之$\frac{1}{14.4}$。
+\item 常溫時化性不活潑，僅可與氟反應得氟化氫；在光照下可與氯反應得氯化氫；在高溫或鐵、鎳、五氧化二釩、鉑族金屬等催化劑存在下反應性高，可還原還原電位為負的金屬的氧化物、可與鹼金屬、鈣、鍶、鋇等高活性金屬反應生成氫的氧化數為 -1 的金屬氫化物、可與具非共軛 π 鍵的有機物發生加成反應、可與許多非金屬物質反應生成氫的氧化數 +1 的分子化合物。
+\item 易燃，接觸火苗即瞬間燃燒生成水，燃燒放熱大量，熱值約140 MJ/kg，高於化石燃料，且無汙染，火焰呈淡藍色，氫氧焰可達2800°C，可用於熔接金屬、燃料電池。儲存安全性甚差，供應前可先用其他氣體稀釋以增加安全性。
+\item 曾用於氣球、氣船充氣，但在興登堡號（LZ 129 Hindenburg）飛船空難後被氦氣取代。
+\item 每年約有40\%的氫氣用於合成氨氣。
+\item 工業上以加熱裂解或脫氫反應製造小分子烷類、烯類與氫氣。
+\item 工業上以鐵與水共熱，得\ce{Fe3O4}等鐵的氧化物與氫氣。
+\item 烴類與水蒸氣在高溫與鎳、鈀或鉑等催化下反應得一氧化碳與氫氣。
+\item 工業上為氯鹼法與莫瓦桑法的副產品。
+\item 工業上將水煤氣與水蒸氣在催化劑存在下共熱，產生二氧化碳與氫氣，再加壓通過水使二氧化碳溶解，可得到氫氣：
+\[\ce{CO(g) + H2(g) + H2O(g) -> CO2(g) + 2H2(g) -> CO2(aq) + 2H2(g)}\]
+\item 純水中加入少量硫酸或氫氧化鈉電解可在陰極得氫氣、陽極得氧氣，純度高但成本亦高。
+\item 實驗室常以鎂、鐵、鋅、鋁等金屬與稀鹽酸或稀硫酸反應或電解水製備氫氣，純度均高。
+\end{itemize}
+\sssc{氫氧化物結構}
+\bit
+\item \ce{OH^-}：O$^-$-H
+\item 羥基-\ce{OH}：-O-H
+\item 氫氧自由基\ce{OH}：H-O（氧有不成對電子）
+\item 超氧化氫\ce{HO2}：H-O-O（不與氫鍵結的氧有不成對電子）
+\item \ce{H2O}：H-O-H
+\item \ce{H2O}$_x$：H(-O-)$_x$H
+\item 水合氫離子\ce{H3O+}：H-O$^+$(-H)-H
+\eit
+\ssc{硼}
+\subsubsection{硼元素}
+\begin{itemize}
+\item $^{10}_5\rmB$：穩定、天然豐度18.9\%。
+\item $^{11}_5\rmB$：穩定、天然豐度81.1\%。
+\item 地殼中主要存在於硼酸鹽中。
+\end{itemize}
+\subsubsection{元素態硼}
+\bit
+\item 四種主要同素異形體為 \tb{α-斜方硼}、\tb{β-斜方硼}、\tb{γ-正方硼}與 \tb{β-四方硼}，NTP 下均穩定，均以 \ce{B12} 二十面體為主要單元，β-斜方硼最常見。
+\item 硬脆、灰黑色、有光澤的類金屬，熔點2076°C，沸點3927°C。不形成 \ce{B^{3+}} 離子，以共價鍵結為主。
+\item 常溫下甚穩定，僅與氟發生激烈反應生成無色氣體三氟化硼\ce{BF3(g)}、與濃硝酸反應生成硼酸與二氧化氮：
+\[\ce{B(s) + 3HNO3(aq) -> H3BO3(aq) + 3NO2(g)}\]
+\item 高溫下可與鹵素反應形成三鹵化硼，或與氧反應形成三氧化二硼，或與熔融強鹼反應生成硼酸鹽與氫氣：
+\[\ce{2B(s) + 6NaOH(l) -> 2NaBO3(s) + 3H2(g)}\]
+\eit
+\subsubsection{硼酸（Boric acid）/正硼酸（Orthoboric acid）}
+\begin{itemize}
+\item \tb{硼酸（Boric acid）/正硼酸（Orthoboric acid）}\ce{H3BO3}，可溶於水，三質子酸，p$K_{a1}$=9.24，p$K_{a2}$=12.4，p$K_{a3}$=13.3。
+\item \tb{四硼酸（Tetraborate or pyroborate）}\ce{B4O5(OH)4^{2-}}：兩個四配位數硼與四個氧鍵結、其中一個氧與氫鍵結、其餘三個氧與一個三配位數硼鍵結；兩個三配位數硼與三個氧鍵結、其中一個氧與氫鍵結、其餘二個氧與一個四配位數硼鍵結。在水中與硼酸和硼酸二氫根可逆平衡：
+\[\ce{B4O5(OH)4^{2-}(aq) + 5H2O(l) -> 2H3BO3(aq) + 2H2BO3^-(aq)}\]
+\item \tb{硼砂（Borax）}\ce{[Na(H2O)4]2B4O5(OH)4}：可溶於水，在水中部分解離，用於清潔劑中等。
+\end{itemize}
+\sssc{氮化硼}
+氮與硼相間形成鑽石結構的共價網狀固體，昇華點2973°C，硬度略小於鑽石，工業上主要作為鑽石的替代品。
+\sssc{三氧化二硼}
+白色固體，通常無定形，由三配位硼和二配位氧共價鍵結組成。
+\ssc{碳}
+\subsubsection{碳元素}
+\begin{itemize}
+\item $^{12}_6$\rmC：最穩定、天然豐度98.94\%、原子量12.0000。
+\item $^{13}_6$\rmC：穩定、天然豐度1.06\%、原子量13.0034。
+\item $^{14}_6$\rmC：具放射性、天然豐度極微量、原子量14.0032，會衰變成氮-14，半生期5730年，可用於放射性元素定年法（Radiative dating）。
+\item 同素異形體如石墨、鑽石、藍絲黛爾石等。
+\item 占地殼約 0.03\%，普遍存在於大氣圈、生物圈與岩石圈，有金剛石、石墨、碳酸鹽、烴類化石燃料、生物組織等形式，主要工業用途是燃料。
+\end{itemize}
+\subsubsection{鑽石/金剛石（Diamond）}
+\begin{itemize}
+\item 共價網狀固體，碳原子以sp$^3$混成軌域鍵結，與一碳原子相鄰的四個碳原子呈以之為中心的正四面體，為三度空間的立體結構，無共振，不導電。熔點3550°C，沸點4830°C，無色透明、折射率高、質極硬、高密度、高導熱性、高熔點、不導電的晶體，硬度為天然物質最大，莫氏硬度10，為名貴寶石，主要用於切割玻璃、研磨物料、飾品等。
+\item \tb{人造鑽石}：1955年，科學家在約 2000°C、10$^7$ Pa 下成功將石墨轉變成人造鑽石。
+\item 常溫壓下鑽石變為石墨為活化能極高、反應速率幾乎為零的自發性過程。
+\end{itemize}
+\subsubsection{石墨（Graphite）/黑鉛（Black lead）}
+\bit
+\item 共價網狀固體，共價網狀六角形多層平面結構，碳原子 sp$^2$ 混成，無數個未參與混成的 2p$_z$ 軌域平行重疊成離域 π 鍵共軛系統，鍵級$\frac{4}{3}$，能隙為零，可導電，層與層間距 341 pm，層與層間僅較微弱凡得瓦力而無共價鍵使石墨易滑動、剝落，有潤滑性。昇華點3650°C，較鑽石熔點高。黑色有金屬光澤、高導電性、高導熱性、高熔點、質軟的固體。
+\item 常作為鉛筆芯、電極。
+\eit
+\sssc{藍絲黛爾石（Lonsdaleite）/六方金剛石（Hexagonal diamond）}
+六方晶系。發現於墜入地球的流星上，撞擊時的高壓與高溫使其上的石墨變成藍絲黛爾石。
+\subsubsection{碳纖維（Carbon fiber）}
+\begin{itemize}
+\item 含碳量高於90\%的聚合物。
+\item 直徑約5-8微米，強度高，質輕強韌而有彈性，部分可導電，常用於製作釣魚桿、網球拍、自行車架、運動器材、微電極、手套等。
+\item 將有機聚合物經處理後以加熱或化學方法去除大部分的非碳元素並拉伸成纖維狀製成。
+\item 常見以聚丙烯腈為原料，低溫環化後高溫脫氫，形成氮上有共振 π 鍵的並氮雜六元環聚合物結構。
+\end{itemize}
+\sssc{結構}
+\bit
+\item \ce{CO}：C$^-\equiv$O$^+$
+\item \ce{CO2}：O=C=O
+\item \ce{CO3^{2-}}：O=C(-O$^-$)-O$^-$（共振）
+\item \ce{C2O2}：O=C=C=O
+\item \ce{C2O4^{2-}}：O=C(-O$^-$)-C(-O$^-$)=O（共振）
+\item \ce{CS2}：S=C=S
+\eit
+\subsubsection{二氧化碳}
+\begin{itemize}
+\item 無色、無味、無臭氣體。微溶於水，溶於水得碳酸。糖水通入高壓二氧化碳可製得碳酸飲料。密度大於空氣，可採向上排氣法或排水集氣法收集，後者純度較高。
+\item 地球大氣的主要溫室氣體。光合作用之原料。
+\item 實驗室中常以碳酸鈣與稀鹽酸反應得氯化鈣溶液、二氧化碳與水製備。
+\item 工業上常以強熱石灰石使分解成二氧化碳與氧化鈣製備。
+\item 可用澄清石灰水檢驗。
+\item \tb{二氧化碳滅火器}：二氧化碳不可燃亦不助燃，又密度大於空氣，故可通過窒息作用滅火，二氧化碳滅火器對A類（普通）火災效能不高，適用於B類（油類）、C類（電氣）與氧化電位小於碳之金屬的D類（金屬）火災，氧化電位大於碳之金屬可在二氧化碳中燃燒，故不可用之。
+\item \tb{乾冰（Dry ice）}：固態之二氧化碳。可由將高壓鋼瓶中的液態二氧化碳倒出製得，常壓下會直接昇華。常作為冷卻劑，有時並與丙酮混合效果更佳。
+\item \tb{超臨界二氧化碳（Supercritical carbon dioxide, sCO$_2$）}：二氧化碳臨界溫度為 31.10°C，臨界壓力為 72.9 atm，超臨界二氧化碳對脂溶性物質具高溶解度，廣泛用於製藥業的中草藥成分的萃取、化妝品業的植物香料的萃取、食品業的咖啡因、油脂和葉黃素的萃取。
+\end{itemize}
+\subsubsection{碳酸}
+\bit
+\item 二質子酸，其共軛鹼碳酸氫根為弱鹼，碳酸氫根之共軛鹼碳酸根更鹼。
+\item 碳酸氫鹽晶體熱穩定性差，加熱釋出水變成碳酸鹽。
+\item 碳酸鹽或碳酸氫鹽水溶液：遇酸均釋出二氧化碳，遇非酸均不釋出二氧化碳，遇氨水不使釋出氨氣，遇酸性銨鹽水溶液釋出二氧化碳與氨氣。
+\eit
+\sssc{二硫化碳}
+無色液體。
+\subsubsection{一氧化碳}
+\begin{itemize}
+\item 有機物不完全燃燒、落葉中之葉綠素分解、火山活動等產生。
+\item 無色、無臭、無味、劇毒氣體，難溶於水，進入體內後會與血紅素結合，使失去攜氧能力，造成細胞缺氧而窒息死亡。
+\item 工業原料，可當冶煉鐵的還原劑：
+\[\ce{FeO(s) + CO(g) ->[$\Delta$] Fe(s) + CO2(g)}\]
+\item 可用甲酸與濃硫酸共熱脫水製備：
+\[\ce{HCOOH(aq) ->[$\Delta$,\tx{\ 濃\ }\ce{H2SO4}] CO(g) + H2O(l)}\]
+\item 常見強單牙配體，碳鍵結。
+\end{itemize}
+\ssc{矽}
+\subsubsection{矽元素}
+地殼含量第二多的元素，占約28.15\%。構成地殼的重要元素，因Si-O單鍵鍵能大，主要以二氧化矽與矽酸鹽等含Si-O鍵的矽化物分布於岩石、砂礫中，如石英、瑪瑙主成分為二氧化矽，長石、黏土、滑石、橄欖岩主成分為矽酸鹽，幾乎不以元素態存在。未見有多鍵鍵結者。
+\subsubsection{元素態矽}
+\begin{itemize}
+\item 鑽石結構的共價網狀固體，略帶金屬光澤，灰黑色，熔點1414°C，熔點與硬度為第三週期中最高者。
+\item 類金屬，半導體，晶圓、電晶體、太陽能發電板之原料，矽的製備與純化是半導體產業中的重要製程，半導體業所需之矽純度極高，如製造電晶體（transistor）需要10N以上純度。
+\item 常溫下甚穩定，僅與氟發生激烈反應生成無色氣體四氟化矽\ce{SiF4(g)}。
+\item 高溫下可與鹵素反應形成四鹵化矽，或與氧反應形成二氧化矽。
+\item  實驗室中以活性金屬與二氧化矽共熱還原製備，純度低。
+\end{itemize}
+\subsubsection{二氧化矽/白砂/矽砂/矽土/石英（Quartz）}
+\begin{itemize}
+\item 一個矽以單鍵連接四個氧、一個氧以單鍵連接二個矽、與一矽原子相鄰的四個氧原子呈以之為中心的正四面體的共價網狀固體，Si-O-Si 鍵角在非晶態（玻璃）中為120°-180°，在 α-石英中為144°。
+\item 硬度大，莫氏硬度7，熔點高，可透光。
+\item 二氧化矽中的部分矽可以被其他元素取代，如鋁等，當取代矽的元素與小於四個氧鍵結時便需要陽離子來平衡電荷。
+\item 水晶、瑪瑙的主要成分，具有顏色通常是因為具有正三價金屬離子，如黃水晶和紫水晶含有鐵離子。
+\item 可用鹼金屬、鹼土金屬或鋁將之還原成矽。
+\item 會被氫氟酸腐蝕，故不可以玻璃器皿盛裝之：
+\[\ce{SiO2(s) + 4HF(aq) -> SiF4(g) + 2H2O(l)}\]
+\item 會被高溫磷酸腐蝕，故不可以玻璃器皿盛裝之：
+\[\ce{SiO2(s) + H3PO4(aq) -> SiO2$\cdot$H3PO4(aq)}\]
+\item 會被強鹼緩慢腐蝕（如氫氧化鈉腐蝕玻璃形成水玻璃），故不可以玻璃器皿長時間盛裝鹼。
+\item \tb{水玻璃}\ce{Na2O$\cdot x$SiO2(aq)}：二氧化矽與氫氧化鈉水溶液共熱生成的無色黏稠性液體，$x=0.5\sim 4$，可溶於水，弱鹼，常用於抗風化、防火、防水塗料、黏著劑：
+\[\ce{$x$SiO2(s) + 2NaOH(aq) -> Na2O$\cdot x$SiO2(aq) + H2O(l)}\]
+\item \tb{矽膠（silica gel）}\ce{$m$SiO2$\cdot n$H2O(s)}：粒狀無定形多孔膠狀固態二氧化矽水合物，將水玻璃加稀酸中和再乾燥脫水製得，常用於食品、藥劑及器材乾燥劑。（註：矽膠有時指矽氧樹脂（silicone））
+\end{itemize}
+\subsubsection{矽酸鹽（Silicate）}
+\bit
+\item \tb{矽酸鹽（Silicate）}[SiO$_{4-x}$]$_n^{\phantom{n}n(4-2x)}$：陰離子為由四配位數、四氧化數矽和負二氧化數氧組成、一個矽以單鍵連接四個氧的多原子基團的鹽類。有時更廣義地指陰離子為由矽和非金屬組成的多原子基團的鹽類。矽酸鹽中的部分矽可以被其他元素取代，當取代矽的元素與小於四個氧鍵結時便需要陽離子來平衡電荷，這類鹽類有時也廣義地稱為矽酸鹽。
+\item \tb{矽酸（Silicic acid）/正矽酸（Orthosilicic acid）}\ce{H4SiO4}：四個\ce{OH}以氧矽單鍵接在矽上的正四面體結構。純質與水溶液均極不穩定。
+\item \tb{鋁矽酸鹽（Aluminosilicate）}：矽酸鹽中的部分矽被鋁取代的鹽類，因鋁僅與三個氧鍵結，單體為\ce{AlO2^-}，每將一個矽以鋁取代需要一個由陽離子提供的正電荷平衡。
+\item \tb{單獨陰離子基團}：
+\bit
+\item \tb{正矽酸鹽（Orthosilicate or nesosilicate）}\ce{SiO4^{4-}}：最簡單的矽酸鹽類。
+\bit
+\item \tb{橄欖石（Olivine）}\ce{(Mg,Fe)2SiO4}：地函主要成分。
+\item \tb{石榴石（Garnet）}\ce{X3Y2(SiO4)3}：
+\bit
+\item \tb{鎂鋁榴石（Pyrope}\ce{Mg3Al2(SiO4)3}
+\item \tb{鐵鋁榴石（Almandine）}\ce{Fe3Al2(SiO4)3}
+\item \tb{錳鋁榴石（Spessartine）}\ce{Mn3Al2(SiO4)3}
+\item \tb{鈣鐵榴石（Andradite）}\ce{Ca3Fe2(SiO4)3}
+\item \tb{鈣鋁榴石（Grossular）}\ce{Ca3Al2(SiO4)3}
+\item \tb{鈣鉻榴石（Uvarovite）}\ce{Ca3Cr2(SiO4)3}
+\eit
+\item \tb{黃玉（Topaz）}\ce{Al2SiO4(F,OH)2}：莫氏硬度8。
+\eit
+\item \tb{焦矽酸鹽（Pyrosilicate or sorosilicates）}\ce{Si2O7^{6-}}：兩個正矽酸根離子共用一個氧縮合成的結構。
+\bit
+\item \tb{托爾特維特石/矽酸鈧釔礦（Thortveitite）}\ce{(Sc,Y)2Si2O7}
+\eit
+\item \tb{環狀矽酸鹽（Cyclosilicate）}Si$_x$O$_{3x}^{\phantom{3x}2x-}$：正矽酸根離子與相鄰者共用一個氧縮合成一或多環結構的矽酸鹽。
+\bit
+\item \ce{Si3O9^{6-}}：三個正矽酸根離子兩兩共用一個氧縮合成正三角形環的結構。
+\bit
+\item \tb{藍錐礦（Benitoite）}\ce{BaTiSi3O9}
+\eit
+\item \ce{Si6O18^{12-}}：六個正矽酸根離子與兩相鄰者共用一個氧縮合成正六邊形環的結構。
+\bit
+\item \tb{綠柱石（Beryl）}\ce{Be3Al2Si6O18}
+\eit
+\eit
+\eit
+\item \tb{鏈狀矽酸鹽（Inosilicate）}：陰離子含有矽氧交替成一度結構的矽酸鹽。熔點高、硬度小。
+\bit
+\item \tb{偏矽酸鹽（Metasilicate）}\ce{SiO3^{2-}}：正矽酸根離子與兩相鄰者共用一個氧縮合成單股長鏈的結構。偏矽酸某又稱矽酸某。
+\bit
+\item \tb{偏矽酸鈉}\ce{Na2SiO3}
+\item \tb{偏矽酸鈣}\ce{CaSiO3}
+\item \tb{輝石（pyroxene）}\ce{(Ca,Mg)SiO3}
+\item \tb{鋰輝石（spodumene）}\ce{LiAl(SiO3)2}
+\eit
+\item \ce{Si4O11^{6-}}：兩\ce{SiO3^{2-}}長鏈並排每對單體單元共用一個氧縮合成雙股長鏈的結構。
+\bit
+\item \tb{石棉（Asbestos）}\ce{Ca2(OH)2Mg5(Si4O11)2}
+\eit
+\eit
+\item \tb{層狀矽酸鹽（Phyllosilicate）}：陰離子含有矽氧交替成二度結構的矽酸鹽。熔點高、硬度小。
+\bit
+\item \ce{Si4O10^{4-}}：無數\ce{SiO3^{2-}}長鏈並排每對相聯異鏈單體單元共用一個氧縮合成二度網狀的結構。
+\bit
+\item \tb{滑石（Talc or talcum）}\ce{Mg3(SiO10)(OH)2}：莫氏硬度1，常用於敷面粉、機械潤滑劑。
+\item \tb{雲母（Mica）}\ce{XY$_{2–3}$Z4O10(O,OH,F)2} where \ce{X} = \ce{(K,Na,Ba,Ca,Cs,(H3O),(NH4))}, \ce{Y} = \ce{(Al,Mg,Fe$\text{(II)}$,Li,Cr,Mn,V,Zn)}, and\ce{Z} = \ce{(Si,Al,Fe$\text{(III)}$,Be,Ti)}
+\bit
+\item \tb{黑雲母（Biotite）}\ce{K(Mg,Fe)3AlSi3O10(F,OH)2}
+\item \tb{白雲母（Muscovite）}\ce{KAl2(AlSi3O10)(F,OH)2}
+\eit
+\eit
+\item \tb{黏土（Clay）}：泛指水合層狀鋁矽酸鹽。大多數純黏土礦物是淺色的，但具雜質則呈現各種顏色，如天然黏土多含氧化鐵呈紅棕色。是陶瓷、磚瓦的主要原料。
+\bit
+\item \tb{高嶺土（Kaolinite）/瓷土}\ce{Al2Si2O5(OH)4}
+\eit
+\eit
+\item \tb{網狀矽酸鹽（Tectosilicate）}：陰離子含有矽氧交替成三度結構的矽酸鹽。熔點高、硬度大。
+\bit
+\item \tb{石英}
+\item \ce{AlSi3O8-}：
+\bit
+\item \tb{正長石（Orthoclase）}\ce{K(AlSi3O8)}：莫氏硬度4。
+\eit
+\item \tb{沸石（Zeolite）}：指具有通式 M$^{n+}_{\phantom{n+}1/n}$(AlO$_2$)$^-$(SiO$_2$)$_x\cdot y$H$_2$O 的網狀鋁矽酸鹽。
+\bit
+\item \tb{鈉沸石（Natrolite）}\ce{Na2Al2Si3O10$\cdot$2H2O}：可作為硬水軟化劑，釋出鈉離子並捕獲鈣、鎂離子。
+\item \tb{霞石（Nepheline or nephelite）}\ce{Na3KAl4Si4O16}
+\eit
+\eit
+\subsubsection{碳化矽/金剛砂/摩星/莫桑鑽（/）石（Moissanite）}
+\begin{itemize}
+\item 碳與矽相間形成鑽石結構的共價網狀固體，硬度大，常作為金剛石的替代品，用於切割玻璃、研磨物料、飾品等。
+\item 工業上常用煤焦、砂（二氧化矽）、木屑與食鹽在電爐中強熱製得，砂的熔點很高，木屑是為增加空隙以增加導熱性，食鹽則是助熔劑：
+\[\ce{SiO2(s) + 2C(s) -> Si(s) + 2CO(g)}\]
+\[\ce{Si(s) + C(s) -> SiC(s)}\]
+\end{itemize}
+\ssc{氮}
+\subsubsection{氮元素}
+\begin{itemize}
+\item $^{14}_7$\rmN：穩定、天然豐度99.6\%。
+\item $^{15}_7$\rmN：穩定、天然豐度0.04\%。
+\item 幾乎所有含氮化合物之分解皆為放熱反應，如\ce{NO2(g)}的莫耳生成熱為34 kJ，\ce{NO(g)}的莫耳生成熱為90 kJ，硝化甘油與三硝基甲苯等含硝基的有機物有爆炸性而可作為火藥的材料。
+\item 氨、硝酸銨、硫酸銨、硝酸鉀、尿素等為常用氮肥。
+\end{itemize}
+\sssc{結構}
+\begin{itemize}
+\item 氮氣\ce{N2}：N$\equiv$ N
+\item 一氧化二氮\ce{N2O}：N$\equiv$ N$^+$-O$^-$\ce{<=>}N=N=O（共振，前者為主）
+\item 一氧化氮\ce{NO}：
+\bit
+\item 高中：N=O（氮有不成對電子）
+\item 實際：N$\doteq$O（π* 軌域有不成對電子，為 2.5 鍵）
+\eit
+\item 二氧化二氮\ce{N2O2}：O=N-N=O
+\item 亞硝金翁離子\ce{NO+}：N$\equiv$ O$^+$
+\item 亞硝酸根離子\ce{NO2^-}：O=N-O$^-$（共振）
+\item 三氧化二氮\ce{N2O3}：O=N-N$^+$(=O)-O$^-$（共振）
+\item 二氧化氮\ce{NO2}：O=N$^+$-O$^-$（氮有不成對電子，共振）
+\item 四氧化二氮\ce{N2O4}：O$^-$-N$^+$(=O)-N$^+$(=O)-O$^-$（共振）
+\item 硝酸根離子\ce{NO3^-}：O$^-$-N$^+$(=O)-O$^-$（共振）
+\item 五氧化二氮\ce{N2O5}：O$^-$-N$^+$(=O)-O-N$^+$(=O)-O$^-$（共振）
+\item 乙二腈\ce{(CN)2}：N$\equiv$ C-C$\equiv$ N
+\item 甲腈\ce{HCN}：H-C$\equiv$ N
+\item 氰離子\ce{CN^-}：C$^-\equiv$N
+\item 腈\ce{RCN}：R-C$\equiv$ N
+\item 氰胺\ce{CN2H2}：N$\equiv$ C-N(-H)-H (主要) \ce{<=>} 碳二亞胺\ce{C(NH)2}：H-N=C=N-H（互變異構）
+\item 氰胺離子\ce{CN2^{2-}}：N$^-$=C=N$^-$
+\item 異氰酸\ce{HNCO}：H-N=C=O (主要) \ce{<=>} 氰酸\ce{HOCN}：H-O-C$\equiv$ N（互變異構）
+\item 氰酸根離子\ce{OCN^-}：N$\equiv$ C-O$^-$ (主要) \ce{<=>} N$^-$=C=O \ce{<=>} O$^+\equiv$ C-N$^{2-}$ (極少)（共振）
+\item 氰酸酯\ce{ROCN}：R-O-C$\equiv$ N
+\item 異氰酸酯\ce{RNCO}：R-N=C=O
+\item 雷酸\ce{HCNO}：H-C$\equiv$ N$^+$-O$^-$ \ce{<=>} 異雷酸\ce{HONC}：H-O-N$^+\equiv$ C$^-$（互變異構）
+\item 雷酸根離子\ce{CNO-}：C$^-\equiv$ N$^+$-O$^-$
+\item 硫氰\ce{(SCN)2}：N$\equiv$ C-S-S-C$\equiv$ N
+\item 異硫氰酸\ce{HNCS}：H-N=C=S (主要) \ce{<=>} 硫氰酸\ce{HSCN}：H-S-C$\equiv$ N（互變異構）
+\item 硫氰酸根離子\ce{SCN^-}：N$\equiv$ C-S$^-$ (主要) \ce{<=>} N$^-$=C=S（共振）
+\item 硫氰酸酯\ce{RSCN}：R-S-C$\equiv$ N
+\item 異硫氰酸酯\ce{RNCS}：R-N=C=S
+\item 疊氮根離子\ce{N3-}：N$^-$=N$^+$=N$^-$
+\item 聯胺\ce{N2H4}：H-N(-H)-N(-H)-H
+\item 甲基聯胺\ce{CH3NHNH2}：H-C(-H)(-H)-N(-H)-N(-H)-H
+\item 二亞胺\ce{N2H2}：H-N=N-H
+\item 有機疊氮化合物\ce{RN3}：R-N=N$^+$=N$^-$\ce{<=>}R-N$^-$-N$^+\equiv$N（共振）
+\item 亞硝胺\ce{RR$'$N2O}：R-N(-R')-N=O
+\end{itemize}
+\subsubsection{氮氣}
+\begin{itemize}
+\item 大氣體積比約 78.08\% 為氮氣，地表上多數氮均以氮氣形式存在於大氣中。
+\item 熔點-210°C，高於氧氣；沸點-196°C，低於氧氣。無色、無臭、無味氣體。難溶於水，可用排水集氣法收集。
+\item 氮氮參鍵鍵能 941 kJ/mol，故化性極安定，常溫下幾乎不反應，常作為高活性物質之鈍化劑、灌充於食品容器中作為食品保鮮劑、灌充於燈泡內防止鎢絲氧化。
+\item \tb{液態氮}：常作為冷卻劑。
+\item 工業上主要由分餾液態空氣獲得，但純度低。
+\item 實驗室中以亞硝酸鈉與氯化銨（均為白色晶體）共熱製備，純度高：
+\[\ce{NaNO2(s) + NH4Cl(s) ->[$\Delta$] N2(g) + NaCl(s) + 2H2O(l)}\]
+\item 實驗室中以氨氣通過灼熱氧化銅氧化製備，純度高：
+\[\ce{2NH3(g) + 3CuO(s) -> N2(g) + 3Cu(s) + 3H2O(l)}\]
+\item 實驗室中將空氣先通過\ce{NaOH}以去除\ce{CO2}，再通過灼熱之銅粉、銅絲或白磷以去除\ce{O2}，最後以排水集氣法收集\ce{N2}，純度低。
+\item 氮氣在高溫下、催化下或閃電下與氧氣反應生成一氧化氮：
+\[\ce{N2(g) + O2(g) -> 2NO(g)}\]
+\item 與鋰或鎂共熱產生紫紅色氮化鋰\ce{Li3N}或黃色氮化鎂\ce{Mg3N2}，兩者均可與水反應產生氨，可用紅色石蕊試紙變成藍色檢驗，常用於檢測氮氣。
+\end{itemize}
+\subsubsection{二氧化氮}
+\begin{itemize}
+\item 紅棕色有毒氣體，密度大於空氣。
+\item 可溶於水，發生反應：
+\[\ce{2NO2(g) + H2O(l) -> HNO2(aq) + HNO3(aq)}\]
+\item 二聚為四氧化二氮放熱，四氧化二氮為之吸熱，兩者可逆平衡：
+\[\ce{2NO2(g) <=> N2O4(g)}\]
+\end{itemize}
+\subsubsection{一氧化氮}
+\begin{itemize}
+\item 無色有毒氣體。密度大於空氣。不溶於水。自由基。
+\item 工業上以奧士華法製備。
+\end{itemize}
+\subsubsection{氧化亞氮/一氧化二氮/笑氣}
+\begin{itemize}
+\item 無色有甜味氣體。不溶於水，溶於乙醇、濃硫酸。第三大溫室氣體。
+\item 常溫下穩定，高溫分解成氮氣和氧氣。
+\item 助燃劑，可用於汽車使加速變大，俗稱氮氣加速。
+\item 吸入會使人欣快，可作為麻醉劑。
+\item 工業上與實驗室中以加熱硝酸銨製備：
+\[\ce{NH4NO3(s) ->[\tx{250°C}] N2O(g) + 2H2O(g)}\]
+\end{itemize}
+\subsubsection{氨}
+\begin{itemize}
+\item 無色有刺激性臭味的氣體。極易溶於水，水溶液弱鹼，\ce{NH3(aq) + H2O(l) <=> NH4^+(aq) + OH^-}，鹼解離常數\scinote{1.8}{-5}。密度小於空氣，用向下排氣法收集。
+\item 工業上使用哈柏法製備。
+\item 實驗室中以氯化銨與強鹼共熱製得：
+\[\ce{2NH4Cl(s) + Ca(OH)2(s) -> CaCl2(s) + 2NH3(g) + 2H2O(l)}\]
+\item 軍工、化工、氮肥、硝酸、染料、清潔劑、冷媒等的原料。
+\item 可使用濃鹽酸或氯化氫氣體檢驗，產生氯化銨白煙。
+\item 可用於製造尿素：
+\[\ce{NH3(g) + CO2(g) -> H2NCONH2(s) + H2O(g)}\]
+\item 常見中等強度單牙配體，氮鍵結。
+\end{itemize}
+\sssc{銨根離子（Ammonium）}
+\bit
+\item 正四面體結構，化學性質類似鈉離子。銨鹽均可溶，陰離子無色者其固體為白色。
+\item \ce{(NH4)2O(s)}與\ce{(NH4)2S(s)}均極不穩定而不存在於一般條件。
+\eit
+\sssc{碳酸銨}
+白色固體。自發分解為氨、水與二氧化碳，常溫緩慢，加熱或水中較快，曾作為食品用膨鬆劑（Leavening agent），因氨具臭味故現多被碳酸氫鈉與酒石酸氫鉀混合粉末取代，但仍用於工業製造泡沫橡膠等：
+\[\ce{(NH4)2CO3(s) ->[$\Delta$] 2NH3(g) + CO2(g) + H2O(g)}\]
+\sssc{亞硫酸銨}
+\bit
+\item 無色固體。
+\item 自發分解為氨、水與二氧化硫，常溫緩慢，加熱或水中較快：
+\[\ce{(NH4)2SO3(s) ->[$\Delta$] 2NH3(g) + SO2(g) + H2O(g)}\]
+\item 具還原性，可作為食品防腐劑、添加於化妝品、添加於硫代硫酸鈉定/顯影劑/液（fixing agent）中以避免硫代硫酸鈉被氧化。
+\eit
+\subsubsection{氯化銨}
+\begin{itemize}
+\item 白色立方晶體。可溶於水，水溶液弱酸。
+\item 工業上為侯氏制鹼法副產品。
+\item 軍工、化工、氮肥等的原料。
+\end{itemize}
+\sssc{二鉻酸銨}
+\bct\bfH\ctr\icg[width=0.5\textwidth]{ad.jpg}\caption{Mikk Mihkel Vaabel. 2012. Wikipedia. https://commons.m.wikimedia.org/wiki/File:Ammooniumdikromaadi\_p\%C3\%B5lemine.JPG.}\ef\FB\ect
+橙紅色有毒晶體，加熱之發生劇烈分解反應，產生綠色三氧化二鉻粉末、氮氣與水，粉末會自我膨脹並噴發產生大量煙霧，狀似火山，過去常用於實驗室中演示，稱火山實驗/桌面火山/化學火山，因有毒現少做：
+\[\ce{(NH4)2Cr2O7(s) ->[$\Delta$] Cr2O3(s) + N2(g) + 4H2O(l)}\]
+\subsubsection{硝酸}
+\begin{itemize}
+\item 硝酸\ce{HNO3}之氮原子與二個氧原子鍵級1.5；硝酸根離子\ce{NO3^-}之氮原子與三個氧原子鍵級$\frac{5}{3}$。純硝酸為無色、有刺激性臭味的發煙液體。混溶於水，強酸。強氧化劑。
+\item 分解成二氧化氮、氧氣與水，照光或受熱尤易，硝酸久置因之呈褐色：
+\[\ce{4HNO3(aq) -> 4NO2(g) + O2(g) + 2H2O(l)}\]
+故須儲存於深棕色玻璃瓶中置於陰涼處。
+\item 工業上以奧士華法製備。
+\item 實驗室中以強熱硝酸鈉與濃硫酸製得：
+\[\ce{NaNO3(s) + H2SO4(aq) -> NaHSO4(aq) + HNO3(aq)}\]
+\item 實驗室中的濃硝酸通常是比重1.4、濃度68\%即15 M。
+\item 反應：
+\begin{itemize}
+\item 與金、鉑不反應。
+\item 與銅、汞、銀的反應和濃度有關：
+\begin{itemize}
+\item 濃硝酸：生成硝酸鹽與二氧化氮：
+\[\ce{Cu(s) + 4HNO3(aq) -> Cu(NO3)2(aq) + 2NO2(g) + 2H2O(l)}\]
+\[\ce{Hg(s) + 4HNO3(aq) -> Hg(NO3)2(aq) + 2NO2(g) + 2H2O(l)}\]
+\[\ce{Ag(s) + 2HNO3(aq) -> AgNO3(aq) + NO2(g) + H2O(l)}\]
+\item 稀硝酸：生成硝酸鹽與一氧化氮：
+\[\ce{3Cu(s) + 8HNO3(aq) -> 3Cu(NO3)2(aq) + 2NO(g) + 4H2O(l)}\]
+\[\ce{3Hg(s) + 8HNO3(aq) -> 3Hg(NO3)2(aq) + 2NO(g) + 4H2O(l)}\]
+\[\ce{3Ag(s) + 4HNO3(aq) -> 3AgNO3(aq) + NO(g) + 2H2O(l)}\text{(微弱)}\]
+\end{itemize}
+\item 與鐵、鉻、鋁的反應和濃度有關：
+\begin{itemize}
+\item 濃硝酸：分別生成\ce{Fe3O4}與\ce{Fe2O3}、\ce{Cr2O3}、\ce{Al2O3}保護膜鈍化，使不繼續反應，故鐵、鉻、鋁不溶於濃硝酸：
+\[\ce{3Fe(s) + 8HNO3(aq) -> Fe3O4(s) + 8NO2(g) + 4H2O(l)}\]
+\[\ce{2Fe(s) + 6HNO3(aq) -> Fe2O3(s) + 6NO2(g) + 3H2O(l)}\]
+\[\ce{2Cr(s) + 6HNO3(aq) -> Cr2O3(s) + 6NO2(g) + 3H2O(l)}\]
+\[\ce{2Al(s) + 6HNO3(aq) -> Al2O3(s) + 6NO2(g) + 3H2O(l)}\]
+\item 稀硝酸：分別生成\ce{Fe(NO3)3}、\ce{Cr(NO3)3}、\ce{Al(NO3)3}與氫氣。
+\end{itemize}
+\item 與錫的反應和濃度有關：
+\begin{itemize}
+\item 濃硝酸：生成水合二氧化錫(IV)沉澱與二氧化氮：
+\[\ce{Sn(s) + 4HNO3(aq) -> SnO2$\cdot$H2O(s) + 4NO2(g) + H2O(l)}\]
+\item 稀硝酸：生成硝酸錫(II)與硝酸銨：
+\[\ce{Sn(s) + 10HNO3(aq) -> 4Sn(NO3)2(aq) + NH4NO3(aq) + 3H2O(l)}\]
+\end{itemize}
+\item 與鉛的反應：生成硝酸鉛(II)，濃硝酸中沉澱：
+\[\ce{Pb(s) + 4HNO3(aq) -> Pb(NO3)2(aq/s) + 2NO2(g) + 2H2O(l)}\]
+\item 濃或熱硝酸與焦炭的反應：
+\[\ce{C(s) + 4HNO3(aq) -> CO2(g) + 4NO2(g) + 2H2O(l)}\]
+\item 與鋅的反應和濃度有關：
+\begin{itemize}
+\item 濃硝酸：生成硝酸鋅與二氧化氮：
+\[\ce{Zn(s) + 4HNO3(aq) -> Zn(NO3)2(aq) + 2NO2(g) + 2H2O(g)}\]
+\item 極稀硝酸：生成硝酸鋅與硝酸銨：
+\[\ce{4Zn(s) + 10HNO3(aq) -> 4Zn(NO3)2(aq) + NH4NO3(aq) + 3H2O(l)}\]
+\end{itemize}
+\item 與鹼金屬、鹼土金屬反應：生成硝酸鹽與氫氣。
+\end{itemize}
+\item 加熱硝酸鹽：
+\begin{itemize}
+\item 低氧化力陽離子（鹼金屬、鈣、鍶、鋇）：得亞硝酸鹽與氧氣。
+\item 中氧化力陽離子（鈹、鎂、鋁至銅）：得氧化物、二氧化氮與氧氣。
+\item 高氧化力陽離子（汞、銀）：得金屬、二氧化氮與氧氣。
+\end{itemize}
+\item 與甘油反應得硝化甘油與三分子水，可作為爆炸物。
+\item 與甲苯反應得三硝基甲苯與三分子水，可作為爆炸物。
+\item 與氨反應得硝酸銨，可作為爆炸物，有時與三硝基甲苯混合，爆炸威力更大。
+\item 沾到皮膚變成黃色，因蛋白質與硝酸反應。
+\item 可利用潮溼碘化鉀–澱粉試紙檢驗：
+\[\ce{2NO3^-(aq) + 6I^-(aq) + 8H^+(aq) -> 3I2(s) + 2NO(g) + 4H2O(l)}\]
+\end{itemize}
+\subsubsection{亞硝酸}
+\begin{itemize}
+\item 氮氧鍵級1.5。混溶於水，弱酸。氮的氧化數為+3；在酸中可當氧化劑，還原成一氧化氮；在鹼中可當還原劑，氧化成硝酸。
+\item 亞硝酸根為常見強單牙配體，氮鍵結。
+\item 以一氧化氮和二氧化氮通入鹼液中製備：
+\[\ce{NO(g) + NO2(g) + 2OH^-(aq) -> 2NO2^-(aq) + H2O(l)}\]
+再酸化得\ce{HNO2(aq)}。
+\item 以加熱高活性金屬的硝酸鹽釋出氧氣製備亞硝酸鹽。
+\item 不安定，在冷水中會發生自身氧化還原反應：
+\[\ce{3HNO2(aq) -> HNO3(aq) + 2NO(g) + H2O(l)}\]
+\item 可利用潮溼碘化鉀–澱粉試紙檢驗：
+\[\ce{2NO2^-(aq) + 2I^-(aq) + 4H^+(aq) -> I2(s) + 2NO(g) + 2H2O(l)}\]
+\item 亞硝酸鹽普遍存在於天然食物，如白色花椰菜、菠菜。亞硝酸鈉為常見食品抗氧化劑、防腐劑、增色劑，可保持肉色鮮豔與抑制細菌生長，如臘肉、火腿、熱狗，部分國家禁用。食藥署建議亞硝酸鹽每日食用量應小於 70 mg/kg 體重。含亞硝酸鹽的食物與含胺類的食物，如軟體動物、秋刀魚、熟成起司，應避免共食，以減少生成亞硝胺。
+\item 亞硝酸根可能將血紅素的亞鐵離子氧化成鐵離子使失去攜氧功能：
+\[\ce{NO2^- + 2H^+ + Fe^{2+} -> NO + H2O + Fe^{3+}}\]
+通常以維生素C/(R)-3,4-二羥基-5-((S)-1,2-二羥乙基)氧雜環戊-3-烯-2-酮為解毒劑，其與亞硝酸反應生成 (R)-5-((S)-1,2-二羥乙基)氧雜環戊-2,3,4-三酮、一氧化氮與水：
+\[\ce{2HNO2 + C6H8O6 -> 2NO + 2H2O + C6H6O6}\]
+\end{itemize}
+\sssc{亞硝胺}
+強致癌物。亞硝酸鹽或其他亞硝醯類（R-N=O）與一級或二級胺轉換成亞硝胺，其中一級胺在酸性環境方好發此反應，二級胺均可：
+\[\tx{R-N=O + R'-N(-R'')-H}\ce{->}\tx{R'-N(-R'')-N=O + R-H}\]
+人體內代謝亞硝酸鹽亦產生亞硝胺。
+\subsubsection{四氧化二氮}
+無色、劇毒、腐蝕性氣體。常與聯胺或甲基聯胺等共同用於火箭燃料。
+\sssc{五氧化二氮}
+無色晶體，昇華點 33°C，氣體無色，與二氧化氮和氧氣可逆平衡：
+\[\ce{2N2O5(g) <=> 4NO2(g) + O2(g)}\]
+\subsubsection{聯胺（Hydrazine）/肼（jĭng）/二氮烷}
+無色有毒液體，混溶於水。常與四氧化二氮共同用於火箭燃料，生成氮氣與水。
+\sssc{甲基聯胺}
+無色有毒液體，混溶於水。常與四氧化二氮共同用於火箭燃料，生成氮氣、水與二氧化碳。
+\sssc{二亞胺（Diimide, diazene, or diimine）/二氮烯}
+分順反異構。
+\subsubsection{氰氣（Cyanogen）/乙二腈（Ethanedinitrile）}
+無色、劇毒氣體，屬擬/類鹵素（pseudohalogen），化性類似鹵素。
+\subsubsection{氰化物（Cyanide）}
+\bit
+\item \tb{氰化物}：指帶有氰離子或氰基的化合物。多劇毒。
+\item \tb{氰鹽}：指帶有氰離子的離子化合物。
+\item \tb{甲腈/氰化氫}\ce{HCN}：具杏仁味、劇毒、高揮發性液體，沸點26°C。易溶於水，稱\tb{氫氰酸}，p$K_a$=9.21。\ce{CN^-}為擬/類鹵素離子，化性類似鹵素離子。
+\item \tb{腈（jīng）（Nitrile）}：具有氰基的有機化合物。
+\eit
+\subsubsection{氰胺（Cyanamide）/胺基氰與碳二亞胺（Carbodiimide）}
+\bit
+\item \tb{氰胺（Cyanamide）/胺基氰}\ce{CN2H2}與\tb{碳二亞胺（Carbodiimide）}\ce{C(NH)2}：互變異構，前者較多，白色晶體，易溶於水。
+\item \tb{氰胺離子}\ce{CN2^{2-}}
+\item \tb{氰胺鹽}：含有氰胺離子的鹽類。
+\item \tb{氰胺化鈣（Calcium cyanamide）}\ce{CaCN2}最常見的氰胺鹽，白色固體。
+\eit
+\end{itemize}
+\sssc{氰酸（Cyanic acid）與異氰酸（Isocyanic acid）}
+\bit
+\item \tb{氰酸（Cyanic acid）}\ce{HOCN}與\tb{異氰酸（Isocyanic acid）}\ce{HNCO}：互變異構，後者為主，無色氣體或易揮發液體，有毒，混溶於水，p$K_a$=3.7。
+\item \tb{氰酸根離子（Cyanate）}\ce{OCN^-}：屬擬鹵素離子。
+\item \tb{氰酸鹽（Cyanate）}：含有氰酸根離子的鹽類。
+\item \tb{氰酸酯（Cyanate）}\ce{ROCN}。
+\item \tb{異氰酸酯（Isocyanate）}\ce{RNCO}。
+\eit
+\sssc{雷酸（Fulminic acid）與異雷酸（Isofulminic acid）}
+\bit
+\item \tb{雷酸（Fulminic acid）}\ce{HCNO}與\tb{異雷酸（Isofulminic acid）}\ce{HONC}：均不穩定。
+\item \tb{雷酸根離子（Fulminate）}\ce{CNO-}：屬擬鹵素離子。
+\item \tb{雷酸鹽（Fulminate）}：含有雷酸根離子的鹽類。均不穩定，具爆炸性，可用於炸藥。
+\eit
+\subsubsection{硫氰（Thiocyanogen）}
+黃色液體，屬擬鹵素。
+\sssc{硫氰酸（Thiocyanic acid）與異硫氰酸（Isothiocyanic acid）}
+\bit
+\item \tb{硫氰酸（Thiocyanic acid）}\ce{HSCN}與\tb{異硫氰酸（Isothiocyanic acid）}\ce{HNCS}：互變異構，後者為主，無色氣體或易揮發液體，有毒，混溶於水，p$K_a$=0.93。
+\item \tb{硫氰酸根離子（Thiocyanate）}\ce{SCN^-}：屬擬鹵素離子。
+\item \tb{硫氰酸鹽（Thiocyanate）}：含有硫氰酸根離子的鹽類。
+\item \tb{硫氰酸酯（Thiocyanate）}\ce{RSCN}。
+\item \tb{異硫氰酸酯（Isothiocyanate）}\ce{RNCS}。
+\eit
+\sssc{疊氮化合物（Azide）}
+\bit
+\item \tb{疊氮根離子（Azide）}\ce{N3-}。
+\item \tb{疊氮化合物（Azide）}：含有疊氮根離子或疊氮基的化合物。
+\item \tb{疊氮鹽（Azide）}：含有疊氮根離子的離子化合物。
+\eit
+\ssc{磷}
+\sssc{磷元素}
+\bit
+\item $^{31}_{15}$P：穩定，天然豐度100\%。
+\item 占地殼約 0.1\%，主要存在於\tb{磷灰石（Apatite）}\ce{Ca5(PO4)3(F,Cl,OH)}，主要用於製造磷肥，次要用於製造磷氧酸。
+\eit
+\subsubsection{白磷（White phosphorus）/黃磷（Yellow phosphorus）}
+\begin{itemize}
+\item 結構為正四面體\ce{P4}，鍵角為60°，有臭味、有毒蠟狀白色物質，不溶於水，活性與毒性高，燃點34°C，熔點44°C，在空氣中會自燃產生\ce{P4O10}，需貯存在水中。
+\item 與鹵素自發反應。
+\item 白磷於熱鹼中自身氧化還原反應得磷化氫與次磷酸：
+\[\ce{P4(s) + OH^-(aq) + H2O(l) -> PH3(g) + H2PO2^-(aq)}\]
+\end{itemize}
+\subsubsection{紅磷/赤磷（Red phosphorus）}
+\begin{itemize}
+\item 結構為白磷分子其中一鍵改為與下一白磷分子的一磷原子鍵結形成的聚合物，密度高於白磷。鮮紅色低毒粉末。難溶於水與有機溶劑。常溫下化性穩定，不與熱鹼反應。燃點400°C，熔點590°C。
+\item 高溫下可與鹵素反應。
+\item 白磷隔絕空氣下加熱至250°C或照光製備。
+\item 火藥、火柴原料。
+\end{itemize}
+\subsubsection{磷酸}
+\begin{itemize}
+\item \ce{H3PO4}，磷的氧化數為+5，三質子酸，弱酸。純質常溫下為白色固體，熔點42°C，穩定。
+\item 常用於食物添加劑、肥料。
+\item \tb{磷灰石（Apatite）}\ce{Ca5(PO4)3(F,Cl,OH)}：莫氏硬度5。
+\item 非食品級者工業上以溼法製備。
+\item 
+\end{itemize}
+\subsubsection{亞磷酸}
+\ce{H3PO3}，磷的氧化數為+3，二質子酸，酸性高於磷酸，還原劑。
+\subsubsection{次磷酸}
+\ce{H3PO2}，磷的氧化數為+1，純質子酸，酸性高於亞磷酸，還原劑。
+\subsubsection{焦磷酸}
+\ce{H4P2O7}，二分子磷酸脫一分子水。
+\subsubsection{三聚磷酸}
+\ce{H5P3O10}，三分子磷酸脫二分子水，SMILES: OP(=O)(O)OP(=O)(O)OP(=O)(O)O。
+\subsubsection{三偏磷酸}
+\ce{H3P3O9}，三分子磷酸脫三分子水，三偏磷酸根 SMILES: O=P(OP(O1)([O-])=O)([O-])OP1([O-])=O，可作為食物添加劑。
+\subsubsection{氧化磷(III)/六氧化四磷/三氧化二磷/亞磷酐/2,4,6,8,9,10-六氧-1,3,5,7-四磷酸三環[3.3.1.1$^{3,7}$]癸烷}
+\begin{itemize}
+\item \ce{P4O6}，過去曾誤以為是\ce{P2O3}。結構為白磷每邊的兩個磷間插入一個二配位氧，一個磷與三個氧鍵結並有一對孤電子，P-O-P鍵角127°，O-P-O鍵角100°。四分子亞磷酸脫四分子水的酐。蠟狀劇毒白色固體。熔點23.8°C，沸點175.4°C。
+\item 具吸水性，反應：
+\[\ce{P4O6 + 6H2O -> 4H3PO3}\]
+\item 燃燒過量白磷製備：
+\[\ce{P4(s) + 3O2(g) -> P4O6(s)}\]
+\item 燃燒過量磷化氫製備：
+\[\ce{4PH3(g) + 6O2(g) -> P4O6(s) + 6H2O(l)}\]
+\end{itemize}
+\subsubsection{氧化磷(V)/十氧化四磷/五氧化二磷（Phosphorus pentoxide）/磷酐/2,4,6,8,9,10-六氧-1λ$^5$,3λ$^5$,5λ$^5$,7λ$^5$-四磷酸三環[3.3.1.1$^{3,7}$]癸烷-1,3,5,7-四氧化物}
+\begin{itemize}
+\item \ce{P4O10}，過去曾誤以為是\ce{P2O5}。結構為\ce{P4O6}的每個磷再與一個氧以雙鍵鍵結，一個磷與四個氧鍵結並沒有孤電子，P-O-P鍵角123°，O-P-O鍵角102°。四分子磷酸脫四分子水的酐。白色粉末。昇華點358°C。
+\item 具強吸水性，反應：
+\[\ce{P4O10(s) + 6H2O(l) -> 4H3PO4(aq)}\]
+可作為酸性乾燥劑。
+\item 燃燒白磷製備：
+\[\ce{P4(s) + 5O2(g) -> P4O10(s)}\]
+\item 燃燒磷化氫製備：
+\[\ce{4PH3(g) + 8O2(g) -> P4O10(s) + 6H2O(l)}\]
+\end{itemize}
+\subsubsection{五鹵化磷}
+\begin{itemize}
+\item sp$^3$混成，角錐形，有極性。
+\item 過量白磷與鹵素反應製備：
+\[\ce{P4 + 6X2 -> 4PX3}\]
+\item 溶於水可得鹵化氫與亞磷酸：
+\[\ce{PX3(s) + 3H2O(l) -> H3PO3(aq) + 3HX}\]
+\end{itemize}
+\subsubsection{三鹵化磷}
+\begin{itemize}
+\item sp$^3$d混成，雙三角錐形，無極性。
+\item 白磷與過量鹵素反應製備：
+\[\ce{P4 + 10X2 -> 4PX5}\]
+\item 溶於水可得鹵化氫與磷酸：
+\[\ce{PX5(s) + 4H2O(l) -> H3PO4(aq) + 5HX}\]
+\end{itemize}
+\subsubsection{磷化氫/膦}
+\begin{itemize}
+\item \ce{PH3}，化性似氨，結構亦為角錐形。無色、易燃、劇毒、腐臭味氣體，屍體分解產物之一。溶於水為弱鹼，鹼性小於氨。
+\item 工業上將白磷與強鹼共熱發生自身氧化還原反應得磷化氫與次磷酸製備。
+\end{itemize}
+\ssc{氧}
+\subsubsection{氧元素}
+\begin{itemize}
+\item $^{16}_8$\rmO：穩定、天然豐度99.76\%、原子量15.9949。
+\item $^{17}_8$\rmO：穩定、天然豐度0.04\%、原子量16.9991。
+\item $^{18}_8$\rmO：具放射性、天然豐度0.21\%、原子量17.9992。
+\item 地殼含量最多的元素，占約46\%，主要以二氧化矽、矽酸鹽與金屬氧化物分布於岩石、砂礫中。
+\end{itemize}
+\subsubsection{氧氣}
+\begin{itemize}
+\item 大氣體積比約20.95\%為氧氣。自然界最重要和普遍的氧化劑，空氣中金屬鏽蝕、食物變質等均為被氧氣氧化。
+\item 熔點-219°C；沸點-183°C。氣態氧無色、無臭、無味；液態淡藍色；固態氧灰黑色。難溶於水，可用排水集氣法收集。不可燃，具助燃性，化性活潑。
+\item 工業上主要由分餾液態空氣獲得，但純度低。
+\item 實驗室中以氯酸鉀經二氧化錳或過氧化氫酶催化或加熱發生自身氧化還原反應獲得：
+\[\ce{2KClO3(s) -> 2KCl(s) + 3O2(g)}\]
+\item 實驗室中以雙氧水經二氧化錳或過氧化氫酶催化發生自身氧化還原反應獲得：
+\[\ce{2H2O2(aq) -> 2H2O(l) + O2(g)}\]
+\item 純水中加入少量硫酸或氫氧化鈉電解可在陰極得氫氣、陽極得氧氣，純度高但成本亦高。
+\item 可用使木材餘焰復燃與使鋼絲絨劇烈燃燒檢驗。
+\item 氫氧焰或乙炔氧焰可產生約2400-3000°C高溫火焰，可用於焊接、冶煉金屬。
+\item 有氧呼吸作用反應物，多數生物維持生命所需，可供醫學、登山、潛水呼吸用。高壓氧艙是一種醫療設備，其中有 1.5-5 atm 的氧氣，可讓病人體內含氧濃度快速提高，使缺氧組織活化，加速傷口癒合。
+\item 常用於煉鋼中去除鐵中雜質用，高壓氧氣注入熔鐵可把鐵中的硫和碳氧化成二氧化硫和二氧化碳，自系統除去。
+\end{itemize}
+\subsubsection{臭氧（Ozone）}
+\begin{itemize}
+\item 中心氧原子混成軌域sp$^2$，O-O鍵級$\frac{3}{2}$，因孤對電子鍵角117°，鍵長0.1278 nm。熔點-192°C；沸點-112°C，均高於氧氣。淡藍色、有刺激性臭味、劇毒氣體。
+\item 氧化性高於氧氣，可利用潮溼碘化鉀–澱粉試紙檢驗，發生反應：
+\[\ce{O3(g) + 2KI(aq) + H2O(l) -> O2(g) + I2(s) + 2KOH(aq)}\]
+\ce{I2}再與試紙上的澱粉生成藍色錯合物，使試紙由無色變成藍色。
+\item 不穩定，易自發分解成氧氣，此反應亦會被\ce{Cl2(g)}或\ce{NO(g)}或含氯化合物(g)催化：
+\[\ce{2O3(g) -> 3O2(g)}\]
+\item 氧氣通過高壓放電管或照射紫外光可得臭氧：
+\[\ce{3O2(g) -> 2O3(g)}\]
+\item 紫外線照射下臭氧可進行反應：
+\[\ce{O3(g) -> O2(g) + O(g)}\]
+\item 氧分子與氧原子碰撞形成臭氧，並釋出熱能，當有第三體吸收熱能時方能穩定，否則臭氧會立刻再次分解。
+\item 平流層臭氧吸收紫外線可保護地球生物，但對流層臭氧對人體有害。含氯化合物受紫外線照射分解出的氯原子及氮氧化物形成一氧化氮等自由基會促進臭氧分解。
+\item 臭氧因其強氧化性可快速分解氣體或液體中毒物、有臭味物、有機物、微生物等，常用於消毒、殺菌，如自來水消毒、泳池消毒、漂白劑、工業廢物處理，因其完全無殘留，故作為飲水消毒劑較氯更安全，但需要乾淨運輸管道。
+\end{itemize}
+\subsubsection{氧的化合物}
+\begin{itemize}
+\item \tb{氧化物（Oxide）}：氧的氧化數為-2的化合物。
+\item \tb{過氧化物（Peroxide）}：具有O$^-$-O$^-$或R-O-O-R'的化合物，氧的氧化數為-1，如\ce{Na2O2}。
+\item \tb{超氧化物（Superoxide）}：具有O$^-$-O$\cdot$的化合物，氧的氧化數為-0.5，如\ce{NaO2}。
+\item 氧的氟化物中氧的氧化數為正，其餘化合物中為負。
+\item 共價網狀固體除外，金屬氧化物溶於水呈鹼性，非金屬氧化物溶於水呈酸性。
+\end{itemize}
+\sssc{過氧化氫}
+\bit
+\item 極淡藍液體，熔點 -0.43°C，分解為水與氧氣於 150.2°C，混溶於水，溶液俗稱雙氧水。
+\item 非鹼中為氧化劑，氧化性隨 pH 增加而減弱，酸中可氧化\ce{Cl^-}，氧系漂白劑之有效成分。
+\item 酸性，p$K_a=11.65$：
+\[\ce{H2O2(aq) <=> H^+(aq) + HO2^-(aq)}\]
+\item 可被強氧化劑氧化，如：
+\[\ce{3H2O2(aq) + 2KMnO4(aq) -> 3O2(g) + 2MnO2(s) + 2KOH(aq) + 2H2O(l)}\]
+\item 自發自身氧化還原反應，pH 值愈高愈快：
+\[\ce{2H2O2(aq) -> 2H2O(l) + O2(g) + 196\tx{\ kJ}}\]
+\[\ce{H2O2(aq) + 2OH^-(aq) -> 2H2O(l) + O2(g) + 217\tx{\ kJ}}\]
+前者可被\ce{Fe^{2+}(aq)}\text{或}\ce{Fe^{3+}(aq)}\text{或}\ce{I^-(aq)}催化，流血時以雙氧水消毒產生大量氣泡即為血液中的亞鐵離子催化之；後者較快。
+\item 市售雙氧水為濃度約3\%的過氧化氫水溶液，可作為家用消毒劑。
+\eit
+\ssc{硫}
+\subsubsection{硫元素}
+\begin{itemize}
+\item $^{32}_ {16}$\rmS：穩定、天然豐度94.8\%。
+\item 硫在地殼主要存在形式為硫化物（硫的氧化物 -2）最多，硫酸鹽次之，元素態硫再次。
+\end{itemize}
+\sssc{結構}
+\bit
+\item 環八硫\ce{S8}：S1SSSSSSS1
+\item 硫化氫\ce{H2S}：H-S-H
+\item 一氧化硫\ce{SO}：S=O
+\item 二氧化硫\ce{SO2}：
+\bit
+\item 高中：O$^-$-S=O（共振）
+\item 實際：O=S=O
+\eit
+\item 三氧化硫\ce{SO3}：O=S(=O)=O
+\item 亞硫酸根離子\ce{SO3^{2-}}：O$^-$-S(=O)-O$^-$（共振）
+\item 硫酸根離子\ce{SO4^{2-}}：O=S(-O$^-$)(-O$^-$)=O（共振）
+\item 過一硫酸根離子\ce{SO5^{2-}}：O$^-$-O-S(=O)(=O)-O$^-$（共振）
+\item 硫代硫酸根離子\ce{S2O3^{2-}}：O$^-$-S(=O)(=O)-S$^-$（共振）
+\item 連二亞硫酸根離子\ce{S2O4^{2-}}：O$^-$-S(=O)-S(=O)-O$^-$（共振）
+\item 焦亞硫酸根離子\ce{S2O5^{2-}}：O$^-$-S(=O)-S(=O)(=O)-O$^-$（共振）
+\item 連二硫酸根離子\ce{S2O6^{2-}}：O$^-$-S(=O)(=O)-S(=O)(=O)-O$^-$（共振）
+\item 焦硫酸根離子\ce{S2O7^{2-}}：O$^-$-S(=O)(=O)-O-S(=O)(=O)-O$^-$（共振）
+\item 過二硫酸根離子\ce{S2O8^{2-}}：O$^-$-S(=O)(=O)-O-O-S(=O)(=O)-O$^-$（共振）
+\item 連多硫酸根離子\ce{S$_x$O6^{2-}}：O$^-$-S(=O)(=O)(-S-)$_{x-2}$S(=O)(=O)-O$^-$（共振）
+\item 發煙硫酸根離子\ce{SO4$\cdot x$SO3^{2-}}：O$^-$-S(=O)(=O)-[O-S(=O)(=O)]$_x$-O$^-$（共振）
+\eit
+\subsubsection{元素態硫}
+\begin{itemize}
+\item 同素異形體：
+\begin{itemize}
+\item 黃色、不溶於水晶體\tb{斜方硫/α-硫}\ce{S8}為最常見形式，S-S-S鍵角107.8°，呈王冠型。
+\item 常壓元素態硫的液態或/與固態平衡混合物中除了160°C至200°C存在之鏈狀硫外主要以各種晶型的環八硫\ce{S8}為主。
+\item 斜方硫緩慢加熱至95.3°C逐漸變成黃色、不溶於水晶體\tb{單斜硫/β-硫}\ce{S8}。
+\item 單斜硫加熱至119.6°C逐漸熔化為黃色\tb{液態硫/熔融硫}。
+\item 斜方硫快速加熱至112.8°C不經單斜硫直接熔化為液態硫。
+\item 液態硫加熱至約160°C開始斷\ce{S8}之共價鍵並形成褐色、高黏度長鏈狀聚合物\tb{鏈狀硫/ψ-硫}\ce{S$_n$}，熔融硫與鏈狀硫混合物稱\tb{無定形硫}。
+\item 無定形硫加熱至約200°C熔化並環化成熔融硫。
+\item 熔融硫快速冷卻形成\tb{彈性硫/塑性硫}，並逐漸結晶回斜方硫或單斜硫。
+\item 熔融硫加熱至445°C汽化成\tb{氣態硫}\ce{S$_x$}，氣態硫包含氧氣型的\ce{S2}、臭氧型的\ce{S3}與環狀的\ce{S4}、\ce{S5}、\ce{S6}、\ce{S7}、\ce{S8}，溫度愈高平均分子量愈小。
+\end{itemize}
+\item \tb{弗拉施法（Frasch process）}：工業上將過熱的水與高壓熱氣體打入礦井使硫熔化並壓升至地面獲得硫。
+\end{itemize}
+\sssc{二氧化硫}
+\bit
+\item 具刺激氣味、無色、有毒氣體。
+\item 亞硫酸的酸酐，可溶於水，發生反應：
+\[\ce{SO2(g) + H2O(l) -> H2SO3(aq)}\]
+\item 因其溶於水形成的亞硫酸具還原力，常作為食品抗氧化劑、防腐劑、增色劑，如金針花漂白。
+\item 工業上以直接燃燒環八硫或焙燒金屬硫化礦製備，後者若以二氧化硫為主要產物者常用黃鐵礦\ce{FeS2}。工業上主要用於製造硫酸。
+\eit
+\subsubsection{亞硫酸（Sulfurous acid）}
+\begin{itemize}
+\item 幾乎不以溶液以外的形式存在，但鹽類穩定而常見。
+\item 亞硫酸根離子為還原劑，亞硫酸鹽水溶液在空氣中不穩定而易被氧化：
+\[\ce{2HSO3^-(aq) + O2(g) -> HSO4^-(aq)}\]
+\item 酸解離常數（因電負度）：\ce{H2SO3}>\ce{H2CO3}
+\item 酸解離常數（因氧拉電子）：\ce{H2SO4}>\ce{H2SO3}
+\item \tb{亞硫酸氫鈉}：白色固體，常用於食品抗氧化劑、防腐劑、增色劑。
+\end{itemize}
+\sssc{三氧化硫}
+\bit
+\item 熔點16.9°C，沸點45°C，無色至白色易昇華結晶固體，無色易汽化液體，具刺激氣味、無色、有毒氣體。氣態與液態主要為單體與環狀三聚體 γ-三氧化硫 [S]1(=O)(=O)-O-[S](=O)(=O)-O-[S](=O)(=O)-O1，固態具多種結構。具氧化力。
+\item 硫酸的酸酐，可溶於水，發生反應：
+\ce{SO3(g) + H2O(l) -> H2SO4(aq)}
+\eit
+\sssc{硫化氫}
+具臭雞蛋氣味、無色、有毒、具腐蝕性、易燃氣體，具還原力。
+\subsubsection{硫酸}
+\begin{itemize}
+\item 強酸，p$K_{a1}$ = −2.8、p$K_{a2}$ = 1.99。富氫鍵，沸點337°C。
+\item 18M硫酸水溶液重量百分濃度98\%密度1.8g/cm$^3$，純硫酸密度1.84g/cm$^3$。
+\item 化學工業之母。
+\item 濃硫酸具強脫水性，可作為酯化反應催化劑、使醣類脫水得黑碳、使醇類脫水得烯（150°C以上）或醚（150°C以下）、使甲酸脫水得一氧化碳。
+\item 濃者為氧化劑，氧化力\ce{HNO3}>\ce{H2SO4}>\ce{H3PO4}
+\item 反應：
+\bit
+\item 稀硫酸與還原電位為負的金屬反應生成硫酸鹽與氫氣：
+\[\ce{2M(s) + H2SO4(aq) -> M2SO4(aq/s) + H2(g)}\]
+\item 濃硫酸與還原電位為負的金屬反應生成硫酸鹽、硫與水或硫酸鹽、二氧化硫與水：
+\[\ce{4M(s) + 3H2SO4(aq) -> 2M2SO4(aq/s) + S(s) + 3H2O(l)}\]
+\[\ce{2M(s) + 2H2SO4(aq) -> M2SO4(aq/s) + SO2(g) + 2H2O(l)}\]
+\item 熱濃硫酸與銅、銀、汞、碳、硫反應：
+\[\ce{Cu(s) + 2H2SO4(aq) -> CuSO4(aq) + SO2(g) + 2H2O(l)}\]
+\[\ce{2Ag(s) + 2H2SO4(aq) -> Ag2SO4(aq) + SO2(g) + 2H2O(l)}\]
+\[\ce{Hg(s) + 2H2SO4(aq) -> HgSO4(aq) + SO2(g) + 2H2O(l)}\]
+\[\ce{C(s) + 2H2SO4(aq) -> CO2(aq) + 2SO2(g) + 2H2O(l)}\]
+\[\ce{S(s) + 2H2SO4(aq) -> 3SO2(g) + 2H2O(l)}\]
+\eit
+\item 工業上現主要以接觸法或溼硫酸法製備，過去以鉛室法製備。
+\item 常用於酸化氧化還原滴定中的試劑，不可用鹽酸因為會被氧化劑氧化產生有毒氯氣，不可用硝酸因為硝酸具氧化力會和還原劑反應而影響滴定結果。
+\end{itemize}
+\subsubsection{發煙硫酸（Oleum）}
+\begin{itemize}
+\item \tb{焦硫酸（Disulfuric acid）}\ce{H2S2O7}：氧化力強於硫酸。
+\item $k$\% 發煙硫酸指將其中原子全部分為\ce{SO3}與\ce{H2SO4}後質量比值為$k$\%。
+\item 可通過三氧化硫溶於濃硫酸製備，接觸法製備硫酸的中間產物，遇水反應得硫酸，冷卻可得焦硫酸晶體。
+\end{itemize}
+\sssc{焦亞硫酸鈉/偏二亞硫酸鈉}
+\bit
+\item 焦亞硫酸/偏二亞硫酸\ce{H2S2O7}不穩定，無法以純質存在。
+\item 白色固體。
+\item 溶於水反應變成亞硫酸氫鈉：
+\[\ce{Na2S2O5(s) + H2O(l) -> 2Na^+(aq) + 2HSO3^-(aq)}\]
+\eit
+\subsubsection{硫代硫酸鈉/海波（hypo）/大蘇打}
+\begin{itemize}
+\item 硫代硫酸\ce{H2S2O3}不穩定，幾乎不以純質存在。
+\item 硫代硫酸根離子具還原力，可還原\ce{Fe^{3+}(aq)}至\ce{Fe^{2+}(aq)}而不進一步還原為\ce{Fe}，是常用弱還原劑，可用於間接碘滴定，以硫代硫酸鈉作為標準液。
+\item 硫代硫酸根在酸性環境不安定，自發自身氧化還原反應分解成水、二氧化硫氣體與硫固體，可作為秒錶反應（clock reaction）/化學鐘（chemical clock）：
+\[\ce{S2O3^{2-}(aq) + 2H^+(aq) -> H2O(l) + SO2(g) + S(s)}\]
+\item 硫代硫酸根與弱氧化劑如\ce{I2}反應得連四硫酸/四硫磺酸：
+\[\ce{2S2O3^{2-} -> S4O6^{2-} + 2e^-}\]
+\item 硫代硫酸根與強氧化劑如\ce{Cl2}、\ce{Cr2O7^{2-}}、\ce{MnO4^-}、\ce{MnO2}反應得硫酸：
+\[\ce{S2O3^{2-} + 5O^{2-} -> 2SO4^{2-} + 8e^-}\]
+\item 通常以白色五水合晶體存在。
+\item 可作為攝影底片的定影劑。
+\item 可作為水的脫氯劑，常用於魚缸：
+\[\ce{S2O3^{2-}(aq) + 4Cl2(aq) + 5H2O(l) -> 2SO4^{2-}(aq) + 8Cl^-(aq) + 10H^+(aq)}\]
+\item 以亞硫酸鈉與硫共熱製備：
+\[\ce{Na2SO3(s) + S(s) ->[$\Delta$] Na2S2O3(s)}\]
+\end{itemize}
+\ssc{元素態鹵素（Halogen）}
+\subsubsection{總論}
+\begin{itemize}
+\item 強氧化劑。
+\item 分子量、分子間作用力、熔點、沸點、熔化熱、汽化熱、莫耳體積、鍵長：\ce{F2}<\ce{Cl2}<\ce{Br2}<\ce{I2}
+\item 鍵能：\ce{Cl2}>\ce{Br2}>\ce{F2}>\ce{I2}
+\item 氧化力、活性、毒性：\ce{F2}>\ce{Cl2}>\ce{Br2}>\ce{I2}
+\item 游離能、電負度：\ce{F}>\ce{Cl}>\ce{Br}>\ce{I}
+\item 原子半徑、原子容：\ce{F}<\ce{Cl}<\ce{Br}<\ce{I}
+\item 電子親和力：\ce{Cl}>\ce{F}>\ce{Br}>\ce{I}
+\item 常溫壓狀態：氣態：\ce{F2}、\ce{Cl2}；液態：\ce{Br2}；固態：\ce{I2}
+\item 鹵素水溶液中具有與鹵酸根離子\ce{XO3^-}和鹵素離子\ce{X-}間的岐化與歸中可逆反應，酸中傾向鹵素、鹼中傾向鹵酸根和鹵素離子：
+\[\ce{3X2(aq) + 3H2O(l) <=> 5X^-(aq) + XO3^-(aq) + 6H^+(aq)}\]
+\item 可與具非共軛多重鍵之有機物發生鹵化加成反應。
+\item 實驗室中常以\ce{MnO2(s)}、\ce{KMnO4(aq)}或\ce{K2Cr2O7(aq)}等強氧化劑在酸性環境中加熱氧化濃\ce{HX(aq)}或\ce{H2SO4(aq) + NaX(aq)}製備\ce{Cl2(g)}、\ce{Br2(l)}或\ce{I2(s)}，其中 X=Cl, Br, or I：
+\[\ce{MnO2(s) + 4HX(aq) ->[$\Delta$] MnX2(aq) + 2H2O(l) + X2(g/l/s)}\]
+\[\ce{2KMnO4(aq) + 16HX(aq) ->[$\Delta$] 2KX(aq) + 2MnX2(aq) + 8H2O(l) + 5X2(g/l/s)}\]
+\[\ce{2KMnO4(aq) + 8H2SO4(aq) + 16NaX(aq) ->[$\Delta$] 2KX(aq) + 2MnX2(aq) + 8H2O(l) + 5X2(g/l/s) + 8Na2SO4(aq)}\]
+\ce{F2}的氧化力較該等氧化劑強故無法以此法製備。
+\end{itemize}
+\sssc{氟元素}
+\bit
+\item $^{19}_9$\rmF：穩定，天然豐度100\%。
+\item 在地殼中占 544 ppm，主要存在於\tb{氟磷灰石（Fluorapatite）}\ce{Ca5(PO4)3F}、\tb{螢石/氟石（Fluorite）}\ce{CaF2}與\tb{冰晶石（Cryolite）}\ce{Na3AlF6}。
+\eit
+\subsubsection{元素態氟/氟氣}
+\begin{itemize}
+\item 淡黃色、有毒氣體。常見氧化劑中最強者，但弱於惰性氣體氟化物。電解\ce{F^-(aq)}陽極產物為\ce{O2}而非\ce{F2}。
+\item 與水發生強烈氧化還原反應：
+\[\ce{F2(g) + H2O(l) -> HF(aq) + O2(g)}\]
+\item 在四氯化碳中發生取代反應取代氯生成四氟化碳與氯氣。
+\item 工業上以莫瓦桑法製備。
+\item 氟氣之儲存、運輸須保持乾燥，以免生成氫氟酸，乾氟可以銅、鎳、鋯或它們的合金為容器，分別生成\ce{CuF2}, \ce{NiF2}與\ce{ZrF4}保護層鈍化。
+\end{itemize}
+\subsubsection{元素態氯/氯氣}
+\begin{itemize}
+\item $^{35}_{17}$\rmCl：穩定，天然豐度76\%。
+\item $^{37}_{17}$\rmCl：穩定，天然豐度24\%。
+\item 在地殼中占約 126 ppm，主要以氯離子存在於水體中。
+\item 黃綠色、有毒氣體。密度遠大於空氣，用向下集氣法收集。可溶於水，水溶液稱氯水，黃綠色，揮發性溶質，應裝在深棕色瓶內貯存以免光化學反應。易溶於有機物，其四氯化碳溶液呈淡黃色。
+\item 工業上以氯鹼法或當氏法製備。
+\item 氯遇水緩慢發生氧化還原反應，氧被氯氧化，照光加速，為光化學反應，故可用潮溼藍色石蕊試紙檢驗，先因酸而變紅，再緩慢被次氯酸氧化變白：
+\[\ce{Cl2(g) + H2O(l) -> HCl(aq) + HOCl(aq)}\]
+\item 氯在鹼中發生自身氧化還原反應：
+\begin{itemize}
+\item 室溫以下主要形成次氯酸：
+\[\ce{Cl2(g) + 2OH^-(aq) -> Cl^-(aq) + ClO^-(aq) + H2O(l)}\]
+\item 60°C以上主要形成氯酸：
+\[\ce{3Cl2(g) + 6OH^-(aq) -> 5Cl^-(aq) + ClO3^-(aq) + 3H2O(l)}\]
+\end{itemize}
+\item 常用於水的殺菌，濃度達 0.2-1.0 ppm 即有殺菌效果，可溶故會殘留於水中，故適用於須經過可能不乾淨管道者，如多數都市自來水。
+\item 常用於製造農藥、攝影底片、漂白劑、殺菌劑、染料、藥品、塑膠、化學品。
+\end{itemize}
+\subsubsection{元素態溴}
+\begin{itemize}
+\item $^{79}_{35}$\rmBr：穩定，天然豐度50.6\%。
+\item $^{81}_{17}$\rmBr：穩定，天然豐度49.4\%。
+\item 在地殼中占約 2.5 ppm，主要以溴離子存在於水體中。
+\item 暗紅色液體，與汞為週期表上唯二NTP下為液體的元素。微溶於水，水溶液稱溴水，紅色，應裝在深棕色瓶內貯存以免光化學反應。易溶於有機物，其四氯化碳溶液呈橙紅色。
+\item 工業上將氯氣通入酸化至 pH 3.5 的含溴鹵水中氧化溴離子製備：
+\[\ce{Cl2(g) + 2Br^-(aq) -> 2Cl^-(aq) + Br2(aq)}\]
+\item 溴遇水緩慢發生自身氧化還原反應，照光加速，為光化學反應，故可用潮溼藍色石蕊試紙檢驗，先因酸而變紅，再緩慢被次溴酸氧化變白：
+\[\ce{Br2(l) + H2O(l) -> HBr(aq) + HOBr(aq)}\]
+\item 溴在鹼中發生自身氧化還原反應：
+\begin{itemize}
+\item 0°C以下主要形成次溴酸：
+\[\ce{Br2(l) + 2OH^-(aq) -> Br^-(aq) + BrO^-(aq) + H2O(l)}\]
+\item 室溫以上主要形成溴酸：
+\[\ce{3Br2(l) + 6OH^-(aq) -> 5Br^-(aq) + BrO3^-(aq) + 3H2O(l)}\]
+\end{itemize}
+\item 常用於製造農藥、攝影底片、二溴乙烷。
+\end{itemize}
+\subsubsection{元素態碘}
+\begin{itemize}
+\item $^{127}_{53}$\rmI：穩定，天然豐度100\%。
+\item 在地殼中占 0.46 ppm，主要存在於碘酸鹽礦物中。
+\item 碘元素在地殼中主要存在於碘氧酸鹽礦物，在生物中主要存在於海帶、海苔中。
+\item 固相灰黑，液相紫黑，氣相紫色，熔點114攝氏度，沸點184攝氏度，易昇華，照光尤甚。難溶於水。沒有碘離子存在下，碘分子在酸性水溶液中易揮發，在鹼性水溶液中易發生自身氧化還原反應，僅在中性、弱酸或弱鹼中較穩定。易溶於有機物，其四氯化碳溶液呈紫色。可用不溶於水的有機溶劑從水中萃取碘，如烷、鹵烷、苯，但醛、酮、醇則會溶於水故不可，其中正己烷、環己烷、戊烷、苯密度比水小，氯仿、四氯甲烷密度比水大。
+\item 工業上用硫酸氫鈉還原鈉硝石中的碘酸鈉製備：
+\[\ce{2IO3^-(aq) + 5HSO3^-(aq) -> I2(s) + 5SO4^{2-}(aq) + 3H^+(aq) + H2O(l)}\]
+\item 過去將海藻燒成灰，將灰溶於水，再通入氯氣製備；工業上將氯氣通入酸化後的含碘鹵水中氧化碘離子製備：
+\[\ce{Cl2(g) + 2I^-(aq) -> 2Cl^-(aq) + I2(s)}\]
+\item 以昇華再結晶法純化。
+\item \tb{碘液}：\ce{I2}微溶於水，但可溶於碘離子\ce{I^-}溶液，形成可溶性\tb{多碘（Polyiodide）離子}，其中大部分為三碘離子\ce{I3-}，稱碘液，棕色。
+\begin{itemize}
+\item \tb{三碘離子}\ce{I3-}：直線形，鍵角176°，三碘形成 3c–4e 鍵：
+\[\ce{I2(s) + I^-(aq) <=> I3^-(aq)}\]
+\item \tb{五碘離子}\ce{I5-}：角形，中央碘鍵角95°，兩側碘鍵角175°，中央碘為正偶極：
+\[\ce{I2(s) + I3^-(aq) <=> I5^-(aq)}\]
+\end{itemize}
+\item 碘遇水極慢發生自身氧化還原反應，照光加速，為光化學反應，故可用潮溼藍色石蕊試紙檢驗，先因酸而變紅，並可能再緩慢被次碘酸氧化變白：
+\[\ce{I2(s) + H2O(l) -> HI(aq) + HOI(aq)}\]
+\item 碘或碘液在鹼中發生自身氧化還原反應：
+\[\ce{3I2(s) + 6OH^-(aq) -> 5I^-(aq) + IO3^-(aq) + 3H2O(l)}\]
+\[\ce{3I3^-(aq) + 6OH^-(aq) -> 8I^-(aq) + IO3^-(aq) + 3H2O(l)}\]
+\item \tb{盧戈氏碘液（Lugol's iodine）}：5\%元素碘、10\%碘化鉀的水溶液，黃褐色。
+\item \tb{碘酊/碘酒（Tincture of iodine/Iodine tincture）}：通常由2\%-7\%的元素碘與2\%-5\%的碘化鉀或碘化鈉溶於酒精和水的混合溶液組成，是常用的醫療用消毒液，深紅色。
+\item 50°C以下可與烷和鹵烷以外的多數有機物形成錯合物，色深藍、紫紅至暗棕。
+\end{itemize}
+\ssc{鹵化氫或氫鹵酸}
+\subsubsection{總論}
+\begin{itemize}
+\item 酸性，具還原力。
+\item 鍵能、極性：\ce{HF}>\ce{HCl}>\ce{HBr}>\ce{HI}
+\item 鍵長、酸解離常數、還原力（因鍵長）：\ce{HF}<\ce{HCl}<\ce{HBr}<\ce{HI}
+\item 沸點、分子間作用力（\ce{HF}有氫鍵來，其餘僅凡得瓦力）：\ce{HF}>\ce{HI}>\ce{HBr}>\ce{HCl}
+\item 熔點：\ce{HI}>\ce{HF}>\ce{HBr}>\ce{HCl}
+\item 酸解離常數（族間因電負度，同族因鍵長）：\ce{H2O}<\ce{H2S}<\ce{H2Se}<\ce{HF}<\ce{H2Te}<\ce{HCl}<\ce{HBr}<\ce{HI}
+\item 可與具非共軛多重鍵之有機物發生氫鹵化加成反應。
+\end{itemize}
+\subsubsection{氟化氫或氫氟酸}
+\begin{itemize}
+\item 氟化氫氣體無色、具強腐蝕性，溶於水為氫氟酸，弱酸，解離常數\scinote{3.53}{-4}，揮發性溶質。
+\item 水溶液中，\ce{F-}可與\ce{HF}形成氟化氫根（bifluoride）\ce{HF2-}，結構為 [F-H-F]$^-$ 3c–4e 鍵鍵角180°，在價鍵理論中是最強的氫鍵。
+\item 氫氟酸主要用於半導體業與玻璃触刻業。接觸 50\% 濃度以下之氫氟酸時，一般不會造成立即之疼痛，但數小時後會漸漸發生組織之破壞，此時再處理可能已導致永久性傷害。氟離子腐蝕力很強，會直接穿透組織，與鈣結合，形成不溶於水的氟化鈣。人體神經系統需要 大量的鈣雕子和鉀離子才能發揮功能，一旦鈣與氟離子結合，神經傳導遭阻斷，將導致劇烈 疼痛，鈣離子突然的大量耗損，也會引發心律不整，可能致命。
+\item \tb{氟化鈣/螢石/氟石（Fluorite）}\ce{CaF2}：無色固體。莫氏硬度4。
+\item \tb{六氟鋁酸鈉/冰晶石（Cryolite）}\ce{Na3AlF6}：無色固體。
+\item 工業上以螢石與濃硫酸共熱至300°C製備：
+\[\ce{CaF2(s) + H2SO4(aq) -> CaSO4(s) + 2HF(g)}\]
+\item 實驗室中以硫酸與氟化鈣共熱製備：
+\[\ce{CaF2(s) + H2SO4(aq) -> 2HF(aq) + CaSO4(s)}\]
+\item 氟化物能讓牙齒表面的琺瑯質變得更堅硬，抵抗酸性物質的侵蝕，減少蛀牙的風險。
+\item \tb{飲水加氟（Water fluoridation）}：向公共供水中投入約 1 ppm 的氟離子，有健康疑慮，一般投入的氟化物是六氟矽酸\ce{H2SiF6}、六氟矽酸鈉\ce{Na2SiF6}或氟化鈉\ce{NaF}。
+\item \tb{含氟牙膏與漱口水}：在牙膏與漱口水中加入約 1000-1500 ppm 的氟離子，一般加入的氟化物是六氟矽酸\ce{H2SiF6}、六氟矽酸鈉\ce{Na2SiF6}或氟化鈉\ce{NaF}。
+\end{itemize}
+\subsubsection{氯化氫或氫氯酸/鹽酸}
+\begin{itemize}
+\item 純氯化氫為無色氣體，易溶於水，水溶液稱鹽酸，無雜質時為無色液體，一般工業製造者含有少量氯化鐵使呈淡黃色。
+\item 工業上將氯鹼法產物氫氣與氯氣直接燃燒製備氯化氫氣體，使溶於稀鹽酸可製備濃鹽酸。
+\item 實驗室中以氯化鈉與濃硫酸共熱製備，以向上排氣法收集：
+\[\ce{2NaCl(s) + H2SO4(aq) -> Na2SO4(aq) + 2HCl(g)}\]
+\item 一般實驗室濃鹽酸約35\%。
+\end{itemize}
+\subsubsection{溴化氫或氫溴酸}
+實驗室中以溴化鈉與濃磷酸（不可用濃硫酸，因其氧化力太強）共熱製備：
+\[\ce{NaBr(s) + H3PO4(aq) ->[$\Delta$] NaH2PO4(aq) + HBr(g)}\]
+\subsubsection{碘化氫或氫碘酸}
+\begin{itemize}
+\item 實驗室中以碘化鈉與濃磷酸（不可用濃硫酸，因其氧化力太強）共熱製備：
+\[\ce{NaI(s) + H3PO4(aq) ->[$\Delta$] NaH2PO4(aq) + HI(g)}\]
+\item \tb{碘片}：指碘化鉀片。可用於治療甲狀腺相關疾病。服用足夠量三十分鐘後可發生阻塞游離碘集入甲狀腺的功能，放射性碘由曝露環境吸入到甲狀腺約需要十到十二小時，故吸入後三到四小時服用碘片可阻擋約一半。日本福島核輻射災害時，日本政府以福島電廠半徑30公里內民眾為發放碘片對象。
+\item 較高氧化數陽離子（不含汞(II)）與碘之鹽常不穩定並自發分解成碘與較低氧化數陽離子與碘之鹽，如：
+\[\ce{2FeI3 -> 2FeI2 + I2}\]
+\[\ce{2CuI2 -> 2CuI + I2}\]
+\end{itemize}
+\ssc{鹵氧酸}
+\sssc{結構}
+\bit
+\item 次氯酸根離子\ce{ClO-}：Cl-O$^-$
+\item 亞氯酸根離子\ce{ClO2^-}：O=Cl-O$^-$（共振）
+\item 氯酸根離子\ce{ClO3^-}：O=Cl(=O)-O$^-$（共振）
+\item 過氯酸根離子\ce{ClO4^-}：O=Cl(=O)(=O)-O$^-$（共振）
+\item 次溴酸根離子\ce{BrO-}：Br-O$^-$
+\item 亞溴酸根離子\ce{BrO2^-}：O=Br-O$^-$（共振）
+\item 溴酸根離子\ce{BrO3^-}：O=Br(=O)-O$^-$（共振）
+\item 過溴酸根離子\ce{BrO4^-}：O=Br(=O)(=O)-O$^-$（共振）
+\item 次碘酸根離子\ce{IO-}：I-O$^-$
+\item 亞碘酸根離子\ce{IO2^-}：O=I-O$^-$（共振）
+\item 碘酸根離子\ce{IO3^-}：O=I(=O)-O$^-$（共振）
+\item 偏過碘酸根離子\ce{IO4^-}：O=I(=O)(=O)-O$^-$（共振）
+\item 正/原過碘酸根離子\ce{IO6^{5-}}：O=I(-O$^-$)(-O$^-$)(-O$^-$)(-O$^-$)-O$^-$（共振）
+\eit
+\subsubsection{總論}
+\begin{itemize}
+\item 無氟氧酸，僅有氯、溴、碘氧酸。
+\item 氧化劑，酸中氧化力較高，氯氧酸為常見強氧化劑。
+\item 氧化力（因氧拉電子）：\ce{HClO4}>\ce{HClO3}>\ce{HClO2}>\ce{HClO}
+\item 酸解離常數：\ce{HClO4}<\ce{HClO3}<\ce{HClO2}<\ce{HClO}
+\item 酸解離常數（因電負度）：\ce{HClO3}>\ce{HBrO3}>\ce{HIO3}
+\item 氯酸與溴酸不穩定，碘酸穩定。
+\end{itemize}
+\subsubsection{次氯酸}
+\begin{itemize}
+\item 結構 H-O-Cl，化學式HClO或HOCl，弱酸、強氧化劑。
+\item 多數液態與固態\tb{氯系漂白劑（Chlorine-based bleaches）}的主要有效成分，如漂白粉\ce{Ca(OCl)Cl}、強力漂白粉\ce{Ca(OCl)2}、漂白水\ce{NaOCl}，原理為\ce{ClO-}可氧化多數色素、汙漬使褪色。
+\item 氯氣溶於冷水或鹼性溶液製備：
+\[\ce{Cl2(g) + H2O(l) -> HCl(aq) + HOCl(aq)}\]
+\item 電解冷濃食鹽水並攪拌製備：
+\[\ce{Cl^-(g) + H2O(l) -> ClO- + H2(g)}\]
+\item 次氯酸根為鹼性：
+\[\ce{ClO^-(aq) + H2O(l) -> HOCl(aq) + OH^-(aq)}\]
+\item 次氯酸根加鹽酸產生氯氣：
+\[\ce{ClO^-(aq) + HCl(aq) -> OH^-(aq) + Cl2(g)}\]
+\[\ce{HClO(aq) + HCl(aq) -> H2O(l) + Cl2(g)}\]
+故含次氯酸根的清潔劑與鹽酸一起使用會釋放有毒氯氣。
+\item \tb{漂白粉}\ce{Ca(OCl)Cl}：可由氯氣通入石灰水製備：
+\[\ce{Cl2(g) + Ca(OH)2(aq) -> Ca(OCl)Cl(aq) + H2O(l)}\]
+\item \tb{強力漂白粉}\ce{Ca(OCl)2}：可由氯氣通入生石灰製備：
+\[\ce{2Cl2(g) + 2CaO(s) -> Ca(OCl)2(aq) + CaCl2(aq)}\]
+\item \tb{漂白水}\ce{NaOCl(aq)}：常見家用漂白水為3\%-6\%次氯酸鈉水溶液。次氯酸鈉具腐蝕性，不適合洗手。
+\end{itemize}
+\subsubsection{亞氯酸}
+\begin{itemize}
+\item 弱酸，極不安定，不能得其純質，亞氯酸鹽較安定，強氧化劑，可漂白。
+\item 通二氧化氯於鹼製備：
+\[\ce{2ClO2(aq) + 2OH^-(aq) -> ClO2^-(aq) + ClO3^-(aq) + H2O(l)}\]
+\item 通二氧化氯於過氧化鈉或過氧化氫的鹼性水溶液製備：
+\[\ce{2ClO2(g) + HO2^-(aq) + OH^-(aq) -> 2ClO2^-(aq) + O2(g) + H2O(g)}\]
+\end{itemize}
+\subsubsection{氯酸}
+\begin{itemize}
+\item 強酸，不安定，不易得高於40\%者，氯酸鹽較安定。
+\item 加熱次氯酸製備：
+\[\ce{3ClO^-(aq) ->[$\Delta$] 2Cl^-(aq) + ClO3^-(aq)}\]
+\item 通氯氣於熱鹼製備：
+\[\ce{3Cl2(g) + 6OH^-(aq) -> 5Cl^-(aq) + ClO3^-(aq) + 3H2O(l)}\]
+\item 電解熱濃食鹽水並攪拌製備：
+\[\ce{Cl^-(g) + 3H2O(l) -> ClO3^- + 3H2(g)}\]
+\end{itemize}
+\subsubsection{過氯酸}
+\begin{itemize}
+\item 強酸，酸解離常數大於所有氫鹵酸與氯氧酸，氯的含氧酸中最安定者，有純質存在但不安定。
+\item 將氯酸鹽加熱至約400°C分解可分解得過氯酸鹽：
+\[\ce{4MClO3(s) ->[$\Delta$] 3MClO4(s) + MCl(s)}\]
+\item 過度電解濃食鹽水於正/陽極製備：
+\[\ce{2Cl2(g) + 8H2O(l) -> 2ClO4^-(aq) + 16H^+(aq) + 14e^-}\]
+\eit
+\sssc{碘酸}
+\bit
+\item 白色固體，可溶於水，弱酸中較強者，純質與水溶液均穩定。
+\item 以氧化劑氧化碘製備，以氯氣為例：
+\[\ce{I2(s) + 5Cl2(g) + 6H2O(l) -> 2HIO3(aq) + 10HCl(aq)}\]
+\item \tb{碘酸鉀}：白色固體，可溶於水，弱鹼。
+\eit
+\ssc{鹵氧化物}
+\sssc{結構}
+\bit
+\item 二氟化氧\ce{OF2}：F-O-F
+\item 二氟化二氧\ce{O2F2}：F-O-O-F
+\item 二氟化三氧\ce{O3F2}：F-O-O-O-F
+\item 二氟化四氧\ce{O4F2}：F-O-O-O-O-F
+\item 二氟化五氧\ce{O5F2}：F-O-O-O-O-O-F
+\item 二氟化六氧\ce{O5F2}：F-O-O-O-O-O-O-F
+\item 一氟化二氧\ce{O2F}：O-O-F（不與氟鍵結的氧有孤對電子）
+\item 二氧化氯\ce{ClO2}：O=Cl=O
+\item 一氧化二氯\ce{Cl2O}：Cl-O-Cl
+\eit
+\sssc{二氧化氯}
+\bit
+\item 11°C以上為黃綠色氣體，-59°C至11°C為紅棕色氣體，強氧化劑，可溶於水，不水解，最穩定與最常見的鹵素氧化物。
+\item 常用於造紙業及水、家用、醫用與空氣的消毒、除霉、除臭、漂白。
+\item 亞氯酸加酸製備：
+\[\ce{5ClO2^-(aq) + 4H^+(aq) -> 4ClO2(aq) + Cl^-(aq) + 2H2O(l)}\]
+\item 氯酸根離子加過氧化鈉或過氧化氫的酸性水溶液製備：
+\[\ce{2ClO3^-(aq) + HO2^-(aq) + 3H^+(aq) -> 2ClO2(aq) + 2H2O(l) + O2(g)}\]
+\eit
+\ssc{鹵素間化合物}
+\sssc{一氯化碘}
+\begin{itemize}
+\item 1814年給呂薩克發現，是首個被發現的鹵素間化合物。
+\item 紅棕色液體，熔點27.2°C，氯的氧化數 -1、碘的氧化數 +1，高極性，氧化劑。溶於非還原性強酸而不反應。
+\item 溶於水反應：
+\[\ce{2ICl(g/l) + 2H2O(l) -> 2HCl(aq) + 2HI(aq) + O2(g)}\]
+\[\ce{4ICl(g/l) + 2H2O(l) -> 4HCl(aq) + 2I2(aq) + O2(g)}\]
+\[\ce{5ICl(g/l) + 3H2O(l) -> 5HCl(aq) + HIO3(aq) + 2I2(aq)}\]
+\item 將氯氣通入過量碘晶體製備：
+\[\ce{Cl2(g) + I2(s) -> 2ICl(g/l)}\]
+\item 可與具非共軛多重鍵之有機物發生鹵化加成反應。
+\end{itemize}
+\ssc{貴族氣體（Noble gases）/惰性氣體（Inert gases）/稀有氣體/鈍氣}
+\subsubsection{總論}
+一般均呈單原子態，化性最低，比氮氣更不活潑。在大氣中含量極少。
+\subsubsection{氦}
+\begin{itemize}
+\item $^3_2\tx{He}$：穩定，天然豐度0.0002\%。
+\item $^4_2\tx{He}$：穩定，天然豐度99.9998\%。
+\item 熔點-272.2°C，沸點-268.9°C，STP密度0.1787 g/L。極輕而不可燃，故常用於填充飛船、氣球等。
+\item 占空氣約0.00053\%。
+\item 占油井所產天然氣約2\%，為工業上取用氦氣主要來源，將天然氣壓縮冷卻使液化，最後未被液化的氣體為氦氣。
+\item 不溶於血液，故\tb{潛水（氣）瓶（Diving (gas) cylinder）}常用氧氣與氦氣之混合氣體，以避免\tb{潛水夫病（Divers' disease）/減壓症（Decompression sickness, DCS）/沉箱病（Caisson disease）}。
+\item \tb{液態氦}：常作為冷卻劑。
+\subsubsection{氖}
+\begin{itemize}
+\item 熔點-248.7°C，沸點-245.9°C，STP密度0.9010 g/L。
+\item 工業上以液態空氣分餾得到。
+\item 真空放電管放出橙紅色光，因折射率較低而能透過濃霧，被用於霓虹燈、半導體晶圓切割、飛機著陸與輪船進港領航等。
+\end{itemize}
+\subsubsection{氬（Yă）}
+\begin{itemize}
+\item 熔點-189.2°C，沸點-185.7°C，STP密度1.783 g/L。
+\item 占空氣約 0.934\%，為乾燥空氣中含量第三大之成分，亦於火山與溫泉釋出的氣體中發現，為地殼含量最多的惰性氣體。
+\item 工業上以液態空氣分餾得到。
+\item 高溫下不與鎢絲作用，故常用於灌充燈泡以延長其壽命。
+\item \tb{氬焊}：氬氣可作為焊接時避免金屬被氧化的保護氣體。
+\item 不可燃故可用於滅火，雖較貴但優點為幾乎不會破壞任何火場中的物品，常用於火場中有特殊儀器時使用。
+\end{itemize}
+\subsubsection{氪}
+\begin{itemize}
+\item 熔點-156.6°C，沸點-152.9°C，STP密度3.741 g/L。
+\item 工業上以液態空氣分餾得到。
+\item 占空氣約 1 ppm，價格昂貴。
+\item 真空放電管放出淡藍色光，可用作高亮度光源的填充氣體。
+\end{itemize}
+\subsubsection{氙（Xīan）}
+\begin{itemize}
+\item 熔點-112°C，沸點-107.1°C，STP密度5.862 g/L。
+\item 工業上以液態空氣分餾得到。
+\item 占空氣約 394 ppb，價格昂貴。
+\item 真空放電管放出淡藍色光，可用作高亮度光源的填充氣體。
+\item 可作為麻醉劑。
+\item \tb{固體氙}：在約140 GPa下，固體氙晶體結構會從面心立方轉變為六方最密排，並開始呈現金屬性；在約155 GPa壓力以上完全進入金屬態，呈天藍色。
+\end{itemize}
+\subsubsection{氡}
+\begin{itemize}
+\item 熔點-111°C，沸點-61.8°C，STP密度9.911 g/L。放射性氣體。
+\item 自然界中極微量。只有$^{222}$Rn 具有足夠長的半衰期（3.825 天），使其能夠從其產生的土壤和岩石中釋放，但自然界中仍極微量。建築材料如花崗岩、磚砂、水泥等可能釋出氡。
+\item Th-232衰變鏈中有Ra-224\text{\textalpha}衰變（半衰期3.66天）為Rn-220再\text{\textalpha}衰變（半衰期55.6秒）為Po-216，最終穩定原子為Pb-208。
+\item U-238衰變鏈中有Ra-226\text{\textalpha}衰變（半衰期1,600年）為Rn-222再\text{\textalpha}衰變（半衰期3.825天）為Po-218，最終穩定原子為Pb-206。
+\item 吸入後因\text{\textalpha}衰變釋出\text{\textalpha}粒子而在呼吸系統造成輻射損傷，會導致肺癌。
+\end{itemize}
+\subsubsection{惰性氣體化合物}
+\begin{itemize}
+\item 1962年巴勒特（Neil Bartlett）首次製造出惰性氣體化合物\tb{六氟鉑酸氙}黃色固體離子化合物 Xe$^+$(PtF$_6$)$^-$；同年，美國阿岡（Argonne）國立試驗所在400°C將氟和氙直接合成\tb{四氟化氙}白色分子化合物，熔點140°C。
+\item 較穩定（但仍極不穩定）者為氙的化合物，如：\tb{二氟化氙}\ce{XeF2}、\tb{四氟化氙}\ce{XeF4}、\tb{六氟化氙}\ce{XeF6}、\tb{二氟一氧化氙}\ce{XeOF2}、\tb{三氧化氙}\ce{XeO3}。
+\item 2000年合成出\tb{氟化氫氬}\ce{HArF}。
+\item 極端高溫下\ce{Kr}、\ce{Xe}、\ce{Rn}可與氟或/與氧化合。
+\item \ce{He}、\ce{Ne}迄今仍無合成出任何化合物。
+\end{itemize}
+
+
+\section{金屬元素及其化合物}
+\ssc{金屬氧化總論}
+\subsubsection{金屬還原氫}
+金屬還原非金屬化氫生成金屬陽離子（作為離子晶體沉澱或溶於水中）與氫氣，反應性：
+\begin{itemize}
+\item 鹼金屬、鈣、鍶、鋇與冷水、熱水、水蒸氣、具氫鍵的化合物（如乙醇）自發反應。
+\item 鹼金屬與水反應產生火花並可能燃燒。
+\item 鎂與熱水自發反應。
+\item 鎂、鋁、錳、鋅、鉻、鐵與熱水蒸氣自發反應。
+\item 鹼金屬、鹼土金屬、鋁、錳、鋅、鉻、鐵、鈷、鎳、錫、鉛等還原電位為負之金屬與非或低氧化性酸（如鹽酸、稀硫酸）自發反應。
+\item 銅、汞、銀、鉑、金等還原電位為正之金屬無法還原非金屬化氫。
+\end{itemize}
+\subsubsection{鹼金屬與鹼土金屬氫化物}
+\begin{itemize}
+\item 氫化鹼金屬為白色離子晶體，具極強還原性，遇酸或水立即反應並可能引發氫氣燃燒甚至爆炸，在潮溼空氣中劇烈反應並可能自燃，在乾燥空氣中不或緩慢反應，鋰、鈉、鉀與氫氣需加熱至約200°C以上才能反應生成之。
+\item 氫化鈣、鍶或鋇為白色離子晶體，具強還原性，遇酸立即反應並可能引發氫氣燃燒甚至爆炸，遇水劇烈反應並可能引發氫氣燃燒，在潮溼空氣中劇烈反應，在乾燥空氣中不或緩慢反應，鈣、鍶、鋇與氫氣需加熱至約300°C以上才能反應生成之。
+\item 氫化鎂為白色晶體，鍵結性質介於離子鍵與共價鍵之間，具還原性，遇酸劇烈反應並可能引發氫氣燃燒，遇水或在潮溼空氣中緩慢反應，在乾燥空氣中不反應，鎂與氫氣需高溫高壓才能反應生成之，通常以間接方法合成。
+\item 氫化鈹為白色共價網狀固體，不溶於水，遇酸迅速反應，在水或潮溼空氣中不或緩慢反應，在乾燥空氣中不反應，可接受路易斯鹼作為配體形成配位化合物，鈹與氫氣非極端條件不反應，以間接方法合成。
+\end{itemize}
+\subsubsection{鹼金屬與鹼土金屬氮化物與磷化物}
+通性：離子化合物固體，\ce{Be3N2}、\ce{Be3P2}具部分共價性，金屬氮化物遇水水解生成金屬氫氧化物與氨，金屬磷化物遇水水解生成金屬氫氧化物與磷化氫。
+
+\begin{longtable}[c]{|p{0.2\tw}|p{0.2\tw}|p{0.2\tw}|p{0.2\tw}|}
+\hline
+氮化物 & 顏色 & 室溫乾燥下自發分解 & 金屬在氮氣中燃燒 \\\hline
+\endhead
+\ce{Li3N} & 紫紅 & 否 & 易 \\\hline
+\ce{Na3N} & 紅棕或深藍 & 否 & 否 \\\hline
+\ce{K3N} & 淡黃 & 是 & 否 \\\hline
+\ce{Be3N2} & 淡黃 & 否 & 極高溫 \\\hline
+\ce{Mg3N2} & 黃 & 否 & 高溫 \\\hline
+\ce{Ca3N2} & 紅棕 & 否 & 高溫 \\\hline
+\ce{Sr3N2} & 黑 & 否 & 高溫 \\\hline
+\end{longtable}\FloatBarrier
+\sssc{鈍化（Passivation）}
+指材料外的保護層，使材料不易與外界反應，如氧化鋁緻密保護層可保護內部之鋁不氧化。
+\subsubsection{金屬在空氣中氧化}
+\begin{longtable}[c]{|p{0.15\tw}|p{0.3\tw}|p{0.15\tw}|p{0.2\tw}|}
+\hline
+元素 & 產物 & 速率 & 鈍化 \\\hline\endhead
+鋰 & \ce{Li2O} & 劇烈 & 弱，疏鬆 \\\hline
+鈉 & \ce{Na2O}、\ce{Na2O2} & 劇烈 & 弱，疏鬆 \\\hline
+鉀 & \ce{K2O}、\ce{K2O2}、\ce{KO2} & 劇烈 & 弱，疏鬆 \\\hline
+銣 & \ce{Rb2O}、\ce{RbO}、\ce{RbO2}  & 劇烈 & 弱，疏鬆 \\\hline
+銫 & \ce{Cs2O}、\ce{CsO}、\ce{CsO2}  & 劇烈 & 弱，疏鬆 \\\hline
+鈹 & \ce{BeO} & 極慢 & 極強，緻密 \\\hline
+鎂 & \ce{MgO} & 中 & 中 \\\hline
+鈣 & \ce{CaO} & 快 & 弱，疏鬆 \\\hline
+鍶 & \ce{SrO}、\ce{SrO2} & 快 & 弱，疏鬆 \\\hline
+鋇 & \ce{BaO}、\ce{BaO2} & 快 & 弱，疏鬆 \\\hline
+鋁 & \ce{Al2O3} & 快 & 極強，緻密 \\\hline
+錫 & \ce{SnO2} & 慢 & 中 \\\hline
+鉛 & \ce{Pb3(OH)2(CO3)2} & 慢 & 中 \\\hline
+鈧 & \ce{Sc2O3} & 慢 & 強，緻密 \\\hline
+鈦 & \ce{TiO2} & 慢 & 極強，緻密 \\\hline
+鉻 & \ce{Cr2O3} & 慢 & 極強，緻密 \\\hline
+錳 & \ce{MnO2$\cdot x$H2O} & 中 & 極弱，多孔易剝落 \\\hline
+鐵 & \ce{FeOOH$\cdot x$H2O} & 快 & 極弱，多孔易剝落 \\\hline
+鈷 & \ce{CoO}、\ce{Co3O4} & 慢 & 中 \\\hline
+鎳 & \ce{NiO} & 慢 & 中 \\\hline
+銅 & \ce{Cu2(OH)2CO3} & 慢 & 強，緻密 \\\hline
+鋅 & \ce{Zn5(OH)6(CO3)2$\cdot$H2O} & 中 & 強，緻密 \\\hline
+\end{longtable}\FloatBarrier
+\sssc{金屬的防鏽}
+原理：
+\begin{itemize}
+\item 保護層鈍化：如緻密氧化層、油漆。
+\item \tb{陰極防鏽（Catholic protection）}：將較活潑金屬或其合金與被保護金屬連接，活潑金屬作為陽極被腐蝕，而被保護金屬則作為陰極。優點為無須完全包覆被保護金屬。有時通直流電以加強此保護。
+\end{itemize}
+實作：
+\begin{itemize}
+\item 塗油或油漆。
+\item 合金：如不鏽鋼。
+\item 電鍍隔離/鍍保護層：電鍍一層金屬，利用擬鍍金屬或其氧化物層隔離外界空氣。\tb{鍍鋅鐵/白鐵}生成鹼式碳酸鋅保護層，兼具陰極防鏽與鈍化。\tb{鍍錫鐵/馬口鐵（Tinplate）}生成二氧化錫保護層，常用於製造罐頭，但鐵比錫易氧化，故若鍍錫部分剝落則內部鐵生鏽更快。
+\item 將較活潑金屬或其合金與被保護金屬連接，有時通直流電。常用於橋梁、離岸風電機、石油平臺、混凝土鋼鐵結構物。
+\end{itemize}
+\ssc{元素態鹼金屬（Alkali Metal）}
+\subsubsection{總論}
+\begin{itemize}
+\item 均為體心立方堆積。
+\item 相較於其他金屬，鹼金屬金屬鍵較弱，質軟可用小刀切割。鋰、鈉、鉀密度小於 1。
+\item 活性、原子半徑、離子半徑、原子容、氣相中還原力均原子序愈大愈大。
+\item 金屬鍵強弱（硬度、熔點、汽化熱）、離子水合能、游離能、沸點均原子序愈大愈小。
+\item 強還原劑，化合物中氧化數均為 +1，可還原氫氣生成鹼金屬氫化物。
+\item 鋰、鈉、鉀須儲存在烴類中，如礦物油（mineral oil）/煤油（kerosene）/石蠟（paraffin）、石油醚（Petroleum ether）或甲苯，以免與空氣或水反應；銣、銫須儲存在惰性氣體或真空中。實驗後剩餘的鈉、鉀應投入低溫的乙醇中使反應成乙醇鹼金屬，不再冒出氫氣氣泡後加入水使反應完全，方可排入下水道。
+\item 還原電位：Li > Rb > K > Cs > Na。與氣相中還原力排序不同主要因為水合能，鹼金屬中鋰的水合能最大，因其半徑小電荷密度高。
+\end{itemize}
+\subsubsection{元素態鋰}
+\begin{itemize}
+\item 鋰元素在自然界中不以元素態存在，而以化合物存在於海水及地殼，占海水約25ppm，占地殼約65ppm，主要礦物如\tb{鋰輝石（spodumene）}\ce{LiAl(SiO3)2}。
+\item 銀白色有光澤柔軟金屬。
+\item 可用於製造鋰電池。
+\end{itemize}
+\subsubsection{元素態鈉}
+\begin{itemize}
+\item 鈉元素在自然界中不以元素態存在，而以化合物存在於海水及地殼，占海水約1.05\%，占地殼約2.6\%，主要礦物如智利硝石\ce{NaNO3}、鈉長石（Albite）\ce{NaAlSi3O8}、冰晶石（Cryolite）\ce{Na3AlF6}。
+\item 銀白色有光澤柔軟金屬，在空氣中燃燒發出黃色火焰，密度比水小。
+\item 工業上以當氏法製備。
+\item 工業上重要還原劑，可用於提煉鈦金屬等：
+\[\ce{TiCl4(g) + 4Na(l) -> 4NaCl(l) + Ti(s)}\]
+\item 可用於製備四乙基鉛（過去含鉛汽油的抗震劑）。
+\end{itemize}
+\subsubsection{元素態鉀}
+\begin{itemize}
+\item 鉀元素在自然界中不以元素態存在，而以化合物存在於海水及地殼，占海洋約0.038\%，占地殼約2.4\%，主要礦物如光鹵石\ce{KMgCl3$\cdot$6H2O}。
+\item 銀白色有光澤柔軟金屬。
+\item 工業上以高溫低壓下將液態元素態鈉與熔融態的氯化鉀反應製得：
+\[\ce{Na(l) + KCl(l) -> NaCl(l) + K(l)}\]
+不以電解法生產是因為鉀的還原電位大，又鉀的揮發性較鈉高，高溫下生產易形成鉀蒸氣揮發而使反應易向右進行。
+\item 海水中鉀離子濃度約為鈉離子十分之一係因植物會吸收鉀離子，且鉀鹽對水溶解度較鈉鹽小，不易由逕流沖刷入海。
+\end{itemize}
+\sssc{元素態銣}
+銀白色有光澤柔軟金屬。
+\subsubsection{元素態銫}
+\begin{itemize}
+\item 金黃色有光澤柔軟金屬。
+\item 游離能最小，為製造光電池最佳材料。
+\item 可用於製作原子鐘。
+\item The second [...] is defined by taking the fixed numerical value of the caesium frequency, $\Delta\nu_{Cs}$, the unperturbed ground-state hyperfine transition frequency of the caesium 133 atom, to be 9192631770 when expressed in the unit Hz, which is equal to s$^{-1}$.
+\end{itemize}
+\ssc{鹼金屬化合物}
+\subsubsection{總論}
+\begin{itemize}
+\item 離子化合物，但鋰的化合物鍵結具共價性，如\ce{LiCl}與\ce{LiClO4}可溶於乙醇、丙酮。
+\item 可溶於水。鹼金屬氫氧化物水溶液為強鹼。
+\item 鹼金屬過氧化物與超氧化物是強氧化劑，能和水、二氧化碳等反應放出氧氣。
+\item 鹼金屬氫化物溶於水：
+\[\ce{MH + H2O -> MOH + H2}\]
+\item 鹼金屬氧化物溶於水：
+\[\ce{M2O + H2O -> 2MOH}\]
+\item 鹼金屬過氧化物溶於水：
+\[\ce{M2O2 + 2H2O -> 2MOH + H2O2}\]
+\item 鹼金屬超氧化物溶於水：
+\[\ce{2MO2 + 2H2O -> 2MOH + H2O2 + O2}\]
+\end{itemize}
+\subsubsection{過氧化鈉}
+\begin{itemize}
+\item 淡黃色。
+\item 以加熱過量氧化鈉製備。
+\item 可用於漂白木漿，以生產紙張和紡織品。
+\end{itemize}
+\subsubsection{氯化鈉/食鹽（Table salt）}
+\begin{itemize}
+\item 白色氯化鈉型晶體，有鹹味。
+\item 常用於食物調味與貯存、製造碳酸鈉、氯氣、鹽酸、氫氧化鈉、金屬鈉、漂白粉等。溶液可作為冷卻浴。
+\end{itemize}
+\subsubsection{氫氧化鈉/苛性鈉（caustic soda）/燒鹼（lye）}
+\begin{itemize}
+\item 白色固體，強腐蝕性，能腐蝕玻璃，具滑膩感，易溶於水，水溶液強鹼、甚滑膩。
+\item 空氣中極易潮解。
+\item 易吸收二氧化碳形成碳酸鈉（主要）或碳酸氫鈉（過量二氧化碳）：
+\[\ce{2NaOH(aq) + CO2(g) -> Na2CO3(aq) + H2O(l)}\]
+\[\ce{NaOH(aq) + CO2(g) -> NaHCO3(aq)}\]
+\item 工業上以氯鹼法製備。
+\item 工業上常用於製造肥皂、紙漿、煉鋁、製藥、人造絲。
+\item 實驗室常用於滴定酸，因易與空氣中的二氧化碳與水反應，故須先標定，常用鄰苯二甲酸氫鉀（KHP）標定之，反應：
+\[\tx{鄰苯二甲酸氫鉀(aq)} + \ce{NaOH(aq) ->}\tx{鄰苯二甲酸鉀鈉(aq)} + \ce{H2O(l)}\]
+\end{itemize}
+\subsubsection{碳酸鈉/純鹼/蘇打（soda ash, sal soda）/洗滌鹼（Washing soda）/洗滌蘇打}
+\begin{itemize}
+\item 無水碳酸鈉為白色粉末。主要水合物晶體為十水合碳酸鈉，俗稱石鹼。易溶於水，鹼性，但難溶於醇。無腐蝕性，可用於洗滌。
+\item 加熱不分解；加酸分解產生二氧化碳與氫氧化鈉；加入鈣、鎂離子產生碳酸鈣與碳酸鎂沉澱。
+\item 工業上以索耳末法或侯氏制鹼法製備。
+\item 可用於暫時硬水軟化、製造玻璃、紙漿、洗滌劑等。
+\end{itemize}
+\subsubsection{碳酸氫鈉/酸式碳酸鈉/小蘇打/焙用鹼（baking soda）/發酵蘇打}
+\begin{itemize}
+\item 白色粉末。可溶於水，鹼性，溶解度與鹼性均小於碳酸鈉。
+\item 為索耳末法與侯氏制鹼法中間產物，但因其中製得的碳酸氫鈉含微量氨，不易由此精製。工業上以二氧化碳通入飽和碳酸鈉水溶液中沉澱出溶解度較小的碳酸氫鈉製備。
+\item 加熱、加酸均分解產生二氧化碳與氫氧化鈉；加入鈣、鎂離子均無沉澱。
+\item \tb{酸鹼（/）二氧化碳滅火器}：碳酸氫鈉粉末與硫酸混合產生二氧化碳來滅火：
+\[\ce{NaHCO3(s) + H^+(aq) -> Na^+(aq) + H2O(l) + CO2(g)}\]
+\item \tb{發粉/焙粉/泡打粉（baking powder）}：碳酸氫鈉與酒石酸氫鉀混合粉末，為食品用膨鬆劑，受熱產生酒石酸鉀鈉與二氧化碳氣體，後者使麵糰蓬鬆，可用於烘焙麵包、餅乾等：
+\[\ce{NaHCO3 + KHC4H4O6 -> KNaC4H4O6 + H2O + CO2}\]
+\item 可作為胃制酸劑，中和胃酸\ce{HCl}；可用於處理動物纖維、製造清潔劑與漱口水等。
+\end{itemize}
+\sssc{硝酸鈉/鈉硝石（Sodium nitrate）/智利硝石（Chile saltpeter）}
+\bit
+\item 白色固體。
+\item 常用於肥料、食品添加劑。
+\item 鈉硝石中常含有少量\ce{NaIO3}。
+\item 工業上用碳酸鈉或碳酸氫鈉中和硝酸或硝酸銨製備。
+\eit
+\subsubsection{氫氧化鉀/苛性鉀（caustic potash）}
+\begin{itemize}
+\item 白色固體。
+\item 工業上電解濃氯化鉀水溶液製造氫氧化鉀、氯氣和氫氣，類似氯鹼法。
+\item 極易潮解，易吸收水氣，易吸收二氧化碳形成碳酸鉀：
+\[\ce{2KOH + CO2 -> K2CO3 + H2O}\]
+\end{itemize}
+\subsubsection{硝酸鉀/硝石（niter or nitre）}
+\begin{itemize}
+\item 白色固體，良好的氧化劑。
+\item 工業上將智利硝石\ce{NaNO3}與氯化鉀水溶液強熱，利用高溫時溶解度\ce{KNO3}$\gg$\ce{NaCl}使後者析出，過濾後蒸乾濾液製備。
+\item 強熱後兩步驟分解釋放氣體：
+\[\ce{2KNO3(s) -> 2KNO2(s) + O2(g)}\]
+\[\ce{4KNO2(s) -> 2N2(g) + 3O2(g) + 2K2O(s)}\]
+\item \tb{黑（色）火藥（Gunpowder or black powder）}：75\%硝酸鉀\ce{KNO3(s)}、15\%木炭\ce{C(s)}與10\%硫磺粉末\ce{S(s)}混合，爆炸產生碳酸鉀、硫酸鉀、硫化鉀、二氧化碳、氮氣、一氧化碳等。
+\item 重要肥料，可提供植物可吸收的氮和鉀，亦為火藥與煙火之重要原料。
+\end{itemize}
+\sssc{氯酸鉀}
+白色固體，良好的氧化劑，性質類似硝酸鉀，火藥與過去閃光燈之原料，亦用於實驗室中製備氧氣與作為氧化劑，易因打擊而爆炸，不可研磨。
+\subsubsection{碳酸鉀/草鹼}
+\begin{itemize}
+\item 以二氧化碳通入氫氧化鉀製備。
+\item \tb{草木灰（Wood ash）}：燃燒草木所得灰燼。約含10\%碳酸鉀。
+\item 重要肥料，亦用於製造玻璃、清潔劑、氫氧化鉀。
+\end{itemize}
+\subsubsection{超氧化鉀}
+可置於呼吸面罩中提供礦工、消防人員、潛水人員等在緊急狀況時的氧氣來源：
+\[\ce{4KO2(s) + 4CO2(g) + 2H2O(g) -> 4KHCO3(s) + 3O2(g)}\]
+\ssc{元素態鹼土金屬（Alkaline Earth Metal）}
+\subsubsection{總論}
+\begin{itemize}
+\item 鈹、鎂為六方最密堆積，鈣、鍶為面心立方堆積，鋇、鐳為體心立方堆積，故金屬鍵強弱（硬度、熔點、汽化熱）不規則。
+\item 活性、原子半徑、離子半徑、原子容、氣相中還原力均原子序愈大愈大，且小於同週期鹼金屬。鈹尤安定，鹼土金屬中僅鈹不與氫氣、水、乾冰反應、鎂不與冷水反應。
+\item 游離能原子序愈大愈小。
+\item 強還原劑，化合物中氧化數均為 +2。
+\item 還原電位：Li > Rb > K > Cs > Ba > Sr > Ca > Na > Mg > Al。（鈹化合物為共價故難溶於水）
+\item 電荷密度較鹼金屬大，故水合能、金屬鍵強弱（硬度、熔點、汽化熱）均大於鹼金屬。
+\item 鈣、鍶、鋇須儲存在烷類中，如煤油、石油醚或甲苯，以免與空氣或水反應。
+\end{itemize}
+\sssc{元素態鈹}
+鋼灰色堅硬有毒金屬。
+\subsubsection{元素態鎂}
+\begin{itemize}
+\item 鎂元素在自然界中不以元素態存在，而以化合物存在於海水及地殼，占海水約0.135\%，占地殼約2.5\%，主要礦物如\tb{菱鎂礦（Magnesite）}\ce{MgCO3}、\tb{白雲石（Dolomite）}\ce{CaCO3$\cdot$MgCO3}。
+\item 鎂離子是生物體重要物質，是葉綠素的重要成分，一些肥料、食品添加劑含鎂鹽；鎂帶是實驗室中常用還原劑。
+\item 銀白色固體，比重 1.74。應密封儲存。
+\item 工業上以道氏法或皮江法製備。
+\item 在空氣中燃燒放出強烈白光生成氧化鎂，過去曾用於各式強光源。過去照相使用的閃光燈利用氯酸鉀與鎂之混合粉末燃燒提供短暫白色亮光。
+\item 使用量第三高的金屬材料，僅次於鐵和鋁。
+\end{itemize}
+\sssc{元素態鈣}
+白色金屬，占地殼3\%，為地殼含量第三高之金屬與第五高的元素，主要存在形式為碳酸鈣。
+\sssc{元素態鍶}
+銀白色有光澤金屬。
+\sssc{元素態鋇}
+銀白色有光澤金屬。
+\sssc{元素態鐳}
+銀白色有光澤放射性金屬，常用於放射性醫療。
+\ssc{鹼土金屬化合物}
+\subsubsection{總論}
+\begin{itemize}
+\item 由於半徑小電荷密度高，鈹的化合物鍵結為共價鍵，鎂的化合物鍵結兼具共價性與離子性，鈣、鍶、鋇、鐳的化合物鍵結為離子鍵。
+\item 氫氧化物溶解度溶解度原子序愈大愈大，鈹為兩性金屬。
+\item 硫酸鹽、鉻酸鹽溶解度原子序愈大愈小。
+\item 草酸鹽溶解度\ce{Mg^{2+}} >\ce{Sr^{2+}} >\ce{Ba^{2+}} >\ce{Ca^{2+}}。
+\item 碳酸鹽溶解度\ce{Mg^{2+}} >\ce{Ba^{2+}} >\ce{Sr^{2+}} >\ce{Ca^{2+}}。
+\item 鹼土金屬化合物溶解度、鹼解離常數小於同週期鹼金屬。
+\item 鎂、鈣、鍶、鋇過氧化物是強氧化劑，能和水、二氧化碳等反應放出氧氣。
+\item 鎂、鈣、鍶、鋇氫化物溶於水：
+\[\ce{MH2 + 2H2O -> M(OH)2 + 2H2}\]
+\item 鎂、鈣、鍶、鋇氧化物溶於水：
+\[\ce{MO + H2O -> M(OH)2}\]
+\item 鎂、鈣、鍶、鋇過氧化物溶於水：
+\[\ce{MO2 + 2H2O -> M(OH)2 + H2O2}\]
+\item 僅鋰可在約300°C以上高溫與氮氣反應，得紫紅色氮化鋰。
+\end{itemize}
+\subsubsection{碳酸鎂/菱鎂礦（Magnesite）}
+難溶於水。
+\subsubsection{氧化鎂/苦土}
+\begin{itemize}
+\item 質輕白色粉末，熔點 2852°C，遇火不燃，耐火性極佳，遇水生成微溶於水氫氧化鎂沉澱。
+\item 工業上以煅燒菱鎂礦或氫氧化鎂製備。
+\item 可用於製造坩（gān）堝（guō）（crucible）、耐火磚、爐子的內裡。可作為胃制酸劑。
+\end{itemize}
+\subsubsection{氫氧化鎂}
+\begin{itemize}
+\item 白色固體。
+\item 微溶於水而呈弱鹼，可作為胃制酸劑。
+\item 以氧化鎂加入水或氧化鈣加入海水製備。
+\item 水溶液攪拌形成具氫氧化鎂懸浮的白色渾濁水溶液稱鎂乳。
+\end{itemize}
+\sssc{過氯酸鎂}
+白色固體，強氧化劑，具強吸水性，是常用中性乾燥劑。
+\subsubsection{氯化鈣}
+\begin{itemize}
+\item 可溶於水。熔點 714°C。味苦。
+\item 自然界多以鹽滷\ce{CaSO4$\cdot$6H2O}存在。
+\item 工業上以道氏法製備（無須電解步驟）。
+\end{itemize}
+\subsubsection{硫酸鎂}
+\begin{itemize}
+\item 可溶於水。
+\item 工業上以加硫酸於菱鎂礦製備：
+\[\ce{MgCO3(s) + H2SO4(aq) -> MgSO4(aq) + H2O(l) + CO2(g)}\]
+\item \tb{七水合硫酸鎂/瀉鹽}：無色晶體，易溶於水，溶液具苦味，可作為瀉藥。
+\item 工業上可作為鞣皮的藥劑。
+\end{itemize}
+\subsubsection{碳酸鈣/灰石/石灰石/石灰岩（Limestone）/方解石（Calcite）}
+\begin{itemize}
+\item 難溶於水，溶解放熱，溶解度與二氧化碳分壓與質子濃度正相關，與溫度負相關：
+\[\ce{CaCO3(s) + H2O(l) + CO2(aq) -> Ca(HCO3)2(aq)}\]
+\[\ce{CaCO3(s) + 2H^+(aq) -> Ca^{2+}(aq) + H2O(l) + CO2(g)}\]
+\item 自然界甚多，天然碳酸鈣礦物純度通常為\tb{方解石（Calcite）}>\tb{大理石（Marble）}>\tb{石灰岩（Limestone）}。方解石莫氏硬度3，是大理石和石灰岩的主要成分。石灰岩是沉積岩，經變質作用後形成大理石。
+\item 實驗室可用之與過量二氧化碳製備碳酸氫鈣水溶液，為暫時硬水：
+\[\ce{CaCO3(s) + H2O(l) + CO2(g) <=> Ca(HCO3)2(aq)}\]
+\item \tb{鐘乳石（Stalactite）與石筍（Stalagmite）}：碳酸鈣溶於碳酸水溶液形成碳酸氫鈣水溶液，順岩石流下或滴下，後逆反應變回碳酸鈣，經長時間累積形成之岩石。由上而下生長者稱鐘乳石，由下而上生長者稱石筍。為喀斯特（Karst）/岩溶/溶蝕地貌的典型特徵。
+\item 工業上可用於製造水泥等。
+\end{itemize}
+\subsubsection{氧化鈣/生石灰/石灰（Lime）}
+\begin{itemize}
+\item 遇水生成氫氧化鈣。可作為鹼性乾燥劑。
+\item 工業上以加熱灰石使分解製備，是製造水泥的首步驟：
+\[\ce{CaCO3(s) ->[$\Delta$] CaO(s) + CO2(g)}\]
+\item 工業上可用於吸收廢棄中的硫氧化物：
+\[\ce{2CaO(s) + 2SO2(g) + O2(g) -> 2CaSO4(s)}\]
+\[\ce{CaO(s) + SO3(g) -> CaSO4(s)}\]
+\end{itemize}
+\subsubsection{氫氧化鈣/熟石灰/消石灰}
+\begin{itemize}
+\item 白色固體。
+\item 以氧化鈣與水反應製備。
+\item 澄清氫氧化鈣水溶液稱\tb{石灰水}，攪拌形成具氫氧化鈣懸浮的白色渾濁水溶液稱\tb{石灰乳}。
+\item 二氧化碳通入澄清石灰水，發生：
+\[\ce{CO2(g) + Ca(OH)2(aq) -> CaCO3(s) + H2O(l)}\]
+使渾濁；待氫氧化鈣用盡，發生
+\[\ce{CaCO3(s) + CO2(g) +H2O(l) -> Ca(HCO3)2(aq)}\]
+使澄清。
+\item 過去用於建築材料，因其會吸收空氣中的二氧化碳，而形成碳酸鈣逐漸硬化。
+\end{itemize}
+\subsubsection{碳化鈣/電石/電土}
+\begin{itemize}
+\item \ce{CaC2}，乙炔二價陰離子與鈣離子之離子化合物，白色固體。
+\item 工業上將生石灰與煤焦隔氧強熱至2000-3000°C製備，其中煤焦可由煤乾餾製得，生石灰可由灰石經強熱放出二氧化碳製得：
+\[\ce{CaO(s) + 3C(s) ->[$\Delta$] CaC2(g) + CO(g)}\]
+\item 加水可製備乙炔：
+\[\ce{CaC2 + 2H2O -> C2H2 + Ca(OH)2}\]
+\item 與氮氣在高溫下反應生成氰胺化鈣\ce{CaCN2}與碳：
+\[\ce{N2(g) + CaC2(s) -> CaCN2(s) + C(s)}\]
+\end{itemize}
+\subsubsection{氯化鈣}
+\begin{itemize}
+\item 無水氯化鈣為白色固體，具強吸水性，是常用中性乾燥劑。可溶於水，溶液可作為冷卻浴。
+\item 工業上為索耳末法副產品。
+\item 實驗室中以碳酸鈣加入鹽酸中製備：
+\[\ce{CaCO3(s) + 2HCl(aq) -> CaCl2(aq) + H2O(l) + CO2(g)}\]
+\end{itemize}
+\subsubsection{硫酸鈣}
+\begin{itemize}
+\item \tb{石膏（Gypsum）}\ce{CaSO4$\cdot$2H2O}：莫氏硬度2，白色半透明晶體，自然界硫酸鈣主要存在形式，非食品級石膏工業上為溼法製磷酸的副產品。
+\item \tb{熟石膏/燒石膏（Bassanite）/半水石膏}\ce{CaSO4$\cdot\frac{1}{2}$H2O}。
+\item 石膏加熱至125°C以上脫水變成熟石膏。
+\item 熟石膏加熱至250°C以上脫水變成無水硫酸鈣。
+\item 熟石膏加水體積稍脹並硬化成石膏，可用於製模、塑像、外科。
+\item \tb{無水硫酸鈣}：白色固體，可用於製造粉筆，因具吸水性亦可作為乾燥劑。
+\item 食品級者可加入豆漿使膠體粒子凝析，形成豆腐、豆花。
+\end{itemize}
+\ssc{元素態貧金屬（Poor metals）/後過渡金屬（Post-transition metals）}
+\subsubsection{總論}
+在金屬中電負度較高，熔點和沸點較低（略介於鹼金屬與鹼土金屬之間），易熔鑄，機械強度較差，質較軟，延展性較高。
+\subsubsection{元素態鋁}
+\begin{itemize}
+\item 鋁在自然界中不以元素態存在，而以化合物存在，占地殼約8.23\%，為地殼含量最高之金屬與第三高的元素，主要存在於\tb{鋁土礦/（鋁）礬土（Bauxite）}\ce{Al2O3$\cdot x$H2O}中。
+\item 銀白色固體。活性大，強還原劑。質輕，比重2.8，僅鐵的約三分之一，具高導熱性、高導電性、富延展性。兩性金屬。
+\item 工業上以拜耳法純化鋁礬土再以霍爾法製備。
+\item 為使用量第二高的金屬，較銅便宜，可製成電線、電纜，常替代銅作為高壓輸電線。質輕，具鈍化，常用於鍋具、家具、門窗、航太、食器、鋁罐。鋁箔常用於包裝食品、材料等。常經陽極氧化保護內部金屬。具有高抗輻射能力，常用於天線。
+\item \tb{鋁合金}：95\%以上的鋁與少量銅、矽、錳、鎂等元素的合金常用於鍛造等，常較鋁更硬而質輕。
+\item \tb{鋁鎂合金}：含2-30\%鎂，比重小，機械強度高，易加工、鑄造，常用於汽車、航太、電腦與手機之機殼。
+\item \tb{鋁鈧合金}：鋁與低於0.4\%的鈧的合金，質輕，常用於航空器外殼。
+\item 鋁粉受熱產生絢爛火花，常用於仙女棒。
+\item 可與氫氧化鈉作為水管暢通劑，放大量熱可能引發氫氣燃燒甚至爆炸須小心使用：
+\[\ce{2Al(s) + 2NaOH(s) + 6H2O(l) -> Na^+(aq) + Al(OH)4^-(aq) + 3H2(g)}\]
+\item 可與氧化鐵(III)混合作為鋁熱劑，引燃後放大量熱，使產物鐵為熔融態，可用於焊接：
+\[\ce{2Al(l) + Fe2O3(l) -> Al2O3(l) + 2Fe(l)}\]
+\end{itemize}
+\subsubsection{元素態錫}
+\begin{itemize}
+\item 主要礦物如\tb{錫石（Cassiterite）}\ce{SnO2}。
+\item 銀白色無毒固體，熔點 231.9°C，熔點大於所有鹼金屬而小於所有鹼土金屬，於金屬中甚低，易熔鑄。
+\item 工業上以碳還原錫石製備。
+\item 錫箔可用於包裝材料、器械等，現多被較便宜的鋁箔取代。
+\item \tb{銲料（Solder）/銲錫}：在銲接的過程中被用來接合金屬零件的導電物質， 熔點需低於被焊物的熔點。傳統最常用的是錫鉛銲料/軟焊料（soft solder），如焊接電路最常用的 60/40 錫/鉛或 63/37 錫/鉛銲料，過去曾以 50/50 錫/鉛銲料焊接水管造成神經系統等的嚴重慢性傷害。無鉛銲料則以錫銀銅合金銲料最常用。
+\end{itemize}
+\subsubsection{元素態鉛}
+\begin{itemize}
+\item 含鉛礦物主要有\tb{方鉛礦（Galena）}\ce{PbS}；含鉛礦物含鉛量多低。
+\item 黑色固體，比重大，熔點 327.5°C，於金屬中甚低，易熔鑄，便宜，可阻擋多數游離輻射。
+\item 工業上以兩步法製備。
+\item \tb{鉛中毒（Lead poisoning）}：含鉛之物多極毒，因鉛離子可和酵素形成錯合物破壞生物代謝與內分泌功能，可對生物造成嚴重急性傷害甚至死亡，長期少量攝取則對神經系統造成嚴重慢性傷害。
+\item \tb{活字金/印刷金（Type metal）}：用於活字印刷的合金，通常約 75\%鉛、20\%銻、5\%錫，可能亦含有少量鋁與銅。
+\item 常用於鉛磚、鉛防護衣、鉛蓄電池負極板。
+\end{itemize}
+\ssc{鋁化合物}
+\sssc{總論}
+\bit
+\item \ce{Al^{3+}}的水合能甚大，離子化合物晶格能多亦大。
+\item \ce{Al^{3+}}極化能力強，鹵化物具共價性。
+\item \ce{Al^{3+}}為酸：
+\[\ce{[Al(H2O)6]^{3+} -> [Al(H2O)5(OH)]^{2+} + H^+}\]
+\eit
+\subsubsection{氧化鋁/鋁土（Alumina）/鋁土礦/（鋁）礬土（Bauxite）}
+\begin{itemize}
+\item 白色固體。兩性物質。
+\item 工業上以拜耳法純化鋁礬土製備。
+\item 強熱氫氧化鋁可得無定形之白色氧化鋁粉末。
+\item \tb{剛玉（Corundum）}：高純度氧化鋁，無色，莫氏硬度9，常用於飾品。
+\item \tb{剛石粉（Emery）}：含四氧化三鐵的剛玉粉末，黑色，常用於研磨。
+\item \tb{紅寶石（Ruby）}：含鉻(III)的剛玉，紅色，常用於飾品。
+\item \tb{藍寶石（Sapphire）}：含鐵(III)與鈦(IV)的剛玉，藍色，常用於飾品。
+\item \tb{人造寶石}：氧化鋁強熱熔化並填加少許過渡金屬氧化物，再經養晶過程可製成人造寶石，常用於飾品。
+\item 常用於鐘錶、機械軸承等精密機械。
+\end{itemize}
+\subsubsection{氫氧化鋁}
+\begin{itemize}
+\item 白色固體。兩性物質。
+\item 在鋁鹽溶液中加入非濃氨水之弱鹼可得白色膠狀氫氧化鋁沉澱：
+\[\ce{Al^{3+}(aq) + 3OH^-(aq) -> Al(OH)3(s)}\]
+\item 能膠結水中之濁質使沉澱，可作為淨水劑；能吸附水中之色素使固著，可作為媒染劑。
+\end{itemize}
+\subsubsection{氯化鋁}
+\begin{itemize}
+\item \ce{AlCl3}，具部分共價性，昇華點190°C，介於離子化合物氯化鎂的熔點708°C與共價分子四氯化矽的熔點-70°C之間。
+\item 在約500°C以上氣相呈單體，結構 Cl-Al(-Cl)-Cl，鋁為sp$^2$混成。
+\item 在液相與約500°C以下氣相呈雙聚體\ce{Al2Cl6}，結構 Cl-Al(-Cl1)(-Cl)<-Cl-Al(<-1)(-Cl)-Cl，鋁為sp$^3$混成，每個鋁與兩個終端氯以典型共價鍵鍵結並與兩個橋接鋁以配位共價鍵鍵結成近似四面體形，整體無極性。熔融態不導電。
+\item 在固相呈單斜晶系結構，鋁的配位數六並呈近似八面體形，正常昇華點 178°C。
+\item 可溶於乙醇。
+\end{itemize}
+\subsubsection{礬（Alum）}
+指實驗式$\mathrm{M}^+.\mathrm{N}^{3+}.(\ce{SO4^{2-}})_2\cdot 12\ce{H2O}$的複鹽，其中$\mathrm{M}^+$為一價金屬陽離子或銨根，$\mathrm{N}^{3+}$為三價金屬陽離子。礬類互為異質同形體（isomorphism），晶體為正八面體。$\mathrm{M}^+.\mathrm{N}^{3+}.(\ce{SO4^{2-}})_2\cdot 12\ce{H2O}$稱$\mathrm{M}\mathrm{N}$礬，當$\mathrm{N}$為鋁時可省略$\mathrm{N}$或稱$\mathrm{M}$明礬，當$\mathrm{M}$為鉀時可省略$\mathrm{M}$。
+
+常見鋁礬如：
+\begin{itemize}
+\item \tb{明礬}\ce{KAl(SO4)2$\cdot$12H2O}：無色，常作為媒染劑、淨水劑、造紙。
+\item \tb{鈉礬}\ce{NaAl(SO4)2$\cdot$12H2O}：無色。
+\item \tb{銨礬}\ce{NH4Al(SO4)2$\cdot$12H2O}：無色。
+\item \tb{鐵礬}\ce{KFe(SO4)2$\cdot$12H2O}：淡紫色。
+\item \tb{鉻礬}\ce{KAl(SO4)2$\cdot$12H2O}：黑紫色。
+\item \tb{錳礬}\ce{KAl(SO4)2$\cdot$12H2O}：淡紅色。
+\end{itemize}
+
+\tb{製備}：工業上以蒸發硫酸鋁與硫酸某的混合溶液結晶製備某礬，而硫酸鋁可通過以硫酸處理鋁土礦獲得。
+\ssc{錫化合物}
+\subsubsection{總論}
+\bit
+\item 錫離子較亞錫離子安定，亞錫離子是強還原劑，可：
+\begin{itemize}
+\item 還原汞離子為亞汞離子：
+\[\ce{Sn^{2+}(aq) + 2Hg^{2+}(aq) -> Sn^{4+}(aq) + Hg2^{2+}(aq)}\]
+\item 還原鐵離子為亞鐵離子：
+\[\ce{Sn^{2+}(aq) + 2Fe^{3+}(aq) -> Sn^{4+}(aq) + 2Fe^{2+}(aq)}\]
+\item 還原過錳酸鉀為二價錳離子：
+\[\ce{5Sn^{2+}(aq) + 2MnO4^-(aq) + 16H^+(aq) -> 5Sn^{4+}(aq) + 2Mn^{2+}(aq) + 8H2O(l)}\]
+\item 還原二鉻酸鉀為三價鉻離子（橘紅色變綠色）：
+\[\ce{3Sn^{2+}(aq) + Cr2O7^{2-}(aq) + 14H^+(aq) -> 3Sn^{4+}(aq) + 2Cr^{3+}(aq) + 7H2O(l)}\]
+\item 還原鉻酸鉀為三價鉻離子（黃色變綠色）：
+\[\ce{3Sn^{2+}(aq) + 2CrO4^{2-}(aq) + 16H^+(aq) -> 3Sn^{4+}(aq) + 2Cr^{3+}(aq) + 8H2O(l)}\]
+\end{itemize}
+\item \ce{Sn^{4+}}極化能力強，鹵化物具共價性。
+\eit
+\subsubsection{氯化錫(II)}
+\bit
+\item 常見為二水合物，無或白色固體，強還原劑。
+\item 可溶於水，略水解為鹽酸與\ce{Sn(OH)Cl(s)}白色沉澱，酸中不水解：
+\[\ce{SnCl2(aq) + H2O(l) <=> Sn(OH)Cl(s) + HCl(aq)}\]
+\item 可將錫金屬溶於濃鹽酸釋出氫氣製備，蒸發其溶液可得二水氯化錫(II)無色針狀結晶，再蒸乾可得無水氯化錫(II)。
+\eit
+\subsubsection{氯化錫(IV)}
+\bit
+\item 無水氯化錫(IV)常溫常壓下為無色發煙液體，熔點 -34°C；五水氯化錫(IV)常溫常壓下為白色固體，熔點 56°C；沸點 "114.5°C。
+\item 114.5°C 以上通過量氯氣於無水氯化錫(II)或錫金屬製備。
+\item \tb{煙幕彈}：軍事上將五水氯化錫(IV)加氨水可製成煙幕彈，引爆時，加熱至 114.5°C 以上，使氯化錫(IV)蒸氣與氨氣和水蒸氣發生反應產生白色氫氧化錫(IV)與白色氯化銨濃煙：
+\[\ce{SnCl4(g) + 4NH3(g) + 4H2O(g) -> Sn(OH)4(s) + 4NH4Cl(s)}\]
+\eit
+\ssc{鉛化合物}
+\subsubsection{總論}
+\bit
+\item 鉛(II)/亞鉛離子較鉛(IV)/鉛離子安定，後者是強氧化劑。
+\item \ce{Pb^{4+}}極化能力強，鹵化物具共價性。
+\eit
+\subsubsection{一氧化鉛/密陀僧（Litharge）/黃丹（Massicot）/鉛黃}
+\begin{itemize}
+\item 淡黃色固體。
+\item 燃燒鉛製備：
+\[\ce{2Pb(s) + O2(g) ->[$\Delta$] 2PbO(s)}\]
+\item 加熱硝酸鉛(II)製備：
+\[\ce{2Pb(NO3)2(s) -> [$\Delta$] 2PbO(s) + 4NO2(g) + O2(g)}\]
+\item 可用於製造玻璃、琺瑯、釉藥及其他鉛化物。
+\end{itemize}
+\subsubsection{四氧化三鉛/紅鉛/鉛丹}
+\begin{itemize}
+\item 橙紅色固體。
+\item 約500°C下燃燒一氧化鉛製備：
+\[\ce{6PbO(s) + O2(g) -> 2Pb3O4(s)}\]
+\item 可用於金屬的防鏽底漆、紅色顏料。
+\end{itemize}
+\subsubsection{二氧化鉛}
+\begin{itemize}
+\item 棕黑色固體。不溶於水，強氧化劑。
+\item 四氧化三鉛加硝酸製備：
+\[\ce{Pb3O4(s) + 4HNO3(aq) -> PbO2(s) + 2Pb(NO3)2(aq) + 2H2O(l)}\]
+\item 鉛蓄電池負極板為之。
+\end{itemize}
+\subsubsection{二碳酸二氫氧鉛(II)/鹼式碳酸鉛/鉛白}
+\ce{Pb3(OH)2(CO3)2}。白色固體。可用作白色顏料。
+\subsubsection{鉻酸鉛(II)/鉻黃}
+黃色固體。可用作黃色顏料。鉻酸鉀加硫酸鉛(II)製備。
+\ssc{過渡元素（Transition Elements）總論}
+\subsubsection{d 區總論}
+\item 第 3 至 12 族依序為 IIIB, IVB, VB, VIB, VIIB, VIIIB, VIIIB, VIIIB, IB, IIB 族。
+\item 均為金屬，具金屬光澤，是電與熱的良導體。
+\item 除 IIB 族外，金屬鍵強，有高熔點、沸點、汽化熱。
+\item IIB 族電子組態 [$(n-2)$VIIIA]$(n-1)$d$^{10}n$s$^2$，內層 d$^{10}$ 甚安定，不具價電子性質，使其只剩下兩個價電子，類似 IIB 族，且化合物中氧化數以 +2 為主。
+\item IB 族電子組態 [$(n-2)$VIIIA]$(n-1)$d$^{10}n$s$^1$，故較穩定。
+\item d$^0$ 與 d$^{10}$ 以外有顏色，常用於顏料。
+\item 多易作為配位中心；多具多種化合物中氧化數，最高為 +8，如 OsO$_4$，氧化數高者多以共價含氧根離子存在，如\ce{VO2^+}、\ce{CrO4^-}、\ce{MnO4^-}；常可作為觸媒，如二氧化錳、五氧化二釩、鉑、鉑銠合金、鎳；常可除臭、殺菌等。
+\end{itemize}
+\subsubsection{第一列過渡元素總論}
+\begin{itemize}
+\item 熔沸點以 VB 最高。
+\item 原子半徑與離子半徑在第 3 至 10 族略隨原子序增加而漸小但變化甚小且有例外，第 10 至 12 族隨原子序增加而漸大。
+\item 第 3 至 11 族密度隨原子序增加而漸大，但鋅的密度在釩與鉻之間。
+\item 鈧的化合物中氧化數僅 +3，第 3 至 7 族最高氧化數即其族數，高氧化數時以共價性含氧根離子存在，如\ce{VO^{2+}}、\ce{VO2^+}、\ce{CrO4^{2-}}、\ce{MnO4^-}，IIIB 族化合物中穩定氧化數僅 +2, +3，銅的化合物中氧化數僅 +1, +2，鋅的化合物中氧化數僅 +2。
+\item 氧化電位除銅外皆大於零。
+\item 除銅為紅色固體，為其餘均為銀白色固體。
+\end{itemize}
+\sssc{稀土元素（Rare-earth element）}
+指鈧（Sc）、釔（Y）、鑭（La）、鈰（Ce）、鐠（Pr）、釹（Nd）、鉕（Pm）、釤（Sm）、銪（Eu）、釓（Gd）、鋱（Tb）、鏑（Dy）、鈥（Ho）、鉺（Er）、銩（Tm）、鐿（Yb）、鎦（Lu）。無放射性者在地殼中含量其實不少，蘊藏量較多者主要在中國大陸和南美洲，澳大利亞、印度、南非亦有，中國大陸掌握主要生產技術，生產和出口量達世界總供應量9成以上。在鋼鐵或有色金屬中加入極少量稀土元素就能明顯改善金屬材料性能，如強度、耐磨性與抗腐蝕能力。
+\sssc{貴金屬（Noble metals）}
+指釕（Ru）、銠（Rh）、鈀（Pd）、銀（Ag）、鋨（Os）、銥（Ir）、鉑（Pt）、金（Au），有時或不包含銀，有時或包含銅和汞。
+\sssc{鉑族金屬（Platinum group metals, PGM）}
+指釕、銠、鈀、鋨、銥、鉑。耐腐蝕、耐高溫、高機械強度、耐磨、低活性、常可催化反應，常用於珠寶、觸媒、藥物、電子元件。
+\sssc{耐火金屬/難熔金屬（Refractory metals）}
+指鈮、鉬、鉭、鎢和錸，即熔點在 2200°C 以上的非放射性金屬；也有定義指鈦、釩、鉻、鋯、鈮、鉬、釕、銠、鉿、鉭、鎢、錸、鋨和銥，即熔點在 1850°C 以上的非放射性金屬。它們具極高的熔點，在室溫下具高硬度、高密度與化學惰性，不易與其他元素反應。
+\ssc{鈧}
+\subsubsection{元素態鈧}
+銀白色固體。
+\subsubsection{氧化鈧}
+\ce{Sc2O3}，不溶於水的白色固體。
+\ssc{鈦}
+\subsubsection{元素態鈦}
+\begin{itemize}
+\item 占地殼約0.44\%，主要以二氧化鈦存在。
+\item 銀白色固體，強度高，強度質料比高於鋁，常用於航太等。
+\item 可在氮氣中燃燒，生成氮化鈦\ce{TiN}。
+\end{itemize}
+\subsubsection{三氧化二鈦}
+黑色半導體固體。
+\subsubsection{二氧化鈦/鈦白}
+\begin{itemize}
+\item 白色不溶於水粉末，為離子化合物但具有部分共價性。
+\item 結晶有高折射率，可作為寶石。
+\item 工業上以硫酸法製備。
+\item 常用作白色塗料，如修正液。
+\end{itemize}
+\subsubsection{氮化鈦}
+\begin{itemize}
+\item 堅硬棕色不溶於水固體。
+\item 常作為工具機塗層用於邊緣保持和耐腐蝕。
+\item 低溫下具超導特性。
+\end{itemize}
+\ssc{釩}
+\sssc{元素態釩}
+銀灰色、可延展金屬。
+\sssc{一氧化釩}
+灰色半導體固體。
+\sssc{三氧化二釩}
+反鐵磁性黑色固體。
+\sssc{釩醯離子/氧釩(IV)離子}
+\ce{VO^{2+}}。藍色。
+\sssc{二氧化釩}
+深藍色固體，兩性物質，溶於強酸形成釩醯離子，溶於強鹼形成複雜的多釩含氧酸根。
+\sssc{過釩醯離子/二氧釩(V)離子}
+\ce{VO2^+}。淡黃色。
+\sssc{五氧化二釩}
+橙色固體，氧化劑，微溶於水，溶於強酸形成過釩醯離子，溶於強鹼形成複雜的多釩含氧酸根。
+\ssc{鉻}
+\sssc{元素態鉻}
+是週期表上第一個違反遞建原理的元素。硬脆、鋼灰色金屬。
+\sssc{氧化鉻(II)/一氧化鉻}
+黑色離子固體，不穩定，空氣中迅速被氧化成三氧化二鉻並可能自燃。
+\sssc{氧化鉻(III)/三氧化二鉻/鉻綠}
+\bit
+\item 綠色離子固體，穩定性極高，兩性物質，不溶於中性水，復溶於強酸形成六水合鉻(III)離子，復溶於強鹼形成四氫氧化鉻(III)離子。
+\item 可作為綠色顏料、玻璃與陶瓷著色劑。
+\item 加熱二鉻酸銨脫氮氣與水或加熱氫氧化鉻(III)脫水製備。
+\eit
+\sssc{氧化鉻(IV)/二氧化鉻}
+黑色離子固體，有鐵磁性，磁帶原料，不溶於水。
+\sssc{氧化鉻(VI)/三氧化鉻}
+紫色離子固體，可溶於水呈酸性，與鹼反應。
+\sssc{鉻(III)離子、六水鉻(III)離子、氫氧化鉻(III)與四氫氧鉻(III)離子}
+\bit
+\item \tb{鉻(III)離子}\ce{Cr^{3+}}：綠色，在水中多形成六水鉻(III)離子。
+\item \tb{六水鉻(III)離子}\ce{[Cr(H2O)6]^{3+}}：紫色正八面體錯離子，安定。
+\item \tb{氫氧化鉻(III)}\ce{Cr(OH)3}：綠色離子固體，兩性物質，不溶於中性水，復溶於強酸形成鉻(III)離子，復溶於強鹼形成四氫氧鉻(III)離子。
+\item \tb{四氫氧鉻(III)離子}\ce{Cr(OH)4-}：藍色，鹼中安定。
+\eit
+\sssc{鉻酸根離子與二鉻酸根離子}
+\bit
+\item \tb{鉻酸根離子}\ce{CrO4^{2-}}：結構 O=Cr(=O)(-O$^-$)-O$^-$，黃色，鹼中安定，無氧化力。
+\item \tb{二鉻酸根離子}\ce{Cr2O7^{2-}}：結構 O=Cr(=O)(-O$^-$)-O-Cr(=O)(-O$^-$)=O，橘色，酸中安定，強氧化力。因與鉻酸鉀之可逆反應，氧化力與質子濃度正相關，\ce{K2Cr2O7(aq)}為實驗室常用強氧化劑，可氧化甲醇、一級醇、二級醇、草酸根、亞鐵離子、錫(II)離子等。
+\item \tb{二鉻酸鉀}\ce{K2Cr2O7}：橘色固體。
+\item 鉻酸根與二鉻酸根的可逆反應：
+\[\ce{2CrO4^{2-}(aq) + 2H^+(aq) <=>[\text{酸}][\text{鹼}] Cr2O7^{2-}(aq) + H2O(l)}\]
+\item 酸中二鉻酸根氧化雙氧水生成鉻(III)離子與氧氣：
+\[\ce{Cr2O7^{2-}(aq) + 3H2O2(aq) + 8H^+(aq) -> 2Cr^{3+}(aq) + 3O2(aq) + 7H2O(l)}\]
+\item 酸中二鉻酸根氧化醇生成鉻(III)離子與羧酸：
+\[\ce{2Cr2O7^{2-}(aq) + 3RCH3OH(aq) + 13H^+(aq) -> 3RCOO^-(aq) + 4Cr^{3+}(aq) + 11H2O(l)}\]
+\item 鹼中四氫氧鉻(III)離子還原雙氧水生成鉻酸根：
+\[\ce{2Cr(OH)4^-(aq) + 2OH^-(aq) + 3H2O2(aq) -> 2CrO4^{2-}(aq) + 8H2O(l)}\]
+\item 使用過量二鉻酸鉀氧化物質後，二鉻酸鉀用量可用硫酸鐵(II)銨水溶液\ce{(NH4)2Fe(SO4)2(aq)}滴定得，使剩餘的二鉻酸根與鐵(II)離子反應：
+\[\ce{Cr2O7^{2-}(aq) + 6Fe^{2+}(aq) + 14H^+(aq) -> 2Cr^{3+}(aq) + 6Fe^{3+}(aq) + 7H2O(l)}\]
+\eit
+\sssc{氯鉻酸根離子}
+\ce{CrO3Cl^-}，橙黃色，結構 O=Cr(=O)(-Cl)-O$^-$。
+\sssc{氯化鉻(II)}
+無水氯化鉻(II)為白色至灰綠色固體；四水合氯化鉻(II)為藍色固體；溶於水，溶液藍色。
+\sssc{乙酸鉻(II)}
+\bct\bfH\ctr\icg[width=0.6\textwidth]{cr.png}\caption{Smokefoot. 2025. Wikipedia.\\https://commons.m.wikimedia.org/wiki/File:Cr2(OAc)4aq2.svg}\ef\FB\ect
+\ce{[Cr2(CH3COO)4(H2O)2]}，磚紅色反磁性固體，錯合物，兩鉻以四重鍵相鍵結，各接受四個乙酸之各一氧與其中一水之氧為配體，微溶於水，可溶於熱水與強鹼。
+\ssc{錳}
+\sssc{元素態錳}
+硬脆銀灰色金屬，煉鋼、製造不鏽鋼重要原料。
+\sssc{二氧化錳/軟錳礦（Pyrolusite）}
+\bit
+\item 棕黑色固體，不溶於水。
+\item 加熱硝酸亞錳製備：
+\[\ce{Mn(NO3)2(s) -> [$\Delta$] MnO2(s) + 2NO2(g)}\]
+\item 氧化劑：
+\[\ce{MnO2(s) + 4H^+(aq) + 2e^- -> Mn^{2+}(aq) + 2H2O(l)}\]
+\item 受熱分解成四氧化三錳與氧氣：
+\[\ce{3MnO2(s) ->[$\Delta$] Mn3O4(s) + O2(g)}\]
+\item 盛裝過錳酸鉀的容器壁常殘留棕色固體，即\ce{MnO2}，可用草酸溶液洗除：
+\[\ce{2MnO2(s) + 2H2C2O4(aq) + 4H^+(aq) -> 4H2O(l) + 4CO2(g) + 2Mn^{2+}(aq)}\]
+\item 可作為碳鋅電池之去極劑之一，氧化吸附在碳棒上的氫氣。可用於製造火柴、玻璃與陶瓷著色劑。
+\item 常用於實驗室中製備\ce{Cl2}、\ce{Br2}、\ce{I2}；常作為催化劑。
+\eit
+\sssc{四氧化三錳}
+棕色固體。
+\sssc{三氧化二錳}
+黑色固體。
+\sssc{錳酸鉀}
+\bit
+\item 水溶液墨綠，只在強鹼中穩定。
+\item 工業上以空氣、二氧化錳與氫氧化鉀製備：
+\[\ce{2MnO2(s) + 4KOH(aq) + O2(g) -> 2K2MnO4(aq) + 2H2O(l)}\]
+\item 工業上以硝酸鉀、二氧化錳與氫氧化鉀製備：
+\[\ce{MnO2(s) + 2KOH(aq) + KNO3(aq) -> K2MnO4(aq) + H2O(l) + KNO2(aq)}\]
+\item 實驗室中以過錳酸鉀與氫氧化鉀製備：
+\[\ce{4KMnO4(aq) + 4KOH(aq) -> 4K2MnO4(aq) + 2H2O(l) + O2(g)}\]
+\item 錳酸根在非強鹼水溶液自發發生自身氧化還原反應，生成過錳酸根與二氧化錳：
+\[\ce{3MnO4^{2-}(aq) + 2H2O(l) -> 2MnO4^-(aq) + MnO2(s) + 4OH^-(aq)}\]
+\eit
+\sssc{過錳酸鉀}
+\bit
+\item 水溶液深紫，氧化力與質子濃度正相關，為實驗室常用強氧化劑與醫用消毒劑，可氧化烯、炔、醛基、羥基、甲酸、甲醇、一級醇、二級醇、甲苯、草酸根、亞鐵離子、錫(II)離子等。
+\item 照光或加熱分解，須保存於深棕色瓶中：
+\[\ce{2KMnO4(s) -> K2MnO4(s) + MnO2(s) + O2(g)}\]
+\item 實驗室常用於滴定還原劑，因易與空氣中物質反應而還原，故須先標定，常用草酸鈉標定之。
+\item 在酸性環境還原半反應，其中錳(II)離子為粉紅色，對氧化還原反應具有催化效果，稱自催化作用：
+\[\ce{MnO4^-(aq) + 8H^+(aq) + 5e^- -> Mn^{2+}(aq) + 4H2O(l)}\]
+\item 在中性或弱鹼性環境還原半反應，其中二氧化錳為棕黑色沉澱：
+\[\ce{MnO4^-(aq) + 2H2O(l) + 3e^- -> MnO2(s) + 4OH^-(aq)}\]
+\item 在強鹼性環境還原半反應，其中錳酸根為墨綠色：
+\[\ce{MnO4^-(aq) + e^- -> MnO4^{2-}(aq)}\]
+\eit
+\sssc{錳(II)離子}
+粉紅色，含其之鹽亦多為粉紅色，如無水與四水合氯化錳(II)。
+\ssc{鐵}
+\sssc{元素態鐵}
+\bit
+\item 占地殼約5\%，為地殼含量次高之金屬與第四高的元素，礦物眾多，主要礦物如\tb{赤鐵礦（hematite）}\ce{Fe2O3}、\tb{磁鐵礦（magnetite）}\ce{Fe3O4}、\tb{褐鐵礦（limonite）}\ce{FeOOH$\cdot x$H2O}、\tb{菱鐵礦（siderite）}\ce{FeCO3}、\tb{方鐵礦（wüstite）}\ce{FeO}、\tb{黃鐵礦（pyrite）}\ce{FeS2}、\tb{白鐵礦（Marcasite or white iron pyrite）}\ce{FeS2}。
+\item 銀灰色固體，具鐵磁性。
+\item 工業上以高爐煉鐵製造生鐵，產物為生鐵與爐渣，是多數鋼鐵材料製造的第一步驟。
+\item \tb{生鐵（Pig iron）/粗鐵（Crude iron）}：指高爐煉鐵的產物。含碳量超過2\%，常含少量矽、錳、磷、硫等。質硬脆，缺乏韌性與強度。
+\item \tb{鑄鐵（Cast iron）}：指含碳量超過2\%，含矽量1-3\%的鐵碳合金，如生鐵。質硬脆，缺乏韌性與強度，熔點約1200°C。通常僅能鑄造鐵器。
+\item \tb{熟鐵/鍛鐵（Wrought iron）/工業純鐵/軟鐵}：指含碳量小於0.02\%的鐵碳合金。質軟而富延展性，易鍛接。過去以鍛造（wrought）製成，即在高溫下對生鐵進行錘擊、軋製或其他加工以排除雜質，與低碳鋼成分相同，現多已被低碳鋼取代，有時也稱低碳鋼為熟鐵/鍛鐵。
+\item \tb{鋼（Steel）}：許多碳鐵合金材料的通稱，由一連串程序降低生鐵的含碳量、添加其他成分、改變結構與性質製成，分為鐵與碳為主的碳鋼（Carbon steel）和添加其他成分的合金鋼（Alloy steel）。
+\eit
+\sssc{碳鋼（Carbon steel）}
+\begin{longtable}[c]{|p{0.2\tw}|p{0.2\tw}|p{0.2\tw}|p{0.2\tw}|}
+\hline
+名稱 & 低碳鋼/軟鋼/熟鐵/鍛鐵 & 中碳鋼 & 高碳鋼/硬鋼 \\\hline
+含碳比例 & <0.2\% & 0.2-0.6\% & 0.6\%-1.5\% \\\hline
+延展性 & 高 & 中 & 低 \\\hline
+熔點 & 高 & 中 & 低 \\\hline
+硬度 & 低 & 中 & 高 \\\hline
+用途 & 鐵絲、鐵釘、鐵管、鐵鏈、電磁鐵 & 鐵軌、鋼梁、結構材料 & 剃刀、鑽頭、手術器械 \\\hline
+\end{longtable}\FloatBarrier
+\sssc{合金鋼}
+\bit
+\item \tb{不鏽鋼（Stainless steel or rustless steel）}：重量比例 (\%) C$\leq$1.2、Cr$\geq$10.5，因鉻造成鈍化可抗鏽、抗腐蝕，奧斯田（austenitic）晶體結構者常含較多 Ni，抗蝕性優，如 AISI 300 系列多數 8$\leq$Ni$\leq$26，Si 可增加硬度與耐酸性，耐酸鋼通常 13.5$\leq$Si$\leq$14.5，較耐氯化物者常含較多 Mo ($\approx$2-3) 如 316 不鏽鋼。常用於螺絲、機械零件、食器、刀具、機動交通工具、酸容器、酸導管等。
+\item \tb{高速鋼（High-speed steel, HSS）}：重量比例 (\%) 0.6$\leq$C$\leq$1.4、鐵以外金屬$\geq$7.0，通常 Cr=4、1$\leq$V$\leq$3，鎢高速鋼（如 T1）通常 W=18，鉬高速鋼（如 M2）通常 Mo=8、W=6。高溫至紅熱仍維持高硬度，常用於高速或高溫工具如刀具、鑽頭。
+\eit
+
+一些常用合金鋼：（依 AISI）
+\begin{longtable}[c]{|p{0.15\tw}|p{0.25\tw}|p{0.25\tw}|p{0.15\tw}|}
+\hline
+名稱 & 重量比例 (\%) & 性質 & 用途 \\\hline\endhead
+201 不鏽鋼 & Cr: 16.00-18.00, C: <0.15, Mn: 5.50-7.50, P: <0.06, S: <0.03, Si: <1.00, Ni: 3.50-5.50 & 防鏽效果差，工業級，價格低 & 鐵窗、鐵門、梁柱、結構材料等 \\\hline
+304 不鏽鋼 & C: <0.08, Mn: <2.00, P: <0.05, S: <0.03, Si: <1.00, Cr: 18.00-20.00, Ni: 8.00-10.50, N: <0.10 & 抗蝕性優，食品級 & 耐蝕餐具、容器、家具等 \\\cline{1-2}
+304L 不鏽鋼 & C: <0.03, Mn: <2.00, P: <0.05, S: <0.03, Si: <1.00, Cr: 18.00-20.00, Ni: 8.00-12.00, N: <0.10 & & \\\cline{1-2}
+304N 不鏽鋼 & C: <0.08, Mn: <2.00, P: <0.05, S: <0.03, Si: <1.00, Cr: 18.00-20.00, Ni: 8.00-10.50, N: 0.10-0.16 & & \\\cline{1-2}
+304LN 不鏽鋼 & C: <0.03, Mn: <2.00, P: <0.05, S: <0.03, Si: <1.00, Cr: 18.00-20.00, Ni: 8.00-12.00, N: 0.10-0.16 & & \\\hline
+316 不鏽鋼 & C: <0.08, Mn: <2.00, Si: <1.00, Cr: 16.00-18.00, Ni: 10.00-14.00, Mo: 2.00-3.00, N: <0.10 & 抗蝕性優，含鉬故抗氯化物能力優，醫療級 & 外科手術器材、高價鍋具 \\\cline{1-2}
+316L 不鏽鋼 & C: <0.03, Mn: <2.00, Si: <1.00, Cr: 16.00-18.00, Ni: 10.00-14.00, Mo: 2.00-3.00, N: <0.10 & & \\\cline{1-2}
+316N 不鏽鋼 & C: <0.08, Mn: <2.00, Si: <1.00, Cr: 16.00-18.00, Ni: 10.00-14.00, Mo: 2.00-3.00, N: 0.10-0.16 & & \\\cline{1-2}
+316LN 不鏽鋼 & C: <0.03, Mn: <2.00, Si: <1.00, Cr: 16.00-18.00, Ni: 10.00-14.00, Mo: 2.00-3.00, N: 0.10-0.16 & & \\\hline
+321 不鏽鋼 & C: <0.08, Mn: <2.00, P: <0.05, S: <0.03, Si: <1.00, Cr: 17.00-19.00, Ni: 9.00-12.00, N: <0.10, Ti: $\geq$5$\times$C & & \\\hline
+403 不鏽鋼 & C: <0.12, Mn: <1.00, Si: <0.75, P: <0.04, S: <0.03, Cr: 16.00-18.00, Ni: <0.06 & 抗蝕性差，食品級，價格較低 & 廚具、洗槽內層、汽車飾件與零組件 \\\hline
+M2 高速鋼 & C: 0.78-1.05, Cr: 3.75-4.50, W: 5.50-6.75, Mo: 4.5-5.5, V: 1.75-2.20, Si: 0.2-0.45, S: <0.30, P: <0.30, Mn: 0.15-0.40 & 高溫至紅熱仍維持高硬度 & 最常用的高速鋼，刀具與鑽頭 \\\cline{1-2}\cline{3-4}
+T1 高速鋼 & C: 0.62-0.80, Mn: 0.10-0.40, P: <0.03, S: <0.03, Si: 0.20-0.40, Cr: 3.75-4.50, V: 0.90-1.30, W: 17.25-18.75 & & 精細或高負載刀具與鑽頭 \\\cline{1-2}\cline{3-4}
+T15 高速鋼 & C: 1.50-1.60, Si: 0.15-0.40, Mn: 0.15-0.40, P: <0.03, S: <0.03, Cr: 3.75-5.00, Mo: <1.0, V: 4.5-5.25, W: 11.75-13.00, Co: 4.75-5.25 & & 較硬物或高速之刀具與鑽頭 \\\hline
+\end{longtable}\FloatBarrier
+\sssc{一氧化鐵/方鐵礦（wüstite）}
+黑色固體，不溶於水。
+\sssc{氫氧化鐵(II)}
+白色固體，不溶於水，鐵(II)離子溶液遇鹼沉澱出之。
+\sssc{四氧化三鐵/磁鐵礦（magnetite）}
+黑色固體，不溶於水，亞鐵磁性，常作為黑色顏料。
+\sssc{三氧化二鐵/赤鐵礦（hematite）、氫氧氧化鐵(III)與它們的水合物}
+\bit
+\item \tb{三氧化二鐵/赤鐵礦（hematite）}\ce{Fe2O3}：紅棕色固體，不溶於水。
+\item \tb{無水合氫氧氧化鐵(III)}\ce{FeOOH}：紅棕色固體，不溶於水。
+\item 無定形\ce{FeOOH$\cdot x$H2O}/\ce{Fe2O3$\cdot (2x+1)$H2O}/褐鐵礦（limonite）：鐵(III)離子溶液遇鹼沉澱出紅棕色膠狀固體為之；褐鐵礦泛指以之為成分的礦物，通常是黃至棕色無定形固體。
+\item 無定形一水合氫氧氧化鐵(III)\ce{FeOOH$\cdot$H2O}/氫氧化鐵(III)\ce{Fe(OH)3}/三水合氧化鐵(III)\ce{Fe2O3$\cdot$3H2O}：黃色固體，為黃色顏料 Pigment Yellow 42。
+\item 氫氧氧化鐵(III)、其水合物與三氧化二鐵(III)加熱後均脫水成無水合三氧化二鐵(III)：
+\[\ce{2FeOOH$\cdot x$H2O(s) -> Fe2O3(s) + $(2x+1)$H2O(g)}\]
+\eit
+\sssc{碳酸鐵(II)/菱鐵礦（siderite）}
+白色或黃色固體，不溶於水。
+\sssc{碳酸鐵(III)}
+紅棕色固體，不溶於水。
+\sssc{鐵鏽（Rust）}
+反應（省略水合）：
+\[\text{陽極：}\ce{Fe(s) -> Fe^{2+}(aq)\text{(白綠)} + 2e^-}\]
+\[\text{陰極：}\ce{2H2O(l) + O2(g) + 4e^- -> 4OH^-(aq)}\]
+\[\ce{4Fe^{2+}(aq) + O2(g) + 4H^+(aq) -> 4Fe^{3+}(aq)\text{(淡黃)} + 2H2O(l)}\]
+\[\ce{Fe^{2+}(aq) + 2H2O(l) <=> Fe(OH)2(s)\text{(白綠)} + 2H^+(aq)}\]
+\[\ce{Fe^{3+}(aq) + 2H2O(l) <=> FeOOH(s)\text{(紅棕)} + 3H^+(aq)}\]
+\[\ce{Fe(OH)2(s) <=> FeO(s)\text{(黑)} + H2O(l)}\]
+\[\ce{2FeOOH(s) <=> Fe2O3(s)\text{(紅棕)} + H2O(l)}\]
+\[\ce{2FeOOH(s) + Fe(OH)2(s) <=> Fe3O4(s)\text{(黑)} + 2H2O(l)}\]
+
+成分：主成分為紅棕色無定形\ce{FeOOH$\cdot x$H2O}，多孔易剝落，生鏽快。
+
+易鏽情況：
+\begin{itemize}
+\item 受機械應力，使鐵易失去電子。
+\item 潮溼。
+\item 遇酸，因質子為\ce{Fe^{2+}}氧化為\ce{Fe^{3+}}之反應物。
+\item 遇電解質水溶液，因電解質可加速電子傳遞。
+\item 遇氧化電位比鐵低的金屬，使鐵更易成為陽極。
+\end{itemize}
+\sssc{六水鐵(II)離子與六水鐵(III)離子}
+\bit
+\item \tb{六水鐵(II)離子}\ce{[Fe(H2O)6]^{2+}}：白綠，還原劑，遇過錳酸鉀、二鉻酸鉀會被氧化成鐵(III)離子，蘋果氧化即為鐵(II)離子被氧化成鐵(III)離子，不與\ce{I^-(aq)}反應。
+\item \tb{六水鐵(III)離子}\ce{[Fe(H2O)6]^{3+}}：黃/褐，氧化劑，不與過錳酸鉀、二鉻酸鉀反應。
+\item \ce{Fe^{3+}(aq) + I^-(aq)}顏色變深：
+\[\ce{2Fe^{3+}(aq) + 3I^-(aq) -> 2Fe^{2+}(aq) + I3^-(aq)}\]
+\eit
+\sssc{硫酸鐵(II)}
+\bit
+\item 無水合為白色固體；七水合為藍綠色固體，具潮解性；可溶於水，形成六水鐵(II)離子與硫酸離子；還原劑，能將硝酸還原為一氧化氮，將氯氣還原為氯離子。
+\item 加熱分解：
+\[\ce{2FeSO4(s) -> Fe2O3(s) + SO2(g) + SO3(g)}\]
+\item 常用於農業、醫療等。
+\eit
+\sssc{六水合硫酸鐵(II)銨/莫耳鹽（Mohr's salt）}
+\ce{(NH4)2Fe(SO4)2$\cdot 6$H2O}，綠色固體，實驗室中常作為鐵(II)離子的來源，用於氧化還原滴定等的還原劑。
+\sssc{六氰鐵(II)離子與六氰鐵(III)離子}
+\bit
+\item \tb{六氰鐵(II)離子}\ce{[Fe(CN)6]^{4-}}：淡黃，鐵為d$^2$sp$^3$混成，配體正八面體排列。
+\item \tb{六氰鐵(III)離子}\ce{[Fe(CN)6]^{3-}}：紅，鐵為d$^2$sp$^3$混成，配體正八面體排列。
+\item \ce{[Fe(CN)6]^{3-}(aq) + I^-(aq)}變黃：
+\[\ce{2[Fe(CN)6]^{3-}(aq) + 3I^-(aq) -> 2[Fe(CN)6]^{4-}(aq) + I3^-(aq)}\]
+\item \tb{三水合六氰鐵(II)酸鉀/三水合亞鐵氰化鉀/黃血鹽}\ce{K4[Fe(CN6)]$\cdot$3H2O}：黃色固體，可溶於水。
+\item \tb{水合六氰鐵(II)酸鈉/水合亞鐵氰化鈉}\ce{Na4[Fe(CN6)]$\cdot$H2O}：黃色固體，可溶於水，常用於食鹽抗結劑。
+\item \tb{七水合六氰鐵(II)酸銅/七水合亞鐵氰化銅}\ce{Cu2[Fe(CN)6]$\cdot$7H2O}：紅棕色固體，難溶於水。
+\item \tb{六氰鐵(III)酸鉀/鐵氰化鉀/赤血鹽}\ce{K3[Fe(CN6)]}：紅色固體，可溶於水。
+\item \tb{六氰鐵(II)酸鐵(III)/亞鐵氰化鐵/普魯士藍（Prussian blue）/柏林藍（Berlin blue）/巴黎藍（Paris/Parisian blue）/鐵藍（Iron blue）}\ce{Fe4[Fe(CN)6]3$\cdot x$H2O}/\ce{Fe7(CN)18$\cdot x$H2O}：深藍色固體，不溶於水。理想晶胞為3$\times$3$\times$3=27個晶格點的正方體（共8個），其中正方體中心與各邊中點有d$^2$sp$^3$混成的\ce{Fe^{3+}}（共4個）、正方體頂點與各面中心有0.6的機率有d$^2$sp$^3$混成的\ce{Fe^{2+}}（無缺失時共4個，平均共2個），每對相鄰的\ce{Fe^{3+}}與\ce{Fe^{2+}}間（共54個晶格點）有氰離子橋接配基（無\ce{Fe^{2+}}缺失時共24個，平均共18個），其中碳以配位鍵鍵結\ce{Fe^{2+}}、氮以配位鍵鍵結\ce{Fe^{3+}}，\ce{Fe(CN)6^{4-}}缺陷可能以配位水代替之配予\ce{Fe^{3+}}且較難去除，孔洞可能以結晶水填補且較易去除。1704年由 Johann Jacob Diesbach 首發現，是首個發現的錯合物與首個現代合成染料，常作為貴重藍色顏料，如葛飾北齋的浮世繪中。
+\item 六氰鐵(II)酸鉀與鐵(III)離子產生深藍色普魯士藍沉澱，常用於檢驗鐵(III)離子：
+\[\ce{4Fe^{3+}(aq) + 3[Fe(CN)6]^{4-}(aq) -> Fe4[Fe(CN)6]3(s)}\]
+\item 六氰鐵(III)酸鉀與鐵(II)離子產生深藍色沉澱，稱\tb{滕氏藍（Turnbull's blue）}，後經光譜分析發現與普魯士藍為同一物質，常用於檢驗鐵(II)離子：
+\[\ce{4Fe^{2+}(aq) + 3[Fe(CN)6]^{3-}(aq) -> Fe4[Fe(CN)6]3(s)}\]
+\eit
+\sssc{硫氰酸鐵(II)、硫氰鐵(III)離子與硫氰酸鐵(III)}
+\bit
+\item \tb{硫氰酸鐵(II)}\ce{Fe(SCN)2}：綠色固體，可溶於水。
+\item \tb{硫氰鐵(III)離子}\ce{FeSCN^{2+}}：血紅。
+\item \tb{硫氰酸鐵(III)}\ce{Fe(SCN)3}：血紅色固體，可溶於水。
+\item \ce{Fe^{2+}(aq) + SCN^{2-}(aq)}無變化。
+\item \ce{Fe^{3+}(aq) + SCN^{2-}(aq)}變血紅色，常用於滴定：
+\[\ce{Fe^{3+}(aq) + SCN^-(aq) -> FeSCN^{2+}(aq)}\]
+\eit
+\sssc{三草酸鐵(III)離子}
+\bit
+\item \tb{三草酸鐵(III)離子}\ce{[Fe(C2O4)3]^{3-}}：黃綠，螯合物，八面體，兩種異構物。
+\item 草酸可除鐵鏽，常用於衣物沾染鐵鏽之去除：
+\[\ce{6H2C2O4(aq) + Fe2O3(s) -> 2[Fe(C2O4)3]^{3-}(aq) + 6H^+(aq) + 3H2O(l)}\]
+\item \tb{三水合三草酸鐵(III)酸鉀}\ce{K3[Fe(C2O4)3]$\cdot$3H2O}：翠綠色固體，可溶於水。
+\item 草酸鉀與氯化鐵(III)在暗室中反應：
+\[\ce{Fe^{3+}(aq)\text{(淡黃)} + 3C2O4^{2-}(aq)\text{(無色)} -> [Fe(C2O4)3]^{3-}(aq)\text{(無色)}}\]
+再蒸發結晶：
+\[\ce{[Fe(C2O4)3]^{3-}(aq) + 3K^+(aq) + 3H2O(l) -> K3[Fe(C2O4)3]$\cdot$3H2O(s)\text{(翠綠)}}\]
+\item 三草酸鐵(III)離子照光會發生光氧化還原反應形成淡黃色草酸鐵(II)：
+\[\ce{2[Fe(C2O4)3]^{3-}(aq) -> 2Fe^{2+}(aq) + 5C2O4^{2-}(aq) + 2CO2(g)}\]
+\[\ce{2K3[Fe(C2O4)3]$\cdot$3H2O(s)\text{(翠綠)} -> 2FeC2O4(s)\text{(淡黃)} + 3K2C2O4$\cdot$H2O(s)\text{(無色)} + 2CO2(g)}\]
+\eit
+\sssc{硫化鐵(II)/隕硫礦（Troilite）}
+\bit
+\item 黑色固體，不溶於水。
+\item 鐵(II)離子遇硫化氫會生成其沉澱：
+\[\ce{Fe^{2+}(aq) + H2S(aq) -> FeS(s) + 2H^+(aq)}\]
+\item 鐵(III)離子遇硫化氫會被還原成鐵(II)離子並生成環八硫沉澱，若硫化氫過量則接著生成黑色硫化鐵(II)沉澱：
+\[\ce{2Fe^{3+}(aq) + H2S(aq) -> 2Fe^{2+}(aq) + 2H^+(aq) + S(s)}\]
+\item 煮較久的水煮蛋其蛋黃表面常變綠或黑，此乃蛋黃中的鐵與蛋白受熱釋放的硫化氫反應生成的硫化鐵(II)。
+\eit
+\sssc{二硫化鐵(II)}
+\bit
+\item \tb{立方晶型二硫化鐵(II)/硫鐵礦/黃鐵礦（Pyrite）/愚人金（Fool's gold）}\ce{FeS2}：淡黃銅色具光澤固體，常用於製造飾品。
+\item \tb{斜方晶型二硫化鐵(II)/白鐵礦（Marcasite or white iron pyrite）}\ce{FeS2}：新鮮表面為錫白至淡黃色，常用於製造飾品。
+\eit
+\sssc{釹磁鐵（Neodymium magnet）/釹鐵硼磁鐵（NdFeB magnet）}
+\ce{Nd2Fe14B}，釹、鐵和硼合金的永久磁鐵，四方晶系。是現今磁性最強的永久磁鐵，也是目前最常使用的稀土磁鐵，常用於電子產品、電動汽車、風力發電機等。
+\ssc{鈷}
+\sssc{元素態鈷}
+銀灰色固體，具鐵磁性，常用於製造磁鐵。
+\sssc{一氧化鈷}
+灰色或橄欖綠色固體。與氧化鋁於約1200°C燒結均可得鈷藍（Cobalt blue）\ce{CoO$\cdot$Al2O3}，常用於陶瓷藍色釉料。
+\sssc{四氧化三鈷}
+黑色固體。
+\sssc{氯化亞鈷}
+氯化亞鈷\ce{CoCl2}水溶液（粉紅色\ce{[Co(H2O)6]^{2+}}，六水配位一鈷、八面體）51.25°C以下結晶得六水合物\ce{[Cr(H2O)4Cl2]$\cdot 2$H2O}（粉紅色，一氯配位一鈷、四水配位、二水水合、鈷配位數六、八面體），51.25-120.2°C結晶得二水合物\ce{[Cr(H2O)2Cl2]}（紫紅色，一氯配位二鈷、二水均配位、鈷配位數六、單斜），六水合物快速加熱至51.25°C得二水合物，二水合物快速加熱至206°C得一水合物（藍紫色），一水合物快速加熱至335°C得無水氯化亞鈷（藍色）。無水氯化亞鈷具強吸水性，遇水變成粉紅色六水合氯化亞鈷，其試紙常用於檢測水。顏色不同乃因錯合物結構不同。
+
+\ce{CoCl2(aq)}遇過量\ce{Cl^-(aq)}或加熱變藍，因吸熱反應：
+\[\ce{[Co(H2O)6]^{2+}(aq)\text{(粉紅)} + 4Cl^-(aq) <=> [CoCl4]^{2-}(aq)\text{(藍)} + 6H2O(l)}\]
+\ssc{鎳}
+\sssc{元素態鎳與其合金}
+\bit
+\item 銀白色固體，具鐵磁性，常用於生產合金鋼。
+\item \tb{蒙乃爾合金（Monel）}：鎳銅合金，鎳約52–68\%、剩餘為銅，在負攝氏度下保持高強度、高硬度與延展性而不脆化，常用於航太、石油生產、船舶。
+\eit
+\sssc{一氧化鎳}
+綠色固體。
+\sssc{三氧化二鎳}
+灰黑色固體。
+\ssc{銅}
+\sssc{銅元素}
+占地殼約0.0007\%，礦物以硫化礦為主，如最多的\tb{黃銅礦（chalcopyrite）}\ce{CuFeS2}與\tb{斑銅礦（bornite）}\ce{Cu5FeS4}，以及較少的\tb{藍煇銅礦（digenite）}\ce{Cu9S5}、\tb{靛銅礦/銅藍}（covellite）\ce{CuS}、\tb{輝銅礦（chalcocite）}\ce{Cu2S}，可用火法或溼法冶煉製備銅，分別是銅的生產中比例最高與次高者；少數為元素態銅，可用磨碎、泡沫浮選等純化；少數為氧化物與碳酸鹽，如\tb{赤銅礦（cuprite）}\ce{Cu2O}、\tb{黑銅礦（tenorite）}\ce{CuO}、\tb{孔雀石（malachite）}\ce{Cu2CO3(OH)2}、\tb{藍銅礦（azurite）}\ce{Cu3(CO3)2(OH)2}等，可用高爐煉銅製備銅，與高爐煉鐵原理與構造相同，並亦產生爐渣。
+\sssc{元素態銅/紅銅/紫銅}
+\bit
+\item 紅色固體，導電性佳，常溫下僅次於銀，導熱性佳，活性低。
+\item \tb{黃銅（Brass）}：銅鋅合金，銅約2/3、鋅約1/3，黃色，易熔，不生鏽，強度小於銅，易加工，常用於砲彈銅殼、機械。
+\item \tb{青銅（Bronze）}：銅錫合金，錫約4–12.5\%、剩餘為銅，赤褐色，硬度大，適於鑄造，常用於貨幣、獎牌、銅像、銅器。
+\item \tb{白銅/德銀（Cupronickel or copper–nickel）}：銅鎳合金，銅約55–90\%、鎳約10–30\%、鋅約0–20\%、錳約0–2\%，銀白色，質硬，電阻大，常用於電阻箱、電熱器、飾物、銀幣。
+\eit
+\sssc{氧化亞銅/赤銅礦（Cuprite）}
+紅色固體。不溶於水，溶於鹽酸形成\ce{CuCl2-}，溶於硫酸氧化成\ce{CuSO4}，溶於硝酸氧化成\ce{Cu(NO3)2}  。\ce{CuOH}不穩定，自發脫水為\ce{Cu2O}。
+\sssc{氧化銅/黑銅礦（Tenorite）}
+黑色固體。
+\sssc{碳酸二氫氧銅(II)/鹼式碳酸銅(II)/銅綠/銅鏽（Patina）}
+\ce{Cu2(OH)2CO3}，銅在潮溼空氣中氧化形成，質地緻密具中等鈍化：
+\[\ce{2Cu + O2 + H2O + CO2 -> Cu2(OH)2CO3}\]
+\sssc{硫酸銅}
+\bit
+\item 無水硫酸銅為白色粉末；五水合硫酸銅/膽礬為藍色晶體；後者加熱至250°C脫水成無水硫酸銅粉末；可溶於水，溶液藍色。
+\item 實驗室常用無水硫酸銅檢驗水的存在。
+\item 可作為自來水、淡水養殖等的殺菌劑，可抑制藻類與微生物生長，缺點為酸性時毒性增加，且可能造成重金屬汙染。
+\eit
+\sssc{氟化銅(II)}
+\bit
+\item 無水氟化銅為白色粉末；五水合氟化銅為藍色晶體；微溶於水。
+\item 氟化銅(I)不穩定，自發分解為氟化銅(II)與銅：
+\[\ce{2CuF(s) -> Cu(s) + CuF2(s)}\]
+\eit
+\ssc{鋅}
+\sssc{元素態鋅}
+銀灰色、反磁性固體。
+\sssc{氧化鋅}
+白色不溶於水固體，常用於食品、聚合物、陶瓷、玻璃、潤滑劑、藥膏、黏合劑。
+\sssc{二碳酸六氫氧鋅/鹼式碳酸鋅}
+\ce{Zn5(OH)6(CO3)2$\cdot$H2O}，白色固體，不溶於水，鋅生鏽稱白鏽，主成分為之。
+\ssc{鈀}
+\sssc{元素態鈀}
+銀白色金屬，鉑族金屬中密度最小、熔點最低者，以王水法提取、純化、拋光或鍍。
+\ssc{銀}
+\sssc{元素態銀}
+銀白色有光澤固體，自然界中主要以輝銀礦（Argentite）\ce{Ag2S}存在，室溫下導電度最高，導熱性高，柔軟，不受多數化學藥品腐蝕，以氰化法提取、純化、拋光或鍍，重要貴金屬，常用於貨幣、飾物、電子產品，常須加入鎳、銅等以增加硬度。
+\sssc{銀離子}
+\begin{itemize}
+\item \ce{AgOH}不穩定，自發脫水為\ce{Ag2O}。
+\item 水中銀離子在少量氨水或其他鹼性溶液中：
+\[\ce{2Ag^+(aq) + 2OH^-(aq) -> Ag2O(s) + H2O(l)}\]
+形成\ce{Ag2O} 沉澱，過量氨水中形成可溶性錯離子\ce{Ag(NH3)^{2+}}。氨水中溶解度：\ce{AgCl}可溶，\ce{AgBr}微溶，\ce{AgI}不溶（溶解指\ce{Ag(NH3)^{2+}}，沉澱指\ce{Ag2O}）。
+\item 所有銀鹽可溶於\ce{CN^-(aq)}中，發生：
+\[\ce{Ag^+(aq) + 2CN^-(aq) -> Ag(CN)2^-(aq)}\]
+形成可溶性錯離子。因此可用\ce{Fe^{3+}(aq)}為指示劑、\ce{SCN^-(aq)}為滴定試劑滴定\ce{Ag^+(aq)}，生成\ce{AgSCN(s)}沉澱，滴定終點\ce{FeSCN^{2+}(aq)}呈血紅色。
+\item 所有銀鹽可溶於\ce{S2O3^{2-}(aq)}，發生：
+\[\ce{Ag^+(aq) + 2S2O3^{2-}(aq) -> Ag(S2O3)2^{3-}(aq)}\]
+形成可溶性錯離子。
+\item \tb{攝影底片（Photographic film）}：以氯、溴、碘化銀晶體為感光劑，透過特殊染料使僅對特定光波長敏感，沖洗時以硫代硫酸鈉為定/顯影劑/液（fixing agent），溶解底片上未曝光的鹵化銀，稱定/顯影（作用）（fixing）：
+\[\ce{AgX(s) + 2S2O3^{2-}(aq) -> Ag(S2O3)2^{3-}(aq) + X^-(aq)}\]
+\item 碘化銀可製造人造雨晶種。
+\item \tb{多侖試劑（Tollens' reagent）}\ce{[Ag(NH3)2]NO3(aq)}：可用於銀鏡反應（Silver mirror reaction）。
+\end{itemize}
+\ssc{鎘}
+\sssc{元素態鎘}
+銀白色金屬，化學性質類似銀，常鍍於金屬以防蝕。
+\sssc{硒化鎘}
+\ce{CdSe}，紅黑色晶體。
+\ssc{鈰}
+\sssc{元素態鈰}
+銀白色金屬。
+\sssc{硫酸鈰(IV)與硫酸鈰(III)}
+硫酸鈰(IV)與硫酸鈰(III)分別為黃色與白色可溶性固體，常用於滴定，\ce{Ce^{4+}(aq)}黃色，\ce{Ce^{3+}(aq)}無色。
+\ssc{鉑}
+\sssc{元素態鉑/白金}
+銀白色金屬，延展性是所有純金屬中最高者，高於金，以王水法提取、純化、拋光或鍍。
+\ssc{金}
+\sssc{元素態金}
+金黃色有光澤固體，自然界中主要以元素態存在，室溫下導電度次於銀和銅為第三高，導熱性高，延展性是所有純金屬中第二高者，1 g 可拉成約 4000 m 細絲，柔軟，不受多數化學藥品腐蝕，有良好的生物相容性，以氰化法或王水法提取、純化、拋光或鍍，重要貴金屬，常用於貨幣、飾物、電子產品、醫藥，常須加入鎳、銅等以增加硬度。$n$K金指$\frac{n}{24}$的金與$\frac{24-n}{24}$的其他金屬（通常是銀或銅）的合金，飾物常見18K金，因24K金/純金太軟。
+\sssc{金(I)離子}
+二氰金(I)錯離子\ce{Au(CN)2-}可溶。
+\sssc{金(III)離子}
+四氰金(III)錯離子\ce{Au(CN)4-}與四氯金(III)錯離子\ce{AuCl4-}均可溶。
+\ssc{汞}
+\sssc{元素態汞/水銀（Quicksilver）}
+\bit
+\item 汞元素占地殼約 0.08 ppm，主要存在於硫化礦，如\tb{硃砂/丹砂/辰砂（Cinnabar）}\ce{HgS}與\tb{黑辰砂（Metacinnabar）}\ce{HgS}。
+\item 銀白色有光澤液體，化性安定，劇毒，密度 13.59 g/cm$^3$，室溫下飽和蒸氣壓 0.0012 mmHg。
+\item 過去常用於溫度計、壓力計、醫藥。
+\eit
+\sssc{汞齊/軟銀/汞合金（Amalgam）}
+汞與其他金屬的合金，根據汞的比例可能是固態，膏狀或液態，如鉀、鈉、鋁、銦、鉈、錫、鉛、鋅、金、銨汞齊。
+\bit
+\item \tb{鉀汞齊與鈉汞齊}：將鹼金屬溶於汞會放熱。
+\item \tb{鋁汞齊}：將鋁絲或鋁箔與氯化汞溶液或汞反應製備。汞可以阻止鋁形成氧化鋁保護層鈍化，使保持高活性。
+\item \tb{鉈汞齊}：凝固點為−58°C，低於純汞，可用於製造低溫溫度計。
+\item \tb{錫汞齊}：曾用作鏡子反射塗層。
+\item \tb{鋅汞齊}：過去電池的鋅片摻以汞，以防止其氧化。
+\item \tb{金汞齊}：金箔或金屑與汞液體接觸會自發溶於之，液態，顏色接近汞。
+\item \tb{牙科用汞齊（Dental amalgam）}：牙科常使用汞（約50\%）與銀（約25\%）、銅、錫等金屬的合金作為牙齒填充物，壽命長，所釋出的汞甚微量，遠低於建議上限與食用海鮮的汞攝取量。
+\eit
+\sssc{汞(I)化合物}
+多具反磁性。除\tb{氫化汞}\ce{HgH}外多以\tb{多汞陽離子}存在。多汞陽離子\ce{Hg$_n$^{2+}}的汞間以共價鍵鍵結，是少數具有金屬間共價鍵的一類離子，最常見者為\ce{Hg2^{2+}}。
+
+除\ce{Hg2Cl2}與\ce{Hg2Br2}外，多數汞(I)之鹽不穩定，會自發或照光時分解為汞(II)之鹽與汞，如：
+\[\ce{Hg2S(s) -> HgS(s) + Hg(l)}\]
+\[\ce{Hg2O(s) -> HgO(s) + Hg(l)}\]
+\[\ce{Hg2I2(s) -> HgI2(s) + Hg(l)}\]
+\sssc{鹵化汞(II)}
+線性配位、有毒離子固體，除碘化汞(II)為橙紅色外均為白色。
+\sssc{氧化汞(II)/三仙丹}
+\bit
+\item 橙紅色離子固體。
+\item 汞與氧氣加熱至 350°C 製備。
+\item 加熱至 500°C 以上得汞與氧氣，過去曾用於實驗室中製備氧氣，昂貴且汞有毒，現不用。
+\item \ce{Hg(OH)2}不穩定，自發脫水為氧化汞(II)與水。
+\eit
+
+
+\section{化學工業（Chemical Industry）}
+\ssc{電解製程}
+\subsubsection{鹼氯工業氯鹼法（Chloralkali process）製備氫氧化鈉、氯氣與氫氣}
+鹼氯工業氯鹼法以陽離子交換樹脂或鋁矽酸鹽（如石棉）隔膜電解槽電解濃食鹽水，製備氯氣、氫氧化鈉和氫氣。
+\begin{itemize}
+\item 負/陰極半反應：\ce{2H2O(l) + 2e^- -> H2(g) + 2OH^-(aq)}
+\item 正/陽極半反應：\ce{2Cl^-(aq) -> Cl2(g) + 2e^-}
+\item 全反應：\ce{2Cl^-(aq) + 2H2O(l) -> Cl2(g) + H2(g) + 2OH^-(aq)}
+\item 陽離子交換樹脂僅允許陽離子通過，鋁矽酸鹽隔膜僅允許\ce{Na^+}、\ce{Cl^-}通過，係為避免發生反應：\ce{Cl2(g) + 2OH^-(aq) -> Cl^-(aq) + ClO^-(aq) + H2O(l)}，並維持電中性。
+\end{itemize}
+將產物氫氣與氯氣直接燃燒可製備氯化氫，使溶於稀鹽酸可製備濃鹽酸。
+\subsubsection{當氏法（Downs process）製備鈉與氯氣}
+由於氯化鈉 m.p. 801°C，常加入氯化鈣作助熔劑，使混合物熔點降到約600-700°C。
+\begin{itemize}
+\item 負/陰極半反應：\ce{Na^+(aq) + e^- -> Na(l)}
+\item 正/陽極半反應：\ce{2Cl^-(aq) -> Cl2(g) + 2e^-}
+\item 全反應：\ce{2Na^+(aq) + 2Cl^-(aq) -> 2Na(l) + Cl2(g)}
+\item 隔膜僅允許鈉離子通過，係為避免發生反應：\ce{Cl2(g) + 2OH^-(aq) -> Cl^-(aq) + ClO^-(aq) + H2O(l)}，並維持電中性。
+\end{itemize}
+\sssc{道氏法（Dow process）/海水提鎂法製備鎂與氯氣}
+\ben
+\item 強熱碳酸鈣產生氧化鈣與二氧化碳：
+\[\ce{CaCO3(s) -> CaO(s) + CO2(g)}\]
+\item 將氧化鈣加入海水中，形成難溶於水的氫氧化鎂沉澱析出：
+\[\ce{CaO(s) + H2O(l) + Mg^{2+}(aq) -> Mg(OH)2(s)}\]
+\item 過濾出氫氧化鎂使與鹽酸反應產生氯化鎂：
+\[\ce{Mg(OH)2(s) + 2HCl(aq) -> MgCl2(aq)}\]
+\item 將氯化鎂脫水，若所須產物為氯化鎂則此步驟即完成。
+\item 電解熔融態氯化鎂，其方法類似當氏法，在負極得到熔融態鎂，在正極得到氯氣。
+\een
+\sssc{皮江法（Pidgeon process）製備鎂}
+\bit
+\item \tb{煅燒鎂礦}：
+\bit
+\item 煅燒\tb{白雲石（Dolomite）}\ce{CaCO3$\cdot$MgCO3}使分解製備\ce{CaO$\cdot$MgO}：
+\[\ce{CaCO3$\cdot$MgCO3(s) ->[$\Delta$] CaO$\cdot$MgO(s) + 2CO2(g)}\]
+\item 煅燒\tb{菱鎂礦（Magnesite）}\ce{MgCO3}使分解製備氧化鎂：
+\[\ce{MgCO3(s) ->[$\Delta$] MgO(s) + CO2(g)}\]
+\item 強熱灰石產生氧化鈣與二氧化碳，再將氧化鈣加入海水中，形成難溶於水的氫氧化鎂沉澱析出，而後煅燒氫氧化鎂使脫水製備氧化鎂。
+\eit
+\item 將\ce{MgO}或\ce{CaO$\cdot$MgO}與矽共熱至約1000°C使還原（通常用較便宜的低純度矽鐵等）產生鎂，副產物為主成分為矽酸鹽的爐渣：
+\[\ce{2MgO(s) + Si(s) -> 2Mg(s) + SiO2(s)}\]
+\[\ce{CaO(s) + SiO2(s) -> CaSiO3(s)}\]
+\[\ce{2CaO(s) + SiO2(s) -> Ca2SiO4(s)}\]
+\eit
+\subsubsection{霍爾法（Hall process）/霍爾–埃魯法（Hall–Héroult process）製備鋁}
+由於氧化鋁熔點2072°C，故添加冰晶石（Cryolite）\ce{Na3AlF6}（有時與氟化鋁）作為助熔劑，使熔點降至約900–1000°C。以正/陽極為碳棒，電解槽以不鏽鋼槽加石墨內襯，電解熔融態氧化鋁：
+\begin{itemize}
+\item 負/陰極半反應：\ce{Al^{3+}(l) + 3e^- -> Al(l)}，液態鋁密度較\ce{Al2O3(l)}與\ce{Na3AlF6(l)}大而在下。
+\item 正/陽極半反應：\ce{C(s) + O^{2-}(l) -> CO(g) + 2e^-}、\ce{C(s) + 2O^{2-}(l) -> CO2(g) + 4e^-}、\ce{CO(g) + O^{2-}(l) -> CO2(g) + 2e^-}、\ce{2O^{2-}(l) -> O2(g) + 4e^-}、\ce{2C(s) + O2(g) -> 2CO(g)}、\ce{C(s) + O2(g) -> CO2(g)}、\ce{2CO(g) + O2(g) -> 2CO2(g)}。陽極碳棒須定期更換。
+\item 全反應（忽略碳氧化）：\ce{2Al2O3(l) -> 4Al(l) + 3O2(g)}
+\end{itemize}
+霍爾法可得純度99\%以上之鋁，但頗耗電，每莫耳鋁約耗 3 法拉第電量。
+\subsubsection{莫瓦桑法（Moissan's method）製備氟氣與氫氣}
+因\ce{HF}解離度低、導電度低，而\ce{KHF2}與\ce{KF}則解離度高、導電度高，故加入\ce{KF}以幫助導電。
+\[\ce{HF + KF -> KHF2}\]
+電解，陰極產生氫氣、陽極產生氟氣：
+\[\ce{HF + KHF2 -> KF + H2 + F2}\]
+淨反應：
+\[\ce{2HF(l) -> H2(g) + F2(g)}\]
+\sssc{電鍍}
+擬鍍金屬作為陽極、被鍍物作為陰極、含有擬鍍金屬陽離子的溶液作為電解液/電鍍液，通直流電電鍍。被鍍物宜先進行酸浸（或/與鹼浸），以去除汙垢、鏽蝕、氧化物膜等。對於氧化電位大於氫氣的擬鍍金屬（如鋅），若電解液為酸性且無有效抑制劑，陰極將產生氫氣，降低電鍍效率與品質，稱氫脆；對於氫氧化物不溶於鹼的擬鍍金屬（如鋅），若電解液為鹼性，將產生氫氧化物沉澱，降低電鍍效率與品質。工業上一般有以下解決方法：
+\bit
+\item 選用擬鍍金屬陽離子不沉澱的酸性電解液，並加入抑制劑，防止氫脆。
+\item 選用鹼性電解液，並加入強配體，阻止氫氧化物生成。氨會釋出氨氣故不宜；對於氰化物可溶的擬鍍金屬常用其氰化物與氫氧化鈉的水溶液為電鍍液，使氰離子與擬鍍金屬陽離子形成穩定錯合物，惟氰離子有毒。
+\eit
+\sssc{陽極氧化（Anodizing）}
+人為增厚金屬氧化層的過程，將待處理金屬作為電解槽的陽極以氧化，最常用於鋁，亦有用於其他具鈍化之金屬者。鋁的陽極氧化通常在加入鉻酸或硫酸等的酸性電解液中，酸性溶液會緩慢溶解氧化鋁，與氧化速率達到平衡，形成奈米孔隙，使電解液可接觸到鋁而繼續氧化。
+\ssc{氧化製程}
+\sssc{哈柏法（Haber process）製備氨}
+以粉末狀或海綿狀鐵為催化劑，氮氣與氫氣被媳婦於其表面上，分子距離靠近，故較易發生有效碰撞，鐵中加入極少量的\ce{K2O} 與\ce{Al2O3} 增強催化能力。
+\[\ce{N2(g) + 3H2(g) <=>[\ce{Fe}, \ce{K2O}, \ce{Al2O3}, \text{200-300 atm, 400-500°C}] 2NH3(g) + 92.4kJ}\]
+\subsubsection{接觸法（Contact process）製備硫酸}
+\begin{enumerate}
+\item 在400-450°C高溫與五氧化二釩催化下燃燒二氧化硫（直接燃燒環八硫或焙燒金屬硫化礦製備）：
+\[\ce{2SO2(g) + O2(g) ->[\tx{400-450°C}, \ce{V2O5}] 2SO3(g)}\]
+\item 使三氧化硫溶於硫酸得發煙硫酸（Oleum）：
+\[\ce{$x$SO3(g) + H2SO4(l) -> H2SO4$\cdot x$SO3(l)}\]
+\item 發煙硫酸加入水得硫酸：
+\[\ce{H2SO4$\cdot x$SO3(l) + $x$H2O(l) -> $(x+1)$H2SO4(aq)}\]
+\end{enumerate}
+淨反應：
+\[\ce{2SO2(g) + O2(g) + 2H2O(l) -> 2H2SO4(aq)}\]
+製得之硫酸純度大，可達90\%以上。
+\subsubsection{溼硫酸法（Wet sulfuric acid process, WSA process）製備硫酸}
+\ben
+\item 燃燒硫化氫：
+\[\ce{2H2S(g) + 3O2(g) ->[$\Delta$] 2H2O(g) + 2SO2(g)}\]
+\item 燃燒二氧化硫：
+\[\ce{2SO2(g) + O2(g) ->[\tx{400-450°C}, \ce{V2O5}] 2SO3(g)}\]
+\item 三氧化硫與水反應：
+\[\ce{SO3(g) + H2O(g) -> H2SO4(g)}\]
+\item 降溫凝結：
+\[\ce{H2SO4(g) -> H2SO4(l)}\]
+\een
+淨反應：
+\[\ce{H2S + 2O2 -> 2H2SO4}\]
+\sssc{鉛室法（Lead chamber process）製備硫酸}
+1946年羅巴克（John Roebuck）發明，因其利用鉛板製成的反應室進行而得名。
+\ben
+\item 將二氧化硫（直接燃燒環八硫或焙燒金屬硫化礦製備）與二氧化氮（初始量以奧士華法等製備）通入水中：
+\[\ce{2NO2(g) + H2O(l) -> HNO3(aq) + HNO2(aq)}\]
+\[\ce{SO2(g) + HNO3(aq) -> NOHSO4(aq)}\]
+\[\ce{NOHSO4(aq) + HNO2(aq) -> H2SO4(aq) + NO2(g) + NO(g)}\]
+\[\ce{SO2(g) + 2HNO2(aq) -> H2SO4(aq) + 2NO(g)}\]
+\item 燃燒其釋出的氣體，將二氧化氮回到第一步驟使用，此步驟為速率決定步驟：
+\[\ce{2NO(g) + O2(g) -> 2NO2(g)}\]
+\een
+淨反應：
+\[\ce{2SO2(g) + O2(g) + 2H2O(l) -> 2H2SO4(aq)}\]
+二氧化氮為催化劑、亞硝基硫酸\ce{NOHSO4}為中間產物。以此法製備得的硫酸純度不高，僅約70\%，故現少用。
+\subsubsection{兩步法（Two-stage process）製備鉛}
+\begin{enumerate}
+\item 將\tb{方鉛礦（Galena）}\ce{PbS}在空氣中燃燒成氧化鉛(II)與二氧化硫：
+\[\ce{PbS(s) + 3O2(g) -> 2PbO(s) + 2SO2(g)}\]
+\item 將氧化鉛(II)與焦炭於爐中共熱還原得鉛：
+\[\ce{PbO(s) + C(s) -> Pb(s) + CO(g)}\]
+\[\ce{PbO(s) + CO(g) -> Pb(s) + CO2(g)}\]
+\end{enumerate}
+\sssc{奧士華法（Ostwald process）製備硝酸}
+\begin{enumerate}
+\item 將氨（可由哈柏法製備）以鉑–銠合金為非勻相光觸媒製備一氧化氮：
+\[\ce{4NH3(g) + 5O2(g) ->[\ce{Pt}, \ce{Rh},\tx{900°C}] 4NO(g) + 6H2O(g)}\]
+若不以鉑–銠合金為催化劑則會發生：
+\[\ce{4NH3(g) + 3O2(g) -> 2N2(g) + 6H2O(l)}\]
+若所需產物為一氧化氮可將此步驟所得混合氣體冷卻去除水得。
+\item 經過熱交換器冷卻回室溫：
+\[\ce{2NO(g) + O2(g) -> 2NO2(g)}\]
+\item 將二氧化氮通入冷水，產物一氧化氮可回收到第二步驟使用：
+\[\ce{3NO2(g) + H2O(l) -> 2HNO3(aq) + NO(g)}\]
+\end{enumerate}
+淨反應：
+\[\ce{4NH3(g) + 8O2(g) -> 4HNO3(aq) + 4H2O(l)}\]
+\sssc{銀、金的氰化法（Cyanidation）}
+將含銀或金的礦石、廢料（如銅的電解精煉的陽極泥）或回收材料（如含金回收電子材料）或欲純化或拋光的銀或金浸入氰化鉀或氰化鈉的水溶液中並通入氧氣或空氣：
+\bit
+\item 銀形成可溶性二氰銀錯離子\ce{[Ag(CN)2]-}
+\item 金形成可溶性二氰金(I)錯離子\ce{[Au(CN)2]-}
+\eit
+再以鋅還原提取較純的銀或金或鍍於物體上：
+\[\ce{2[Ag(CN)2]^-(aq) + Zn(s) -> 2Ag(s) + [Zn(CN)4]^{2-}(aq)}\]
+\[\ce{2[Au(CN)2]^-(aq) + Zn(s) -> 2Au(s) + [Zn(CN)4]^{2-}(aq)}\]
+\sssc{金、鉑、鈀的王水（Aqua regia）法}
+王水為 15 M 濃硝酸與 12 M 濃鹽酸以體積比1:3混合而成之溶液。將含金、鉑或鈀的礦石、廢料（如銅的電解精煉的陽極泥）或回收材料（如含金回收電子材料）或欲純化或拋光的金、鉑或鈀浸入王水中：
+\bit
+\item 金形成可溶性四氯金(III)酸\ce{H[AuCl4]}：
+\[\ce{Au(s) + HNO3(aq) + 4HCl(aq) -> H[AuCl4](aq) + NO(g) + 2H2O(l)}\]
+\item 鉑形成可溶性六氯鉑(IV)酸\ce{H2[PtCl6]}：
+\[\ce{Pt(s) + 4HNO3(aq) + 6HCl(aq) -> H2[PtCl6](aq) + 4NO2(g) + 4H2O(l)}\]
+\item 鈀形成可溶性四氯鈀(II)酸\ce{H2[PdCl4]}：
+\[\ce{Pd(s) + 2HNO3(aq) + 4HCl(aq) -> H2[PdCl4](aq) + 2NO2(g) + 2H2O(l)}\]
+\eit
+再以氯化亞鐵還原提取較純的金、鉑或鈀或鍍於物體上：
+\[\ce{H[AuCl4](aq) + 3FeCl2(aq) -> Au(s) + 3FeCl3(aq) + HCl(aq)}\]
+\[\ce{H2[PtCl6](aq) + 4FeCl2(aq) -> Pt(s) + 4FeCl3(aq) + 2HCl(aq)}\]
+\[\ce{H2[PdCl4](aq) + 2FeCl2(aq) -> Pd(s) + 2FeCl3(aq) + 2HCl(aq)}\]
+\ssc{還原製程}
+\subsubsection{熱還原法製備矽}
+將白砂與石墨或鋁在電爐中強熱，可製得純度在2N以下的冶金級矽（Metallurgical grade silicon, MG-Si, MGS）：
+\[\ce{SiO2(s) + 2C(s) -> Si(s) + 2CO(g)}\]
+\[\ce{3SiO2(s) + 4Al(s) -> 3Si(s) + 2Al2O3(s)}\]
+\sssc{高爐/鼓風爐（Blast furnace）煉鐵}
+\bct\bfH\ctr\icg[width=0.8\textwidth]{Blast_Furnace_Reactions.jpg}\caption{OpenStax. 2014. Wikipedia. https://commons.m.wikimedia.org/wiki/File:Blast\_Furnace\_Reactions.jpg.}\ef\FB\ect
+\bct\bfH\ctr\icg[width=0.3\textwidth]{Alto.jpg}\caption{Diego Delso. 2015. Wikipedia.\\https://commons.m.wikimedia.org/wiki/File:Alto\_Horno,\_Puerto\_de\_Sagunto,\_Espa\%C3\%B1a,\_2015-01-04,\_DD\_91.JPG.}\ef\FB\ect
+鐵礦：
+\bit
+\item 主成分僅含 Fe、C、O、H 之鐵礦適合用於高爐煉鐵，如\tb{赤鐵礦（hematite）}\ce{Fe2O3}、\tb{磁鐵礦（magnetite）}\ce{Fe3O4}、\tb{褐鐵礦（limonite）}\ce{FeOOH$\cdot x$H2O}、\tb{菱鐵礦（siderite）}\ce{FeCO3}、\tb{方鐵礦（wüstite）}\ce{FeO}，含硫之鐵礦因硫不易去除而不適合用於高爐煉鐵。
+\item 若原料為褐鐵礦或菱鐵礦則先飢燒後才能加入高爐爐頂：
+\[\ce{2FeOOH$\cdot x$H2O(s) -> Fe2O3(s) + $(2x+1)$H2O(g)}\]
+\[\ce{FeCO3(s) -> FeO(s) + CO2(g)}\]
+\item 粉狀鐵礦須先燒結成塊狀燒結礦才能加入高爐爐頂。
+\eit
+高爐的構造（由上而下）：
+\bit
+\item \tb{爐頂/送料口（Top）}：鐵礦、煤焦與熔劑灰石（若鐵礦的主要雜質為二氧化矽，較常見）或矽砂（若鐵礦的主要雜質為碳酸鈣）由此投入。
+\item \tb{爐身（Stack）}：原料下落並逐漸加熱，發生初步氧化還原反應。
+\item \tb{爐腰（Belly）}：爐體最寬處，溫度更高，反應加劇。
+\item \tb{爐缸（Hearth）}：最下方、最高溫區（約1500°C），密度較高的熔融生鐵（Pig iron）/粗鐵（Crude iron）與密度較低的熔融爐渣/熔渣（Slag）在此分離，爐渣密度較小浮於熔鐵之上，可使熔鐵不與氣體接觸而再次氧化。
+\item \tb{風口（Tuyere）}：爐缸的口，點火後須不斷由此鼓入熱空氣或氧氣，有時並加入煤粉、天然氣、石油或焦油等，以提高溫度並促進燃燒。
+\item \tb{鐵口（Tap hole）}：液態生鐵流出口。
+\item \tb{渣口（Slag notch）}：液態爐渣流出口，爐渣主要成分為\ce{$x$CaO$\cdot y$SiO2}，尤其偏矽酸鈣\ce{CaSiO3}，可用於製造水泥。
+\eit
+反應：
+\bit
+\item 爐身至爐腰：煤焦、一氧化碳作為還原劑還原鐵礦：
+\[\ce{Fe2O3(s) + 3C(s) <=> 2Fe(s) + 3CO(g)}\]
+\[\ce{Fe2O3(s) + 3CO(g) <=> 2Fe(s) + 3CO2(g)}\]
+\[\ce{3Fe2O3(s) + CO(g) <=> 2Fe3O4(s) + CO2(g)}\]
+\[\ce{Fe3O4(s) + 4C(s) <=> 3Fe(s) + 4CO(g)}\]
+\[\ce{Fe3O4(s) + 4CO(g) <=> 3Fe(s) + 4CO2(g)}\]
+\[\ce{Fe3O4(s) + CO(g) <=> 3FeO(s) + CO2(g)}\]
+\[\ce{FeO(s) + C(s) <=> Fe(s) + CO(g)}\]
+\[\ce{FeO(s) + CO(g) <=> Fe(s) + CO2(g)}\]
+\[\ce{C(s) + CO2(g) <=> 2CO(g)}\]
+\item 爐缸：碳酸鈣釋出二氧化碳、固體熔化、熔劑與雜質反應形成爐渣：
+\[\ce{C(s) + CO2(g) <=> 2CO(g)}\]
+\[\ce{CaCO3(s) -> CaO(s) + CO2(g)}\]
+\[\ce{Fe(s) -> Fe(l)}\]
+\[\ce{CaO(s) -> CaO(l)}\]
+\[\ce{SiO2(s) -> SiO2(l)}\]
+\[\ce{$x$CaO(l) + $y$SiO2(l) -> $x$CaO$\cdot y$SiO2(l)}\]
+\eit
+\ssc{取代製程}
+\subsubsection{拜耳法（Bayer process）製備氧化鋁}
+\tb{鋁土礦/（鋁）礬土（Bauxite）}\ce{Al2O3$\cdot x$H2O}：紅色礦物，約含80\%\ce{Al2O3$\cdot x$H2O}，主要雜質為\ce{Fe2O3}、\ce{SiO2}、\ce{TiO2}。
+\begin{enumerate}
+\item 將鋁礬土粉碎、泡沫浮選等。
+\item 加入氫氧化鈉：
+\[\ce{Al2O3 + 2NaOH + 3H2O -> 2NaAl(OH)4}\]
+\[\ce{SiO2 + 2NaOH -> Na2SiO3 + H2O}\]
+其他氧化物則不溶於氫氧化鈉。
+\item 加熱或加酸：
+\[\ce{NaAl(OH)4 -> Al(OH)3 + NaOH}\]
+\[\ce{NaAl(OH)4 + CO2 -> Al(OH)3 + NaHCO3}\]
+\item 加熱乾燥：
+\[\ce{2Al(OH)3 -> Al2O3 + 3H2O}\]
+\end{enumerate}
+\subsubsection{索耳末法（Solvay process）/氨鹼法（Ammonia-soda process）/索爾維制鹼法製備碳酸鈉與氯化鈣}
+\begin{enumerate}
+\item 強熱碳酸鈣產生氧化鈣與二氧化碳：
+\[\ce{CaCO3(s) -> CaO(s) + CO2(g)}\]
+\item 將二氧化碳通入濃氨水與濃氯化鈉的鹼性混合溶液中，產生碳酸氫鈉沉澱：
+\[\ce{CO2(g) + NH3(aq) + NaCl(aq) + H2O(l) -> NaHCO3(s) + NH4Cl(aq)}\]
+\item 取出碳酸氫鈉，強熱得碳酸鈉，二氧化碳回收至第二步驟使用：
+\[\ce{2NaHCO3(s) -> Na2CO3(s) + H2O(l) + CO2(g)}\]
+\item 將氯化銨與第一步驟產生的氧化鈣溶於水所得的氫氧化鈣共熱製得氨水，回收至第二步驟使用：
+\[\ce{CaO(s) + H2O(l) -> Ca(OH)2(aq)}\]
+\[\ce{2NH4Cl(aq) + Ca(OH)2(aq) -> 2NH3(aq) + CaCl2(aq) + 2H2O(l)}\]
+\end{enumerate}
+全反應：
+\[\ce{CaCO3 + 2NaCl -> Na2CO3 + CaCl2}\]
+\subsubsection{聯合制鹼法/侯氏制鹼法（Hou's process）製備碳酸鈉與氯化銨}
+由於哈柏法製氨成本下降，又氯化銨可用於製造肥料經濟價值高於氯化鈣，故侯德榜改良索耳末法為侯氏制鹼法。
+\begin{enumerate}
+\item 將氨氣通入濃氯化鈉溶液中產生濃氨水與濃氯化鈉的鹼性混合溶液。
+\item 將二氧化碳通入濃氨水與濃氯化鈉的鹼性混合溶液中，產生碳酸氫鈉沉澱：
+\[\ce{CO2(g) + NH3(aq) + NaCl(aq) + H2O(l) -> NaHCO3(s) + NH4Cl(aq)}\]
+\item 取出碳酸氫鈉，強熱得碳酸鈉，二氧化碳回收至第二步驟使用：
+\[\ce{2NaHCO3(s) -> Na2CO3(s) + H2O(l) + CO2(g)}\]
+\end{enumerate}
+全反應：
+\[\ce{CO2 + 2NH3 + 2NaCl + H2O -> Na2CO3 + 2NH4Cl}\]
+\subsubsection{硫酸法（Sulfate process）製備二氧化鈦}
+\tb{鈦鐵礦（Ilmenite）}\ce{FeTiO3}：鐵黑色礦物。
+\begin{enumerate}
+\item 將鈦鐵礦溶於硫酸，得硫酸氧鈦\ce{TiOSO4}或硫酸鈦(IV)：
+\[\ce{FeTiO3(aq) + 2H2SO4(aq) -> FeSO4(aq) + TiOSO4(aq) + 2H2O(l)}\]
+\[\ce{FeTiO3(aq) + 3H2SO4(aq) -> FeSO4(aq) + Ti(SO4)2(aq) + 3H2O(l)}\]
+\item 加鹼中和：
+\[\ce{TiO^{2+}(aq) + 2OH^-(aq) -> TiO2(s) + H2O(l)}\]
+\[\ce{Ti^{4+}(aq) + 4OH^-(aq) -> TiO2(s) + 2H2O(l)}\]
+\item 乾燥得二氧化鈦白色粉末。
+\end{enumerate}
+\subsubsection{水泥的製造}
+\begin{enumerate}
+\item 煅燒灰石：
+\[\ce{CaCO3(s) -> CaO(s) + CO2(g)}\]
+\item 石灰與黏土、火山灰、爐渣等共熱至約1500°C，製造出各種不同的水泥：
+\[\ce{CaO(s) + SiO2(s) -> CaSiO3(s)}\]
+\[\ce{2CaO(s) + SiO2(s) -> 2CaO$\cdot$SiO2(s)}\]
+\[\ce{3CaO(s) + SiO2(s) -> 3CaO$\cdot$SiO2(s)}\]
+\[\ce{3CaO(s) + Al2O3(s) -> 3CaO$\cdot$Al2O3(s)}\]
+\[\ce{4CaO(s) + Al2O3(s) + Fe2O3(s) -> 4CaO$\cdot$Al2O3$\cdot$Fe2O3(s)}\]
+\end{enumerate}
+\sssc{水泥的水化作用（Hydration reaction）}
+指水泥遇水逐漸變硬的化學過程，放熱，水泥與水混合後可任意塑型，經一段時間後逐漸發生水化作用變硬，故為常用建築材料。
+\begin{itemize}
+\item 矽酸三鈣的水化反應：主要產生早期強度。
+\[\ce{2(3CaO$\cdot$SiO2) + 6H2O -> 3CaO$\cdot$2SiO2$\cdot$3H2O + 3Ca(OH)2}\]
+\item 矽酸二鈣的水化反應：貢獻長期強度。
+\[\ce{2(2CaO$\cdot$SiO2) + 4H2O -> 3CaO$\cdot$2SiO2$\cdot$3H2O + Ca(OH)2}\]
+\end{itemize}
+\sssc{溼法（Wet process）製備磷酸與石膏（Gypsum）}
+將純度較高的\tb{磷灰石（Apatite）}\ce{Ca5(PO4)3(F,Cl,OH)}溶於硫酸，製得磷酸與副產品石膏，均為非食品級：
+\[\ce{Ca5(PO4)3(F,Cl,OH)(s) + 5H2SO4(aq) -> 5CaSO4(aq) + 3H3PO4(aq) + H(F,Cl)(aq)\tx{/}H2O(l)}\]
+\sssc{鹹水蒸發}
+將海水或鹽湖水截留於鹽田以太陽曝晒使水蒸發，相當節省能源，硫酸鈣首先析出，接著是氯化鈉，收集該等固體即為\tb{粗（海）鹽（Unrefined (sea) salt）}，主要成分為氯化鈉，次要成分為氯化鈣、氯化鎂、硫酸鈣、硫酸鎂等，易潮解且帶苦味；剩餘的水溶液稱\tb{鹽滷/滷水/苦滷/滷鹼/鹽鹵/鹵水/苦鹵/鹵鹼（Bittern or nigari）}，其中陰離子如氯、溴、碘、硫酸根，陽離子如鎂、鈉、鉀、鈣，食品級者可加入豆漿使膠體粒子凝析，形成豆腐、豆花。
+\sssc{（食）鹽（(table) salt）的製造}
+\bit
+\item \tb{粗鹽精製方法}
+\bit
+\item 將粗鹽溶於水中，加入少許碳酸鈉，過濾去除碳酸鎂和碳酸鈣沉澱，再蒸發結晶。
+\item 電透析法。
+\eit
+\item \tb{精（製）鹽（Refined salt）}：粗鹽精製後所得甚純之氯化鈉。
+\item \tb{強化食鹽（Fortified table salt）}：加入添加物的食鹽。
+\item \tb{含碘食鹽（Iodized salt）}：添加少量\ce{NaI}、\ce{KI}、\ce{NaIO3}或/與\ce{KIO3}以防止甲狀腺腫。
+\item \tb{抗結劑（Anticaking agent）}：水合亞鐵氰化鈉\ce{Na4[Fe(CN6)]$\cdot$H2O}最常見，亦可補充鐵，其他抗結劑如磷酸三鈣、碳酸鈣、碳酸鎂、鋁矽酸鈉和鋁矽酸鈣。
+\eit
+\ssc{物理製程}
+\sssc{泡沫浮選法（Froth flotation）}
+泡沫浮選是一種選擇性地從親水性物質中分離疏水性物質的過程，用於礦物加工、紙張回收和廢水處理行業。
+
+銅、鎳、鉛、金或鋅等礦石的泡沫浮選的溶劑與捕收劑選擇：
+\bit
+\item \tb{親水溶劑}：水溶液，通常 pH 值 7-11。
+\item \tb{疏水溶劑}：密度小於水的液態烴類，少量即可，常用松節油（Turpentine）。
+\item \tb{捕收劑（Collector）}：烷基黃原酸鈉 ROC(=S)-S$^-$.Na$^+$，因其極性部分附著在礦石顆粒上，再吸附於氣泡上被帶到疏水溶劑液面上，收集之得精礦。烷基 R 愈長疏水性愈佳但礦石選擇性愈差，常用乙基黃原酸鈉。
+\eit
+步驟：
+\ben
+\item 將待處理物粉碎（comminution），理想情況下各物質在物理上分離，粉末尺寸通常在直徑 2-500 微米範圍內。
+\item 在浮選器中加入粉末、親水溶劑、疏水溶劑、與所欲物質的捕收劑。
+\item 壓入空氣並予以攪拌使生大量泡沫，此等泡沫為疏水性膜包裹之氣泡。
+\item 粉末被吸附於捕收劑再吸附於氣泡上被帶到液面上，收集之；岩石碎粒沉於器底。
+\een
+\sssc{液態空氣分餾}
+\begin{itemize}
+\item \tb{液態空氣}：將空氣去除懸浮微粒、水、二氧化碳後，加大壓力和降低溫度至約 -191°C 可將其液化為液態空氣。外觀如水，顏色極淡藍，比重約 0.91，無固定沸點混合物。
+\item \tb{杜瓦瓶（cryogenic storage dewar）}：雙層玻璃瓶，層間抽成真空，以避免熱傳導與對流，兩壁內側鍍銀，以反射熱輻射，可用於儲存液態空氣等極低溫物質。
+\item \tb{液態空氣分餾}：可用於製備氮氣、氧氣與惰性氣體，蒸發順序 (沸點) 為：\ce{He} (4K) $\ra$\ce{Ne} (27K) $\ra$\ce{N2} (77K) $\ra$\ce{Ar} (87K) $\ra$\ce{O2} (90K) $\ra$\ce{Kr} (120K) $\ra$\ce{Ne} (165K)。
+\end{itemize}
+\ssc{銅的火法冶煉}
+\sssc{銅精礦}
+將\tb{黃銅礦（chalcopyrite）}\ce{CuFeS2}與\tb{斑銅礦（bornite）}\ce{Cu5FeS4}泡沫浮選等，得到銅精礦。
+\sssc{部分氧化焙燒（Partial oxidation roasting）}
+部分氧化焙燒可提高銅精礦的銅含量，並減少硫、鐵等雜質，釋放\ce{SO2}氣體，生成主成分為\ce{Cu2S$\cdot$FeS}的焙燒礦，是冰銅的前驅物：
+\[\ce{2CuFeS2 + 3O2 -> Cu2S + 2FeS + 2SO2}\]
+\[\ce{2Cu5FeS4 + 7O2 -> Cu2S + 2FeS + 4SO2}\]
+\[\ce{2Cu2S + 3O2 -> 2Cu2O + 2SO2}\]
+\sssc{熔煉（Smelting）}
+在 1200–1300°C 下將焙燒礦與二氧化矽熔劑混合進行\tb{閃速熔煉（flash smelting）}或\tb{熔池熔煉（bath smelting）}，得到含 40–70\% 銅的\tb{冰銅（Matte）}\ce{Cu2S$\cdot$FeS(l)}與爐渣\ce{FeSiO3(l)}，後者密度較低浮於上方：
+\[\ce{Cu2O + FeS -> Cu2S + FeO}\]
+\[\ce{FeO + SiO2 -> FeSiO3}\]
+\sssc{轉爐吹煉（Converter blowing）}
+在轉爐中吹入空氣強熱氧化冰銅，得到含 97–99\% 銅的\tb{粗銅（Blister copper）}與爐渣\ce{FeSiO3(l)}，反應有兩階段：
+\ben
+\item 氧化硫化亞鐵：
+\[\ce{2FeS + 3O2 -> 2FeO + 2SO2}\]
+\[\ce{FeO + SiO2 -> FeSiO3}\]
+\item 氧化硫化亞銅生成粗銅：  
+\[\ce{Cu2S + O2 -> 2Cu + SO2}\]
+此階段劇烈放熱，無需外加燃料。
+\een
+\sssc{火精煉（Fire Refining）}
+目的為去除粗銅殘留的硫、氧等雜質，分為兩階段：
+\ben
+\item 氧化階段：吹入空氣強熱氧化雜質，部分銅亦氧化：
+\[\ce{4Cu + O2 -> 2Cu2O}\]
+\item 還原階段：加入煤粉、天然氣、石油或焦油等還原\ce{Cu2O}為\ce{Cu}。
+\een
+產物為 99.5–99.9\% 銅，稱\tb{陽極銅（Anode copper）}。
+\subsubsection{電解精煉（Electrorefining）}
+以陽極銅為陽極，以純銅為陰極，以硫酸銅為電解液，陽極銅氧化成銅離子而後在陰極還原成純銅，純度可達99.95\%以上，較銅活性大者則以陽離子型態留在電解液中，較銅活性小者則在陽極下形成陽極泥/陽極淤渣，內含貴金屬。
+\ssc{晶圓（Wafer）製造}
+\sssc{Nines 表示法}
+純度$9\times\sum_{k=1}^m10^{-k}+n\times10^{-k-1}$稱$m$N$n$，常用於半導體業表示矽的純度。
+\subsubsection{西門子法（Siemens process）}
+將矽反應成矽烷\ce{SiH4(g)}、三氯化矽\ce{SiHCl3(g)}或四氯化矽\ce{SiCl4(g)}等氣態化合物，使與雜質分離，再將之分解結並晶成多晶矽，可製得純度在9N以上的電子級矽（Electronic grade silicon, EG-Si, EGS）。
+
+四氯化矽途徑：
+\[\ce{Si(s) + 2Cl2(g) ->[$\Delta$] SiCl4(g)}\]
+\[\ce{SiCl4(g) + 2H2(g) ->[$\Delta$] Si(s) + 4HCl(g)}\]
+三氯化矽途徑：
+\[\ce{Si(s) + 3HCl(g) ->[$\Delta$] SiHCl3(g) + H2(g)}\]
+\[\ce{4SiHCl3(g) ->[$\Delta$] 3SiCl4(g) + SiH4(g)}\]
+\[\ce{SiH4(g) ->[$\Delta$] Si(s) + 2H2(g)}\]
+\subsubsection{區域熔煉/帶域熔化（zone melting）/浮區/浮帶（floating-zone）法}
+將矽棒自一端起用帶狀加熱圈局部加熱到熔化並慢慢向另一端移動，保持一小截面為熔融狀，因含有雜質的矽凝固點下降，所以冷卻時較純的矽先固化，而雜質則留在熔融態的矽中，當加熱圈移到末端時，大部分的雜質將被集中到最後一小段，可將此段切斷丟棄。反覆此法，可得純度11N以上的矽晶體。由於較高純度的矽減少雜質作為凝固結晶之核的機會，可以在其中加入晶種以完美結晶，使兼顧純化與長單晶。
+\subsubsection{晶圓（Wafer）}
+\bct\bfH\ctr\icg[width=0.5\textwidth]{Wafer.jpg}\caption{German Wikipediabiatch, original upload 7. Okt 2004 by Stahlkocher de:Bild:Wafer 2 Zoll bis 8 Zoll.jpg. https://commons.m.wikimedia.org/wiki/File:Wafer\_2\_Zoll\_bis\_8\_Zoll\_2.jpg.}\ef\FB\ect
+將9N以上純度的單晶矽柱切片可得晶圓。有直徑 4、5、6、8、12 英寸等規格。晶圓直徑愈大，邊緣無法使用的廢料愈少，故用於生產之效率愈高。是生產二極體、電晶體、電阻、積體電路等電子元件的材料。
+\ssc{半導體元件製造（Semiconductor device fabrication）}
+\subsubsection{微影/光刻（Photolithography, optical lithography, or reticle）}
+\begin{itemize}
+\item 光罩（Photomask or mask）：透明石英玻璃片，覆蓋有通常是鉻金屬或氧化鐵(III)的薄膜，上布積體電路的圖像，圖像可能是倍縮的。
+\item 微影/光刻（Photolithography, optical lithography, or reticle）：將光透過光罩與透鏡照於晶圓上，以將圖型複製於晶圓上。
+\end{itemize}
+\subsubsection{電子束蝕刻（Electron-beam lithography, EBL）}
+與微影/光刻類似，同樣有一「罩」擋住不需被移除的部分，但利用電子束而非光將圖型複製於晶圓上，因電子物質波波長較小，精確度較高，在半導體工業中用於微加工（microfabrication）。
+\subsubsection{化學機械拋光（Chemical mechanical polishing or chemical mechanical planarization, CMP）}
+利用化學和機械力的結合來平滑表面的過程。
+\subsubsection{晶圓背面研磨（Wafer backgrinding）}
+在此過程中晶圓厚度被減小，以實現積體電路的堆疊和高密度封裝。
+\subsubsection{晶圓切割（Wafer dicing）/裸晶分離（Die singulation）}
+隱形切割（Stealth dicing）：沿著預定的切割線利用約100 kHz的雷射脈衝將缺陷區域引入晶圓中，再擴展載體模以引起斷裂。
+\subsubsection{積體電路封裝（Integrated circuit packaging）}
+是半導體元件製造的最後階段，指將元件的核心裸晶（die）封裝在一個支撐物之內，以防止物理損壞及化學腐蝕，並提供對外連接用的引腳（pin），以便將晶片安裝在電路系統裡。封裝後的積體電路（Integrated circuit, IC）稱晶片（chip）。
+\subsubsection{測試（Testing）}
+半導體元件製造中測試與製造、封裝等過程是交互進行的。
+\begin{itemize}
+\item 封裝前測試/晶圓測試（Wafer testing）/晶圓挑揀（Wafer sorting）：在晶圓階段即透過探針卡（Probe card）對晶圓做測試。
+\item 封裝過程測試：透過引腳做各種功能檢測。
+\item 封裝後測試：對 IC 產品進行功能測試和環境條件測試。
+\end{itemize}
+\ssc{氧化還原電池（Redox cell）/電化電池（Electrochemical cell）}
+\sssc{丹尼耳電池（Daniell cell）/鋅銅電池}
+Zn(s) | Zn$^{2+}$(aq) || Cu$^{2+}$(aq) | Cu(s)，以鋅棒為負/陽極，以硫酸鋅為負/陽極電解液，以銅棒為正/陰極，以硫酸銅為正/陰極電解液，以 U 型管裝硝酸鉀水溶液為鹽橋。
+\sssc{伏打電堆（Voltaic pile）}
+以高還原電位金屬（通常為鋅）為負/陽極，以低還原電位金屬（通常為銀或銅）為正/陰極，以吸滿電解質水溶液（通常為食鹽水）的布為鹽橋，以一片負/陽極、一片鹽橋、一片正/陰極依序堆疊製成的電堆。
+\subsubsection{氫氧燃料電池}
+\begin{itemize}
+\item 兩電極以鍍有鉑黑的多孔性石墨板作為觸媒。
+\item 陽極注入氫氣作為燃料，行氧化反應。
+\item 陰極注入氧氣，行還原反應。
+\item 兩電極以滲透性薄膜隔開。
+\item 依電解質種類有酸性/質子交換膜、鹼性/強鹼型/氫氧化鉀型、固體高分子型、磷酸型、熔融碳酸鹽、固態氧化物等，惟電解質不影響電池淨反應。
+\end{itemize}
+理論電壓均為 1.23 伏特，惟因內電阻等因素，實際電壓通常約 0.7 伏特，能量轉換率可達六至八成，遠高於內燃機約不到二成的能量轉換率，但電極甚貴。
+\subsubsection{碳鋅電池（Zinc–carbon battery）/酸性乾電池/乾電池/鋅錳電池/勒克朗杜電池（Leclanché cell） }
+一次電池，外殼為鋅殼陽極，中心為陰極石墨棒，中間為\ce{MnO2}、\ce{NH4Cl}、\ce{ZnCl2}、澱粉和少量水的混合物膠體：
+\begin{itemize}
+\item 負/陽極半反應：\ce{Zn(s) -> Zn^{2+}(aq) + 2e^-}。
+\item 正/陰極半反應：\ce{2NH4^+(aq) + 2e^- -> 2NH3(g) + H2(g)}。
+\item 氣體吸附於碳棒表面受極化會影響導電，故使用二氧化錳和氯化鋅作為去極劑（depolarizer），以去除極化而增加效率：
+\bit
+\item 二氧化錳氧化吸附在碳棒上的氫氣：\ce{2MnO2(s) + H2(g) -> Mn2O3(s) + H2O(l)}
+\item 氯化鋅和氨氣形成錯合物：\ce{Zn^{2+}(aq) + 2NH3(g) + 2Cl^-(aq) -> Zn[(NH3)2Cl2](s)}
+\eit
+\item 電池全反應：\ce{Zn(s) + 2NH4Cl(aq) + 2MnO2(s) -> Mn2O3(s) + Zn[(NH3)2Cl2](s) + H2O(l)}。
+\end{itemize}
+電壓約1.5伏特。因電解質含氯化銨，呈酸性，會與鋅殼反應腐蝕之，而降低電池的電壓，故碳鋅電池壽命不長，不使用時應取出以免損傷電器。碳鋅電池不可充電，乃因鋅離子還原電位小於氫離子，充電時氫離子將優先取得電子產生氫氣，而有爆炸風險。
+\subsubsection{鹼性電池（Alkaline battery）/鹼性乾電池}
+一次電池，以氫氧化鉀為電解質，鋅粉為負/陽極，兩者混合調成膠體物質，二氧化錳和石墨的混合物棒為正/陰極，不鏽鋼為外殼：
+\begin{itemize}
+\item 負/陽極半反應：\ce{Zn(s) + 2OH^-(aq) -> ZnO(s) + 2H2O(l) + 2e^-}。
+\item 正/陰極半反應：\ce{2MnO2(s) + H2O(l) + 2e^- -> Mn2O3(s) + 2OH^-(aq)}。
+\item 電池全反應：\ce{Zn(s) + 2MnO2(s) -> ZnO(s) + Mn2O3(s)}。
+\end{itemize}
+內電阻較乾電池低，故電壓略高於1.5伏特，可在短時間內放出較大電流，電池使用時間與電壓穩定性亦較優，產物為固體，沒有酸性乾電池可能漏電解液的問題。
+\subsubsection{鉛蓄電池/鉛酸電池（Lead-acid battery）}
+二次電池，以鉛板為負極，二氧化鉛板為正極，37\%的稀硫酸為電解液，放電時反應：
+\begin{itemize}
+\item 負/陽極半反應：\ce{Pb(s) + H2SO4(aq) -> PbSO4(s) + 2H^+(aq) + 2e^-}。
+\item 正/陰極半反應：\ce{PbO2(s) + H2SO4(aq) + 2H^+(aq) + 2e^- -> PbSO4(s) + 2H2O(l)}。
+\item 放電全反應：\ce{Pb(s) + PbO2(s) + 2H2SO4(aq) -> 2PbSO4(s) + 2H2O(l)}。
+\end{itemize}
+電池每放一莫耳電子，負極生成硫酸鉛而變重 96 g，正極生成硫酸鉛而變重 64 g，硫酸濃度減少，密度下降，依勒沙特列原理不利反應向右故電壓略降。
+
+充電時外電源正極與負極分別連接鉛蓄電池的正極與負極，充電時電池之角色轉為電解，兩電極半反應均為放電時之逆反應。
+
+鉛蓄電池每一組電池槽的電壓約2.0伏特，汽車電瓶通常將6組鉛蓄電池串連，提供12伏特的電壓。
+
+舊型的鉛蓄電池充電時水會被電解，加上電解液蒸發，需常補水。改良後的免維護鉛蓄電池，其極板柵架用鉛鈣合金製造，在反應過程中可減少充電時的水電解反應，並密封出售，而免加水維護，壽命可達數年。
+\subsubsection{一次鋰電池}
+一次電池，以鋰金屬或鋰合金為陽極，常以二氧化錳\ce{MnO2}、硫化鐵\ce{FeS2}或碳氟化合物（
+\ce{CF$_x$}為陰極，以鋰鹽的有機溶劑溶液為電解液，下以\ce{MnO2}陰極為例：
+\begin{itemize}
+\item 負/陽極半反應：\ce{Li(s) -> Li^+(aq) + e^-}
+\item 正/陰極半反應：\ce{MnO2(s) + Li^+(aq) + e^- -> MnO2Li(s)}
+\item 電池全反應：\ce{Li(s) + MnO2(s) -> MnO2Li(s)}
+\end{itemize}
+能量密度高、壽命長、放電平穩，常用於小型電子設備。
+\subsubsection{鋰離子電池（Lithium-ion Battery）與鋰聚合物電池（Lithium Polymer Battery, Li-Po）}
+二次電池，以鋰鈷氧化物或鋰錳氧化物等含鋰化合物作為陰極，以含鋰的石墨Li$_x$C$_n$（0<x$\leq 1$）為陽極，鋰離子電池以\ce{LiCoO2}等鋰鹽的有機溶劑溶液為電解液，鋰聚合物電池以鋰鹽的凝膠狀或固體聚合物為電解液，放電時反應：
+\begin{itemize}
+\item 負/陽極半反應：\ce{Li$_x$C$_n$(s) -> nC(s) + xLi^+(aq) + e^-}
+\item 正/陰極半反應：\ce{Li$_{1-x}$CoO2(s) + xLi^+(aq) + xe^- -> LiCoO2(s)}
+\end{itemize}
+充電時外電源正極與負極分別連接鋰離子電池或鋰聚合物電池的正極與負極，充電時電池之角色轉為電解，兩電極半反應均為放電時之逆反應。
+
+電壓約3.6伏特，能量密度高，常用於電子產品與電動車。鋰離子電池無記憶效應，壽命長。鋰聚合物電池為鋰離子電池的一種改進，但製造成本較高，且對過充與過放敏感，通常需搭配保護電路使用。
+\subsection{還原性測試}
+\subsubsection{裴琳試液（Fehling's solution）}
+斐林試液A為藍色硫酸銅水溶液，斐林試液B為酒石酸鉀鈉（或稱羅謝爾鹽）和強鹼氫氧化鈉的無色透明混合溶液，其中酒石酸為雙亞基，可與銅離子錯合。裴琳試液與強還原劑（如醛基、還原糖、α-羥基酮、乙二酸、次磷酸，但不含芳香醛）共熱反應可得磚紅色氧化亞銅沉澱與藍色褪色，可用於測試之。以醛為例，得氧化亞銅與羧酸鹽：
+\[\ce{RCHO(l) + 2Cu^{2+}(aq) + 5OH-(aq) -> RCOO-(aq) + Cu2O(s) + 3H2O(l)}\]
+\subsubsection{本氏液/本尼迪特試劑（Benedict's reagent）}
+本氏液為碳酸鈉、檸檬酸鈉與硫酸銅的淺藍色混合溶液，與強還原劑（如醛基、還原糖、α-羥基酮、乙二酸、次磷酸，但不含芳香醛）共熱可發生與裴琳試液相同的反應，得磚紅色氧化亞銅沉澱與藍色褪色，反應當量愈大愈接近紅色，可用於測試之。
+\subsubsection{多侖試劑（Tollens' reagent）與銀鏡反應（Silver mirror reaction）}
+\tb{多侖試劑}\ce{[Ag(NH3)2]NO3)(aq)}之配置：
+\ben
+\item \ce{AgNO3(aq)} 中加入數滴 \ce{NaOH(aq)} 形成\ce{Ag2O(s)}沉澱。
+\item 逐滴滴入 \ce{NH3(aq)} 搖晃至沉澱完全溶解為二氨銀錯離子 \ce{[Ag(NH3)2]+}。
+\item 多侖試劑必須隨配隨用而不可久置，且含有多侖試劑的廢液須加水稀釋方可倒棄，均為防止生成氮化銀 \ce{Ag3N} 、疊氮化銀 \ce{AgN3} 等不穩定而易爆炸之物質。
+\een
+\tb{銀鏡反應}：在多侖試劑中滴加強還原劑（如醛基、還原糖、α-羥基酮、乙二酸、次磷酸，含芳香醛）作為還原劑，加熱數分鐘後，多侖試劑的銀離子還原析出銀於玻璃等器壁上，屬無電電鍍。以醛基為例：
+\[\ce{RCHO(aq) + 2[Ag(NH3)2]+(aq) + 3OH-(aq) -> RCOO-(aq) + 2Ag(s) + 4NH3(aq) + 2H2O(l)}\]
+\subsection{水的淨化處理}
+\sssc{原水}
+指未經淨化處理之水。
+\sssc{硬水（Hard water）與軟水（Soft water）}
+\begin{itemize}
+\item \tb{硬水（Hard water）}：含鈣或鎂離子的水。
+\item \tb{暫時硬水（Temporary hard water）}：陰離子為碳酸氫根，即溶質為酸式碳酸鹽，的硬水。
+\item \tb{永久硬水（Permanent hard water）}：非暫時硬水的硬水。
+\item \tb{軟水（Soft water）}：非硬水的水。
+\item \tb{硬水沉澱}：硬水易產生碳酸鈣、碳酸鎂、硫酸鈣等沉澱，其中硫酸鈣溫度愈高溶解度愈低，在鍋具中稱鍋垢，會影響鍋爐導熱甚至因導熱不均爆炸。
+\end{itemize}
+\sssc{去離子水（Deionized water, DI water）}
+指除了氫與氧組成的離子外不具有其他離子的水。
+\sssc{離子交換/去離子過程（Ion-exchange process）}
+\bit
+\item 水先通過具強酸性陽離子交換樹脂\ce{RH}的氫離子交換管/第一管柱，使水中陽離子與樹脂的\ce{H^+}交換；再通過具強鹼性陰離子交換樹脂\ce{R$'$OH}的氫氧離子交換管/第二管柱，使水中的陰離子與樹脂的\ce{OH^-}交換；最終獲得去離子水，全反應：
+\[\ce{RH(s) + R$'$OH(s) + M^+(aq) + X^-(aq) -> RM(s) + R$'$X(s) + H2O(l)}\]
+\item 兩管順序不可交換，否則中間管路可能生成金屬氫氧化物沉澱而阻塞。
+\item 離子交換無法去除非電解質。
+\item 離子交換後，陽離子交換樹脂上的氫離子減少，可泡鹽酸使增加，從而更新其交換能力，稱再生。
+\item 離子交換後，陰離子交換樹脂上的氫氧根離子減少，可泡氫氧化鈉水溶液使增加，從而更新其交換能力，稱再生。
+\eit
+\sssc{硬水軟化（Hard water softening）}
+\bit
+\item \tb{加熱}：加熱碳酸氫鈣/鎂變成碳酸鈣/鎂沉澱。僅適用於暫時硬水。
+\item \tb{加氫氧化鈣}：使碳酸氫鈣/鎂變成碳酸鈣/鎂沉澱。僅適用於暫時硬水。
+\item \tb{加碳酸鈉}：形成碳酸鈣/鎂沉澱，但留下鹼性，工業與家用多不合適。
+\item \tb{蒸餾}：但二氧化碳不易除去且成本較高。
+\item \tb{加磷酸鹽}：形成磷酸鈣/鎂沉澱，但會造成水質優養化。
+\item \tb{陽離子交換法}：
+\begin{itemize}
+\item 人工合成泡沸石/陽離子交換樹脂\ce{NaR}：如聚苯乙烯磺酸鈉。
+\item 天然泡沸石\ce{NaZ}：如鈉沸石（Natrolite）\ce{Na2Al2Si3O10$\cdot$2H2O}。
+\item 陽離子交換時，鎂與鈣離子被\ce{Na(R,Z)}捕獲，鈉離子進入水中；陽離子交換後，\ce{Na(R,Z)}上的鈉離子減少，可泡濃食鹽水使增加，從而更新其交換能力，稱再生（regeneration）：
+\[\ce{(Ca,Mg)^{2+}(aq) + 2Na(R,Z)(s) <=>[\text{陽離子交換}][\text{再生}] (Ca,Mg)(R,Z)2(s) + 2Na^+(aq)}\]
+\end{itemize}
+\eit
+\subsubsection{前處理}
+初步去除較大的固態物、懸浮物。
+\begin{itemize}
+\item \tb{攔汙柵}。
+\item \tb{油水分離裝置}。
+\item \tb{沉澱池/沉降池}。
+\end{itemize}
+\subsubsection{一級處理}
+去除固形物、懸浮物。
+\begin{enumerate}
+\item \tb{分水井}：將原水經由進水管進入分水井，然後被均勻地分配到後續的處理單元中。確保水流的穩定和均勻，避免因流量變化對後續處理過程造成影響。
+\item \tb{快混池/快速混合池}：水與明礬\ce{KAl(SO4)2$\cdot 12$H2O}或聚合氯化鋁（Polyaluminium Chloride, PAC）等淨水劑迅速混合，形成膠體溶液，吸收、凝聚原水中的懸浮固體，並可加入NaOCl等消毒藥劑進行初步消毒。
+\item \tb{膠凝池/慢混池}：混凝劑吸附懸浮固體形成膠體溶液，其溶質稱絮凝體/膠羽，經過緩慢攪拌，結合形成大型絮凝體，變得更易於沉澱。
+\item \tb{沉澱池/沉降池}：絮凝體在沉澱池中重力沉降到池底，形成汙泥，清水則從上部流出。去除水中的懸浮固體和絮凝體。
+\item \tb{快濾池/快速過濾池}：水經過過濾材料，如砂礫、煤炭、細砂，的層層過濾，去除剩餘的微生物、微小顆粒和懸浮物。
+\end{enumerate}
+\subsubsection{二級處理}
+去除有機物質。
+\begin{itemize}
+\item \tb{曝氣}：主要用於工業廢水處理。通過鼓風機或將水噴灑在空中等方式增加水中的氧氣含量，加速有機物分解，去除異味、揮發性有機物及一些溶解性氣體（如二氧化碳），並促進某些金屬（如鐵和錳）的氧化沉澱。
+\item \tb{加活性汙泥}：其富含微生物，能分解有機物質。
+\end{itemize}
+\subsubsection{三級處理}
+提高排放水的水質。
+\begin{itemize}
+\item \tb{重金屬沉澱池}：用於工業廢水，加入適當試劑使重金屬沉澱。
+\item \tb{離子交換/去離子過程}：主要用於工業廢水或海水淡化處理。
+\item \tb{清水池/消毒}：進行最終的消毒處理，通常使用氯氣、臭氧與/或紫外線。
+\bit
+\item \tb{氯氣}：加入氯氣約 0.2 至 1.0 ppm 即可殺菌，大量水處理廠通常以高壓鋼瓶裝液氯添加於水中，會殘留氯味，並可能與有機物質反應產生致癌物，可避免運送過程汙染，都市用水常用，臺灣自來水用之。
+\item \tb{臭氧}：加入臭氧約 1.0 ppm即可殺菌，使用後產生氧氣，無殘留，無法避免運送過程汙染，漸受採用，歐洲飲用水多用之。
+\eit
+\item \tb{除臭/吸附}：主要用於工業廢水處理、海水淡化或飲水機等純化以取得飲用水，通常使用活性碳吸附水中的雜質並除臭、脫色。
+\item \tb{逆滲透（Reverse osmosis, RO）}： 主要用於工業廢水處理、海水淡化或飲水機等純化以取得純水。使用僅可讓水通過的半透膜隔開兩管，含雜質水端施以高壓，水通過半透膜，在另一端得到高純度的水。使用 RO 的水需前處理至足夠乾淨否則半透膜壽命短。
+\item \tb{蒸餾}：主要用於海水淡化與製備純水，最古典的純化方法之一，耗熱，可利用太陽能進行，很難去除低沸點的有機物質。
+\item \tb{凝固}：主要用於海水淡化，因溶質粒子數愈多凝固點愈低，慢慢凝固時，較純的水會先凝固，並將較原先濃度更高的鹽水析出。凝固比蒸餾更節省能源，且可降低鍋垢與腐蝕的發生。
+\end{itemize}
+\ssc{顯示器（Display）}
+\sssc{陰極射線管/映像管（Cathode ray tube, CRT）顯示器}
+\bct\bfH\ctr\icg[width=0.5\textwidth]{CRT.jpg}\caption{Draconichiaro. 2018. Wikipedia.
+\\https://commons.m.wikimedia.org/wiki/File:CRTslowmotion\_PetesDragon.jpg.}\ef\FB\ect
+利用陰極電子槍發射電子，在高壓下射向螢光屏，使螢光粉發光。早期僅能展現黑白畫面，而後改以三支電子槍打在紅色、綠色和藍色三種螢光粉上展現彩色畫面。
+
+1925年發明，笨重，後被電漿顯示器等淘汰。
+\sssc{等離子/電漿顯示器（Plasma display）}
+\bct\bfH\ctr\icg[width=0.5\textwidth]{Panasonic.jpg}\caption{TwentyEighteen. 2014. Wikipedia. https://commons.m.wikimedia.org/wiki/File:Panasonic\_TX-P55ST60E\_late\_era\_plasma\_TV.jpg.}\ef\FB\ect
+每個電漿發光體，為真空玻璃管中注入惰性氣體或水銀蒸氣，加電壓使氣體游離放出紫外線，激發螢光粉而產生可見光，利用激發時間的長短來產生不同的亮度，每個像素有紅色、綠色和藍色三種不同螢光粉的電漿發光體。
+
+1964年發明，較液晶顯示器早成熟，後被液晶顯示器淘汰。
+\sssc{液晶顯示器（Liquid-crystal display, LCD）}
+\bct\bfH\ctr\icg[width=0.5\textwidth]{Casio.jpg}\ef\FB\ect
+液晶分子置於兩平行玻璃板之間，過去利用細小的電線，現在利用薄膜電晶體（Thin-film transistor, TFT），對液晶分子施加不同電壓，使產生特定排列方向，進而改變其光學性質。使用的液晶分子為苯甲酸膽固醇酯等。背光板（Backlight）提供光源，先通過一偏振板，再通過液晶分子，因折射角度不同而獲得不同光強度。單色背光加上前述構造即可作為黑白液晶顯示器。彩色液晶顯示器中則使用紅色、綠色和藍色螢光粉產生多色背光，通過前述構造後，還須再通過濾色板（Color flter）與另一偏振器以濾色。
+
+\tb{薄膜電晶體液晶顯示器（Thin-film transistor–liquid-crystal display, TFT–LCD）}：模組厚度（含背光板）約 4 毫米，相較於電漿顯示器厚度更薄、體積更小、操作電壓更低、耗電量更少、更易設計多色面板。
+
+\tb{弗里德里克斯轉變（Fréedericksz transition）}：當對未變形狀態的液晶施加足夠強的電場或磁場時產生的液晶相變。於1927年由 Vsevolod Konstantinovich Frederiks 與 A. Repiewa 發現。是液晶顯示器的原理。
+
+液晶顯示器在20世紀中葉即廣泛使用，至今仍是主流顯示器。
+\ssc{有機發光二極體（Organic light-emitting diode, OLED）顯示器/有機電致發光顯示器（Organic electroluminescence display, OELD））}
+\bct\bfH\ctr\icg[width=0.5\textwidth]{OEL.jpg}\caption{STRONGlk7. 2012. Wikipedia. https://commons.m.wikimedia.org/wiki/File:OEL\_right.JPG}\ef\FB\ect
+使用利用有機發光二極體作為光源，每個 OLED 皆可自行發出特定顏色的光，因此不需要背光板和濾色板等構造，厚度可做到 2 毫米以下。相較於液晶顯示器厚度更薄、視角更廣、應答速率愈快、操作電壓更低、耗電量更少、可撓曲性更大（適用於聚合物導電基板）、對比度更大、製程更簡單。但缺點如，有機分子易氧化使生命週期縮短，且不同顏色其生命週期不同。
+
+1987年發明，已有商業產品，如勇於智慧型手機、車用顯示器、電腦等，可能是未來的主流。
+\sssc{場發射顯示器（Field emission display, FED）}
+類似於傳統的陰極射線管顯示器，但電子源改用多個單獨的奈米級電子槍組成的大面積矩陣，每個像素包含紅色、綠色和藍色三個子像素，各由一個或多個電子槍打到塗布有螢光粉的陽極板上產生，再透過光刻有一系列金屬條紋的玻璃板螢幕上。耗電低於液晶顯示器。
+
+\tb{奈米碳管場發射顯示器（carbon nanotube－field emission display, CNT－FED）}：使用摻雜的奈米碳管作為發射器。
+
+2000年開始投入研究，目前尚無商業產品。
+\ssc{玻璃（Glass）}
+\sssc{玻璃（Glass）}
+以二氧化矽與/或矽酸鹽類為主要成分的玻璃態混合物，一般由白砂和碳酸鹽類混合加熱製成，玻璃轉化溫度一般約五百多攝氏度。
+\sssc{鈉鈣玻璃（Soda–lime glass）/鈉鈣矽玻璃（Soda–lime–silica glass）/鈉玻璃/普通玻璃（Regular glass）}
+主要成分為偏矽酸鈉、偏矽酸鈣與二氧化矽，由白砂、灰石和碳酸鈉混合加熱製成，質較軟、玻璃轉化溫度低、抵抗化學藥品能力較弱，常用於玻璃瓶、玻璃門窗。
+\sssc{鉀鈣玻璃（Potash–lime glass）/鈉鈣矽玻璃（Potash–lime–silica glass）/鉀玻璃/化學強化玻璃（Chemically strengthened glass）}
+由白砂、灰石和碳酸鉀混合加熱製成，質較硬、玻璃轉化溫度高、抵抗化學藥品能力較強，常用於裝飾品、化學實驗器具。
+\sssc{鉛玻璃（Lead glass）/光學玻璃（Optical glass）}
+由白砂、氧化鉛(II)和碳酸鉀混合加熱製成，透光度佳、折射率大，常用於光學器具。
+\sssc{硼玻璃/硼矽玻璃（Borosilicate glass）/派熱克斯玻璃/派熱司玻璃（Pyrex）/耐熱玻璃/熱硬化玻璃/熱強化玻璃（Heat-strengthened glass）}
+由白砂、灰石、碳酸鈉和三氧化二硼或硼砂混合加熱製成，質硬、玻璃轉化溫度高、熱膨脹率小，常用於烹飪用具、化學實驗器具。
+\sssc{有色玻璃}
+玻璃中加入過渡金屬常具顏色，如常見玻璃呈綠色乃因所有砂含有少量氧化鉻(II)所致：
+\begin{longtable}[c]{|c|c|}
+\hline
+添加 & 顏色\\\hline\endhead
+\ce{Cu2O} & 紅\\\hline
+\ce{Fe2O3} & 黃\\\hline
+\ce{FeO} & 綠\\\hline
+\ce{Cr2O3} & 綠\\\hline
+\ce{CoO} & 藍\\\hline
+\ce{MnO2} & 紫\\\hline
+\end{longtable}
+\FB
+\sssc{石英玻璃（Quartz glass）/熔融石英（Fused quartz）}
+由純度較高的石英熔化並急速冷卻後製成，熱膨脹率小，耐熱性高，常用於化學實驗器具、提煉設備。高純度的石英玻璃熔化拉絲後可作成柔軟度佳的光學纖維，常用於光纖電纜（Fiber-optic cable）、內視鏡（Endoscope）等醫學檢查儀器。
+\ssc{陶瓷（Ceramic）}
+\sssc{陶瓷（Ceramic）}
+泛指高溫燒結而成的無機非金屬固體材料，一般質硬但甚脆，熔點高，耐熱，耐酸鹼，耐氧化還原劑，耐各類溶劑，絕緣。
+\sssc{陶}
+較不純的黏土成型乾燥後經約1000攝氏度燒結而成，較粗糙且一般較紅，如磚瓦、陶器，磚瓦通常使用具有較多鐵氧化物雜質者，為常用建築材料。
+\sssc{瓷}
+較純的黏土成型乾燥後經約1500攝氏度燒結而成，較細緻且較白，如瓷器。
+\sssc{鐵氧體（Ferrite）}
+含有鐵的氧化物的亞磁性陶瓷材料，是永久磁鐵的重要原料。
+\ssc{奈米材料（Nanomaterials）}
+奈米材料比表面積（Specific surface area, SSA）遠大於塊材，表現出許多原子尺度的性質，有不同於塊材的物理、化學、光學、電磁學等性質。
+\sssc{定義}
+\bit
+\item \tb{奈米尺度（Nanoscale）}：指 1-100 nm。
+\item \tb{塊材（Bulk material）}：指三維空間中所有維度均大於 100 nm 的材料。
+\item \tb{奈米材料（Nanomaterials）}：指三維空間中至少有一維處於 1-100 nm 範圍內的材料。
+\item \tb{二維/層狀奈米材料}：指三維空間中有一維處於 1-100 nm 範圍內的材料。
+\item \tb{一維/柱狀奈米材料}：指三維空間中有二維處於 1-100 nm 範圍內的材料。
+\item \tb{奈米顆粒/奈米粒子（Nanoparticle）/零維/顆粒狀奈米材料}：指最大直徑處於 1-100 nm 範圍內的材料。
+\item \tb{奈米技術（Nanotechnology）}：研究奈米材料之製造、性質與製造的技術。 
+\item \tb{奈米複合材料（Nanocomposite）}：多相固體奈米材料。
+\item \tb{超晶格（Superlattice）}：兩種或更多材料的奈米尺度二維層或更低維結構的週期性陣列。
+\eit
+\sssc{通性}
+\bit
+\item 顆粒愈小，熔點愈低。
+\item 比表面積愈大，熱交換面積愈大，導熱性愈佳，常用於低溫導熱材料。
+\item 比表面積愈大，接觸面積愈大，有效碰撞頻率愈大，活性愈高，因此固相奈米材料常可作為異相催化劑，奈米顆粒分散在流體中常可形成膠體溶液，常可作為催化劑，均常用於殺菌、防毒、催化有機物氧化等，奈米顆粒在液體溶劑中形成的膠體溶液常需要保護劑。
+\item 奈米材料通常反射率很低，多呈現黑色，可作為高效率的光熱、光電等轉換材料。
+\item 量子井/量子阱（Quantum well）、量子線（Quantum wire）與量子點（Quantum dot, QD）/半導體奈米晶體（Semiconductor nanocrystal）可用於電晶體、太陽能電池、光電元件、光觸媒等。
+\item 許多奈米顆粒照光可產生電子電洞對，再與其他物質結合形成自由基，如奈米二氧化鈦、奈米銀、碳點，可用於殺菌、防毒、除臭等。
+\item 奈米顆粒可進出細胞膜，故可能催化或阻止生物機能，可用於殺菌等，但若進入環境可能對生物體造成難以預料的衝擊，是奈米技術的隱憂。
+\item 許多奈米塗層具有超疏水性，如奈米二氧化鈦塗層，可減少結垢、防汙，常用於奈米衛浴設備、奈米建材、奈米磁磚、奈米馬桶等。
+\eit
+\sssc{蛾眼效應（Moth eye effect）}
+夜行性飛蛾的複眼表面有奈米柱狀結構，呈現漸變折射率（graded index），導致大部分的光都被吸收，只有極少被反射，而呈黑色，即使在月光下覓食或活動也不易被天敵發現。奈米柱狀結構的蛾眼效應可用於抗反射膜鏡片、光電元件等。
+\sssc{超親水性（Superhydrophilicity）}
+\bit
+\item \tb{親水性（Hydrophilicity）}：指與水滴的接觸角小於30°。
+\item \tb{超親水性（Superhydrophilicity）}：指與水滴的接觸角（contact angle）小於1°。
+\item 超親水性表面可產生水膜，使汙垢不易附著，達到自潔（Self-cleaning）的效果。
+\eit
+\sssc{超疏水性（Superhydrophobicity or Ultrahydrophobicity）與蓮葉效應（Lotus effect）}
+\bit
+\item \tb{疏水性（Hydrophobicity）}：指與水滴的接觸角在30°至120°（亦有稱90°）。
+\item \tb{超疏水性（Superhydrophobicity or Ultrahydrophobicity）}：指與水滴的接觸角大於150°（亦有稱120°、140°）且滑動角小於120°（亦有稱無此限制）。
+\item 超疏水性表面上的水會因表面張力形成水珠，只要表面稍微傾斜就會滾落，達到自潔的效果。
+\item \tb{蓮葉效應/荷葉效應/蓮花效應/荷花效應（Lotus effect）}：蓮（\textit{Nelumbo nucifera}）葉表面上有約 5-15 微米高的突起表皮細胞，上覆蓋有直徑約 100-200 奈米的蠟結晶與500-1000奈米的疏水性絨毛，形成超疏水性，葉面上的水會形成水珠滾落。芋葉上也有類似效應。
+\eit
+\sssc{磁性奈米顆粒（Magnetic nanoparticle）}
+指一些與磁場具有相互作用的奈米顆粒。許多鐵磁性或亞鐵磁性物質的顆粒小於一臨界體積即具有超順磁性，主要研究的磁性奈米顆粒包含奈米鐵氧體和奈米金屬。
+\subsubsection{富勒烯（Fullerene）}
+\begin{itemize}
+\item \tb{富勒烯（Fullerene）}：完全由$n$個三配位碳原子組成，具有12個五邊形面和 $\frac{n}{2}-10$ 個六邊形面的多面體封閉籠，其中 $\geq 20$。鍵級$\frac{4}{3}$。如\ce{C60}、\ce{C70}、\ce{C72}、\ce{C84}。因結構類似建築師富勒（R. B. Fuller）設計的球形屋頂而得名。一般不導電，但可用於製造超導材料。可作為潤滑劑、石油精煉過程中的催化劑、化妝品成分、氣體儲存材料、放射醫療材料等。
+\item \tb{內嵌富勒烯（Endohedral fullerenes or endofullerenes）}：嵌有一個或多個小分子、原子或離子的富勒烯，可能包裹在籠內、取代碳而在碳網路內、附著在球外等，傳統將內嵌$M$的富勒烯 C$_n$ 記作 M@C$_n$。內嵌物如氫氣、惰性氣體、金屬原子等。可用於儲氫、儲惰性氣體、放射醫療等。
+\item \tb{過渡金屬富勒烯錯合物（Transition metal fullerene complex）}：富勒烯可作為配位子（ligand）與過渡金屬形成錯合物，通常富勒烯作為多牙配位子，與一或多個過渡金屬原子或離子形成配位共價鍵。
+\item \tb{巴克球/巴基球（Buckyball）/巴克明斯特芙（Buckminsterfullerene）/足球烯/芙-60}\ce{C60}：有12個五元環和20個六元環交錯稠合成足球結構的富勒烯，是分子量最小的富勒烯。共振但不在整個分子上離域。不導電、彈性佳。
+\item \tb{碳簇（Carbon clusters）}：石墨經電弧方電法（arc discharge method）或雷射蒸發法（laser-ablation）製得的碳sp$^2$混成軌域鍵結的同素異形體，如巴克球、奈米碳管。
+\item 1991年，霍夫曼（Donald Huffman）和克雷許梅（Wolfgang Krätschmer）利用聚焦後的氖雷射光照射石墨片使蒸發，再利用氖氣帶出該氣體，透過質譜儀測量其分子量發現\ce{C60}。
+\item 可吸引病毒並與之嵌合，可降低病毒毒素與阻止病毒擴散，如碳六十用於治療愛滋病。
+\eit
+\sssc{碳量子點（Carbon quantum dot, CQD）/碳點（Carbon dot, CD）}
+主要由sp$^2$、sp$^3$混成碳為主體的碳奈米顆粒，一般為球形，直徑小於 5 奈米，可能非晶、部分晶化或高度結晶，上可能有各種官能基（如羥基、胺基、羧酸基）以調控其光學、化學等性質。
+
+可使用含碳有機小分子，如甘胺酸，或薑、樹葉、咖啡渣、茶葉渣等植物渣，經水熱、微波、電化學等方法製成。
+
+會吸收特定波長的光，其膠體溶液一般濃度低時呈黃色透明，隨濃度增加逐漸變為咖啡色，直到無法透光變為黑色。碳點是新興奈米螢光材料，照射不同顏色的光線可放出不同顏色的螢光，可通過碳點大小與組成等調控。
+
+一般穩定性高，耐酸鹼，具高催化活性，有些可照光產生自由基以殺菌，具高生物相容性，具有外圍修飾特定官能基可用於抑制特定癌細胞、生物辨識、降低生物分子毒性、生物影像與生物感測器、細胞顯影、金屬離子與毒物檢測試劑等。
+
+一些具高導電度，可用於製造燃料電池、超電容等。
+\subsubsection{石墨烯（Graphene）}
+\begin{itemize}
+\item 單層石墨烯指單層的石墨層狀平面結構，厚度約0.34nm；少層石墨烯指3-10層；多層石墨烯指10層以上、10nm以下；石墨烯微片指2層以上、10nm以下。
+\item 2004年蓋姆（Andre K. Geim）領導的團隊利用普通膠帶沾黏石墨首次製造出單層石墨烯，蓋姆及其學生諾沃肖洛夫（Konstantin Novoselov）獲2010年諾貝爾物理獎。
+\item 石墨烯展現許多原子尺度的效應，是目前世界上已知最薄、最堅韌的材料，質輕、強度大、 韌性大，室溫下呈透明，卻密實到連氦原子都無法通過，彈性、導電性、導熱性優於奈米碳管與石墨，導電性與銅相近，可用於製造超高效能的場效電晶體（Field effect transistor, FET），用於電子產品可製造更薄、導電速度更快的新電子元件、觸控螢幕、面板、太陽能電池等。
+\item 與塑膠混合可產生質輕、高導電性、耐熱、耐磨耗、強韌的複合材料，可能用於汽車、航太、軍事、生醫、綠能、電子元件等。
+\end{itemize}
+\subsubsection{奈米碳管（Carbon nanotube, CNT）}
+\begin{itemize}
+\item 飯島澄男於1991年發現。
+\item 單層奈米碳管為完全由三配位數碳原子組成的中空管狀結構，管體部分為由石墨烯捲曲成圓柱形管狀之構型，末端為半球狀構型以封閉之，末端及轉折處可能出現五角環或七角環。
+\item 多層奈米碳管直徑4-30奈米，長約1微米，由2-50個同心單層奈米碳管組成。
+\item 具高張力強度、強韌、柔軟、高彈性、高導熱性。單層奈米碳管的強度是鋼的100倍但密度僅有鋼的六分之一，若做成截面1平方毫米的線狀材料，耐重可達數噸。
+\item 化性穩定。
+導電性隨直徑大小、捲曲方向等結構不同而不同，可能為絕緣體、半導體或導體，甚至可達遠大於銅的導電度，可用於製作纜線、電子元件、薄型螢幕等。
+\item 中空毛細管特性可吸附氣體，可作為燃料電池的儲氫裝置。
+\end{itemize}
+\sssc{奈米纖維（Nanofiber）}
+如蛋白質、纖維素與聚乳酸、聚(乙烯)-(乙酸乙烯酯)等聚酯。通常具有高機械強度，可用於紡織，製造具光澤、質感細緻、輕薄、柔軟、保暖、自潔等性質的紡織品。
+\sssc{奈米結矽晶（Nanocrystalline silicon）}
+可變成導體或半導體，可用於光電等。
+\sssc{奈米銀}
+\begin{itemize}
+\item 易失去電子釋出銀離子，如照光時等，在流體中分散形成膠體溶液，常用於催化有機物氧化，奈米銀離子電洞易形成自由基，亦易與硫醇基、蛋白質、核酸等結合，可作為氧化還原反應的催化劑，奈米銀或奈米銀離子可穿透細胞膜進入細胞內，銀離子與酶蛋白上的硫醇基結合可抑制 DNA 與 RNA 的合成，故奈米銀屬長效型抗菌劑，且不會造成抗藥性，可通過顯微注射定位給藥，以消除體內癌細胞或微生物等，可能取代抗生素的一些應用，常加到襪子、織品、棉球、口罩、燒燙敷料、繃帶等中製成抗菌用品。
+\item 可催化甲醇氧化成甲醛並釋出氫氣：
+\[\ce{CH3OH(l) ->[\ce{Ag}] HCHO(g) + H2(g)}\]
+\item 可催化丙烯氧化成1,2-環氧丙烷\ce{C3H6O}（SMILES: CC1CO1）：
+\[\ce{2C3H6(g) + O2(g) ->[\ce{Ag}] 2C3H6O(g)}\]
+\end{itemize}
+\sssc{鉑黑（Platinum black）}
+金屬鉑的極細粉末，呈黑色，優良催化劑，常用於電極等。
+\sssc{奈米金}
+\begin{itemize}
+\item 在流體中分散形成膠體溶液，不同直徑與濃度可呈現不同顏色。顆粒愈小愈偏紅色、顆粒愈大愈偏金色。
+\item 顆粒愈小熔點愈低，直徑 2 nm 的奈米金粒子熔點 327°C 遠低於塊材金熔點 1063°C。
+\item 工業上將金溶於王水中生成四氯金酸，再用檸檬酸鈉溶液\ce{C6H5O7Na3(aq)}還原製備得奈米金的膠體溶液，加入的檸檬酸鈉濃度愈大，生成的奈米顆粒半徑愈小。
+\item 有別於塊材金的低活性與強抗腐蝕性，易與硫醇基、蛋白質、核酸等結合，具高生物相容性，利用金奈米顆粒的顏色改變製成的生物感應器可有效偵測過量的核酸、蛋白質等，常用於生物與醫學檢測。
+\item \tb{驗孕棒（Pregnancy test stick）}：懷孕的女性會分泌一種特殊的荷爾蒙–人絨毛膜促性腺激素（Human chorionic gonadotropin, hCG）主要功能是刺激黃體，有利於雌激素和黃體酮持續分泌，以促進子宮蛻膜形成，使胎盤生長成熟。將女性的尿液滴在驗孕棒上，若有該荷爾蒙存在，其會與驗孕棒中奈米金表面有抗體修飾的奈米金試劑，再與固定在測試區上的抗體結合，使奈米金聚集，使測試區呈現紅寶石色。
+\item 奈米金銀合金（一般以金為主成分）可催化一氧化碳氧化成二氧化碳，可製成防毒面具避免一氧化碳中毒，屬異相催化：
+\[\ce{2CO(g) + O2(g) -> [\ce{Au}] 2CO2(g)}\]
+\item 長條狀奈米金吸收近紅外線與可見光效率高。
+\end{itemize}
+\sssc{奈米鋁}
+極易燃燒。
+\sssc{奈米鉑}
+具高催化性，可用於燃料電池。
+\sssc{奈米雙晶銅（Nano-twin Cu）}
+在導電度相差不多下，機械強度大幅提升，可用於燃料電池。
+\sssc{縱向磁記錄（Longitudinal magnetic recording, LMR）與垂直磁記錄（Perpendicular magnetic recording, PMR）}
+\bct\bfH\ctr\icg[width=0.9\textwidth]{Perpendicular_Recording_Diagram.svg.png}\ef\FB\ect
+傳統的縱向磁記錄以環寫入器（ring writing element）在記錄層（recording layer）中寫入一段平行於記錄層的磁矩儲存資訊；而垂直磁記錄則以單極寫入器（monopole writing element）在記錄層中寫入一段垂直於記錄層的磁矩儲存資訊。兩者均具有超順磁性極限，均屬常規磁記錄（Conventional magnetic recording, CMR），但後者由於磁各向異性更高，故產生超順磁性的臨界體積更小，可達到縱向磁記錄的數十倍密度。
+
+記錄層是一層鐵磁性或亞鐵磁性物質，主要使用鈷鉻鉑合金；其下可利用由順磁性物質構成的軟磁底層（Soft Underlayer, SUL）加強記錄層的磁場強度，主要使用鐵鈷或鐵鎳合金；記錄頭（recording head）主要使用鐵鈷或鐵鎳合金電磁鐵寫入資訊。
+\sssc{奈米二氧化鈦}
+奈米二氧化鈦照紫外光後電子會被激發至導帶產生自由電子與電洞對，電子與空氣中的氧分子作用生成超氧陰離子\ce{O2^{2-}}，電洞則與水分子作用形成氫氧自由基\ce{OH}，兩者皆極不穩定、活性極強，會將氣相中的有機物等分解為二氧化碳、水、氧氣等無害物質，有殺菌、除臭、防霉、淨化空氣的效果，可用於汽機車排氣管、染料敏化太陽能電池等的光觸媒，又氫氧自由基可降低水的表面張力，使表面產生超親水性，可用於衛浴設備塗層以防汙。
+\sssc{n 型染料敏化太陽能電池（Dye-sensitized solar cell, DSSC, DSC）}
+構造：
+\bit
+\item 頂端是摻氟的二氧化錫（SnO$_2$:F）薄層沉積在透明平板（一般是玻璃）背面的透明陽極，其背面有一薄層奈米二氧化鈦，多孔、表面積與體積比值大。
+\item 底端是碘化物電解質薄層在導電平板（一般是鉑）上的負極/相對電極，負極與透明陽極連接並密封以免溶液洩漏。
+\item 兩電極間為釕-多吡啶染料光敏劑與電解質混合溶液，使透明陽極背面的二氧化鈦浸於其中，染料薄膜會與二氧化鈦形成共價鍵，負極的碘化物則溶於其中。
+\eit
+原理：
+\bit
+\item 二氧化鈦吸收太陽的紫外光，電子被激發至導帶產生電子與電洞對。
+\item 電子最終傳到負極。
+\item 電洞氧化光敏劑。
+\item 氧化後的光敏劑氧化負極的碘化物而自身還原，氧化半反應：
+\[\ce{3I^- -> I3- + 2e^-}\]
+\item \ce{I3-}移至負極，吸收來自二氧化鈦的電子，還原成碘離子。
+\eit
+\sssc{奈米鐵氧體}
+研究最多的磁性奈米顆粒之一，一旦鐵氧體顆粒小於 128 奈米，它們就會變成超順磁性，從而防止自聚集。
+\sssc{奈米氧化鋅}
+黑色，能吸收雷達電磁波，可作為隱形飛機塗料。
+\sssc{奈米硒化鎘}
+具量子限制現象，可用於發光二極體等電子元件。接受紫外線照射後呈彩虹般鮮豔顏色。
+\sssc{奈米陶瓷}
+\bit
+\item \tb{奈米陶瓷材料}：由奈米陶瓷顆粒壓製而成的奈米陶瓷材料具有較傳統陶瓷塊材更好的韌性、強度、延展性、耐壓性、抗老化性、緻密性、防水性。
+\item \tb{奈米陶瓷塗料}：汽車車身與玻璃的奈米陶瓷塗層、精度拋光磨料、電子元件。
+\item \tb{奈米級釉料}：表面粗糙結構為奈米級，小於汙染物的尺寸，可用水輕鬆沖去汙染物，常用於奈米衛浴設備、奈米建材、奈米磁磚、奈米馬桶等。
+\item \tb{奈米冰箱}：奈米陶瓷顆粒發射的遠紅外線可保鮮，如市售奈米冰箱將奈米陶瓷顆粒混合於冰箱襯墊纖維中製成奈米陶瓷複合材料，增強保鮮效能。
+\eit
+\sssc{奈米積層陶瓷電容器（Multilayer ceramic capacitor, MCC）}
+由高度絕緣的薄介電陶瓷層及金屬電極層交錯堆疊而成，每一陶瓷層上下都被兩個平行電極夾住形成一個平板電容，每層愈薄，固定厚度下的總層數愈大，固定容積下的電容愈大。奈米級鈦酸鋇為基材的介電陶瓷粉體是介電陶瓷層主流。體積小、耐高溫、耐高電壓。
+\sssc{電磁遮罩/輻射遮罩}
+電磁遮罩乃為吸收自身設備發出的電磁波與阻擋外界的電磁波，石墨烯、奈米金屬粉末、液體等可用於手機等的電磁遮罩。
+\end{document}

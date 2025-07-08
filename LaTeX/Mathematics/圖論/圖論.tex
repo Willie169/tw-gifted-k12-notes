@@ -1,0 +1,513 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{圖論}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{圖論（Graph theory）}
+\section{圖論}
+\subsection{詞彙定義}
+\begin{itemize}
+\item 無向圖（undirected graph）：可表示為一個有序對$G=(V(G), E(G), \phi(G))$，其中，$V(G)$是頂點（vertex），或稱點（point），集；$E(G)$是邊（edge），或稱線（line），集；$\phi(G)$是將每條邊映射到一對無序頂點的關聯函數，符合$\phi(G): \,E(G)\to\{(x, y):\, x, y\in V(G)\}$。未特別說明者，圖通常為無向圖。
+\item 簡單圖（simple graph）：指沒有重邊（multiple edges）或自環（loop，或譯迴圈）的圖。在無向圖中，重邊指兩條相異的邊對應到同一對無序頂點，自環指一條邊自一個點連接到其自身（joins a vertex to itself），可表示為一個有序對$G=(V(G), E(G))$，其中$E(G)\subseteq\{\{x, y\}\mid x, y\in V(G)\wedge x\neq y\}$。未特別說明者，圖通常為簡單圖。
+\item 權重圖（weighted graph，或譯賦權圖）：一個權重圖是一個帶有數值權重的圖，每條邊都有一個相應的權重（weight)或成本。權重可用$w: E(G) \rightarrow \mathbb{R}$ 表示，其中 $w(e)$ 表示邊 $e$ 的權重。未特別說明者，圖通常為無權重圖。 
+\item 端點（endpoints）、相鄰（adjacent）與鄰居（neighbor）：對一條邊$e=\{u, v\}$（或可簡寫為$e=uv$），$u$和$v$被稱為其端點，並稱$u$和$v$相鄰，即$u$是$v$的鄰居。$v$的所有鄰居所構成的集合（the neighorhood of $v$），記作$N_G(v)$。
+\item 度數（degree）：一個點$v$的度數指連接到（be incident to）該頂點的邊數，用$deg_G(v)$表示，即$deg_G(v)=|N_G(v)|$。一個圖$G$的所有頂點中度數最大與最小者之度數分別稱$\Delta(G)$與$\delta(G)$。若$\Delta(G)=\delta(G)=k$，則稱圖$G$為$k$正則的（$k$-regular）。
+\item 路徑（path）：一條路徑是圖中的一個頂點和邊的交替序列，以一頂點開始、一頂點結束，該二點稱該路徑的端點，其中邊以相鄰的兩頂點為端點，且除路徑的兩端點得為同一點外，同一頂點不得出現在一路徑上$\geq 2$次。例如，$v_1e_1v_2e_2v_3$是一條路徑。
+\item 行跡（trail）：一條行跡是圖中的一個頂點和邊的交替序列，以一頂點開始、一頂點結束，該二點稱該行跡的端點，其中邊以相鄰的兩頂點為端點，且同一條邊不得出現在一行跡上$\geq 2$次。一條路徑必為一條行跡。
+\item 道路（walk）：一條道路是圖中的一個頂點和邊的交替序列，以一頂點開始、一頂點結束，該二點稱該道路的端點，其中邊以相鄰的兩頂點為端點。若一條道路的兩端點為同一點，則稱該道路為封閉的（closed），否則稱該道路為開放的（open）。一條行跡必為一條道路。
+\item 長度（length）：對無權重圖而言，一個由邊構成的集合的長度為其包含的邊數；對權重圖而言，一個由邊構成的集合的長度為其包含的所有邊的權重和。一條長度為$n$的道路稱為$n$-道路（$n$-walk）；一條長度為$n$的行跡稱為$n$-行跡（$n$-trail）；一條長度為$n$的路徑稱為$n$-路徑（$n$-path）。例如，無權重圖中道路$v_1e_1v_2e_2v_3$的長度為2。
+\item 距離（distance）：對無向圖中的兩個點$u ,v$，距離$d(u, v)$為以$u$、$v$為兩端點之所有路徑中長度最短者之長度，且該路徑稱最短路徑（shortest path）。
+\item 度數序列：對$V(G)=\{v_1, v_2, v_3, \ldots, v_n\}$，稱$\{deg_G(v_1), deg_G(v_2), deg_G(v_3), \ldots, deg_G(v_n)\}$為圖$G$的度數序列。對道路$v_1e_1v_2e_2v_3\ldots e_{n-1}v_n$，稱$\{deg_G(v_1), deg_G(v_2), deg_G(v_3), \ldots, deg_G(v_n)\}$為其的度數序列。
+\item 連通的（connected）：一個圖是連通的，若且唯若對圖中的每一對頂點都存在至少一條路徑。如果一個圖有$>k$個頂點，且刪除任意$<k$個頂點時仍是連通圖，則稱其為$k$-頂點-連通的（$k$-vertex-connected）或$k$連通的（$k$-connected）。
+\item 可平面圖化的（planar）：一個圖是可平面化的，若且唯若它可以畫在平面上，使它的邊僅相交於端點。一個可平面化的圖的此種畫法稱為平面嵌入（planar embedding）。一個可平面化的圖的平面嵌入稱為平面圖（plane graph）。
+\item 子圖（subgraph）：一個圖$H=(V(H), E(H))$是另一個圖$G=(V(G), E(G))$的子圖，如果$V(H)\subseteq V(G)$且$E(H)\subseteq E(G)$。即子圖是由原始圖中的一部分頂點和邊構成的圖。
+\item 生成子圖（spanning subgraph）：一個圖$H=(V(H), E(H))$是另一個圖$G=(V(G), E(G))$的生成子圖，如果$V(H)=V(G)$且$E(H)\subseteq E(G)$。
+\item 誘導子圖（induced subgraph）：一個圖$H=(V(H), E(H))$是另一個圖$G=(V(G), E(G))$的誘導子圖，如果$V(H)\subseteq V(G)$且$E(H)=\{uv\mid u, v\in V(H)\wedge uv\in E(G)\}$。
+\item 連通分支（connected component）：或譯連通分量、連通元件，簡稱分支（component），或譯元件。在一個無向圖中，連通分支是指圖中的最大連通子圖，即在該子圖中，任意兩個頂點都有至少一條連通路徑，而與該子圖外的任何其他頂點都沒有連通路徑。
+\item 完全圖（complete graph）：一個具有$n$個頂點的完全圖，記為$K_n$，其中每一對不同的頂點都有一條邊相連。
+\item $k$分圖（$k$-partite graph）：一個k分圖是一個圖$G=(V(G), E(G))$，其中頂點集$V(G)$可以被分為$k$個互斥的非空子集，使得圖中的每條邊都連接不同的子集內的頂點。這些子集稱為$k$-partition，圖$G$可記作$(k$-partition$_1, k$-partition$_2, k$-partition$_3, \ldots, k$-partition$_k)$。完全$k$分圖指任一$k$-partition中的所有點均與其他$k-1$個$k$-partition中的所有點相鄰，記作$K_{n_1, n_2, \ldots, n_k}$，其中$n_i=|k$-partition$_i|$（$1\leq i\leq k$）。
+\item $n$-圈（n-cycle）：或譯$n$-環。一個$n$-圈是一條封閉$n$-路徑（$n\geq$3），記作$C_n$。當$n$為奇數，稱$C_n$為奇圈（odd cycle）；當$n$為偶數，稱$C_n$為偶圈（even cycle）；當$n=3$，又稱$C_n$為三角形（triangle）。例如，$v_1e_1v_2e_2\ldots e_{n-1}v_ne_nv_1$是一個$n$-圈。
+\item 樹（tree）：一個不包含任何圈的連通圖。
+\end{itemize}
+\subsection{鄰接矩陣（Adjacency matrix）}
+\begin{itemize}
+\item 對於一個無權重簡單無向圖 $G=(V(G), E(G))$，其鄰接矩陣 $A$ 是一個 $|V(G)|\times|V(G)|$ 的矩陣，對於其中元素$a_{ij}$，若$v_i$ 和 $v_j$ 之間存在一條邊，則$a_{ij}=1$，否則$a_{ij}=0$。
+\item 對於一個無向權重圖 $G=(V(G), E(G))$，其鄰接矩陣 $A$ 是一個 $|V(G)|\times|V(G)|$ 的矩陣，對於其中元素$a_{ij}$，若$v_i$ 和 $v_j$ 之間存在一條邊$e$，則$a_{ij}=w(e)$，否則$a_{ij}=\infty$。
+\item 令一無權重圖的鄰接矩陣為$A$，則$A^n$的$a_ij$元素表示以點$i$和點$j$為兩端點且長度為$n$的道路個數。
+\end{itemize}
+\subsection{配對（Matching）與點覆蓋（Vertex cover）}
+\begin{itemize}
+\item 配對：一個圖$G$的一個配對$M$是其邊集合的子集合，使得$M$中任二元素不共端點。
+\item $M$-飽和（$M$-saturated）：給定圖$G$的一組配對$M$，$M$中的每條邊的每個端點稱$M$-飽和。圖$G$中非$M$-飽和的點，稱$M$-未飽和（$M$-unsaturated）。
+\item 最大配對（maximum matching）：圖$G$的配對中元素數最多者。對任意圖$G$，最大配對必存在。
+\item 完美配對（perfect matching）：圖$G$的一個配對$M$使得圖$G$中的所有點都$M$-飽和。一個完美配對必為一個最大配對。對任意圖$G$，完美配對不必然存在。
+\item $M$-交錯路徑（$M$-alternating path）：又稱$M$-交錯路線。指一條路徑$P$滿足$\forall P$的第奇數條邊均屬於$M$或滿足$\forall P$的第偶數條邊均屬於$M$。
+\item $M$-可擴張路徑（$M$-augmenting path）：又稱$M$-可擴張路線。指一條$M$-交錯路徑，滿足其長度為奇數且兩端點均為$M$-未飽和。
+\item $X$-完美配對：在$(X, Y_1, Y_{k-1})$-$k$分圖中，一個使得所有$X$中的點都是$M$-飽和的配對$M$。
+\item 點覆蓋：圖$G$的一個點覆蓋$C$是其點集合的子集合，使得$\forall e=uv \in E(G): u\in C \vee v\in C$ 。
+\item 最小點覆蓋（minimum vertex covering）：一個圖中元素數量最小的點覆蓋。
+\item 雙重隨機矩陣（doubly stochastic matrix）：每行及每列和皆為$1$的非負實數矩陣。
+\item 排列矩陣（permutation matrix）：每個元素皆為$1$或$0$的雙重隨機矩陣。
+\item 相異代表系（System of Distinct Representatives，SDR）：令集合$A_1, A_2, A_3, \ldots, A_n$均為集合$S$的子集合。集合族$(A_1, A_2, A_3, \ldots, A_n)$的相異代表系是$S$的子集$\{a_1, a_2, a_3, \ldots, a_n\}$，使得$\forall 1\leq i \neq j \leq n: a_i \in A_1 \wedge a_i \neq a_j$。
+\end{itemize}
+\subsection{著色（Coloring）}
+\begin{itemize}
+\item $k$-著色（$k$-coloring）：一個圖$G$的$k$-著色指一函數$f: V(G) \rightarrow \{1, 2, 3, \ldots, k\}$。如果$f$滿足$f(u)\neq f(v)$對所有$uv\in E(G)$，稱$f$是$G$的正常$k$-著色（proper $k$-coloring）。
+\item 著色數（chromatic number）：一個圖$G$的著色數$\chi(G)$指使得$G$存在正常$k$-著色的最小$k$。如果$\chi(G)\leq j$，稱$G$是可以被$j$-著色的（$j$-colorable）。
+\item 四色定理（four color theorem）：對於任一無自環的平面圖$G$，$\chi(G)\leq 4$。
+\item $k$-邊著色（$k$-edge-coloring）：一個圖$G$的$k$-邊著色指一函數$f: E(G) \rightarrow \{1, 2, 3, \ldots, k\}$。
+\end{itemize}
+\subsection{尤拉與哈密頓}
+\begin{itemize}
+\item 尤拉行跡（Eulerian trail）：又稱尤拉路徑（Eulerian path）。指一條行跡（但不一定是路徑），經過圖中每條邊均剛好一次。一個圖$G$存在尤拉迴路若且唯若$\left|\{v\mid v\in V(G)\wedge \frac{\deg_G(v)}{2}\notin \mathbb{N}\}\right|\in \{0, 2\}$。
+\item 尤拉迴路（Eulerian circuit）：又稱尤拉環（Eulerian cycle）。指一條封閉的尤拉路徑。一個圖$G$存在尤拉迴路若且唯若$\left|\{v\mid v\in V(G)\wedge \frac{\deg_G(v)}{2}\notin \mathbb{N}\}\right|=0$。
+\item 哈密頓路徑（Hamiltonian path）：一條路徑，經過圖中每個節點剛好一次。
+\item 哈密頓迴路／環（Hamiltonian circuit/cycle）：一條封閉的哈密頓路徑。一個有哈密頓迴路的圖稱哈密頓的（Hamiltonian）。
+\end{itemize}
+\section{演算法}
+演算法（algorithm）：在有限步驟內解決數學問題的程序，並通常具有以下五大特性：
+\begin{itemize}
+\item 輸入（input）：可有多個輸入資料，或是沒有輸入資料。
+\item 輸出（output）：必須至少有一個輸出結果。
+\item 明確性（definiteness）：每個指令必須明確，不可模稜兩可。
+\item 有限性（finiteness）：執行演算法，必須在有限步驟內結束。
+\item 有效性（effectiveness）：又稱可行性，演算法中的每個命令都必須是可執行的步驟，用紙筆也能推演完畢，以確定能解決問題。
+\end{itemize}
+\subsection{人員分派問題的交錯路徑演算法}
+\subsubsection{人員分派問題（the personnel assignment problem）}
+有$n$人$x_1, x_2, x_3, \ldots, x_n$將分派至$n$個任務$y_1, y_2, y_3, \ldots, y_n$，每個人可勝任一或多種任務。試找出一個分派方式使每個人均可分派到他能勝任的任務（每一任務只能由一個人完成）。 \\
+將問題構造為一個$(X, Y)$-二分圖$G$，其中$X=\{x_1, x_2, x_3, \ldots, x_n\}$，$Y=\{y_1, y_2, y_3, \ldots, y_n\}$，且$\forall i, j \in \{i\mid 1\leq i\leq n\}$，$x_i$與$y_j$相鄰若且唯若人$x_i$可勝任$y_j$任務。則此問題可轉變成：試找出二分圖$G$的一組完美配對。
+\subsubsection{交錯路徑演算法}
+輸入：一個$(X, Y)$二分圖$G$。 \\
+輸出：二分圖$G$的一組最大配對$M$。 \\
+程序： 先令$M=\varnothing$。接著將$X$中的每個未飽和點$v$依序尋找以$v$為端點的交錯路徑：若存在$M$-擴充路徑$P$，$M\rightarrow(M\setminus P)\cup(P\setminus M)$；若不存在$M$-擴充路徑，直接刪除此點，繼續從剩下的子圖找$G$的最大配對。
+\subsection{婚姻穩定問題的Gale-Shapley男方求婚法}
+\subsubsection{婚姻穩定問題（stable marriage problem，SMR）}
+有單身男女各$n$人（$n>0$），每個人都對所有$n$位異性有一給定偏好程度排序，且對不同異性之偏好程度必不相等。定義配偶必為異性且一個人最多只有一個配偶。定義一組最大配對指一個配對情況使得所有人均有配偶。定義一組穩定配對指一個配對情況滿足：
+\begin{enumerate}[label=(\arabic*)]
+\item 不同時存在單身男與單身女。
+\item 若一位有配偶者$a$對一位異性$b$的偏好程度高於$a$之現有配偶，則$b$必有配偶且$b$對$a$的偏好程度小於$b$之現有配偶。
+\end{enumerate}
+求一組最大穩定配對。
+\subsubsection{Gale-Shapley男方求婚法}
+輸入：單身男女各$n$人分別對所有$n$位異性的偏好程度排序。 \\
+輸出：一組最大穩定配對。 \\
+程序：在每一輪求婚中，每一位單身男性依序向所有尚未拒絕過他的女性中偏好程度最高者求婚，若被求婚者為單身，則求婚者與被求婚者配對為夫婦；若被求婚者已有配偶，且被求婚者對現有配偶之偏好程度小於對求婚者之偏好程度，則求婚者與被求婚者配對為夫婦，被求婚者原本的配偶恢復為單身，且被求婚者原本的配偶視為被該被求婚者拒絕過；若被求婚者已有配偶，且被求婚者對現有配偶之偏好程度大於對求婚者之偏好程度，則被求婚者拒絕求婚者。一位單身男性求婚後，無論是否被拒絕，均換下一位單身男性進行求婚。一輪求婚完畢，若仍有單身者，則進行下一輪求婚；若沒有單身者，則輸出配對。 \\
+註：該配對必為男性最佳最大穩定配對，若欲求女性最佳穩定配對則改由女性求婚，方法相同。
+\subsection{單源最短路徑問題的戴克斯特拉演算法}
+\subsubsection{單源最短路徑問題（shortest path problem）}
+給定一個權重無向圖（權重沒有負數）與一個點作為起點，求其到任意點的距離。
+\subsubsection{戴克斯特拉演算法（Dijkstra's algorithm）}
+輸入：一個權重無向圖（權重沒有負數）與其中一點作為起點。 \\
+輸出：起點到任意點的距離。 \\
+程序：令：起點為$a$；$a$之暫定距離為$0$；任一$a$以外的點之暫定距離的初始值為$\infty$；集合$S$的初始值為$\{$所有點$\}$；路徑$P$的初始值為$a$；動點$n$的初始值為$a$。 \\
+每一輪運算均包含以下步驟：
+\begin{enumerate}[label=(\arabic*)]
+\item 令$S$中暫定距離最小的點為$n$。
+\item 考慮所有滿足$u\in S\cap N(n)$的點$u$，計算$u$經過邊$e=un$與$p$到達$a$的路徑的長度，若該長度小於$u$原有之暫定距離，則將該長度賦值給$u$之暫定距離，考慮完所有的點$u$後，將$n$自$S$中去除。
+\end{enumerate}
+不斷重複運算直到$S=\varnothing$，此時每個點的暫定距離即皆為起點到該點的距離。
+\subsection{旅行業務員問題的演算法}
+\subsubsection{旅行業務員問題}
+旅行業務員問題（Traveling Salesman Problem，TSP，又稱旅行商問題）：一位旅行業務員要到$n$個城市推展業務（$n \in \mathbb{N}$），從其一城市出發，每個城市恰只經過一次，再回到原先的起點。已知任二城市間的旅行成本，給定出發之城市，求滿足條件之最小成本路徑。 \\
+令該等城市之集合為一完全權重簡單無向圖的點集，城市之間的旅行成本為二點間的邊之權重，所求為最短尤拉迴路。
+\subsubsection{旅行業務員問題的演算法}
+輸入：一完全權重簡單無向圖（權重沒有負數）與其中一點為出發點。 \\
+輸出：最短尤拉迴路。 \\
+程序：給每個點一個相異代號$i$（$1\leq i\leq n$），其中出發點的代號為$b$；作該圖的鄰接矩陣$A$，其元素滿足：$\forall 1\leq i\neq j\leq n: a_{i j}=$邊$ij$的權重、$\forall 1\leq i\leq n: a_{i i}=\infty$；令$\forall \{i, j\}\subseteq \{i\mid 1\leq i\leq n\}: a_{i j}$的編號為$(i, j)$，此編號不再改變。定義函數$\operatorname{simp}(A, c)$（其中$A$為矩陣，$c$為變數）為：通過有限個「將$A$之任一行或列減去同一正整數$k$並將$c$賦值為其原本的值$+k$」之步驟，使$A$滿足：「不存在負元素，且無法通過有限個將任一行或列同減去一正整數之步驟，在不存在負元素的前提下，增加$=0$的元素數」。令：整數$p$的初始值為$b$；路徑$S$的初始值為$b$；整數$t$的初始值為$0$；整數$f$的初始值為$\infty$；由路徑組成的集合$G$的初始值為$\varnothing$。 \\
+定義二元決策樹的一次決策以判定$t=n-1$是否成立為開始：
+\begin{enumerate}[label=(\arabic*)]
+\item 若否，則接著進行以下步驟：
+\begin{enumerate}[label=\tc{\arabic*}]
+\item $\operatorname{simp}(A, c)$。
+\item 令$j$為符合$1\leq p\neq j\neq b$的最小整數。
+\item 將二元決策樹分叉為選與不選$(p, j)$的兩個分支，不同分支之$A$、$c$、$p$、$S$、$t$於分叉時繼承自分叉前，而後不再與其他分支之該等變項相互影響；但$f$、$G$則是全域的，每一時間其值均繼承至前一時間。
+\item 對不選擇$(p, j)$的分支，令$(p, j)=\infty$。
+\item 對選擇$(p, j)$的分支，將$c$賦值為其原本的值$+(p, j)$。若$c > f$則廢止這個分支，否則，依序：將$j$附加到$S$的末尾、去掉當前$A$之第$p$列與第$j$行、將$j$賦值給$b$、將$t$賦值為其原本的值$+1$。
+\end{enumerate}
+\item 若是，則接著進行以下步驟：
+\begin{enumerate}[label=\tc{\arabic*}]
+\item $\operatorname{simp}(A, c)$。
+\item 將$c$賦值為其原本的值$+(p, b)$。若$c > f$則廢止這個分支；若$c = f$，則依序：將$b$附加到$S$的末尾、將$S$加入$G$中、結束這個分支；否則，依序：將$f$賦值為$c$、將$G$賦值為$\{S\}$、結束這個分支。
+\end{enumerate}
+\end{enumerate}
+對二元決策樹上的每個尚未被廢止或結束的分支進行決策，直到所有分支都被廢止或結束，此時的$G$中的所有元素都是最短尤拉迴路，$f$為任一$G$中路徑的長度。
+\subsection{中國郵差問題（Chinese postman problem）/路線檢查問題（Route inspection problem）的演算法}
+\subsubsection{中國郵差問題/路線檢查問題}
+給定一個連通權重無向圖（權重沒有負數），求最短哈密頓迴路的長度。
+\subsubsection{中國郵差問題/路線檢查問題的演算法}
+輸入：一個連通權重無向圖（權重沒有負數）。 \\
+輸出：最短哈密頓迴路的長度。 \\
+程序：若該圖有尤拉迴路，即不存在度數為奇數之點，則將所有邊之權重加總即為最短哈密頓迴路的長度。若該圖無尤拉迴路，則繪製一完全權重圖$G$，$V(G)=\{$所有在原圖中度數為奇數之點$\}$，其中任兩點間之邊的權重為該二點在原圖中的最短路徑長度。考慮$G$的所有完美配對，取其中長度最小者$M$，則將原圖所有邊之權重加總再加上$M$之長度即為最短哈密頓迴路的長度。
+\section{鴿籠原理（pigeonhole Principle）/鴿洞原理/鴿巢原理/狄利克雷抽屜原理（Dirichlet's drawer principle）}
+\subsection{鴿籠原理}
+有$n$隻鴿子飛入$k$個籠子，則必\(\exists\)至少一個籠子內有\(\lceil\frac{N}{k}\rceil\)隻以上的鴿子。
+\subsection{廣義鴿籠原理}
+對於任意\(n, k_1, k_2,\ldots,k_n\in \mathbb{N}\)，如有\(\sum_{i=1}^n k_i-n+1\)隻鴿子飛入$n$個籠子則\(\exists i: \text{第}i\text{個籠子至少有}k_i\)隻鴿子。 
+\section{拉姆賽數（Ramsey number）}
+\subsection{拉姆賽數}
+對於任意$j, p_1, p_2, \ldots, p_j \in \mathbb{N}$，拉姆賽數$\operatorname{R}(p_1, p_2, \ldots, p_j)$為最小的$n$滿足：對於完全圖$K_n$的任意$j$-邊著色，總是\(\exists i \in \{1, 2, \ldots, j\}$使其存在一個子圖$K_{p_i}$的邊都著同一色。例如：$R(p, q)=R(q, p)$、$R(1, p)=1$、$R(2, p)=p$、\(R(3, 3) = 6\)、\(R(3, 4) = 9\)、\(R(3, 5) = 14\)、\(R(3, 6) = 18\)、\(R(3, 7) = 23\)、\(R(3, 8) = 28\)、\(R(3, 9) = 36\)、$R(4, 4)=18$、$R(4, 5)=25$、$R(3, 3, 3)=17$。
+\subsection{圖的拉姆賽數}
+給定$k$個圖$G_1, G_2, \ldots, G_k$，圖的拉姆賽數$R(G_1, G_2, \ldots, G_k)$為最小之正整數n滿足：對於完全圖$K_n$的任意$k$-邊著色，總是\(\exists i \in \{1, 2, \ldots, k: (\forall j \in \{1, 2, \ldots, k\}: \exists \text{其一個子圖同構於$G_j$，且其邊均著同一色})\)。例如：$R(P_3, K_3) = 5$，其中$P_n$表示$n$-路徑。
+\subsection{題目節選}
+\subsubsection{Bipartite if and only if containing no odd cycle}
+\textit{Statement. }Graph $G$ is bipartite if and only if it contains no odd cycle.
+\begin{proof}\mbox{}\\
+$G$ is bipartite if and only if all its components are bipartite. Similarly, $G$ does not contain an odd cycle if and only if all its components do not contain an odd cycle. Without loss of generality, assume $G$ is connected. \\
+Left to right: Since $G$ is bipartite, the two endpoints of each edge must belong to different bipartitions. If there is a cycle in $G$, choose one vertex in it and assign it to one bipartition. Select one of its neighbors; it must belong to the other bipartition. Therefore, the length of any cycle in $G$ must be even. \\
+Right to left: The statement is equivalent to ``If $G$ is not a bipartite graph, then $G$ contains an odd cycle.'' Let $G$ not be bipartite. Pick a vertex $u$, and let $f(u, v)$ be the shortest path between $u$ and $v$ for all $u, v \in V(G)$. Define X as the set of all $v \in V(G)$ such that the length of $f(u, v)$ is even, and $Y$ as the set of all $v \in V(G)$ such that the length of $f(u, v)$ is odd. Since $G$ isn't bipartite, G contains $s, t$ such that $e = st$ belongs to $E(G)$, and either $\{s, t\}\subseteq X$ or $\{s, t\}\subseteq Y$. Now, consider the cycle consisting of $f(u, s)$, $e$, and $f(u, t)$; it must be an odd cycle in G.
+\end{proof}
+\subsubsection{Equivalent statements of tree}
+\textit{Statement. }In the graph $G$ containing $n$ vertices ($n ≥ 1$), the following statements are equivalent:
+\begin{enumerate}[label=(\arabic*)]
+\item $G$ is connected and does not contain any cycles.
+\item For any two vertices $u$ and $v$ in graph $G$, there exists a unique $(u, v)$-path.
+\item $G$ is connected and contains $(n - 1)$ edges.
+\item $G$ contains $(n - 1)$ edges and does not contain any cycles.
+\end{enumerate}
+\begin{proof}\mbox{}\\
+\textbf{(1) to (4):} \\
+When $n = 1$, the statement is evidently true. When $n = 2$, $G = K_2$, so the statement is also true. For $n \geq 3$, let \(P: v_0e_1v_1e_2\ldots e_kv_k\) be the longest path in $G$. \\
+\textit{Lemma. }If $G$ does not contain cycles, \(N(v_0) = \{v_1\}\), \(N(v_k) = \{v_{k-1}\}\). \\
+Let \(u = v_0\vee v_k\), and \(G' = G - u\), then \(|V(G)| = |V(G')| + 1\) and \(|E(G)| = |E(G')| + 1\). Assume that \(G'\) is connected. Because there is no path passing through \(u\) in $G'$, \(|E(G')| = |V(G')| - 1\) is equivalent to \(|E(G)| = |V(G)| - 1\). So, the statement is proved by mathematical induction. \\
+\textbf{Proof of the Lemma:} If \(v\leq v_1\) belongs to \(N(v_0)\) and \(v\) is in path \(P\), there will be a cycle from \(v\), through part of \(P\), to \(v_0\), and back to \(v\). If \(v\) belongs to \(N(v_0)\) and \(v\) isn't in path \(P\), \(P\) won't be the longest path. So, we have proved that \(N(v_0) = \{v_1\}\). For \(v_k\), similarly,  \(N(v_k) = \{v_{k-1}\}\). \\
+\textbf{(4) to (3):} \\
+When $n = 1\vee 2\vee 3$, the statement is true. Assume the statement is true for \(n = k\) where \(k \geq 3\). In going from \(n = k\) to \(n = k+1\), both \(|V(G)|\) and \(|E(G)|\) increase by one because there will be an edge incident to one of the vertices in the original graph and the new vertex. Otherwise if there is an edge from one vertex in the original graph to another vertex in the original graph, there will be a cycle. By mathematical induction, we have proved that the new $G$ is connected. \\
+\textbf{(3) to (1):} \\
+Because \(|E(G)| = n - 1\), the sum of \(\deg(v)\) for all \(v\) belonging to \(V(G)\) equals \(2|E(G)| = 2n - 2\). Since \(G\) is connected, \(\delta(G) \geq 1\). If \(n\) is odd, let \(n-1\) vertices have a degree of one, and one vertex has a degree of zero. Then, there will be \(\frac{n-1}{2}\) \(K_2\) and a \(K_1\), which are \(\frac{n+1}{2}\) components. To connect them, at least \(\frac{n-1}{2}\) edges are needed, leaving no edges to form a cycle. If \(n\) is even, let all vertices have a degree of one. Then, there will be \(\frac{n}{2}\) \(K_2\), which are \(\frac{n}{2}\) components. To connect them, at least \(\frac{n-2}{2}\) edges are needed, again leaving no edges to form a cycle. Therefore, there must not be a cycle in $G$. \\
+\textbf{(1) to (2):} \\
+Assign one vertex \(u\) in \(V(G)\) to belong to layer 0. For each vertex \(v'\) in \(V(G)\) such that \(e = uv'\) exists, assign \(v'\) to layer 1. For each vertex \(v^*\) in \(V(G)\) such that there exists an edge \(e = vv^*\) with \(v\) in layer \(n\) (where \(n > 0\)) and \(v^*\) not in layer \(n-1\), assign \(v^*\) to layer \(n+1\). Define the number of each vertex as the order it was assigned in the layer to which it belongs. Define the coordination sequence of each vertex as the sequence of the numbers of each vertex in the path from \(u\) to it. The coordination sequence of a vertex must be unique because two paths between \(u\) and another vertex, presented by their two coordination sequences, will form a subgraph of $G$ that contains a cycle otherwise. The only path between two vertices in $G$ is to trace the coordination sequences of each vertex back (each time the length of the coordination sequence decreases by one) separately until they have the same coordination sequence, and the vertices passed in the process will form that path. Because all vertices in $V(G)$ have a coordination sequence, there must be a path between any two vertices in $V(G)$. Because the coordination sequence of a vertex must be unique, the path between two vertices in $V(G)$ is also unique. \\
+\textbf{(2) to (1):} \\
+For any two vertices \(u\) and \(v\), there exists a \((u, v)\)-path. So, \(G\) is connected. Prove the second half of the statement by contradiction. If there is a cycle in \(G\), there will be two vertices \(a\) and \(b\) satisfying that there are two different paths between them, which is contradictory to the statement two. \\
+(1)$\Rightarrow$(4)$\Rightarrow$(3)$\Rightarrow$(1)$\wedge$(1)$\Leftrightarrow$(2).
+\end{proof}
+\subsubsection{Euler's Formula}
+\textit{Statement. }\textbf{Euler's Formula:} For any connected plane graph \(G\), \(v - e + f = 2\), where \(v=|V(G)|, e=|E(G)|, f=|F(G)|\).
+\begin{proof}\mbox{}\\
+When \(e = 1\), the plane graph has \(v = 2\) and \(f = 1\), satisfying \(v - e + f = 2\). \\
+Assume that when \(e = n - 1\), the graph is a plane graph, and \(v - e + f = 2\). Consider the addition of the \(n\)-th edge in \(G\). The possible scenarios are:
+\begin{enumerate}[label=(\arabic*)]
+\item Connecting two vertices around the same face in the original \(G\) without edges crossing each other. This addition introduces one edge and one face, and the formula \(v - e + f = 2\) remains true.
+\item Adding an edge that crosses at least one other edge, resulting in a non-plane graph. In this case, \(v - e + f \neq 2\).
+\item Adding a loop or a multiple edge without edges crossing each other, where the statement is still true.
+\item Adding a new vertex and an edge connecting to it without edges crossing each other. This addition introduces one edge and one vertex, where the statement is still true.
+\end{enumerate}
+Assume that when \(e = n - 1\), \(v - e + f \neq 2\), and the graph is not a plane graph. Regardless of how the new edge is added when \(e = n\), the resulting graph will not be a plane graph, and \(v - e + f \neq 2\). \\
+By mathematical induction, the proposition is proven.
+\end{proof}
+\subsubsection{Extended Euler's Formula}
+\textit{Statement. }For any plane graph \(G\), the equation \(v - e + f = c + 1\) holds, where \(v=|V(G)|\), \(e=|E(G)|\), \(f=|F(G)|\), and \(c\) is the number of components of \(G\).
+\begin{proof}\mbox{}\\
+\textit{Lemma: Euler's Formula. }For any connected plane graph \(G\), \(v - e + f = 2\), where \(v=|V(G)|\), \(e=|E(G)|\), \(f=|F(G)|\). \\
+The graph \(G\) is a plane graph if and only if all its components are plane graphs. When all components are combined, \(c-1\) faces are eliminated, as the outer faces merge into one. For any component of \(G\), \(v - e + f = 2\) holds. Summing these expressions and subtracting the eliminated faces, we get \(v-e+f = 2c - (c-1) = c+1\).
+\end{proof}
+\subsubsection{Twice the number of sides is greater than or equal to three times the number of faces}
+\textit{Statement. }For connected plane graphs, when \(v \geq 3\), \(2e \geq 3f\).
+\begin{proof}\mbox{}\\
+For connected plane graphs, each edge surrounds at least two faces or surrounds a face twice. For connected plane graphs, \(v \geq 3\) implies a face is incident to at least three edges (being incident to an edge twice counts as two incidences). Therefore,
+\end{proof}
+\subsubsection{The number of sides is less than or equal to three times the number of vertices minus six}
+\textit{Statement. }For connected plane simple graph \(G\), when \(v \geq 3\), the relationship \(e \leq 3v - 6\) holds, where \(v = |V(G)|\) and \(e = |E(G)|\).
+\begin{proof}\mbox{}\\
+\textit{Lemma 1: Euler's Formula. }For any connected plane graph \(G\), \(v - e + f = 2\), where \(v=|V(G)|\), \(e=|E(G)|\), \(f=|F(G)|\). \\
+\textit{Lemma 2. }For connected plane graphs, when \(v \geq 3\), \(2e \geq 3f\). \\
+Since Lemma 1 and 2 hold, \(2e \geq 3(2 - v + e) = 6 - 3v + 3e \Rightarrow e \leq 3v - 6\).
+\end{proof}
+\subsubsection{The number of sides is less than or equal to twice the number of vertices minus four when there are no triangles}
+\textit{Statement. }For connected plane simple graph \(G\), when \(v \geq 3\) and there are no triangles in \(G\), the relationship \(e \leq 2v - 4\) holds, where \(v = |V(G)|\) and \(e = |E(G)|\).
+\begin{proof}\mbox{}\\
+\textit{Lemma: Euler's Formula. }For any connected plane graph \(G\), \(v - e + f = 2\), where \(v=|V(G)|\), \(e=|E(G)|\), \(f=|F(G)|\). \\
+For connected plane simple graphs \(G\), when \(v \geq 3\) and there are no triangles in \(G\), a face is evidently incident to at least $4$ edges (being incident to an edge twice counts as two incidences). By the Lemma, we have \(4(2 - v + e) \leq 2e \Rightarrow 4 - 2v + 2e \leq e \Rightarrow e \leq 2v - 4\).
+\end{proof}
+\subsubsection{The minimum degree of any plane simple graph is less than or equal to five}
+\textit{Statement. }For any plane simple graph \(G\), the minimum degree \(\delta(G) \leq 5\).
+\begin{proof}\mbox{}\\
+The proposition holds for \(G\) if and only if it holds for each component \(H\) of \(G\). Without loss of generality, assume, for the sake of contradiction, that \(G\) is a connected plane simple graph with a minimum degree \(\delta(G) \geq 6\). Then, every vertex in \(G\) is incident to at least \(6\) edges. Consequently, the total number of edges \(e\) is at least \(3v\). However, this contradicts the inequality \(e \leq 3v - 6\), which holds for connected plane simple graphs. Therefore, the assumption that \(\delta(G) \geq 6\) must be false, leading to the conclusion that \(\delta(G) \leq 5\).
+\end{proof}
+\subsubsection{Divide a plane with straight lines}
+\textit{Statement. }In a plane, given $n$ straight lines where no two lines are parallel and no three lines intersect at a common point, they can divide the plane into \(\frac{n^2 + n + 2}{2}\) regions.
+\begin{proof}\mbox{}\\
+Let \(f\) be the number of regions (or faces in graph theory). Consider a circle containing all pre-existing intersection points inside it and intersecting each of the $n$ lines twice. Also, consider every pre-existing cut-off when it meets the circle. Then, there are \(f + 1\) faces (including the region outside the circle) and \(\frac{n(n-1)}{2} + 2n = \frac{n^2 + 3n}{2}\) intersection points in total. Among these points, \(2n\) of them have a degree of $3$, and the remaining points have a degree of $4$. Therefore, the total number of degrees is \(4 \cdot \frac{n^2 + 3n}{2} - 2n = 2n^2 + 4n\), indicating that the number of edges is \(n^2 + 2n\). By Euler's Formula, we have \(\frac{n^2 + 3n}{2} - (n^2 - 2n) + (f + 1) = 2\), which simplifies to \(f = \frac{n^2 + n + 2}{2}\).
+\end{proof}
+\subsubsection{偶數頂點數之完全圖的相異完美配對個數}
+題目：\\
+求出完全圖$K_n$的相異完美配對個數。\\
+過程：\\
+$K_{2n}$之哈密頓路徑數為$\frac{(2n)!}{2}$，故其哈密頓迴圈數為$\frac{(2n)!}{4n}$。一個哈密頓迴圈中有二相異完美配對；包含同一個完美配對的相異哈密頓迴圈個數即為該完美配對的交錯迴圈數$=\frac{2^n\cdot n!}{2n}$，故：
+\[\text{所求}=2\cdot\frac{(2n)!}{4n}\div\frac{2^n\cdot n!}{2n}=\frac{(2n)!}{2^n\cdot n!}\]
+答：
+\[\frac{(2n)!}{2^n\cdot n!}\]
+\subsubsection{完全二分圖的相異完美配對個數}
+題目：\\
+求出完全二分圖$K_{n,n}$的相異完美配對個數。\\
+過程：\\
+\[
+\begin{aligned}
+&\text{所求} \\
+=&\text{X bipartitions 的排列方法數}\times \text{Y bipartitions 的排列方法數}\div\text{一個完美配對被重複算的次數} \\
+=&\frac{P^n_n\cdot P^n_n}{P^n_n} \\
+=&n!
+\end{aligned}
+\]
+答：\(n!\)
+\subsubsection{配對中的邊數小於點覆蓋中的點數}
+\textit{Statement. }對任意圖$G$的任一配對$M$與任一點覆蓋$C$，$|M|\leq |C|$。
+\begin{proof}\mbox{}\\
+使用反證法。假設存在一個配對$M$和一個點覆蓋$C$，使得$|M| > |C|$。 \\
+考慮配對$M$中的每個邊，這些邊都連接圖$G$中的不同點。由於$C$是一個點覆蓋，故包含圖$G$中每條邊的至少一個端點。因此對於$M$中的每條邊，我們可以在$C$中找到一個端點。由於$|M| > |C|$，根據鴿籠原理，至少有一個點在$M$中出現兩次，導致$M$不是一個合法的配對，與原假設矛盾。故原假設錯誤。
+\end{proof}
+\subsubsection{Berge's theorem}
+\textit{Statement. }\textbf{Berge's theorem：}給定圖$G$的一組配對$M$，$M$是最大配對若且唯若$G$沒有$M$-可擴張路線。
+\begin{proof}\mbox{}\\
+右到左：使用反證法。假設路徑$P = v_0e_1e_2 \ldots e_{2k+1}v_{2k+1}$是一條$M$-可擴張路徑。然後，定義 $M' = (M - \{e_2, e_4, \ldots, e_{2k}\}) \cup \{e_1, e_3, \ldots, e_{2k+1}\}$。然而，這使得 $M'$ 的邊數比 $M$ 多一，這與 $M$ 是最大配對矛盾。因此，不存在 $M$-可擴張路徑。 \\
+左到右：如果 $M$ 不是最大配對，則存在一個配對 $M'$，其中 $|M'| > |M|$。令子圖 $H = (M \setminus M')\cup(M'\setminus M)$，$H$中任一點的度數最多為二，且$H$的每個分支都是偶圈或路徑。由於 $M'$ 的邊數更多，$H$的分支中必存在兩端點皆為$M$-非飽和的路徑。然而，這表示我們可以藉由添加這條路徑的邊來擴展 $M$，這與 $M$ 是最大配對矛盾。因此，不存在這樣的 $M'$。
+\end{proof}
+\subsubsection{Hall's marriage theorem}
+\textit{Statement. }\textbf{Hall's marriage theorem：}$(X, Y)$-二分圖存在$X$-完美配對若且唯若對於任何$X$的子集$S$，$|N(S)|\geq|S|$。
+\begin{proof}\mbox{}\\
+右到左：顯然正確，因為如果存在 $X$ 的子集 $S$，使得 $|N(S)| < |S|$，那麼就無法構建完美配對。 \\
+左到右：使用數學歸納法。當 $k=1$ 時，顯然成立。假設對於所有 $|X|\leq k$ 都成立。當 $|X|=k+1$ 時，令該圖為$G$，有兩種情況： \\
+情況一：對於所有 $S\subseteq X$ 且 $S\neq X$，有 $|N_G(S)| > |S|$。取一條邊 $uv$，其中 $u\in X$，$v\in Y$，並令 $G' = G \setminus\{u, v\}$。對於所有 $S\subseteq X\setminus\{u\}$，我們有 $|N_{G'}(S)| \geq |S|$，因此將邊 $e=uv$ 添加到原來的 $X$-完美配對中，仍然得到 $X$-完美配對。 \\
+情況二：存在一個 $S\subseteq X$ 且 $S\neq X$，使得 $|N_G(S)| = |S|$。令 $G' = G[N(S)\cup S]$ 和 $G'' = G[(Y-N(S))\cup (X-S)]$。對於任何 $K\subseteq (X\setminus S)$，我們有 $|S\cup K| \leq |N(K)| + |S|$。由歸納法假設，$G'$ 和 $G''$ 都有 $X$-完美配對，將這兩個配對聯合起來，仍然得到 $X$-完美配對。
+\end{proof}
+\subsubsection{以Hall's marriage theorem證明König's theorem}
+題目：\\
+\textbf{König's theorem：}若$G$為二分圖且有最大配對$M^*$與最小點覆蓋$C^*$，$|M^*|=|C^*|$。 \\
+\textbf{Hall's marriage theorem：}$(X, Y)$-二分圖存在$X$-完美配對若且唯若對於任何$X$的子集$S$，$|N(S)|\geq|S|$。 \\
+試以Hall's marriage theorem證明König's theorem。
+\begin{proof}\mbox{}\\
+令 $A = C^* \cap X$，$B = C^* \cap Y$。顯然，$X - A$ 與 $Y - B$ 之間沒有任何邊，故$|C^*| = |A| + |B|$。 \\
+令 $G' = G[A \cup (Y - B)]$，則$G'$ 有 $A$-完美配對，同理亦有 $B$-完美配對。根據 Hall's marriage theorem，$G'$ 的 $A$-完美配對和 $B$-完美配對中的邊數總和小於等於$M^*$ 的邊數 $|M^*|$，即 $|C^*| = |A| + |B| \leq |M^*|$。\\
+另外，由於 $M*$ 的每條邊至少有一個端點在 $C^*$ 中，因此 $|M^*| \leq |C^*|$。 \\
+結合上述不等式，得到$|M^*|=|C^*|$。
+\end{proof}
+\subsubsection{Proving Hall's marriage theorem with König's theorem}
+\textit{König's theorem: }If \(G\) is a bipartite graph with a maximum matching \(M^*\) and a minimum vertex cover \(C^*\), then \(|M^*| = |C^*|\). \\
+\textit{Hall's marriage theorem: }A bipartite graph \((X, Y)\) has a \(X\)-perfect matching if and only if for every subset \(S\) of \(X\), \(|N(S)| \geq |S|\). \\
+\textit{Statement. }Hall's marriage theorem implies König's theorem.
+\begin{proof}\mbox{}\\
+Consider a bipartite graph \(G = (A \cup B, E)\). According to König's theorem, in a bipartite graph with a maximum matching \(M^*\) and a minimum vertex cover \(C^*\), then \(|M^*| = |C^*|\). \\
+Assume, for contradiction, that there is no \(X\)-perfect matching. Let \(C\) be a minimal vertex cover of \(G\). We have \(|C| = |C \cap A| + |C \cap B| < |A|\). This implies \(|C \cap B| < |A| - |C \cap A|\). \\
+Let \(S = A \setminus (C \cap A)\). Any vertex \(v \in A \setminus C\) can only be connected to a vertex \(b \in B \cap C\), or we could extend the cover, contradicting the minimality of \(C\). This implies \(N(S) \leq |C \cap B|\). \\
+Combining the inequalities, we get \(|N(S)| < |S|\), leading to a contradiction. Therefore, the existence of a \(X\)-perfect matching is confirmed, proving Hall's marriage theorem with König's theorem.
+\end{proof}
+\subsubsection{結婚定理}
+\textit{Statement. }\textbf{結婚定理（The Marriage theorem）：}$k$正則二分圖（$k>0$）必有完美配對。
+\begin{proof}\mbox{}\\
+\textbf{Hall's marriage theorem：}$(X, Y)$-二分圖存在$X$-完美配對若且唯若對於任何$X$的子集$S$，$|N(S)|\geq|S|$。 \\
+考慮一個$k$正則二分圖$G$分為$A$、$B$兩個bipartition。考慮$A$的任意非空子集$S$，由於$G$是$k$正則的，每個$S$中的點都有$k$個鄰居，因此$|N(S)| = k|S|$。由於$k|X| \geq |X|$，滿足 Hall's marriage theorem 的條件，故存在$X$-完美配對。得證。
+\end{proof}
+\subsubsection{Birkhoff–von Neumann theorem}
+\textit{Statement. }\textbf{Birkhoff–von Neumann theorem:} For any doubly stochastic matrix \(Q\), there exists a positive integer \(k\) such that \(Q\) can be expressed as the sum of \(k\) permutation matrices, each multiplied by a positive real number, and the sum of these coefficients is equal to 1.
+\begin{proof}\mbox{}\\
+\textbf{Hall's marriage theorem：} A bipartite graph \((X, Y)\) has a \(X\)-perfect matching if and only if for every subset \(S\) of \(X\), \(|N(S)| \geq |S|\). \\
+Construct a bipartite graph in which the rows of \(Q\) are listed in one part and the columns in the other. A row \(i\) is connected to a column \(j\) if and only if \(q_{ij} \neq 0\). Let \(A\) be any set of rows, and \(A'\) be the set of columns joined to rows in \(A\) in the graph. We aim to express the sizes \(|A|\) and \(|A'|\) of the two sets in terms of the elements \(q_{ij}\). \\
+For every \(i\) in \(A\), the sum over \(j\) in \(A'\) of \(q_{ij}\) is 1, as all columns \(j\) for which \(q_{ij} \neq 0\) are included in \(A'\), and \(Q\) is doubly stochastic. Therefore, \(|A|\) is the sum over all \(i \in A, j \in A'\) of \(q_{ij}\). \\
+Meanwhile, \(|A'|\) is the sum over all \(i\) (whether or not in \(A\)) and all \(j\) in \(A'\) of \(q_{ij}\). This sum is greater than or equal to the corresponding sum in which the \(i\) are limited to rows in \(A\). Thus, \(|A'|\) is greater than or equal to \(|A|\). \\
+The conditions of Hall's marriage theorem are satisfied, and we can find a set of edges in the graph that join each row in \(Q\) to exactly one distinct column. These edges define a permutation matrix, and the non-zero cells correspond to the non-zero cells in \(Q\).
+\end{proof}
+\subsubsection{相異代表系}
+\textit{Statement. }集合族$(A_1, A_2, A_3, \ldots, A_n)$存在相異代表系$\Leftrightarrow \forall J\subseteq \{1, 2, 3, \ldots, n\}: \left|\bigcup_{i\in J} A_i\right|\geq \left|J\right|$。
+\begin{proof}\mbox{}\\
+左表述到右表述：在符合左表述之前提下，右表述之左式的最小值發生於$\forall J: \left(\forall i \in J: \left|A_i - \bigcup_{k\in J\wedge k\neq i}\right|=1\right)$，此時右表述之左式$=|J|$。 \\
+右表述到左表述：等價於左表述不成立則右表述不成立，即：
+\[
+\begin{aligned}
+&\text{若集合族}(A_1, A_2, A_3, \ldots, A_n)\text{沒有相異代表系，則：}　\\
+& \exists J\subseteq \{1, 2, 3, \ldots, n\}: \left|\bigcup_{i\in J} A_i\right|< \left|J\right| \\
+\Rightarrow & \exists J\subseteq \{1, 2, 3, \ldots, n\}: \left(\exists i \in J: \left|A_i - \bigcup_{k\in J\wedge k\neq i}\right|=0\right) \\
+\Rightarrow & \text{右表述不成立}
+\end{aligned}
+\]
+\end{proof}
+\subsubsection{拉丁矩陣擴展}
+題目：\\
+設$r\leq n$，一個$r\times n$階拉丁矩陣（Latin matrix）是一個$r\times n$矩陣，且其元素均$\in \{1, 2, 3, \ldots, n\}$，且同行或同列階無相同的元素。 \\
+證明：當$r<n$時，任一給定$r\times n$階拉丁矩陣都可以增加第$r+1$列，使成為$(r+1)\times n$階拉丁矩陣。
+\begin{proof}\mbox{}\\
+\textbf{Hall's marriage theorem：}$(X, Y)$-二分圖存在$X$-完美配對若且唯若對於任何$X$的子集$S$，$|N(S)|\geq|S|$。 \\
+要為一個$r\times n$階拉丁矩陣拉丁矩陣增加一列，我們需要為每一行添加一個數。對於每個$i \in \{1, 2, 3, \ldots, n\}$，定義$S_i$為$1, 2, 3, \ldots, n$等$n$個數中尚未出現於矩陣的第$i$行的數構成的集合。使用歸謬證法。假設$S_1, S_2, S_3 \ldots S_n$等$n$個集合不存在相異代表系。根據Hall's marriage theorem，這$n$個集合中必有某$k$個集合（$1\leq k\leq n$）的聯集的元素個數$<k$。由於每個集合$S_i$都包含$n−r$個數，這$k$個集合中總共有$k(n-r)$個數（允許相同的數被重複計算），而一個數在這些數中最多可能被重複計算$n-r$次，由此推知在上述$k(n-r)$個數中至少存在$\left\lceil\frac{k(n-r)}{n-r}\right\rceil=k$個相異數，與原假設矛盾。
+\end{proof}
+\subsubsection{鄰接矩陣}
+題目：\\
+甲、乙、丙、丁四人傳球，每次可傳給自己以外的任何人，現在球在甲手中，則在傳了六次球後，球傳到以手中的傳球過程共有幾種？\\
+過程：\\
+\[
+\begin{aligned}
+\text{Adjacency matrix } A &=
+\begin{bmatrix}
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+\end{bmatrix} \\
+A^6 &=
+\begin{bmatrix}
+183 & 182 & 182 & 182 \\
+182 & 183 & 182 & 182 \\
+182 & 182 & 183 & 182 \\
+182 & 182 & 182 & 183 \\
+\end{bmatrix} \\
+A^6\text{ 之元素}_{14} &= 182
+\end{aligned}
+\]
+答：$182$種。
+\subsubsection{旅行業務員問題}
+題目：\\
+一個推銷員住在A城而必須去訪問B、C、D城。這些城市間的距離為$\overline{AB}=120$、$\overline{AC}=140$、$\overline{AD}=180$、$\overline{BC}=70$、$\overline{BD}=100$、$\overline{CD}=110$（單位：公里）。 \\
+試找出自A城出發通過B、C、D城而後回到A城的最短路線。\\
+過程：\\
+\[
+\begin{aligned}
+& \text{Original matrix: }
+\begin{bmatrix}
+\infty & 120 & 140 & 180 \\
+120 & \infty & 70 & 100 \\
+140 & 70 & \infty & 110 \\
+180 & 100 & 110 & \infty \\
+\end{bmatrix} \\
+\Rightarrow & 
+\begin{bmatrix}
+\infty & 0 & 20 & 30 \\
+0 & \infty & 0 & 0 \\
+20 & 0 & \infty & 10 \\
+30 & 0 & 10 & \infty \\
+\end{bmatrix} \\
+& \text{distance}=120+70+70+100+50+30=440 \\
+\end{aligned}
+\]
+\[
+\begin{aligned}
+& \text{1選1 4：}
+\begin{bmatrix}
+0 & \infty & 0 \\
+20 & 0 & \infty \\
+30 & 0 & 10 \\
+\end{bmatrix}
+\text{, distance}=470 \\
+\Rightarrow\text{ } & \text{2選4 3 } \Rightarrow \text{distance}=470+10+0+0=480. \\
+& \text{2選4 2 } \Rightarrow \text{distance}=470+0+0+20=490.
+\end{aligned}
+\]
+\[
+\begin{aligned}
+& \text{1選1 3：}
+\begin{bmatrix}
+0 & \infty & 0 \\
+20 & 0 & 10 \\
+30 & 0 & \infty \\
+\end{bmatrix}
+\text{, distance}=460 \\
+\Rightarrow\text{ } & \text{2選3 4 } \Rightarrow \text{distance}=460+10+0+0=470. \\
+& \text{2選3 2 } \Rightarrow \text{distance}=460+0+0+30=490. \\
+& \text{1選1 2：}
+\begin{bmatrix}
+0 & 0 & 0 \\
+20 & \infty & 10 \\
+30 & 10 & \infty \\
+\end{bmatrix}
+\text{, distance}=440 \\
+\Rightarrow\text{ } & \text{2選2 4 } \Rightarrow \text{distance}=440+0+10+20=470. \\
+& \text{2選2 3 } \Rightarrow \text{distance}=440+0+10+30=480.
+\end{aligned}
+\]
+答：最短路徑為ACDBA或ABDCA，距離470公里。
+\subsubsection{鴿籠原理一}
+題目：\\
+在座標平面上，將$x$、$y$座標均為整數的點稱為整點。試證：在平面上任取五個整點，其中必有兩個點的中點亦為整點。
+\begin{proof}\mbox{}\\
+將整點以$x$、$y$之奇偶分類，共有$2^2=4$類。兩整點之中點為整點等價於兩整點為同一類。根據鴿龍原理，有五鴿放入四籠，必有$\geq 1$籠中有$\geq 2$鴿，即必有兩個點的中點亦為整點。
+\end{proof}
+\subsubsection{鴿籠原理二}
+題目：\\
+將任意$nm+1$個相異實數排成一列。試證：必可從中挑出$n+1$個數來形成一個嚴格遞增數列或$m+1$個數來形成一個嚴格遞減數列（挑數字時位置不需連續，但須維持原來數列中的前後關係）。
+\begin{proof}\mbox{}\\
+使用反證法。假設存在$nm+1$個相異實數排成的數列，無法從中挑出$n+1$個數來形成一個嚴格遞增數列且無法從中挑出$m+1$個數來形成一個嚴格遞減數列。 \\
+考慮此數列的第$i$項，令：從第$i$項往後挑選子數列（含第$i$項）所能找到的最長遞增子數列長度為$a_i$，從第$i$項往後挑選子數列（含第$i$項）所能找到的最長遞減子數列長度為$b_i$。 \\
+根據假設，$\forall i\in \{i\mid 1\leq i\leq nm+1\wedge i\in\mathbb{N}\}: 1\leq a_i\leq n\wedge 1\leq b_i\leq m$，故數對$(a, b)$有$nm$種不同的狀況，但數列長度為$nm+1$，所以存在相異正整數$s$、$k$，使得$(a_s, b_s) = (a_k, b_k)$。令數列的第$s$項為$C_s$，第$k$項為$C_k$。若$C_s > C_k$，則$b_s\geq b_k+1$（矛盾）；若$C_s<C_k$，則$a_s\geq a_k+1$（矛盾）。 \\
+故原假設錯誤。
+\end{proof}
+\subsubsection{Ramsey number 1}
+\textit{Statement. }\[ R(p, q) \leq R(p - 1, q) + R(p, q - 1) \]
+\begin{proof}\mbox{}\\
+Evidently, \(R(1, q) = R(p, 1) = 1\). When \(p, q \geq 2\), assume that \(a = R(p - 1, q)\) and \(b = R(p, q - 1)\) exist. Consider a random 2-edge-coloring of \(K_{a+b}\). Pick a random vertex \(v\), let the vertices colored with color one in the neighborhood of \(v\) be denoted as set \(A\), and the rest, colored with color two, as set \(B\). \\
+Since \( \deg(v) = a + b - 1 = |A| + |B| \), it must be the case that \(|A| \geq a\) or \(|B| \geq b\). Without loss of generality, if \(|A| \geq a\), there must exist \(K_{p-1}\) colored with color one or \(K_q\) colored with color two. In the former case, we obtain \(K_p\) colored with color one when adding \(v\). If \(|B| \geq b\), there must exist \(K_p\) colored with color one or \(K_{q-1}\) colored with color two. In the latter case, we obtain \(K_q\) colored with color two when adding \(v\). \\
+Therefore, \(R(p, q)\) exists, and \(R(p, q) \leq R(p - 1, q) + R(p, q - 1)\). By mathematical induction,
+\end{proof}
+\subsubsection{Ramsey number 2}
+\textit{Statement. }\[ R(p, q) \leq \binom{p+q-2}{p-1} \]
+\begin{proof}\mbox{}\\
+When \( p = 1 \), \( R(1, q) = 1 \leq \binom{1+q-2}{1-1} = 1 \), which holds true. \\
+When \( q = 1 \), \( R(p, 1) = 1 \leq \binom{p+1-2}{p-1} = 1 \), which also holds true. \\
+\textit{Lemma. }
+\[ R(p, q) \leq R(p - 1, q) + R(p, q - 1) \]
+Now, let \( i \in \mathbb{N} \). If \( R(i, i) \) holds true, then:
+\[ R(i + 1, i) \leq R(i, i) + R(i + 1, i - 1) \leq \binom{2i-2}{i-1} + \binom{2i-2}{i-2} = \binom{2i-1}{i-1} \]
+Similarly, \( R(i, i + 1) \) holds true. Therefore, by mathematical induction, the statement holds true.
+\end{proof}
+\subsubsection{可平面化}
+\textit{Statement. }圖$G$可嵌在平面上若且唯若它可嵌在球面上。
+\begin{proof}\mbox{}\\
+左到右：顯而易見。 \\
+右到左：若圖$G$可嵌在球面上，假設$G$的球面嵌入為$\overline{G}$，則可在球面上任取一不在$\overline{G}$上的點$N$，則$\overline{G}$對於從$N$的球面射影之像即為$G$的平面嵌入。
+\end{proof}
+\subsubsection{正$n$面體}
+題目：\\
+利用Euler's Formula求出所有可能的正多面體及其頂點、邊與面數。\\
+\textbf{Euler's Formula：} 對於任何連通的平面圖 \(G\)，\(v - e + f = 2\)，其中 \(v=|V(G)|\)、\(e=|E(G)|\)、\(f=|F(G)|\)。\\
+過程：\\
+由於正多面體可視為嵌入球面的圖，故必可平面化。令其平面嵌入有$v$個點、$e$條邊、$f$個面，且每個點的度數為$k$、每個面由$l$條邊圍成。因為每條邊有兩個端點，且恰為兩個面的邊界，故得$kv=2e=lf$。代入Euler's Formula，得$\left(\frac{2}{k}+1+\frac{2}{l}\right)e=2$，故得$\frac{2}{k}+\frac{2}{l}>1$，整理得$(k-2)(l-2)<4$。因為$k$、$l$顯然均$>3$，故$(k, l)$只有五種可能：$(3,3),(3,4),(3,5),(4,3),(5,3)$，依序對應到以下五種正多面體及其頂點、邊與面數： \\
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$k$ & $l$ & $e$ & $v$ & $f$ & 名稱 \\
+\hline
+3 & 3 & 6 & 4 & 4 & 正四面體 \\
+\hline
+3 & 4 & 12 & 8 & 6 & 正六面體（立方體） \\
+\hline
+4 & 3 & 12 & 6 & 8 & 正八面體 \\
+\hline
+3 & 5 & 30 & 20 & 12 & 正十二面體 \\
+\hline
+5 & 3 & 30 & 12 & 20 & 正二十面體 \\
+\hline
+\end{tabular}
+\end{table}
+\subsubsection{五色定理}
+\textit{Statement. }對於任意無自環的平面圖 $G$，$\chi(G) \leq 5$。
+\begin{proof}\mbox{}\\
+有重邊者，因不影響著色，忽略之，使為簡單圖。使用數學歸納法。當 $|V(G)| \leq 5$ 時，必成立。假設 $|V(G)| = k$ 時命題成立，則當 $|V(G)| = k+1$ 時： \\
+\textit{Lemma. }對於任意平面簡單圖 $G$，最小度數 $\delta(G) \leq 5$。 \\
+令 $G$ 中度數最大的點為 $x$。若 $\deg(x) < 5$，$x$ 可著剩餘的顏色，命題顯然成立；若 $\deg(x) = 5$，觀察 $G' = G - G[x]$。根據歸納法假設，$G'$ 有正常 $5$-著色，若 $x$ 的鄰居總共用了不超過四種顏色，$x$ 可著剩餘的顏色，命題顯然成立；若 $x$ 的五個鄰居分別著不同的顏色，令為 $a, b, c, d, e$，分別著 $1, 2, 3, 4, 5$ 號色，取 $G$ 的誘導子圖 $H$ 滿足 $V(H) = \{v \mid v \text{著$1$號色或$3$號色}\}$，討論如下： \\
+\textit{Case1.} $a, c$ 二點在 $H$ 的不同分支中：將 $a$ 所屬的分支中，所有著 $1$ 號色者改著 $3$ 號色，所有著 $3$ 號色者改著 $1$ 號色，則 $x$ 可著 $1$ 號色，命題成立。 \\
+\textit{Case2.} $a, c$ 二點在 $H$ 的同一分支中：$H$ 中的任一 $(a, c)$-路徑與 $x$ 在 $G$ 終必形成一圈，故取 $G$ 的誘導子圖 $I$ 滿足 $V(I) = \{v \mid v \text{著$2$號色或$4$號色}\}$，$b, d$ 二點必在 $I$ 的不同分支中，將 $b$ 所屬的分支中，所有著 $2$ 號色者改著 $4$ 號色，所有著 $4$ 號色者改著 $2$ 號色，則 $x$ 可著 $2$ 號色，命題成立。 \\
+由數學歸納法，得證。
+\end{proof}
+\subsubsection{棋盤}
+題目：\\
+今有一$8\times 8$的方格紙，是否能用$1\times 2$的矩形紙張（矩形紙張互不重疊）遮蓋至左上與至右下共二格以外之所有格？\\
+過程：\\
+令方格紙黑白相間如西洋棋盤狀，一矩形紙張必覆蓋一黑格一白格，需覆蓋之黑格與白格數差為$2$，故不可。
+\subsubsection{Ore's theorem}
+\textit{Statement. }Ore's theorem: For any simple undirected graph $G$ with $n \geq 3$ vertices, if \(\forall v, w \in V(G) \wedge vw \notin E(G): \deg(v) + \deg(w) \geq n\), then $G$ is a Hamiltonian graph.
+\begin{proof}\mbox{}\\
+The proposition is equivalent to ``If $G$ is not a Hamiltonian graph, then \(\exists v, w \in V(G) \wedge vw \notin E(G): \deg(v) + \deg(w) < n\).'' Let $G$ be a non-Hamiltonian graph with $n \geq 3$ vertices. Construct a graph $H$ from $G$ by adding edges one at a time, ensuring that no Hamiltonian cycle is created, until no more edges can be added. Let $x$ and $y$ be two non-adjacent vertices in $H$, and add the edge $xy$ to create at least one new Hamiltonian cycle. This cycle must have the form $v_1v_2\ldots v_n$, where $x = v_1$ and $y = v_n$.  \\
+For each $2 \leq i \leq n$, consider the two possible edges in $H$ from $v_1$ to $v_i$ and from $v_{i-1}$ to $v_n$. At most one of these edges can exist in $H$, otherwise $v_1v_2\ldots v_{i-1}v_nv_{n-1}\ldots v_iv_1$ would form a Hamiltonian cycle. Therefore, for each $i$, there are at most two edges with $v_1$ or $v_n$ as endpoints, and the total number of such edges is at most $n - 1$. Thus, \(\exists v, w \in V(H) \wedge vw \notin E(G): \deg(v) + \deg(w) < n\). Since $|V(G)| \leq 2E(H)$, it follows that \(\exists v, w \in V(G) \wedge vw \notin E(G): \deg(v) + \deg(w) < n\).
+\end{proof}
+\subsubsection{Dirac's theorem}
+\textit{Statement. }Dirac's Theorem: For any simple undirected graph $G$ with $n \geq 3$ vertices, if $\forall v \in V(G): \deg(v) \geq \frac{n}{2}$, then $G$ is a Hamiltonian graph.
+\begin{proof}\mbox{}\\
+The proposition is equivalent to ``If $G$ is not a Hamiltonian graph, then $\exists v \in V(G): \deg(v) < \frac{n}{2}$.'' Let $G$ be a non-Hamiltonian graph with $n \geq 3$ vertices. Construct a graph $H$ from $G$ by adding edges one at a time, ensuring that no Hamiltonian cycle is created until no more edges can be added. Let $x$ and $y$ be two non-adjacent vertices in $H$, and add the edge $xy$ to create at least one new Hamiltonian cycle. This cycle must have the form $v_1v_2\ldots v_n$, where $x = v_1$ and $y = v_n$. \\
+Let $S = \{i \mid xv_{i+1} \in E(G)\}$ and $T = \{i \mid v_{i}y \in E(G)\}$. $S \cap T = \varnothing$; otherwise, $v_1v_2\ldots v_{i-1}v_iv_nv_{n-1}\ldots v_{i+1}v_1$ would form a Hamiltonian cycle. Also, $v_n \notin S \cup T$, so $n \geq |S \cup T| = |S| + |T| = \deg(x) + \deg(y)$, which implies $\min(\deg(x), \deg(y)) < \frac{n}{2}$.
+\end{proof}
+\end{document}

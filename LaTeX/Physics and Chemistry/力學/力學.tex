@@ -1,0 +1,1059 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{力學與重力}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\sct{力學（Mechanics）與重力（Gravity）}
+若無另聲明，物體與系統均指絕熱系統，位置均為慣性參考系，時間$t$。
+\ssc{簡史}
+\begin{itemize}
+\item 150：托勒密（Ptolemy）提出地心模型（Geocentric model）。
+\item 1543：哥白尼（Nicolaus Copernicus）著「天體運行論（On the Revolutions of the Heavenly Spheres）」，發表日心說（Heliocentrism）。
+\item 1609：伽利略（Galileo Galilei）使用望遠鏡觀測行星。
+\item 1609：克卜勒（Johannes Kepler Kepler）著「新天文學（Astronomia nova）」，發表克卜勒第一及第二行星運動定律（Kepler's First and Second Laws of Planetary Motion）。
+\item 1619：克卜勒著「世界的和諧（Harmonices Mundi）」，發表克卜勒第三行星運動定律（Kepler's Third Law of Planetary Motion）。
+\item 1632：伽利略著「關於兩大世界體系的對話（Dialogue Concerning the Two Chief World Systems）」。
+\item 1634：伽利略提出慣性定律（Law of Inertia）。
+\item 1687：牛頓出版「自然哲學的數學原理（Philosophiae Naturalis Principia Mathematica）」，發表牛頓運動定律（Newton's Laws of Motion）與牛頓萬有引力定律（Newton's Law of Universal Gravitation）。
+\end{itemize}
+\ssc{時刻與時間}
+\sssc{時刻}
+自時間為零起算，經過$k\in\mathbb{N}_0$秒，稱第$k$秒或第$k+1$秒初，對於$k\in\mathbb{N}$又稱第$k$秒末。
+\sssc{時間}
+\begin{itemize}
+\item 第$k$秒初到第$k$秒末稱第$k$秒內。
+\item 第$1$秒初到第$k$秒末稱$k$秒內。
+\end{itemize}
+\subsection{平移運動/平動/移動（Shift）}
+\subsubsection{向量}
+\begin{itemize}
+\item\tb{力（Force）}：系統間的交互作用。
+\item\tb{外力（External force）}：系統外施予系統之力。
+\item\tb{內力（Internal force）}：系統內不同質點間的力。
+\item\tb{平衡力}：作用在同一系統上且和為零的一組外力。
+\item\tb{保守力（Conservative force）}：只與系統位置有關而與路徑、時間無關的力，對於兩給定端點間的任意路徑，其對位置的路徑積分相同。
+\item\tb{位置（Position）}：系統在相對於某參考原點建立的向量空間中所處的點。
+\item\tb{位移（Displacement）}：系統末位置減去初位置。
+\item\tb{（瞬間/瞬時）速度（Velocity）}：系統位置對時間的導數。
+\item\tb{平均速度（Average velocity）}：系統位移，與末時刻減去初時刻，的比值。
+\item\tb{（瞬間/瞬時）加速度（Acceleration）}：系統速度對時間的導數。
+\item\tb{平均加速度（Average acceleration）}：系統末速度減去初速度，與末時刻減去初時刻，的比值。
+\item\tb{動量（Momentum）}：系統質量與速度的乘積。
+\item\tb{衝量（Impulse）}：系統末動量減去初動量。
+\end{itemize}
+\subsubsection{純量}
+\begin{itemize}
+\item\tb{距離（Distance）}：兩系統的距離為其位置向量差的歐幾里得範數。
+\item\tb{（慣性）質量}：對於某系統施力時該力與其造成該系統加速度的比值。
+\item\tb{（瞬間/瞬時）速率（Speed）}：系統速度的歐幾里得範數。
+\item\tb{路徑長（Path length）}：系統速率對時間自初時刻到末時刻的積分。
+\item\tb{平均速率（Average speed）}：系統路徑長，與末時刻減去初時刻，的比值。
+\item\tb{功（Work）}：一力所做的功為其對系統在受力期間行進路徑的路徑積分。
+\item\tb{功率（Power）}：一力所做的功率為其與系統速度的內積。
+\item\tb{動能（Kinetic energy）}：二分之一乘以動量的平方再除以質量。
+\item\tb{位能（Potential energy）}：系統因其相對於其他系統的位置、自身內部的應力、電荷或其他因素所持有的能量。對於保守力，位能只與系統位置有關，而與路徑、時間無關。位能一般僅定義於保守力。
+\item\tb{力學能（Mechanical energy）}：系統動能與位能的總和。
+\end{itemize}
+\sssc{牛頓第一運動定律（Newton's first law of motion）/慣性定律（Law of inertia）/動量守恆定律（Law of conservation of momentum）}
+假若施加於某系統的外力為零，則該系統的動量不變，稱其處於移動平衡（shifting equilibrium）。
+\sssc{牛頓第二運動定律（Newton's second law of motion）}
+施加於某系統的外力等於該系統的動量時變率。
+\sssc{牛頓第三運動定律（Newton's third law of motion）/作用力與反作用力定律（Law of action force and reaction force）}
+當兩個系統交互作用於對方時，彼此施加於對方的力，其大小相等、方向相反。一者稱作用力，則另一者稱反作用力。
+\sssc{功能定理（The Work–Energy Theorem）}
+一系統在一段時間內所受外力作功等於其動能變化。
+\sssc{力學能守恆（Law of Conservation of Mechanical Energy）}
+不受非保守力做功的系統，其力學能守恆。
+\sssc{拉密定理（Lami's theorem）}
+三維空間中三向量合為零，則它們必有公法向量，且其中二者夾角之正弦值與第三者之量值成正比，即它們恰可以首尾相接連接成一個三角形（含退化）。
+\sssc{（理想）剛體（Rigid body or rigid object）}
+一種有限尺寸且無形變的固體，無形變表示不論是否受到外力，剛體內部質點與質點之間的距離都不會改變。
+\ssc{質心（Center of mass）}
+\sssc{向量}
+\bit
+\item\tb{質心（Center of mass）（位置）}：系統中各點密度乘以該點位置向量的體積積分，再除以系統質量。一系統的位置指其質心位置。
+\item\tb{質心（瞬間/瞬時）速度}：質心位置對時間的導數，等於系統中各點密度乘以該點速度向量的體積積分，再除以系統質量。
+\item\tb{質心（瞬間/瞬時）加速度}：質心速度對時間的導數，等於系統中各點密度乘以該點加速度向量的體積積分，再除以系統質量。
+\item\tb{動量}：系統質量與質心速度的乘積，等於系統中各點密度乘以該點速度向量的體積積分。
+\item\tb{衝量}：系統末動量減去初動量，等於系統中各點密度，乘以該點末速度減去初速度之向量，的體積積分。
+\eit
+\sssc{純量}
+\begin{itemize}
+\item\tb{密度（Density）}：一點的密度為該處的單位體積質量；一系統的密度為其質量除以其體積。
+\item\tb{質心動能}：系統總質量$m$，質心速度$\mathbf{v}_c$，質心動能$K_c$：
+\[K_c=\frac{m\mathbf{v}_c^{\phantom{c}2}}{2}.\]
+系統質心動能僅受系統外力影響。
+\item\tb{總動能}：系統中各點密度，乘以該點速度的歐幾里得範數的平方，的體積積分。
+\item\tb{內（動）能（Internal (kinetic) energy）}：系統的總動能減去質心動能。
+\end{itemize}
+\subsection{轉動（Rotation）}
+\subsubsection{向量}
+\begin{itemize}
+\item\tb{（槓桿）力臂（Lever arm）}：一力的力臂為其施力點相對於受力系統質心的位置向量。
+\item\tb{力矩（Torque）}：一力對受力系統產生之力矩為該力與其力臂的叉積。一外力對受力系統產生之力矩稱外力矩。
+\item\tb{角位置（Angular position）}：相對於某個參考旋轉軸與參考角位置原點，系統的位置向量在垂直參考旋轉軸的平面上的投影與參考角位置原點的夾角，以逆時針為正。一個系統對於每個軸有一個角位置。
+\item\tb{角位移（Angular displacement）}：系統末角位置減初角位置。
+\item\tb{（瞬間/瞬時）角速度（Angular velocity）}：系統角位置對時間的導數。
+\item\tb{（瞬間/瞬時）角加速度（Angular acceleration）}：系統角速度對時間的導數。
+\item\tb{角動量（Angular momentum）}：系統轉動慣量與角速度的乘積。
+\end{itemize}
+\subsubsection{純量}
+\begin{itemize}
+\item\tb{轉動慣量（Moment of inertia）}：系統內密度乘以與參考軸距離的平方的體積積分。轉動慣量乘以角加速度等於力矩。
+\item\tb{（瞬間/瞬時）角速率（Angular speed）/角頻率（Angular frequency）}：系統角速度的歐幾里得範數。
+\end{itemize}
+\sssc{質點轉動}
+一質點質量$m$，相對於參考點的位置$\mathbf{r}$，轉動慣量$I$、角速度$\boldsymbol{\omega}$、角加速度$\boldsymbol{\alpha}$、速度$\mathbf{v}$、加速度$\mathbf{a}$、角動量$\mathbf{L}$、轉動動能$K$：
+\[I=m|\mathbf{r}|^2\]
+\[\mathbf{L}=I\boldsymbol{\omega}\]
+\[\mathbf{v}=\boldsymbol{\omega}\times\mathbf{r}.\]
+\[\mathbf{a}=\boldsymbol{\alpha}\times\mathbf{r}-|\boldsymbol{\omega}|^2\mathbf{r}.\]
+\[K=\frac{I\boldsymbol{\omega}^2}{2}=\frac{|\mathbf{L}|^2}{2I}.\]
+\sssc{角動量守恆定律（Law of conservation of angular momentum）}
+當一系統受合外力矩為零，其角動量時變率必為零，稱其處於轉動平衡（Rotational equilibrium），即該系統角位置靜止或行等角速度運動。
+\sssc{三力轉動平衡}
+一剛體受三力達轉動平衡，則三力延長線必交於一點。
+\sssc{靜力平衡（Static equilibrium）}
+指一系統達移動平衡且轉動平衡。
+\ssc{參考系（Frame of reference or reference frame）}
+\sssc{參考系（Frame of reference or reference frame）}
+一個抽象的座標系，其原點、方向和比例已在物理空間中基於一組參考點（reference points）而指定。參考點指在數學和物理上定義的幾何點。
+\sssc{慣性參考系（Inertial frame of reference）/伽俐略參考系（Galilean reference frame）}
+指在僅考慮實際力時，遵守牛頓運動定律的參考系。
+
+一個慣性參考系相對於另一個慣性參考系必靜止或行等速度運動。
+\sssc{非慣性參考系（Non-inertial frame of reference）}
+指在僅考慮實際力時，不遵守牛頓運動定律的參考系。
+\sssc{假想力（Fictitious force）/慣性力（inertial force）/假力（pseudo-force）}
+在非慣性參考系中描述系統運動時，欲使得牛頓第二運動定律成立需要作用於系統的非實際力。
+\sssc{旋轉參考系（Rotating reference frame）中的假想力}
+令一旋轉參考系相對於慣性參考系以角速度$\boldsymbol{\omega}$繞其原點旋轉，一質量$m$質點在此參考系有位置$\mathbf{x}$和速度$\mathbf{v}$，欲使牛頓第二運動定律在此參考系中成立需施予該質點假想力$\mathbf{F}$，則其服從：
+\[\mathbf{F}=-m\boldsymbol{\omega}\times\qty(\boldsymbol{\omega}\times\mathbf{x})-2m\boldsymbol{\omega}\times\mathbf{v}-m\frac{\mathrm{d}\boldsymbol{\omega}}{\mathrm{d}t}\times\mathbf{x}\]
+其中：$-m\boldsymbol{\omega}\times\qty(\boldsymbol{\omega}\times\mathbf{x})$稱\tb{離心力（Centrifugal force）}，$-2m\boldsymbol{\omega}\times\mathbf{v}$稱\tb{科里奥利力/科氏力（Coriolis force）}，$-m\frac{\mathrm{d}\boldsymbol{\omega}}{\mathrm{d}t}\times\mathbf{x}$稱\tb{尤拉力（Euler force）}。
+\ssc{變質量系統}
+\sssc{質量增加}
+令：
+\begin{itemize}
+\item 時間$t$時：主系統質量$m$、速度$\mathbf{v}$，副系統質量$\mathrm{d}m$、速度$\mathbf{v}+\mathbf{u}$，兩系統總動量$\mathbf{p}$；
+\item 時間$(t+\mathrm{d}t)$時：副系統併入主系統，主系統的性質在$t$時為$i$者變為$i+\mathrm{d}i$，主系統動量為$\mathbf{p}+\mathrm{d}\mathbf{p}$。
+\end{itemize}
+\[\begin{aligned}
+& \mathbf{p}=m\mathbf{v}+(\mathrm{d}m)(\mathbf{v}+\mathbf{u})\\
+& \mathbf{p}+\mathrm{d}\mathbf{p}=\qty(m+\mathrm{d}m)(\mathbf{v}+\mathrm{d}\mathbf{v})\\
+& \mathrm{d}\mathbf{p}=m(\mathrm{d}\mathbf{v})-(\mathrm{d}m)\mathbf{u}
+\end{aligned}\]
+\sssc{質量減少}
+令：
+\begin{itemize}
+\item 時間$t$時：主系統質量$m$、速度$\mathbf{v}$、動量$\mathbf{p}$；
+\item 時間$(t+\mathrm{d}t)$時：主系統分出質量$\mathrm{d}m$的副系統，使得主系統質量變為$m-\mathrm{d}m$，主系統的質量以外性質在$t$時為$i$者變為$i+\mathrm{d}i$，副系統速度$\mathbf{v}+\mathbf{u}$。
+\end{itemize}
+\[\begin{aligned}
+& \mathbf{p}=m\mathbf{v} \\
+& \mathbf{p}+\mathrm{d}\mathbf{p}=\qty(m-\mathrm{d}m)(\mathbf{v}+\mathrm{d}\mathbf{v})+\mathrm{d}m(\mathbf{v}+\mathbf{u})\\
+& \mathrm{d}\mathbf{p}=\qty(m-\mathrm{d}m)(\mathrm{d}\mathbf{v})+(\mathrm{d}m)\mathbf{u}
+\end{aligned}\]
+\ssc{Lagrangian Mechanics (拉格朗日力學)}
+\sssc{Configuration space}
+The degrees of freedom, or parameters, that define the configuration, or position of all constituent point particles, of a physical system are called generalized coordinates, and the space defined by these coordinates is called the configuration space of the system. Each unique possible configuration of the system corresponds to a unique point in the space. It is often the case that the set of all actual configurations of the system is a manifold in the configuration space, called the configuration manifold of the system. The number of dimensions of the configuration space is equal to the degrees of freedom of the system.
+\sssc{Lagrangian mechanics}
+Lagrangian mechanics describes a mechanical system as a pair $(M,L)$ consisting of a configuration manifold $M$ and a smooth functional $L\colon TM\to\mathbb{R}$, called a Lagrangian, where $TM$ is the tagent bundle of $M$, that is, $L=L(\mathbf{q},\dot{\mathbf{q}},t)$, where the vector $\mathbf{q}$ is a point in the configuration space of the system, $\dot{\mathbf{q}}=\frac{\mathrm{d}\mathbf{q}}{\mathrm{d}t}$, and $t$ is time.
+\subsection{Non-Relativistic Lagrangian}
+Let $\mathbf{r}_k$ denote the position of the $k$th particle for $_{k=1}^N$ in the position space $\mathbb{R}^3$ equipped with Cartesian coordinates as function of time, and \[\mathbf{v}_k=\dot{\mathbf{r}_k}=\frac{\mathrm{d}\mathbf{r}_k}{\mathrm{d}t}.\]
+The non-relativistic Lagrangian for a system of $N$ particles is given by
+\[L=T-V,\]
+where
+\[T=\frac{1}{2}\sum_{k=1}^Nm_k\mathbf{v}_k^{\phantom{k}2}\]
+is the total kinetic energy of the system. Each particle labeled $k$ has mass $m$, and $\mathbf{v}_k^{\phantom{k}2}=\mathbf{v}_k\cdot\mathbf{v}_k$ is the square of the norm of its velocity, equivalent to the dot product of the velocity with itself.
+
+$V$, the potential energy of the system, is the energy any one of the particles has due to all the others together with all external influences. For conservative forces (e.g. Newtonian gravity), $V$ is a function of the vectors of the position of the particles only, that is, $V=V((\mathbf{r}_k)_{i=1}^N)$. For non-conservative forces that can be derived from an appropriate potential (e.g. electromagnetic potential), $V$ is a function of the vectors of the position and velocity of the particles, that is, $V=V((\mathbf{r}_k)_{i=1}^N,(\mathbf{v}_k)_{i=1}^N)$. For some time-dependent external field or force (e.g. electric field and magnetic flux density field in electromagnetodynamics), the potential changes with time, so most generally, $V$ is a function of the vectors of the position and velocity of the particles and time, that is, $V=V((\mathbf{r}_k)_{i=1}^N,(\mathbf{v}_k)_{i=1}^N,t)$.
+\sssc{Lagrange's Equations of the First Kind}
+With these definitions, Lagrange's equations of the first kind are
+\[\nabla_{\mathbf{r}_k}L-\frac{\mathrm{d}}{\mathrm{d}t}\nabla_{\dot{\mathbf{r}_k}}L+\sum_{i=1}^C\lambda_i\nabla_{\mathbf{r}_k}f_i=0,\]
+where $k$ for $_{k=1}^N$ labels the particles, $f_i$ for $_{i=1}^C$ labels $C$ constraint equations, and $\lambda_i$ for $_{i=1}^C$ labels the Lagrange multiplier for the $i$th constraint equation. The constraint equations can be either holonomic, that is, in the form of $f_i((\mathbf{r}_k)_{i=1}^N)=0$, non-holonomic, that is, in the form of $f_i((\mathbf{r}_k)_{i=1}^N,(\mathbf{v}_k)_{i=1}^N)=0$, or most generally, time dependent, that is, in the form of $f_i((\mathbf{r}_k)_{i=1}^N,(\mathbf{v}_k)_{i=1}^N,t)=0$.
+\sssc{From position space to configuration space}
+In each constraint equation, one coordinate can be determined from the other coordinates. The number of independent coordinates is therefore $n = 3N − C$. We can construct a configuration space with $n$ generalized coordinates,  conveniently written as an $n$-vector $\mathbf{q} = ((q_k)_{k=1}^n)$. Hence the position coordinates as functions of the generalized coordinates and time are
+\[\mathbf{r}_k\colon\mathbb{R}^{n+1}\to\mathbb{R}^3;\;(\mathbf{q},t)\mapsto\mathbf{r}_k(x_k,y_k,z_k).\]
+The vector $\mathbf{q}$ is a point in the configuration space of the system. The time derivatives of the generalized coordinates are called the generalized velocities, and for each particle labelled as $k$ for $_{k=1}^N$, its velocity vector, namely, the total derivative of its position with respect to time, is
+\[\mathbf{v}_k=\left(\dot{\mathbf{q}}\cdot\nabla_{\mathbf{q}}\right)\mathbf{r}_k+\frac{\partial\mathbf{r}_k}{\partial t}.\]
+\sssc{Euler–Lagrange Equations or Lagrange's Equations of the Second Kind}
+With these definitions, the Euler–Lagrange equations, or Lagrange's equations of the second kind are
+\[\nabla_{\mathbf{q}}L=\frac{\mathrm{d}}{\mathrm{d}t}\nabla_{\dot{\mathbf{q}}}L.\]
+The number of equations has decreased compared to Newtonian mechanics, from $3N$ to $n = 3N − C$ coupled second-order differential equations in the generalized coordinates. These equations do not include constraint forces at all, only non-constraint forces need to be accounted for.
+\ssc{接觸力（Contact Force）}
+以下接觸力都是由電磁力構成。
+\sssc{正向力（Normal Force）}
+垂直於兩系統界面的接觸排斥力，且令界面兩側系統為$A$、$B$，界面指入$A$的單位法向量$\hat{n}$，$\mathbf{A}$相對於$\mathbf{B}$的速度$\mathbf{v}$，則當兩系統間正向力量值大於零時其必足夠小使得$\mathbf{v}\cdot\hat{n}\leq 0$。
+\sssc{摩擦力（Frictional force）}
+平行於兩系統界面的接觸力，且與受力系統相對於施力系統速度的內積不為正，且與受力系統所受其他外力合的內積不為正。與該界面的正向力與界面粗糙程度有關，與接觸面積無關。
+\begin{itemize}
+\item \textbf{靜摩擦力（Static frictional force）}：界面兩側系統相對速度平行界面的分量為零時的摩擦力，等於受力系統所受其他外力合平行界面的分量乘以負一，其量值不大於最大靜摩擦力。
+\item \textbf{最大靜摩擦力（Maximum static frictional force）}：一界面可能發生的靜摩擦力量值的最大值，其量值正比於該界面的正向力量值，其量值與正向力量值的比值稱靜摩擦（力）係數（Coefficient of static friction）。
+\item \textbf{（滑）動摩擦力（Kinetic frictional force）}：界面兩側系統相對速度平行界面的分量不為零時的摩擦力，其量值與兩側系統相對速度平行界面的分量無關，其量值正比於該界面的正向力量值，其量值與正向力量值的比值稱（滑）動摩擦（力）係數（Coefficient of kinetic friction），通常略小於靜摩擦（力）係數。
+\end{itemize}
+\sssc{彈性力/回復力（Elastic Force/Restoring Force）}
+彈性系統內部垂直於假想界面的接觸吸引力。對於符合\textbf{虎克定律（Hooke's Law）}的一維彈性系統，稱（理想）彈簧（spring），其彈性力$\mathbf{F}$等於力常數（force constant）/彈力常數/彈性常數（spring constant）$k$乘以相對於原長的位移$\mathbf{x}$乘以負一，即$\mathbf{F}=-k\mathbf{x}$，可定義彈力位能/彈性位能（spring potential energy）$U$等於力常數乘以相對於原長的位移的平方除以二，即$U=\frac{k^2}{2}$。
+\sssc{張力（Tension）}
+系統內部的接觸吸引力。
+\sssc{表面張力（Surface tension）}
+液體表面分子間的吸引力。
+\ssc{碰撞（Collision）}
+\sssc{定義}
+物體接近時，彼此間產生排斥力。
+\sssc{碰撞的性質}
+若參與碰撞的所有物體為一孤立系統，則該系統遵循：
+\begin{itemize}
+\item 動量、質心動能：碰撞前=碰撞中=碰撞後
+\item 總動能、內動能：碰撞中<碰撞前$\leq$後
+\end{itemize}
+\sssc{兩質點縮減質量（reduced mass）/有效慣性質量/約化質量/減縮質量}
+二質點質量$m_1$、$m_2$，則兩者之系統的縮減質量$\mu$定義為：
+\[\mu=\f{1}{\f{1}{m_1}+\f{1}{m_2}} = \f{m_1m_2}{m_1+m_2}.\]
+\sssc{兩質點內動能與縮減質量}
+兩質點系統縮減質量$\mu$、兩質點相對速率$v$，內動能$K_{int}$為：
+\[K_{int}= \frac{\mu v^2}{2}.\]
+\sssc{兩質點內動能與距離}
+兩質點距離$x$、內動能$K_{int}$：
+\begin{itemize}
+\item $\dv{x}{t}$與$\dv{K_{int}}{t}$同號，
+\item $x$最小時$K_{int}=0$
+\end{itemize}
+\sssc{兩質點碰撞的恢復係數（coefficient of restitution）}
+兩質點碰撞，令碰撞前質點$1$相對於質點$2$接近速度$\mb{v}_{12}$，碰撞後質點$2$相對於質點$1$遠離速度$\mb{v}'_{21}$，則恢復係數$e$定義為：
+\[e = \f{\mb{v}'_{21}}{\mb{v}_{12}} \]
+\subsubsection{兩質點一維（完全）彈性碰撞（Elastic collision）}
+\begin{itemize}
+\item $e=1$
+\item 碰撞期間作用力均為保守力。
+\item 動量、質心動能、力學能、位能+內動能：碰撞前=碰撞中=碰撞後
+\item 總動能：最接近時<碰撞前=碰撞後
+\item 內動能：0=最接近時<碰撞前=碰撞後
+\item 位能：最接近時>碰撞前=碰撞後
+\item 一者相對於另一者的相對速度碰撞前、後量值不變、符號變號。
+\end{itemize}
+\subsubsection{兩質點一維非彈性碰撞（Inelastic collision）}
+\begin{itemize}
+\item $0\leq e<1$
+\item 碰撞期間作用力有非保守力。
+\item 動量、質心動能：碰撞前=碰撞中=碰撞後
+\item 總動能、力學能、位能+內動能：最接近時$\leq$碰撞後<碰撞前
+\item 內動能：0=最接近時$\leq$碰撞後<碰撞前
+\item 位能：最接近時$\geq$碰撞前=碰撞後
+\end{itemize}
+\subsubsection{兩質點一維完全非彈性碰撞（Completely inelastic collision）}
+\begin{itemize}
+\item $e=0$
+\item 碰撞期間作用力有非保守力。
+\item 動量、質心動能：碰撞前=碰撞中=碰撞後
+\item 總動能、力學能、位能+內動能：最接近時=碰撞後<碰撞前
+\item 內動能：0=最接近時=碰撞後<碰撞前
+\item 位能：最接近時=碰撞前=碰撞後
+\item 碰撞後兩者速度相同。
+\end{itemize}
+\sssc{動質點一維彈性碰撞靜質點能量變化}
+兩質點質量$m_1$、$m_2$，碰撞前動能分別為$K_1$、$0$，令$r=\f{m_1}{m_2}$，兩者彈性碰撞，碰撞後，$m_1$之動能$K'_1$、$m_2$之動能$K'_2$：
+\[\begin{aligned}
+\f{K'_2}{K_1} &= \f{4r}{(1+r)^2} = \f{m_1m_2}{\qty(m_1+m_2)^2} \\
+\f{K'_1}{K_1} &= \qty(\f{1-r}{1+r})^2 = \qty(\f{m_1-m_2}{m_1+m_2})^2
+\end{aligned}\]
+當$r=1$，能量傳遞比率$=1$；當$r=0.5$或$r=2$，能量傳遞比率$=\f{8}{9}$。
+\sssc{兩質點一維碰撞通式}
+兩質點質量$m_1$、$m_2$，碰撞前，速度$v_1$、$v_2$，質心速度$v_c$，內動能$K_{int}$，令兩質點縮減質量$\mu$，兩者碰撞，恢復係數$e$，無外力，碰撞後，$m_1$之速度$v'_1$、$m_2$之速度$v'_2$、內動能$K'_{int}$：
+\[\begin{aligned}
+v_c &= \frac{m_1v_1+m_2v_2}{m_1+m_2} \\
+K_{int} &= \frac{\mu\qty(v_1-v_2)^2}{2}\\
+v'_1 &= \qty(1+e)v_c - ev_1 = \f{(m_1-em_2)v_1+\qty(1+e)m_2v_2}{m_1+m_2} \\
+v'_2 &= \qty(1+e)v_c - ev_2 = \f{(m_2-em_1)v_2+\qty(1+e)m_1v_1}{m_2+m_1} \\
+K'_{int} &= \f{\mu \qty(v'_1-v'_2)^2}{2} = \f{\mu \qty(e\qty(v_1-v_2))^2}{2} = e^2K_{int}
+\end{aligned}\]
+\sssc{兩質點夾彈簧一維彈性碰撞}
+兩質點質量$m_1$、$m_2$，碰撞前，速度$v_1$、$v_2$，內動能$K_{int}$，令兩質點縮減質量$\mu$，$m_1$靠$m_2$側或$m_2$靠$m_1$側黏有一質量不計、力常數為$k$之理想彈簧，兩者彈性碰撞，兩者最近時中彈簧被壓縮之最大長度$x$：
+\[ \f{kx^2}{2} = \f{\mu (v_1-v_2)^2}{2} = K_{int} \]
+\ssc{重力（Gravity）}
+\sssc{牛頓萬有引力定律（Newton's Law of Universal Gravitation）}
+質量$M$、$m$的兩質點距離$r$，則其相互重力量值$F$為：
+\[F=\frac{GMm}{r^2}\]
+方向指向另一質點，其中重力常數（Gravitational constant） $G = 6.67430\times 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$。
+\sssc{重力場（Gravitational field）}
+一個質量$M$的質點發出的重力場$\mathbf{g}$作為位置$\mathbf{r}$的函數，即另一質點在該位置受到其重力產生之重力加速度，為：
+\[\mathbf{g}=-\frac{GM\hat{\mathbf{r}}}{|\mathbf{r}|^2}\]
+重力場強度（Gravitational field strength）為其量值。重力場為保守場。
+\sssc{重力位能（Gravitational potential energy）}
+質量$M$、$m$的兩質點距離$r$，其間儲存重力位能$U$，以$r=\infty$為$U=0$：
+\[U=-\frac{GMm}{r}\]
+\sssc{卡文迪西（扭秤）試驗（Cavendish experiment）}
+用線捆綁於中懸掛的長木棍兩端各掛一小鉛球作為扭秤，兩大鉛球分別懸掛在小球附近一小段距離，測量大球和小球之間微弱的重力。
+\sssc{球殼定理（Shell Theorem）}
+\textit{Theorem:}
+一半徑$R$、球心$P$的球體系統$S$，其總質量$M$、質心位於$P$、質量分布球對稱，則：
+\begin{enumerate}
+\item $S$對與$P$距離$\geq R$的任一點的淨重力效應，與一個質量$M$、位於$P$的質點相同。
+\item 令$S$內有一半徑$r<R$、球心$P$的球體子系統$T$，則$S-T$對$T$內任一點的淨重力效應為零。
+\end{enumerate}
+\begin{proof}\mbox{}\\
+將$S$視為由無限薄的薄球殼組成，則定理等同於：
+
+一半徑$R$、球心$P$的球殼系統$S$，其總質量$m$、質心位於$P$、質量分布球對稱，則：
+\ben
+\item $S$對與$P$距離$\geq R$處的任一點的淨重力效應，與一個質量$m$、位於$P$的質點相同。
+\item $S$對與$P$距離$<R$處
+的淨重力效應為零。
+\een
+
+任選一通過$P$的平面，在其上定義一個以$P$為極點、任一在該平面上且始於$P$的射線為極軸的極座標系統。令重力場指向$P$為正、其反向為負。令球殼發出的重力場$g$。將球殼視為由無限多個無限小的圓環組成，使得每個圓環的質心都在極軸上。定義每個圓環的角位置為其與極座標平面在極軸同一側的交點的角位置，使得每個圓環都有一個在$[0,\pi]$的角位置。取極軸上一與$P$距離$D$的點$Q$。令$\mathrm{d}m$為角位置$\theta$的圓環的質量、$s$為該圓環上任意點與$Q$的距離、$\mathrm{d}g$為該圓環發出的重力場在$Q$的量值。令$\mathrm{d}\mathrm{d}m$為該圓環上任一點的質量、$\mathrm{d}\mathrm{d}g$為該點發出的重力場在$Q$的量值。
+
+令：
+\[x=D-R\cos\theta\]
+對於圓環上一點有：
+\[\mathrm{d}\mathrm{d}g=G\frac{\mathrm{d}\mathrm{d}m}{s^2}\]
+故對於任一圓環有：
+\[\begin{aligned}
+\mathrm{d}g&=\int\mathrm{d}\mathrm{d}g\\
+&=\left(\frac{G}{s^2}\right)\int\left(\frac{(\mathrm{d}\mathrm{d}m)x}{s}\right)\\
+&=\frac{G(\mathrm{d}m)x}{s^3} 
+\end{aligned}\]
+對於角位置$\theta$的圓環有：
+\[R^2+D^2-s^2=2RD\cos\theta\]
+\[ x^2 = D^2 + R^2 \cos^2 \theta - 2RD \cos \theta = s^2 - R^2 \sin^2 \theta \]
+故：
+\[\begin{aligned}
+\mathrm{d}m &= \qty(\frac{m}{4\pi R^2})\cdot\qty(R\,\mathrm{d}\theta)\cdot(2\pi\sqrt{s^2 - x^2}) \\
+&= \frac{m\,\mathrm{d}\theta\cdot\sqrt{s^2-x^2}}{2R}\\
+&= \frac{m\,\mathrm{d}\theta\cdot\sin\theta}{2}
+\end{aligned}\]
+故對於整個球殼有：
+\[\begin{aligned}
+g &= \int \mathrm{d}g \\
+&= \int_0^\pi\left(\frac{m\sin\theta}{2}\frac{Gx}{s^3}\right)\,\mathrm{d}\theta\\
+&= \frac{Gm}{2}\int_0^\pi\left(\frac{\sin\theta\qty(D-R\cos\theta)}{s^3}\right)\,\mathrm{d}\theta\\
+&= \frac{Gm}{2}\int_0^\pi\left(\frac{\sin\theta\qty(D-\frac{R^2 + D^2 - s^2}{2D})}{s^3}\right)\,\mathrm{d}\theta\\
+&= \frac{Gm}{2}\int_0^\pi\left(\frac{\sin\theta\qty(D^2-R^2+s^2)}{2Ds^3}\right)\,\mathrm{d}\theta
+\end{aligned}\]
+利用 \( R^2 + D^2 - s^2 = 2 R D \cos \theta \)：
+\[ \mathrm{d}s \frac{\mathrm{d}\qty(R^2 + D^2 - s^2)}{\mathrm{d}s} = \mathrm{d}\theta \frac{\mathrm{d}\qty(2 R D \cos \theta)}{\mathrm{d}\theta} \]
+\[ -\mathrm{d}s \cdot 2s = \mathrm{d}\theta \cdot (-2 R D \sin \theta) \]
+\[ s \, \mathrm{d}s = R D \sin \theta \, \mathrm{d}\theta \]
+故：
+\[\begin{aligned}
+g &= \frac{Gm}{2}\int_{\abs{D-R}}^{D+R}\left(\frac{\sin\theta\qty(D^2-R^2+s^2)}{2Ds^3}\frac{s}{RD\sin\theta}\right)\,\mathrm{d}s\\
+&= \frac{Gm}{4RD^2}\int_{\abs{D-R}}^{D+R}\left(\frac{D^2-R^2}{s^2}+1\right)\,\mathrm{d}s\\
+&= \frac{Gm}{4RD^2}\left(\frac{R^2-D^2}{s}+s\right)\left|_{\abs{D-R}}^{D+R}\right.\\
+&= \frac{Gm}{4RD^2}\left(\frac{R^2-D^2}{D+R}-\frac{R^2-D^2}{\abs{D-R}}+D+R-\abs{D-R}\right)\\
+&=\begin{cases}
+\frac{Gm}{4RD^2}\left(R-D+R+D+D+R-D+R\right)=\frac{Gm}{D^2},\quad & D\geq R\\
+\frac{Gm}{4RD^2}\left(R-D-R-D+D+R-R+D\right)=0,\quad & D<R
+\end{cases}
+\end{aligned}\]
+注意到$D=R$當且僅當$D=R=0$，此時球殼為一質點。
+\end{proof}
+\sssc{空腔定理（Cavity Theorem）}
+\textit{Theorem:} 一半徑$R$、球心$P$的球體$S$，其總質量$M$、質心位於$P$、質量分布均勻。將$S$內挖出一半徑$r$、球心$Q$、質量為零的球體空腔$T$，其中$r\leq R-\ol{PQ}$。令一動點$W$位於$T$中，則該點之重力場$\vec{g}$與$W$的位置無關。
+\begin{proof}
+\[\vec{g}=\frac{GM\ora{WP}}{R^3}-\frac{GM\ora{WQ}}{R^3}=\frac{GM\ora{QP}}{R^3}\]
+\end{proof}
+\sssc{標準重力加速度（Standard acceleration of gravity）}
+\[g_0\coloneq 9.80665 \tx{\ m s}^{-2}\]
+\sssc{重量（Weight）}
+物體所受的重力。
+\sssc{視重（Apparent Weight）}
+一般定義為系統受到的外接觸力在其所受重力反方向的分量。
+\sssc{重心（Center of gravity）}
+若一質量$m$得系統受的重力與一位於點$P$、質量$m$的質點受的重力相同，則稱點$P$為該系統的重心。
+\ssc{忽略大天體運動的雙星重力運動}
+下小天體或行星相對於大天體或恆星質量極小，可將後者視為不動。
+\sssc{克卜勒第一行星運動定律（Kepler's First Laws of Planetary Motion）/克卜勒橢圓定律（Kepler’s Law of Ellipses）}
+行星繞恆星公轉之系統，行星之運動軌跡為一以該恆星為一焦點的橢圓或以該恆星為圓心的圓。
+
+擴展：小天體與恆星的系統，小天體運動軌跡為以恆星為圓心的圓、以恆星為一焦點的橢圓、以恆星為焦點的拋物線、以恆星為距離該分支頂點較近的焦點的一雙曲線分支，或一通過恆星的直線的一部分。
+\begin{proof}\mbox{}\\
+以恆星位置為原點，在小天體軌跡與恆星所在的平面為建立極座標，令時間$t$，恆星質量$M$，小天體質量$m$，位置$(r;\theta)$，$j\coloneq GM$，萬有引力給出：
+\[\ddot{r}-r\dot{\theta}^2=-\frac{j}{r^2}\]
+以恆星為參考點之角動量$L=mr^2\dot{\theta}$守恆，令：
+\[h\coloneq\frac{L}{m}=r^2\dot{\theta}\]
+若$h=0$，則行星運動軌跡為一通過恆星的直線的一部分。
+
+討論$h\neq0$的情況，令$u=\frac{1}{r}$：
+\[2u^{-3}\dot{u}^2-u^{-2}\ddot{u}-\frac{\dot{\theta}^2}{u}=-ju^2\]
+變數轉換為$u(\theta)$：
+\[\dot{\theta}=h u^2\]
+\[\dot{u}=\dv{u}{\theta}\dot{\theta}=h u^2\dv{u}{\theta}\]
+\[\ddot{\theta}=2h u\dot{u}=2h^2u^3\dv{u}{\theta}\]
+\[\ddot{u}=\dv{t}\qty(\dv{u}{\theta}\dot{\theta})=\dv[2]{u}{\theta}\dot{\theta}^2+\dv{u}{\theta}\ddot{\theta}=h^2u^4\dv[2]{u}{\theta}+2h^2u^3\qty(\dv{u}{\theta})^2\]
+\[2h^2u\qty(\dv{u}{\theta})^2-h^2u^2\dv[2]{u}{\theta}-2h^2u\qty(\dv{u}{\theta})^2-h^2u^3=-ju^2\]
+\[\dv[2]{u}{\theta}+u=\frac{j}{h^2}\]
+
+解：
+\[\lambda^2+1=0\]
+\[\lambda=\pm i\]
+\[u=C\cos(\theta+\phi)+\frac{j}{h^2}\]
+其中$C$和$\phi$為常數。
+
+\[\begin{aligned}
+r&=\frac{1}{C\cos(\theta+\phi)+\frac{j}{h^2}}\\
+&=\frac{\frac{h^2}{j}}{1+\frac{Ch^2}{j}\cos(\theta+\phi)}\\
+&=\frac{\frac{L^2}{GMm^2}}{1+\frac{CL^2}{GMm^2}\cos(\theta+\phi)}
+\end{aligned}\]
+
+即：小天體軌跡為，以$\ell\coloneq \frac{L^2}{GMm^2}$為半正焦弦（semi-latus rectum）、以$\varepsilon\coloneq \frac{CL^2}{GMm^2}$為離心率（Eccentricity）的，以恆星為圓心的圓、以恆星為一焦點的橢圓、以恆星為焦點的拋物線、以恆星為距離該分支頂點較近的焦點的一雙曲線分支。
+\end{proof}
+\sssc{克卜勒第二行星運動定律（Kepler's Second Laws of Planetary Motion）/克卜勒等面積定律（Kepler’s Law of Equal Areas）}
+行星與恆星連線單位時間掃過的面積恆不變。
+
+擴展：小天體與恆星的系統，小天體與恆星連線單位時間掃過的面積恆不變。
+\begin{proof}\mbox{}\\
+即$\frac{h}{2}=\frac{L}{2m}$，因角動量守恆而不變。
+\end{proof}
+\sssc{克卜勒第三行星運動定律（Kepler's Third Law of Planetary Motion）/克卜勒週期定律（Kepler’s Law of Period）}
+忽略所有行星對其他行星的重力效應，繞同一恆星公轉的所有行星其橢圓軌道半長軸或圓軌道半徑$a$的三次方與週期$T$的二次方正比。
+
+擴展：
+\[\frac{a^3}{T^2}=\frac{GM}{4\pi^2}\]
+\begin{proof}\mbox{}\\
+令橢圓軌道半短軸或圓軌道半徑$b$，週期$T$等於行星軌道面積$\pi ab$除以行星與恆星連線單位時間掃過的面積$\frac{j}{2}$。
+\[b=\sqrt{a\ell}\]
+\[T=\frac{2\pi ab}{j}\]
+\[\ell=\frac{L^2}{GMm^2}\]
+\[L=m\sqrt{GM\ell}\]
+\[j=\frac{\sqrt{GM\ell}}{2}\]
+\[\begin{aligned}
+\frac{a^3}{T^2}&=\frac{a^3j^2}{4\pi^2 a^2b^2}\\
+&=\frac{a^3j^2}{4\pi^2a^3\ell}\\
+&=\frac{GM}{4\pi^2}
+\end{aligned}\]
+\end{proof}
+\sssc{行星公轉}
+對於橢圓軌道，距恆星較近的長軸頂點稱\textbf{近恆星點（perihelion）}，距恆星較遠的長軸頂點稱\textbf{遠恆星點（aphelion）}。一質量$m$行星以半長軸$a$、焦距$c$橢圓或半徑$a$圓軌道繞質量$M$恆星運動，軌道離心率$\varepsilon$，兩者距離$r$，重力位能$U$以$r=\infty$為$U=0$，相對恆星的慣性參考系中，行星速率$v$，動能$K$，力學能$E$稱束縛能，角動量量值$L$，對於橢圓軌道，行星位於近恆星點時距恆星$r_1$、速率$v_1$，行星位於遠恆星點時距恆星$r_2$、速率$v_2$，行星位於短軸頂點（即與恆星距離$\sqrt{a^2-c^2}$處）時速率$v_b$；對於圓軌道，$r_1=r_2=r=a$，行星速率$v_1=v_2=v_b=v$：
+\[r_1=a-c\]
+\[r_2=a+c\]
+\[\varepsilon=\frac{a}{c}\]
+\[U=-\frac{GMm}{r}\]
+\[E=-\frac{GMm}{2a}\]
+\[K=GMm\qty(\frac{1}{r}-\frac{1}{2a})\]
+\[L=m\sqrt{\frac{GM(a+c)(a-c)}{a}}=m\sqrt{GMa(1-\varepsilon^2)}\]
+\[v=\sqrt{GM\qty(\frac{2}{r}-\frac{1}{a})}\]
+\[v_1=\sqrt{\frac{GM(a+c)}{a(a-c)}}\]
+\[v_2=\sqrt{\frac{GM(a-c)}{a(a+c)}}\]
+\[v_b=\sqrt{\frac{GM}{a}}\]
+\begin{proof}
+\[E=\frac{mv_1^{\phantom{1}2}}{2}-\frac{GMm}{r_1}=\frac{mv_2^{\phantom{2}2}}{2}-\frac{GMm}{r_2}\]
+\[v_1^{\phantom{1}2}-\frac{2GM(a+c)}{a^2-c^2}=v_2^{\phantom{2}2}-\frac{2GM(a-c)}{a^2-c^2}\]
+\[u\coloneq\frac{v_1}{r_2}=\frac{v_2}{r_1}\]
+\[u^2\qty((a+c)^2-(a-c)^2)=\frac{4GMc}{a^2-c^2}\]
+\[u=\sqrt{\frac{GM}{a(a+c)(a-c)}}\]
+\[\frac{L}{m}=r_1r_2u=\sqrt{\frac{GM(a+c)(a-c)}{a}}\]
+\[v_1=ur_2=\sqrt{\frac{GM(a+c)}{a(a-c)}}\]
+\[v_2=ur_1=\sqrt{\frac{GM(a-c)}{a(a+c)}}\]
+\[v_b=\frac{L}{m\sqrt{a^2-c^2}}=\sqrt{\frac{GM}{a}}\]
+\[E=\frac{GMm(a+c)}{2a(a-c)}-\frac{GMm}{a-c}=\frac{GMm(a+c)-2GMma}{2a(a-c)}=-\frac{GMm}{2a}\]
+\[K=E-U=\frac{GMm}{r}-\frac{GMm}{2a}\]
+\[v=\sqrt{\frac{2K}{m}}=\sqrt{GM\qty(\frac{2}{r}-\frac{1}{a})}\]
+\end{proof}
+\sssc{行星圓軌道公轉}
+一質量$m$行星以半徑$r$圓軌道繞質量$M$恆星運動，重力位能$U$以$r=\infty$為$U=0$，相對恆星的慣性參考系中，行星速率$v$，角速率$\omega$，動能$K$，力學能$E$稱束縛能，角動量量值$L$：
+\[U=-\frac{GMm}{r}\]
+\[E=-\frac{GMm}{2r}\]
+\[K=\frac{GMm}{2r}\]
+\[L=m\sqrt{GMr}\]
+\[v=\sqrt{\frac{GM}{r}}\]
+\[\omega=\sqrt{\frac{GM}{r^3}}\]
+\sssc{小天體掠過恆星}
+一質量$m$小天體自無限遠處以速率$u$靠近質量$M$恆星，在無限遠處過其位置且以其速度為方向向量的直線與恆星距離$b$，兩者距離$r$，重力位能$U$以$r=\infty$為$U=0$，相對恆星的慣性參考系中，小天體速率$v$，動能$K$，力學能$E=U+K$，角動量量值$L$，與恆星最近距離$R$，此時速率$w$：
+\[U=-\frac{GMm}{r}\]
+\[E=\frac{mu^2}{2}\]
+\[K=\frac{mu^2}{2}+\frac{GMm}{r}\]
+\[\frac{L}{m}=ub=Rw\]
+\[v=\sqrt{u^2+\frac{2GM}{r}}\]
+\[w=\frac{\sqrt{G^2M^2+u^4b^2}+GM}{ub}\]
+\[R=\frac{\sqrt{G^2M^2+u^4b^2}-GM}{u^2}\]
+\begin{proof}
+\[E=\frac{mv^2}{2}-\frac{GMm}{r}=\frac{mu^2}{2}\]
+\[v^2-u^2=\frac{2GM}{r}\]
+\[v=\sqrt{u^2+\frac{2GM}{r}}\]
+\[\frac{L}{m}=ub=Rw\]
+\[R=\frac{ub}{w}\]
+\[w^2-\frac{2GMw}{ub}-u^2=0\]
+\[w=\frac{GM}{ub}+\sqrt{\qty(\frac{GM}{ub})^2+u^2}=\frac{GM+\sqrt{G^2M^2+u^4b^2}}{ub}\]
+\[R=\frac{u^2b^2}{GM+\sqrt{G^2M^2+u^4b^2}}=\frac{\sqrt{G^2M^2+u^4b^2}-GM}{u^2}\]
+\end{proof}
+\sssc{行星公轉橢圓軌道的離心率向量（eccentricity vector）、真近點角（True anomaly）、偏近點角（Eccentricity anomaly）與平近點角（Mean anomaly）}
+\textbf{離心率向量}$\boldsymbol{\varepsilon}$定義為量值等於\textbf{離心率}$\varepsilon$、方向為焦點指向近恆星點的向量。行星位置$\mathbf{r}$以恆星$S$為原點，\textbf{真近點角}$\nu$定義為：
+\[\nu=\arccos\frac{\boldsymbol{\varepsilon}\cdot\mathbf{r}}{|\boldsymbol{\varepsilon}||\mathbf{r}|}.\]
+半長軸$a$，\textbf{偏近點角}$\mathscr{E}$定義為使得近恆星點為$\mathscr{E}=0+2z\pi,\quad z\in\mathbb{Z}$且逆時針旋轉$\mathscr{E}$增加且：
+\[\cos\mathscr{E}=\frac{a-|\mathbf{r}|}{a\varepsilon}.\]
+\textbf{平近點角}$\mathscr{M}$定義為：
+\[\mathscr{M}=\mathscr{E}-\varepsilon\sin\mathscr{E}.\]
+令半短軸$b=a\sqrt{1-\varepsilon^2}$，以$S$為原點、近日點在$x$軸正向上，建立平面直角座標，軌道上任一點$P$的位置$(x,y)$，則：
+\[x=a(\cos\mathscr{E}-\varepsilon)\]
+\[y=b\sin\mathscr{E}\]
+\begin{proof}\mbox{}\\
+以橢圓中心$C$為圓心、$a$為半徑畫輔助圓，將$P$對應到輔助圓上一點$Q$使得直線$PQ$垂直橢圓長軸於$W$。建立極座標$(r;\theta)=\qty(r\cos\theta,r\sin\theta)$。
+\[\cos\angle WCQ=\frac{a\varepsilon+r\cos\theta}{a}\]
+\[r=\frac{a(1-\varepsilon^2)}{1+\varepsilon\cos(\theta)}\]
+\[\cos\theta=\frac{a(1-\varepsilon^2)-r}{r\varepsilon}\]
+\[\begin{aligned}
+\cos\angle WCQ&=\frac{a\varepsilon+\frac{a(1-\varepsilon^2)-r}{\varepsilon}}{a}\\
+&=\frac{a\varepsilon^2+a(1-\varepsilon^2)-r}{a\varepsilon}\\
+&=\frac{a-r}{a\varepsilon}
+\end{aligned}\]
+故：
+\[\angle WCQ=\mathscr{E}\]
+\[x=a(\cos\mathscr{E}-\varepsilon)\]
+以橢圓中心$C$為圓心、$b$為半徑畫輔助圓，將$P$對應到輔助圓上一點$F$使得直線$PF$垂直橢圓短軸於$X$，因為：
+\[\angle QPF=\angle QWC=\frac{\pi}{2}\]
+\[\angle PQF=\angle WQC\]
+故：
+\[\angle CFX=\angle QFP=\angle WCQ=\mathscr{E}\]
+\[y=b\sin\mathscr{E}\]
+\end{proof}
+行星與恆星連線自近恆星點起掃過的面積$A$，週期$T$：
+\[A=\frac{ab\mathscr{M}}{2}\]
+\[\dv{\mathscr{M}}{t}=\frac{2\pi}{T}\]
+\begin{proof}
+\[\begin{aligned}
+A&=\int_0^{\mathscr{E}}\frac{1}{2}\left(x\dv{y}{\mathscr{E}}-y\dv{x}{\mathscr{E}}\right)\,\mathrm{d}\mathscr{E}\\
+&=\int_0^{\mathscr{E}}\frac{1}{2}\left(a(\cos z-\varepsilon)b\cos z+b\sin za\sin z\right)\,\mathrm{d}z\\
+&=\int_0^{\mathscr{E}}\frac{1}{2}\left(ab-ab\varepsilon\cos z\right)\,\mathrm{d}z\\
+&=\frac{ab}{2}\left(z-\varepsilon\sin z\right)\big\vert_0^{\mathscr{E}}\\
+&=\frac{ab}{2}\left(\mathscr{E}-\varepsilon\sin\mathscr{E}\right)\\
+&=\frac{ab\mathscr{M}}{2}
+\end{aligned}\]
+\end{proof}
+一行星以離心率$\varepsilon$、橢圓半長軸或圓半徑$a$軌道繞質量$M$恆星運動，週期$T$，從一個短軸頂點經過近恆星點到達另一個短軸頂點花費時間$T_1$，從一個短軸頂點經過遠恆星點到達另一個短軸頂點花費時間$T_2$：
+\[T=2\pi\sqrt{\frac{a^3}{GM}}\]
+\[T_1=T\qty(\frac{1}{2}-\frac{\varepsilon}{\pi})=\sqrt{\frac{a^3}{GM}}\qty(\pi-2\varepsilon)\]
+\[T_2=T\qty(\frac{1}{2}+\frac{\varepsilon}{\pi})=\sqrt{\frac{a^3}{GM}}\qty(\pi+2\varepsilon)\]
+\sssc{逃逸/脫離速度（Escape velocity）與宇宙速度（Cosmic velocity）}
+令地球半徑$R$、地表重力場量值$g$。
+\begin{itemize}
+\item \textbf{逃逸/脫離速度（Escape velocity）}：以無限遠處為所有位能為零處，在某處使得力學能為零的速率為其逃逸/脫離速度。
+\item \textbf{第一宇宙速度（First cosmic velocity）/環繞速度}：在地球上發射的物體在地球表面作圓周運動所需的最小初始速度，即$\sqrt{gR}\approx 7.9$ km/s。
+\item \textbf{第二宇宙速度（Second cosmic velocity）/地球逃逸/脫離速度}：只考慮與地球間的重力位能而不考慮與其他物質間的重力位能下地表的逃逸速度，即$\sqrt{2gR}\approx 11.2$ km/s。
+\item \textbf{第三宇宙速度（Third cosmic velocity）/太陽系逃逸/脫離速度}：只考慮與地球間和與太陽間的重力位能而不考慮與其他物質間的重力位能下地表的逃逸速度，$\approx 16.7$ km/s。
+\item \textbf{第四宇宙速度（Fourth cosmic velocity）/銀河系逃逸/脫離速度}：只考慮與地球間、與太陽間和與銀河系間的重力位能而不考慮與其他物質間的重力位能下地表的逃逸速度，目前粗估在 525 km/s 以上。
+\end{itemize}
+\sssc{地球同步軌道（Geosynchronous orbit, GSO）}
+在地球上空使得繞地球公轉週期與地球自轉週期相同的衛星軌道，海拔高度約 35786 km，其中衛星稱同步衛星（Geosynchronous satellite）。特別地，赤道上空的地球同步軌道稱地球靜止軌道（Geostationary orbit, GEO），其上衛星始終在地球同一地上空。
+\sssc{內行星最大視角}
+設行星$A$以半徑$R$的圓軌道繞恆星$S$公轉，同平面上其內行星$B$以半徑$r$的圓軌道繞恆星$S$公轉，則$A$觀察$B$與$S$之夾角最大值為$\arcsin\frac{r}{R}$，發生於$\ol{AB}\perp\ol{BS}$時。
+\ssc{雙星重力運動}
+\sssc{克卜勒第一行星運動定律（Kepler's First Laws of Planetary Motion）/克卜勒橢圓定律（Kepler’s Law of Ellipses）}
+雙星互繞系統，兩星之運動軌跡各為一以雙星質心為一焦點的橢圓或以雙星質心為圓心的圓。
+
+擴展：雙星系統，兩星之運動軌跡各為以雙星質心為圓心的圓、以雙星質心為一焦點的橢圓、以雙星質心為焦點的拋物線、以雙星質心為距離該分支頂點較近的焦點的一雙曲線分支，或一通過雙星質心的直線的一部分，且兩星之運動軌跡離心率相同、半正焦弦與星之質量反比。
+\begin{proof}\mbox{}\\
+以雙星質心位置為原點，在雙星所在的平面為建立極座標，令時間$t$，雙星質量$m$、$M$，位置$(r;\theta)$、$(R;\tau)$，雙星質心位置給出：
+\[mr=MR\]
+\[\tau=\theta\pm\pi\]
+萬有引力給出：
+\[\ddot{r}-r\dot{\theta}^2=-\frac{GM}{(r+R)^2}\]
+\[\ddot{R}-R\dot{\theta}^2=-\frac{Gm}{(r+R)^2}\]
+以雙星質心為參考點之角動量$I=mr^2\dot{\theta}$與$J=MR^2\dot{\theta}$守恆，令：
+\[h\coloneq\frac{I}{m}=r^2\dot{\theta}\]
+\[H\coloneq\frac{J}{M}=R^2\dot{\theta}\]
+
+因為：
+\[h=\frac{Hr^2}{R^2}=\frac{HM^2}{m^2}\]
+$h=0\iff H=0$，此時雙星運動軌跡各為一通過質心的直線的一部分。
+
+討論$h\neq0$的情況，令$u=\frac{1}{r}$，$w=\frac{1}{R}$：
+\[\frac{1}{R+r}=\frac{uw}{u+w}\]
+\[2u^{-3}\dot{u}^2-u^{-2}\ddot{u}-\frac{\dot{\theta}^2}{u}=-GM\qty(\frac{uw}{u+w})^2\]
+
+變數轉換為$u(\theta)$：
+\[\dot{\theta}=h u^2\]
+\[\dot{u}=\dv{u}{\theta}\dot{\theta}=h u^2\dv{u}{\theta}\]
+\[\ddot{\theta}=2h u\dot{u}=2h^2u^3\dv{u}{\theta}\]
+\[\ddot{u}=\dv{t}\qty(\dv{u}{\theta}\dot{\theta})=\dv[2]{u}{\theta}\dot{\theta}^2+\dv{u}{\theta}\ddot{\theta}=h^2u^4\dv[2]{u}{\theta}+2h^2u^3\qty(\dv{u}{\theta})^2\]
+\[2h^2u\qty(\dv{u}{\theta})^2-h^2u^2\dv[2]{u}{\theta}-2h^2u\qty(\dv{u}{\theta})^2-h^2u^3=-GM\qty(\frac{uw}{u+w})^2\]
+\[h^2u^2\dv[2]{u}{\theta}+h^2u^3=GM\qty(\frac{uw}{u+w})^2\]
+\[\dv[2]{u}{\theta}+u=\frac{GM}{h^2}\qty(\frac{w}{u+w})^2\]
+
+考慮：
+\[w=\frac{Mu}{m}\]
+
+令：
+\[k\coloneq\dv[2]{u}{\theta}+u=\frac{GM}{h^2}\qty(\frac{M}{m+M})^2=\frac{GM^3}{(m+M)^2h^2}\]
+
+解：
+\[\lambda^2+1=0\]
+\[\lambda=\pm i\]
+\[u=C\cos(\theta+\phi)+k\]
+其中$C$和$\phi$為常數。
+
+\[\begin{aligned}
+r&=\frac{1}{C\cos(\theta+\phi)+k}\\
+&=\frac{\frac{1}{k}}{1+\frac{C}{k}\cos(\theta+\phi)}\\
+&=\frac{\frac{1}{k}}{1+\frac{C}{k}\cos(\theta+\phi)}\\
+&=\frac{\frac{(m+M)^2h^2}{GM^3}}{1+\frac{C(m+M)^2h^2}{GM^3}\cos(\theta+\phi)}\\
+&=\frac{\frac{(m+M)^2I^2}{Gm^2M^3}}{1+\frac{C(m+M)^2I^2}{Gm^2M^3}\cos(\theta+\phi)}
+\end{aligned}\]
+
+令：
+\[D\coloneq CM\]
+令雙星總角動量量值$L$：
+\[I=\frac{ML}{m+M},\quad J=\frac{mL}{m+M}\]
+
+有：
+\[r=\frac{\frac{L^2}{Gm^2M}}{1+\frac{DL^2}{Gm^2M^2}\cos(\theta+\phi)}\]
+
+又：
+\[\begin{aligned}
+R&=\frac{mr}{M}\\
+&=\frac{\frac{m(m+M)^2h^2}{GM^4}}{1+\frac{C(m+M)^2h^2}{GM^3}\cos(\theta+\phi)}\\
+&=\frac{\frac{(m+M)^2H^2}{Gm^3}}{1-\frac{D(m+M)^2H^2}{Gm^4}\cos(\tau+\phi)}\\
+&=\frac{\frac{(m+M)^2J^2}{GM^2m^3}}{1-\frac{D(m+M)^2J^2}{GM^2m^4}\cos(\tau+\phi)}\\
+&=\frac{\frac{L^2}{GM^2m}}{1-\frac{DL^2}{GM^2m^2}\cos(\tau+\phi)}
+\end{aligned}\]
+
+即：
+\begin{itemize}
+\item 質量$m$者軌跡為，以$\ell_m\coloneq \frac{L^2}{Gm^2M}$為半正焦弦、以$\varepsilon\coloneq \frac{DL^2}{Gm^2M^2}$為離心率的，以質心為圓心的圓、以質心為一焦點的橢圓、以質心為焦點的拋物線、以質心為距離該分支頂點較近的焦點的一雙曲線分支。
+\item 質量$M$者軌跡為，以$\ell_M\coloneq \frac{L^2}{GM^2m}$為半正焦弦、以$\varepsilon\coloneq \frac{DL^2}{GM^2m^2}$為離心率的，以質心為圓心的圓、以質心為一焦點的橢圓、以質心為焦點的拋物線、以質心為距離該分支頂點較近的焦點的一雙曲線分支。
+\end{itemize}
+\end{proof}
+\sssc{克卜勒第二行星運動定律（Kepler's Second Laws of Planetary Motion）/克卜勒等面積定律（Kepler’s Law of Equal Areas）}
+雙星系統，一星與雙星質心連線單位時間掃過的面積恆不變，雙星連線單位時間掃過的面積亦恆不變。
+\begin{proof}
+即$\frac{h}{2}=\frac{I}{2m}$、$\frac{H}{2}=\frac{J}{2M}$與$\frac{h+H}{2}=\frac{L|m-M|}{2mM}$，均因角動量守恆而不變。
+\end{proof}
+\sssc{克卜勒第三行星運動定律（Kepler's Third Law of Planetary Motion）/克卜勒週期定律（Kepler’s Law of Period）}
+擴展：質量$m$、$M$雙星互繞，兩者之橢圓軌道半長軸或圓軌道半徑$a$、$q$、週期$T$：
+\[\frac{a^3}{T^2}=\frac{GM^3}{(m+M)^24\pi^2}\]
+\[\frac{q^3}{T^2}=\frac{Gm^3}{(m+M)^24\pi^2}\]
+\[\frac{(a+q)^3}{T^2}=\frac{G(m+M)}{4\pi^2}\]
+\begin{proof}\mbox{}\\
+令橢圓軌道半短軸或圓軌道半徑$b$，週期$T$等於該星軌道面積$\pi ab$除以該星與雙星質心連線單位時間掃過的面積$\frac{h}{2}$。
+\[b=\sqrt{a\ell_m}\]
+\[T=\frac{2\pi ab}{h}\]
+\[\ell_m=\frac{L^2}{Gm^2M}\]
+\[L=m\sqrt{GM\ell_m}\]
+\[h=\frac{ML}{m(m+M)}=\frac{M\sqrt{GM\ell_m}}{m+M}\]
+\[\begin{aligned}
+\frac{a^3}{T^2}&=\frac{a^3h^2}{4\pi^2 a^2b^2}\\
+&=\frac{a^3h^2}{4\pi^2a^3\ell_m}\\
+&=\frac{GM^3}{(m+M)^24\pi^2}
+\end{aligned}\]
+同理：
+\[\frac{q^3}{T^2}=\frac{Gm^3}{(m+M)^24\pi^2}\]
+\[a=M\qty(\frac{Gm}{(m+M)^24\pi^2})^{1/3}\]
+\[q=m\qty(\frac{Gm}{(m+M)^24\pi^2})^{1/3}\]
+\[a+q=\qty(M+m)^3\frac{Gm}{(m+M)^24\pi^2}\]
+\[\frac{(a+q)^3}{T^2}=\frac{G(m+M)}{4\pi^2}\]
+\end{proof}
+\sssc{雙星互繞}
+對於橢圓軌道，距質心較近的長軸頂點稱近質心點，距質心較遠的長軸頂點稱遠質心點，一星在近質心點時另一星亦在近質心點。質量$m$、$M$雙星分別以半長軸$M\alpha$、$m\alpha$、焦距$M\gamma$、$m\gamma$橢圓或半徑$M\alpha$、$m\alpha$圓軌道繞雙星質心運動，軌道離心率$\varepsilon$，兩者距離$r$，分別距質心$\frac{Mr}{m+M}$、$\frac{mr}{m+M}$，重力位能$U$以$r=\infty$為$U=0$，相對雙星質心的慣性參考系中，兩者速率$M\sigma$、$m\sigma$，總動能$K=\frac{mM(m+M)\sigma^2}{2}$，總力學能$E=U+K$稱束縛能，總角動量量值$L$，對於橢圓軌道，雙星位於近質心點時雙星距離$r_1$、兩者速率$M\sigma_1$、$m\sigma_1$，雙星位於遠質心點時雙星距離$r_2$、兩者速率$M\sigma_2$、$m\sigma_2$，雙星位於短軸頂點時（即兩者與質心距離$M\sqrt{\alpha^2-\gamma^2}$、$m\sqrt{\alpha^2-\gamma^2}$時）兩者速率$M\sigma_b$、$m\sigma_b$；對於圓軌道，$r_1=r_2=r=\qty(m+M)\alpha$，兩者速率$M\sigma_1=M\sigma_2=M\sigma_b=M\sigma$、$m\sigma_1=m\sigma_2=m\sigma_b=m\sigma$：
+\[r_1=\qty(m+M)(\alpha-\gamma)\]
+\[r_2=\qty(m+M)(\alpha+\gamma)\]
+\[\varepsilon=\frac{\alpha}{\gamma}\]
+\[U=-\frac{GmM}{r}\]
+\[E=-\frac{GmM}{2(m+M)\alpha}\]
+\[K=GmM\qty(\frac{1}{r}-\frac{1}{2(m+M)\alpha})\]
+\[L=mM\sqrt{\frac{G(\alpha+\gamma)(\alpha-\gamma)}{\alpha}}\]
+\[\sigma=\sqrt{\frac{2G}{m+M}\qty(\frac{1}{r}-\frac{1}{2(m+M)\alpha})}\]
+\[\sigma_1=\frac{1}{m+M}\sqrt{\frac{G(\alpha+\gamma)}{\alpha(\alpha-\gamma)}}\]
+\[\sigma_2=\frac{1}{m+M}\sqrt{\frac{G(\alpha-\gamma)}{\alpha(\alpha+\gamma)}}\]
+\[\sigma_b=\sqrt{\frac{G}{(m+M)\alpha}}\]
+\begin{proof}
+\[E=\frac{mM(m+M)\sigma_1^{\phantom{1}2}}{2}-\frac{GmM}{r_1}=\frac{mM(m+M)\sigma_2^{\phantom{2}2}}{2}-\frac{GmM}{r_2}\]
+\[\frac{mM(m+M)\qty(\sigma_1^{\phantom{1}2}-\sigma_2^{\phantom{2}2})}{2}=-\frac{GmM(r_2-r_1)}{r_1r_2}\]
+\[\sigma_1^{\phantom{1}2}-\sigma_2^{\phantom{2}2}=\frac{4G\gamma}{(m+M)^2(\alpha+\gamma)(\alpha-\gamma)}\]
+\[u\coloneq\frac{\sigma_1}{r_2}=\frac{\sigma_2}{r_1}\]
+\[u^2\qty((\alpha+\gamma)^2-(\alpha-\gamma)^2)=\frac{4G\gamma}{(m+M)^4(\alpha+\gamma)(\alpha-\gamma)}\]
+\[u^2=\frac{G}{(m+M)^4\alpha(\alpha+\gamma)(\alpha-\gamma)}\]
+\[u=\frac{1}{(m+M)^2}\sqrt{\frac{G}{\alpha(\alpha+\gamma)(\alpha-\gamma)}}\]
+\[\sigma_1=\frac{1}{m+M}\sqrt{\frac{G(\alpha+\gamma)}{\alpha(\alpha-\gamma)}}\]
+\[\sigma_2=\frac{1}{m+M}\sqrt{\frac{G(\alpha-\gamma)}{\alpha(\alpha+\gamma)}}\]
+\[\begin{aligned}
+L&=m\frac{Mr_1}{m+M}M\sigma_1+M\frac{mr_1}{m+M}m\sigma_1\\
+&=mMr_1\sigma_1\\
+&=mMur_1r_2\\
+&=mM\sqrt{\frac{G(\alpha+\gamma)(\alpha-\gamma)}{\alpha}}
+\end{aligned}\]
+\[L=mM(m+M)\sqrt{\alpha^2-\gamma^2}\sigma_b\]
+\[\sigma_b=\sqrt{\frac{G}{(m+M)\alpha}}\]
+\[\begin{aligned}
+E&=\frac{GmM(\alpha+\gamma)}{2(m+M)\alpha(\alpha-\gamma)}-\frac{GmM}{(m+M)(\alpha-\gamma}\\
+&=\frac{GmM(\alpha+\gamma)-2GmM\alpha}{2(m+M)\alpha(\alpha-\gamma)}\\
+&=-\frac{GmM}{2(m+M)\alpha}
+\end{aligned}\]
+\[K=E-U=GmM\qty(\frac{1}{r}-\frac{1}{2(m+M)\alpha})\]
+\[\sigma=\sqrt{\frac{2K}{mM(m+M)}}=\sqrt{\frac{2G}{m+M}\qty(\frac{1}{r}-\frac{1}{2(m+M)\alpha})}\]
+\end{proof}
+\sssc{雙星圓軌道互繞}
+質量$m$、$M$雙星分別以半徑$\frac{Mr}{m+M}$、$\frac{mr}{m+M}$圓軌道繞雙星質心運動，重力位能$U$以$r=\infty$為$U=0$，相對雙星質心的慣性參考系中，兩者速率$M\sigma$、$m\sigma$，角速率$\omega$，總動能$K=\frac{mM(m+M)\sigma^2}{2}$，總力學能$E=U+K$稱束縛能，總角動量量值$L$：
+\[U=-\frac{GmM}{r}\]
+\[E=-\frac{GmM}{2r}\]
+\[K=\frac{GmM}{2r}\]
+\[L=mM\sqrt{\frac{Gr}{m+M}}\]
+\[\sigma=\sqrt{\frac{G}{(m+M)r}}\]
+\[\omega=\sqrt{\frac{G(m+M)}{r^3}}\]
+\sssc{雙星互相掠過}
+質量$m$、$M$雙星自距離無限遠以速率$(m+M)\eta$相互靠近，一星在距離無限遠時過自身位置且以其相對另一星速度為方向向量的直線與另一星距離$b$，兩者距離$r$，重力位能$U$以$r=\infty$為$U=0$，相對雙星質心的慣性參考系中，兩者速率$M\sigma$、$m\sigma$，總動能$K=\frac{mM(m+M)\sigma^2}{2}$，總力學能$E=U+K$，總角動量量值$L$，雙星最近距離$R$，此時兩者速率$M\zeta$、$m\zeta$：
+\[U=-\frac{GMm}{r}\]
+\[E=\frac{mM(m+M)\eta^2}{2}\]
+\[K=\frac{mM(m+M)\eta^2}{2}+\frac{GMm}{r}\]
+\[L=mMb\eta=mMR\zeta\]
+\[\sigma=\sqrt{\eta^2+\frac{2G}{(m+M)r}}\]
+\[\zeta=\frac{\sqrt{G^2+(m+M)^2\eta^4b^2}+G}{(m+M)\eta b}\]
+\[R=\frac{\sqrt{G^2+(m+M)^2\eta^4b^2}-G}{(m+M)\eta^2}\]
+\begin{proof}
+\[E=\frac{mM(m+M)\sigma^2}{2}-\frac{GMm}{r}=\frac{mM(m+M)\eta^2}{2}\]
+\[\sigma^2-\eta^2=\frac{2G}{(m+M)r}\]
+\[\sigma=\sqrt{\eta^2+\frac{2G}{(m+M)r}}\]
+\[L=m\frac{Mb}{m+M}M\eta+M\frac{mb}{m+M}m\eta=mMb\eta=mMR\zeta\]
+\[R=\frac{\eta b}{\zeta}\]
+\[\zeta^2-\frac{2G\zeta}{(m+M)\eta b}-\eta^2=0\]
+\[\zeta=\frac{G}{(m+M)\eta b}+\sqrt{\qty(\frac{G}{(m+M)\eta b})^2+\eta^2}=\frac{G+\sqrt{G^2+(m+M)^2\eta^4b^2}}{(m+M)\eta b}\]
+\[R=\frac{(m+M)\eta^2b^2}{G+\sqrt{G^2+(m+M)^2\eta^4b^2}}=\frac{\sqrt{G^2+(m+M)^2\eta^4b^2}-G}{(m+M)\eta^2}\]
+\end{proof}
+\sssc{雙星互繞橢圓軌道的離心率向量（eccentricity vector）、真近點角（True anomaly）、偏近點角（Eccentricity anomaly）與平近點角（Mean anomaly）}
+\textbf{離心率向量}$\boldsymbol{\varepsilon}$定義為量值等於\textbf{離心率}$\varepsilon$、方向為焦點指向近質心點的向量。星體位置$\mathbf{r}$以雙星質心$S$為原點，\textbf{真近點角}$\nu$定義為：
+\[\nu=\arccos\frac{\boldsymbol{\varepsilon}\cdot\mathbf{r}}{|\boldsymbol{\varepsilon}||\mathbf{r}|}.\]
+半長軸$a$，\textbf{偏近點角}$\mathscr{E}$定義為使得近恆星點為$\mathscr{E}=0+2z\pi,\quad z\in\mathbb{Z}$且逆時針旋轉$\mathscr{E}$增加且：
+\[\cos\mathscr{E}=\frac{a-|\mathbf{r}|}{a\varepsilon}.\]
+\textbf{平近點角}$\mathscr{M}$定義為：
+\[\mathscr{M}=\mathscr{E}-\varepsilon\sin\mathscr{E}.\]
+令半短軸$b=a\sqrt{1-\varepsilon^2}$，以$S$為原點、近質心點在$x$軸正向上，建立平面直角座標，軌道上任一點$P$的位置$(x,y)$，則：
+\[x=a(\cos\mathscr{E}-\varepsilon)\]
+\[y=b\sin\mathscr{E}\]
+\begin{proof}\mbox{}\\
+以橢圓中心$C$為圓心、$a$為半徑畫輔助圓，將$P$對應到輔助圓上一點$Q$使得直線$PQ$垂直橢圓長軸於$W$。建立極座標$(r;\theta)=\qty(r\cos\theta,r\sin\theta)$。
+\[\cos\angle WCQ=\frac{a\varepsilon+r\cos\theta}{a}\]
+\[r=\frac{a(1-\varepsilon^2)}{1+\varepsilon\cos(\theta)}\]
+\[\cos\theta=\frac{a(1-\varepsilon^2)-r}{r\varepsilon}\]
+\[\begin{aligned}
+\cos\angle WCQ&=\frac{a\varepsilon+\frac{a(1-\varepsilon^2)-r}{\varepsilon}}{a}\\
+&=\frac{a\varepsilon^2+a(1-\varepsilon^2)-r}{a\varepsilon}\\
+&=\frac{a-r}{a\varepsilon}
+\end{aligned}\]
+故：
+\[\angle WCQ=\mathscr{E}\]
+\[x=a(\cos\mathscr{E}-\varepsilon)\]
+以橢圓中心$C$為圓心、$b$為半徑畫輔助圓，將$P$對應到輔助圓上一點$F$使得直線$PF$垂直橢圓短軸於$X$，因為：
+\[\angle QPF=\angle QWC=\frac{\pi}{2}\]
+\[\angle PQF=\angle WQC\]
+故：
+\[\angle CFX=\angle QFP=\angle WCQ=\mathscr{E}\]
+\[y=b\sin\mathscr{E}\]
+\end{proof}
+星體與雙星質心連線自近恆星點起掃過的面積$A$，週期$T$：
+\[A=\frac{ab\mathscr{M}}{2}\]
+\[\dv{\mathscr{M}}{t}=\frac{2\pi}{T}\]
+\begin{proof}
+\[\begin{aligned}
+A&=\int_0^{\mathscr{E}}\frac{1}{2}\left(x\dv{y}{\mathscr{E}}-y\dv{x}{\mathscr{E}}\right)\,\mathrm{d}\mathscr{E}\\
+&=\int_0^{\mathscr{E}}\frac{1}{2}\left(a(\cos z-\varepsilon)b\cos z+b\sin za\sin z\right)\,\mathrm{d}z\\
+&=\int_0^{\mathscr{E}}\frac{1}{2}\left(ab-ab\varepsilon\cos z\right)\,\mathrm{d}z\\
+&=\frac{ab}{2}\left(z-\varepsilon\sin z\right)\big\vert_0^{\mathscr{E}}\\
+&=\frac{ab}{2}\left(\mathscr{E}-\varepsilon\sin\mathscr{E}\right)\\
+&=\frac{ab\mathscr{M}}{2}
+\end{aligned}\]
+\end{proof}
+質量$m$、$M$雙星分別以橢圓半長軸或圓半徑$a$、$q$軌道繞雙星質心運動，軌道離心率$\varepsilon$，週期$T$，前者從一個短軸頂點經過近恆星點到達另一個短軸頂點花費時間$T_1$，從一個短軸頂點經過遠恆星點到達另一個短軸頂點花費時間$T_2$：
+\[T=2\pi\sqrt{\frac{a^3(m+M)^2}{GM^3}}=2\pi\sqrt{\frac{(a+q)^3}{G(m+M)}}\]
+\[T_1=T\qty(\frac{1}{2}-\frac{\varepsilon}{\pi})=\sqrt{\frac{a^3(m+M)^2}{GM^3}}\qty(\pi-2\varepsilon)=\sqrt{\frac{(a+q)^3}{G(m+M)}}\qty(\pi-2\varepsilon)\]
+\[T_1=T\qty(\frac{1}{2}+\frac{\varepsilon}{\pi})=\sqrt{\frac{a^3(m+M)^2}{GM^3}}\qty(\pi+2\varepsilon)=\sqrt{\frac{(a+q)^3}{G(m+M)}}\qty(\pi+2\varepsilon)\]
+\sssc{拉格朗日點（Lagrange points）}
+雙星以圓軌道互繞，拉格朗日點指使得位於之的一質量極小而可忽略其對雙星重力效應的質點可以僅受雙星之重力而維持其與雙星的相對位置的點。令雙星質量$m<M$，兩者距離$r$，角頻率$\omega$，拉格朗日點共有五個，分別是：
+\begin{itemize}
+\item 位於雙星連線段上與質量$m$之星距離$x$、與質量$M$之星距離$r-x$的$L_1$：
+\[\frac{M}{(r-x)^2}-\frac{m}{x^2}=\qty(\frac{Mr}{m+M}-x)\frac{m+M}{r^3}\]
+\item 位於過雙星直線上與質量$m$之星距離$x$、與質量$M$之星距離$r+x$的$L_2$：
+\[\frac{M}{(r+x)^2}+\frac{m}{x^2}=\qty(\frac{Mr}{m+M}+x)\frac{m+M}{r^3}\]
+\item 位於過雙星直線上與質量$m$之星距離$x$、與質量$M$之星距離$x-r$的$L_3$：
+\[\frac{M}{(x-r)^2}+\frac{m}{x^2}=\qty(x-\frac{Mr}{m+M})\frac{m+M}{r^3}\]
+\item 雙星旋轉平面上距雙星均為$r$的$L_4$與$L_5$。
+\end{itemize}
+\ssc{多同質量星正多邊形排列圓軌道互繞}
+$n$個質量均為$m$之星在同一平面上排成一正$n$邊形以半徑$r$圓軌道繞$n$星質心運動，重力位能$U$以任二星之間距離$\infty$為$U=0$，相對$n$星質心的慣性參考系中，一星之速率$v$，角速率$\omega$，總動能$K=\frac{nmv^2}{2}$，總力學能$E=U+K$稱束縛能，總角動量量值$L$：
+\[U=-\frac{nGm^2}{4r}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}\]
+\[E=-\frac{nGm^2}{8r}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}\]
+\[K=\frac{nGm^2}{8r}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}\]
+\[L=nm\sqrt{\frac{Gmr}{4}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}}\]
+\[v=\sqrt{\frac{Gm}{4r}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}}\]
+\[\omega=\sqrt{\frac{Gm}{4r^3}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}}\]
+\begin{proof}
+\[\begin{aligned}
+U&=-\frac{n}{2}\sum_{k=1}^{n-1}\frac{Gm^2}{\sqrt{2r^2\left(1-\cos\frac{2\pi k}{n}\right)}}\\
+&=-\frac{nGm^2}{4r}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}
+\end{aligned}\]
+\[\begin{aligned}
+\omega^2r&=\sum_{k=1}^{n-1}\frac{Gm}{2r\sqrt{2r^2\left(1-\cos\frac{2\pi k}{n}\right)}}\\
+&=\frac{Gm}{4r^2}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}
+\end{aligned}\]
+\[\omega=\sqrt{\frac{Gm}{4r^3}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}}\]
+\[v=\sqrt{\frac{Gm}{4r}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}}\]
+\[K=\frac{nGm^2}{8r}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}\]
+\[L=nmvr=nm\sqrt{\frac{Gmr}{4}\sum_{k=1}^{n-1}\csc\frac{\pi k}{n}}\]
+\end{proof}
+\ssc{宇宙膨脹例題}
+根據霹靂說（The Big Bang Theory），現今宇宙中的所有物質最初是縮聚在一點，在某一瞬間（定義為時間$t=0$）突然爆炸開來，往各方向均勻膨脹。經許多年後，形成現在的宇宙，且仍然在膨脹中。宇宙中所見的任一星系（Galaxy），對整個宇宙而言，可近似為一個質點。任何一個星系都可選作為宇宙的中心，其他的星系相對於該星系的速度，皆沿徑向遠離，即對此中心為球形對稱。假設宇宙間的質量分布是均勻的，又各星系之間僅有萬有引力的作用，回答下列各題：
+\sssc{運動方程}
+選取某一星系（例如我們所在的銀河系）為座標原點，考慮徑向座標為$r$的另一星系的運動情形。設在半徑為$r$的球體內所含物質的總質量為$M$，萬有引力常數為$G$，寫出該星系的運動方程式。 
+
+\textbf{答：}假設宇宙間的質量分布是均勻的，所以對於座標原點而言，應為球形對稱。設所考慮的星系質量為$m$，則該星系所受萬有引力$\mathbf{F}$為：
+\[\mathbf{F}=-\frac{GMm}{r^2}\hat{r}\ldots\boxed{1}\]
+設其加速度為$\mathbf{a}$其運動方程式即：
+\[\mathbf{a}=-\f{GM}{r^2}\hat{r}\ldots\boxed{2}\]
+\sssc{徑向速度作為徑向座標的函數}
+假設當星系的徑向座標$r\to\infty$時，該星系的徑向速度$v\leftarrow 0$，求該星系的徑向速度作為其徑向座標的函數。 
+
+答：因一維運動，故將向量均視為純量。將二式積分，左式變為功，可換為動能，令積分常數$C$，得：
+\[\f{1}{2}v^2-\f{GM}{r}=C\ldots\boxed{3}\]
+當$r\leftarrow\infty,v\leftarrow 0$，所以$C=0$。將三式改寫為：
+\[v=\sqrt{\f{2GM}{r}}\ldots\boxed{4}\]
+\sssc{徑向座標作為時間的函數}
+承上，試求徑向座標$r$作為時間$t$的函數。 
+
+答：解四式：
+\[r^{\f{1}{2}}\df{r}{t}=\sqrt{2GM}\]
+\[\itg{r^{\f{1}{2}}\df{r}{t}}{t}=\itg{\sqrt{2GM}}{t}\]
+\[\itg{r^{\f{1}{2}}\df{r}{t}}{t}=r^{\f{1}{2}}r-\itg{\f{1}{2}r^{-\f{1}{2}}r}{t}\]
+\[\itg{r^{\f{1}{2}}\df{r}{t}}{t}=r^{\f{3}{2}}-\itg{\f{1}{2}r^{\f{1}{2}}}{t}\]
+\[\itg{\f{1}{2}r^{\f{1}{2}}}{t}=\f{1}{3}r^{\f{3}{2}}\]
+\[\itg{r^{\f{1}{2}}\df{r}{t}}{t}=\f{2}{3}r^{\f{3}{2}}\]
+\[\f{2}{3}r^{\f{3}{2}}=\sqrt{2GM}t\]
+\[r=\qty(\f{3}{2}\sqrt{2GM}t)^{\f{2}{3}}\ldots\boxed{5}\]
+\sssc{哈柏定律}
+美國天文學家哈柏經由觀察得知：$v=Hr$，稱為哈柏定律（Hubble's law），式中$H$為哈柏常數（Hubble's constant）。測得$H$值約為$0.5×10^{-10}\ \tx{yr}^{-1}$，求現在所見宇宙的年齡。 
+
+答： 將五式帶入四式：
+\[v=\sqrt{2GM}(\f{3}{2}\sqrt{2GM}t)^{-\f{1}{3}}\ldots\boxed{6}\]
+將六式除以五式：
+\[H=\f{\sqrt{2GM}(\f{3}{2}\sqrt{2GM}t)^{-\f{1}{3}}}{(\f{3}{2}\sqrt{2GM}t)^{\f{2}{3}}}\]
+\[H=\sqrt{2GM}(\f{3}{2}\sqrt{2GM}t)^{-1}\]
+\[H=\f{2}{3}t^{-1}\]
+\[\f{2}{3}t^{-1}=0.5×10^{-10}\ \tx{yr}^{-1}\]
+\[t=1.33×10^{10}\ \tx{yr}\]
+\ssc{流體壓力}
+\sssc{流體壓力（Fluid pressure）}
+流體柱底所受的的壓力等於流體密度乘以深度乘以重力加速度加上流體頂所受的壓力。
+\sssc{連通管原理}
+流體面以下相連的兩或多個相同同相物質的流體柱，平衡時等高處壓力相等。
+\sssc{帕斯卡定律（Pascal's law）/帕斯卡原理（Pascal's principle）}
+靜止的封閉不可壓縮流體中任何一點的壓力變化都會均勻且不減弱地傳遞到整個流體各個方向上的所有點，並且由於壓力而產生的力與封閉壁成直角。
+\sssc{浮力（Buoyancy）}
+流體中的物體受到的壓力對其表面的面積分。
+\sssc{阿基米德原理（Archimedes' principle）}
+任何物體，無論全部或部分浸入流體，都會受到一個等於該物體排開的流體重量的力的浮力。
+\sssc{物體的浮沉}
+令密度$\rho$物體在密度$d$流體中受浮力$F$、重力$W$：
+\begin{longtable}[c]{|c|c|c|}
+\hline
+物體行為 & 力 & 密度 \\\hline\endhead
+漂浮 & $F=G$ & $\rho<F$ \\\hline
+懸浮 & $F=G$ & $\rho=F$ \\\hline
+沉底 & $F<G$ & $\rho>F$ \\\hline
+上浮 & $F>G$ & $\rho<F$ \\\hline
+下沉 & $F<G$ & $\rho>F$ \\\hline
+\end{longtable}\FB
+其中：
+\begin{itemize}
+\item\textbf{漂浮}：物體在流體面上，以外力下壓後移去外力仍會上浮出流體面。
+\item\textbf{懸浮}：物體在流體中任一位置，以外力移動後移去外力會保持位置而不會回復到之前的高度。
+\item\textbf{沉底}：物體沉於器底，以外力上提後移去外力仍會下沉至器底。
+\item\textbf{上浮}：一個動態過程，最終達到漂浮。
+\item\textbf{下沉}：一個動態過程，最終達到沉底。
+\end{itemize}
+\sssc{終端速度（Terminal velocity）}
+當物體在流體中運動時，在流體向物體運動反方向所施的力下，物體的運動速度因而不變，這時物體所移動的速度就是終端速度。
+\ssc{等速率圓周運動（Uniform circular motion）}
+\sssc{等速率圓周運動}
+等速率圓周運動指一個二維週期性運動，其中位置$\mathbf{x}$符合：
+\[\ddot{x}=\boldsymbol{\omega}\times\qty(\boldsymbol{\omega}\times\qty(\mathbf{x}-\mathbf{C}))\]
+其中$\boldsymbol{\omega}$和$\mathbf{C}$是常向量。
+
+角速度$\boldsymbol{\omega}$，角速率$\omega=\abs{\boldsymbol{\omega}}$，週期$\frac{2\pi}{\omega}$，軌跡為一以$\mathbf{C}$為圓心的圓，稱軌跡圓，運動過程中速率與加速度量值均始終不變，加速度、速度與角速度始終兩兩相垂直。質量$m$質點做等速率圓周運動時，稱$m\ddot{x}$為向心力（centripetal force）。
+
+若以軌跡圓圓心為原點在軌跡圓所在平面上建立平面直角座標$(x,y)$，使得質點逆時針繞原點公轉，即此座標的$(1,0)$與$(0,1)$在三維空間中的叉積為角速度方向單位向量，令軌跡圓半徑$R$，位置$\mathbf{x}$：
+\[\mathbf{x}=\qty(R\cos(\omega t+\phi),R\sin(\omega t+\phi))\]
+\[\dot{x}=\boldsymbol{\omega}\times\mathbf{x}=\qty(-R\omega\sin(\omega t+\phi),R\omega\cos(\omega t+\phi))\]
+\[\ddot{x}=\boldsymbol{\omega}\times\dot{x}=\qty(-R\omega^2\cos(\omega t+\phi),-R\omega^2\sin(\omega t+\phi))\]
+其中初始相位角$\phi$，相位角$\omega t+\phi$，速率$R\omega$、加速度量值$R\omega^2$。 
+\sssc{錐動擺/圓錐擺（Conical pendulum）}
+一質量$m$質點懸掛於一長$L$之繩下端，繩上端固定，與重力場方向夾銳角$\theta$，質點僅受量值$N$之繩張力與量值$mg$之重力，做角速率$\omega$、速率$v$、軌跡圓半徑$L\sin\theta$之等速率圓周運動：
+\[N=mg\sec\theta\]
+\[g\tan\theta=\omega^2L\sin\theta\]
+\[\omega=\sqrt{\frac{g\sec\theta}{L}}\]
+\[v=\sqrt{gL\sin\theta\tan\theta}\]
+\ssc{簡諧運動（Simple harmonic motion, SHM）}
+\sssc{簡諧運動}
+簡諧運動指一個一維週期性運動，其中位置$\mathbf{x}$符合：
+\[\ddot{x}=-\omega^2\mathbf{x}\]
+其中$\omega$為常數。
+
+\[\mathbf{x}=\mathbf{R}\sin(\omega t+\phi)+\mathbf{C}\]
+\[\dot{x}=\mathbf{R}\omega\cos(\omega t+\phi)\]
+\[\ddot{x}=-\mathbf{R}\omega^2\sin(\omega t+\phi)\]
+
+角頻率$\omega$，週期$\frac{2\pi}{\omega}$，初始相位角$\phi$，相位角$\omega t+\phi$，振幅$\abs{\mathbf{R}}$，平衡點（equilibrium position）$\mathbf{C}$，端點$\mathbf{C}\pm\mathbf{R}$，最大速率$\abs{\mathbf{R}}\omega$，最大加速度量值$\abs{\mathbf{R}}\omega^2$，$\mathbf{x}=\mathbf{C}\pm\mathbf{R}$與$\ddot{x}=\mp\mathbf{R}\omega^2$發生於$\omega t+\phi=\frac{\pm\pi}{2}+2z\pi,\quad z\in\mathbb{Z}$，$\mathbf{x}=\mathbf{C}$發生於$\omega t+\phi=z\pi,\quad z\in\mathbb{Z}$，$\dot{x}=\mathbf{R}\omega$發生於$\omega t+\phi=2z\pi,\quad z\in\mathbb{Z}$，$\dot{x}=-\mathbf{R}\omega$發生於$\omega t+\phi=\qty(2z+1)\pi,\quad z\in\mathbb{Z}$。令一垂直$\mathbf{R}$之向量$\mathbf{N}$，任意實數$a$與$b$，則$\mathbf{x}$恰與一軌跡圓半徑$\abs{\mathbf{R}}$、圓心$\mathbf{C}+a\mathbf{N}$、角速度$\omega\frac{\mathbf{R}\times\mathbf{N}}{\abs{\mathbf{R}\times\mathbf{N}}}$的等速率圓周運動之位置在直線$\mathbf{C}+t\mathbf{R},\quad t\in\mathbb{R}$之正射影相同。
+\sssc{彈簧兩端兩物簡諧運動}
+一質量不計、力常數$k$之理想彈簧，兩端各黏一物，質量$m$、$M$，兩物縮減質量$\mu=\frac{mM}{m+M}$，無外力下進行簡諧運動，則角頻率為$\sqrt{\frac{k}{\mu}}$，若初始時自彈簧被壓縮或拉長$R$靜止釋放，則力學能為$\frac{kR^2}{2}$，以平衡點為相位角$0$，則質量$m$者其相對於平衡點的位移$x$：
+\[x=\frac{\mu R}{m}\sin(\sqrt{\frac{k}{\mu}}t)\]
+\[\dot{x}=\frac{\mu R}{m}\sqrt{\frac{k}{\mu}}\cos(\sqrt{\frac{k}{\mu}}t)\]
+\[\ddot{x}=-\frac{\mu R}{m}\frac{k}{\mu}\sin(\sqrt{\frac{k}{\mu}}t)\]
+彈簧相對於原長的位移$y$：
+\[y=R\sin(\sqrt{\frac{k}{\mu}}t)\]
+\[\dot{y}=R\sqrt{\frac{k}{\mu}}\cos(\sqrt{\frac{k}{\mu}}t)\]
+\[\ddot{y}=-R\frac{k}{\mu}\sin(\sqrt{\frac{k}{\mu}}t)\]
+總動能$K$：
+\[K=\frac{kR^2}{2}\cos^2(\sqrt{\frac{k}{\mu}}t)\]
+彈力位能$U$：
+\[U=\frac{kR^2}{2}\sin^2(\sqrt{\frac{k}{\mu}}t)\]
+\sssc{單擺小角度近似為簡諧運動}
+均勻重力加速度量值$g$下，擺長$L$、角位置振幅$\theta_0\gtrapprox 0$的簡單單擺，其角位置$\theta$對時間的函數服從：
+\[L\dv[2]{\theta}{t}=g\sin\theta\]
+小角度近似$\sin\theta=\theta$：
+\[L\dv[2]{\theta}{t}=g\theta\]
+令初始角位置為$\theta_0\sin\phi$：
+\[\theta=\theta_0\sin(\sqrt{\frac{g}{L}} t+\phi)\]
+即角頻率$\sqrt{\frac{g}{L}}$的簡諧運動位置方程。
+\sssc{阻尼簡諧運動（Damped simple harmonic motion）}
+阻尼簡諧運動指一個一維週期性運動，其中位置$\mathbf{x}$符合：
+\[\ddot{x}=-k(\mathbf{x}-\mathbf{C})-b\dot{x}\]
+其中$k>0$、$b>0$為常數，$\mathbf{C}$是常向量。
+
+分為三種情況，下$\mathbf{A}$為常向量，$B$為常數：
+\begin{itemize}
+\item $b^2<4k$稱\textbf{欠阻尼/次阻尼（Underdamped）}：
+\[\mathbf{x}=\mathbf{A}e^{\frac{-b}{2}t}\sin(\frac{\sqrt{4k-b^2}}{2}t+\phi)+\mathbf{C}\]
+\[\dot{x}=\mathbf{A}\sqrt{k}e^{\frac{-b}{2}t}\sin\qty(\frac{\sqrt{4k-b^2}}{2}t+\phi+\arctan\frac{-\sqrt{4k-b^2}}{b})\]
+\[\ddot{x}=\mathbf{A}ke^{\frac{-b}{2}t}\sin\qty(\frac{\sqrt{4k-b^2}}{2}t+\phi+2\arctan\frac{-\sqrt{4k-b^2}}{b})\]
+\item $b^2=4k$稱\textbf{臨界阻尼（Britically damped）}：
+\[\mathbf{x}=\mathbf{A}(1+Bt)e^{\frac{-b}{2}t}+\mathbf{C}\]
+\[\dot{x}=\mathbf{A}\frac{B-b(1+Bt)}{2}e^{\frac{-b}{2}t}\]
+\[\ddot{x}=\mathbf{A}\frac{b(B-b(1+Bt))}{4}e^{\frac{-b}{2}t}\]
+\item $b^2>4k$稱\textbf{過阻尼（Overdamped）}
+\[\mathbf{x}=\mathbf{A}e^{\frac{-b}{2}t}\qty(e^{\frac{\sqrt{b^2-4k}}{2}t}+Be^{\frac{-\sqrt{b^2-4k}}{2}t})+\mathbf{C}\]
+\[\dot{x}=\mathbf{A}e^{\frac{-b}{2}t}\qty(\frac{-b+\sqrt{b^2-4k}}{2}e^{\frac{\sqrt{b^2-4k}}{2}t}+\frac{-b-\sqrt{b^2-4k}}{2}Be^{\frac{-\sqrt{b^2-4k}}{2}t})\]
+\[\ddot{x}=\mathbf{A}e^{\frac{-b}{2}t}\qty(\frac{b^2-2k-b\sqrt{b^2-4k}}{2}e^{\frac{\sqrt{b^2-4k}}{2}t}+\frac{b^2-2k+b\sqrt{b^2-4k}}{2}Be^{\frac{-\sqrt{b^2-4k}}{2}t})\]
+\end{itemize}
+\begin{proof}
+\[\lambda^2+b\lambda+k=0\]
+\[\lambda=\frac{-b\pm\sqrt{b^2-4k}}{2}\]
+Base $b^2<4k$:
+\[\lambda=\frac{-b\pm\sqrt{4k-b^2}i}{2}\]
+\[\mathbf{x}=\mathbf{D}\qty(e^{\frac{-b+\sqrt{4k-b^2}i}{2}t}+Ee^{\frac{-b-\sqrt{4k-b^2}i}{2}t})=\mathbf{A}e^{\frac{-b}{2}t}\sin(\frac{\sqrt{4k-b^2}}{2}t+\phi)\]
+\[\begin{aligned}
+\dot{x}&=\frac{-b\mathbf{A}}{2}e^{\frac{-b}{2}t}\sin(\frac{\sqrt{4k-b^2}}{2}t+\phi)+\frac{\sqrt{4k-b^2}\mathbf{A}}{2}e^{\frac{-b}{2}t}\cos(\frac{\sqrt{4k-b^2}}{2}t+\phi)\\
+&=\mathbf{A}\sqrt{k}e^{\frac{-b}{2}t}\sin\qty(\frac{\sqrt{4k-b^2}}{2}t+\phi+\arctan\frac{-\sqrt{4k-b^2}}{b})
+\end{aligned}\]
+\[\begin{aligned}
+\ddot{x}&=\frac{-b\mathbf{A}}{2}\sqrt{k}e^{\frac{-b}{2}t}\sin\qty(\frac{\sqrt{4k-b^2}}{2}t+\phi+\arctan\frac{-\sqrt{4k-b^2}}{b})+\frac{\sqrt{4k-b^2}\mathbf{A}}{2}\sqrt{k}e^{\frac{-b}{2}t}\cos\qty(\frac{\sqrt{4k-b^2}}{2}t+\phi+\arctan\frac{-\sqrt{4k-b^2}}{b})\\
+&=\frac{-b}{2}\sin\qty(\frac{\sqrt{4k-b^2}}{2}t+\phi+\arctan\frac{-\sqrt{4k-b^2}}{b})+\frac{\sqrt{4k-b^2}}{2}\cos\qty(\frac{\sqrt{4k-b^2}}{2}t+\phi+\arctan\frac{-\sqrt{4k-b^2}}{b})\\
+&=\mathbf{A}ke^{\frac{-b}{2}t}\sin\qty(\frac{\sqrt{4k-b^2}}{2}t+\phi+2\arctan\frac{-\sqrt{4k-b^2}}{b})
+\end{aligned}\]
+Base $b^2=4k$:
+\[\lambda=\frac{-b}{2}\]
+\[\mathbf{x}=\mathbf{A}(1+Bt)e^{\frac{-b}{2}t}\]
+\[\dot{x}=\mathbf{A}\frac{-b+B-bBt}{2}e^{\frac{-b}{2}t}\]
+\[\ddot{x}=\mathbf{A}\frac{-b^2-bB-b^2Bt}{4}e^{\frac{-b}{2}t}\]
+Base $b^2>4k$:
+\[\lambda=\frac{-b\pm\sqrt{b^2-4k}}{2}\]
+\[\mathbf{x}=\mathbf{A}\qty(e^{\frac{-b+\sqrt{b^2-4k}}{2}t}+Be^{\frac{-b-\sqrt{b^2-4k}}{2}t})=\mathbf{A}e^{\frac{-b}{2}t}\qty(e^{\frac{\sqrt{b^2-4k}}{2}t}+Be^{\frac{-\sqrt{b^2-4k}}{2}t})\]
+\[\begin{aligned}
+\dot{x}&=\mathbf{A}\frac{-b}{2}e^{\frac{-b}{2}t}\qty(e^{\frac{\sqrt{b^2-4k}}{2}t}+Be^{\frac{-\sqrt{b^2-4k}}{2}t})+\mathbf{A}e^{\frac{-b}{2}t}\qty(\frac{\sqrt{b^2-4k}}{2}e^{\frac{\sqrt{b^2-4k}}{2}t}+B\frac{-\sqrt{b^2-4k}}{2}e^{\frac{-\sqrt{b^2-4k}}{2}t})\\
+&=\mathbf{A}e^{\frac{-b}{2}t}\qty(\frac{-b+\sqrt{b^2-4k}}{2}e^{\frac{\sqrt{b^2-4k}}{2}t}+\frac{-b-\sqrt{b^2-4k}}{2}Be^{\frac{-\sqrt{b^2-4k}}{2}t})
+\end{aligned}\]
+\[\begin{aligned}
+\ddot{x}&=\mathbf{A}e^{\frac{-b}{2}t}\qty(\frac{b^2-b\sqrt{b^2-4k}}{4}e^{\frac{\sqrt{b^2-4k}}{2}t}+\frac{b^2+b\sqrt{b^2-4k}}{4}Be^{\frac{-\sqrt{b^2-4k}}{2}t})+\mathbf{A}e^{\frac{-b}{2}t}\qty(\frac{-b\sqrt{b^2-4k}+b^2-4k}{4}e^{\frac{\sqrt{b^2-4k}}{2}t}+\frac{b\sqrt{b^2-4k}+b^2-4k}{4}Be^{\frac{-\sqrt{b^2-4k}}{2}t})\\
+&=\mathbf{A}e^{\frac{-b}{2}t}\qty(\frac{b^2-2k-b\sqrt{b^2-4k}}{2}e^{\frac{\sqrt{b^2-4k}}{2}t}+\frac{b^2-2k+b\sqrt{b^2-4k}}{2}Be^{\frac{-\sqrt{b^2-4k}}{2}t})
+\end{aligned}\]
+\end{proof}
+\ssc{自由落體運動（Free fall motion）}
+\sssc{自由落體運動（Free fall motion）}
+均勻重力加速度量值$g$下，一平面直角座標使得$x$軸在地面上、重力加速度$(0,-g)$，一高度不計物體初位置$(0,h)$、$t=0$時以初速度$(v_x,v_y)$斜拋而出，落地（即$y=0$）前位置$\mathbf{r}$：
+\[\mathbf{r}=\qty(v_xt,h+v_yt-\frac{g}{2}t^2)\]
+\[\dot{r}=\qty(v_x,v_y-gt)\]
+若$v_y>0$，則到達最高點時：
+\[t=\frac{v_y}{g}\]
+\[\mathbf{r}=\qty(\frac{v_xv_y}{g},h+\frac{v_y^{\phantom{y}2}}{2g})\]
+\[\dot{r}=\qty(v_x,0)\]
+落地前，在到達最高點前與後相同時間之速率相同、高度相同、鉛直速度分量相反，稱時間對稱性。
+
+到達地面時：
+\[t=\frac{v_y+\sqrt{v_y^{\phantom{y}2}+2gh}}{g}\]
+\[\mathbf{r}=\qty(\frac{v_x\qty(v_y+\sqrt{v_y^{\phantom{y}2}+2gh})}{g},0)\]
+\[\dot{r}=\qty(v_x,-\sqrt{v_y^{\phantom{y}2}+2gh})\]
+此時$\mathbf{r}$的$x$座標稱射程（range）。
+
+若$h=0$，則到達地面時：
+\[t=\frac{2v_y}{g}\]
+\[\mathbf{r}=\qty(\frac{2v_xv_y}{g},0)\]
+\[\dot{r}=\qty(v_x,-v_y)\]
+\sssc{正比於速度之空氣阻力下的自由落體運動}
+均勻重力加速度量值$g$下，一平面直角座標使得$x$軸在地面上、重力加速度$\mathbf{g}=\qty(0,-g)$，設質量$m$、速度$\dot{r}$之物體所受空氣阻力$\mathbf{f}$為：
+\[\mathbf{f}=-mb\dot{r}\]
+其中$b$為正常數。
+
+一高度不計物體初位置$(0,h)$、$t=0$時以初速度$(v_x,v_y)$斜拋而出，落地（即$y=0$）前位置$\mathbf{r}$：
+\[\ddot{\mathbf{r}}=-b\dot{\mathbf{r}}+\mathbf{g}\]
+
+\[\mathbf{r}=\qty(\frac{v_x}{b}\qty(1-e^{-bt}),h+\frac{gt}{b}-\qty(\frac{v_y}{b}+\frac{g}{b^2})\qty(1-e^{-bt}))\]
+\[\dot{\mathbf{r}}=\qty(v_xe^{-bt},\frac{g}{b}+\qty(v_y+\frac{g}{b})e^{-bt})\]
+\[\ddot{\mathbf{r}}=\qty(-bv_xe^{-bt},-\qty(bv_y+g)e^{-bt})\]
+\begin{proof}
+\[(u,w)\coloneq\dot{\mathbf{r}}\]
+\[\dot{u}+bu=0\]
+\[u=v_xe^{-bt}\]
+\[\dot{w}+bw=-g\]
+\[e^{bt}\dot{w}+be^{bt}w=-ge^{bt}\]
+\[\dv{}{t}\qty(e^{bt}w)=-ge^{bt}\]
+\[e^{bt}w=-\frac{g}{b}e^{bt}+B\]
+\[w=-\frac{g}{b}+Be^{-bt}\]
+\[-\frac{g}{b}+B=v_y\]
+\[w=\frac{g}{b}+\qty(v_y+\frac{g}{b})e^{-bt}\]
+\[\dot{\mathbf{r}}=\qty(v_xe^{-bt},\frac{g}{b}+\qty(v_y+\frac{g}{b})e^{-bt})\]
+\[\ddot{\mathbf{r}}=\qty(-bv_xe^{-bt},-\qty(bv_y+g)e^{-bt})\]
+\[\mathbf{r}=\qty(\frac{v_x}{b}\qty(1-e^{-bt}),h+\frac{gt}{b}-\qty(\frac{v_y}{b}+\frac{g}{b^2})\qty(1-e^{-bt}))\]
+\end{proof}
+
+終端速度為：
+\[\dot{\mathbf{r}}=\qty(0,-\frac{g}{b})\]
+\begin{proof}
+\[-b\dot{\mathbf{r}}+(0,-g)=0\]
+\[\dot{\mathbf{r}}=\qty(0,-\frac{g}{b})\]
+\end{proof}
+\ssc{重力下鉛直圓周運動或簡單單擺（Simple pendulum）運動}
+\sssc{重力下鉛直圓周運動或簡單單擺（Simple pendulum）運動}
+均勻重力加速度量值$g$下，令重力加速度$(g,0)$，$xy$平面上一圓以原點為圓心、半徑$R$，稱軌跡圓，定義角位置$\theta$使得圓周上一點位置為$(R\cos\theta,R\sin\theta)$，一質量$m$質點在圓周上僅受重力與一垂直圓周之外力$\mathbf{N}=N(-\cos\theta,-\sin\theta)$，$t=0$時恰以速度$(0,u)$通過圓周最低點$(R,0)$，其中$u\geq 0$。當質點在圓周上且以原點為參考點的角速度出紙面時，令速率$v$，以原點為參考點的角速度$\dot{\theta}$，角加速度$\ddot{\theta}$，切向加速度$R\ddot{\theta}(-\sin\theta,\cos\theta)$，$a\coloneq R\ddot{\theta}$，法向加速度$R\dot{\theta}^2(-\cos\theta,-\sin\theta)$，$q\coloneq R\dot{\theta}^2$，動能$K$，重力位能$U$以$y$軸為$U=0$，力學能$E=U+K$。若此運動順利通過圓周最高點$(-R,0)$，則不斷逆時針繞原點不等速率地公轉，稱鉛直圓周運動，令週期$T_1$；若此運動不通過最高點而在圓周上兩$\theta$互為相反數的點之間週期往復運動，稱簡單單擺運動或單擺運動，令該二點$\theta=\pm\theta_m$，其中$\theta_m>0$，稱臨界角（critical angle），質點在該二點時速率為零，質點每次通過$(0,R)$時之速率均為$u$但與前一次通過時之速度反向，此運動相當於受力條件不變下自$(R\cos\theta_m,\pm R\sin\theta_m)$靜止釋放之運動，令週期（自$\theta=\theta_m$回到$\theta=\theta_m$所須的時間）$T_2$：
+\[U=-mgR\cos\theta\]
+\[E=U+\frac{mv^2}{2}=\frac{mu^2}{2}-mgR\]
+\[K=\frac{mv^2}{2}=\frac{mu^2}{2}-mgR(1-\cos\theta)\]
+\[v=\sqrt{u^2-2gR(1-\cos\theta)}\]
+\[\dot{\theta}=\frac{v}{R}=\frac{\sqrt{u^2-2gR(1-\cos\theta)}}{R}\]
+\[q=\frac{v^2}{R}=\frac{u^2-2gR(1-\cos\theta)}{R}\]
+\[a=g\sin\theta\]
+\[\ddot{\theta}=\frac{a}{R}=\frac{g}{R}\sin\theta\]
+\[N=\frac{mv^2}{R}-mg\cos\theta=\frac{m}{R}\qty(u^2-2gR+gR\cos\theta)\]
+\[T_1=\int_0^{2\pi}\frac{\mathrm{d}\theta}{\dot{\theta}}=R\int_0^{2\pi}\frac{\mathrm{d}\theta}{\sqrt{u^2-2gR(1-\cos\theta)}}\]
+\[\theta_m=\arccos\frac{u^2}{2gR}\]
+\[T_2=2\int_{-\theta_m}^{\theta_m}\frac{\mathrm{d}\theta}{\dot{\theta}}=4R\int_0^{\theta_m}\frac{\mathrm{d}\theta}{\sqrt{u^2-2gR(1-\cos\theta)}}\]
+
+當限制條件$N\geq 0$時（例如以連接圓心與質點之質量不計軟繩提供之繩張力為$\mathbf{N}$，或以軌跡圓圓周的光滑可脫離軌道提供之正向力為$\mathbf{N}$），則：
+\begin{itemize}
+\item $u>\sqrt{5GR}$：鉛直圓周運動，最高點$N>0$、$v>\sqrt{gR}$。
+\item $u=\sqrt{5GR}$：鉛直圓周運動，最高點$N=0$、$v=\sqrt{gR}$。
+\item $\sqrt{2gR}<u<\sqrt{5gR}$：於$y$軸脫離軌跡圓。
+\item $0<u\leq\sqrt{2gR}$：單擺運動。
+\item $u=0$：靜止於$(R,0)$。
+\end{itemize}
+
+當$N$無限制條件時（例如以連接圓心與質點之質量不計剛體提供之力為$\mathbf{N}$，或以軌跡圓圓周的光滑不可脫離軌道提供之力為$\mathbf{N}$），則：
+\begin{itemize}
+\item $u>\sqrt{5GR}$：鉛直圓周運動，最高點$N>0$、$v>\sqrt{gR}$。
+\item $u=\sqrt{5GR}$：鉛直圓周運動，最高點$N=0$、$v=\sqrt{gR}$。
+\item $2\sqrt{gR}<u<\sqrt{5gR}$：鉛直圓周運動，最高點$-mg<N<0$、$0<v<\sqrt{gR}$。
+\item $u=2\sqrt{gR}$：到達最高點時恰停止，最高點$N=-mg$、$v=0$。
+\item $0<u\leq2\sqrt{gR}$：單擺運動。
+\item $u=0$：靜止於$(R,0)$。
+\end{itemize}
+\end{document}

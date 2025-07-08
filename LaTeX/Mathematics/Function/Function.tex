@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Function}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{Function (函數)}
+\subsection{Definition and notation}
+A function is formed by three sets, the domain (定義域) $X$, the codomain (對應域) $Y$, and the graph $R$ that satisfy the three following conditions:
+\[R\subseteq \{(x,y)\mid x\in X,y\in Y\}\]
+\[\forall x\in X,\exists y\in Y,\left(x,y\right)\in R \]
+\[ (x,y)\in R\land (x,z)\in R\implies y=z\]
+
+A function $f$ that satisfies the above is denoted as:
+\[f\colon X\to Y.\]
+in which the domain $X$ is also denoted as $D_f$.
+
+The range (值域), denoted as $R_f$ or $f(X)$, is defined as:
+\[\{ y \mid \exists x \in X, (x, y) \in R \}.\]
+
+If $x\in X$ and $(x, y) \in R$, we write $y = f(x)$, in which $f(x)$ is called the image of $x$ under $f$, $x$ is called the independent variable (自變數/獨立變數), and $y$ is called the dependent variable (應變數/依賴變數); and the function $f$ is also denoted as:
+\[f \colon X \to Y;\, x \mapsto y.\]
+\ssc{Properties}
+Consider a function $f$:
+\[f\colon X\to Y;\,x\mapsto y.\]
+\sssc{Injection (單射)/Injective function/One-to-one (一對一) function}
+\[\forall a,b\in X\text{\ s.t.\ } f(a)=f(b)\colon a=b\]
+\subsection{Many-to-one (多對一) function}
+\[\exists a\neq b\in X\colon f(a)=f(b)\]
+\sssc{Surjection (滿射/蓋射)/Surjective function/Onto function}
+\[f(X)=Y\]
+\sssc{Bijection (對射)/Bijective function/One-to-one (一對一) function/One-to-one correspondence (一一對應)}
+Injective and surjective function.
+\ssc{Increasing and Decreasing}
+Consider a function $f$:
+\[f\colon X\to Y;\,x\mapsto y,\]
+such that $Y$ is a totally ordered set.
+\sssc{(Monotone) Increasing (（單調）遞增)/Non-Decreasing (非遞減) function}
+$f$ is increasing on $I\subseteq X$ if and only if
+\[\forall a,b\in I\colon a<b\implies f(a)\leq f(b).\]
+$f$ is increasing if and only if
+\[\forall a,b\in X\colon a<b\implies f(a)\leq f(b).\]
+\sssc{Strictly increasing (嚴格遞增) function}
+$f$ is strictly increasing on $I\subseteq X$ if and only if
+\[\forall a,b\in I\colon a<b\implies f(a)<f(b).\]
+$f$ is strictly increasing if and only if
+\[\forall a,b\in X\colon a<b\implies f(a)<f(b).\]
+\sssc{(Monotone) Decreasing (（單調）遞減)/Non-Increasing (非遞增) function}
+$f$ is decreasing on $I\subseteq X$ if and only if
+\[\forall a,b\in I\colon a<b\implies f(a)\geq f(b).\]
+$f$ is decreasing if and only if
+\[\forall a,b\in X\colon a<b\implies f(a)\geq f(b).\]
+\sssc{Strictly decreasing (嚴格遞減) function}
+$f$ is strictly decreasing on $I\subseteq X$ if and only if
+\[\forall a,b\in I\colon a<b\implies f(a)>f(b).\]
+$f$ is strictly decreasing if and only if
+\[\forall a,b\in X\colon a<b\implies f(a)>f(b).\]
+\sssc{Monotone (單調) function}
+$f$ is monotone on $I\subseteq X$ if and only if it is either monotone increasing or monotone decreasing on $I$.
+
+$f$ is monotone if and only if it is either monotone increasing or monotone decreasing.
+\ssc{Transformation}
+\sssc{Translation (平移)}
+For any function $f\colon\mathbb{R}\to\mathbb{R}$, shifting $y=f(x)$ right by $h$ units and up by $k$ units on the $xy$ coordinate plane yields $y=f(x-h)+k$.
+\sssc{Scaling (伸縮/縮放/拉伸)}
+For any function $f\colon\mathbb{R}\to\mathbb{R}$, on the $xy$ coordinate plane, expand $y=f(x)$ vertically by $a$ times the original value with the $x$ axis as the reference line, and expand $y=af\qty(\frac{x}{b})$ horizontally by $b$ times the original value with the $y$ axis as the reference line, to obtain $y=af\qty(\frac{x}{b})$.
+\ssc{Common ways to define functions}
+\sssc{Function composition (函數合成)}
+For two functions $f\colon X\to Y$ and $g\colon V\to W$ such that $g(V)\subseteq X$, the composition of them, denoted as $(f\circ g)$, is defined as:
+\[(f \circ g)\colon V\to Y;\,x\mapsto = f(g(x))\]
+\sssc{Inverse function (反函數)}
+For a bijective function $f\colon X\to Y$, the inverse of it, denoted as $f^{-1}$, is defined as:
+\[f^{-1}\colon Y\to X;\,f(x)\mapsto x\]
+\sssc{Power notation}
+For a bijective function $f\colon X\to X$, $f^0$ is defined by:
+\[f^0\colon X\to X;\,x\mapsto x,\]
+$f^n(x)$ for any $n\in\mathbb{N}$ is defined by:
+\[f^n\colon X\to X;\,x\mapsto f\left(f^{n-1}(x)\right),\]
+and $f^{-n}(x)$ for any $n\in\mathbb{N}$ is defined by:
+\[f^{-n}\colon X\to X;\,x\mapsto f^{-1}\left(f^{-n+1}(x)\right).\]
+\sssc{Piecewise function (分段函數)}
+A piecewise function is a function defined in the form:
+\[f(x) =
+\begin{cases}
+f_1(x), & \quad x\in A_1, \\
+f_2(x), & \quad x\in A_2, \\
+\vdots \\
+f_n(x), & \quad x \in A_n
+\end{cases},\]
+where
+\[\bigcup_{i=1}^nA_i=D_f\land\forall i\neq j\land i,j\in\mathbb{N}\land i,j\leq n\colon A_i\cap A_j=\varnothing.\]
+\end{document}

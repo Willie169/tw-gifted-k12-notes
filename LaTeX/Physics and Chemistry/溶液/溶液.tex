@@ -1,0 +1,239 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{溶液}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{溶液（Solution）}
+\subsection{組成}
+\begin{itemize}
+    \item \tb{溶劑（Solvent）}：液態者優先作為溶劑，有多種液態者水優先作為溶劑，稱水溶液（Aqueous solution），無水者以含量最多之液態者作為溶劑，稱非水溶液（Nonaqueous solution），無液態者以含量最多者作為溶劑。水溶液記作溶質 (aq)、酒精溶液記作溶質 (alc)、其餘溶液記作溶質 (溶劑)。
+    \item \tb{溶質（Solute）}：溶液中除了溶劑以外的組分。
+\end{itemize}
+\ssc{依狀態分類}
+\begin{longtable}[c]{|c|c|c|c|c|}
+\hline
+\diagbox{溶劑狀態}{溶質狀態} & 氣態 & 液態 & 固態 & 名稱\\\hline\endhead
+氣態 & 空氣 & 空氣中的水氣 & 碘溶於氨 & 氣態溶液\\\hline
+液態 & 汽水 & 酒精水溶液 & 糖水 & （液態）溶液\\\hline
+固態 & 氫氣溶於 \ce{Pd}、\ce{Pt} & 鈉汞齊 & 青銅 & 固態溶液/固溶體\\\hline
+\end{longtable}
+\FB
+\subsection{（真）溶液（(True) solution）、膠體溶液（Colloid）與懸浮液（Suspension）}
+\begin{longtable}[c]{|p{0.2\tw}|p{0.2\tw}|p{0.2\tw}|p{0.2\tw}|}
+    \hline
+    \textbf{屬性} & \textbf{真溶液} & \textbf{膠體溶液} & \textbf{懸浮液} \\
+    \hline
+    \endhead
+    粒子直徑 & $<10^{-9}$ m & $10^{-9} \sim 10^{-6}$ m & $\geq 10^{-6}$ m \\
+    \hline
+    粒子約含原子個數 & $<10^3$ & $10^3 \sim 10^9$ & $\geq 10^9$ \\
+    \hline
+    顯微鏡可觀察到粒子 & 否 & 是 & 是 \\
+    \hline
+    均勻性 & 一相 & 二相均勻 & 二相不均勻 \\
+    \hline
+    安定性/不沉澱性 & 是 & 是 & 否 \\
+    \hline
+    可離心分離溶質與溶劑 & 否 & 是 & 是\\
+    \hline
+    濾紙穿透性 & 可 & 可 & 不可 \\
+    \hline
+    羊皮紙穿透性 & 可 & 不可 & 不可 \\
+    \hline
+    布朗運動 & 無 & 有 & 無 \\
+    \hline
+    分散光線 & 否 & 是，廷得耳效應 & 是 \\
+    \hline
+    拉午耳定律 & 稀薄溶液或相似性質分子混合者 & 否 & 否 \\
+\hline
+凝固點下降依數性質 & 稀薄溶液 & 否 & 否 \\
+    \hline
+    沸點上升依數性質 & 非揮發性溶質稀薄溶液 & 否 & 否 \\
+    \hline
+    滲透壓依數性值 & 是 & 是 & 否 \\
+    \hline
+    舉例 & NaCl(aq) & 牛奶 & 懸浮微粒 \\
+    \hline
+\end{longtable}
+\FB
+註：一般稱溶解與否係指真溶液而言。
+\ssc{膠體溶液（Colloid）}
+\sssc{術語}
+溶質又稱膠體粒子、分散相或分散質；溶劑又稱連續相或分散媒/分散介質（Dispersion
+medium）；膠體溶液又稱分散系（統）（Dispersion
+system）/膠體系（統）（Colloidal system）。分散系為流體者又稱溶膠（Sol）；分散系為液體者又稱液膠（Sol）；分散系為固體者又稱凝膠/膠凝體（Gel）；分散媒為氣體者又稱氣溶膠（Aerosol）；分散媒為水者又稱水溶膠（Hydrosol）；分散媒為醇者又稱醇溶膠（Alcosol）。
+\sssc{廷得耳效應（Tyndall effect）}
+足夠強的光線入射膠體溶液時可觀察到光亮的通路，因膠體粒子足夠大可以散射光線。
+\sssc{布朗運動}
+膠體粒子在同一時間受到溶劑分子的合力常不為零，使膠體粒子在溶液中不規則運動，是其可以不沉澱而安定存在的原因之一。
+\sssc{膠體帶電}
+膠體粒子吸附離子或極性分子而帶電或偶極，可能使之間互相排斥，而不沉澱。金屬氫氧化物常帶正電；硫化物常帶負電。
+\sssc{凝析（Condensation）}
+在膠體溶液中加入電解質、通電或改變酸鹼值時，易中和帶電的膠體粒子，使聚集與沉澱，稱凝析。溶液中之離子，每個離子帶電荷數絕對值較大者，較易吸附帶異性電的膠體粒子使凝析。實例如：將石膏或食醋加入豆漿，可使其中蛋白質凝析，可用於製作豆花與鹹豆漿；將醋酸加入奶，可使酪素凝析；將稀酸加入橡樹汁，可使生橡膠凝析；凝析法淨化水，以明礬等的鋁離子吸附水中膠體粒子，使凝析沉澱出來；河海交會處形成三角洲。
+\sssc{舉例}
+\begin{longtable}[c]{|c|c|c|c|}
+\hline
+分散質 & 分散媒 & 分散系種類 & 舉例 \\\hline\endhead
+氣體 & 液體 & 氣泡 & 肥皂泡末、刮鬍泡沫 \\\hline
+氣體 & 固體 & 固態泡沫 & 發泡尿素甲醛樹脂、發泡聚苯乙烯、發泡橡膠 \\\hline
+液體 & 氣體 & 液態氣溶膠 & 雲、霧 \\\hline
+液體 & 液體 & 乳液 & 高濃度清潔劑溶液、豆漿、牛奶、奶油、沙拉醬、醬油、紅茶 \\\hline
+液體 & 固體 & 固態乳液 & \\\hline
+固體 & 氣體 & 固態氣溶膠 & 煙、塵 \\\hline
+固體 & 液體 & 溶膠 & 膠水、油漆、墨水、指甲油、牙膏 \\\hline
+固體 & 固體 & 膠凝體 & 有色寶石 \\\hline
+\end{longtable}\FB
+\subsection{濃度}
+\begin{itemize}
+    \item \tb{質量百分濃度/重量百分濃度} C\% 或 P\% 或 W\%：每100 克溶液中所含溶質克數。
+    \item \tb{體積百分濃度} V\%：每 100 毫升溶液中所含溶質毫升數。
+    \item \tb{百萬分濃度或百萬分點} ppm 或 C$_\text{ppm}$：每 $10^6$ 克（或毫升）溶液中所含溶質克數。
+    \item \tb{十億分濃度或十億分點} ppb 或 C$_\text{ppb}$：每 $10^9$ 克（或毫升）溶液中所含溶質克數。
+    \item \tb{兆分濃度或兆分點} ppt 或 C$_\text{ppt}$：每 $10^{12}$ 克（或毫升）溶液中所含溶質克數。
+    \item \tb{體積莫耳濃度} C$_\text{M}$ 或 M：每公升溶液中所含溶質莫耳數。
+    \item \tb{質量莫耳濃度} C$_\text{m}$ 或 m 或 b：每公斤溶劑中溶解的溶質莫耳數。
+    \item \tb{莫耳分率} X：混合物中某一組分元素莫耳數占總莫耳數的比例。
+    \item \tb{當量濃度（Equivalent Concentration）/規定濃度（Normality）} C$_\text{N}$：每公升溶液中所含溶質當量。
+\end{itemize}
+\subsection{溶解度（Solubility）}
+\sssc{溶解度（Solubility）}
+指定溫壓下，定量溶劑所能溶解溶質而使沉澱速率不大於溶解速率的最大量。一般用每 100 克（或其他度量）水（或其他溶劑）中可溶解且溶液穩定的最大溶質克數表示。
+\sssc{飽和溶液（Saturated solution）}
+濃度等於溶解度的溶液。處於沉澱（結晶）速率與溶解速率相同的動態平衡。
+\sssc{過飽和溶液（Supersaturated solution）}
+濃度大於溶解度的溶液。加入物質、改變溫度、振盪或攪拌等易使結晶直到變成飽和溶液，加入同型晶種尤佳。
+
+製備方法可以先將溶液調整至溶解度較高之溫度並加入溶質使溶解，而後再調整溫度使濃度大於溶解度，過程應避免搖晃或攪拌。常用於製作過飽和溶液的溶質如醋酸鈉。
+\sssc{不飽合溶液（Unsaturated solution）}
+濃度小於溶解度的溶液。加入溶質可再溶解。
+\sssc{混溶（miscible）}
+可以以任意比例互溶。無反應或其他特殊條件下。氣態物質間均可混溶。
+\sssc{可溶（Soluble）、微溶（Slightly soluble）與不溶（Insoluble）}
+通常：
+\bit
+\item 可溶（Soluble）：$\geq$0.1 M 或 $\geq$20 g/L
+\item 微溶（Slightly soluble）：10$^{-4}$ M 至 0.1 M 或 0.1 g/L 至 20 g/L
+\item 難溶/不溶（Insoluble）：<10$^{-4}$ M 或 <0.1 g/L
+\eit
+\sssc{Qualifiers used to describe extent of solubility according to U.S. Pharmacopoeia}
+\begin{longtable}[c]{|c|c|}
+\hline
+Qualifier & Definition (飽和時溶劑質量除以溶質質量) \\\hline
+極易溶（Very soluble）& <1 \\\hline
+易溶（Freely soluble） & 1-10 \\\hline
+可溶（Soluble）& 10-30 \\\hline
+略溶（Sparingly soluble）&30-100 \\\hline
+微溶（Slightly soluble）&100-1000 \\\hline
+極微溶（Very slightly soluble）&1000-10000 \\\hline
+幾乎不溶（Practically insoluble）或不溶（insoluble）&10000 \\\hline
+\end{longtable}\FB
+\ssc{依數性質}
+\sssc{符號約定}
+\bit
+\item $n$：莫耳數
+\item $P$：蒸氣壓
+\item $T$：絕對溫度
+\item $R$：理想氣體常數
+\item $i$：凡特荷夫因子/凡特荷夫因數（van't Hoff factor）
+\item $P^\circ$：飽和蒸氣壓
+\item $\pi$：滲透壓（Osmotic pressure）
+\item $\Delta T_f $：凝固點下降量，即溶劑凝固點減去溶液凝固點。
+\item $\Delta T_b $：沸點上升量，即溶液沸點減去溶劑沸點。
+\eit
+\sssc{凡特荷夫因子/凡特荷夫因數（van't Hoff factor）}
+每莫耳溶質平均實際溶解出的粒子莫耳數。
+\sssc{滲透壓（Osmotic pressure）}
+兩側分別裝溶劑與溶液，中間以可透溶劑、不透溶質的半透膜相隔的 U 型管中，欲防止溶劑經半透膜流入溶液所需施加到溶液上的最小壓力。血液平均滲透壓約為7.7大氣壓。細胞若處於高滲透壓溶液（高張溶液）則水分滲出而細胞皺縮；若處於低滲透壓溶液（低張溶液）則水分滲出而細胞膨脹，有細胞壁者不破裂，無者易破裂。
+\sssc{拉午耳定律（Raoult's law）}
+$k$種物質$A_1, A_2, \ldots, A_k$混合之溶液，蒸氣壓為：
+\[P =\frac{\sum_{i = 1}^k \qty(P^{ \circ} _{A_i} \cdot n_{A_i} \cdot i_{A_i})}{\sum_{i = 1}^k \qty(n_{A_i} \cdot i_{A_i})}.\]
+固體溶質多蒸氣壓極小或為零可忽略不計。全不與外界氣體環境接觸之物質不影響蒸氣壓，因其不與氣體碰撞形成可逆平衡，如密度較小之組分在密度較大之組分之上而使後者完全不與外界氣體接觸，稱液封，如水液封水銀。稀薄溶液、相似性質分子混合者偏差較小，較接近拉午耳定律。完全不互溶的各組分的總蒸氣壓為各組分蒸氣壓簡單相加。
+\sssc{體積加成性}
+溶液的體積加成性指的是在混合不同濃度或不同成分的溶液時，混合後的總體積是否等於各個溶液體積的簡單相加。由於分子間的相互作用（如氫鍵等），混合溶液常不具有體積加成性。例如，將等量的乙醇和水混合時，混合後的體積會少於單獨乙醇和水的體積總和。通常性質較接近的物質，如甲苯與苯，混合後較具有體積加成性。
+\sssc{理想溶液（Ideal solution）}
+符合體積加成性的溶液，即混合時無焓變的溶液，即符合拉午耳定律的溶液。
+\sssc{凝固點下降依數性質}
+對於稀薄溶液：
+\[\Delta T_f = K_f \cdot C_m \cdot i.\]
+其中$K_f$為凝固點下降常數，依溶劑種類而定，不依賴於溶質種類。
+
+可用於測量分子量，但因凝固點測量較不精確故對於分子量大者誤差大。
+\sssc{凝固點測量}
+液態降溫時，若發生過冷現象，凝固點測量值應計為得失熱量–溫度圖上液相降溫直線部分與固相降溫直線部分的延長線交點。
+
+測量溶液之凝固點時，常取固態升溫之熔點與液態降溫之凝固點之平均值。
+\sssc{沸點上升依數性質}
+對於非揮發性溶質稀薄溶液：
+\[\Delta T_b = K_b \cdot C_m \cdot i.\] 
+其中$K_b$為沸點上升常數，依溶劑種類而定，不依賴於溶質種類。
+
+可用於測量分子量，但因凝固點測量較不精確故對於分子量大者誤差大。
+
+揮發性溶質則因兩者均貢獻蒸氣壓而不服從此定律，且部分物質可能形成共沸物。
+\sssc{滲透壓依數性質}
+\[\pi = i \cdot C_M \cdot R \cdot T.\]
+可用於測量分子量，因壓力通過液柱測量可達較高精確度，故無論分子量大小均適用。
+\sssc{共沸物（Azeotrope）}
+指兩組分或多組分的液體混合物以特定比例組成時，在定壓下沸騰，此時蒸氣組成比例與溶液相同，無法以常規的蒸餾或分餾分離。
+\ssc{氣體溶解度與其分壓關係}
+\sssc{通性}
+其他狀態函數恆定，氣體在液面上分壓$P$愈大，其體積莫耳溶解度愈大。
+\sssc{亨利定律（Henry's law）}
+一難溶氣體在液面上分壓$P$，其他狀態函數恆定，其溶質莫耳單位溶液/溶劑體積溶解度與$P$成正比，即其溶解體積單位溶液/溶劑體積溶解度不依賴於$P$。令體積莫耳濃度$C_M$，亨利常數$k_H$定義為：
+\[C_M=k_HP\]
+$k_H$依賴於溫度、氣體溶質種類、溶劑種類。
+
+低壓、低溶解度者較符合亨利定律；氣體會與液體發生反應或溶解度較大者，如氨氣、硫化氫、二氧化硫、二氧化碳、氯氣、鹵化氫溶於水，則偏差較大。
+\sssc{實例}
+\bit
+\item \tb{碳酸飲料}：在約0至4攝氏度將水通以4大氣壓二氧化碳，再加入糖與香料等，可製備碳酸飲料。
+\item \tb{潛水用氧氣筒}：氦氣於血液的溶解度較小，故今潛水用氧氣筒內為氦氣與氧氣之混合氣體。
+\item \tb{減壓症（Decompression sickness, DCS）/潛水夫病（divers' disease）/沉箱病（caisson disease）}：人體因周遭環境壓力急速降低使氣體在血液中溶解度迅速下降而釋出造成的疾病，主要症狀如皮膚皮疹、虛脫、關節痛、視覺障礙、平衡障礙、呼吸困難等。
+\eit
+\subsection{溶解熱}
+\sssc{莫耳溶解熱}
+一莫耳物質溶解於大量溶劑中的能量變化。
+\sssc{水合能（Hydration energy）/水合焓（Hydration enthalpy）}
+一莫耳氣體成分溶解於大量水中的能量變化（一般為負）。對離子化合物而言即晶格能與溶解熱之和。
+\subsubsection{吸熱反應}
+\begin{itemize}
+\item 多數固體溶於液體，如離子化合物須吸收晶格能，但熵增加故仍可能自發，如\ce{Na2SO4$\cdot 10$H2O}。
+\item 無水硫酸鈉在32.4°C以下溶於水。
+\item 離子化合物解離成離子。
+\end{itemize}
+\subsubsection{放熱反應}
+\begin{itemize}
+\item 氣體溶於液體。
+\item 部分硫酸鹽溶於水。
+\item \ce{Ca(OH)2}、\ce{Ce2(SO4)3}、\ce{CaSO4}、\ce{MnSO4}、\ce{Ca(CH3COO)2$\cdot$H2O}溶於水。
+\item 無水硫酸鈉在32.4°C以上溶於水。
+\end{itemize}
+\subsubsection{溶解度曲線（Solubility curve）}
+溶解度對溫度的曲線中，吸熱溶解的曲線斜率為正（溫度上升時溶解度增加），而放熱溶解的曲線斜率為負（溫度上升時溶解度減少）。測量時常用降溫以便觀察。
+\ssc{活度（Activity）}
+$\alpha$，是實際濃度的有效度量，考慮了溶液中離子之間的相互作用，等於「活性係數（Activity coefficient）$\times$體積莫耳濃度」，其中活性係數為無因次量。理想稀溶液活度接近於濃度，較高濃度的溶液離子間相互作用會變得明顯，導致活度與濃度之間的偏差。
+\ssc{比爾-朗伯定律（Beer–Lambert law）與比色法（Colorimetry）}
+\subsubsection{比爾-朗伯定律（Beer–Lambert law）}
+一束單色光照射於一均勻非散射的吸光介質表面，在通過一定厚度的介質後，由於介質吸收了一部分光能，透射光的強度減弱。吸收介質的濃度愈大、介質的厚度愈大，則光強度的減弱愈顯著，其關係為：
+\[A=-\log_{10}\frac{I_t}{I_0}=\log_{10}\frac{1}{\mathscr{T}}=\mathscr{K}\cdot l\cdot c\]
+其中： 
+\begin{itemize}
+\item $A$: 吸光度
+\item $I_0$: 入射光的光度 (cd)
+\item $I_t$: 透射光的光度 (cd)
+\item $l$: 吸收介質的厚度 (m 或 cm)
+\item $c$: 吸收介質的濃度 (g/L 或 mol/L)
+\item $\mathscr{T}$: 透射比/透光度
+\item $\mathscr{K}$: 吸收係數 ($(l\cdot c)$之單位$^{-1}$)
+\end{itemize}
+\subsubsection{比色法（Colorimetry）}
+利用比爾-朗伯定律得知平衡常數的方法。於兩同樣口徑之比色管（平底試管，測量時外包黑紙）加入不同濃度的相同溶質之溶液，比色法燈具之光自比色管底部向上照射，測量兩溶液透光度，當兩溶液相同透光度時，溶液濃度與管內溶液高度成反比。
+\end{document}

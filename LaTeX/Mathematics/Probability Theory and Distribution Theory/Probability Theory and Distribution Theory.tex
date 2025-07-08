@@ -1,0 +1,436 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Probability Theory and Distribution Theory}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{Probability Theory (機率論) and Distribution Theory (分布論)}
+\section{Probability (機率)}
+\subsection{Probability}
+\begin{itemize}
+\item (Random) Experiment or Trial (（隨機）試驗): A process that can be repeated and the results may be different each time. It has repeatability, that is, the test can be repeated under the same conditions, and randomness, that is, the results of each test may be different, with randomness and uncertainty.
+\item Sample space (樣本空間): The set of all possible outcomes of an experiment. For example, the sample space for flipping a coin is $\{\text{head}, \text{tail}\}$.
+\item Event (事件): A subset of the sample space. For example, the event of rolling a die and getting an even number is $\{2, 4, 6\}$.
+\item Probability (機率): The likelihood of an event occurring, a number between 0 and 1. The closer the probability is to 1, the more likely the event is to occur.
+\item Impossible event (空事件): An event with zero probability.
+\item Sure event (全事件): An event with one probability.
+\item Sum event (和事件): The sum event of event $A$ and event $B$ is $A\cup B$.
+\item Product event (積事件): The product event of event $A$ and event $B$ is $A\cap B$.
+\item Complement event (餘事件): The complement event of event $A$ in sample space $S$ is $A'=S\setminus A$.
+\item Classical probability (古典機率): If the number of all possible outcomes of an event is finite or countable infinite, and the chance of each outcome occurring in the sample space is equal, then the probability of the event occurring can be calculated by:
+\[ P(A)= \frac{\text{The number of outcomes of event A}}{\text{The number of all possible outcomes}} \]
+\item Objective probability (客觀機率) or Frequency probability (頻率機率): An objective probability value obtained based on past experience or statistical data, usually the frequency of past events or repeated experiments to obtain the probability of an event occurring.
+\item Subjective probability (主觀機率): A probability value that is not supported by statistical data.
+\item Conditional probability (條件機率): The probability of another event occurring given that a certain event has occurred. Usually expressed as $P(A|B)$, which is the probability of event $A$ occurring given that event $B$ has occurred.$P(A|B)= \frac{P\qty(A\cap B)}{P\qty(B)}$.
+\item Mutually exclusive events (互斥事件): Two or more events cannot occur at the same time, that is, $A_1,A_2,\ldots,A_n$ are mutually exclusive events if and only if:
+\[\forall J\neq\varnothing\land J\subseteq\{a\mid a\in\mathbb{N}\land 1\leq a\leq n\}\colon P\qty(\bigcap_{j\in J} A_j)=0.\]
+\item Independent events (獨立事件): Two or more events have no effect on each other, that is, $A_1,A_2,\ldots,A_n$ are independent events if and only if:
+\[\forall J\neq\varnothing\land J\subseteq\{a\mid a\in\mathbb{N}\land 1\leq a\leq n\}\colon P\qty(\bigcap_{j\in J} A_j)=\prod_{j\in J}P\qty(A_j).\]
+\item Repeated trials: A trial that consists of repeated independent trials. The probability of an event $A$ where events $A_i$ occured in each trial $i$ is $\prod_iP(A_i)$.
+\item Partitions (分割或劃分): If \( \{A_i\}_{i \in I} \) is a set of partitions of the sample space \( \Omega \) then the following conditions are met:
+\[\begin{aligned}
+& \forall i \in I\colon A_i \subseteq \Omega,\\
+& \forall i,\, j \in I \land i\neq j\colon A_i \cap A_j = \emptyset,\\
+& \bigcup_{i \in I} A_i = \Omega. 
+\end{aligned}\]
+\item Bayes' Theorem (貝葉斯定理或貝氏定理): If \( \{A_i\}_{i \in I} \) is a set of partitions of a sample space \( \Omega \), then,
+\[ \forall 1\leq j\leq |I|\colon P(A_j|B)= \frac{P\qty(A_j)\times P\qty(B\left| A_j\right.)}{\sum_{k=1}^{\qty|I|} P\qty(A_k)\times P\qty(B\left| A_k\right.)} \]
+\end{itemize}
+\subsection{Random Variable (隨機變數)}
+The random variable is a measurable function of which the domain is the sample space of a probability space and the range is typically a subset of real numbers. If the range of it is finite or countable infinite, it is called a discrete random variable; if the range of it is continuous, it is called a continuous random variable; if the range of it is continuous in some parts and discrete in others, it is called a mixed random variable. Given ramdom variable $X$ and sample space $\Omega$, $X=x$ means that event $\{\omega \in \Omega \mid X(\omega) = x\}$ occured. If a random variable $X$ follows a probability distribution $P$, we write $X\sim P$.
+\ssc{Probability Function (機率函數)}
+\sssc{Probability Mass Function (PMF) (機率質量函數) or Probability Function of Discrete Random Variable}
+The probability mass function, denoted as $P(x)$, is a function of which the domain is the range of a discrete random variable and the codomain is $[0,1]$, indicating the probability of events, such that the probability sum of the probability mass function of all elements in its domain is 1.
+\sssc{Probability Density Function (PDF) (機率分布函數) or Probability Function of Continuous Random Variable}
+The probability density function, denoted as $f(x)$, is a function of which the domain is the range of a continuous random variable and the codomain is $[0,1]$, indicating the probability of events, such that the probability sum of the probability density function of all elements in its domain is 1.
+\subsection{Cumulative Distribution Function (CDF) (累積分布函數)}
+Cumulative distribution function is a function $F\colon\mathbb{R}\to[0,1]$ satisfying
+\[\lim_{x\to-\infty}F(x)=0,\quad\lim_{x\to\infty}F(x)=1.\]
+\sssc{For discrete random variables}
+For a discrete random variable \( X \) with probability mass function \( P(x) \), the cumulative distribution function $F$ is given by:
+\[F(x) = P(X\leq x) = \sum_{k \leq x} P(X = k).\]
+\sssc{For continuous random variables}
+For a continuous random variable \( X \) with probability density function \( f(x) \), the cumulative distribution function $F$ is given by:
+\[ F(x) = \int_{-\infty}^xf(t)\,\mathrm{d}t.\]
+\subsection{Probability space (機率空間)}
+A probability space $(\Omega,\Sigma,\mu)$ is a measure space of which $\Omega$ is the sample space of an experiment, $\mu$ is called the probability measure, indicating the probability of events, such that $\mu\colon\Sigma\to [0,1]$, $\mu(\Omega)=1$. The composition function of the random variable and the probability function of an experiment is the probability measure of that experiment.
+\subsection{(Mathematical) Expected Value/Expectation/Expectancy (期望值) or Mean (平均值)}
+\sssc{For discrete random variables}
+For a discrete random variable \( X \) with probability mass function \( P(x) \), the expected value, $E[X]$ or $E(X)$, or mean $\mu_X$, is given by:
+\[ E[X] = \mu_X = \sum_{x\in\text{range}(X)}x\cdot P(x).\]
+\sssc{For continuous random variables}
+For a continuous random variable \( X \) with probability density function \( f(x) \), the expected value, $E[X]$ or $E(X)$, or mean $\mu_X$, is given by:
+\[ E[X] = \mu_X = \int_{-\infty}^{\infty}x\cdot f(x)\,\mathrm{d}x.\]
+\subsection{Variance (變異數)}
+\sssc{For discrete random variables}
+For a discrete random variable \( X \) with probability mass function \( P(x) \), the variance, $\text{Var}(X)$ or $\sigma_X^{\phantom{X}2}$, is given by:
+\[\text{Var}(X) = E[(X - E[X])^2] = \sum_{x \in \text{range}(X)} (x - E[X])^2 \cdot P(x).\]
+\sssc{For continuous random variables}
+For a continuous random variable \( X \) with probability density function \( f(x) \), the variance, $\text{Var}(X)$ or $\sigma_X^{\phantom{X}2}$, is given by:
+\[\text{Var}(X) = E[(X - E[X])^2] = \int_{-\infty}^{\infty} (x - E[X])^2 \cdot f(x) \, \mathrm{d}x.\]
+\subsection{Standard Deviation (標準差)}
+The standard deviation, $\text{SD}(X)$ or $\sigma_X$, is the positive square root of the variance, that is,
+\[\text{SD}(X) = \sqrt{\text{Var}(X)}.\]
+\ssc{Mode (眾數)}
+For a discrete or continuous random variable $X$ with probability function $p(x)$, the mode, $\text{Mode}(X)$, is given by:
+\[\text{Mode}(X)=\arg\max_x(p(x)).\]
+\ssc{Median (中位數)}
+\sssc{For all random variables}
+For a random variable \( X \), the median, $\text{Median}(X)$, is an element in the range of $X$ that satisfies:
+\[P(X\leq \text{Median}(X))\geq\frac{1}{2}\land P(X\geq \text{Median}(X))\geq\frac{1}{2}.\]
+\sssc{For continuous random variables}
+For a continuous random variable $X$ with probability density function $f(x)$, the median, $\text{Median}(X)$, is an element in the range of $X$ such that the cumulative distribution function $F(x)$ of it is $\frac{1}{2}$, that is,
+\[F(\text{Median}(X))=\int_{-\infty}^{\text{Median}(X)}f(x)\,\mathrm{d}x=\frac{1}{2}.\]
+\ssc{Entropy (熵)}
+\sssc{For discrete random variables}
+For a discrete random variable \( X \) with probability mass function \( P(x) \), the entropy, $H(X)$, is given by:
+\[H(X)=-\sum_{i\in D_P}P(i)\log P(i).\]
+\sssc{For continuous random variables}
+For a continuous random variable \( X \) with probability density function \( f(x) \), the entropy, $H(X)$, is given by:
+\[H(X)=-\int_{-\infty}^{\infty}f(x)\log f(x)\,\mathrm{d}x.\]
+\subsection{Affine Transformation}
+There are two random variable $X$ and $Y=aX+b$ where $a,b\in\mathbb{R}$, then,
+\[E[X]=aE[X]+b.\]
+\[\text{Var}(Y)=a^2\text{Var}(X).\]
+\[\text{SD}(Y)=|a|\text{SD}(X).\]
+\[\text{Mode}(Y)=a\text{Mode}(X)+b.\]
+\[\text{Median}(Y)=a\text{Median}(X)+b.\]
+If $X$ is discrete,
+\[H(Y)=\begin{cases}H(X),\quad &a\neq 0\\0,\quad &a=0\end{cases};\]
+if $X$ is continuous,
+\[H(Y)=\begin{cases}H(X)+\log|a|,\quad &a\neq 0\\0,\quad &a=0\end{cases}.\]
+\section{Common Discrete Distribution}
+\subsection{Bernoulli Trial or Binomial Trial}
+\subsubsection{Bernoulli Trial (伯努力試驗) or Binomial Trial (二項試驗)}
+A Bernoulli trial is a random experiment with exactly two possible outcomes, "success" and "failure", in which the probability of success is the same every time the experiment is conducted.
+\subsubsection{Binomial Distribution}
+If the random variable $X$ follows the binomial distribution with number of Bernoulli trials $n\in\mathbb{N}$ and probability of success $p$, we write $X\sim B(n,p)$. The probability of getting exactly $k$ successes in $n$ independent Bernoulli trials (with the same success probability $p$) is given by the probability mass function:
+\[P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}.\]
+$P(X=k)$ when $X\sim B(n,p)$ has the following property:
+\begin{itemize}
+\item If $(n+1)p\in\mathbb{N}\land p\neq 1$, the probability mass function has two modes at $k=(n+1)p$ and $k=(n+1)p-1$; if $p=1$, it has one mode at $k=(n+1)p-1$; otherwise, it has one mode at $\lfloor(n+1)p\rfloor$. The probability mass function is strictly increasing for $k<(n+1)p$ and strictly decreasing for $k>(n+1)p$
+\begin{proof}
+\[K:=\arg\max_{k\in\mathbb{Z},0\leq k\leq n}\left(\binom{n}{k}p^k(1-p)^{n-k}\right),\quad n\in\mathbb{N},p>0.\]
+If $p=1$, it has one mode at $k=(n+1)p-1$; otherwise, let:
+\[g(k):=\frac{P(X=k+1)}{P(X=k)}=\frac{(n-k)p}{(k+1)(1-p)}.\]
+\[g'(k)=\frac{-(n+1)p}{(k+1)^2(1-p)}\leq 0.\]
+\[K-1=\{\min\left(k\text{\ s.t.\ }\frac{n-k}{k+1}>\frac{1-p}{p}\right),\min\left(k\text{\ s.t.\ }\frac{n-k}{k+1}\geq\frac{1-p}{p}\right)\}.\]
+Solve $g(k*)=0$ for $k*$:
+\[\frac{n-(k^*+1)}{(k^*+1)+1}=\frac{1-p}{p}\]
+\[np-(k^*+1)p=(k^*+1)+1-(k^*+1)-p.\]
+\[k^*=(n+1)p.\]
+\end{proof}
+\item The expected value of it is $np$.
+\begin{proof}
+\[\begin{aligned}
+E[X]=&\sum_{k=1}^nk\binom{n}{k}p^k(1-p)^{n-k}\\
+=&\sum_{k=1}^nn\binom{n-1}{k-1}p^k(1-p)^{n-k}\\
+=&np\sum_{k=1}^n\binom{n-1}{k-1}p^{k-1}(1-p)^{n-k}\\
+=&np(p+1-p)^{n-1}\\
+=&np.
+\end{aligned}\]
+\end{proof}
+\item The variance of it is $np(1-p)$.
+\begin{proof}
+\[\begin{aligned}
+E[X^2]=&\sum_{k=0}^nk^2\binom{n}{k}p^k(1-p)^{n-k}\\
+=&np\sum_{k=1}^nk\binom{n-1}{k-1}p^{k-1}(1-p)^{n-k}\\
+=&np\sum_{k=1}^{n-1}k\binom{n-1}{k}p^k(1-p)^{n-1-k}+np\\
+=&np(n-1)p+np\\
+=&n^2p^2-np^2+np
+\end{aligned}\]
+\[\text{Var}(X)=E[X^2]-(E[X])^2=n^2p^2-np^2+np-n^2p^2=np(1-p).\]
+\end{proof}
+\end{itemize}
+\subsubsection{Geometric Distribution}
+If the random variable $X$ follows the geometric distribution with probability of success $p$, we write $X\sim G(p)$ or $X \sim Geo(p)$. The number of Bernoulli trials (with the same success probability $p$) needed to get one success is given by the probability mass function:
+\[P(X=k)=p(1-p)^{k-1}.\]
+$P(X=k)$ when $X\sim G(p)$ has the following property:
+\begin{itemize}
+\item The probability mass function is strictly decreasing.
+\begin{proof}
+\[g(k):=p(1-p)^{k-1}.\]
+\[g'(k)=p\ln(1-p)(1-p)^{k-1}<0.\]
+\end{proof}
+\item $k>j\in\mathbb{N}$,
+\[P(X=k|X>j)=P(X=k-j).\]
+\begin{proof}
+\[\frac{p(1-p)^k}{(1-p)^j}=p(1-p)^{k-j}.\]
+\end{proof}
+\item The expected value of it is $\frac{1}{p}$.
+\begin{proof}
+\[E[X]=\sum_{k=1}^{\infty}kp(1-p)^{k-1}=\sum_{k=1}^{\infty}(k-1)p(1-p)^{k-1}+\sum_{k=1}^{\infty}p(1-p)^{k-1}\]
+\[(1-p)E[X]=\sum_{k=1}^{\infty}kp(1-p)^k\]
+\[E[X]-(1-p)E[X]=pE[X]=\sum_{k=1}^{\infty}p(1-p)^{k-1}=p\frac{1}{1-(1-p)}=1.\]
+\end{proof}
+\item The variance of it is $\frac{1-p}{p^2}$.
+\begin{proof}
+\[E[X^2]=\sum_{k=1}^{\infty}k^2p(1-p)^{k-1}=\sum_{k=1}^{\infty}(k-1)^2p(1-p)^{k-1}+2\sum_{k=1}^{\infty}kp(1-p)^{k-1}-\sum_{k=1}^{\infty}p(1-p)^{k-1}.\]
+\[(1-p)E[X^2]=\sum_{k=1}^{\infty}k^2p(1-p)^k.\]
+\[E[X^2]-2E[X]+1-(1-p)E[X^2]=pE[X^2]-2E[X]+1=0.\]
+\[E[X^2]=\frac{2E[X]-1}{p}=\frac{2-p}{p^2}.\]
+\[\text{Var}(X)=E[X^2]-(E[X])^2=\frac{1-p}{p^2}.\]
+\end{proof}
+\end{itemize}
+\section{Common Continuous Distribution}
+\ssc{Normal distribution (常態分布/正態分布)/Gaussian distribution (高斯分布)}
+\sssc{Probability density function}
+The general normal distribution or Gaussian distribution given by mean $\mu$ and standard deviation $\sigma$ is a continuous probability distribution for a real-valued random variable defined by the probability density function:
+\[f(x|\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}.\]
+\sssc{Cumulative distribution function}
+\[F(x|\mu,\sigma^2)=\frac{1}{2}\left(1+\operatorname{erf}\left(\frac{x-\mu}{\sigma\sqrt{2}}\right)\right),\]
+where $\operatorname{erf}$ is the error function, which is a $\mathbf{C}\to\mathbf{C}$ function defined by:
+\[\operatorname{erf}(z)=\frac{2}{\sqrt{\pi}}\int_0^ze^{-t^2}\,\mathrm{d}t.\]
+\sssc{Mode}
+\[\text{Mode}(x)=\mu\]
+\sssc{Median}
+\[\text{Median}(x)=\mu\]
+\sssc{Entropy}
+\[H(x)=\frac{1}{2}\log\qty(2\pi e\sigma^2).\]
+\sssc{Notation}
+If the random variable $X$ follows the general normal distribution given by mean $\mu$ and standard deviation $\sigma$, we write $X\sim\mathcal{N}(\mu,\sigma^2)$.
+\sssc{Standard (標準)/Unit (單位) Normal Distribution}
+The standard normal distribution or unit normal distribution is the normal distribution given by mean $\mu=0$ and standard deviation $\sigma=1$.
+\begin{itemize}
+\item The probability density function of standard normal distribution, $\varphi(z)$, is
+\[\varphi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}.\]
+\item The cumulative distribution function of standard normal distribution, $\Phi(z)$, is
+\[\Phi(z)=\frac{1}{2}\left(1+\operatorname{erf}\left(\frac{z}{\sqrt{2}}\right)\right).\]
+\item PDF of general normal distribution:
+\[f(x|\mu,\sigma^2)=\frac{1}{\sigma}\varphi\left(\frac{x-\mu}{\sigma}\right).\]
+\item CDF of general normal distribution:
+\[F(x|\mu,\sigma^2)=\Phi\left(\frac{x-\mu}{\sigma}\right).\]
+\end{itemize}
+\section{Discrete-Time Markov Chain (DTMC) (離散時間馬可夫鏈) and Discrete-Time Markov Decision Process (DTMDP) (離散時間馬可夫決定過程)}
+\subsection{Stochastic matrix (隨機矩陣), transition matrix (轉移矩陣), probability matrix (機率矩陣), transition probability matrix (轉移機率矩陣), substitution matrix (替代矩陣), or Markov matrix (馬可夫矩陣)}
+\begin{itemize}
+\item (Left) stochastic matrix, (left) transition matrix, (left) probability matrix, (left) transition probability matrix, (left) substitution matrix, or (left) Markov matrix: A square matrix in which the sum of each row is 1 and each element is greater than or equal to zero.
+\item Right stochastic matrix, right transition matrix, right probability matrix, right transition probability matrix, right substitution matrix, or right Markov matrix: A square matrix in which the sum of each column is 1 and each element is greater than or equal to zero.
+\item Doubly stochastic matrix, doubly transition matrix, doubly probability matrix, doubly transition probability matrix, doubly substitution matrix, or doubly Markov matrix: A matrix that is both a left stochastic matrix and a right stochastic matrix.
+\item Closed property (封閉性) of left stochastic matrix: The matrix product of several left stochastic matrices, the arithmetic mean of several left stochastic matrices, and the positive integer power of a left stochastic matrix are all stochastic matrices.
+\item Closed property of right stochastic matrix: The matrix product of several right stochastic matrices, the arithmetic mean of several right stochastic matrices, and the positive integer power of a right stochastic matrix are all stochastic matrices.
+\item Regularity: A left or right stochastic matrix $\mb{A}$ is regular if there exists at least one $n\in\mathbb{N}_0$ such that every entries in $\mb{A}^n$ is positive.
+\item Singularity: A left or right stochastic matrix is singular if it is not regular.
+\end{itemize}
+\subsection{Discrete-time Markov Chain (DTMC)}
+\begin{itemize}
+\item State $s$: The state of the agent with respect to the environment.
+\item State space $S$: The set of all possible states.
+\item State transition: The transition from a state to next state.
+\item State transition probability $p(s'|s)$: A probability mass function that defines the likelihood of an agent transitioning to $s'$ from $s$.
+\item (State) transition (probability) matrix $P$: Suppose the states could be indexed as $s_i\left(_{i=1}^n\right)$. The state transition matrix is defined to be:
+\[P\in[0,1]^{n\times n}\land P_{ij}:=p(s_j|s_i).\]
+It satisfies:
+\[\forall i\in\mathbb{N}\leq n\colon\sum_{j=1}^nP_{ij}=1\]
+\item Trajectory: A finite or infinite state chain that an agent can take. In a trajectory, the $i$th state is called $s_{i-1}$, making the trajectory $s_0s_1\ldots s_{i-1}s_i\ldots$.
+\item System model, Transition model, or Model: the state transition probability of each state of a DTMC.
+\item Discrete-time Markov chain (DTMC) $(S,p(s'|s))$: A stochastic process describing a sequence of possible events in which the probability of each event depends only on the current state in the previous event. A DTMC is given by a two-tuple of the state space $S$ and state transition probability $p(s'|s)$, that the following property, called Markov property (馬可夫性) or memoryless property (無記憶性或無後效性), holds:
+\[p(s_{t+1}|s_t,s_{t-1},\ldots,s_0)=p(s_{t+1}|s_t).\]
+\item Irreducibility (不可約性): a DTMC is irreducible if for any two states $s_i$ and $s_j$, there exists at least one positive integer $k$ such that $(P^k)_{ij}>0$. A DTMC is irreducible if and only if its state transition matrix $P$ is a regular stochastic matrix.
+\item Period (週期): the period of a state $s_i$ in $S$ is the greatest common divisor of all positive integer $k$ such that $(P^k)_{ii}>0$.
+\item Aperiodicity (非週期性): a state is aperiodic if its period is 1; a DTMC is aperiodic if all states in its state space is aperiodic.
+\item Steady state (穩定狀態或穩態): A probability distribution $\pi$ over $S$ such that $\pi P = \pi$. If a DTMC is irreducible and aperiodic, then it has a unique steady-state distribution $\pi$, and for any probability distribution $\pi'$ over $S$:
+\[\lim_{k\to\infty}\pi'P^k=\pi\]
+\end{itemize}
+\subsection{Discrete-time Markov decision process (DTMDP)}
+\begin{itemize}
+\item State $s$: The state of the agent with respect to the environment.
+\item State space $S$: The set of all possible states.
+\item State transition: The transition from a state to next state.
+\item Action: A choice the agent can make to interact with the environment, changing its state.
+\item Action space of a state $A_s$: The set of all possible actions of a state $s$.
+\item (State) transition (probability) matrix (of an action) $p(s'|s,a)$: A probability mass function that defines the likelihood of an agent transitioning to $s'$ given that the agent takes an action $a$ in a state $s$.
+\item Policy $\pi(a|s)$: A policy is a probability function from the state space to the action spaces an agent follows to select actions based on its current state. It defines the conditional probability of the agent taking action $a$ when in state $s$.
+\item Deterministic policy: A policy is deterministic if, for each state $s$, there exists exactly one action $a$ such that $\pi(a|s)=1$ and $\pi(a'|s)=0$ for all other actions $a'\neq a$.
+\item Stochastic policy: A policy that is not deterministic.
+\item State transition probability (given a policy) $p_{\pi}(s'|s)$:
+\[p_{\pi}(s'|s):=\sum_a\pi(a|s)p(s'|s,a).\]
+\item State transition matrix (given a policy) $P_{\pi}$: Suppose the states could be indexed as $s_i\left(_{i=1}^n\right)$. The state transition matrix of a policy $\pi$ is defined to be:
+\[P_{\pi}\in[0,1]^{n\times n}\land (P_{\pi})_{ij}:=p_{\pi}(s_j|s_i).\]
+It satisfies:
+\[\forall i\in\mathbb{N}\leq n\colon\sum_{j=1}^nP_{ij}=1\]
+\item Reward $r$: A real number the agent gets after taking a action.
+\item Reward transition probability $p(r|s,a)$: A probability mass function that defines the likelihood of an agent receiving reward $r$ given that the agent takes an action $a$ in a state $s$.
+\item Reward (given a policy) $r_{\pi}(s)$:
+\[r_{\pi}(s):= E[r|S_t=s,A_t=a]=\sum_a\pi(a|s)\sum_rp(r|s,a)r.\]
+\item Reward vector (given a policy) $r_{\pi}$: Suppose the states could be indexed as $s_i\left(_{i=1}^n\right)$. The reward vector of a policy $\pi$ is defined to be:
+\[r_{\pi}:=[r_{\pi}(s_i)\left(_{i=1}^n\right)]^{\top}\in\mathbb{R}^n.\]
+\item Trajectory: A finite or infinite state-action-reward chain that an agent can take by taking a chain of actions in the action space of the state it's in, moving along a chain of states in the state space, and receiving rewards along the way. In a trajectory, the $i$th state is called $s_{i-1}$, the $i$th action taken is called $a_{i-1}$, the $i$th reward received is called $r_i$, making the trajectory $s_0\xrightarrow[r_1]{a_0}s_1\ldots s_{i-1}\xrightarrow[r_i]{a_{i-1}}s_i\ldots$.
+\item Return: The sum of all rewards the agent receives along a trajectory.
+\item Discounted return $G_t$: The discounted reward $G_t$ at step $t$ given that the discount rate is $\gamma\in[0,1)$, the reward at step $i$ is $r_i$, and the final step in the trajectory is the step $t+n$ ($n=\infty$ for infinite trajectory), is defined to be:
+\[G_t:=\sum_{i=0}^n\gamma^ir_{t+i}.\]
+\item Terminal state: The state that the agent is in after its last action in a finite trajectory.
+\item Episode or Trial: A trajectory with a terminal state.
+\item Episodic task: A task with a terminal state.
+\item Continuing task: A task without a terminal state.
+\item Target state: The terminal state in a finite trajectory, or the state that the agent stays in since a specific action is taken and that the agent takes a same action that doesn't change its state afterwards in an infinite trajectory. Not all infinite trajectories have a target state.
+\item Absorbing state: A target state in an infinite trajectory that any action of the agent after it yields zero reward. Not all infinite trajectories have an absorbing state.
+\item System model, Transition model, or Model: the state transition probability of each action in the action space of each state, and the reward transition probability of each action in the action space of each state of a DTMDP.
+\item Discrete-time Markov decision process (DTMDP) $(S,A_s,p(s'|s,a),p(r|s,a))$: A DTMDP is given by a four-tuple of the state space $S$, the action spaces $A_s$ of each state $s$, the state transition probability $p(s'|s,a)$ of each action $a$ in the action space of each state $s$, and the reward transition probability $p(r|s,a)$ of each action $a$ in the action space of each state $s$, that the following property, called Markov property or memoryless property, holds:
+\[\begin{aligned}
+& p(S_{t+1}|A_t,S_t,A_{t-1},S_{t-1},\ldots,A_0,S_0)=p(S_{t+1}|A_t,S_t),\\
+& p(R_{t+1}|A_t,S_t,A_{t-1},S_{t-1},\ldots,A_0,S_0)=p(R_{t+1}|A_t,S_t).
+\end{aligned}\]
+If a policy is given, a DTMDP becomes a DTMC.
+\item State value $v_{\pi}(s)$: The state value, a function of state $s$ given the policy $\pi$, is the expected value of the discounted return $G_t$ given $S_t=s$, that is,
+\[v_{\pi}(s):= E[G_t|S_t=s].\]
+\item State value vector $v_{\pi}$: Suppose the states could be indexed as $s_i\left(_{i=1}^n\right)$. The state value vector of a policy $\pi$ is defined to be:
+\[v_{\pi}:=[v_{\pi}(s_i)\left(_{i=1}^n\right)]^{\top}\in\mathbb{R}^n.\]
+\item Policy evaluation: Given a policy, finding out the corresponding state values of all states is called policy evaluation.
+\item Action value or Q-value $q_{\pi}(s,a)$ or $Q^{\pi}(s,a)$: The action value, a function of state-action pair $(s,a)$ given the policy $\pi$, is the expected value of the discounted return $G_t$ given $S_t=s$ and $A_t=a$, that is,
+\[q_{\pi}(s,a):= E[G_t|S_t=s,A_t=a]= E[R_{t+1}+\gamma v_{\pi}(S_{t+1})|S_t=s,A_t=a].\]
+\item Optimal Policy $\pi^*$: Given two policies $\pi_1$ and $\pi_2$, if
+\[v_{\pi_1}(s)\geq v_{\pi_2}(s),\quad\forall s\in S,\]
+then we say $\pi_1$ is "better" than $\pi_2$.\\
+A policy $\pi^*$ is optimal if for any other policy $\pi$
+\[v_{\pi^*}(s)\geq v_{\pi}(s),\quad\forall s\in S.\]
+Given a DTMDP, there must exist an optimal policy, but it is not necessarily unique.
+\end{itemize}
+\subsection{Bellman Equation}
+\subsubsection{Bellman Equation Elementwise Form}
+The elementwise form of the Bellman equation of a given policy $\pi$ is
+\[\begin{aligned}
+v_{\pi}(s)=& E[G_t|S_t=s]\\
+=& E[R_{t+1}|S_t=s]+\gamma E[G_{t+1}|S_t=s]\\
+=&\sum_a\pi(a|s)\sum_rp(r|s,a)r+\gamma\sum_a\pi(a|s)\sum_{s'}p(s'|s,a)v_{\pi}(s')\\
+=&\sum_a\pi(a|s)\left(\sum_rp(r|s,a)r+\gamma\sum_{s'}p(s'|s,a)v_{\pi}(s')\right)\\
+=&r_{\pi}(s)+\gamma\sum_{s'}p_{\pi}(s'|s)v_{\pi}(s'),\quad\forall s\in S.
+\end{aligned}\]
+\subsubsection{Bellman Equation Matrix-Vector Form}
+The matrix-vector form of the Bellman equation of a given policy $\pi$ is
+\[v_{\pi}=r_{\pi}+\gamma P_{\pi}v_{\pi}.\]
+\subsubsection{Bellman Equation Closed Form Solution}
+\[v_{\pi}=(I-\gamma P_{\pi})^{-1}r_{\pi}.\]
+\subsubsection{Bellman Equation Iterative Solution Matrix-Vector Form}
+Consider a sequence $\{v_k\}$ where $v_0$ is any arbitrary vector $\in\mathbb{R}^{|S|}$, and
+\[v_k=r_{\pi}+\gamma P_{\pi}v_{k-1},\quad k\in\mathbb{N},\]
+then
+\[v_{\pi}=\lim_{k\to\infty}v_k.\]
+In practice, we usually stop when $\|v_k-v_{k-1}\|$ is sufficiently small or when $k$ is sufficiently large.
+\subsubsection{Bellman Equation Iterative Solution Elementwise Form}
+Consider a sequence $\{v_k(s)\}$ where $v_0(s)$ is any arbitrary value, and
+\[v_k=\sum_a\pi(a|s)\left(\sum_rp(r|s,a)r+\gamma\sum_{s'}p(s'|s,a)v_{k-1}(s)\right),\quad k\in\mathbb{N},\]
+then
+\[v_{\pi}(s)=\lim_{k\to\infty}v_k.\]
+In practice, we usually stop when $|v_k(s)-v_{k-1}(s)|$ is sufficiently small or when $k$ is sufficiently large.
+\subsubsection{Value Improvement Theorem}
+Consider a sequence $\{v_k\}$ where $v_0$ is any arbitrary vector $\in\mathbb{R}^{|S|}$, and
+\[v_k=r_{\pi}+\gamma P_{\pi}v_{k-1},\quad k\in\mathbb{N},\]
+then
+\[v_{k+1}\geq v_k.\] 
+\subsection{State-Action Value Function or Value Function (VF)}
+Compare
+\[v_{\pi}(s)=\sum_a\pi(a|s)q_{\pi}(s,a)\]
+and the Bellman equation, we have the action-value function:
+\[q_{\pi}(s,a)=\sum_rp(r|s,a)r+\gamma\sum_{s'}p(s'|s,a)v_{\pi}(s').\]
+\subsection{Contraction Mapping Theorem}
+\subsubsection{Fixed Point}
+Given $f\colon X\to X$, $x\in X$ is a fixed point if
+\[f(x)=x.\]
+\subsubsection{Contraction Mapping or Contractive Function}
+$f\colon X\to X$ is a contraction mapping if
+\[\exists\gamma\in[0,1)\colon\|f(x_1)-f(x_2)\|\leq\gamma\|x_1-x_2\|,\quad\forall x_1,x_2\in X,\]
+where $\|\cdot\|$ can be any vector norm.
+\subsubsection{Contraction Mapping Theorem}
+For any contraction mapping,
+\begin{itemize}
+\item Existence: there exists a fixed point $x^*$ satisfying $f(x^*)=x^*$.
+\item Uniqueness: the fixed point $x^*$ is unique.
+\item Algorithm: Consider a sequence $\{x_k\}$ where $x_0$ is any arbitrary value and $x_{k+1}=f(x_k),\quad k\in\mathbb{N}$, then
+\[\lim_{k\to\infty}x_k=x^*.\]
+Moreover, the convergence rate is exponential and determined by $\gamma$.
+\end{itemize}
+\subsection{Bellman Optimality Equation (BOE)}
+\subsubsection{Bellman Optimality Equation Elementwise Form}
+\[v(s)=\max_{\pi}\left(\sum_a\pi(a|s)q(s,a)\right),\quad s\in S.\]
+\subsubsection{Bellman Optimality Equation Matrix-Vector Form}
+\[v=\max_{\pi}\left(r_{\pi}+\gamma P_{\pi}v_{\pi}\right).\]
+\subsubsection{Value Iteration (VI) Matrix-Vector Form}
+Let
+\[f(v)=\max_{\pi}\left(r_{\pi}+\gamma P_{\pi}v\right),\]
+where $v$ is a state value given policy $\pi$.\\
+Because $f(v)$ is a contraction mapping, it satisfies the contraction mapping theorem, that is,
+\begin{itemize}
+\item Existence and uniqueness:
+\[\exists!v^*\text{\ such that\ }v^*=f(v^*),\]
+\item Iterative algorithm: Consider a sequence $\{v_k\}$ where $v_0$ is any arbitrary value, and $v_k=f(v_{k-1}),\quad k\in\mathbb{N}$. It converges to $v^*$ in an exponential rate determined by $\gamma$ as $k$ approaching $\infty$.
+\end{itemize}
+One iteration in the value iteration algorithm,
+\[v_{k+1}=f(v_k)=\max_{\pi}\left(r_{\pi}+\gamma P_{\pi}v_k\right),\quad k+1\in\mathbb{N},\]
+can be decomposed into two steps,
+\begin{enumerate}
+\item \textbf{Policy update (PU)}: Solve 
+\[\pi_{k+1}=\arg\max_{\pi}(r_{\pi}+\gamma P_{\pi}v_k)\]
+for $\pi_{k+1}$ given $v_k$.
+\item \textbf{Value update (VU)}: Solve 
+\[v_{k+1}=r_{\pi_{k+1}}+\gamma P_{\pi_{k+1}}v_k),\]
+for $v_{k+1}$ given $\pi_{k+1}$ and $v_k$.
+\end{enumerate}
+In practice, we usually stop when $\|v_k-v_{k-1}\|$ is sufficiently small or when $k$ is sufficiently large.
+\subsubsection{Value Iteration (VI) Elementwise Form}
+In elementwise form, the two steps of value iteration can be written as,
+\begin{enumerate}
+\item \textbf{Policy update (PU)}: Solve
+\[\pi_{k+1}(s)=\arg\max_{\pi}\sum_a\pi(a|s)q_{\pi_k}(s,a),\quad s\in S\]
+for $\pi_{k+1}(s)$ given $v_k(s')$ for all $s'\in S$.\\
+Let $a^*_k(s)=\arg\max_aq_{\pi_k}(s,a)$. We select
+\[\pi_{k+1}(a|s)=\begin{cases}1,\quad a=a^*_k(s)\\0,\quad a\neq a^*_k(s)\end{cases},\]
+called "greedy policy" because it simply selects the greatest policy value.
+\item \textbf{Value update (VU)}: Solve
+\[v_{k+1}(s)=\sum_a\pi_{k+1}(a|s)q_{\pi_k}(s,a),\quad s\in S\]
+for $v_{k+1}(s)$ given $\pi_{k+1}(a|s)$ for all $a\in A_s$ for all $s\in S$, and $v_k(s')$ for all $s'\in S$.\\
+Since $\pi_{k+1}(a|s)$ is greedy,
+\[v_{k+1}(s)=\max_aq_{\pi_k}(s,a).\]
+\end{enumerate}
+In practice, we usually stop when $|v_k(s)-v_{k-1}(s)|$ is sufficiently small or when $k$ is sufficiently large.
+\subsubsection{Optimality Theorem}
+Suppose $v^*$ is the solution to a Bellman optimality equation, that is, 
+\[v^*=\max_{\pi}\left(r_{\pi}+\gamma P_{\pi}v^*\right).\]
+Suppose
+\[\pi^*=\arg\max_{\pi}\left(r_{\pi}+\gamma P_{\pi}v^*\right).\]
+Then 
+\[v^*=r_{\pi^*}+\gamma P_{\pi^*}v^*.\]
+$v^*$ is the optimal state value, and $\pi^*$ is the optimal policy.
+\subsubsection{Optimal Policy Invariance Theorem}
+Consider a Markov decision process with $v^*\in\mathbb{R}^{|S|}$ as the optimal state value satisfying $v^*=\max_{\pi}(r_{\pi}+\gamma P_{\pi}v^*$. If every reward $r$ is changed by an affine transformation to $ar+b$, where $a,b\in\mathbb{R}$ and $a\neq 0$, then the corresponding optimal state value $v'$ is also an affine transformation of $v^*$:
+\[v'=av^*+\frac{b}{1-\gamma}\mathbf{1},\]
+where $\gamma\in[0,1)$ is the discount rate and $\mathbf{1}=[1,\ldots,1]^{\top}\in\mathbb{R}^{|S|}$.\\
+Consequently, the optimal policies are invariant to any affine transformation of the reward signals.
+\subsubsection{Policy Improvement Theorem}
+If 
+\[\pi_{k+1}=\arg\max_{\pi}(r_{\pi}+\gamma P_{\pi}v_{\pi_k}),\]
+then $\|v_{\pi_{k+1}}\|\geq\|v_{\pi_k}\|$ for any $k$.
+\subsubsection{Convergence of Policy Iteration Theorem}
+The state value sequence $\{v_{\pi_k}\}_{k=0}^{\infty}$ generated by the policy iteration algorithm converges to the optimal state value $v^*$. Consequently, the policy sequc $\{\pi_k\}_{k=0}^{\infty}$ coverages to an optimal policy.
+\subsubsection{Policy Iteration (PI) Matrix-Vector Form}
+An arbitrary initial policy $\pi_0$ is given. One iteration in the policy iteration algorithm can be decomposed into two steps,
+\begin{enumerate}
+\item \textbf{Policy evaluation (PE)}: Solve the Bellman equation
+\[v_{\pi_k}=r_{\pi_k}+\gamma P_{\pi_k}v_{\pi_k}\]
+for $v_{\pi_k}$ given $\pi_k$.
+\item \textbf{Policy improvement (PI)}: Solve
+\[\pi_{k+1}=\arg\max_{\pi}(r_{\pi}+\gamma P_{\pi}v_{\pi_k})\]
+for $\pi_{k+1}$ given $v_{\pi_k}$.
+\end{enumerate}
+In practice, we usually stop when $\|v_{\pi_k}-v_{\pi_{k-1}}\|$ is sufficiently small or when $k$ is sufficiently large.
+\subsubsection{Policy Iteration (PI) Elementwise Form}
+In elementwise form, the two steps of policy iteration can be written as,
+\begin{enumerate}
+\item \textbf{Policy evaluation (PE)}: Solve the Bellman equation
+\[v_{\pi_k}(s)=\sun_a\pi(a|s)q_{\pi_k}(s,a),\quad s\in S\]
+for $v_{\pi_k}$ given $\pi_k$.
+\item \textbf{Policy improvement (PI)}:\\
+Solve
+\[\pi_{k+1}(s)=\arg\max_{\pi}\sum_a\pi(a|s)q_{\pi_k}(s,a),\quad s\in S\]
+for $\pi_{k+1}(s)$ given $v_{\pi_k}(s)$.\\
+Let $a^*_k(s)=\arg\max_aq_{\pi_k}(s,a)$. We select
+\[\pi_{k+1}(a|s)=\begin{cases}1,\quad a=a^*_k(s)\\0,\quad a\neq a^*_k(s)\end{cases},\]
+called "greedy policy" because it simply selects the greatest policy value.
+\end{enumerate}
+In practice, we usually stop when $|v_{\pi_k}(s)-v_{\pi_{k-1}}(s)|$ is sufficiently small or when $k$ is sufficiently large.
+\subsubsection{Truncated Policy Iteration}
+The truncated policy iteration is the same as policy iteration with the policy evaluation step using the iterative solution but stopped when $\|v_k-v_{k-1}\|$ is sufficiently small or when $k$ is sufficiently large. If stopping when $k=1$, the truncated policy iteration becomes value iteration except that the first iteration lacks value update and is initialized with an arbitrary policy; if stopping when $k=\infty$, the truncated policy iteration becomes policy iteration.
+\end{document}

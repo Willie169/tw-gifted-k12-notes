@@ -1,0 +1,163 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{單變數實多項式函數}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{單變數實多項式函數}
+\subsection{多項式（Polynomial）}
+指由多個項（term）組成的代數表達式，每個項是常數（稱該項係數（coefficient））與零或正整數（為零則該項稱常數項（constant term））個變數的非負整數冪次的乘積。 
+\ssc{單變數實多項式函數定理}
+下$f(x)$、$g(x)$、$q(x)$、$r(x)$均為$x$的實多項式，$a$、$b$為非零實數。
+\sssc{領導係數（leading coefficient）}
+指單變數多項式的最高次項係數。
+\sssc{最高次項次數}
+\[\deg(af(x)\cdot g(x))=\deg(f(x))+\deg(g(x))\]
+\[\deg(af(x)+bg(x))\leq\max(\deg(f(x)),\deg(g(x)))\]
+\sssc{除法原理/商定則（Quotient rule）}
+恰有一組$q(x)$、$r(x)$滿足：
+\[f(x)=g(x)\cdot q(x)+r(x),\quad\deg(r(x))<\deg(g(x))\lor r(x)=0\]
+稱被除式$f(x)$除以除式$g(x)$的商式為$q(x)$、餘式為$r(x)$。若$r(x)=0$則$q(x)$為$f(x)$的因式，$f(x)$為$q(x)$的倍式。
+\sssc{餘式定理}
+$f(x)$除以$(ax+b)$的餘式為$f\qty(\frac{b}{a})$。
+\sssc{因式定理}
+$f\qty(\frac{b}{a})=0$若且惟若$ax+b$為$f(x)$的因式。
+\sssc{恆等定理}
+兩$n$次多項式$f(x)$與$g(x)$，若存在$n+1$個相異數$a$使得$f(a)=g(a)$，則$f(x)=g(x)$。
+\subsection{零函數}
+\[f(x)=0\]
+\subsection{一元一次函數}
+$a\neq 0$
+\subsubsection{一般式、標準式}
+\[f(x)=ax+b\]
+其中$a$稱斜率，$b$稱$y$截距。
+\subsubsection{線性函數（Linear function）}
+零函數與一元一次函數合稱線性函數。
+\subsubsection{圖形特徵}
+\begin{itemize}
+\item 直線。
+\item 二階旋轉對稱點：圖形上任一點。
+\item 沒有反曲點。
+\end{itemize}
+\sssc{根數}
+一實根。
+\subsection{一元二次函數}
+$a\neq 0$
+\subsubsection{一般式}
+\[f(x)=ax^2+bx+c\]
+\subsubsection{標準式}
+\[f(x)=a(x-h)^2+k\]
+其中$ (h,k)=\qty(-\frac{b}{2a},-\frac{b^2-4ac}{4a})$
+\subsubsection{判別式}
+\[\Delta=b^2-4ac\]
+\subsubsection{根}
+\[x =\frac{-b\pm\sqrt{b^2-4ac}}{2a}=\frac{-b\pm\sqrt{\Delta}}{2a}\]
+\subsubsection{圖形特徵}
+\begin{itemize}
+\item 拋物線。
+\item 頂點、極值點、最值點：$(h,k)$。
+\item 對稱軸：$x=h$。
+\item 開口：$a$為正，開口向上；$a$為負，向下。$|a|$愈大，開口愈小。
+\item 沒有反曲點。
+\end{itemize}
+\sssc{根數}
+\begin{itemize}
+\item $\Delta>0$：二相異實根。
+\item $\Delta=0$：一實根且為二重根。
+\item $\Delta<0$：無實根，二相異共軛虛根，$a>0$則$f(x)>0$，$a<0$則$f(x)<0$。
+\end{itemize}
+\sssc{根與係數關係}
+令根$\alpha$、$\beta$
+\[\alpha+\beta=-\frac{b}{a}\]
+\[\alpha\beta=\frac{c}{a}\]
+\subsection{一元三次函數}
+$a\neq 0$
+\subsubsection{一般式}
+\[f(x)=ax^3+bx^x+cx+d\]
+\subsubsection{標準式}
+\[f(x)=a(x-h)^3+p(x-h)+k\]
+其中$(h,p,k)=\qty(-\frac{b}{3a},c-\frac{b^2}{3a},\frac{2b^3-9abc}{27a^2}+d)$
+\subsubsection{判別式}
+\[\Delta = 18abc - 4a^3c + a^2b^2 - 4b^3 - 27c^2\]
+\subsubsection{根}
+\bma
+x =& -\frac{b}{3a}+e^{\frac{i2\pi k}{3}}\sqrt[3]{\frac{bc}{6a^2}-\frac{b^3}{27a^3}-\frac{d}{2a}+\sqrt{\left(\frac{bc}{6a^2}-\frac{b^3}{27a^3}-\frac{d}{2a}\right)^2+\left(\frac{c}{3a}-\frac{b^2}{9a^2}\right)^3}}\\
+&+ e^{-\frac{i2\pi k}{3}}\sqrt[3]{\frac{bc}{6a^2}-\frac{b^3}{27a^3}-\frac{d}{2a}},\quad k=0,1,2
+\eam
+\subsubsection{圖形特徵}
+\begin{itemize}
+\item 頂點、二階旋轉對稱點、反曲點：$(h,k)$。
+\item 開口：$a>0$則$x>h$時向上、$x<h$時向下；$a<0$則$x<h$時向上、$x>h$時向下。
+\item 極值：$ap<0$若且惟若存在二個極值點，$p=0$若且惟若存在一個極值點（圖形單調遞增或減），$ap>0$若且惟若不存在極值點（圖形嚴格遞增或減）。
+\item 最值點：不存在。
+\item 發散：$a$為正，$x\to\infty$向上發散，$x\to -\infty$向下發散；$a$為負，$x\to\infty$向下發散，$x\to -\infty$向上發散。$|a|$愈大，發散愈快。
+\item 頂點處斜率：$p$
+\end{itemize}
+\sssc{根數}
+\begin{itemize}
+\item $\Delta>0$：三相異實根。
+\item $\Delta=0$：一實根且為三重根或二相異實根且其一為二重根。
+\item $\Delta<0$：一實根，二相異共軛虛根。
+\end{itemize}
+\sssc{根與係數關係}
+令根$\alpha$、$\beta$、$\gamma$
+\[\alpha+\beta+\gamma=-\frac{b}{a}\]
+\[\alpha\beta+\beta\gamma+\gamma\alpha=\frac{c}{a}\]
+\[\alpha\beta\gamma=-\frac{d}{a}\]
+\sssc{卡丹諾公式（Cardino's formula）}
+$x^3=px+q$的判別式為：
+\[\Delta=4p^3-27q^2\]
+根為：
+\bma
+x&=e^{\frac{i2\pi k}{3}}\sqrt[3]{\frac{q}{2}+\sqrt{\frac{q^2}{4}-\frac{p^3}{27}}}+e^{-\frac{i2\pi k}{3}}\sqrt[3]{\frac{q}{2}-\sqrt{\frac{q^2}{4}-\frac{p^3}{27}}},\quad k=0,1,2\\
+&=e^{\frac{i2\pi k}{3}}\sqrt[3]{\frac{q}{2}+\sqrt{\frac{-\Delta}{108}}}+e^{-\frac{i2\pi k}{3}}\sqrt[3]{\frac{q}{2}-\sqrt{\frac{-\Delta}{108}}},\quad k=0,1,2
+\eam
+\subsection{單變數實多項式函數的導函數}
+\[\frac{\mathrm{d}}{\mathrm{d}x}x^n = n \cdot x^{n-1}\]
+\begin{proof}
+\bma
+\frac{\mathrm{d}}{\mathrm{d}x}x^n &= \lim_{\Delta x \to 0} \frac{(x + \Delta x)^n - x^n}{\Delta x}\\
+&= \lim_{\Delta x \to 0}\frac{\qty(\sum_{k=0}^{n} \binom{n}{k} x^{n-k} (\Delta x)^k) - x^n}{\Delta x}\\
+&= \lim_{\Delta x \to 0}\frac{\sum_{k=1}^{n} \binom{n}{k} x^{n-k} (\Delta x)^k}{\Delta x}\\
+&= \lim_{\Delta x \to 0}\sum_{k=1}^{n} \binom{n}{k} x^{n-k} (\Delta x)^{k-1}\\
+&= n x^{n-1}
+\eam
+\end{proof}
+\subsection{多項式插值法（Polynomial Interpolation）}
+給定：
+\[A=\{a_k\mid k\in\mathbb{N}_0\land k\leq n\}\subseteq\mathbb{R}\text{\ s.t.\ }\forall i\neq j\colon a_i\neq a_j,\]
+\[B=\{b_k\mid k\in\mathbb{N}_0\land k\leq n\}\subseteq\mathbb{R},\]
+多項式插值法指找​​到一個次數最多為 $n$ 的多項式 $p(x)$ 使得：
+\[\forall k\in\mathbb{N}_0\land k\leq n\colon p(a_k)=b_k\]
+的方法。
+\subsubsection{牛頓插值法（Newton's Polynomial）}
+定義差商（divided difference）：
+\[\begin{cases}
+f[a_i]=b_i,\quad& i\in\mathbb{N}_0\land i\leq n,\\
+f[a_i,a_{i+1}]=\frac{f[a_{i+1}]-f[a_i]}{a_{i+1}-a_i},\quad& i\in\mathbb{N}_0\land i\leq n-1,\\
+f[(a_i)_{i=j}^k]=\frac{f[(a_i)_{i=i+1}^k]-f[(a_i)_{i=j}^{k-1}]}{a_k-a_j},\quad j<k\leq n\land j,k\in\mathbb{N}_0.
+\end{cases}\]
+則：
+\[p(x)=\sum_{k=0}^nf[(a_i)_{i=0}^k]\prod_{i=0}^{k-1}(x-a_i).\]
+\subsubsection{拉格朗日插值法（Lagrange Polynomial）}
+\textbf{標準形式}：
+定義基函數（base function）：
+\[\ell_k(x)=\prod_{a\in A\setminus\{a_k\}}\frac{x-a}{a_k-a}\]
+則：
+\[p(x)=\sum_{k=0}^nb_k\ell_k(x).\]
+\textbf{重心形式（Barycentric form）}：
+定意權重（weight）：
+\[w_k=\prod_{a_i\in A\setminus\{a_k\}}\frac{1}{a_k-a_i}\]
+則：
+\[p(x)=\begin{cases}
+\frac{\sum_{k=0}^n\frac{b_kw_k}{x-a_k}}{\sum_{k=0}^n\frac{w_k}{x-a_k}},\quad& x\notin A.\\
+b_k,\quad x=a_k\in A.
+\end{cases}\]
+\end{document}

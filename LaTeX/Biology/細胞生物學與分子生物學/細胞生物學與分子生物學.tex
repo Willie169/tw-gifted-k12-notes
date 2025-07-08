@@ -1,0 +1,692 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{細胞生物學與分子生物學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{細胞生物學（Cell Biology）與分子生物學（Molecular Biology）}
+\section{生命現象}
+生物體指可表現全部生命現象的完整個體。生命現象包括：
+\begin{itemize}
+\item 代謝：生物體內化學反應的總稱。分為：
+\begin{itemize}
+\item 同化代謝：小分子合成大分子，多消耗能量。
+\item 異化代謝：大分子分解成小分子，多釋放能量。
+\end{itemize}
+\item 生長：生物體的細胞體積增大或數目增加。
+\item 感應：生物體能接受刺激而產生反應。
+\item 繁殖：生物體產生新生物體並將親代特徵傳遞給子代。
+\end{itemize}
+\section{病毒}
+\subsection{地位}
+缺乏生長與感應能力，且無法獨立於宿主表現代謝與繁殖，處於生物與非生物之間。
+\subsection{構造}
+主要由外部的蛋白質外殼與中心的遺傳物質核酸（DNA或RNA）所構成。有些病毒在蛋白質外殼外還有一層由寄主細胞膜或核膜而來的套膜，為雙層磷脂質，如流感病毒與愛滋病病毒等，套膜上具有病毒特殊的醣蛋白分子，可協助病毒感染進入寄主細胞。無套膜的病毒，其特殊的醣蛋白分子則位於蛋白質外殼上。
+\subsection{專一性}
+可以感染各種生物體，且對宿主細胞具有一定專一性，與套膜上的醣蛋白有關。例如：可感染細菌者稱噬菌體；可感染動物者稱動物病毒，如流感病毒；可感染植物者稱植物病毒，如菸草鑲嵌病毒。
+\subsection{絕對寄生}
+大多數病毒缺乏酵素系統，在寄主細胞外無法表現代謝及繁殖等生命現象，且病毒也無法靠自己運動。
+\subsection{繁殖}
+病毒的繁殖必須在宿主細胞中，利用細胞的酵素系統與核糖體，才能製造蛋白質外殼並複製遺傳物質，再組裝成新的病毒顆粒。新的病毒顆粒可以藉由將寄主細胞瓦解或出芽等方式釋出，再感染新的宿主細胞。
+\subsection{大小}
+通常介於20至400nm，需要使用電子顯微鏡才能觀察。
+\subsection{遺傳物質}
+病毒的遺傳物質為DNA或RNA，不同時使用兩者。遺傳物質為DNA者稱DNA病毒，如腺病毒與B型肝炎病毒等；遺傳物質為RNA者稱RNA病毒，如流感病毒、愛滋病病毒、菸草鑲嵌病毒、A型肝炎病毒、新冠肺炎病毒等。
+\subsection{巴爾的摩病毒分類系統（Baltimore classification）}
+\begin{itemize}
+\item 第一組（Group I） 雙鏈DNA病毒（dsDNA viruses）：腺病毒科、疱疹病毒科和痘病毒科。
+\item 第二組（Group II） 單鏈DNA病毒（ssDNA viruses）：細小病毒科。
+\item 第三組（Group III）雙鏈RNA病毒（dsRNA viruses）：呼腸孤病毒科。
+\item 第四組（Group IV）正義單鏈RNA病毒（(+)ssRNA viruses）：微小核糖核酸病毒科、披膜病毒科和冠狀病毒科。
+\item 第五組（Group V）反義單鏈RNA病毒（(-)ssRNA viruses）：正黏液病毒科和炮彈病毒科。
+\item 第六組（Group VI）單鏈RNA逆轉錄病毒（ssRNA-RT viruses）：逆轉錄病毒科。
+\item 第七組（Group VII）雙鏈DNA逆轉錄病毒（dsDNA-RT viruses）：肝病毒科。
+\end{itemize}
+\section{尺寸}
+\bct\bfH\ctr\begin{tabular}{|c|c|}
+\hline
+物質 & 長度量級 \\\hline
+原子 & 10$^{-10}$m \\\hline
+小分子 & 10$^{-9}$m \\\hline
+核酸 & 10$^{-8}$m \\\hline
+蛋白質 & 10$^{-8}$m \\\hline
+病毒 & 10$^{-7}$m \\\hline
+葉綠體 & 10$^{-6}$m \\\hline
+粒線體 & 10$^{-6}$m \\\hline
+細菌 & 10$^{-5}$m \\\hline
+動植物細胞 & 10$^{-4}$m \\\hline
+頭髮 & 10$^{-3}$m \\\hline
+\end{tabular}\ef\FB\ect
+\section{細胞學說（Cell Theory）}
+細胞學說主張：
+\begin{enumerate}
+\item 所有生物體都是由細胞構成的。
+\item 細胞是生物體結構和功能的基本單位。
+\item 所有細胞都是由已經存在的細胞分裂而來的。
+\end{enumerate}
+\section{不同生物細胞的比較}
+\bct\bfH\ctr\icg[width=0.7\textwidth]{cell.png}\caption{真核細胞與原核細胞}\ef\FB\ect
+\bct\bfH\ctr\icg[width=0.8\textwidth]{animal_cell.png}\caption{動物細胞}\ef\FB\ect
+\bct\bfH\ctr\icg[width=0.9\textwidth]{plant_cell.png}\caption{植物細胞}\ef\FB\ect
+\subsection{古細菌原核細胞（Archaea）}
+\begin{itemize}
+  \item 細胞核：無核膜、細胞核
+  \item 細胞壁：多數有，通常不含肽聚糖，成分多樣
+  \item 細胞膜：具有獨特的脂類結構，與其他生物不同
+  \item 胞器：僅有無膜結構的胞器，如核糖體
+  \item 代謝方式：多樣，包括呼吸作用、發酵作用等，能在極端環境 下生存
+  \item 單或多細胞生物：主要是單細胞
+  \item 大小：通常0.1至15微米
+  \item 細胞分裂：二分裂法
+\end{itemize}
+\subsection{真細菌原核細胞（Bacteria）}
+\begin{itemize}
+  \item 細胞核：無核膜、細胞核
+  \item 細胞壁：有，主要含肽聚糖，革蘭氏陽性細菌含厚層肽聚糖，革蘭氏陰性細菌含薄層肽聚糖和外膜
+  \item 細胞膜：由磷脂雙層構成
+  \item 胞器：僅有無膜結構的胞器，如核糖體。藍綠菌為水生、有葉綠素等光合作用所需色素，但無葉綠體
+  \item 代謝方式：多樣，包括光合作用、有氧呼吸、無氧呼吸、酒精發酵、乳酸發酵、異質乳酸發酵、雙歧桿菌途徑異質乳酸發酵等。
+  \item 單或多細胞生物：主要是單細胞
+  \item 大小：通常0.5至5微米
+  \item 細胞分裂：二分裂法
+\end{itemize}
+\subsection{原生植物細胞（Protist Plant-like）}
+\begin{itemize}
+  \item 細胞核：有核膜、細胞核
+  \item 細胞壁：多有，成分多樣
+  \item 細胞膜：由磷脂雙層構成
+  \item 胞器：有無膜和有膜胞器，後者如粒線體、內質網，高基氏體、葉綠體
+  \item 代謝方式：多為自營，通過光合作用獲取能量，有氧呼吸
+  \item 單或多細胞生物：都有
+  \item 大小：通常10至100微米
+  \item 細胞分裂：有絲分裂
+\end{itemize}
+\subsection{原生動物細胞（Protist Animal-like）}
+\begin{itemize}
+  \item 細胞核：有核膜、細胞核
+  \item 細胞壁：無
+  \item 細胞膜：由磷脂雙層構成
+  \item 胞器：有無膜和有膜胞器，後者如粒線體、內質網，高基氏體
+  \item 代謝方式：主要為異營，通過攝取其他有機物獲取能量，有氧呼吸
+  \item 單或多細胞生物：都有
+  \item 大小：通常10至100微米
+  \item 細胞分裂：有絲分裂
+\end{itemize}
+\subsection{原生真菌細胞（Protist Fungus-like）}
+\begin{itemize}
+  \item 細胞核：有核膜、細胞核
+  \item 細胞壁：有些有，主要由幾丁質構成
+  \item 細胞膜：由磷脂雙層構成
+  \item 胞器：有無膜和有膜胞器，後者如粒線體、內質網，高基氏體
+  \item 代謝方式：多為異營，通過分解有機物獲取能量，有氧呼吸、 酒精發酵等。酵母菌是一些單細胞真菌的總稱，為兼性厭氧性生物，可在有氧條件下行有氧呼吸，也可在缺氧時進行酒精發酵，多數酵母菌能夠利用多種單醣分子進行呼吸或發酵，部分甚至可利用五碳醣
+  \item 單或多細胞生物：都有
+  \item 大小：通常10至100微米
+  \item 細胞分裂：有絲分裂
+\end{itemize}
+\subsection{真菌細胞（Fungi）}
+\begin{itemize}
+  \item 細胞核：有核膜、細胞核
+  \item 細胞壁：有，主要由幾丁質構成
+  \item 細胞膜：由磷脂雙層構成
+  \item 胞器：有無膜和有膜胞器，後者如粒線體、內質網，高基氏體
+  \item 代謝方式：主要為異營，通過分解有機物獲取能量，有氧呼吸為主，酒精發酵為輔
+  \item 單或多細胞生物：酵母菌主要是單細胞，其他主要是多細胞
+  \item 大小：酵母菌通常3至10微米，其他真菌細胞通常2至10微米
+  \item 細胞分裂：有絲分裂
+\end{itemize}
+\subsection{植物細胞（Plant Cells）}
+\begin{itemize}
+  \item 細胞核：有核膜、細胞核
+  \item 細胞壁：有，主要由纖維素構成
+  \item 細胞膜：由磷脂雙層構成
+  \item 胞器：具有膜結構的胞器，如粒線體、內質網、高基氏體，特有葉綠體
+  \item 代謝方式：主要為自營，通過光合作用獲取能量，有氧呼吸為主，酒精發酵為輔
+  \item 單或多細胞生物：藻類單或多細胞都有，其他主要是多細胞
+  \item 大小：通常10至100微米
+  \item 細胞分裂：有絲分裂
+\end{itemize}
+\subsection{動物細胞（Animal Cells）}
+\begin{itemize}
+  \item 細胞核：有無膜和有膜胞器，後者如粒線體、內質網，高基氏體
+  \item 細胞壁：無
+  \item 細胞膜：由磷脂雙層構成
+  \item 胞器：具有膜結構的胞器，如粒線體、內質網、高基氏體等
+  \item 代謝方式：主要為異營，通過攝取其他有機物獲取能量，有氧呼吸為主，乳酸發酵為輔
+  \item 單或多細胞生物：主要是多細胞
+  \item 大小：通常10至30微米
+  \item 細胞分裂：有絲分裂
+\end{itemize}
+\section{真核細胞（Eukaryotic cells）}
+\bct\bfH\ctr\icg[width=0.7\textwidth]{endomembrane.png}\ef\FB\ect
+\ssc{真核細胞}
+\begin{itemize}
+  \item 大小：多在1100微米，如大腸桿菌約2微米、人類白血球約10微米，少數較大，如神經細胞可超過1公尺、牛蛙卵約2毫米。
+  \item 成分：
+  \begin{itemize}
+    \item 水約70\%、蛋白質約15\%、核酸約7\%、醣類約3\%、脂質約\%、礦物質約1\%、維生素約不到1\%等。
+    \item 生物體含量質量比例前四名：O>C>H>N。
+\end{itemize}
+  \item 原生質（protoplasm）：組成活細胞而被原生質膜（細胞膜） 包圍的全部物質，不包含細胞壁等分泌到細胞外的物質。
+  \item 三大基本構造：細胞膜、細胞質與細胞核。
+\end{itemize}
+\subsection{核酸（Nucleic acid）}
+核酸指由核苷酸（Nucleotides）序列縮合聚合而成的長鏈狀雙鏈螺旋結構聚合物。為一種通常位於細胞核內大型的生物有機分子，存在於所有生物，具有編碼、傳遞及表達遺傳信息的功能。
+\subsubsection{核苷酸（Nucleotide）}
+由一個核糖或去氧核糖、一個含氮鹼基、一個或多個磷酸基團組成，其中核糖或去氧核糖含C、H、O，加入含氮鹼基為核苷或去氧核苷，含C、H、O、N，加入磷酸根為核苷酸或去氧核苷酸，含C、H、O、N、P，聚合後為核糖核酸或去氧核糖核酸。
+\subsubsection{去氧核糖核酸（Deoxyribonucleic acid, DNA）}
+含氮鹼基包括A腺嘌呤（Adenine）、G鳥糞嘌呤（Guanine）、T胸腺嘧啶（Thymine）和C胞嘧啶（Cytosine）。為雙股螺旋結構分子，大多是鏈狀結構大分子，少部分呈環狀結構，分子量一般都很大。主要功能是資訊儲存，可組成遺傳指令。
+\bct\bfH\ctr\icg[height=0.6\textheight]{dna.jpg}\caption{OpenStax, 2016.}\ef\FB\ect
+\subsubsection{核醣核酸（Ribonucleic acid, RNA）}
+含氮鹼基包括A腺嘌呤、G鳥糞嘌呤、C胞嘧啶和U尿嘧啶（Uracil）。為單股螺旋結構分子，分子量一般較DNA小很多。主要功能是遺傳資訊的翻譯與表達，合成蛋白質。
+\bct\bfH\ctr\icg[height=0.6\textheight]{dna.jpg}\caption{Narayanese, 2007.}\ef\FB\ect
+\subsubsection{含氮鹼基互補配對原則（Complementary pairing principle of nitrogen-containing bases）}
+\begin{itemize}
+\item RNA有四種核苷酸：AMP、UMP、CMP與GMP。其中腺嘌呤A與以兩個氫鍵與尿嘧啶U配對、鳥糞嘌呤G以三個氫鍵與胞嘧啶C配對，稱鹼基對。
+\item DNA有四種核苷酸：dAMP、dTMP、dCMP與dGMP。腺嘌呤A與以兩個氫鍵與胸腺嘧啶T配對、鳥糞嘌呤G以三個氫鍵與胞嘧啶C配對，稱鹼基對。
+\end{itemize}
+\bct\bfH\ctr\icg[width=0.5\textwidth]{AT.png}\ef\FB\ect
+\bct\bfH\ctr\icg[width=0.5\textwidth]{AU.png}\ef\FB\ect
+\bct\bfH\ctr\icg[width=0.5\textwidth]{GC.png}\ef\FB\ect
+\subsection{細胞核（Nucleus）}
+\begin{itemize}
+  \item 構造：雙層核膜包圍核仁、核質和染色質。
+  \item 功能：具有遺傳物質，控制細胞生理活動。
+  \item 觀察：以亞甲藍液染色在複式顯微鏡下觀察，可見細胞中的細胞核呈深藍色。
+\end{itemize}
+\subsubsection{核質（Nucleoplasm）}
+指存在於真核細胞核內部的液體。它是由水、鹽類和其他溶質組成的凝膠狀物質，填充了細胞核核膜與核仁之間。
+\subsubsection{轉錄（Transcription）}
+指細胞以DNA的一股聚核苷酸鏈為模板合成RNA，發生在核質中。
+
+RNA聚合酶（RNA polymerase, RNAP, RNApol）：RNA聚合酶自己包含解旋功能故不使用解旋酶，其局部打開雙鏈 DNA，以暴露的核苷酸的鏈用作 RNA 合成的模板（單股作為模板）。 轉錄因子及其相關的轉錄介質複合體必須連接到稱為啟動子區的DNA結合位點，然後 RNAP 才能在該位置啟動 DNA 解旋。 RNAP 不僅啟動 RNA 轉錄，還引導核苷酸定位，促進附著和延伸，具有內在的校對和替換能力，以及終止識別能力。
+\subsubsection{信使RNA（mRNA）}
+攜帶從DNA轉錄而來的遺傳信息，指導蛋白質的合成。
+\subsubsection{核糖體RNA（rRNA）}
+組成核糖體的核心部分，負責蛋白質的合成。分為大次單元與小次單元，催化其間的多肽鏈生成。
+\subsubsection{轉運RNA（tRNA）}
+在蛋白質合成過程中攜帶胺基酸到核糖體。
+\subsubsection{小核RNA（snRNA）}
+參與mRNA的剪接過程。
+\subsubsection{小核仁RNA（snoRNA）}
+主要在核仁中發揮作用，參與rRNA的加工和修飾。
+\subsubsection{微小RNA（miRNA）}
+調控基因表達，通常通過與mRNA結合抑制其翻譯或促進其降解。
+\subsubsection{小干擾RNA（siRNA）}
+通常與mRNA結合，導致其降解並抑制基因表達。
+\subsubsection{核膜（Nuclear membrane）/核包膜（Nuclear envelope）/核外膜}
+\begin{itemize}
+  \item 雙層膜結構：核膜由兩層磷脂雙層組成，類似於細胞膜的結構 。
+  \item 核纖層（Nuclear lamina）：細胞核內膜內側約 30 至 100  nm厚的緻密纖維狀網，由中間絲和膜相關蛋白組成。
+  \item 核孔（Nuclear pore）：核膜上有許多核孔，由核孔複合體組成，允許物質（如RNA、蛋白質）在細胞質和核質之間進行交換。
+  \item 支持和保護：核膜支持細胞核內部結構並防止核質中的分子與細胞質中的其他結構混合。
+  \item 核質調節：核膜可以調節核質中物質的流動。
+  \item 核膜在細胞分裂時會解體，而在細胞分裂完成後，核膜會重新形成。
+\end{itemize}
+\subsubsection{核仁（Nucleolus）}
+\begin{itemize}
+  \item 一個或數個球狀或環狀結構，通常為1到2個。
+  \item 合成rRNA，並加工之，如加帽、多腺苷酸化、剪接。
+  \item 將rRNA與特定蛋白質等成分結合形成核糖體的前體並合成次單元，而後通過核孔排入細胞質，在細胞質內完成核糖體的組裝。
+  \item 參與調控細胞中核糖體數量的變化。
+\end{itemize}
+\subsubsection{染色質（Chromatin）}
+染色質是由DNA分子與蛋白質層層纏繞而成，呈雙股螺旋結構。對於真核生物細胞核，呈雙股螺旋線狀結構。
+\subsubsection{染色質複製}
+染色質在細胞分裂間期 S 期完成半保留複製（Semiconservative replication），即以一股為模板合成另一股的複製，形成二倍體（Diploid） ，其過程為：
+  \begin{itemize}
+    \item 起始（Initiation）：
+    \begin{enumerate}[label=\Roman*.]
+    \item 起始點識別：由一些特定蛋白質識別的特定DNA序列稱起始點，為雙鏈解開之開始處。
+    \item DNA解旋酶（DNA helicase）：將雙鏈解開，形成一個稱為複製叉（replication fork）的結構。DNA係反向雙股螺旋，即一股為3'至5'，另一股是5'至3'。
+    \item 單股DNA結合酶（Single-strand DNA-binding protein）： 與單股DNA結合，使DNA雙螺旋在DNA解旋酶解旋後維持分離。
+    \item DNA拓樸異構酶（DNA topoisomerases）：當解旋酶在複製叉處解旋 DNA 時，前面的 DNA 被迫旋轉，會導致 DNA 中的扭曲不斷累積。拓樸異構酶，如DNA旋轉酶（Gyrase），是一種暫時斷裂 DNA 鏈的酶，可以透過在 DNA 螺旋上添加負超螺旋緩解 DNA 螺旋兩條鏈解開時產生的張力。
+    \end{enumerate}
+    \item 延伸（Elongation）：
+    \begin{enumerate}[label=\Roman*.]
+    \item RNA或DNA引物（Primer）：由引物酶（Primase）合成，為DNA聚合酶提供一個起始點。
+    \item DNA聚合酶（DNA polymerase, DNAP, DNApol）：多種DNA聚合酶以 3' 至 5' 方向讀取DNA模板（雙股均分別作為模板），以 5' 至 3' 沿著模板鏈根據含氮鹼基互補配對原則添加核苷酸，合成新的互補鏈，並進行校對和糾錯。DNA夾（DNA clamp）是防止 DNA 聚合酶與 DNA 母鏈解離的蛋白質。複製叉兩側會形成前導鏈（Leading strand）和後隨鏈（Lagging strand）。前導鏈是新 DNA 鏈，其合成方向與生長的複製叉相同，故是連續的。後隨鏈以岡崎片段（Okazaki fragments）的形式被不連續地合成，岡崎片段指DNA聚合酶 I 將後隨鏈上的RNA引物校正成DNA後的片段。
+    \item DNA連接/黏合酶（DNA ligase）：可以藉由形成磷酸雙脂鍵將DNA在3'端的尾端與5'端的前端連在一起。DNA連接酶旋轉半保留複製的雙股DNA為雙股螺旋，並加入後隨鏈的岡崎片段。
+    \item DNA拓樸異構酶：解開超螺旋張力。
+    \end{enumerate}
+    \item 終止（Termination）：
+    \begin{enumerate}[label=\Roman*.]
+    \item 終止：真核生物在染色體的多個點啟動 DNA 複製，因此複製叉在染色體的許多點相遇並終止，其中DNA拓樸異構酶解開超螺旋張力 DNA連接酶連接兩段。
+    \item 端粒（Telomeres）：由於真核生物具有線性染色體，DNA複製無法到達染色體的最末端，使該區每個複製週期中都會遺失。端粒是靠近末端的重複 DNA 區域，有助於防止因縮短而導致基因流失。端粒數量使細胞只能分裂一定次數，DNA 損失會阻止進一步分裂，稱為海弗利克極限（Hayflick limit）。在將 DNA 傳遞給下一代的生殖細胞中，端粒酶（Telomerase）會延長端粒區域的重複序列。端粒酶可能會在體細胞中錯誤地變得活躍，有時會導致癌症的形成。
+    \end{enumerate}
+\end{itemize}
+\subsubsection{分子生物學的中心法則（Central Dogma of Molecular Biology）}
+由英國分子生物學家克里克（Francis Crick）在1958年提出。
+\begin{itemize}
+\item 複製（Replication）：DNA 可以自我複製，以將遺傳信息在細胞分裂時傳遞給子細胞。
+\item 轉錄（Transcription）
+DNA 上的遺傳信息被轉錄為 mRNA。
+\item 轉譯（Translation）：mRNA 上的遺傳信息被翻譯為蛋白質。mRNA 的核苷酸序列決定了胺基酸的排列順序，從而形成具有特定功能的蛋白質。
+\end{itemize}
+\subsubsection{種別性}
+具有種別性指可作為物種辨識依據。
+\begin{itemize}
+  \item 核苷酸與胺基酸無種別性。
+  \item 生物的DNA、RNA和其製造的蛋白質具有種別性。
+\end{itemize}
+\subsection{細胞膜（Cell membrane）/原生質膜（Plasma membrane）}
+\bct\bfH\ctr\icg[width=0.7\textwidth]{membrane.png}\ef\FB\ect
+為包圍細胞內部結構的薄膜，區隔原生質與非原生質。由雙層磷脂質及蛋白質、膽固醇與醣類構成。
+\subsubsection{雙層磷脂質}
+\begin{itemize}
+  \item 細胞膜主要由雙層磷脂質組成，磷脂分子的疏水尾端會內向排列，而親水頭端則向外與細胞質和細胞外液體接觸。
+  \item 選擇性通透/半透性：小分子，如氧氣、二氧化碳和水，其中水有極性但較小故仍可通過，但仍有蛋白質水通道供其通過；疏水性分子，如脂溶性維生素、固醇類，可通過；極性分子、大分子、離子不可通過。
+\end{itemize}
+\subsubsection{蛋白質}
+\begin{itemize}
+  \item 流體鑲嵌：膜上的蛋白質可在磷脂質中滑動。
+  \item 整合（Integral）蛋白：跨越膜並具有與內部分子相互作用的親水性胞質結構域，即將其錨定在細胞膜內的疏水性跨膜結構域和與外部分子相互作用的親水性胞外結構域。
+    \item 受體（Receptors）：屬於整合蛋白。細胞膜上的受體蛋白質能夠識別和結合特定的外部分子，如訊號分子或激素，啟動特定的細胞響應，如訊號轉導通路的啟動或基因表達的調控。
+    \item 通道（Channels）：屬於整合蛋白。通道蛋白可以主動或被動的運輸特定的物質通過細胞膜，具專一性，例如離子通道和水通道蛋白（Aquaporins）。離子通道可維持細胞內外的電位平衡，例如細胞膜上的鈉鉀泵（Sodium–potassium pump）利用ATP能量將鈉離子從細胞內推出，同時將鉀離子從細胞外移入，維持了細胞內外的離子濃度差。 
+    \item 運輸器（Transporters）：屬於整合蛋白。細胞膜上的運輸器蛋白質形成主動或被動地將特定的分子或離子從一側的細胞膜運輸到另一側，從而調節細胞內的濃度，具專一性。
+    \item 細胞黏附分子（Cell adhesion molecules，CAMs）：屬於整合蛋白。在細胞黏附（Adhesion）中發揮作用，包括細胞內與細胞骨架的的相互作用和跨膜與其他細胞的相互作用。分為嗜同性結合與嗜異性結合。
+  \item 脂質錨定（Lipid anchored）蛋白：不屬於整合蛋白。與單一或多個脂質分子共價結合，疏水性插入細胞膜並錨定蛋白質，本身不與膜接觸。
+  \item 週邊（Peripheral）蛋白：不屬於整合蛋白。附著於整合蛋白或與脂質雙層的外圍區域。往往只與膜發生暫時的相互作用後就解離，在細胞質中繼續其工作。
+\end{itemize}
+\subsubsection{醣類}
+醣類，如醣蛋白或糖脂，與生物體內細胞辨識是否為外來物質或細胞有關。
+\subsubsection{膽固醇}
+以親水端插在磷脂質親水端，使疏水端伸向雙層磷脂質間的磷脂質疏水端，以增加細胞膜的穩定性。
+\subsection{細胞質（Cytoplasm）}
+細胞膜之內包圍在細胞核周圍的區域。包含胞器（Organelles）、細胞流體（Cytosol）和細胞骨架（Cytoskeleton），是細胞主要代謝的場所。
+\subsubsection{細胞流體}
+構成細胞質大部分體積的液體部分，包含水、鹽類和其他分子，為膠體溶液，提供了溶解和運輸細胞內各種物質的媒介。
+\subsubsection{細胞骨架}
+由微管（Microtubules）、微絲（Actin filaments）和中間絲（Intermediate filaments）等組成，提供了細胞形態的支持和結 構的穩定性，同時參與細胞運動、分裂和內部器官的定位和運輸。
+\subsubsection{核糖體（ribosome）}
+\begin{itemize}
+  \item 非膜狀胞器，主要成分為蛋白質和rRNA，由大次單元和小次單元組成，存在於所有真核細胞和原核細胞中。
+  \item 真核細胞中，附著在內質網上的稱附著型核糖體或膜結合核糖體（Membrane-bound ribosome），其餘稱游離型核糖體。兩者具有相同的構造也可以互相轉換，一個核糖體是處於游離態還是膜結合態僅取決於它們正在轉譯的mRNA單鏈首端第一個三聯體密碼子（AUG）之後是否有一段「內質網靶向信號序列」（ER-targeting signal sequence），該序列經核糖體轉譯，能得到一多肽片段稱信號肽（Signal peptide）。細胞質中的訊息辨識顆粒（Signal recognition particle）可辨識之並與之結合，而粗糙內質網膜上有SRP受體辨識SRP並使帶有SRP的RNA-核糖體複合物被SRP受體結合於內質網上。
+  \item 大次單元/大亞基：負責結合並轉譯mRNA上的訊息。
+  \item 小次單元/小亞基：主要負責轉譯過程中的tRNA和mRNA的移動。
+  \item 電子顯微鏡下方可見。
+  \end{itemize}
+\subsubsection{真核轉譯（Eukaryotic translation）}
+是信使RNA在真核生物中轉譯成蛋白質的生物學過程。 它由四個階段組成：起始（Initiation）、延伸（Elongation）、終止（Termination）和再循環（Recapping ）。
+  \begin{itemize}
+    \item 起始：核糖體及其相關因子與 mRNA 結合並在起始密碼子（Start codon）處組裝的過程。一般而言，其步驟為：
+    \begin{enumerate}[label=\Roman*.]
+    \item 甲硫胺酸起始tRNA（Met-tRNAimet）結合到40S核糖體小亞基上，從而形成43S前起始複合物。
+    \item 前起始複合物結合到被活化的mRNA的5'端末端，並沿著5'至3'的方向在5'端非轉譯序列上移動，直到尋找到正確的起始密碼子（一般為第一個AUG），並形成48S複合物。
+    \item 60S核糖體大亞基結合上來，最終形成80S起始複合物，準備開始後續轉譯。
+    \item 每個步驟都需要多個真核起始因子（Eukaryotic initiation factor, eIF）的參與。
+    \end{enumerate}
+    \item 延伸：mRNA 被定位，以便在蛋白質合成的延伸階段可以翻譯下一個密碼子。起始tRNA佔據核醣體中的P位點，A位點準備接收胺基-tRNA。在鏈延伸過程中，每個額外的胺基酸以三步驟微循環的方式添加到新生的多肽鏈中。
+    \begin{enumerate}[label=\Roman*.]
+    \item 將正確的胺醯基-tRNA定位於核糖體的A位點。
+    \item 形成肽鍵（醯胺鍵）。
+    \item 將mRNA相對於核糖體移位一個密碼子。
+    \end{enumerate}
+    \item 終止：延長的終止取決於真核釋放因子（Eukaryotic release factors）。此時一個多肽鏈製造完成。
+\end{itemize}
+\subsubsection{內質網（Endoplasmic reticulum, ER）}
+\begin{itemize}
+  \item 粗糙內質網（Rough Endoplasmic Reticulum，RER）：單層膜胞器。靠近細胞核且與核膜相連。在其表面附著著大量的核糖體，主要功能是參與折疊多肽鏈、合成蛋白質、後轉譯修飾（如糖基化）和折疊蛋白質。合成的蛋白質通常會被包裝成囊泡（Vesicle），然後通過囊泡融合進入高基氏體進行進一步的修飾和分泌，或直接傳遞並使用。
+  \item 平滑內質網（Smooth Endoplasmic Reticulum，SER）：單層膜胞器。在粗糙內質網之外而不與核膜相連。無附著的核糖體，主要功能 包括合成脂質（如磷脂和固醇）、儲存鈣離子（在肌肉細胞中尤為重要 ）、解毒（如肝細胞中的解毒作用）和代謝碳水化合物。可分泌囊泡傳遞物質給其他胞器或細胞膜。
+  \item 電子顯微鏡下方可見。
+\end{itemize}
+\subsubsection{高基氏體（Golgi apparatus）}
+\begin{itemize}
+  \item 結構：由單層膜的扁平膜囊堆積狀排列而成的胞器，形成一個扁平而彎曲的結構。
+  \item 電子顯微鏡下方可見。
+  \item 蛋白質修飾（Protein Modification）：在高基氏體內，蛋白質可能會經歷糖基化（glycosylation）、磷酸化（phosphorylation） 、切割（cleavage）和其他後轉譯修飾，這些修飾能夠影響蛋白質的功能和穩定性。通常，要分泌到細胞外的蛋白質需要經過高基氏體修飾，細胞內使用的則僅須粗糙內質網修飾。
+  \item 細胞膜合成（Membrane Synthmesis）：高基氏體參與合成細胞膜的部分脂質成分。
+  \item 細胞內運輸（Intracellular Transport）：高基氏體分泌的囊泡可以將其包裝的分子傳遞給其他細胞器或細胞膜。
+\end{itemize}
+\subsubsection{液胞/液泡（Vacuole）}
+\begin{itemize}
+  \item 囊狀的單層膜胞器，內含細胞液（cell sap），多呈酸性環境，主要成分是水並可能含有無機鹽、有機物、酶、色素甚至氣體等。
+  \item 液胞存在於植物和真菌細胞，以及一些原生生物、動物、真細菌、古細菌細胞中。多數成熟的植物與真菌細胞有一個大而明顯的中央液胞 ；而動物液胞通常則小而多，無中央液胞。
+  \item 中央液胞功能：儲存物質、代謝廢物、細胞壓力調節、細胞形狀維持、色素顯色（如花青素等水溶性色素）等。
+  \item 小液胞功能：儲存物質、代謝廢物、作為白血球吞噬體、作為食泡行胞內消化等。
+\end{itemize}
+\subsubsection{溶體（Lysosomes）}
+\begin{itemize}
+  \item 功能：以其中的各種水解酶（通常為嗜酸性）分解物質、釋放 酶導致程序性細胞死亡（Programmed cell death, PCD），即細胞凋 亡（Cellular suicide）。
+  \item 植物細胞無此構造，以液胞代之。
+\end{itemize}
+\subsubsection{粒線體/線粒體（Mitochondria）}
+\begin{itemize}
+  \item 雙層膜結構：由外膜和褶皺狀的粒線體內膜（inner mitochondrial membrane）兩層雙層磷脂質組成，隔出內外膜間隙（Intermembrane space）與內膜內部的基質（Matrix）。從細胞質到達粒線體基質，需穿過兩個雙層磷脂質模，即粒線體外膜與內膜。
+  \item 粒線體DNA：粒線體擁有自己的粒線體DNA（mtDNA），分布於基質中，能夠自主複製和進行基因表達。類似原核生物的DNA，為雙股螺旋環狀結構。故粒線體為半自主胞器，具有內共生特性。雖然現存生物體中絕大多數作用於粒線體的蛋白質，是由細胞核DNA所製造，但這些基因中有一些可能是源於細菌，並於演化過程中轉移到細胞核中，稱為核內粒線體片段。對動物而言，受精卵中的mtDNA主要遺傳自母親；而對植物來說略有變異，但仍然以母系遺傳為主；真菌則源自雙親。
+  \item 核糖體：粒線體會自行製造核糖體，分布於基質中，與細菌的核糖體相似。
+  \item 有氧呼吸：粒線體負責有氧呼吸中除了糖解（即葡萄糖在細胞質中分解為丙酮酸）外的其他階段，以生產能量，故有細胞發電廠之稱。屬異化代謝。
+  \end{itemize}
+\subsubsection{葉綠體（Chloroplast）}
+\begin{itemize}
+  \item 與白色體（Leucoplast）和有色體（Chromoplast）同為三種色素體（plastid）之一。含有高濃度的葉綠素a和b，故為三者唯一可行光合作用者。
+  \item 葉綠素為脂溶性色素。
+  \item 雙層膜結構：葉綠體由內膜和外膜兩層雙層磷脂質組成，隔出內外膜間隙（Intermembrane space）與內膜內部的基質（Stroma），基質內有類囊體。基質是進行光合作用固碳反應的場所。
+  \item 葉綠體DNA：葉綠體擁有自己的葉綠體DNA（cpDNA），分布於基質中，能夠進行自主複製和基因表達。一般認為類似原核生物的DNA為雙股螺旋環狀結構，但部分研究認為雙股螺旋線狀結構。葉綠體為半自主胞器，具有內共生特性。
+  \item 核糖體：葉綠體會自行製造核糖體，分布於基質中，與細菌的核糖體相似。
+  \item 類囊體（Thylakoids）：是葉綠體或藍綠菌內由類囊體膜（Thylakoid membrane）組成的扁平圓盤狀囊狀結構，膜內封閉空間稱類囊體腔（Thylakoid lumen），含有光合作用所需的光合色素（如葉綠素）和其他輔助色素，是光合作用的光反應場所。類囊體經常堆疊成基粒（grana）/葉綠餅。基粒間通過基質類囊體（Stroma thylakoids）/基質片狀膜（Stroma lamella），連接在一起。
+  \item 產氧光合作用：簡稱光合作用。屬同化代謝。葉綠體是植物與藻類行產氧光合作用的場所。多數植物行產氧光合作用。少數行產氧光合作用的真核細胞其葉綠素等所需物質之在細胞質中而不具有葉綠體。
+  \end{itemize}
+\subsubsection{中心體（Centrosome）}
+\begin{itemize}
+  \item 主要在動物細胞中存在，一些低等植物和藻類細胞也具有中心體或類似的結構，大多數高等植物（苔蘚、蕨類、裸子和開花植物）細胞則沒有中心體，但苔蘚、蕨類和部分裸子植物的雄配子有中心粒，以形成鞭毛（Flagellum）。
+  \item 結構：無膜胞器。由一對相互垂直的中心粒（Centriole）及其周圍的無定形基質，稱中心粒周基質（Pericentriolar material，PCM ），組成。中心粒位於中心體的核心，並被周圍的基質包圍。
+  \item 與細胞分裂、鞭毛或纖毛形成有關。
+  \item 中心粒：一種微管結構，每個中心粒由九組三聯體微管組成， 呈現為環狀排列。
+  \item 微管組織中心（Microtubule Organizing Center，MTOC）：中心體負責調控細胞中的微管動態，包括微管的生成、穩定和分解。
+  \item 有絲分裂（Mitosis）和減數分裂（Meiosis）：中心體在間期S期複製，在分裂前期分離。
+\end{itemize}
+\subsection{細胞代謝}
+\subsubsection{ATP 能量轉換}
+\begin{itemize}
+  \item ATP：三磷酸腺苷；[[(2R,3S,4R,5R)-5-(6-胺基嘌呤-9-基)-3,4-二羥基四氫呋喃-2-基]甲氧基-羥基磷醯基]磷醯基磷酸氫鹽；\ce{C10H8N4O2NH2(OH)2(PO3H)3H}
+  \item 自ATP依序斷掉一個高能磷酸鍵脫去一個磷酸根得到：ADP（二磷酸腺苷）、AMP（單磷酸腺苷）與腺苷（Adenosine），脫去的磷酸根變成磷酸 Pi \ce{H3PO4}。若一次脫去兩個磷酸根（兩者間之鍵不斷）則為焦磷酸 PPi \ce{H4P2O7}。
+  \item 同化代謝：
+  \begin{itemize}
+    \item \ce{ADP + Pi + 30.5kJ -> ATP + H2O}
+    \item \ce{AMP + PPi + 40.6kJ -> ATP + H2O }
+    \item \ce{AMP + Pi + 30.5kJ -> ADP + H2O }
+    \item \ce{Adenosine + Pi +14.2kJ -> AMP + H2O}
+    \item \ce{PPi + H2O + 31.8kJ -> 2Pi}
+\end{itemize}
+  \item 異化代謝：以 \ce{ATP + H2O -> ADP + Pi + 27.8kJ} 為例，能量轉換效率達九成。
+  \item $\frac{[\tx{ATP}]}{[\tx{ADP}]}$愈高，表細胞能量愈充足，促進同化代謝，抑制異化代謝，反之亦然。
+\end{itemize}
+\subsubsection{糖解}
+\begin{itemize}
+  \item 發生在細胞質。屬於異化代謝。
+    \item 總反應式：\ce{\tx{葡萄糖} + 2 NAD+ + 2 ADP + 2 Pi -> 2 \tx{丙酮酸} + 2 NADH + 2 H+ + 2 ATP}。其中：葡萄糖\ce{C6H12O6}；丙酮酸\ce{C3H4O3}，其中菸鹼醯胺腺嘌呤二核苷酸（NADH）\ce{C21H27N7O14P2}是一種輔酶。
+\item 糖解可以作為有氧呼吸與許多發酵的第一步，對於有氧呼吸，其產物送至粒線體進行後續反應。
+\item 無氧呼吸：與有氧呼吸一樣使用電子傳遞鏈，但使用氧以外的電子受體，行呼吸作用。無氧與有氧呼吸皆為呼吸作用。
+\item 一般來說，細胞在有其可使用的電子受體時行呼吸作用，缺少時方行發酵作用。
+\end{itemize}
+\subsubsection{有氧呼吸}
+  \begin{itemize}
+    \item 丙酮酸氧化：丙酮酸被丙酮酸脫氫酶複合物（PDC）氧化成乙醯輔酶A和CO2。
+    \item 檸檬酸循環（Citric Acid Cycle）: 檸檬酸循環發生在粒線體的基質中。一分子的乙醯輔酶A在被檸檬酸循環代謝後，可產生兩分子的CO2分子、三分子NADH、一分子FADH2，以及一分子GTP。
+    \item 氧化磷酸化（Οxidative phosphorylation, OXPHOS）：發生在粒線體內膜上。NADH與FADH2中的還原勢通過蛋白質複合體的電子傳遞鏈（Electron transport chain）將電子送達作為最終電子受體的氧氣 ，所釋放的能量用於最終合成ATP合酶（複合體V）。
+    \item 產量：不含糖解的2個ATP，有氧呼吸的粒線體部分理論產量為36個ATP，2個來自於三羧酸循環及大約34個來自於電子傳遞系統。實際產量略低，約26、28或30個。
+    \item 當動植物細胞缺氧，使粒線體沒有電子受體可以進行三羧酸循環（TCA cycle）處理丙酮酸時，動、植物細胞將分別進行乳酸、酒精發酵，此時糖解作用（Glycolysis）速率無顯著改變，但抑制丙酮酸進入粒線體。
+    \item 溫度效應：一定範圍內與有氧呼吸速率正相關，溫度太高粒線體膜和酵素會被破壞反而減慢。
+    \item 氧氣濃度效應：正相關。
+\end{itemize}
+\subsubsection{同質乳酸發酵（Homofermentative lactic acid fermentation）}
+  \begin{itemize}
+    \item 反應式：\ce{\text{丙酮酸} + NADH + H+ -> C3H6O3 + NAD+}，不釋放可用能量，其中 \ce{C3H6O3} 為乳酸。
+    \item 主要發生在乳酸菌屬（Lactobacillus）、鏈球菌屬（Streptococcus）、乳酸乳球菌屬（Lactococcus）、動物缺氧時等。
+\end{itemize}
+\subsubsection{異質乳酸發酵（Heterofermentative lactic acid fermentation）}
+  \begin{itemize}
+  \item 乳酸發酵：\ce{\text{丙酮酸} + NADH + H+ -> C3H6O3 + NAD+}
+  \item 酒精發酵：\ce{\text{丙酮酸} + NADH + H+ -> C2H5OH + CO2 + NAD+}
+    \item 主要發生在腸膜明串珠菌（Leuconostoc mesenteroides）、雙發酵乳桿菌（Lactobacillus bifermentous）等。
+\end{itemize}
+\subsubsection{雙歧桿菌途徑（Bifidum pathway）異質乳酸發酵}
+  \begin{itemize}
+    \item 乳酸發酵：\ce{\text{丙酮酸} + NADH + H+ -> C3H6O3 + NAD+}
+    \item 乙酸發酵： \ce{2\text{丙酮酸} + 2 NADH + 2 H+ + ADP + Pi -> 3CH3COOH + 2 NAD+ + ATP}
+    \item 主要發生在雙歧桿菌屬（Bifidobacterium）。
+\end{itemize}
+\subsubsection{酒精發酵}
+  \begin{itemize}
+    \item 反應式：\ce{\text{丙酮酸} + NADH + H+ -> C2H5OH + CO2 + NAD+}
+    \item 主要發生在酵母菌、植物缺氧時等。
+\end{itemize}
+\subsubsection{產氧光合作用（Oxygenic photosynthmesis）}
+  \begin{itemize}
+    \item 光反應：
+\begin{itemize}
+\item 在類囊體中進行，需要特定波長的光才能觸發反應，該波長由輔助色素決定。
+\item 光反應時，葉綠素的一個分子會吸收一個光子並失去一個電子，該電子稱熱電子，能量高。該電子被脫鎂葉綠素吸收，接著傳遞給醌（Quinone）分子，使電子開始沿著電子傳輸鏈流動，最將\ce{NADP}加上水分子提供的氫還原 \ce{NADPH}，同時放出氧氣。來自水分子的其他氫離子和前面所得的NADPH供固碳反應使用。類囊體膜上的ATP合酶將\ce{H+}從膜內往外推送時會產生ATP，也供固碳反應使用。
+\item 反應：\ce{2 H2O + 2 NADP+ + 3 ADP + 3 Pi + \tx{光} ->[\tx{光合色素，葉綠素a、b為主，葉黃素、胡蘿蔔素等為輔}] 2 NADPH + 2H+ + 3 ATP + O2}，其中菸鹼醯胺腺嘌呤二核苷酸磷酸（\ce{NADPH}）\ce{C21H29N7O17P3}是一種輔酶。
+\end{itemize}
+    \item 卡爾文循環（Calvin Cycle）/固碳反應
+\begin{itemize}
+\item 過去因認為不需光而稱暗反應，但後來發現部分酵素需要光刺激提升其活性。在葉綠體基質中進行。
+\item RuBisCO 酶從大氣中捕獲 \ce{CO2}，​​並在卡爾文循環過程中，使用掉光反應形成的 ATP 和 NADPH，並釋放甘油醛3-磷酸（一種三碳醣）。產生的約六分之五的甘油醛3-磷酸用於再生核酮糖1,5-二磷酸，使該過程可以繼續進行。沒有因此回收的磷酸丙糖通常縮合形成磷酸己糖，最終產生葡萄糖、果糖、蔗糖、澱粉、纖維素等。
+\item 反應式：\ce{3 CO2 + 9 ATP + 6 NADPH + 6 H+ ->[\tx{RuBisCO 酶}] C3H7O6P + 9 ADP + 8 Pi + 6 NADP+ + 3 H2O}，其中：產物\ce{C3H7O6P}為甘油醛3-磷酸（C3H6O3-phosphate）。
+\end{itemize}
+    \item 總反應過程（未平衡）：\ce{H2O + CO2 + \tx{光} ->[\tx{葉綠素、輔助色素、RuBisCo酶、PEP羧化酶等}] \tx{醣類} + O2 + H2O}
+    \item 產生葡萄糖時的總反應式：\ce{6 H2O + 6 CO2 -> C6H12O6 + 6 O2}
+    \item 光強度效應：一定範圍內與光合作用速率正相關，光照太強葉綠素會被破壞反而減慢。
+    \item 溫度效應：一定範圍內與光合作用速率正相關，溫度太高類囊體膜和酵素會被破壞反而減慢。
+    \item 二氧化碳與水分濃度效應：一定範圍內與光合作用速率正相關。
+\end{itemize}
+\subsection{細胞壁（Cell wall）}
+\begin{itemize}
+  \item 在細胞膜的外面的非原生質。
+  \item 功能：結構支持、保護作用、細胞間連接、在高滲透壓環境防止過度膨脹等。
+  \item 特性：為細胞的分泌物，大部分物質可以直接通過細胞壁。
+  \end{itemize}
+\sssc{植物細胞壁}
+  \begin{itemize}
+    \item 成分：主要由纖維素（Cellulose）組成，還包含半纖維素（Hemicellulose）、果膠（Pectin）和少量的蛋白質。
+    \item 層次結構：
+    \begin{itemize}
+    \item 初生細胞壁（Primary cell wall）：在細胞分裂後形成，較薄且富有彈性，允許細胞生長和擴展。
+    \item 次生細胞壁（Secondary cell wall）：在細胞停止生長後形成，較厚且堅固，包含更多的纖維素和木質素，提供額外的強度和保護 。
+    \item 中膠層（Middle Lamella）：位於相鄰細胞的初生細胞壁之間，主要由果膠組成，起到膠合相鄰細胞的作用。
+    \end{itemize}
+    \end{itemize}
+\sssc{真菌細胞壁}
+  \begin{itemize}
+    \item 成分：主要由幾丁質（Chitin）和葡聚糖（Glucans）組成，還可能含有一些蛋白質和其他多醣。
+    \item 結構：通常包括一層幾丁質和一層葡聚糖。
+\end{itemize}
+\sssc{藻類細胞壁}
+成分：藻類細胞壁的成分多樣，常見成分包括纖維素、琼脂 、褐藻膠等。
+\section{細胞週期（Cell cycle）、細胞分裂與細胞分化（Cellular differentiation）}
+\begin{itemize}
+  \item 細胞週期分為兩個主要階段：間期（Interphase），和包括有絲分裂和細胞質分裂的 M 期（M phase）/分裂期。若無G$_0$期，則間期約占細胞週期時間九成，間期中G$_1$期約占五成，M 期中細胞質分裂時間較短。
+  \item 永久玻片細胞已死，不再有細胞週期。
+  \item 有絲分裂：是真核細胞將其細胞核中的染色體分配到兩個子核之中的過程，兩個子核均擁有與親代細胞相同的染色體，即均為二倍體 (2n)。細胞核分裂後通常伴隨著細胞質分裂，將細胞質、細胞器與細胞膜等細胞結構均等分配至子細胞中。
+  \item 減數分裂：是有性生殖中生殖細胞的細胞分裂，產生配子，即精子或卵細胞等。在間期後有兩輪分裂，分別稱減數分裂 I 和減數分  II，第二輪分裂產生的子細胞只有單倍體 (n)。
+\end{itemize}
+\subsection{細胞週期調控}
+\begin{itemize}
+  \item CDK 細胞週期蛋白機制：細胞週期蛋白和細胞週期蛋白依賴性激酶（CDK）為細胞在細胞週期的進展的主要決定者。
+  \item 抑制基因：兩個基因家族（Family），cip/kip（CDK 交互作用蛋白/激酶抑制蛋白（CDK interacting protein/Kinase inhibitory protein））家族和 INK4a/ARF（激酶抑制劑4/替代讀碼框架（Inhibitor of Kinase 4/Alternative Reading Frame））家族，可阻止細胞週期的進展。由於這些基因有助於預防腫瘤形成，因此它們被稱為腫瘤抑制基因。
+  \item 半自主轉錄網絡（Transcriptional network）：與 CDK 細胞週期蛋白機制協同作用來調節細胞週期。
+  \item 細胞週期檢查點（Checkpoints）：細胞利用細胞週期檢查點來監測和調節細胞週期的進展，一般細胞在滿足檢查點要求之前無法進入下一階段，但基因突變後可能可以繞過檢查點，在養分不虞匱乏下不斷分裂，形成不受細胞週期管控的癌細胞。
+\end{itemize}
+\subsection{間期}
+\begin{itemize}
+  \item 包括 G$_1$、S 和 G$_2$ 期（Phase），不常分裂的細胞則會進入 G$_0$ 期，而將程序性細胞死亡之細胞會進入之。
+  \item G$_1$ 期/間隙 1/生長 1：細胞正常生長和發揮功能。在此 期間，產生大量的蛋白質合成，產生更多的細胞器，細胞體積增加，生長為原始大小的約兩倍。如果細胞不再分裂，它將進入G$_0$。
+  \item G$_0$ 期/間隙 0/生長 0：被認為是一個休息階段。有不同的形式並且由於多種原因而出現，例如環境因素，如營養缺乏，限制了增殖所需的資源。大多數成體神經元細胞已完全分化並處於 G$_0$ 期。
+  \item G$_1$/S檢查點：調節真核細胞是否進入DNA複製和隨後的分裂 過程。
+  \item S期/合成期：細胞半保留複製其DNA，並複製中心體等所需胞器與物質。
+  \item G$_2$ 期/間隙 2/間隙 2：細胞恢復生長，為分裂做準備。 細胞繼續生長至有絲分裂開始。在植物中，葉綠體在 G$_2$ 期間分裂。
+  \item G$_2$/M 檢查點：確保細胞具有足夠兩個子細胞所需的細胞質和磷脂質，並檢查是否是複製的正確時間。
+\end{itemize}
+\subsection{染色體}
+\begin{itemize}
+  \item 染色體套數：單套染色體 (n) 為單倍體，只有一套染色體而不成對，染色體有 n 條；雙套染色體 (2n) 為二倍體，有二套，即成對的同源染色體，染色體有 2n 條；三套染色體 (3n) 為三倍體，有三套， 染色體有 3n 條，以此類推。三倍體以上統稱多倍體。
+  \item 染色體數 n：單套染色體總數。
+  \item 同源（Homologous）染色體是在多倍體細胞中，形態、結構基本相同的染色體。一般而言，體細胞有 兩兩成對的同源染色體，即二倍數染色體 (2n)，即該細胞為二倍體，生殖細胞僅有不成對的單倍數染色體 (n)，無同源染色體。X 與 Y 性染色體不是同源染色體，但首尾具有同源片段， 稱偽常染色體區域（Pseudoautosomal region），具有相同的基因座並參與聯會。
+\end{itemize}
+常見真核生物染色體數目：
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+生物種類 & 染色體數目 \\ \hline
+豌豆 & 7對 \\ \hline
+阿拉伯芥 & 5對 \\ \hline
+果蠅 & 4對 \\ \hline
+老鼠 & 20對 \\ \hline
+人 & 23對 \\ \hline
+黑猩猩 & 24對 \\ \hline
+\end{tabular}
+\end{center}
+\subsection{有絲分裂}
+\subsubsection{植物細胞的早前期（Preprophase）}
+植物細胞特有，形成前期帶（Preprophase band），一個細胞膜下方緻密的微管（Microtubule），並在核膜處開始微管成核（Microtubule nucleation）。在從前期進入前期的過程中，隨機定向的微管根據紡錘體軸沿著核表面平行排列。這種結構稱為前期紡錘體。在前期中期開始時由核膜破裂觸發，前期帶消失，前期紡錘體成熟為中期紡錘體，佔據前核的空間。
+\subsubsection{前期（Prophase）}
+\begin{itemize}
+  \item 染色體（Chromosome）形成：間期複製的 DNA 使用凝縮蛋白複合體（Condensin complex）由長度達 0.7 \text{\textmu}m 濃縮至 0.2-0.3 \text{\textmu}m 的染色體。此時形成的染色體稱二分體（Dyad），由在中節（Centromere）連接的兩個姊妹染色分體（Sister chromatids）組成，其中黏連蛋白（Cohesin）負責將姊妹染色體保持在一起，中節上有兩個供紡錘絲連接的著絲點（Kinetochore）/動粒。
+  \item 動物細胞中心體分離：在動物細胞的前期，中心體移動得夠遠 ，可以用光學顯微鏡來分辨。由於 \text{\textgamma}-微管蛋白的募集，每個中心體的微管活性增加，每個中心體叉指極間微管彼此相互作用，使中心體在相關運動蛋白的驅動下向細胞的相反兩極移動。每個中心粒組織單一 放射狀微管陣列，以中心體為核，稱星狀體（Asters）。
+  \item 植物細胞前期帶消失。
+  \item 紡錘體形成：參與間期支架的微管分解。對於有中心體的細胞 ，來自兩個星狀體的極間微管相互作用，連接微管組並形成有絲分裂紡錘體（Spindle apparatus）的基本結構。經實驗即使去除中心體仍能形成紡錘體。對於沒有中心體的細胞，在間期成核的微管聚集在相反的兩極，並開始在稱為灶點（Foci）的位置形成紡錘體。
+  \item 核仁消失：核仁在前期分解消失，導致核醣體產生停止，但核膜仍保持完整。
+\end{itemize}
+\subsubsection{前中期（Prometaphase）}
+\begin{itemize}
+  \item 核膜分解：細胞核膜分解成多個膜囊泡（Membrane vesicles）。
+  \item 著絲點微管（Kinetochore microtubules）附著於著絲點：從紡錘體伸出的著絲點微管達到染色體並附著於著絲點上，使染色體進入激動狀態。
+  \item 有絲分裂紡錘體（Mitotic spindle）形成：其他紡錘體微管與來自相反極的微管接觸，形成有絲分裂紡錘體。
+\end{itemize}
+\subsubsection{中期（Metaphase）}
+與紡錘體微管相關的馬達（Motor）蛋白施加的力將染色體移向赤道中期板（Equatorial metaphase plate）/赤道板/中期板/赤道，即一條與兩個紡錘體極等距的假想線，聚集。
+\subsubsection{M期中期檢查點（紡錘體檢查點）}
+確保染色體上著絲點微管的正確附著和均勻平衡的排列。 任何未附著或不正確附著的著絲點都會產生訊號，阻止後期促進複合物 （Anaphase promoting complex, APC/C）的激活。
+\subsubsection{後期（Anaphase）}
+\begin{itemize}
+  \item 開始：後期促進複合物標記一種稱為 Securin 的抑制性伴侶（Inhibitory chaperone）並透過泛素化（Ubiquitylating）將其破壞。Seculin 的破壞釋放分離酶，然後分離酶分解黏連蛋白。
+  \item 後期A：著絲點微管解聚並縮短，與運動蛋白一起產生運動，姊妹染色分體被著絲點微管拉向位於細胞每個極的中心體，呈現 V 形或 Y 形。
+  \item 後期B：極間微管（Interpolar microtubules）始於每個紡錘體並在分裂細胞的赤道處連接，並相互擠壓導致每個紡錘體進一步分開；星體微管（Astral microtubules）從每個紡錘體開始並與細胞膜連接，將每個中心體拉得更靠近細胞膜。
+  \item 多數細胞後期A先於後期B，少數細胞，如少數脊索動物的卵細胞，後期B先於後期A。
+\end{itemize}
+\subsubsection{末期（Telophase）}
+\begin{itemize}
+  \item 有絲分裂細胞週期蛋白依賴性激酶（Mitotic Cyclin-dependent Kinases, M-Cdks）去磷酸化：M-Cdks 的蛋白質標靶的磷酸化可驅動早期有絲分裂中的紡錘體組裝、染色體濃縮和核膜破裂，其在末期的去磷酸化，允許後續步驟發生。
+  \item 有絲分裂紡錘體拆解（Disassembly）：有絲分裂紡錘體從正端（Plus end），即靠近著絲點的一端，開始拆解。
+  \item 核膜重組（Resembly）：核膜重新形成，包含雙層膜、核纖層與核孔。
+  \item 染色體解聚（Decondensation）：染色體變回染色體。
+\end{itemize}
+\subsection{細胞質分裂（Cytokinesis）}
+\subsubsection{動物細胞細胞質分裂}
+\begin{itemize}
+  \item 中央紡錘體（Central spindle）形成：有絲分裂紡錘體重組，非動粒微管纖維在紡錘體兩極之間成束，形成中央紡錘體。
+  \item 分裂溝形成：紡錘體決定動物細胞分裂平面，形成細胞質分裂溝（Cytokinetic furrow）。
+  \item 細胞膜向內生長：在分裂溝處，肌動蛋白-肌球蛋白收縮環驅動分裂過程，使細胞膜向內生長，將母細胞分為兩半區。
+  \item 脫落（Abscission）：分裂溝凹入形成中間體（Midbody）結構，中間體由電子緻密的蛋白質材料組成。大多數動物細胞類型透過細胞間細胞因子橋（Intercellular cytokinetic bridge）保持連接長達數小時，直到它們被肌動蛋白獨立的過程，稱脫落。
+  \item 非著絲點微管重組為細胞骨架：細胞質分裂後，當細胞週期返回間期時，非著絲點微管重組為新的細胞骨架。
+\end{itemize}
+\subsubsection{植物細胞細胞質分裂}
+\begin{itemize}
+  \item 成膜體（Phragmoplast）形成：成膜體是由有絲分裂紡錘體的殘餘物組裝而成的微管陣列，作為供囊泡運輸至成膜體中區的軌道，並用於引導和支持細胞板（Cell plate）形成。
+  \item 膜管（Membrane tubules）形成：主要由高基氏體釋出的囊泡含有形成新細胞邊界所需的脂質、蛋白質和碳水化合物，運送成膜體，並融合以產生眾多膜管。
+  \item 細胞板形成：膜管橫向融合，在胼胝質（Callose）沉積後轉化為片狀的細胞板，作為細胞壁的前身。
+  \item 內吞作用回收物質：網格蛋白介導的內吞作用（Clathrin-mediated endocytosis）回收細胞板上多餘的膜和其他材料。
+  \item 與親代細胞融合及新細胞壁形成：細胞板與親代的細胞膜通常不對稱地融合。年輕細胞板的狹窄管腔內，新細胞壁開始建構，所需的成分由分泌囊泡攜帶，並依序沉積。隨著細胞板與親代細胞膜的融合，胼胝質被細胞壁所需的纖維素取代。
+\end{itemize}
+\subsection{減數分裂}
+\subsubsection{前期 I }
+\begin{itemize}
+  \item 細線期（Leptotene stage）：
+  \begin{itemize}
+    \item 細線體：在細線期，每個複製的染色體（每條染色體由兩個姊妹染色分體組成）呈現由黏連蛋白居間（Mediate）的環的線狀陣列，稱為細線體，光學顯微鏡下可見。
+    \item 聯會（Synapsis）/突觸起始：同源染色體的末端首先附著在核膜上，然後這些末端-膜的複合體在細胞骨架的輔助下遷移，直到匹配的末端配對完成，形成四分體。接著在同源染色體之間形成由蛋白質和 RNA 組成的聯會複合體的橫向（軸向）元件促進下，使同源染色體開始沿其長度配對。聯會過程中，常染色體由聯會複合體整個連接在一 起，而性染色體則只在偽常染色體區域發生聯會與交換。
+    \item 基因重組（Genetic recombination）：基因重組由酵素 SPO11 啟動，該酵素產生程序性雙股斷裂，在同源對的非姐妹染色單體之間產生交叉，等位基因發生交換。
+\end{itemize}
+  \item 合子期（Zygotene）：
+  \begin{itemize}
+    \item 聯會完成：聯會完成後，聯會複合體將同源物沿著縱向長度壓縮在一起，複合體的側向元件與每條染色體相關，而中心區域將它們 固定在一起，允許親密配對和基因重組事件。
+    \item 重組結節（Recombination nodules）：蛋白質重組結節沿著同源染色體之間的聯會複合體出現，標記並調節交叉形成的位點，以確保每個染色體臂至少有一次交換。
+\end{itemize}
+  \item 粗線期（Pachytene）：聯會結束， 四分體姊妹染色分體均互不完全相同。先前重組事件中任何未解決的 DNA 雙股斷裂被修復。
+  \item 粗線期檢查點：檢測到的錯誤可以阻止減數分裂細胞週期並觸發缺陷細胞的凋亡（程序性細胞死亡）。
+  \item 雙線期（Diplotene）：聯會複合體分解，同源染色體彼此稍微分離。然而同源染色體的交叉仍保留，同源染色體仍緊密地結合在交叉處。
+  \item 恆動期（Diakinesis）：除染色體呈四分體外，與有絲分裂前期和前中期大致相同，核仁消失、核膜分解為囊泡、形成減數分裂紡錘體等。部分動物的卵母細胞沒有中心體，由微管組織中心（MTOC）在卵質中形成一個球體，並開始使微管成核，著絲點微管伸向染色體並附著在著絲點上，形成星狀體，染色體移向赤道，減數分裂紡錘體形成。
+\end{itemize}
+\subsubsection{前期 I 停滯（Prophase I arrest）}
+雌性哺乳動物和鳥類等出生時就擁有未來排卵所需的所有 卵母細胞，這些卵母細胞在減數分裂的前期 I 階段被阻止，可能持續數十年的前期 I 停滯階段。
+\subsubsection{中期 I }
+與有絲分裂的中期大致相同，此時染色體仍呈四分體，同源染色體間仍可能發生交換。
+\subsubsection{後期 I }
+與有絲分裂後期大致相同，但分離的不是姊妹染色分體， 而是自四分體分離為各呈二分體的同源染色體。二分體的姊妹染色分體的著絲點的黏連蛋白受守護神（Shugoshin）蛋白保護而不會分離。
+\subsubsection{末期 I }
+與有絲分裂末期大致相同，細胞核重新形成並包圍每個單倍體群。
+\subsubsection{細胞質分裂}
+減數分裂 I 後發生不完全的細胞質分裂，導致細胞質橋，使細胞質能夠在子細胞之間共享，直到減數分裂 II 結束。
+\subsubsection{前期 II }
+除染色體為二分體外，與前期 I 的恆動期大致相同。
+\subsubsection{中期 II }
+與有絲分裂中期大致相同。新的赤道板與中期 I 的赤道板垂直。
+\subsubsection{後期 II }
+與有絲分裂後期大致相同。
+\subsubsection{末期 II }
+與有絲分裂末期大致相同。
+\subsubsection{細胞質分裂}
+與有絲分裂細胞質分類大致相同。
+\subsubsection{特化}
+部分配子需特化，如人類精細胞特化出鞭毛而成為精子。
+\subsection{人類產生配子的過程}
+\begin{itemize}
+  \item 人類雄配子：男性睪丸的精原細胞染色質複製後稱初級精母細 胞，其減數分裂 I 後稱次級精母細胞，其減數分裂 II 後稱精細胞，其特化後稱精子，具有鞭毛。
+  \item 人類雌配子：女性卵巢的卵原細胞染色質複製後稱初級卵母細 胞，其減數分裂 I 後產生一個次級精母細胞和一個第一極體，前者減數分裂 II 產生一個卵細胞和一個第二極體。極體體積較小，無受精能力。
+\end{itemize}
+\subsection{細胞分化（Cellular differentiation）}
+\subsubsection{幹細胞（Stem cell）}
+\begin{itemize}
+  \item 全能幹細胞（totipotent）：具有發展成獨立個體的能力的細胞。卵子和精子的融合產生受精卵，受精卵在形成胚胎過程中有八細胞期之前，其中任一細胞皆是全能幹細胞。如胚胎幹細胞（Embryonic stem cell），受精卵就是最高層次的胚胎幹細胞。
+  \item 多能（Pluripotent）幹細胞：是全能幹細胞的後裔，無法發育成一個個體，具有分化成所有三個胚層：外胚層、中胚層和內胚層的細胞的能力，即可以分化成除了胎盤等胚外組織的全部細胞種類的能力，可以無限次不分化的分裂。如神經幹細胞。
+  \item 次多能（Multipotent）幹細胞：僅能有限次不分化的分裂，可分化為有限的細胞類型。如造血幹細胞（可成為各種血球）、間質幹細胞（可成為骨骼、軟骨和脂肪細胞）。
+  \item 單能（Unipotent）幹細胞：只能向一種或數種密切相關的細胞類型分化，但具有自更新屬性，將其與非幹細胞區分開。如上皮組織基底層幹細胞、成肌細胞。
+  \item 細胞分化：指多細胞生物中，一個幹細胞在分裂的時候，其子細胞的基因表達受到調控，例如 DNA 甲基化，變成不同細胞類型的過程。基因不因此改變。分化後的細胞在其結構、功能上都會出現差異，只能分裂得出同等細胞類型的子細胞。動物細胞分化如精子、卵、上皮、紅 血球、白血球、神經、平滑肌、骨骼肌、硬骨細胞等。植物細胞分化如 精、卵、表皮、薄壁、導管、葉肉、分生組織細胞等。
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+細胞種類 & 型態 & 功能 \\ \hline
+神經細胞 & 具有許多突起 & 訊息接收和傳遞 \\ \hline
+肌肉細胞 & 纖維狀 & 利於收縮產生運動 \\ \hline
+木質部細胞 & 管狀 & 協助體內水及礦物質的運送 \\ \hline
+植物表皮細胞 & 扁平且排列緊密 & 保護 \\ \hline
+保衛細胞 & 半月形且兩兩成對 & 控制氣孔開閉 \\ \hline
+\end{tabular}
+\end{center}
+\section{實驗}
+\subsection{DNA 粗萃取實驗}
+\begin{itemize}
+  \item 攪碎細胞壁：對於有細胞壁的細胞，以果汁機攪碎。
+  \item 破壞膜：加入洗碗精為界面活性劑破壞膜。
+  \item 濃食鹽水：加入 5M 食鹽水使帶負電的 DNA 表面被 \ce{Na+} 覆蓋，分子間失去排斥力而凝聚沉澱，與蛋白質分離。若食鹽水濃度過低，DNA 分子仍帶負電會相斥，若過高則因為吸附的鈉離子較多帶正電也會相斥 ，而不沉澱。
+  \item 木瓜酵素：加入鳳梨、木瓜、嫩精或其他還有木瓜酵素之物， 以分解蛋白質。
+  \item 酒精：加入95\%冰酒精，利用DNA不溶於酒精使DNA聚集纏繞析出。
+\end{itemize}
+\subsection{變色葉實驗（Variegated Leaf Experiment）}
+變色葉實驗是一種用於證明葉片中葉綠素對光合作用至關重要的實驗方法。在這個實驗中，使用具有綠色和非綠色區域的變色葉，通常是由於葉片中部分細胞含有葉綠素，而其他部分則缺乏葉綠素。\\
+\textbf{實驗步驟：}
+\begin{enumerate}
+\item 準備變色葉： 選擇一片具有明顯綠色和非綠色區域的變色葉。
+\item 去澱粉處理： 將葉片放置在黑暗中約24小時，以消耗葉片中的澱粉。
+\item 暴露於光線下： 將葉片放置在陽光下約6小時，讓其進行光合作用。
+\item 煮沸處理： 將葉片放入沸水中煮沸幾分鐘，以殺死葉片並使其變軟。
+\item 脫色處理： 將葉片放入含有酒精的燒杯中，並將燒杯放入水浴中加熱，直到葉片變白，去除葉綠素。
+\item 碘染色： 將脫色後的葉片浸入稀釋的碘溶液中幾分鐘，然後取出並沖洗掉多餘的碘溶液。
+\item 觀察結果： 觀察葉片的變色情況。在含有葉綠素的綠色區域，葉片會變成藍黑色，表示該區域進行了光合作用，產生了澱粉。而在缺乏葉綠素的非綠色區域，葉片不會變色，表示該區域未進行光合作用。
+\end{enumerate}
+\textbf{結論：}\\
+通過這個實驗，可以證明葉片中含有葉綠素的區域能夠進行光合作用，並產生澱粉，而缺乏葉綠素的區域則無法進行光合作用，無法測得澱粉。這表明葉綠素對光合作用至關重要。
+\section{發展史}
+\begin{itemize}
+  \item 1590荷蘭詹森（Zacharias Janssen）發明光學複式顯微鏡，10倍。
+  \item 1665英國虎克（Robert Hooke）以自製50倍複式顯微鏡觀察到軟木切片蜂窩狀小空格，稱細胞。
+  \item 1676微生學之父雷文霍克（Antoni van Leeuwenhoek）改良出270倍單式顯微鏡，觀察到細菌。
+  \item 1798道爾吞（John Dalton）發現自己患有紅綠色盲後出版《關於色彩視覺的離奇事實》。
+  \item 1831英國布朗（Robert Brown）發現蘭花花瓣細胞內球狀構造 ，稱細胞核。
+  \item 1838德國許萊登（Matthias Schleiden）以顯微鏡觀察植物結果提出「細胞是構成植物體的基本單位」。
+  \item 1838德國許旺（Theodor Schwann）以顯微鏡觀察動物結果提出「細胞是構成的動物和植物構造的基本單位」。
+  \item 1855德國魏修（Rudolf Virchow）根據雷麥克（Robert Remak ）的研究結果提出「細胞來自已存在的細胞」，修正許萊登和許旺的學說，形成細胞學說。
+  \item 1855-1856奧地利孟德爾提出孟德爾的遺傳法則。其前多流行融合遺傳（Blending inheritance）說。
+  \item 1865孟德爾發表植物雜交的實驗，1900年方被再發現，後世稱其遺傳學之父。
+  \item 1879德國弗萊明（Walther Flemming）利用特殊染劑將動物胚胎細胞染色，發現細胞在分裂時會出現染色較深的絲狀物，後稱染色體 （Chromosome）。
+  \item 1891德國漢金（Hermann Henking）發現昆蟲細胞中一段類似染色體的物質未產生聯會，但與染色體同樣移到子細胞中，稱之 X 體，即 X 染色體。
+  \item 1902-1903美國薩登（Walter Sutton）出版論短線蟲染色體組的形態和遺傳中的染色體。
+  \item 1902德國包法利（Theodor Boveri）使用光學顯微鏡觀察動物卵細胞受精的過程，提出遺傳的染色體學說的一部分。
+  \item 1905史蒂文森（Nettie Stevens）發現昆蟲雌性個體體細胞有 XX 染色體而雄性個體體細胞有X與另一性狀、大小不同的染色體，稱之 Y 染色體。
+  \item 1909丹麥約翰森（Wilhelm Johannsen）將控制性狀的遺傳因子改稱基因。
+  \item 1910摩根（Thomas Morgan）進行果蠅眼色遺傳實驗，發現互交結果不同，提出性聯遺傳。
+  \item 1935-1944埃弗里（Oswald Avery）、麥克勞德（Colin MacLeod）和麥卡蒂（Maclyn McCarty）共同完成埃弗里-麥克勞德-麥卡蒂實驗，證明去氧核糖核酸是肺炎鏈球菌的遺傳物質。
+  \item 1952富蘭克林（Rosalind Franklin）利用 X 射線結晶繞射技術拍攝 DNA X射線繞射照片，認為DNA是有幾條鍊子的大型螺旋，外面是磷酸鹽。
+  \item 1953美國華生（James Watson）和英國克里克（Francis Crick）提出DNA雙股螺旋構造模型。
+  \item 1982格里夫茲（Frederick Griffith）做格里夫茲實驗，顯示肺炎鏈球菌的遺傳訊息會因為轉型作用，即自外界得到轉型物質，而發生改變。
+\end{itemize}
+\end{document}

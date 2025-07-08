@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Sequences and Series}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{Sequences and Series (數列與級數)}
+\ssc{Sequence (數列)}
+\sssc{Sequence (數列)}
+A sequence is a function whose domain is an interval of integers, usually denoted as $\langle a_n\rangle$, $\{a_n\}$, or $(a_n)$, sometimes with domain as $\langle a_n\rangle_{n=1}^m$, $\{a_n\}_{n=1}^m$, or $(a_n)_{n=1}^m$, where the subscript $n$ refers to the nth element of the sequence, that is, the function value when the independent variable is $n$.
+\sssc{Finite sequence (有限數列)}
+A finite sequence is a sequence with finite terms, e.g. $\langle a_n\rangle_{n=1}^m=\langle a_1,a_2,\ldots,a_m\rangle,m\geq 1$ and $m$ is finite.
+\sssc{Infinite sequence (無窮數列)}
+An infinite sequence is a sequence with infinite terms, e.g. $\langle a_n\rangle_{n=1}^\infty=\langle a_1,a_2,\ldots\rangle$. Unless otherwise specified, the sequences referred to below are infinite sequences.
+\ssc{Series (級數)}
+\sssc{Series (級數)}
+The sum of the terms of a sequence.
+\sssc{Finite Series (有限級數)}
+The sum of the terms of a finite sequence.
+\sssc{Infinite Series (無窮級數)}
+The sum of the terms of an infinite sequence.
+\subsection{Arithmetic progression/sequence (等差數列) and arithmetic series (等差級數)}
+An arithmetic sequence is a sequence $\langle a_n\rangle=\langle a_1+(n-1)d\rangle$. 
+
+Given $a$ and $b$, $\frac{a+b}{2}$ is called the median of an arithmetic sequence (等差中項).
+
+An arithmetic series is a series $S_n=\sum_{i=1}^na_i$, where $\langle a_n\rangle$ is an arithmetic sequence.
+
+\[\nexists\lim_{n\to\infty}a_n,\quad d\neq 0\]
+\[\lim_{n\to\infty}a_n=a_1,\quad d=0\]
+\[S_n=\frac{n}{2}\qty(a_1+a_n)=\frac{n}{2}\qty(2a_1+(n-1)d)=na_1+\frac{n(n-1)d}{2}\]
+\[\nexists\lim_{n\to\infty}S_n,\quad a_1\neq 0\lor d\neq 0\]
+\[\lim_{n\to\infty}S_n=0,\quad a_1=0\land d=0\]
+\subsection{Geometric progression/sequence (等比/幾何數列) and geometric series (等比/幾何級數)}
+A geometric sequence is a sequence $\langle a_n\rangle=\langle a_1\cdot r^{n-1}\rangle$, where $a_1r\neq 0$.
+
+Given $a$ and $b$, $\pm\sqrt{ab}$ is called the median of an geometric sequence (等比中項).
+
+A geometric series is a series $S_n=\sum_{i=1}^na_i$, where $\langle a_n\rangle$ is a geometric sequence.
+
+\[S_n=\frac{a_1\qty(1-r^n)}{1-r},\quad r\neq 1\]
+\[S_n=na_1,\quad r=1\]
+\[\lim_{n\to\infty}S_n=\frac{a_1}{1-r},\quad \abs{r}<1\]
+\[\nexists\lim_{n\to\infty}S_n,\quad \abs{r}\geq 1\]
+\subsection{Riemann zeta function (黎曼 zeta 函數)}
+\[\begin{aligned}
+\zeta(s) &= \sum_{n=1}^\infty\frac{1}{n^s}\\
+&= \frac{1}{\Gamma (s)}\int _0^\infty \frac {x^{s-1}}{e^x-1}\,\mathrm {d} x
+\eam
+\sssc{Harmonic series (調和級數)}
+\[S_n=\sum_{n=1}^n\frac{1}{n}\]
+\[\nexists\sum_{n=1}^\infty\frac{1}{n}\]
+\sssc{Basel problem (巴塞爾問題)}
+\[\zeta(2)=\frac{\pi^2}{6}\]
+\sssc{Other even positive integers}
+\[\zeta(4)=\frac{\pi^4}{90}\]
+\[\zeta(6)=\frac{\pi^6}{945}\]
+\[\zeta(8)=\frac{\pi^8}{9450}\]
+\[\zeta(10)=\frac{\pi^{10}}{93555}\]
+\[\zeta(12)=\frac{691\pi^{12}}{638512875}\]
+\[\zeta(14)=\frac{2\pi^{14}}{18243225}\]
+\sssc{Infinity}
+\[\lim_{n\to\infty}\zeta(n)=1\]
+\subsection{Euler–Mascheroni constant (歐拉–馬斯克若尼常數)}
+\[\begin{aligned}
+\gamma &= \lim _{n\to \infty }\left(\left(\sum _{k=1}^n\frac {1}{k}\right)-\ln(n)\right)\\
+&= \int _1^\infty \left(\frac{1}{\lfloor x\rfloor}-\frac{1}{x}\right)\,\mathrm{d}x
+\end{aligned}\]
+\subsection{冪級數（Power series）}
+\[\begin{aligned}
+\sum_{i=1}^ni &= \frac{n\qty(n+1)}{2}\\
+\sum_{i=1}^ni^2 &= \frac{n\qty(n+1)\qty(2n+1)}{6}\\
+\sum_{i=1}^ni^3 &= \qty(\frac{n(n+1)}{2})^2\\
+\sum_{i=1}^ni^r &= n + \sum_{k=1}^{n-1} (n-k)((k+1)^r - k^r)\\
+&= n + \sum_{k=1}^{n-1} (n-k)\sum_{j=0}^{r-1}\binom{r}{j}k^{j}
+\end{aligned}\]
+\end{document}

@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Inequalities}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{Inequalities}
+\subsection{Triangle Inequality (三角不等式)}
+For any normed space $V$ with norm $\|\cdot\|$:
+\[\forall a,b\in V\colon\|a\|+\|b\|\geq\|a+b\|\geq\abs{\|a\|-\|b\|}.\]
+\subsection{Reverse Triangle Inequality (反三角不等式)}
+For any normed space $V$ with norm $\|\cdot\|$:
+\[\forall a,b\in V\colon\|a\|+\|b\|\geq\|a-b\|\geq\abs{\|a\|-\|b\|}.\]
+\subsection{Jensen's Inequality (詹森不等式)}
+Let \((\Omega, \mu)\) be a probability space, \( g: \Omega \to \mathbb{R} \) be a real-valued \( \mu \)-integrable function, and \( \varphi: \mathbb{R} \to \mathbb{R} \) be a convex function. Then, Jensen's inequality states:
+\[ \int_{\Omega} \varphi\circ g(\omega) \, \mathrm{d}\mu(\omega) \geq \varphi \left( \int_{\Omega} g(\omega) \,\mathrm{d}\mu(\omega) \right)\]
+\begin{proof}\mbox{}\\
+Since $\varphi$ is convex, at each real number $x$, we have a non-empty set of subderivatives, which may be thought of as lines touching the graph of $\varphi$ at $x$, but which are below the graph of $\varphi$ at all points. 
+
+We define:
+\[x_{0} := \int _{\Omega } g \,\mathrm{d}\mu.\]
+Because of the existence of subderivatives for convex functions, we may choose $a$ and $b$ such that $ax + b \leq \varphi (x)$ for all real $x$ and $ax_{0} + b = \varphi (x_{0})$.
+
+But then we have that for almost all $\omega \in \Omega$:
+\[ \varphi (g(\omega)) \geq ag(\omega) + b \] 
+
+Since we have a probability measure, the integral is monotone with $\mu (\Omega) = 1$ so that
+\[\begin{aligned}
+\int _{\Omega} \varphi\circ g(\omega)\, \mathrm{d}\mu(\omega) &\geq \int _{\Omega} ag(\omega) + b \, \mathrm{d}\mu(\omega) \\
+&= a\int _{\Omega} g \, \mathrm{d}\mu + b \int _{\Omega} \, \mathrm{d}\mu \\
+&= ax_{0} + b = \varphi (x_{0}) \\
+&= \varphi \left(\int _{\Omega} g \, \mathrm{d}\mu \right).
+\end{aligned}\]
+\end{proof}
+\subsection{AM-GM Inequality (算幾不等式)}
+\[ \frac{\sum_{i=1}^n x_i}{n} \geq \qty(\prod_{i=1}^n x_i)^{1/n} \]
+\begin{proof}\mbox{}\\
+\textit{Lemma:} Jensen's inequality.\\
+Applying Jensen's inequality to the logarithm function, which is concave, and the arithmetic mean:
+\[
+\log \left(\frac{\sum_{i=1}^n x_i}{n}\right) \geq \sum_{i=1}^n \frac{1}{n} \log\left(x_i\right) = \log \left( \qty(\prod_{i=1}^n x_i)^{1/n} \right)
+\]
+Exponentiating both sides gives the desired inequality:
+\[
+\frac{\sum_{i=1}^n x_i}{n} \geq \qty(\prod_{i=1}^n x_i)^{1/n}
+\]
+\end{proof}
+\subsection{Cauchy-Schwarz Inequality (柯西-施瓦茨不等式)}
+For any \( \mathbf{u},\,\mathbf{v}\in\mathbb{C}^n \),
+\[ \abs{\mathbf{u}\cdot\mathbf{v}}\leq\abs{\mathbf{u}}\abs{\mathbf{v}}\]
+and
+\[ \abs{\mathbf{u}\cdot\mathbf{v}}\leq\abs{\mathbf{u}}\abs{\mathbf{v}}\iff\mathbf{u}\parallel\mathbf{v}, \]
+where \( \mathbf{u} \cdot \mathbf{v} \) is the standard inner product defined as
+\[
+\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i \overline{v_i},
+\]
+with \( \overline{v_i} \) denoting the complex conjugate of \( v_i \).
+\begin{proof}\mbox{}\\
+Consider the complex number \( z = \mathbf{u} \cdot \mathbf{v} \).\\
+Define the function
+\[
+f(t) = \abs{ \mathbf{u} + t\mathbf{v} }^2
+\]
+for some real number \( t \). Then, we have
+\[\begin{aligned}
+f(t) &= \left( \mathbf{u} + t\mathbf{v} \right) \cdot \overline{\left( \mathbf{u} + t\mathbf{v} \right)}\\
+&= \left( \mathbf{u} \cdot \overline{\mathbf{u}} \right) + t \left( \mathbf{u} \cdot \overline{\mathbf{v}} \right) + t \left( \mathbf{v} \cdot \overline{\mathbf{u}} \right) + t^2 \left( \mathbf{v} \cdot \overline{\mathbf{v}} \right)\\
+&= |\mathbf{u}|^2 + 2t \Re(\mathbf{u} \cdot \overline{\mathbf{v}}) + t^2 |\mathbf{v}|^2.
+\end{aligned}\]
+Since \( f(t) \geq 0 \) for all \( t \in \mathbb{R} \), the quadratic equation in \( t \) must have a non-positive discriminant. The discriminant of this quadratic is:
+\[\begin{aligned}
+\Delta &= \left( 2 \Re(\mathbf{u} \cdot \overline{\mathbf{v}}) \right)^2 - 4 \times |\mathbf{v}|^2 \times |\mathbf{u}|^2\\
+&= 4 \left( \Re(\mathbf{u} \cdot \overline{\mathbf{v}}) \right)^2 - 4 |\mathbf{u}|^2 |\mathbf{v}|^2.
+\end{aligned}\]
+We require \( \Delta \leq 0 \). This implies:
+\[
+\left( \Re(\mathbf{u} \cdot \overline{\mathbf{v}}) \right)^2 \leq |\mathbf{u}|^2 |\mathbf{v}|^2.
+\]
+Taking the square root of both sides and noting that \( \abs{\mathbf{u}\cdot\mathbf{v}} \geq \Re(\mathbf{u} \cdot \overline{\mathbf{v}}) \):
+\[
+\abs{\mathbf{u}\cdot\mathbf{v}} \leq |\mathbf{u}| |\mathbf{v}|.
+\]
+Equality \( \abs{\mathbf{u}\cdot\mathbf{v}} = |\mathbf{u}| |\mathbf{v}| \) holds if and only if the discriminant \( \Delta = 0 \). This happens when the quadratic equation has a double root or equivalently, when \( \mathbf{u} + t\mathbf{v} = 0 \) for some real \( t \), implying \( \mathbf{u} \) is a scalar multiple of \( \mathbf{v} \). Therefore, \( \mathbf{u} \) and \( \mathbf{v} \) are linearly dependent, meaning:
+\[\mathbf{u}\parallel\mathbf{v}.\]
+\end{proof}
+For any \( \mathbf{u},\,\mathbf{v}\in\mathbb{R}^n \),
+\[ \abs{\mathbf{u}\cdot\mathbf{v}}\leq\abs{\mathbf{u}}\abs{\mathbf{v}}\]
+and
+\[ \abs{\mathbf{u}\cdot\mathbf{v}}\leq\abs{\mathbf{u}}\abs{\mathbf{v}}\iff\mathbf{u}\parallel\mathbf{v}, \]
+where \( \mathbf{u} \cdot \mathbf{v} \) is the standard inner product defined as
+\[
+\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i.
+\]
+\end{document}

@@ -1,0 +1,137 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{複數與複數平面}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\sct{複數（Complex number）與複數平面（Complex plane）}
+\ssc{複數（Complex number）}
+\bit
+\item \tb{複數（Complex number）}：可表示成$z=a+bi$得數，其中$a,b\in\mathbb{R}$。
+\item \tb{實部（Real part）}：$z=a+bi$的實部$\Re(z)=a$。
+\item \tb{虛部（Imaginary part）}：$z=a+bi$的虛部$\Im(z)=b$。
+\item \tb{虛數（Imaginary number）}：虛部不為零的複數。
+\item \tb{純虛數（Pure imaginary number）}：實部為零的虛數。
+\eit
+\ssc{共軛複數（Conjugate complex number）}
+$z$的共軛複數$\ol{z}$，稱 z bar，為其實部加上其虛部的負一倍，即絕對值不變輻角乘上負號。
+\sssc{複數除法}
+\[\frac{1}{z}=\frac{\bar{z}}{|z|^2},z\neq 0\]
+\sssc{共軛複數的性質}
+\[\ol{z_1}+\ol{z_2}=\ol{z_1+z_2}.\]
+\[\ol{z_1}-\ol{z_2}=\ol{z_1-z_2}.\]
+\[\ol{z_1\cdot z_2}=\ol{z_1}\cdot\ol{z_2}.\]
+\[\Re(\ol{z_1}\cdot z_2)=\Re(z_1\cdot\ol{z_2}).\]
+\[\frac{\ol{z_1}}{\ol{z_2}}=\ol{\qty(\frac{z_1}{z_2})},\quad z_2\neq 0.\]
+\[\ol{z^n}=\qty(\ol{z})^n,\quad zn\neq 0.\]
+\[\ol{e^{i\theta}}=e^{-i\theta}.\]
+\ssc{複數的絕對值/向徑/模（長）}
+\[|a+bi|=\sqrt{a^2+b^2}\]
+即：
+\[|z|=\sqrt{z\cdot\ol{z}}\]
+\ssc{負實數根號的性質}
+\[\forall a>0\colon\sqrt{-a}=\sqrt{a}i\]
+\[\sqrt{ab}=\begin{cases}
+-\sqrt{a}\sqrt{b},\quad &a<0\land b<0\\
+\sqrt{a}\sqrt{b},\quad &\tx{otherwise.}
+\end{cases}\]
+\ssc{歐拉公式（Euler's formula）}
+\[e^{i\theta}=\cos\theta+i\sin\theta.\]
+\ssc{多項式的性質}
+\sssc{代數基本定理（Fundamental theorem of algebra）}
+任何一個次數大於零的複係數$n$次方程式都至少有一個複數根。
+\sssc{根數}
+若$k$重根計作$k$個根，則複係數$n$次多項式方程恰有$n$個複數根。
+\sssc{虛根成對定理}
+實係數多項式方程$f(x)=0$如有虛根$x$則$\ol{x}$亦為其根。
+\sssc{共軛複數的函數值}
+實係數多項式函數$f$、複數$z$：
+\[\ol{f(z)}=f\qty(\ol{z}).\]
+\sssc{奇數次實係數多項式方程}
+奇數次實係數多項式方程必有實根。
+\ssc{複數平面（Complex plane）/阿爾岡平面（Argand plane）/高斯平面（Gaussian plane）}
+由實軸為橫軸與虛軸為縱軸定義的二位笛卡爾座標平面，與複數域一一對應。
+\subsection{輻角（Argument）}
+$\arg(z)$代表$z$的輻角（Argument），$\operatorname{Arg}(z)$代表$z$的輻角主值/主輻角（Principal argument），惟少數文獻反之。
+\subsubsection{輻角（Argument）}
+$z=x+yi\in\mathbb {C}_{\neq 0}$，其中$x,y\in\mathbb{R}$，$z$的輻角$\arg(z)=\varphi$定義為使等式：
+\[z=x+yi=\sqrt{x^2+y^2}(\cos \varphi +i\sin \varphi )\]
+成立的任何實數$\varphi $。
+
+$0$的輻角主值未定義。
+\subsubsection{輻角主值/主輻角（Principal argument）}
+$z=x+yi\in\mathbb {C} _{\neq 0}$，其中$x,y\in\mathbb{R}$，$z$的輻角主值$\operatorname{Arg}(z)$定義為其輻角中處於$(-\pi,\pi]$者，亦有文獻定義為其輻角中處於$[0,2\pi)$者。
+
+$0$的輻角主值未定義。
+\sssc{複數極式}
+令複數$z$有輻角$\theta$，則其極式為：
+\[z=|z|(\cos\theta+i\sin\theta).\]
+\ssc{複數運算的幾何意義}
+\sssc{四則運算}
+\bit
+\item 複數相加減，實部與虛部分別相加減，相當於平面向量相加減。
+\item 複數相乘，模長相乘、輻角相加。
+\item 複數相除，模長相除、輻角相減。
+\eit
+\sssc{隸美弗公式（De Moivre's formula）}
+\[(r(\cos\theta+i\sin\theta))^n=r^n(\cos(n\theta)+i\sin(n\theta)),\quad r\neq 0\land n\in\mathbb{Z}.\]
+\sssc{雙曲線函數隸美弗公式}
+\[(r(\cosh\theta+i\sinh\theta))^n=r^n(\cosh(n\theta)+i\sinh(n\theta)),\quad r\neq 0\land n\in\mathbb{Z}.\]
+\sssc{點積}
+複數平面上$P(z_1)$與$Q(z_2)$的點積為$\Re(z_1\cdot\ol{z_2})$。
+\ssc{複數的冪及其在複數平面上的幾何意義}
+\sssc{1的正整數分之一次冪及其在複數平面上的幾何意義}
+令$n\in\mathbb{N}$，$\omega=\cos\frac{2\pi}{n}+i\sin\frac{2\pi}{n}$，則$1^{\frac{1}{n}}$，即$x^n=1$的$n$個根，為$\omega$的0到$n-1$次方，即：
+\[e^{\frac{2\pi k}{n}}=\cos\frac{2\pi k}{n}+i\sin\frac{2\pi k}{n},\quad k\in\mathbb{N}_0<n.\]
+彼等根在複數平面上為以原點為圓心的單位圓的內接正$n$邊形的$n$個頂點。
+\sssc{非零複數的正整數分之一次冪及其在複數平面上的幾何意義}
+令$z\in\mathbb{C}_{\neq 0}\land n\in\mathbb{N}$，$\omega=\cos\frac{2\pi}{n}+i\sin\frac{2\pi}{n}$，則$z^{\frac{1}{n}}$，即$x^n=z$的$n$個根為$\sqrt[n]{|z|}$乘以$\omega$的0到$n-1$次方，即：
+\[\sqrt[n]{|z|}e^{\frac{\Arg(z)+2\pi k}{n}}=\sqrt[n]{|z|}\qty(\cos\frac{\Arg(z)+2\pi k}{n}+i\sin\frac{\Arg(z)+2\pi k}{n}),\quad k\in\mathbb{N}_0<n.\]
+彼等根在複數平面上為以原點為圓心、半徑$\sqrt[n]{|z|}$的圓的內接正$n$邊形的$n$個頂點。
+\subsubsection{非零複數的複數次冪及其在複數平面上的幾何意義}
+令$z\in\mathbb{C}_{\neq 0}\land w\in\mathbb{C}$，則$z^w$為：
+\[\begin{aligned}
+z^w=&e^{w\ln(z)}\\
+=&\left(|z|e^{i\arg(z)}\right)^w\\
+=&|z|^{\Re(w)}|z|^{\Im(w)i}e^{i\Re(w)\arg(z)}e^{-\Im(w)\arg(z)}\\
+=&|z|^{\Re(w)}e^{-\Im(w)\arg(z)+i(\Re(w)\arg(z)+\Im(w)\ln|z|)}\\
+=&|z|^{\Re(w)}e^{-\Im(w)\arg(z)}\left(\cos(\Re(w)\arg(z)+\Im(w)\ln|z|)+i\sin(\Re(w)\arg(z)+\Im(w)\ln|z|)\right),
+\end{aligned}\]
+其中：
+\[\arg(z)=\Arg(z)+2\pi k,\quad k\in\mathbb{Z}.\]
+彼等根在複數平面上為螺旋
+\[|z|^{\Re(w)}e^{-\Im(w)\theta}\left(\cos(\Re(w)\theta+\Im(w)\ln|z|)+i\sin(\Re(w)\theta+\Im(w)\ln|z|)\right)\]
+上等輻角差的點。
+\paragraph*{模長：}
+\[\abs{z^w}=|z|^{\Re(w)}e^{-\Im(w)\arg(z)}.\]
+\begin{itemize}
+\item 當$\Im(w)>0$：模長對$k$指數衰減，即隨$k$增大趨近於零、隨$k$減小發散至無限大。
+\item 當$\Im(w)<0$：模長對$k$指數增長，即隨$k$增大發散至無限大、隨$k$減小趨近於零。
+\item 當$\Im(w)=0$：模長始終為$|z|^{\Re(w)}$，即在複數平面上根在以原點為圓心、半徑$|z|^{\Re(w)}$的圓上。
+\end{itemize}
+\paragraph*{輻角：}
+\[\arg\left(z^w\right)=\Re(w)\arg(z)+\Im(w)\ln|z|.\]
+\begin{itemize}
+\item 當$\Re(w)>0$：輻角對$k$線性增長，即隨$k$增大逆時針旋轉、隨$k$減小順時針旋轉。
+\item 當$\Re(w)<0$：輻角對$k$線性衰減，即隨$k$增大順時針旋轉、隨$k$減小逆時針旋轉。
+\item 當$\Re(w)\in\mathbb{Z}$：輻角主值始終為$\left(\Re(w)\Arg(z)+\Im(w)\ln|z|\right)\mod (2\pi)$，即在複數平面上根在輻角$\Re(w)\Arg(z)+\Im(w)\ln|z|$的射線上。
+\end{itemize}
+\paragraph*{螺旋方向：}
+\begin{itemize}
+\item 當$\Re(w)\Im(w)>0$：在複數平面上根在以原點為中心點的順時針發散的螺旋上。
+\item 當$\Re(w)\Im(w)<0$：在複數平面上根在以原點為中心點的逆時針發散的螺旋上。
+\item 當$\Im(w)=0$：在複數平面上根在以原點為圓心的圓上。
+\end{itemize}
+\paragraph*{根的個數：}
+\begin{itemize}
+\item 當$\Im(w)=0\land\Re(w)\in\mathbb{Q}$：令$\abs{\Re(w)}=\frac{m}{n}$其中$n\in\mathbb{N},\gcd(m,n)=1$，則有$n$個根，且彼等根在複數平面上為以原點為圓心、半徑$|z|^{\Re(w)}$的圓的內接正$n$邊形的$n$個頂點，且其中一個頂點在輻角$\Re(w)\Arg(z)$的射線上。
+\item 其他情況：有無限多個根。
+\end{itemize}
+\end{document}

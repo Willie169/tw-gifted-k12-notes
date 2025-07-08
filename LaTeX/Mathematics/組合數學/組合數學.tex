@@ -1,0 +1,242 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{組合數學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{組合數學（Combinatorics）}
+\subsection{計數原理（Counting principle）/基本計數原理（Fundamental principle of counting）}
+\begin{itemize}
+\item \tb{窮舉法（Proof by exhaustion）}：將所有可能一一列舉出而計算數目的方法。
+\item \tb{樹狀圖（Tree structure）}：畫出樹狀圖列舉而計算數目的方法。
+\item \tb{乘法原理（Rule of product or multiplication principle）}：若有$a$種方法做事$A$，$b$種方法做事$B$，則合共有$a\cdot b$種方法做事$A\land B$。
+\item \tb{加法原理（Rule of sum or addition principle）}：若有$a$種方法做事$A$，$b$種方法做事$B$，則合共有$a+b$種方法做事$A\lor B$。
+\end{itemize}
+\ssc{冪集計數原理（Counting principle for power sets）}
+\[n(2^A)=2^{n\qty(A)}\]
+\ssc{排容原理/取捨原理（Principle of inclusion-exclusion or inclusion–exclusion principle, PIE）}
+\textit{Statement:}
+\[ \left|\bigcup _{i=1}^n A_i\right| = \sum _{\emptyset \neq J\subseteq \{a|a \in \mathbb{N} \wedge 1\leq a\leq n\}}\left((-1)^{|J|-1}\cdot{\Biggl |}\bigcap _{j\in J}A_j{\Biggr |}\right) \]
+
+\tb{以元素證明：}
+\begin{proof}
+\[
+\begin{aligned}
+& \left|\bigcup _{i=1}^n A_i\right| = \sum _{\emptyset \neq J\subseteq \{a|a \in \mathbb{N} \wedge 1\leq a\leq n\}}\left((-1)^{|J|-1}\cdot{\Biggl |}\bigcap _{j\in J}A_j{\Biggr |}\right) \\
+& \equiv 1_{\bigcup _{i=1}^n A_i} = \sum _{k=1}^{n}\left((-1)^{k-1}\cdot\sum _{I\subseteq \{a|a \in \mathbb{N} \wedge 1\leq a\leq n\} \wedge |I|=k}1_{A_{I}}\right) \\
+& \equiv \forall \left( x \in \bigcup_{i=1}^n A_i, m = \sum_{i: x \in A_i}1\right): 1 = \sum _{k=1}^{m}\left((-1)^{k-1}\sum _{I\subset \{a|a \in \mathbb{N} \wedge 1\leq a\leq m\} \wedge |I|=k}1\right) \\
+& \equiv \forall \left( x \in \bigcup_{i=1}^n A_i, m = \sum_{i: x \in A_i}1\right): {\binom{m}{0}} = \sum _{k=1}^{m}\left((-1)^{k-1}{\binom {m}{k}}\right) \\
+& \equiv \forall \left( x \in \bigcup_{i=1}^n A_i, m = \sum_{i: x \in A_i}1\right): (1-1)^m = 0
+\end{aligned}
+\]
+\end{proof}
+
+\tb{以數學歸納法證明：}
+\begin{proof}
+\[
+\begin{aligned}
+& \text{當\ } n=2, |A_1\bigcup A_2| = |A_1|+|A_2| - |A_1\cap A_2)\text{，命題成立；} \\
+& \text{假設當\ } n=k\geq 2, k \in \mathbb{N} \text{，命題成立，} \\
+& \text{則當\ } n=k+1,\\
+& \left| \bigcup_{i=1}^{k+1} A_i \right| \\
+& = \left| \left(\bigcup_{i=1}^k A_i\right)\cup A_{k+1} \right| \\
+& = \sum _{\emptyset \neq J\subseteq \{a|a \in \mathbb{N} \wedge 1\leq a\leq k+1\}}\left((-1)^{|J|-1}\cdot{\Biggl |}\bigcap _{j\in J}A_j{\Biggr |}\right) \\
+& \text{，命題亦成立。} \\
+& \text{由數學歸納法，得證。}
+\end{aligned}
+\]
+\end{proof}
+\subsection{階乘（Factorial）與伽瑪函數（Gamma function）}
+\sssc{階乘（Factorial）}
+\[n! = \begin{cases}\prod_{i=1}^n i, & \text{if } n \in \mathbb{N}, \\1, & \text{if } n = 0.\end{cases}\]
+\sssc{伽瑪函數（Gamma function）}
+階乘函數在正實部複數域上的擴展。
+\[\Gamma(z) = \int_0^{\infty} t^{z-1} e^{-t} \, \mathrm{d}t, \quad \Re(z) > 0\]
+其中$\Re(z)$指$z$之實部。\\
+特別地，對於正實數$z$：
+\[\Gamma(z) = (z-1)!\]
+\subsection{排列（Permutation）}
+\sssc{盡相異物排列}
+從$n$相異物中取$m$個排成一直列（$0\leq m\leq n$），正逆序視為二，其排列總數$P_m^n=\frac{n!}{\qty(n-m)!}$。
+\sssc{不盡相異物排列}
+設有$n$物，共有$k$種，第$i$種有$m_i$個。全取排成一直列，正逆序視為二，其排列總數為$\frac{n!}{\prod_{i=1}^n m_i!}$。
+\sssc{盡相異物重複排列}
+從$n$類相異物中，任取$m$個排成一直列，正逆序視為二，其中每類物品的個數均不小於$m$且可重複選取，其排列總數為$n^m$。
+\subsection{錯排（Derangement）}
+$n$相異物全取作直線排列，其中$m$物（$m\leq n$）依次被限制不能排列於相異單一指定位置之排列，其方法數稱$D_m^n$；當$m=n$，錯排方法數稱$D_n$。
+\subsubsection{全錯排}
+\tb{遞迴式}：
+\[
+\begin{cases}
+D_0 &= 1 \\
+D_1 &= 0 \\
+D_n &= (n-1) \cdot (D_{n-1}+D_{n-2})\quad\text{（當\protect\ }n > 2\text{）}
+\end{cases}
+\]
+\tb{一般式}：
+\[
+\begin{aligned}
+D_n &= n! \cdot \left(1+\sum_{i=1}^n \frac{(-1)^i}{i!} \right) \\
+&= \sum_{i=0}^n (C_i^n \cdot (n-i)! \cdot (-1)^i
+\end{aligned}
+\]
+\tb{錯排機率}：
+\[ \lim_{n \to \infty} \frac{D_n}{n!} = \frac{1}{e} \]
+\subsubsection{非全錯排}
+\[ D_m^n = \sum_{i=0}^m \left((-1)^i \cdot C_i^m \cdot (n-i)!\right) \]
+\subsection{環狀排列（Cyclic permutation）}
+環狀排列：$n$物全取排列成環狀，不同方法之判定僅考慮相對位置，不考慮絕對位置，惟翻轉（順時針$\rightleftharpoons$逆時針）視為二種。
+\subsubsection{盡相異物環狀排列}
+\[ \frac{n!}{m\cdot (n-m)!} \]
+\subsubsection{不盡相異物環狀排列}
+$n$ 不盡相異物，全取作環狀排列，求其方法數。
+\begin{itemize}
+\item \textbf{法一：}\\
+子循環：一個長度$n$的給定直線排列，若其前$\frac{n}{m}$物重複$m$次等同於原排列，且不存在$>1$的$k$使原排列的前$\frac{n}{m\cdot k}$物重複$k$次等同於原排列的前$\frac{n}{m}$物，則稱原排列的前$\frac{n}{m}$物為一個長度$\frac{n}{m}$的子循環，稱原排列之子循環長度為$\frac{n}{m}$、子循環數目為$m$。 \\
+令該$n$不盡相異物的所有可能直線排列中，有$d_i$個之子循環長度為$\ell_i$，且$\sum_{i=1}^m d_i=$該$n$不盡相異物直線排列方法數，則：
+\[ \text{所求}=\sum_{i=1}^m \frac{d_i}{\ell_i} \]
+\item \textbf{法二：}\\
+令該$n$不盡相異物可分為$k$相異類，第$i$類（$1\leq i\leq k$）有$m_i$件相同物。最大公因數$\gcd(m_1, m_2, m_3, \ldots, m_k)=g$。令所求為$R$。
+\begin{itemize}
+\item 最大公因數$g$為$1$：
+\[ R=\frac{\left(n-1\right)!}{\prod_{i=1}^k\left(m_i!\right)} \]
+\item 最大公因數$g$為一質數$p$：
+\[ R=\frac{1}{n}\cdot \left(\frac{n!}{\prod_{i=1}^k\left(m_i!\right)}-\frac{n!}{\prod_{i=1}^k\left(\frac{m_i}{p}!\right)}\right)+\frac{\left(\frac{n}{p}-1\right)!}{\prod_{i=1}^k\left(\frac{m_i}{p}!\right)} \]
+\item 最大公因數$g$為任一正整數：
+\[
+\begin{aligned}
+\text{令\protect\ }g & \text{之所有相異質因數由小到大依序為}p_1, p_2, p_3, \ldots, p_q。 \\
+R &= \sum_{j=0}^q \left((-1)^j \cdot \sum_{\left|Y\right|=j} \frac{\left(\sum_{i=1}^k \frac{m_i}{\prod_{y \in Y} y}\right)!}{\prod_{i=1}^k \left(\frac{m_i}{\prod_{y \in Y} y}!\right)}\right) \\
+& \text{，其中 } Y \subseteq \{p_1, p_2, p_3, \ldots, p_q\} \\
+& \text{，定義 } \prod_{y \in \emptyset} y = 1
+\end{aligned}
+\]
+\end{itemize}
+\end{itemize}
+\subsection{組合數（Combinatorics）}
+組合數記作$\binom{n}{m}$或$C_m^n$。
+\subsubsection{組合數非負整數域定義}
+從$n$相異物中每次取$m$個為一組（$0 \leq m \leq n, m,n \in \mathbb{N}_0$）之組合數，即：
+\[\binom{n}{m} = \frac{n!}{m!\qty(n-m)!}, \quad 0 \leq m \leq n\land m,n \in \mathbb{N}_0.\]
+\subsubsection{組合數非負實數域定義}
+\[\binom{n}{m} = \frac{\prod_{i=0}^{m-1} \left(n-i\right)}{m!}, \quad 0 \leq m \leq n\land m \in \mathbb{N}_0\land n \in \mathbb{R}_{\geq 0}.\]
+\subsubsection{組合數實數域定義}
+\[\binom{n}{m} = 
+\begin{cases}
+& \frac{\prod_{i=0}^{m-1} \left(n-i\right)}{m!}, \quad 0 \leq m \leq n\land m \in \mathbb{N}_0\land n \in \mathbb{R}_{\geq 0},\\
+& (-1)^m \cdot \binom{-n+m-1}{m}, \quad 0 \leq m \leq -n+m-1\land m \in \mathbb{N}_0\land n \in \mathbb{R}_{<0}.
+\end{cases}\]
+\subsubsection{組合數大於負一複數域定義}
+\[\binom{n}{m} = \frac{\Gamma(n+1)}{\Gamma(m+1)\Gamma(n-m+1)}, \quad 0 \leq \Re(m) \leq \Re(n)\land m,n\in\mathbb{C}\land \Re(n),\Re(m),\Re(n-m) \in \mathbb{R}_{>-1}.\]
+\subsubsection{組合數複數域定義}
+\[\begin{aligned}
+&\binom{n}{m} \\
+=& \begin{cases}
+\frac{\Gamma(n+1)}{\Gamma(m+1)\Gamma(n-m+1)}, \quad & 0 \leq \Re(m) \leq \Re(n)\land m,n\in\mathbb{C}\land \Re(n),\Re(m),\Re(n-m) \in \mathbb{R}_{>-1},\\
+(-1)^m \cdot\binom{-n+m-1}{m}, \quad & 0 \leq \Re(m) \leq \Re(-n+m-1)\land m,n\in\mathbb{C}\land\Re(-n+m),\Re(m+1),\Re(-n) \in \mathbb{R}_{>0}.
+\end{cases}
+\end{aligned}\]
+\sssc{二項式定理（Binomial theorem）}
+\[\begin{aligned}
+& (a+b)^n,\quad a,b,n\in\mathbb{C}\land a+b\neq 0\\
+=& \begin{cases}
+& \sum_{m=0}^n \binom{n}{m} \cdot a^m \cdot b^{n-m},\quad\Re(n)\in\mathbb{N}_0,\\
+& \sum_{m=0}^{\infty} \binom{n}{m} \cdot a^m \cdot b^{n-m},\quad\Re(n)\notin\mathbb{N}_0\land\text{\ 此表達式收斂}.
+\end{cases}\end{aligned}\]
+\sssc{多項式定理（Multinomial theorem）}
+\[\begin{aligned}
+&\left(\sum_{i=1}^mx_i\right)^n,\quad x_i,n\in\mathbb{C}\land\sum_{i=1}^mx_i\neq 0\\
+=& \begin{cases}
+& \sum_{\substack{\sum_{i=1}^mk_i=n\\k_i\in\mathbb{N}_0}}\frac{n!}{\prod_{i=1}^n(k_i!)}\prod_{i=1}^nx_i^{\phantom{i}k_i},\quad \Re(n)\in\mathbb{N}_0,\\
+& \sum_{k_i\in\mathbb{N}_0}\frac{\Gamma(n+1)}{\prod_{i=1}^n\Gamma(k_i+1)}\prod_{i=1}^nx_i^{\phantom{i}k_i},\quad\Re(n)\notin\mathbb{N}_0\land\text{\ 此表達式收斂}.
+\end{cases}\end{aligned}\]
+\sssc{范德蒙恆等式（Vandermonde identity）}
+\[\sum_{k=0}^n\binom{n}{k}^2=\binom{2n}{n}.\]
+\begin{proof}\mbox{}\\
+Consider a lattice path from \((0,0)\) to \((n,n)\) in a grid where each step moves either right \((1,0)\) or up \((0,1)\).\\
+Since we must choose \( n \) steps to move right out of the total \( 2n \) steps, the total number of such paths is given by:
+\[\binom{2n}{n}.\]
+Now, let’s count the same paths differently. Choose an intermediate point \((k, n-k)\) at step \( n \). The number of ways to reach this point from \((0,0)\) using \( k \) right steps and \( n-k \) up steps is \( \binom{n}{k} \). From \((k, n-k)\) to \((n,n)\), we need \( n-k \) right steps and \( k \) up steps, which can be done in \( \binom{n}{k} \) ways. Summing over all possible \( k \), we obtain:
+\[\sum_{k=0}^{n}\binom{n}{k}^2.\]
+\end{proof}
+\sssc{重複組合}
+由$n$類相異物中，任取$m$個為一組之方法數，其中每類物品的個數均不小於$m$且可重複選取。記作$H^n_m$。
+\[
+\begin{aligned}
+H_m^n &= C^{n+m-1}_m \\
+&= C^{n+m-1}_{n-1}
+\end{aligned}
+\]
+\sssc{巴斯卡公式（Pascal's formula）}
+\[C^n_m=C^{n-1}_{m-1}+C^{n-1}_m\]
+\sssc{組合恆等式}
+\[
+\begin{aligned}
+\sum_{k=0}^n C_k^n &= 2^n \\
+\sum_{k=0}^n (-1)^k \cdot C_k^n &= 0 \\
+\sum_{k=0}^n 2^k \cdot C_k^n &= 3^n \\
+\sum_{k=0}^n k \cdot C_k^n &= n \cdot 2^{n-1} \\
+\sum_{k=0}^n k^2 \cdot C_k^n &= n \cdot (n-1) \cdot 2^{n-2} + n \cdot 2^{n-1} \\
+\sum_{k=3}^n C_2^k &= n \cdot 2^{n-1} \\
+\left(\prod_{i=0}^x (k-i)\right) \cdot C^n_k &= \left(\prod_{i=0}^x (n-i)\right) \cdot C^{n-k-1}_{k-x-1} \quad x < k\land x \in \mathbb{N} \\
+\sum_{k=0}^{n} \left(\left(\prod_{i=0}^x (k-i)\right) \cdot C^n_k\right) &= \sum_{k=0}^{n} \left(\left(\prod_{i=0}^x (n-i)\right) \cdot C^{n-k-1}_{k-x-1}\right) \\
+&= \frac{n!}{\left(n-x-1\right)!} \cdot 2^{n-x-1} \\
+& \quad x < n\land x \in \mathbb{N}, \text{定義}\,\forall k<0: C_k^n=0
+\end{aligned}
+\]
+\sssc{巴斯卡三角形（Pascal's triangle）/楊輝三角形}
+令最上面一列為第$0$列，向下每列遞增$1$；每一列最左之數為第$0$個，向右每個遞增$1$。巴斯卡三角形之第$n$列第$m$個數定義為$C_m^n$。
+\[
+\begin{aligned}
+\begin{array}{ccccccc}
+& & & 1 & & & \\
+& & 1 & & 1 & & \\
+& 1 & & 2 & & 1 & \\
+1 & & 3 & & 3 & & 1 \\
+& \vdots & & & & \vdots &
+\end{array}
+\end{aligned}
+\]
+\subsection{卡特蘭數（Catalan number）}
+\sssc{卡特蘭數（Catalan number）}
+所有在$n \times n$格點中不越過對角線的單調路徑的個數，一個單調路徑從格點左下角出發，在格點右上角結束，每一步均為向上或向右，記作$C_n$。
+
+\tb{遞迴式}：
+\[
+\begin{cases}
+C_0 &= 1 \\
+C_n &= \sum_{k=1}^n C_{k-1}\cdot C_{n-k}\quad\text{（當\protect\ }n>0\text{）}
+\end{cases}
+\]
+\begin{proof}
+令對角線為$y=x$，第一次到達對角線上時的位置為$(k, k)$，則第一次到達對角線前的單調路徑數為$C_k$，第一次到達對角線後的單調路徑數為$C_{n-k}$，故對$n>0$成立。$C_0=C_1=0$，亦成立。
+\end{proof}
+
+\tb{一般式}：
+\[
+\begin{aligned}
+C_n &= C_n^{2n} - C_{n-1}^{2n} \\
+&= \frac{1}{n+1} \cdot C_n^{2n}
+\end{aligned}
+\]
+\begin{proof}
+自$(0, 0)$至$(n, n)$的單調路徑數為$C^{2n}_n$。考慮這些路徑中不符合卡特蘭數定義者，其第一次跨越對角線$y=x$的點必在$y=x+1$上，將接下來的路徑對$y=x+1$鏡射，則終點$(n,n)$變為$(n-1, n+1)$。在此$(n-1) \times (n+1)$格點中自$(0, 0)$至$(n-1, n+1)$的單調路徑數為$C^{2n}_{n-1}$。故$C_n = C_n^{2n} - C_{n-1}^{2n} = \frac{1}{n+1} \cdot C_n^{2n}$。
+\end{proof}
+\subsubsection{非正方形格點的卡特蘭數}
+所有在$n \times k$格點中不越過對角線的單調路徑的個數，一個單調路徑從格點左下角出發，在格點右上角結束，每一步均為向上或向右，記作$C_{n,k}$。
+
+\tb{一般式}：
+\[C_{n,k}=
+\begin{cases}
+C_k^{n+k}-C_{k-1}^{n+k} & \quad\text{（當\protect\ }n \geq k\text{）} \\
+C_n^{n+k}-C_{n-1}^{n+k} & \quad\text{（當\protect\ }n \leq k\text{）}
+\end{cases}
+\]
+\end{document}

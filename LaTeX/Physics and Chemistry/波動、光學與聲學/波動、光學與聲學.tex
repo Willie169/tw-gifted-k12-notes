@@ -1,0 +1,1481 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{波動、光學與聲學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{波動（Waves）、光學（Optics）與聲學（Acoustics）}
+\section{約定}
+\subsection{小波動假設}
+波動之振幅相較於背景量極小而可忽略。
+\ssc{波動通用}
+\sssc{純量}
+\begin{itemize}
+\item $t$：時間，一般作為自變數。
+\item $x$：位置方向為一維時之位置，一般作為自變數。
+\item $y$：振動位移方向為一維時質點平均自平衡點位移，或簡稱平均位移，聲學上指平均粒子位移（Particle displacement）。
+\item $v$：位置方向為一維時之相速度/相速度量值。
+\item $A$：振幅（Amplitude）
+\item $\lambda$：波長（Wavelength）
+\item $k$：波數（Wave number）
+\item $\omega$：角頻率（Angular frequency）量值
+\item $\nu$：頻率（Frequency）。介質質點在每秒內振動的次數。
+\item $T$：週期（Period）。介質上質點在每秒內振動的次數。
+\item $E$：能量
+\item $u$：能量密度
+\item $\Phi$：相位（Phase）
+\item $\phi$：相位角（Phase angle）
+\item $D$：波程差
+\end{itemize}
+\sssc{向量}
+\begin{itemize}
+\item $\mathbf{x}$：位置向量，一般作為自變數。
+\item $\mathbf{y}$：質點平均自平衡點位移向量，或簡稱平均位移，聲學上指平均粒子位移。
+\item $\mathbf{v}$：相速度（Phase velocity）。指波的相位（如波峰、波谷）在空間中傳遞的速度。
+\item $\mathbf{v}_g$：群速度（Grovp velocity）。指波包（即波振幅外形上的變化）在空間中傳遞的速度。
+\item 波長向量$\mathbf{\lambda}$：$\lambda\hat{\mathbf{v}}$。
+\item $\mathbf{k}$：波向量（Wave vector）
+\end{itemize}
+\sssc{數學}
+\begin{itemize}
+\item 對於向量$\mathbf{v}$，$\abs{\mathbf{v}}$表示其歐幾里得距離。
+\item 單位法向量：$\hat{n}$
+\item 任意純量$A$與非零向量$\mathbf{B}$，向量$\mathbf{C}=\frac{A}{\mathbf{B}}$表示$\mathbf{C}$使得$\mathbf{B}\cdot \mathbf{C}=A$且$\abs{A}=\abs{\mathbf{B}}\cdot \abs{\mathbf{C}}$，即$\mathbf{B}\cdot \mathbf{C}=A$且$\mathbf{B}\parallel\mathbf{C}$。
+\item 任意向量$\mathbf{a}$，$\hat{\mathbf{a}}$指與$\mathbf{a}$同向的單位向量。
+\item $_0$指初始值/平衡點值/背景值。
+\end{itemize}
+\subsection{折射（Refraction）、反射（Reflection）與透射（Transmission）}
+\subsubsection{場景}
+一波自介質1射向介質2，法線（Normal）為垂直於介質分界超平面且與入射波有交點的直線。自介質1入射之波稱入射波或入射線（Incident ray），入射線與法線的最小夾角稱入射角（Angle of incidence），反射回介質1的波稱反射波或反射線（Reflected ray），反射線與法線的最小夾角稱反射角（Angle of reflection），入射角的餘角稱掠射角（Grazing angle/Glancing angle），小掠射角入射稱掠射（Grazing incidence），透射入介質2的波稱透射波、透射線、折射波或折射線，透射線與法線的最小夾角稱折射角（Angle of refraction）。
+\subsubsection{純量}
+\begin{itemize}
+\item $v_1$：介質1的波速率
+\item $v_2$：介質2的波速率
+\item $n_1$：介質1的折射率
+\item $n_2$：介質2的折射率
+\item $k_1$：介質1的波數（因$k=\frac{\omega}{v}$，頻率不變，故$k\propto\frac{1}{v}$）
+\item $k_2$：介質2的波數
+\item \( \theta_i \)：入射角。
+\item \( \theta_t \)：折射角。
+\item $A_i$：入射波振幅
+\item $A_r$：反射波之振幅（須考慮正負）
+\item $A_t$：透射波之振幅（須考慮正負）
+\item $R$：（振幅）反射係數
+\item $T$：（振幅）透射係數
+\item $u_i$：入射波能量密度
+\item $u_r$：反射波能量密度
+\item $u_t$：透射波能量密度
+\end{itemize}
+\subsection{光學}
+\sssc{發光強度}
+\bit
+\item $I_l$：發光強度/光度（Luminous intensity）(cd = candela = 燭光 = 坎)
+\item $\Phi_l$：光通量（Luminous flux）(lm lumen = 流明 = cd sr)
+\item $L_l$：亮度/輝度（Luminance）(cd m$^{-2}$)
+\end{itemize}
+\sssc{鏡}
+\begin{itemize}
+\item 鏡頂（Vertex）/鏡心：鏡面之中心點。
+\item 主軸（Principal axis）：過鏡心垂直於鏡心處鏡面之切面的線。
+\item 焦平面（Focus plane）：過焦點垂直主軸的平面。
+\end{itemize}
+\subsection{繩波}
+\sssc{純量}
+\begin{itemize}
+\item $F$：繩張力在波前進方向的分量量值
+\item $\mu$：（繩子等的）線密度
+\item $u_K$：動能密度
+\item $u_U$：位能密度
+\end{itemize}
+\subsection{聲波}
+\subsubsection{純量}
+\begin{itemize}
+\item $p$：氣壓。
+\item $p_s$：聲壓（Sound pressure）/動壓（Perturbation pressure），即$p-p_0$。
+\item $\rho$：密度
+\item $\rho_s$：動密度（Perturbation density），即$\rho-\rho_0$。
+\item $M$：平均莫耳質量
+\item $T$：絕對溫度
+\item $I$：聲音強度（Sound intensity）
+\item $P$：Sound power
+\item $\beta $：音強級（Sound level）
+\item $\gamma$：絕熱指數（Adiabatic index）/等熵膨脹係數（Isentropic expansion factor），即定壓熱容與定容熱容的比值
+\item $K_s$：等熵體積模量（Isentropic bulk modulus）/不可壓縮量/體積彈性係數（Elastic modulus），$K_s=-V_0\dv{p}{V}=\rho_0\dv{p}{\rho}$，對於理想氣體，$K_s=\gamma p_0$。
+\item $z$：特性聲波阻抗。
+\end{itemize}
+\subsubsection{常數}
+\begin{itemize}
+\item $R$：理想氣體常數
+\end{itemize}
+
+
+\section{波動（Wave motion）}
+\subsection{定義}
+物質波（Matter wave）除外，指擾動的傳遞，介質不隨波前進，但傳遞動量和能量。
+\subsection{波的分類}
+\begin{itemize}
+\item 按媒介
+\begin{itemize}
+\item 力學波或機械波（Mechanical wave）：依賴介質傳播能量與擾動者，如水波、聲波。
+\item 電磁波（Electromagnetic wave）：不依賴介質傳播能量與擾動者，如紅外線、微波。
+\end{itemize}
+\item 按介質振動方向
+\begin{itemize}
+\item 縱波（Longitudinal wave）/疏密波（Rarefaction wave）：波的振動方向與傳播方向平行，如聲波、地震P波（Primary wave）。
+\item 橫波（Transverse wave）：波的振動方向與傳播方向垂直，如電磁波、繩波、地震S波（Secondary wave）。具有偏振性（Polarization），即波的傳遞僅在特定的方向上。
+\item 以上皆非：波的振動方式非僅與傳播方向平行或傳播方向垂直，如地震表面波（Surface wave）中的洛夫波（Love wave）、水面波。
+\end{itemize}
+\item 按週期性質
+\begin{itemize}
+\item 脈（衝）波（Pulse wave）：單一的波動脈衝，波通過介質時質點短暫振動後恢復靜止於原來位置。
+\item 週期波（Periodic wave）：重複出現的波動，如正弦波。
+\end{itemize}
+\item 按波形傳遞
+\begin{itemize}
+\item 行（進）波：波形在空間中向前傳播，如水面波。
+\item 駐波（Standing/Stationary wave）：由兩個相同頻率和振幅的行波相向傳播而形成，波形固定不動。
+\end{itemize}
+\item 按維度
+\begin{itemize}
+\item 一維波
+\item 二維波
+\item 三維波
+\end{itemize}
+\end{itemize}
+\subsection{波的形狀}
+\begin{itemize}
+\item 波形（Waveform）：波動作為時間函數的圖形形狀。
+\item 振幅（Amplitude）：波動造成質點相對於平衡位置的最大位移。
+\item 波峰（Crest/Peak）：波形中的最高點，即波的最大正位移。
+\item 波谷（Trough）：波形中的最低點，即波的最大負位移。
+\item 波長（Wavelength）：波形中連續兩個相同相位點之間的距離。
+\item 波前（Wavefront）：等相位處形成的幾何對象，$i$維波的波前是$i-1$維幾何對象，始終與波的行進方向垂直。
+\end{itemize}
+\subsection{數學描述}
+\subsubsection{任意維非齊次波動方程（Inhomogeneous wave equation）}
+\[\pdv[2]{\mathbf{y}(\mathbf{x},t)}{t}-v^2\nabla^2\mathbf{y}(\mathbf{x},t)=\mathbf{f}(\mathbf{x},t)\]
+\subsubsection{任意維齊次波動方程（Homogeneous wave equation）}
+令$\dv{\mathbf{v}}{t}=0$。
+\[\pdv[2]{\mathbf{y}}{t}=v^2\nabla^2\mathbf{y}\]
+\subsubsection{一維齊次波動方程}
+\[\pdv[2]{y}{t}=v^2\pdv[2]{y}{x}\]
+\subsubsection{波函數（Wave function）}
+指函數\(\mathbf{y}(\mathbf{x},t)\)。
+\subsubsection{介質質點振動速度}
+令有興趣點與波同速度移動，即：$\mathbf{x}=\mathbf{v}t$。
+\[\pdv{\mathbf{y}}{t} = - \nabla_{\mathbf{x}} \mathbf{y} \cdot \mathbf{v}\]
+\subsubsection{一維介質質點振動速度}
+令有興趣點與波同速度移動，即：$x=vt$。
+\[ \pdv{y}{t}=-\pdv{y}{x}v \]
+\subsection{平面波（Plane wave）}
+指一個物理量，其值在任何給定時刻在垂直於空間中固定方向的任何平面上都是恆定的。
+\subsection{頻率不變}
+不考慮量子與相對論效應，在慣性參考系中，無都卜勒效應下，一波的頻率恆不變。
+\subsection{週期波運動分析（Kinetic analysis）/週期波基本參數關係}
+\[\begin{aligned}
+\omega &= 2\pi \nu \\
+T &= \frac{1}{\nu} \\
+\mathbf{k} &= \frac{2\pi}{\lambda}\hat{\mathbf{v}} \\
+k &= |\mathbf{k}| = \frac{2\pi}{\lambda} \\
+\mathbf{v} &= \nu \lambda \hat{\mathbf{v}} = \frac{\omega}{\mathbf{k}} \\
+\mathbf{v}_g &= \pdv{\omega}{\mathbf{k}} \\
+&= \mathbf{v}+\lambda \pdv{\mathbf{v}}{\lambda} \\
+&= \mathbf{v}+\mathbf{k} \cdot\pdv{\mathbf{v}}{\mathbf{k}}
+\end{aligned}\]
+\ssc{週期波的相位（Phase）與相位角（Phase angle）}
+\sssc{相位（Phase）與相位角（Phase angle）}
+週期函數$\mathbf{F}(t)$及其週期$T$（週期指使得$\mathbf{F}(t+T)=\mathbf{F}(t)$的最小正實數），定義$t_0$為一個週期的起始點，則相位$\Phi(t)$與相位角$\phi (t)$為：（有文獻不稱$\Phi(t)$為相位而稱$\phi(t)$為相位）
+\[\Phi(t)=\qty(\frac{t-t_0}{T}-\left\lfloor\frac{t-t_0}{T}\right\rfloor)\]
+\[\phi(t)=2\pi\Phi(t)\]
+$\Phi(t)$和$\phi(t)$均與原函數有相同的週期，且在任意週期的起始點為零。
+\sssc{相位移（Phase shift）與與相位角移（Phase angle shift）}
+令有週期為$T$的週期函數$\mathbf{F}(t)$和$\mathbf{G}(t)=\alpha \mathbf{F}(t+\tau)$，其中$\alpha$和$\tau$為常數，則$\mathbf{G}$對$\mathbf{F}$的相位移$\Delta\Phi$與相位角移$\Delta\phi$為：（有文獻不稱$\Delta\Phi$為相位移而稱$\Delta\phi$為相位移）
+\[\Delta\Phi=\frac{\tau}{T}-\left\lfloor\frac{\tau}{T}\right\rfloor(+z,\quad z\in\mathbb{Z})\]
+\[\Delta\phi=2\pi(\Delta\Phi)\]
+相位差一般指相位移或其絕對值；相位角差一般指相位角移或其絕對值。
+\sssc{同相、異相與反相}
+兩以位置與參數$t$為自變數之週期函數，圖形互為彼此平移可得，定義：
+\begin{itemize}
+\item 同相（In phase）：相位角差為零。使疊加函數最大值為兩函數最大值之和、疊加函數最小值為兩函數最小值之和。
+\item 異相（Out of phase）：非同相。相位角差 $k$ 稱為 $k$ 異相。
+\item 反相（Completely out of phase）：相位角差為$\pi$，即 $\pi$ 異相。
+\end{itemize}
+
+以正弦函數為例，函數$\mb{F}(t)=\sin(\omega t+\phi_1)$與$\mb{G}(t)=\sin(\omega t+\phi_2)$：
+\begin{itemize}
+\item 同相：$\phi_1=\phi_2+2z\pi,z\in\mathbb{Z}$。
+\[\mb{F}(t)+\mb{G}(t)=2\sin(\omega t+\phi_1)\]
+\item $k$ 異相：$\phi_1+k=\phi_2+2z\pi,z\in\mathbb{Z}$。
+\bma
+\mb{F}(t)+\mb{G}(t) &= \qty(1+\cos k)\sin(\omega t+\phi_1)+\sin k\cos(\omega t+\phi_1)\\
+&= \sqrt{2+2\cos k}\sin\qty(\omega t+\phi_1+\tan^{-1}\qty(\frac{\sin k}{1+\cos k}))\\
+&= 2\abs{\cos\frac{k}{2}}\sin\qty(\omega t+\phi_1+\frac{k}{2})
+\eam
+\item 反相：$\phi_1=\phi_2+\pi+2z\pi,z\in\mathbb{Z}$。
+\[\mb{F}(t)+\mb{G}(t)=0\]
+\end{itemize}
+\subsection{波程差（Path difference）}
+\sssc{波程差（Path difference）}
+\[D=\abs{\ol{PS_1}-\ol{PS_2}}\]
+其中：$P$為有興趣點，$S_1$與$S_2$為兩比較之波源。
+
+光的波程差稱光程差。
+\sssc{波程差遠場近似}
+波源共面且相距$b$之兩波至與波源面平行且距離$L\gg b$的屏幕上某距兩波源連線之中垂線在屏幕上的正射影距離為$y=L\tan\theta$之點的光程差$D$為：
+\[D = \sqrt{\left(y + \frac{b}{2}\right)^2 + L^2} - \sqrt{\left(y - \frac{b}{2}\right)^2 + L^2}\]
+可近似為：
+\[D\approx d\sin\theta=\frac{dy}{\sqrt{y^2+L^2}}\]
+\begin{proof}\mbox{}\\
+$D$作為$\frac{b}{2}$的函數馬克勞林展開至一階：
+\[\begin{aligned}
+D &\approx \left(\sqrt{y^2 + L^2} + \frac{y\frac{b}{2}}{\sqrt{y^2 + L^2}}\right) - \left(\sqrt{y^2 + L^2} - \frac{y\frac{b}{2}}{\sqrt{y^2 + L^2}}\right)\\
+&= \frac{yb}{\sqrt{y^2 + L^2}}\\
+&= \frac{L\tan\theta b}{L\sec\theta}\\
+&= b\sin\theta
+\end{aligned}\]
+\end{proof}
+當$\theta\approx 0$：
+\[\sin\theta\approx\theta\approx\tan\theta\]
+可再近似為
+\[D\approx\frac{dy}{L}\]
+\ssc{波的干涉（Interference）}
+干涉指波疊加為合成波的現象。
+\sssc{波的疊加原理（Superposition principle of waves）}
+指當兩個或多個波在同一點重疊時，該點的總位移（作為向量）等於各個波的位移之和。
+\sssc{波的獨立性}
+指波經過相遇又離開後與相遇前行為相同，宛如未相遇過。
+\sssc{分類}
+\begin{itemize}
+\item 建設性干涉（Constructive interference）：合成波的振幅大於每個組分波的振幅。
+\item 破壞性干涉（destructive interference）：合成波的振幅小於每個組分波的振幅。
+\item 完全建設性干涉（Fully constructive interference）：合成波的振幅等於每個組分波的振幅和。
+\item 完全破壞性干涉（Fully destructive interference）：合成波的振幅等於零。
+\end{itemize}
+\sssc{同調性/相干性（Coherence）}
+同調波源（Coherent source）：指頻率相同的波源。可以形成穩定的干涉圖樣。
+\sssc{波節（Node）與波腹（Antinode）}
+兩同調、同波形、同振幅波干涉：
+\begin{itemize}
+\item 波節/節點（Node）：指反相，即完全破壞性干涉，的點。二維中或稱節線（Nodal line）。
+\item 波腹/腹點（Antinode）：指同相，即完全建設性干涉，的點。二維中或稱腹線（Antinodal line）。
+\end{itemize}
+\sssc{拍（Beat）}
+兩個波函數，在空間域上圖形互為彼此縮放與平移可得，在時間域上頻率不同。則兩波疊加後會呈現振幅大小變化週而復始，稱時域上最小的一段波形使得該波形結束後立即重複完全相同的波形為拍，稱拍的週期的倒數為拍頻，拍頻等於兩組分波頻率差值的二分之一。以正弦波為例：
+\[A\sin(\mathbf{k}_1\mathbf{x}-\omega_1 t)+A\sin(\mathbf{k}_2\mathbf{x}-\omega_2 t)=2A\cos\qty(\frac{\mathbf{k}_1-\mathbf{k}_2}{2}\mathbf{x}-\frac{\omega_1-\omega_2}{2}t)\sin\qty(\frac{\mathbf{k}_1+\mathbf{k}_2}{2}\mathbf{x}-\frac{\omega_1+\omega_2}{2}t)\]
+\sssc{干涉的應用}
+界面活性劑產生的泡沫呈現彩色、主動降噪（Active Noise Cancellation, ANC）等。
+
+
+\section{兩二維同圓形波干涉}
+兩同頻率、同波形、同振幅二維圓形波在勻波速介質中干涉：
+\bit
+\item 節線與腹線均為以兩波源為焦點的雙曲線或退化的雙曲線。
+\item 中央線若為節/腹線稱中央節/腹線，中央以外者，兩側分別以最接近中央者為第一節/腹線並依序編號。
+\item 中央線波程差為零。兩波最大波程差等於兩波源之距離，發生於通過兩波源之直線除了兩波源連線線段。
+\item 節線之相位差為$\qty(n-\frac{1}{2})\lambda ,\quad (n\in\mathbb{N})$，腹線之相位差為$n\lambda,\quad (n\in\mathbb{N})$。
+\item 兩相鄰節線或兩相鄰腹線之波程差為二分之一倍波長。
+\item 兩波同相：中央線為腹線，節線與腹線在中央線兩側以波程差每改變四分之一波長一節線或腹線且節線與腹線交錯之規則排開。當兩波源距離$d$時：節線有$2n$條，其中$n$為服從$\qty(n-\frac{1}{2})\lambda)\leq d$的最大正整數解，每一個小於等於$n$的正整數$k$代表一對第$k$節線；兩波源間之節線有$2m$條，其中$m$為服從$\qty(m-\frac{1}{2})\lambda)< d$的最大正整數解；若$n=m+1$，則通過兩波源之直線除了兩波源連線線段為兩條節線，此情況發生於$d$為奇數倍波長時，若此情況未發生則節線均為未退化雙曲線；腹線有$2p+1$條，其中$p$為服從$p\lambda\leq d$的最大正整數解，每一個小於等於$p$的正整數$k$代表一對第$k$腹線，$+1$代表中央腹線；兩波源間之腹線有$2q+1$條，其中$q$為服從$p\lambda< d$的最大正整數解；若$p=q+1$，則通過兩波源之直線除了兩波源連線線段為兩條腹線，此情況發生於$d$為偶數倍波長時，若此情況未發生則腹線除了中央腹線外均為未退化雙曲線。
+\item 兩波反相：中央線為節線，節線與腹線在中央線兩側以波程差每改變四分之一波長一節線或腹線且節線與腹線交錯之規則排開。當兩波源距離$d$時：腹線有$2n$條，其中$n$為服從$\qty(n-\frac{1}{2})\lambda)\leq d$的最大正整數解，每一個小於等於$n$的正整數$k$代表一對第$k$腹線；兩波源間之腹線有$2m$條，其中$m$為服從$\qty(m-\frac{1}{2})\lambda)< d$的最大正整數解；若$n=m+1$，則通過兩波源之直線除了兩波源連線線段為兩條腹線，此情況發生於$d$為奇數倍波長時，若此情況未發生則腹線均為未退化雙曲線；節線有$2p+1$條，其中$p$為服從$p\lambda\leq d$的最大正整數解，每一個小於等於$p$的正整數$k$代表一對第$k$節線，$+1$代表中央節線；兩波源間之節線有$2q+1$條，其中$q$為服從$p\lambda< d$的最大正整數解；若$p=q+1$，則通過兩波源之直線除了兩波源連線線段為兩條節線，此情況發生於$d$為偶數倍波長時，若此情況未發生則節線除了中央節線外均為未退化雙曲線。
+\item 兩波非同相亦非反相，中央線非腹線或節線。
+\end{itemize}
+
+
+\section{正弦波（Sine wave）}
+此指波形為正弦或其平移之波。
+\subsection{波函數}
+一個行進的正弦波的波函數可以表示成：
+\[\begin{aligned}
+y &= A \cdot \sin\qty(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi) \\
+&= \frac{A}{2i} \left(e^{i(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi)} - e^{-i(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi)} \right)
+\end{aligned}\]
+其中：若$\pm$取負表波在$x_i$軸往$\frac{k_i}{\abs{k_i}}$方向傳遞，若$\pm$取正表波在$x_i$軸往$-\frac{k_i}{\abs{k_i}}$方向傳遞。
+
+證明其符合波動方程式：
+\[\pdv[2]{y}{t}=v^2\nabla^2y\]
+\begin{proof}\mbox{}\\
+We want to prove:
+\[ \qty(y = A \cdot \sin\qty(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi))\implies\qty(\pdv[2]{y}{t}=v^2\nabla^2y)\]
+Compute \(\frac{\partial^2 y}{\partial t^2}\):
+\[\frac{\partial y}{\partial t} = A \pm\omega \cdot \cos\left(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi\right).\]
+\[\begin{aligned}
+\frac{\partial^2 y}{\partial t^2} &= -A \omega^2 \cdot \sin\left(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi\right)\\
+&= -\omega^2 y.
+\end{aligned}\]
+Compute \(\nabla^2 y\):
+\[
+\frac{\partial y}{\partial x_i} = Ak_i \cdot \cos\left(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi\right).
+\]
+\[
+\frac{\partial^2 y}{\partial x_i^2} = -Ak_i^2 \cdot \sin\left(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi\right).
+\]
+\[
+\nabla^2 y = -|\mathbf{k}|^2 y.
+\]
+Given:
+\[
+v = \frac{\omega}{k}
+\]
+So:
+\[
+\frac{\partial^2 y}{\partial t^2} = v^2 \nabla^2 y.
+\]
+\end{proof}
+\subsection{一維波函數}
+\[\begin{aligned}
+y &=A\cdot\sin(kx\pm\omega t+\phi)\\
+&= A\cdot\sin\qty(2\pi\qty(\frac{x}{\lambda}\pm\frac{t}{T})+\phi)\\
+&= \frac{A}{2i} \left(e^{i(kx \pm \omega t + \phi)} - e^{-i(kx \pm \omega t + \phi)} \right)
+\end{aligned}\]
+其中：$x$為位置；$y$為質點振動位移；$\phi$為相位角；若$\pm$取負表波往$x$軸$\frac{k}{\abs{k}}$方向傳遞，若$\pm$取正表波往$x$軸$-\frac{k}{\abs{k}}$方向傳遞。
+\subsection{介質質點振動速度}
+波函數：
+\[y=A\cdot\sin(\mathbf{k}\cdot\mathbf{x}-\omega t+\phi)\]
+令$\mathbf{x}=\frac{\omega}{\|\mathbf{k}\|}\hat{\mathbf{k}}t$，即有興趣位置始終在同一相位，即：
+\[\dv{y}{t}=0\]
+介質質點振動速度$\pdv{y}{t}$：
+\[\pdv{y}{t}+\pdv{y}{\mathbf{x}}\dv{\mathbf{x}}{t}=\dv{y}{t}=0\]
+\[\dv{\mathbf{x}}{t}=\frac{\omega}{\|\mathbf{k}\|}\hat{\mathbf{k}}\]
+\[\pdv{y}{t}=-\frac{\omega}{\|\mathbf{k}\|}\pdv{y}{\mathbf{x}}\cdot\hat{\mathbf{k}}\]
+\subsubsection{一維介質質點振動速度}
+波函數：
+\[y=A\cdot\sin(kx\pm\omega t+\phi)\]
+令有興趣點與波同速度移動，即：$x=vt$。
+\[ \pdv{y}{t}=-\pdv{y}{x}v \]
+\subsection{合成波振幅}
+令波$f(x,t)=A\cdot\sin\qty(\mathbf{k}\mathbf{x}-\omega t-\phi_1)$與$g(x,t)=B\cdot\sin\qty(\mathbf{k}\mathbf{x}-\omega t-\phi_2)$，合成波$f(t)+g(t)$振幅$C$：
+\[ C = \sqrt{A^2+B^2+2AB\cos\qty(\phi_1-\phi2)} \]
+\subsection{駐波（Standing wave）}
+駐波指兩個波數、頻率和振幅皆相同的正弦波相向行進干涉而成的合成波。
+\subsubsection{數學描述}
+令兩波$f(\mathbf{x},t)=A\sin\qty(\mathbf{k}\cdot\mathbf{x}+\omega t+\phi_1)$、$g(\mathbf{x},t)=A\sin\qty(\mathbf{k}\cdot\mathbf{x}-\omega t+\phi_2)$，其合成波為：
+\[ f(\mathbf{x},t)+g(\mathbf{x},t) = 2A\sin\qty(\mathbf{k}\cdot\mathbf{x} + \frac{\phi_1 + \phi_2}{2})\cos\qty(\omega t + \frac{\phi_1 - \phi_2}{2}) \]
+\begin{proof}
+\[
+f(\mathbf{x},t) + g(\mathbf{x},t) = A\sin\qty(\mathbf{k}\cdot\mathbf{x} + \omega t + \phi_1) + A\sin\qty(\mathbf{k}\cdot\mathbf{x} - \omega t + \phi_2)
+\]
+正弦的和化積公式：
+\[
+\sin{u} + \sin{v} = 2\sin\qty(\frac{u + v}{2})\cos\qty(\frac{u - v}{2})
+\]
+設：
+\[
+u = \mathbf{k}\cdot\mathbf{x} + \omega t + \phi_1, \quad v = \mathbf{k}\cdot\mathbf{x} - \omega t + \phi_2
+\]
+則：
+\[\begin{aligned}
+&f(\mathbf{x},t) + g(\mathbf{x},t) \\
+=& 2A\sin\qty(\frac{\mathbf{k}\cdot\mathbf{x} + \omega t + \phi_1 + \mathbf{k}\cdot\mathbf{x} - \omega t + \phi_2}{2})\cos\qty(\frac{\mathbf{k}\cdot\mathbf{x} + \omega t + \phi_1 - (\mathbf{k}\cdot\mathbf{x} - \omega t + \phi_2)}{2})\\
+=& 2A\sin\qty(\mathbf{k}\cdot\mathbf{x} + \frac{\phi_1 + \phi_2}{2})\cos\qty(\omega t + \frac{\phi_1 - \phi_2}{2})
+\end{aligned}\]
+\end{proof}
+\subsubsection{駐波性質}
+\begin{itemize}
+\item 波數與頻率：駐波的波數與頻率同其組分波。
+\item 波節：$D=(2m-1)\frac{\lambda}{2}$之點，其中$m\in\mathbb{N}$。相鄰兩波節的距離為$\frac{\lambda}{2}$。兩波腹的中點為波節。
+\item 波腹：$D=n\lambda$之點，其中$n\in\mathbb{N}$。相鄰兩波腹的距離為$\frac{\lambda}{2}$，相鄰兩腹點分別處於正位移與負位移。兩波節的中點為波腹。一點為波腹若且惟若一點會出現波峰若且惟若一點會出現波谷。
+\item 波環：指由兩個波節包圍的一個完整的波的區域。一個波環中的擾動能量始終停留在該波環中。
+\item 駐波中的各質點均做簡諧運動，函數$\frac{\mathrm{d}^2y}{\mathrm{d}t^2}=\omega^2y$，其中動能與位能和不變且兩者交互變化，且愈接近節點簡諧運動振幅愈小。
+\item 相鄰三節點所夾二間距，其中質點位移方向相反。
+\end{itemize}
+\subsubsection{駐波頻率}
+一個由$n-1$維給定反射性質的封閉曲面包圍的$n$維給定波動傳播性質之物理系統可能形成的駐波中：
+\begin{itemize}
+\item 基頻/基音（Fundamental frequency）：指頻率最小者。
+\item 第$i$諧音（Harmonic）：指頻率為基頻之$i$倍者。
+\item 第$i$泛音（Overtone）：指該給定情況下可能發生駐波的頻率中第$i+1$小者。
+\end{itemize}
+
+
+\section{光學（Optics）}
+\subsection{幾何光學（Geometrical Optics）與物理光學（Physical Optics）}
+\begin{itemize}
+\item 幾何光學：利用光的直進性質及反射和折射定律，得知光的行進路徑和物與像的幾何關係。
+\item 物理光學：說明光的波動性質。
+\end{itemize}
+\subsection{幾何光學}
+\subsubsection{光線（ray of light）與光束（beam of light）}
+\begin{itemize}
+\item A ray of light (光線): The light traveling in any one direction in a straight line is called a ray of light.
+\item A beam of light (光束): A group of light rays given out from a source is called a beam of light.
+\end{itemize}
+\subsubsection{直進性}
+幾何光學的光具有直進性。
+\subsubsection{可逆性}
+幾何光學的光具有可逆性。
+\subsubsection{成像}
+\begin{itemize}
+\item 實像（Real image）：光線實際會聚而成的像，可投影在屏幕上。
+\item 虛像（Virtual image）：射入觀察者眼中的光線的延長線會聚而成的像，無法投影在屏幕上。
+\end{itemize}
+\subsubsection{Fermat's principle (費馬原理)/The principle of least time (最短時間原理)}
+Fermat's principle states that the path taken by a ray between two given points is the path that can be traveled in the least time.
+\subsection{光的粒子說與波動說}
+\subsubsection{牛頓的光的粒子說}
+1704年牛頓提出光的粒子說，認為光由微小的粒子組成。其光微粒模型中，光粒子（Corpuscle）體積小、質量小、速度極快，彼此不相作用，分布甚為稀疏，與物體完全彈性碰撞，受重力與鄰近分子的引力。可以解釋光的直進、反射、折射、色散、亮度平方反比定律、物質吸光生熱、光壓等。反射以完全彈性碰撞解釋。折射以光粒子受物質吸引解釋，相當於斜面滑物受重力。無法解釋光的干涉與繞射，錯誤預測水中光速較空氣快。1801年楊格發表雙狹縫實驗結果，1850年菲左與佛科分別測出光在空氣與水中之光速，推翻牛頓的假說。
+\subsubsection{惠更斯的光的波動說}
+1609年惠更斯提出光的波動說，即惠更斯原理。可以解釋光的直進、反射、折射、色散、亮度平方反比定律、物質吸光生熱、光壓、部分反射部分折射現象、干涉、繞射等。錯誤認為存在以太（Ether），光須以之為介質之傳播。1881年邁克生和毛立證實以太不存在。1864年馬可士威從理論上預測光是一種電磁波，1888赫茲實驗證實。
+\subsubsection{愛因斯坦的光量子說}
+1905年愛因斯坦提出光量子說，主張光有波粒二象性。
+
+
+\section{反射（Reflection）、折射（Refraction）、透射（Transmission）與偏振/偏極化（Polarization）}
+\subsection{反射}
+\subsubsection{漫射（diffuse reflection）與鏡面反射（specular reflection）}
+\begin{itemize}
+\item 漫射：非光滑表面反射。
+\item 鏡面反射：光滑表面反射。
+\end{itemize}
+\subsubsection{反射成像}
+經奇數次反射之成像與原像左右相反，經偶數次反射之成像與原像左右相同。
+\subsubsection{反射定律（Law of reflection）}
+入射角（入射線與法線的夾角）等於反射角（反射線與法線的夾角）。
+\subsection{折射}
+\subsubsection{折射率（Refractive index/Index of refraction）}
+\begin{itemize}
+\item 某介質的（絕對）折射率是光在真空中（有時用空氣中）的相速度除以在該介質中的相速度。
+\item 介質1對介質2的相對折射率（Relative index of refraction）$n_{21}$為介質2中的波速除以介質1中的波速，即介質1的折射率除以介質2的折射率。
+\item 介質2進入介質1的相對折射率為介質1對介質2的相對折射率。
+\item 兩介質相較，折射率較小者稱光疏介質（Optically thinner medium），較大者稱光密介質（Optically denser medium）。
+\end{itemize}
+
+\begin{longtable}{|c|c|}
+\hline
+Material medium & Refractive index\\\hline\endhead
+Air & 1.0003\\\hline
+Ice & 1.31\\\hline
+Water & 1.33\\\hline
+Alcohol & 1.36\\\hline
+Kerosene & 1.44\\\hline
+Fused quartz & 1.46\\\hline
+Turpentine oil & 1.47\\\hline
+Benzene & 1.50\\\hline
+Crown glass & 1.52\\\hline
+Diamond & 2.42\\\hline
+\end{longtable}
+\FB
+\subsubsection{司乃耳定律（Snell's law）}
+\[v_2 \sin \theta_i = v_1 \sin \theta_t \]
+對於光即：
+\[n_1 \sin \theta_i = n_2 \sin \theta_t \]
+\subsubsection{視深與實深}
+令$h$為實深、$h'$為視深、$\theta$為入射角、$\theta'$為折射角、$n$與$n'$分別為物體與觀察者所在介質的折射率。
+\[h\tan\theta=h'\tan\theta'\]
+小角度近似：
+\[\frac{h}{n}=\frac{h'}{n'}\]
+
+多層平行界面的視深：有數層平行之介質，界面平行，厚度依序為$h_1, h_2, \ldots, h_m$，折射率依序為$n_1, n_2, \ldots, n_m$，觀察者自折射率為$n$之介質中觀察最低層底的物體，其中無全反射發生，視深的小角度近似為：
+\[h'=n\sum_{i=1}^n\frac{h_i}{n_i}\]
+\subsection{全（內）反射（Total (internal) reflection）}
+從波速較小的介質進入波速較大的介質，當入射角$>$臨界角（Critical angle）$\theta_c$時，發生全反射，即無透射僅有反射，其中：
+\[ \sin \theta_c = \frac{v_1}{v_2} \]
+對於光即：
+\[ \sin \theta_c = \frac{n_2}{n_1} \]
+當入射角=臨界角時仍有折射光沿著介面前進。
+
+應用：
+\begin{itemize}
+\item 光纖/光導纖維（Optical fiber）：是一種由玻璃或塑膠製成的纖細導線，用來傳輸光信號。光纖直徑約十至數百微米，內部有折射率較大的纖心（core），外有折射率較小的包層/塗層（cladding），讓光在纖心內部以全反射的方式傳輸，不會輕易逸出。這種傳輸方式使得光纖適合長距離高速通信、內視鏡（endoscope）等。
+\item 光自玻璃入空氣之臨界角約 42$^\circ$，用三稜鏡代替平面鏡將入射光反射可避免面鏡部分折射之光強度減弱。
+\item 光自鑽石入空氣之臨界角約24$^\circ$，可通過切割使光從頂部流出。
+\item 光自水入空氣之臨界角約48.7$^\circ$。
+\end{itemize}
+\subsection{反射係數（Reflection coefficient）與透射係數（Transmission coefficient）}
+（振幅）反射係數：
+\[ R = \frac{A_r}{A_i} \]
+（振幅）透射係數：
+\[ T = \frac{A_t}{A_i} \]
+功率反射係數：
+\[ R^2 \]
+功率透射係數：
+\[ \frac{k_2}{k_1}T^2=\frac{v_1}{v_2}T^2\]
+因為能量守恆：
+\[ R^2 + \frac{k_2}{k_1}T^2 = 1 \]
+
+令入射波的波函數$f(x,t)$，其中$x$軸正向為其前進方向。
+
+令反射波的$x$軸正向為其前進方向，$t=0$為入射波接觸入射平面時，則反射波的波函數為$R\cdot f(x,t)$。
+
+令透射波的$x$軸正向為其前進方向，$t=0$為入射波接觸入射平面時，則透射波的波函數為$T\cdot f(x,t)$。
+
+對於無需考慮偏振的入射波（如縱波與垂直入射的橫波）：
+\[ R = \frac{k_1-k_2}{k_1+k_2} = \frac{v_2-v_1}{v_1+v_2} \]
+\[ T = \frac{2k_1}{k_1+k_2} = \frac{2v_2}{v_1+v_2} \]
+\begin{proof}\mbox{}\\
+令入射波$y=A_i\sin(k_ix-\omega t)$，反射波$y=A_r\sin(k_1x+\omega t)$，透射波$y=A_t\sin(k_2x-\omega t)$，界面$x=0$。
+
+$x=0$處連續：
+\[A_t\sin(-\omega t)+A_r\sin(\omega t)=A_i\sin(-\omega t)\]
+\[A_t-A_r=A_i\]
+
+$x=0$處動量守恆：
+\[\pdv{y_t}{x}+\pdv{y_r}{x}=\pdv{y_i}{x}\]
+\[k_2A_t\cos(-\omega t)+k_1A_r\cos(\omega t)=k_1A_i\cos(-\omega t)\]
+\[k_2A_t+k_1A_r=k_1A_i\]
+
+解聯立：
+\[ \frac{A_r}{A_i} = \frac{k_1-k_2}{k_1+k_2} \]
+\[ \frac{A_t}{A_i} = \frac{2k_1}{k_1+k_2} \]
+\end{proof}
+當$k_1<k_2$，且波函數$f(t)$存在非零常數$T$使得$f(t)+f(t+\frac{T}{2})=0$，反射波與入射波相位角差$\pi$。
+\ssc{側位移/旁位移}
+一一維波自一介質通過一界面進入另一波速不同的介質再通過一與前述界面平行的界面回到與原先介質波速相同的介質，則該經兩次折射後的波與原先的波的延長線的距離稱側位移。
+\subsection{海市蜃樓（Mirage）}
+\subsubsection{下蜃景（inferior mirage）}
+In an inferior mirage, the mirage image appears below the real object. The real object in an inferior mirage is the (blue) sky or any distant (therefore bluish) object in that same direction. The mirage causes the observer to see a bright and bluish patch on the ground.
+
+Light rays coming from a particular distant object all travel through nearly the same layers of air, and all are refracted at about the same angle. Therefore, rays coming from the top of the object will arrive lower than those from the bottom. The image is usually upside-down, enhancing the illusion that the sky image seen in the distance is a specular reflection on a puddle of water or oil acting as a mirror.
+\subsubsection{上蜃景（superior mirage）}
+A superior mirage is one in which the mirage image appears to be located above the real object. A superior mirage occurs when the air below the line of sight is colder than the air above it. This unusual arrangement is called a temperature inversion. During daytime, the normal temperature gradient of the atmosphere is cold air above warm air. Passing through the temperature inversion, the light rays are bent down, and so the image appears above the true object, hence the name superior.
+
+A superior mirage can be right-side up or upside-down, depending on the distance of the true object and the temperature gradient. Often the image appears as a distorted mixture of up and down parts.
+\subsection{偏振/偏極化（Polarization）}
+橫波振動的方向用偏振表示，一個橫波可分解成振動方向相垂直的兩個波。
+\subsubsection{s 偏振（s polarization）/垂直（German: senkrecht）偏振與 p 偏振（p polarization）/平行（parallel）偏振}
+s 偏振指振動方向垂直於入射平面，p 偏振指振動方向平行於入射平面。對於電磁波，取電場方向為振動方向。令s-偏振反射係數$R_s$，s-偏振透射係數$T_s$，p-偏振反射係數$R_p$，s-偏振透射係數$T_p$：
+\[ R_s = \frac{v_1 \cos \theta_i - v_2 \cos \theta_t}{v_1 \cos \theta_i + v_2 \cos \theta_t} \]
+\[ T_s = \frac{2 v_1 \cos \theta_i}{v_1 \cos \theta_i + v_2 \cos \theta_t} \]
+\[ R_p = \frac{v_2 \cos \theta_i - v_1 \cos \theta_t}{v_2 \cos \theta_i + v_1 \cos \theta_t} \]
+\[ T_p = \frac{2 v_1 \cos \theta_i}{v_2 \cos \theta_i + v_1 \cos \theta_t} \]
+\sssc{非偏振波}
+指同時具有 s 與 p 偏振成分的波。多數光源發出的光都是非偏振波，稱非偏振光。
+\subsubsection{布儀爾角（Brewster's Angle）}
+當入射角為布儀爾角$\theta_B$時，$r_p=0$，即p-偏振無反射。此時折射角$\theta_t$為$\frac{\pi}{2}-\theta_B$。
+\[ \tan \theta_B = \frac{v_2}{v_1} \]
+\begin{proof}\mbox{}\\
+$r_p=0$：
+\[ v_2\cos\theta_B=v_1\cos\theta_t \]
+司乃爾定律：
+\[ v_1\sin\theta_B=v_2\sin\theta_t \]
+推導：
+\[\qty(\frac{v_2}{v_1}\cos\theta_B)^2+\qty(\frac{v_1}{v_2}\sin\theta_B)^2=1\]
+\[v_2^{\phantom{2}4}\cos^2\theta_B+v_1^{\phantom{1}4}\sin^2\theta_B=(v_1v_2)^2\]
+\[\qty(v_1^{\phantom{1}4}-v_2^{\phantom{2}4})\sin^2\theta_B =v_2^{\phantom{2}2}\qty(v_1^{\phantom{1}2}-v_2^{\phantom{2}2})\]
+\[\frac{\tan^2\theta_B }{1+\tan^2\theta_B }=\frac{v_2^{\phantom{2}2}}{v_1^{\phantom{1}2}+v_2^{\phantom{2}2}}\]
+\[v_1^{\phantom{1}2}tan^2\theta_B =v_2^{\phantom{2}2}\]
+因$\theta_B\in [0,\frac{\pi}{2}]$，$\tan\theta_B >0$：
+\[ \tan \theta_B = \frac{v_2}{v_1} \]
+求$\theta_t$：
+\[ v_1^{\phantom{1}2}\tan\theta_B=v_2^{\phantom{2}2}\tan\theta_t \]
+\[ \tan \theta_t = \frac{v_1}{v_2} \]
+\end{proof}
+\subsubsection{偏振片/偏振器（Polarizer）}
+指可以過濾入射光僅使特定偏振光通過的光學元件。大部分電磁波均為非偏振光。兩個相互垂直的偏振片可以阻擋所有的電磁波。
+\bit
+\item 吸收型偏振器：由鏈狀聚合物構成，吸收電場平行長鏈方向的電磁波而允許電場垂直長鏈方向的電磁波通過。
+\item 反射型偏振器：由縫寬遠小於波長的金屬光柵構成，會吸收或反射電場平行狹縫方向的電磁波而允許電場垂直狹縫方向的電磁波通過。
+\eit
+\subsubsection{馬呂士定律（Malus's law）}
+電磁波連續通過兩個偏振片，稱第一個偏振片為起偏片，以得偏振光，稱第二個偏振片為檢偏片，馬呂士定律指出，令起偏片與檢偏片的偏振方向夾角$\theta$，則通過檢偏片後的電磁波強度等於入射檢偏片的電磁波強度乘以$\cos^2\theta$。
+\subsubsection{偏振片過濾漫射}
+光經過漫反射後在不同偏振方向強度不同，偏振片可過濾許多角度的漫射，降低周遭漫射的干擾，使景物顯得較清晰，色彩對比較鮮明，但阻擋一部分的光故視野較暗。太陽眼鏡與汽車遮陽鏡即為偏振片。
+\subsubsection{立體電影}
+立體電影係以兩個視角稍微不同的攝影機同時拍攝兩個影像，並以偏振方向相互垂直的光分別播放兩者，觀影時兩眼分別配戴該二偏振方向的偏振片，產生立體效果。
+
+
+\section{面鏡（Mirror）反射}
+\subsection{平面鏡}
+\subsubsection{夾角二平面鏡成像}
+平面上直立二靜止之平面反射鏡，兩鏡之一端點重合，另一端點在足夠遠處，兩鏡之夾角$\theta\in (0,\pi)$，一靜止物視為一點靜置於兩鏡之間，令成像個數（不含物本身）$N$，若物與兩鏡面距離相同則$b=1$否則$b=0$，$m\coloneq\frac{2\pi}{\theta}$：
+\[N=\bcs
+\lfloor m\rfloor-1,\quad & m\in\mathbb{N}\lor b=1,\\
+\lfloor m\rfloor,\quad & \tx{otherwise}.
+\ecs\]
+\subsubsection{偏向角}
+偏向角$\delta$指光線射入某光學儀器，最後射出光線與原射入光線的夾角。對於夾角$\theta$之兩平面鏡，$\delta = 2(\pi-\theta)$，可利用使$\delta=\pi$反向反射任意入射光線。
+\subsubsection{平行平面鏡}
+兩平面鏡相對，其間物可形成無限多個虛像。
+\subsubsection{光槓桿（Optical lever）原理}
+若有一固定光線，入射至一個平面反射鏡上，當平面反射鏡轉動了$\theta$時，其反射光線會偏轉$2\theta$。
+\subsection{拋物面鏡（Parabolic mirror）}
+\subsubsection{拋物凹（Concave）面鏡}
+平行光反射匯聚於焦點。
+\subsubsection{拋物凸（Convex）面鏡}
+平行光反射延長線交於焦點，稱虛焦點。
+\subsubsection{表格}
+\bct\bfH\ctr
+\begin{tabular}{|p{0.05\tw}|p{0.15\tw}|p{0.15\tw}|p{0.05\tw}|p{0.05\tw}|p{0.1\tw}|p{0.1\tw}|}
+\hline
+鏡別  & 物距        & 像的位置      & 像的虛實 & 像的正倒 & 像與物相比之大小 & 像與物相比之移動速率 \\\hline
+凹面鏡 & 鏡前無窮遠     & 鏡前焦點      & 實    &      & 一點       & 較小         \\\hline
+凹面鏡 & 鏡前大於兩倍焦距  & 鏡前焦距至二倍焦距 & 實    & 倒立   & 縮小       & 較小         \\\hline
+凹面鏡 & 鏡前兩倍焦距    & 鏡前兩倍焦距    & 實    & 倒立   & 相等       & 相等         \\\hline
+凹面鏡 & 鏡前焦距至兩倍焦距 & 鏡前大於兩倍焦距  & 實    & 倒立   & 放大       & 較大         \\\hline
+凹面鏡 & 鏡前焦點      & 無窮遠       &      &      &          & 較大         \\\hline
+凹面鏡 & 鏡前鏡心至焦點   & 鏡後        & 虛    & 正立   & 放大       & 較大         \\\hline
+凹面鏡 & 鏡前鏡心      & 鏡後鏡心      & 虛    & 正立   & 放大       & 較大         \\\hline
+平面鏡 & 鏡前任意      & 鏡後等於物距    & 虛    & 正立   & 相等       & 相等         \\\hline
+凸面鏡 & 鏡前無窮遠     & 鏡後焦點      & 虛    & 正立   & 一點       & 較小         \\\hline
+凸面鏡 & 鏡前任意      & 鏡後焦點至鏡心   & 虛    & 正立   & 縮小       & 較小         \\\hline
+凸面鏡 & 鏡前鏡心      & 鏡後鏡心      & 虛    & 正立   & 縮小       & 較小  \\\hline      
+\end{tabular}
+\ef\FB\ect
+\subsubsection{面鏡公式（Mirror formula）}
+令焦距$f$凹面鏡為正、凸面鏡為負，物距$p$實物（即鏡前）為正、虛物（即鏡後）為負，像距$q$實像為正、虛像為負，物高$h_o$正立為正、倒立為負，像高$h_i$正立為正、倒立為負，橫向放大率（Lateral magnification）（指垂直主軸）$m=\frac{h_i}{h_o}$，縱向放大率（指平行主軸）$m_p$。
+\[m=\frac{q}{p}=\frac{f}{p-f}=\frac{q-f}{f}\]
+\[\frac{1}{p}+\frac{1}{q}=\frac{1}{f}\]
+\[(p-f)(q-f)=f^2\]
+\[pq=pf+qf\]
+\[m_p=\dv{q}{p}=-m^2\]
+\begin{proof}
+\[(p-f)(q-f)=f^2\]
+\[\dv{p}(p-f)+\dv{q}(q-f)=0\]
+\[\dv{q}{p}=-\frac{q-f}{p-f}=-m^2\]
+\end{proof}
+實物與實像的最小距離為$4f$
+\begin{proof}\mbox{}\\
+根據柯西不等式：
+\[\qty(\qty(\frac{1}{\sqrt{p}})^2+\qty(\frac{1}{\sqrt{q}})^2)\qty(\qty(\sqrt{p})^2+\qty(\sqrt{q})^2)\geq (1+1)^2\]
+\[\qty(\frac{1}{p}+\frac{1}{q})(p+q)\geq 4\]
+\end{proof}
+共軛成像：指實物與實像可互換位置，此時$p+q\geq 4f$。
+\subsection{球面鏡（Spherical mirror）}
+\subsubsection{近軸光線焦點}
+球面鏡對於近軸光線之反射可近似為焦點為入射點向球心方向移動曲率半徑二分之一長度處的拋物面鏡。
+
+\begin{proof}\mbox{}\\
+令距主軸$h$之光線入射角$\alpha$，$r$為鏡面曲率半徑，$f$為焦距：
+\[\tan\alpha=\frac{h}{r}\]
+\[\tan(2\alpha)=\frac{h}{f}\]
+\[\lim_{\alpha\to 0}\frac{\tan\alpha}{\alpha}=1\]
+\[\lim_{\alpha\to 0}\frac{f}{r}=\frac{1}{2}\]
+\end{proof}
+\subsubsection{球面像差（Spherical aberration, SA）}
+平行入射光，光線反射線（對於球凹面鏡）/反射線之延長線（對於球凸面鏡）與主軸之交點距鏡心之距離，近軸光線較遠軸光線小，因此光線不能交於一個理想的焦點。
+\ssc{應用}
+\sssc{平面鏡}
+日常生活鏡子、潛望鏡、反射式望遠鏡副鏡。
+\sssc{凸面鏡}
+路口安全鏡、車輛後視鏡、商店防盜鏡。
+\sssc{凹面鏡}
+反射式望遠鏡主鏡、化妝鏡、聚光鏡。
+
+
+\section{透鏡（Len）折射}
+\subsection{透鏡}
+光線入透鏡折射，出透鏡再折射。即使兩面曲率不同，焦距仍相等。
+\sssc{常用透鏡材料}
+\bit
+\item 石英玻璃（Quartz glass）/熔融石英（Fused quartz）：589.3 nm 光折射率 1.458。
+\item 鉛玻璃（Lead glass）/光學玻璃（Optical glass）：589.3 nm 光折射率 1.5-1.9，依各型號成分不同而不同。
+\item 聚甲基丙烯酸甲酯（Polymethyl methacrylate, PMMA）/聚(2-甲基丙烯酸甲酯)/壓克力（acrylic）（樹脂）/有機玻璃：589.3 nm 光折射率約 1.49。
+\item 發泡聚苯乙烯（Expanded Polystyrene, EPS）/保麗龍/保麗綸/泡沫塑膠（foamed plastic/polymeric foam）顆粒：用於微波，折射率約 1.55。
+\eit
+\subsection{三稜鏡（Triangular prism）}
+\subsubsection{定義}
+\begin{itemize}
+\item 稜鏡：指一透鏡其中存在兩面不平行。
+\item 主截面：與稜鏡各稜線相交成直角的橫截面。
+\item 三稜鏡：主截面為三角形的稜鏡。
+\item 偏向角$\delta$：原入射線與射出稜鏡之光線之夾角。
+\end{itemize}
+\subsubsection{三稜鏡偏向角}
+令三稜鏡頂角$\theta$，兩次折射。
+\[\delta = \theta_{i1}-\theta_{t1}+\theta_{t2}-\theta_{i2}=\theta_{i1}+\theta_{t2}-\theta\]
+\subsubsection{小角度三稜鏡偏向角}
+令$\theta_{i1}$、$\theta_{t2}$甚小，取$\sin\theta\approx\theta$：
+\[\delta=(n-1)\theta\]
+\subsubsection{三稜鏡最小偏向角}
+最小偏向角$\delta_{min}$發生於入射與出射線對稱於三稜鏡的頂角時，此時：
+\[\delta_{min}=2\theta_{i1}-\theta\]
+\[n=\frac{\sin\qty(\frac{\delta_{min}+\theta}{2})}{\sin\qty(\frac{\theta}{2})}\]
+\begin{proof}\mbox{}\\
+解$\dv{\delta}{\theta_{i1}}=0$：
+\[\dv{\delta}{\theta_{i1}}=1+\dv{\theta_{t2}}{\theta_{i1}}=0\]
+\[\dv{\theta_{t2}}{\theta_{i1}}=-1\]
+\[\dv{\theta_{t2}}=-\dv{\theta_{i1}}\]
+因$\theta=\theta_{t1}+\theta_{i2}$：
+\[\dv{\theta_{t1}}=-\dv{\theta_{i2}}\]
+令三稜鏡折射率為$n$，司乃耳定律：
+\[\sin\theta_{i1}=n\sin\theta_{t1}\]
+\[n\sin\theta_{i2}=\sin\theta_{t2}\]
+微分：
+\[\cos\theta_{i1}\dv{\theta_{i1}}=n\cos\theta_{t1}\dv{\theta_{t1}}\]
+\[n\cos\theta_{i2}\dv{\theta_{i2}}=\cos\theta_{t2}\dv{\theta_{t2}}\]
+故：
+\[\frac{\cos\theta_{i1}}{\cos\theta_{t2}}=\frac{\cos\theta_{t1}}{\cos\theta_{i2}}\]
+利用司乃耳定律：
+\[\frac{1-\sin^2\theta_{i1}}{1-\sin^2\theta_{t2}}=\frac{n^2-\sin^2\theta_{i1}}{n^2-\sin^2\theta_{t2}}\]
+\[(1-\sin^2\theta_{i1})(n^2-\sin^2\theta_{t2})=(1-\sin^2\theta_{t2})(n^2-\sin^2\theta_{i1})\]
+\[(1-n^2)(\sin^2\theta_{i1}-\sin^2\theta_{t2})=0\]
+因$n\neq 1$，故：
+\[\theta_{i1}=\theta_{t2}\]
+\end{proof}
+\subsection{薄透鏡（Thin lens）}
+\subsubsection{凹（Concave）面鏡}
+可散光，可分為雙凹、平凹、凸凹。
+\subsubsection{凸（Convex）面鏡}
+可聚光，可分為雙凸、平凸、凹凸。
+\subsubsection{球面像差（Spherical aberration, SA）}
+平行入射光，光線透射線與主軸之交點距鏡心之距離，近軸光線較遠軸光線大，因此光線不能交於一個理想的焦點。
+\subsubsection{色像差（Chromatic aberration, SA）}
+波長愈長的光焦距愈大。
+\subsubsection{表格}
+\bct\bfH\ctr
+\begin{tabular}{|p{0.05\tw}|p{0.15\tw}|p{0.15\tw}|p{0.05\tw}|p{0.05\tw}|p{0.1\tw}|p{0.1\tw}|}
+\hline
+鏡別  & 物距        & 像的位置      & 像的虛實 & 像的正倒 & 像與物相比之大小 & 像與物相比之移動速率 \\\hline
+凸透鏡 & 鏡前無窮遠     & 鏡後焦點      & 實    &      & 一點       & 較小         \\\hline
+凸透鏡 & 鏡前大於兩倍焦距  & 鏡後焦距至二倍焦距 & 實    & 倒立   & 縮小       & 較小         \\\hline
+凸透鏡 & 鏡前兩倍焦距    & 鏡後兩倍焦距    & 實    & 倒立   & 相等       & 相等         \\\hline
+凸透鏡 & 鏡前焦距至兩倍焦距 & 鏡後大於兩倍焦距  & 實    & 倒立   & 放大       & 較大         \\\hline
+凸透鏡 & 鏡前焦點      & 無窮遠       &      &      &          & 較大         \\\hline
+凸透鏡 & 鏡前鏡心至焦點   & 鏡前        & 虛    & 正立   & 放大       & 較大         \\\hline
+凸透鏡 & 鏡前鏡心      & 鏡前鏡心      & 虛    & 正立   & 放大       & 較大         \\\hline
+凹透鏡 & 鏡前無窮遠     & 鏡前焦點      & 虛    & 正立   & 一點       & 較小         \\\hline
+凹透鏡 & 鏡前任意      & 鏡前焦點至鏡心   & 虛    & 正立   & 縮小       & 較小         \\\hline
+凹透鏡 & 鏡前鏡心      & 鏡前鏡心      & 虛    & 正立   & 縮小       & 較小  \\\hline      
+\end{tabular}
+\ef\FB\ect
+\subsubsection{薄透鏡公式/高斯式}
+令焦距$f$凸透鏡為正、凹透鏡為負，物距$p$實物（即鏡前）為正、虛物（即鏡後）為負，像距$q$實像為正、虛像為負，物高$h_o$正立為正、倒立為負，像高$h_i$正立為負、倒立為正，橫向（指垂著主軸）放大率（Magnification）$m=\frac{h_i}{h_o}$，縱向（指平行主軸）放大率$m_p$。
+\[m=\frac{q}{p}=\frac{f}{p-f}=\frac{q-f}{f}\]
+\[\frac{1}{p}+\frac{1}{q}=\frac{1}{f}\]
+\[(p-f)(q-f)=f^2\]
+\[pq=pf+qf\]
+\[m_p=\dv{q}{p}=-m^2\]
+實物與實像的最小距離為$4f$
+
+共軛成像：指實物與實像可互換位置，此時$p+q\geq 4f$。
+\subsubsection{菲涅耳透鏡（Fresnel lens）}
+由多層同心的環形光學面組成，其曲率和角度根據透鏡的總焦距來設計，旨在減少光學系統中的厚度和重量，而達到相同的透鏡效果。
+\subsubsection{造鏡者公式（Lens maker's formula）}
+令一薄透鏡由兩共主軸球面組成，鏡前面曲率半徑$R_1$曲率圓心距鏡後近於距鏡前為正，鏡後面曲率半徑$R_2$曲率圓心距鏡前近於距鏡後為正，半鏡高$h$，實物物距$p$，實像像距$q$，鏡最高點至物距離$l_1$，鏡最高點至像距離$l_2$，鏡前鏡心至鏡重心$x_1$，鏡後鏡心至鏡重心$x_1$，鏡內外光速分別為$v$、$c$，$n=\frac{c}{v}$。
+
+自物到像經透鏡任意處所需時間應相等：
+\[\frac{l_1+l_2}{c}=\frac{p-x_1}{c}+\frac{x_1+x_2}{v}+\frac{q-x_2}{c}=\frac{p+q}{c}+\qty(\frac{1}{v}-\frac{1}{c})\qty(x_1+x_2)\]
+\[l_1+l_2-p-q=\qty(\frac{c}{v}-1)\qty(x_1+x_2)\]
+考慮鏡最高點、鏡後面曲率重心、鏡重心之直角三角形：
+\[R^2=\qty(R_2-x_2)^2+h^2\]
+因薄透鏡$x_2<<R_2$：
+\[x_2\approx\frac{h^2}{2R_2}\]
+同理：
+\[x_1\approx\frac{h^2}{2R_1}\]
+考慮鏡最高點、物、鏡重心之直角三角形：
+\[l_2^{\pht{2}2}=p^2+h^2\]
+\[l_2-p=\frac{h^2}{l_2+p}\approx\frac{h^2}{2p}\]
+同理：
+\[l_1-q\approx\frac{h^2}{2q}\]
+代入：
+\[\frac{h^2}{2p}+\frac{h^2}{2q}=\qty(\frac{c}{v}-1)\qty(\frac{h^2}{2R_1}+\frac{h^2}{2R_2})\]
+\[\frac{1}{p}+\frac{1}{q}=(n-1)\qty(\frac{1}{R_1}+\frac{1}{R_2})\]
+\[\frac{1}{f}=(n-1)\qty(\frac{1}{R_1}+\frac{1}{R_2})\]
+\subsubsection{放大鏡（Magnifying glass）}
+凸透鏡，物體置於鏡前焦點內，鏡前得正立放大虛像。
+\subsubsection{投影機（Projector）}
+凸透鏡，物體置於鏡前焦點與兩倍焦距之間，鏡後得倒立放大實像。
+\subsubsection{照相機與眼睛}
+鏡頭或角膜與水晶體為凸透鏡，光圈或虹膜控制鏡頭孔徑或瞳孔，物體置於鏡前焦點之外，鏡後得倒立實像於感光元件或視網膜上，轉換成電子信號或神經信號。
+\sssc{眼鏡}
+近視配戴凹透鏡、遠視配戴凸透鏡，將倒立實像調整至視網膜上。
+\sssc{光學顯微鏡（Optical microscope）}
+物鏡為凸透鏡，物體置於鏡前焦點與兩倍焦距之間，鏡後得倒立放大實像於目鏡鏡前焦點之內，目鏡為凸透鏡，鏡前得正立放大虛像於眼睛上，所見為兩次放大後的倒立虛像。
+
+
+\section{色散（(Chromatic) dispersion）}
+\subsection{色散介質}
+\begin{itemize}
+\item 色散介質：在色散介質中，不同頻率的波以不同的速度傳播。
+\item 非色散介質：在非色散介質中，所有頻率的波以相同的速度傳播，因此波形和相位一起傳播，波包保持不變。例如真空。
+\item 正常色散（Normal dispersion）：折射率與波長負相關。對於可見光，大多數透明材料，如空氣、水、玻璃，為之。
+\item 異常色散（Anomalous dispersion）：折射率與波長正相關。常見於紫外線。
+\end{itemize}
+\subsection{柯西方程式（Cauchy's equation）}
+折射率作為波長的函數：
+\[n(\lambda)=\sum_{i=0}^k\frac{A_i}{\lambda^{2i}}, \quad A_i \tx{ are constants.} \]
+\subsection{虹與霓（Rainbow）}
+\subsubsection{虹/主虹（The first rainbow）}
+平行入射陽光折射入而後反射而後折射出，紅光與入射光夾138度，紫光與入射光夾140度，目視紅光像在下。
+\subsubsection{霓/副虹（The second rainbow）}
+平行入射陽光折射入而後反射兩次而後折射出，紅光與入射光夾129度，紫光與入射光夾126度，目視紅光像在上。
+\subsubsection{位置}
+雨後或有霧時背對太陽側有時可見，陽光仰角大於某虹圈的光與平行入射陽光反向之夾角時不可見該虹圈，光與平行入射陽光反向之夾角愈小的虹圈愈靠內，故虹在內而霓在外。
+\subsubsection{視圖}
+視線成錐形，所見為圓弧，所見異色光係來自不同圓上之水滴，與平行入射陽光反向夾角愈大者來自愈外側之水滴。
+
+
+\section{人類視覺}
+\ssc{顏色}
+\sssc{物體的顏色}
+\begin{itemize}
+\item 不透明物的顏色取決於其反射之光。
+\item 透明物的顏色取決於其透射之光。
+\end{itemize}
+\sssc{視網膜錐狀細胞與光的三原色}
+人眼的視網膜上有三種類型的錐狀細胞：
+\begin{itemize}
+\item 紅色錐狀細胞（L錐體）：對長波（約564納米）最敏感。
+\item 綠色錐狀細胞（M錐體）：對中波（約534納米）最敏感。
+\item 藍色錐狀細胞（S錐體）：對短波（約420納米）最敏感。
+\end{itemize}
+因此光的三原色為紅（Red）、綠（Green）、藍（Blue）。
+\sssc{加法混色原理}
+光的三原色遵循加法混色原理。當紅R、綠G、藍B三色光疊加在一起，能產生白光。若兩色光相加可形成白光則互為互補光。
+\sssc{減法混色原理}
+顏料等物質遵循減法混色原理。當青（Cyan, C）、洋紅（Magenta, M）、黃（Yellow, Y）三色顏料等物質疊加在一起，能產生黑色。若兩色顏料等物質相加可形成黑色則互為互補色。
+\subsection{發光強度}
+\subsubsection{發光強度/光度（Luminous intensity）}
+衡量人眼感知到光的強度的物理量。頻率為\scinote{540}{12} Hz 的單色輻射光源（黃綠色可見光）在某方向的輻射強度為$\frac{1}{683}$ W sr$^{-1}$時，該輻射源在該方向的發光強度定義為1燭光。
+\subsubsection{光通量（Luminous flux）}
+定義發光強度為1 燭光 (cd) 的各向同性的光源在 1 sr 內放射的光通量為 1 流明 (lm)。
+\subsubsection{亮度/輝度（Luminance）}
+單位面積光度。
+
+
+\section{惠更斯－菲涅耳原理（Huygens–Fresnel principle）}
+惠更斯指出當波行進時，波前上的每一點都可以視為新的點波源，以其為球心，各自發出與原波同樣維度的球面子波（Wavelet）。在某一時刻，和這些子波相切的流形，稱為包絡（線/面）（Envelope），形成新的波前。
+
+對於源自於點波源 $\mathbf{0}$ 的波函數：
+\[y=\frac{A}{\|\mathbf{x}\|}e^{i\mathbf{k}\cdot\mathbf{x}-\omega t}\]
+其中 $\mathbf{k}$ 為已知的 $d$ 維波向量；$\mathbf{x}$ 為 $d$ 維空間中的一個任意位置；$y$ 的自變數為 $\mathbf{x}$ 和 $t$。
+
+波動方程式給出：
+\[ \pdv[2]{y}{t} = v^2\nabla^2y \]
+計算波速：
+\[\pdv[2]{y}{t} = -\frac{A \omega^2}{\|\mathbf{x}\|} e^{i (\mathbf{k} \cdot \mathbf{x} - \omega t)}\]
+\[\nabla^2 y = -\frac{A \|\mathbf{k}\|^2}{\|\mathbf{x}\|} e^{i (\mathbf{k} \cdot \mathbf{x} - \omega t)}\]
+\[v^2 = \frac{\omega^2}{\|\mathbf{k}\|^2}\]
+菲涅耳指出，其在 $t_0$ 時的波前上的新點波源 $\mathbf{x}_0$ 發出的波為：
+\[y=\frac{A}{2\|\mathbf{x}_0\|}\left(1+\frac{\left(\mathbf{x}-\mathbf{x}_0\right)\cdot\mathbf{x}_0}{\|\mathbf{x}-\mathbf{x}_0\|\cdot\|\mathbf{x}_0\|}\right)e^{i\qty(\mathbf{k}\cdot\left(\mathbf{x}-\mathbf{x}_0\right)-\omega \left(t-t_0\right))}\]
+其中：
+\[\|\mathbf{x}_0\|=\frac{\omega}{\|\mathbf{k}\|}t_0\]
+惠更斯－菲涅耳原理可以解釋反射定律、司乃耳定律、干涉等現象。
+
+
+\section{忽略繞射之多狹縫干涉}
+做光的狹縫繞射與干涉實驗時，通常使用同頻同調波源，同頻常使用濾光器（Optical filter）達成，即可以過濾入射光僅使特定波長區間通過的光學元件，同調則常使用狹縫與透鏡達成。
+\subsection{光柵（Grating）}
+使反射光（稱反射光柵）或/與透射光（稱透射光柵）的振幅（稱振幅光柵）或/與相位（稱相位光柵）相對於入射光受到週期性空間調製的光學元件。
+\subsection{忽略繞射之雙狹縫干涉}
+同調光通過狹縫射向屏幕。令狹縫間距$b>\lambda$，狹縫寬忽略，屏幕距狹縫片$L$。屏幕平行兩狹縫各自中線之公垂線，對於屏幕上某點，令其在兩狹縫中線上之垂線與屏幕平面之法線過兩狹縫中線者之夾角$\theta$，取正，$y=L\tan\theta$。
+
+光程差$D$為：
+\[D=\sqrt{\left(L\tan\theta+\frac{b}{2}\right)^2+L^2}-\sqrt{\left(L\tan\theta-\frac{b}{2}\right)^2+L^2}\]
+\begin{itemize}
+\item 中央亮紋：$\theta=0$。
+\item 第$m$亮紋：$D=m\lambda$。
+\item 第$m$暗紋：$D=\left(m-\frac{1}{2}\right)\lambda$。
+\end{itemize}
+\subsection{遠場忽略繞射之雙狹縫干涉（Double slits interference）}
+同調光通過狹縫射向屏幕。令狹縫間距$b>\lambda$，狹縫寬忽略，屏幕距狹縫片$L$，$L\gg b$。屏幕平行兩狹縫各自中線之公垂線，對於屏幕上某點，令其在兩狹縫中線上之垂線與屏幕平面之法線過兩狹縫中線者之夾角$\theta$，取正，屏幕上某點距狹縫片中線在屏幕上正射影距離$y=L\tan\theta$。
+\subsubsection{亮暗紋}
+光程差$\approx b\sin\theta$（若非$b\gg \lambda$不可為此近似），令$m=\frac{b\sin\theta}{\lambda}$。亮紋指同相處，即光強度極大值處；暗紋指反相處，即光強度極小值處。
+\begin{itemize}
+\item 亮紋：
+\[(m+1)\in\mathbb{N}\]
+，稱第$m$亮紋（$m$th-order maximum），$m=0$為中央亮紋（Central maximum）。
+\item 暗紋：
+\[\qty(m+\frac{1}{2})\in\mathbb{N}\]
+，稱第$m$暗紋（$m$th-order minimum）。
+\end{itemize}
+對於小角度：
+\[\frac{y}{L}=\tan\theta=\sin\theta\]
+\[m=\frac{by}{L\lambda}\]
+故條紋間距$\Delta y$：
+\[\Delta y=\frac{L\lambda}{b}\]
+亮紋發生於：
+\[y=m\frac{\lambda L}{b},\quad (m+1)\in\mathbb{N}\]
+暗紋發生於：
+\[y=m\frac{\lambda L}{b},\quad (m+\frac{1}{2})\in\mathbb{N}\]
+\subsubsection{相位角差}
+相位角差$\phi$：
+\[\phi=\frac{2\pi b\sin\theta}{\lambda}\]
+\subsubsection{光強度}
+令$I$為光強度：
+\[\begin{aligned}
+I(\theta) &= I_0\qty(\frac{\sin\phi}{\sin\frac{\phi}{2}})^2\\
+&= I_0\qty(\frac{\sin\qty(\frac{2\pi b\sin\theta}{\lambda})}{\sin\qty(\frac{\pi b\sin\theta}{\lambda})})^2\\
+&=4I_0\cos^2\frac{\phi}{2}\\
+&=4I_0\cos^2\qty(\frac{\pi b\sin\theta}{\lambda})
+\end{aligned}\]
+對於小角度令$\tan\theta=\sin\theta$：
+\[I(y)=4I_0\cos^2\qty(\frac{\pi by}{L\lambda})\]
+\subsection{遠場忽略繞射之多狹縫干涉}
+同調光通過狹縫射向屏幕。令有$k$個狹縫，狹縫寬忽略，相鄰狹縫間距$b>\lambda$，屏幕距狹縫片$L$，$L\gg b$。屏幕平行任二狹縫各自中線之公垂線，對於屏幕上某點，令其在中央狹縫中線上之垂線與屏幕平面之法線過中央狹縫中線者之夾角$\theta$，取正，屏幕上某點距狹縫片中線在屏幕上正射影距離$y=L\tan\theta$。
+\[I(\theta) = I_0\qty(\frac{\sin\qty(k\frac{\pi b\sin\theta}{\lambda})}{\sin\qty(\frac{\pi b\sin\theta}{\lambda})})^2\]
+\subsubsection{折射率效應}
+折射率$n$的介質，因波長為真空$\frac{1}{n}$倍，故$m$為真空$n$倍。
+\subsubsection{非單色光效應}
+入射光為白光時，中央亮紋兩側可見黃色，因紫色$m$最小，而其互補色為黃色。
+\subsubsection{夾角效應}
+屏幕面與狹縫面夾角$\theta$時，狹縫有效間距為$b\cos\theta$。
+
+
+\section{繞射/衍射（Diffraction）}
+\subsection{特性}
+令障礙物或孔徑寬$a$，波長$\lambda$。
+\begin{itemize}
+\item 繞射前後，波之頻率、波長、波速等均不變。
+\item $a$愈小，方向改變愈明顯。
+\item $a>\lambda$時，$a$愈接近$\lambda$，繞射強度愈。
+\item $a<\lambda$時，$a$愈接近$\lambda$，繞射強度愈大。
+\end{itemize}
+\subsection{菲涅耳-基爾霍夫繞射公式（Fresnel–Kirchhoff diffraction formula）}
+描述波在遇到障礙物或孔徑時繞射後任一點的波場強（如音強、光強），無論遠近。可以從此公式推導出惠更斯－菲涅耳原理。
+\[
+U(P) = -\frac{U_0}{2\pi} \iint_S \left(\frac{\cos(\theta_i) + \cos(\theta_r)}{r} \right) e^{ikr} \frac{\mathrm{d}S}{r}
+\]
+其中：
+\begin{itemize}
+\item \( U(P) \) 是觀察點 \( P \) 處的複數波場（包含幅度和相位）。
+\item \( U_0 \) 是入射波場在屏幕上的分布。
+\item \( S \) 是繞射屏的孔徑面積。
+\item  \( r \) 是從孔徑面上的元素 \( Q \) 到觀察點 \( P \) 的距離。
+\item  \( k = \frac{2\pi}{\lambda} \) 是波數，\( \lambda \) 是波長。
+\item  \( \theta_i \) 是入射波的入射角，\( \theta_r \) 是從孔徑元素到觀察點的角度。
+\item  \( \mathrm{d}S \) 是孔徑面上的微小面積元素。
+\end{itemize}
+\subsection{菲涅耳數（Fresnel number）}
+菲涅耳數，無因次，定義為：
+\[ F=\frac{a^2}{L\lambda}\]
+其中：$a$ 是繞射物直徑（孔徑、縫寬、障礙物徑等），$L$ 是繞射物與觀察屏之間的距離，$\lambda$ 是入射波的波長。
+
+若 $F\gtrsim 1$ ，則繞射波是處於近場，可以使用菲涅耳繞射作為近似；若 $F << 1$，則繞射波是處於遠場，可以使用夫朗和斐繞射作為近似。
+\subsection{菲涅耳繞射（Fresnel Diffraction）}
+描述在繞射現象的近場近似，這時候波前還不能近似為平行波。
+\[
+U(P) = \frac{\exp(ikz)}{i\lambda z} \iint_{S} U_0(Q) \cdot \exp \left( i \frac{k}{2z} \left[ (x - x_1)^2 + (y - y_1)^2 \right] \right) \,\mathrm{d}x_1 \mathrm{d}y_1
+\]
+其中：\( x_1, y_1 \) 是孔徑平面上的座標；\( x, y \) 是觀察平面上的座標。
+\subsection{夫朗和斐繞射（Fraunhofer Diffraction）}
+夫朗和費繞射適用於遠場條件下，即當觀察屏幕位於很遠的地方時，波前可以被近似為平行波。
+\[
+U(P) = \frac{\exp(ikz)}{i\lambda z} \exp(i \frac{k}{2z}(x^2 + y^2)) \iint_{S} U_0(x_1, y_1) \exp(-i \frac{2\pi}{\lambda z} (x x_1 + y y_1)) \,\mathrm{d}x_1 \mathrm{d}y_1
+\]
+由於遠場條件下，繞射圖樣與原孔徑場的傅里葉變換直接相關，因此可以進一步簡化為：
+\[
+U(P) = \frac{e^{ikz}}{i\lambda z} e^{i \frac{k}{2z}(x^2 + y^2)} \mathcal{F}\{U_0(x_1, y_1)\} 
+\]
+其中，\(\mathcal{F}\{U_0(x_1, y_1)\}\) 是孔徑平面波場的傅里葉變換。
+\subsection{遠場單狹縫繞射（Single slit diffraction）}
+同調光通過狹縫射向屏幕。令縫寬$a>\lambda$，屏幕距狹縫片$L$，$L\gg a$。屏幕平行狹縫兩邊緣之公垂線，對於屏幕上某點，令其在狹縫中線上之垂線與屏幕平面之法線過狹縫中線者之夾角$\theta$，取正，屏幕上某點距狹縫片中線在屏幕上正射影距離$y=L\tan\theta$。令$\phi=\frac{\pi a\sin\theta}{\lambda}$，$m=\frac{a\sin\theta}{\lambda}$。
+\subsubsection{亮暗紋}
+亮紋指同相處，即光強度極大值處；暗紋指反相處，即光強度極小值處；亮帶中線指兩相鄰暗紋之中線。
+\begin{itemize}
+\item 中央亮紋：$\theta=0$。
+\item 暗紋：$m\in\mathbb{N}$，稱第$m$暗紋，狹縫兩邊緣光程差$m$。將狹縫分為$2m$等分，自上起第$k$與$k+1$等分將完全相消干涉，由此可知。
+\item 亮紋：$\phi=\tan\phi$時。
+\item 除中央亮帶亮紋與亮帶中線相同外，亮紋與亮帶中線不同且亮帶中線亮度小於亮紋。
+\item 愈遠離中央之亮帶亮度愈小。
+\item 距中央亮紋最近之二暗紋之夾角最大，為其餘相鄰兩暗紋夾角之二倍。
+\end{itemize}
+對於小角度：
+\[\frac{y}{L}=\tan\theta=\sin\theta\]
+\[m=\frac{ay}{L\lambda}\]
+故除中央外之相鄰兩暗紋間距$\Delta y$：
+\[\Delta y=\frac{L\lambda}{a}\]
+暗紋發生於：
+\[y=m\frac{L\lambda}{a},\quad m\in\mathbb{N}\]
+\subsubsection{光強度}
+\( I_0 \) 是中心極大處的波強，場強分布為：
+\[\begin{aligned}
+I(\theta) &= I_0 \left( \frac{\sin\phi}{\phi} \right)^2\\
+&= I_0 \left( \frac{\sin \left( \frac{\pi a \sin\theta}{\lambda} \right)}{\frac{\pi a \sin\theta}{\lambda}} \right)^2
+\end{aligned}\]
+\subsubsection{觀察}
+當狹縫甚寬，$\theta$甚小，則亮帶窄而鄰近，難觀察到暗紋。
+\subsection{遠場多狹縫繞射與干涉}
+波長$\lambda$同調波通過平面上$k$個相鄰狹縫射向屏幕，縫寬$a>\lambda$、兩相鄰狹縫中線相距$b>\lambda$，屏幕平面平行狹縫平面，兩者距離$L$使得$L\gg a$、$L\gg b$，中央亮紋場強$I_0$。對於屏幕上某點，令其與狹縫平面中線之最短連線與該點上狹縫平面法線之夾角$\theta$，則場強分布$I(\theta)$為：
+\[I(\theta) = I_0\left( \frac{\sin \left( \frac{\pi a \sin\theta}{\lambda} \right)}{\frac{\pi a \sin\theta}{\lambda}} \right)^2\left(\frac{\sin\qty(k\frac{\pi b\sin\theta}{\lambda})}{\sin\qty(\frac{\pi b\sin\theta}{\lambda})}\right)^2\]
+\subsubsection{折射率效應}
+折射率$n$的介質，因波長為真空$\frac{1}{n}$倍，故$m$為真空$n$倍。
+\subsubsection{非單色光效應}
+入射光為白光時，中央亮紋兩側可見黃色，因紫色$m$最小，而其互補色為黃色。
+\subsubsection{夾角效應}
+屏幕面與狹縫面夾角$\theta$時，狹縫有效間距為$b\cos\theta$，有效縫寬為$a\cos\theta$。
+\ssc{阿拉戈光斑（Arago spot）/帕松光斑（Poisson spot）}
+一點光源照射一直徑$a$之圓球之中心，圓球後距離$b$處一屏幕，在屏幕上呈現一以圓球中心投影處為圓心的光斑，菲涅耳繞射下（即進場近似下），$\frac{b^2}{b^2+a^2}$愈大，光斑愈小，強度愈強。
+
+
+\section{都卜勒效應（Doppler effect）}
+\subsection{非相對論性都卜勒效應}
+令$\hat{n}$為自波源至觀察者方向單位向量；$\mathbf{v}'$為對觀察者而言的視波速量值；$v$為該種波在該介質的波速量值；$\mathbf{v}_m$為介質本身移動速度；$\mathbf{o}$為觀察者相對於介質的移動速度；$\mathbf{s}$為波源相對於介質的移動速度；$f'$為觀察者的視頻率；$f$為原頻率（對波源而言的頻率）；$\lambda'$為對觀察者而言的為視波長；$\lambda=\frac{v}{f}$。所有速率相對論性均忽略。
+
+非相對論性都卜勒效應指出：
+\[f'=\frac{v+\mathbf{v}_m\cdot\hat{n}-\mathbf{o}\cdot\hat{n}}{v+\mathbf{v}_m\cdot\hat{n}-\mathbf{s}\cdot\hat{n}}\cdot f\]
+\[v'=v+\mathbf{v}_m\cdot\hat{n}-\mathbf{o}\cdot\hat{n}\]
+\[\lambda'=\frac{v'}{f'}=\frac{v+\mathbf{v}_m\cdot\hat{n}-\mathbf{s}\cdot\hat{n}}{f}=\frac{v+\mathbf{v}_m\cdot\hat{n}-\mathbf{s}\cdot\hat{n}}{v+\mathbf{v}_m\cdot\hat{n}}\lambda\]
+\subsection{藍移（Blue shift）與紅移（Red shift）}
+藍移指光之視頻率因都卜勒效應而增加，紅移指光之視頻率因都卜勒效應而減少。
+
+
+\section{繩波}
+\subsection{波速}
+\[v=\sqrt{\frac{F}{\mu}}\]
+\begin{proof}\mbox{}\\
+設笛卡爾$x,y$坐標，其中$x$方向為波傳遞方向，以$x$軸為極坐標之極軸，時間$t$，一段微分繩子繩張力水平分量量值$F$、線密度$\mu$、長度$\Delta x$、左端位置$\qty(s,y(t))$、左端角度$\pi+\alpha$、右端角度$\beta$、左端繩張力量值$F_1$、右端繩張力量值$F_2$：
+\[\begin{aligned}
+&\begin{cases}
+F\qty(\sin\beta-\sin\alpha)=\qty(\mu\Delta x)\pdv[2]{y}{t}\\
+F_1\cos\alpha=F_2\cos\beta=F
+\end{cases}\\
+& F_2\tan\beta-F_1\tan\alpha=\frac{\qty(\mu\Delta x)\pdv[2]{y}{t}}{F}\\
+& \frac{1}{\Delta x}\qty(\left.\pdv{y}{x}\right|_{x+\Delta x}-\left.\pdv{y}{x}\right|_x)=\frac{\mu}{F}\pdv[2]{y}{t}\\
+& \pdv[2]{y}{x}=\frac{\mu}{F}\pdv[2]{y}{t}\\
+& \Rightarrow v=\sqrt{\frac{F}{\mu}}
+\end{aligned}\]
+\end{proof}
+\subsection{重力下鉛直繩波}
+長度$L$，質量$m$的均勻繩，自然下垂，最低處$y$坐標$0$，最高處$y$坐標$L$，張力鉛直分量量值$F$。重力加速度量值$g$（假設不隨高的改變）。今由下端產生一橫波向上傳遞，時間$t$以波開始傳遞時為0，波速$v$，求耗時$T$：
+\[\begin{aligned}
+F &= mg\frac{y}{L}\\
+v &= \sqrt{\frac{FL}{m}}=\sqrt{yg}=\dv{y}{t}
+\end{aligned}\]
+求$\dv{v}{t}$：
+
+\textit{Method 1:}
+\[\begin{aligned}
+\dv{v}{t} &= \dv{\sqrt{yg}}{t}\\
+&= \frac{1}{2}\qty(yg)^\frac{1}{2}\dv{\qty(yg)}{t}\\
+&= \frac{1}{2}\sqrt{\frac{g}{y}}\dv{y}{t}\\
+&= \frac{1}{2}\sqrt{\frac{g}{y}}v\\
+&= \frac{g}{2}\\
+\end{aligned}\]
+\textit{Method 2:}
+\[\begin{aligned}
+\dv{v}{y} &= \frac{1}{2}\sqrt{\frac{g}{y}}\\
+\dv{v}{y} &= \dv{y}\qty(\dv{y}{t})=\dv{t}\qty(\dv{y}{t})\cdot\dv{t}{y}=\frac{\dv[2]{y}{t}}{\dv{y}{t}}\\
+\dv{v}{t} &= \dv[2]{y}{t} \\
+&= \dv{y}{t}\cdot\dv{v}{y} \\
+&= \sqrt{yg}\cdot\frac{1}{2}\sqrt{\frac{g}{y}}\\
+&= \frac{g}{2}
+\end{aligned}\]
+求$T$：
+\[\begin{aligned}
+L &= \frac{1}{2}\dv{v}{t}T^2 = \frac{gT^2}{4}\\
+T &= \sqrt{\frac{4L}{g}}
+\end{aligned}\]
+\subsection{能量}
+\subsubsection{繩波能量一般式}
+假設一條張緊的繩子上有一個橫波：
+\[ u = \frac{1}{2} \mu \left( \frac{\partial y}{\partial t} \right)^2 + \frac{1}{2} F \left( \frac{\partial y}{\partial x} \right)^2 \]
+\begin{proof}\mbox{}\\
+動能密度 \( u_K \)：\\
+對於一小段長度 \(\Delta x\) 的繩子，其質量為 \(\mu \Delta x\)。這段繩子的動能 \(\Delta K\) 為：
+\[ \Delta K = \frac{1}{2} (\mu \Delta x) \left( \frac{\partial y}{\partial t} \right)^2 \]
+\[ u_K = \frac{\Delta K}{\Delta x} = \frac{1}{2} \mu \left( \frac{\partial y}{\partial t} \right)^2 \]
+位能密度 \( u_U \)：
+
+對於一小段長度 \(\Delta x\) 的繩子，其位能 \(\Delta U\) 為：
+\[ \Delta U = \frac{1}{2} F \left( \frac{\partial y}{\partial x} \right)^2 \Delta x \]
+\[ u_U = \frac{\Delta U}{\Delta x} = \frac{1}{2} F \left( \frac{\partial y}{\partial x} \right)^2 \]
+能量密度 \( u \)：
+\[ u = u_K + u_U = \frac{1}{2} \mu \left( \frac{\partial y}{\partial t} \right)^2 + \frac{1}{2} F \left( \frac{\partial y}{\partial x} \right)^2 \]
+\end{proof}
+\subsubsection{正弦繩波}
+設一條張緊的繩子上有一個弦繩波，波的位移函數 \( y(x,t) = A \sin(kx - \omega t) \)，則：
+\[ u_K = u_U = \mu A^2 \omega^2 \cos^2(kx - \omega t) \]
+\[ u = \mu A^2 \omega^2 \cos^2(kx - \omega t) \]
+\begin{proof}
+\[ \frac{\partial y}{\partial t} = -A \omega \cos(kx - \omega t) \]
+\[ \frac{\partial y}{\partial x} = A k \cos(kx - \omega t) \]
+\[ \omega = k \sqrt{\frac{F}{\mu}} \]
+\[\begin{aligned}
+u_K &= \frac{1}{2} \mu \left( \frac{\partial y}{\partial t} \right)^2 \\
+&= \frac{1}{2} \mu (A \omega)^2 \cos^2(kx - \omega t) \\
+&= \frac{1}{2} \mu \left( A k \sqrt{\frac{F}{\mu}} \right)^2 \cos^2(kx - \omega t)\\
+&= \frac{1}{2} A^2 k^2 F \cos^2(kx - \omega t)\\
+&= \frac{1}{2} \mu A^2 \omega^2 \cos^2(kx - \omega t)\\
+u_U &= \frac{1}{2} F \left( \frac{\partial y}{\partial x} \right)^2\\
+&= \frac{1}{2} F (A k)^2 \cos^2(kx - \omega t) \\
+&=  \frac{1}{2} F (A k)^2 \cos^2(kx - \omega t) \\
+&= \frac{1}{2} \mu A^2 \omega^2 \cos^2(kx - \omega t)
+\end{aligned}\]
+\[ u = u_K + u_U = \mu A^2 \omega^2 \cos^2(kx - \omega t) \]
+\end{proof}
+\subsection{反射與透射}
+繩波是一維波，必為垂直入射。
+\subsubsection{固定端（Fixed end）反射}
+相當於$v_2=0$、$k_2=\infty$、$R=-1$、$T=0$，反射波與入射波之波形上下顛倒、左右相反。
+\subsubsection{自由端（Free end）反射}
+相當於$v_2=\infty$、$k_2=0$、$R=1$、$T=2$，反射波與入射波之波形上下不顛倒、左右相反。
+\subsubsection{不同線密度的繩}
+介質1線密度$\mu_1$，介質2線密度$\mu_2$。
+\[ R = \frac{k_1-k_2}{k_1+k_2} = \frac{v_2-v_1}{v_1+v_2} = \frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}} \]
+\[ T = \frac{2k_1}{k_1+k_2} = \frac{2v_2}{v_1+v_2} = \frac{2\sqrt{\mu_1}}{\sqrt{\mu_1}+\sqrt{\mu_2}} \]
+\[ u_i = \mu_1 (R A_i)^2 \omega^2 \cos^2(kx - \omega t) \]
+\[ u_r = \mu_1 A_i^{\phantom{i}2} \omega^2 \cos^2(kx - \omega t) \]
+\[ u_t = \mu_2 (T A_i)^2 \omega^2 \cos^2(kx - \omega t) \]
+\[\begin{aligned}
+\frac{u_r}{u_i} &= R^2 \\
+&= \frac{\qty(v_2-v_1)^2}{\qty(v_1+v_2)^2} \\
+&= \frac{\mu_1+\mu_2-2\sqrt{\mu_1\mu_2}}{\mu_1+\mu_2+2\sqrt{\mu_1\mu_2}}\\
+\frac{u_t}{u_i} &= T^2\frac{\mu_2}{\mu_1} \\
+&= \frac{4v_1^{\phantom{1}2}}{\qty(v_1+v_2)^2} \\
+&= \frac{4\mu_2}{\mu_1+\mu_2+\sqrt{\mu_1\mu_2}}
+\end{aligned}\]
+\begin{itemize}
+\item 當$\mu_1=\mu_2$，$R=0$，$T=1$。
+\item 輕繩（線密度較小）到重繩（線密度較大）：$R<0$，$T<1$；反射波波速與波長不變、振幅變小、波形上下顛倒；透射波波速與波長等倍變小、振幅變小、波形上下不顛倒。
+\item 重繩（線密度較大）到輕繩（線密度較小）：$R>0$，$T>1$；反射波波速與波長不變、振幅變小、波形上下不顛倒；透射波波速與波長等倍變大、振幅變大、波形上下不顛倒。
+\item 假設$\mu_1$不變，$\mu_2$變化$\mathrm{d}\mu_2$成為$\mu_2+\mathrm{d}\mu_2$，則$\mathrm{d}\mu_2\qty(\mu_2-\mu_1)>0$時$\abs{R}$增加、$T$減少；$\mathrm{d}\mu_2\qty(\mu_2-\mu_1)<0$時$\abs{R}$減少、$T$增加。
+\end{itemize}
+\subsection{繩/弦上駐波}
+固定端必為節點，自由端必為腹點。
+\subsubsection{兩端均為固定端}
+長為$L$的繩，兩端均為固定端，形成駐波時：
+\[\lambda = \frac{2L}{n},\quad n\in\mathbb{N} \]
+\[\nu = \frac{nv}{2L},\quad n\in\mathbb{N} \]
+\begin{itemize}
+\item 共有 $n+1$ 個節點、$n$ 個腹點。
+\item 弦樂器弦上之波即為此種駐波。
+\item $n=1$ 對應的頻率最低，該頻率為基頻/基音或第一諧音。
+\item 對於任意 $n\in\mathbb{N}\land n>1$，其對應的頻率為基頻的 $n$ 倍，該頻率為第 $n$ 諧音或第 $n-1$ 泛音。
+\end{itemize}
+\subsubsection{一端為固定端、一端為自由端}
+長為$L$的繩，一端為固定端、一端為自由端，形成駐波時：
+\[\lambda = \frac{4L}{n},\quad \frac{n+1}{2}\in\mathbb{N} \]
+\[\nu = \frac{nv}{4L},\quad \frac{n+1}{2}\in\mathbb{N} \]
+\begin{itemize}
+\item 共有 $\frac{n+1}{2}$ 個節點、$\frac{n+1}{2}$ 個腹點。
+\item $n=1$ 對應的頻率最低，該頻率為基頻、基音或第一諧音。
+\item 對於任意 $n\in\left\{x\middle|\frac{x-1}{2}\in\mathbb{N}\right\}$，其對應的頻率為基頻的 $n$ 倍，該頻率為第 $n$ 諧音或第 $\frac{n-1}{2}$ 泛音。
+\end{itemize}
+\subsubsection{兩端均為自由端}
+長為$L$的繩，兩端均為固定端，形成駐波時：
+\[\lambda = \frac{2L}{n},\quad n\in\mathbb{N} \]
+\[\nu = \frac{nv}{2L},\quad n\in\mathbb{N} \]
+\begin{itemize}
+\item 共有 $n$ 個節點、$n+1$ 個腹點。
+\item $n=1$ 對應的頻率最低，該頻率為基頻、基音或第一諧音。
+\item 對於任意 $n\in\mathbb{N}\land n>1$，其對應的頻率為基頻的 $n$ 倍，該頻率為第 $n$ 諧音或第 $n-1$ 泛音。
+\end{itemize}
+
+
+\section{Airy wave theory}
+In fluid dynamics, Airy wave theory (often referred to as linear wave theory) gives a linearised description of the propagation of gravity waves on the surface of a homogeneous fluid layer. The theory assumes that the fluid layer has a uniform mean depth, and that the fluid flow is inviscid, incompressible and irrotational.
+\subsection{Flow problem formulation}
+The waves propagate in the horizontal direction, with coordinate \( x \), and a fluid domain bound above by a free surface at \( z = \eta(x,t) \), with \( z \) the vertical coordinate (positive in the upward direction) and \( t \) being time. The level \( z = 0 \) corresponds with the mean surface elevation. The impermeable bed underneath the fluid layer is at \( z = -h \). Further, the flow is assumed to be incompressible and irrotational – a good approximation of the flow in the fluid interior for waves on a liquid surface – and potential theory can be used to describe the flow. The velocity potential \( \Phi(x, z, t) \) is related to the flow velocity components \( u_x \) and \( u_z \) in the horizontal (\( x \)) and vertical (\( z \)) directions by:
+\[
+u_x = \frac{\partial \Phi}{\partial x} \quad \text{and} \quad u_z = \frac{\partial \Phi}{\partial z}.
+\]
+Then, due to the continuity equation for an incompressible flow, the potential \( \Phi \) has to satisfy the Laplace equation:
+\begin{equation}
+\frac{\partial^2 \Phi}{\partial x^2} + \frac{\partial^2 \Phi}{\partial z^2} = 0.\quad\tx{\tb{(1)}}
+\end{equation}
+Boundary conditions are needed at the bed and the free surface in order to close the system of equations. For their formulation within the framework of linear theory, it is necessary to specify what the base state (or zeroth-order solution) of the flow is. Here, we assume the base state is rest, implying the mean flow velocities are zero.
+
+The bed being impermeable, leads to the kinematic bed boundary-condition:
+\begin{equation}
+\frac{\partial \Phi}{\partial z} = 0 \quad \text{ at } z = -h.\quad\tx{\tb{(2)}}
+\end{equation}
+In case of deep water – by which is meant infinite water depth, from a mathematical point of view – the flow velocities have to go to zero in the limit as the vertical coordinate goes to minus infinity: \( z \to -\infty \).
+
+At the free surface, for infinitesimal waves, the vertical motion of the flow has to be equal to the vertical velocity of the free surface. This leads to the kinematic free-surface boundary-condition:
+\begin{equation}
+\frac{\partial \eta}{\partial t} = \frac{\partial \Phi}{\partial z} \quad \text{ at } z = \eta(x,t).\quad\tx{\tb{(3)}}
+\end{equation}
+If the free surface elevation \( \eta(x,t) \) was a known function, this would be enough to solve the flow problem. However, the surface elevation is an extra unknown, for which an additional boundary condition is needed. This is provided by Bernoulli's equation for an unsteady potential flow. The pressure above the free surface is assumed to be constant. This constant pressure is taken equal to zero, without loss of generality, since the level of such a constant pressure does not alter the flow. After linearisation, this gives the dynamic free-surface boundary condition:
+\begin{equation}
+\frac{\partial \Phi}{\partial t} + g \eta = 0 \quad \text{ at } z = \eta(x,t).\quad\tx{\tb{(4)}}
+\end{equation}
+Because this is a linear theory, in both free-surface boundary conditions – the kinematic and the dynamic one, equations (3) and (4) – the value of \( \Phi \) and \( \frac{\partial \Phi}{\partial z} \) at the fixed mean level \( z = 0 \) is used.
+\subsection{Solution for a progressive monochromatic wave}
+For a propagating wave of a single frequency – a monochromatic wave – the surface elevation is of the form:
+\[
+\eta = a \cos ( k x - \omega t ).
+\]
+The associated velocity potential, satisfying the Laplace equation (1) in the fluid interior, as well as the kinematic boundary conditions at the free surface (2), and bed (3), is:
+\[
+\Phi = \frac{\omega}{k} a \frac{\cosh k (z+h) }{\sinh k h} \sin ( k x - \omega t),
+\]
+with \( \sinh \) and \( \cosh \) the hyperbolic sine and hyperbolic cosine function, respectively. But \( \eta \) and \( \Phi \) also have to satisfy the dynamic boundary condition, which results in non-trivial (non-zero) values for the wave amplitude \( a \) only if the linear dispersion relation is satisfied:
+\[
+\omega^2 = g k \tanh k h,
+\]
+with \( \tanh \) the hyperbolic tangent. So angular frequency \( \omega \) and wavenumber \( k \) – or equivalently period \( T \) and wavelength \( \lambda \) – cannot be chosen independently, but are related. This means that wave propagation at a fluid surface is an eigenproblem. When \( \omega \) and \( k \) satisfy the dispersion relation, the wave amplitude \( a \) can be chosen freely (but small enough for Airy wave theory to be a valid approximation).
+\subsection{Table of wave quantities}
+\begin{itemize}
+\item \textbf{Deep water} – for water depths greater than half the wavelength, \( h > \frac{1}{2} \lambda \), the phase speed is nearly independent of water depth (which is the case for most wind waves on the sea and ocean surface).
+\item \textbf{Shallow water} – for a water depth smaller than 5\% of the wavelength, \( h < \frac{1}{20} \lambda \), the phase speed of the waves is only dependent on water depth, and no longer a function of period or wavelength.
+\item \textbf{Intermediate depth} – all other cases, \( \frac{1}{20} \lambda < h < \frac{1}{2} \lambda \), where both water depth and period (or wavelength) have a significant influence on the solution of Airy wave theory.
+\end{itemize}
+In the limiting cases of deep and shallow water, simplifying approximations to the solution can be made. While for intermediate depth, the full formulations have to be used.
+\begin{longtable}[c]{|p{0.12\textwidth}|p{0.1\textwidth}|p{0.08\textwidth}|p{0.14\textwidth}|p{0.14\textwidth}|p{0.26\textwidth}|}
+\hline
+\multicolumn{6}{|p{0.8\textwidth}|}{\textbf{Properties of gravity waves on the surface of deep water, shallow water and at intermediate depth, according to Airy wave theory}} \\
+\hline
+\textbf{quantity} & \textbf{symbol} & \textbf{units} & \textbf{deep water} ( $ h > \frac{1}{2}\lambda $ ) & \textbf{shallow water} ( $ h < \frac{1}{20}\lambda $ ) & \textbf{intermediate depth} (all $ \lambda $ and $ h $ ) \\
+\hline\endhead
+\textbf{surface elevation} & $\eta(\mathbf{x},t)$ & m & \multicolumn{3}{c|}{$a \cos \theta(\mathbf{x},t)$} \\
+\hline
+\textbf{wave phase} & $\theta(\mathbf{x},t)$ & rad & \multicolumn{3}{c|}{$\mathbf{k}\cdot\mathbf{x} - \omega t$} \\
+\hline
+\textbf{observed angular frequency} & $\omega$ & rad$\cdot$s$^{-1}$ & \multicolumn{3}{c|}{$ \left( \omega - \mathbf{k}\cdot\mathbf{U} \right)^2 = \bigl( \Omega(k) \bigr)^2 \quad \text{ with } \quad k= |\mathbf{k}| $} \\
+\hline
+\textbf{intrinsic angular frequency} & $\sigma$ & rad$\cdot$s$^{-1}$ & \multicolumn{3}{c|}{$ \quad \sigma^2 = \bigl( \Omega(k) \bigr)^2 \quad \text{ with } \quad \sigma = \omega - \mathbf{k}\cdot\mathbf{U} $} \\
+\hline
+\textbf{unit vector in the wave propagation direction} & $\mathbf{e}_k$ & – & \multicolumn{3}{c|}{$\frac{\mathbf{k}}{k}$} \\
+\hline
+\textbf{dispersion relation} & $\Omega(k)$ & rad$\cdot$s$^{-1}$ & $\Omega(k) = \sqrt{g k}$ & $\Omega(k) = k \sqrt{g h}$ & $\Omega(k) = \sqrt{g k \tanh k h}$ \\
+\hline
+\textbf{phase speed} & $c_p=\frac{\Omega(k)}{k}$ & m$\cdot$s$^{-1}$ & $\sqrt{\frac{g}{k}} = \frac{g}{\sigma}$ & $\sqrt{g h}$ & $\sqrt{\frac{g}{k} \tanh k h}$ \\
+\hline
+\textbf{group speed} & $c_g = \frac{\partial\Omega}{\partial k}$ & m$\cdot$s$^{-1}$ & $\frac{1}{2} \sqrt{\frac{g}{k}} = \frac{1}{2} \frac{g}{\sigma}$ & $\sqrt{g h}$ & $\frac{1}{2} c_p \left( 1 + k h \frac{1 - \tanh^2 k h}{\tanh k h} \right)$ \\
+\hline
+\textbf{ratio} & $\frac{c_g}{c_p}$ & – & $\frac{1}{2}$ & 1 & $\frac{1}{2} \left( 1 + k h \frac{1 - \tanh^2 k h}{\tanh k h} \right)$ \\
+\hline
+\textbf{horizontal velocity} & $\mathbf{u}_x(\mathbf{x},z,t)$ & m$\cdot$s$^{-1}$ & $\mathbf{e}_k \sigma a\, e^{k z} \cos \theta$ & $\mathbf{e}_k \sqrt{\frac{g}{h}} a \cos \theta$ & $\mathbf{e}_k \sigma a \frac{\cosh k (z+h) }{\sinh k h} \cos \theta$ \\
+\hline
+\textbf{vertical velocity} & $u_z(\mathbf{x},z,t)$ & m$\cdot$s$^{-1}$ & $\sigma a\, e^{k z} \sin \theta$ & $\sigma a \frac{z + h}{h} \sin \theta$ & $\sigma a \frac{\sinh k (z+h) }{\sinh k h} \sin \theta$ \\
+\hline
+\textbf{horizontal particle excursion} & $\boldsymbol{\xi}_x(\mathbf{x},z,t)$ & m & $-\mathbf{e}_k a\, e^{k z} \sin \theta$ & $-\mathbf{e}_k \frac{1}{k h} a \sin \theta$ & $-\mathbf{e}_k a \frac{\cosh k (z+h) }{\sinh k h} \sin \theta$ \\
+\hline
+\textbf{vertical particle excursion} & $\xi_z(\mathbf{x},z,t)$ & m & $a\, e^{k z} \cos \theta$ & $a \frac{z + h}{h} \cos \theta$ & $a \frac{\sinh k (z+h) }{\sinh k h} \cos \theta$ \\
+\hline
+\textbf{pressure oscillation} & $p(\mathbf{x},z,t)$ & N$\cdot$m$^{-2}$ & $\rho g a\, e^{k z} \cos \theta$ & $\rho g a \cos \theta$ & $\rho g a \frac{\cosh k (z+h) }{\cosh k h} \cos \theta$ \\
+\hline
+\end{longtable}\FB
+
+
+\section{聲學（Acoustic）}
+\subsection {聲波}
+\begin{itemize}
+\item 聲波靠介質的擾動來傳送能量，是力學波。
+\item 流體中的聲波為縱波，因為流體可以承受垂直於其表面的縱向力，但受到平行於其表面的橫向力（剪力）時無法產生切應力（Shear stress）抵抗之，所以流體擾動時，其分子位移平行於受力方向。固體受到平行於其表面的橫向力（剪力）時會產生切應力（Shear stress）抵抗之，故固體中的聲波有橫波與縱波。下討論流體中的聲波。
+\item 聲波中，聲壓為正的部分稱密部，聲壓為負的部分稱疏部。一般空氣中的聲波其振幅在 10 Pa 以下，遠小於大氣壓力。
+\item 聲波之干涉服從疊加原理。
+\item 聲波有反射與折射。
+\item 聲波有繞射現象，接近波長的狹縫或障礙物繞射現象較明顯等。
+\end{itemize}
+\subsection{聲速（Speed of sound）}
+各種物質的聲速各約為（未註明為非縱波者為縱波）：
+\begin{longtable}[c]{|c|c|}
+\hline
+介質 & 聲速 (m/s)\\\hline\endhead
+乾燥空氣 & 331 + 0.6攝氏度\\\hline
+0°C氫氣 & 1286\\\hline
+0°C氦氣 & 972\\\hline
+0°C氧氣 & 317\\\hline
+25°C淡水 & 1493\\\hline
+25°C海水 & 1533\\\hline
+25°C水銀 & 1450\\\hline
+25°C甘油 & 1904\\\hline
+25°C甲醇 & 1143\\\hline
+25°C煤油 & 1324\\\hline
+25°C四氯化碳 & 926\\\hline
+鉛 & 1960\\\hline
+橡木 & 3850\\\hline
+玻璃（縱波） & 5500\\\hline
+玻璃（橫波） & 3000\\\hline
+銅 & 5010\\\hline
+黃銅 & 4700\\\hline
+鋼 & 5200\\\hline
+鋁 & 6420\\\hline
+鐵 & 5950\\\hline
+金 & 3240\\\hline
+橡膠 & 1600\\\hline
+\end{longtable}\FB
+\subsection {氣體介質之聲速}
+\subsubsection {方程}
+\[v^2 = \dv{p}{\rho}\]
+即：
+\[v^2=\frac{p_s}{\rho_s}\]
+\begin{proof}\mbox{}\\
+動量守恆：
+\[\dd{\rho \mathbf{v}} = 0\]
+故：
+\[\rho\dd{\mathbf{v}}=-\mathbf{v}\dd{rho}\]
+氣壓梯度力：
+\[\dv{\mathbf{v}}{t} = -\frac{1}{\rho}\nabla p\]
+故：
+\[\dd{p}=-\rho\dv{\mathbf{v}}{t}\cdot\dd{\mathbf{x}}=-\rho\dd{v}v=v^2\dd{\rho}\]
+\end{proof}
+\subsubsection {等熵體積模量}
+\[v = \sqrt{\dv{p}{\rho}}=\sqrt{\frac{K_s}{\rho_0}}\]
+\subsubsection {理想氣體}
+\[K_s=\gamma p_0\]
+\[v = \sqrt{\frac{\gamma p_0}{\rho_0}} = \sqrt{\frac{\gamma RT}{M}}\]
+\subsubsection {乾燥空氣}
+令$T_C$為攝氏度。
+\[\sqrt{T}=\sqrt{273\qty(1+\frac{T_C}{273})}\approx \qty(1+\frac{T_C}{2\times 273})\sqrt{273}\]
+令$T_C=0$時的$v$為$v_0$：
+\[v_0=\sqrt{\frac{\gamma R\times 273}{M}}\approx 331 \text{ (m/s)}\]
+\[\frac{v_0}{546}\approx =0.61\]
+\[v\approx 331+0.61T_C\]
+20$^\circ$C空氣的聲速約為343 m/s，該速度稱音速。
+\subsection {氣體介質之聲波的數學描述}
+\subsubsection {波動方程式聲壓形式}
+\[\frac{\partial^2 p_s(\mathbf{x}, t)}{\partial t^2} = v^2 \nabla^2 p_s(\mathbf{x}, t)\]
+\subsubsection {波動方程式平均位移形式}
+\[\frac{\partial^2 \mathbf{y}(\mathbf{x}, t)}{\partial t^2} = v^2 \nabla^2 \mathbf{y}(\mathbf{x}, t)\]
+\subsubsection {聲壓與平均位移之關係}
+\[p_s = -\rho_0 v^2 (\nabla \cdot \mathbf{y})\]
+\begin{proof}
+引理：連續性方程：
+\[\frac{\partial \rho}{\partial t} + \nabla \cdot \left( \rho \frac{\partial\mathbf{y}}{\partial t} \right) = 0\]
+根據小波動假設：
+\[\frac{\partial \rho_s}{\partial t} + \rho_0 \nabla \cdot \frac{\partial\mathbf{y}}{\partial t} = 0\]
+推導：
+\[\frac{\partial \rho_s}{\partial t} + \rho_0 \frac{\partial}{\partial t} (\nabla \cdot \mathbf{y}) = 0\]
+\[\rho_s + \rho_0 (\nabla \cdot \mathbf{y}) = 0\]
+引理：前述聲速方程：
+\[p_s = v^2 \rho_s\]
+\[p_s = -\rho_0 v^2 (\nabla \cdot \mathbf{y})\]
+\end{proof}
+\subsubsection{介質質點振動速度}
+令有興趣點與波同速度移動，即：$\mathbf{x}=\mathbf{v}t$。
+\[\pdv{\mathbf{y}}{t} = - \nabla_{\mathbf{x}} \mathbf{y} \cdot \mathbf{v}\]
+\subsubsection {一維波動方程式聲壓形式}
+\[\frac{\partial^2 p_s(x, t)}{\partial t^2} = v^2 \frac{\partial^2 p_s(x, t)}{\partial x^2}\]
+\subsubsection {一維波動方程式平均位移形式}
+\[\frac{\partial^2 y(x, t)}{\partial t^2} = v^2 \frac{\partial^2 y(x, t)}{\partial x^2}\]
+\subsubsection {一維聲壓與平均位移之關係}
+\[p_s = -\rho_0 v^2 \pdv{y}{x}\]
+\subsubsection{一維介質質點振動速度}
+令有興趣點與波同速度移動，即：$x=vt$。
+\[ \pdv{y}{t}=-\pdv{y}{x}v \]
+\subsection {氣體介質之正弦聲波}
+\subsubsection{波函數}
+對於每一個維度，平均位移對聲壓之相位角移為$\frac{\pi}{2}$，即平均位移較聲壓（時間上）領先$\frac{1}{4}$週期，即聲壓較平均位移（空間上）快$\frac{\mathbf{\lambda}}{4}$，即：
+\[\begin{aligned}
+p_s &= A \cdot \sin\qty(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi) \\
+y &= A \cdot \cos\qty(\mathbf{k} \cdot \mathbf{x} \pm \omega t + \phi) 
+\end{aligned}\]
+\subsubsection{一維波函數}
+平均位移對聲壓之相位角移為$\frac{\pi}{2}$，即平均位移較聲壓（時間上）領先$\frac{1}{4}$週期，即聲壓較平均位移（空間上）快$\frac{\lambda}{4}$，即：
+\[\begin{aligned}
+p_s &=A\cdot\sin(kx\pm\omega t+\phi)\\
+y &=A\cdot\cos(kx\pm\omega t+\phi)
+\end{aligned}\]
+\subsection{聲波阻抗（Acoustic impedance）}
+\subsubsection{特性聲波阻抗（Characteristic acoustic impedance）/（實）聲波阻抗/聲阻（Acoustic resistance）}
+\[z=\rho v\]
+\subsection{聲波的能量/聲能（Sound energy）}
+\subsubsection{聲能密度/聲波的能量密度}
+\[ u = \frac{p_s^{\pht{s}2}}{\rho v}\]
+\subsubsection{Sound power/Acoustic power}
+Sound power or acoustic power $P$ is the rate at which sound energy is emitted, reflected, transmitted or received, per unit time.
+\subsubsection{聲音強度（Sound intensity, Acoustic intensity）/聲強/音強}
+\[ I = \rho v\]
+對於球面聲波，徑向聲音強度作為距球體中心距離$r$的函數由下式給出：
+\[I(r)=\frac{P}{A(r)}\]
+其中：$A(r)$ is the surface area of a sphere of radius $r$.
+
+對於三維球面聲波，徑向聲音強度作為距球體中心距離$r$的函數由下式給出：
+\[I(r)=\frac{P}{4\pi r^{2}}\]
+此音強正比於$r$的$-2$次方稱聲音的平方反比定律。
+\subsubsection{音強級（Sound level/Intensity level）/響度（Loudness）與分貝（deci-Bell, dB）}
+\[\beta = 10\log\qty(\frac{I}{I_0})\]
+其中：$I_0=10^{-12}$ W/m$^2$；音強級$\beta$單位分貝（deci-Bell, dB），為無因次單位。
+\subsection{波節與波腹}
+\begin{itemize}
+\item 聲壓節點或節線/波節：指聲壓始終為零的點，位於$\mathbf{k}\cdot\mathbf{x}$。相鄰兩波節的距離為$\frac{\lambda}{2}$。
+\item 聲壓腹點或腹線/波腹（Antinode）：指相鄰兩聲壓波節的中點。合成波的聲壓波峰始終僅出現在波腹。相鄰兩波腹的距離為$\frac{\lambda}{2}$，相鄰兩波腹分別處於正聲壓與負聲壓。
+\item 粒子平均位移節點或節線/波節：指粒子平均位移始終為零的點，位於$\mathbf{k}\cdot\mathbf{x}$。相鄰兩波節的距離為$\frac{\lambda}{2}$。粒子平均位移波節即聲壓波腹。
+\item 粒子平均位移腹點或腹線/波腹（Antinode）：指相鄰兩粒子平均位移波節的中點。合成波的粒子平均位移波峰始終僅出現在波腹。相鄰兩波腹的距離為$\frac{\lambda}{2}$，相鄰兩波腹分別處於正粒子平均位移與負粒子平均位移。粒子平均位移波腹即聲壓波節。
+\end{itemize}
+\subsection{駐波}
+\begin{itemize}
+\item 閉管端必為聲壓腹點、位移節點。
+\item 開管端必為聲壓節點、位移腹點。
+\item 較常用位移表示，亦有用聲壓表示者。
+\item 給定條件之管內，駐波的所有可能頻率為駐波頻率或共振頻率（Resonant frequency）。
+\end{itemize}
+\subsubsection{兩端均為開管端/開管樂器}
+長為$L$的管，兩端均為開管端，形成駐波時：
+\[\lambda = \frac{2L}{n},\quad n\in\mathbb{N} \]
+\[\nu = \frac{nv}{2L},\quad n\in\mathbb{N} \]
+\begin{itemize}
+\item 共有 $n+1$ 個位移腹點/聲壓節點、$n$ 個位移節點/聲壓腹點。
+\item $n=1$ 對應的頻率最低，該頻率為基頻、基音或第一諧音。
+\item 對於任意 $n\in\mathbb{N}\land n>1$，其對應的頻率為基頻的 $n$ 倍，該頻率為第 $n$ 諧音或第 $n-1$ 泛音（Overtone）。
+\end{itemize}
+\subsubsection{一端為開管端、一端為閉管端/閉管樂器}
+長為$L$的管，一端為開管端、一端為閉管端，形成駐波時：
+\[\lambda = \frac{4L}{n},\quad \frac{n+1}{2}\in\mathbb{N} \]
+\[\nu = \frac{nv}{4L},\quad \frac{n+1}{2}\in\mathbb{N} \]
+\begin{itemize}
+\item 共有 $\frac{n+1}{2}$ 個位移腹點/聲壓節點、$\frac{n+1}{2}$ 個位移節點/聲壓腹點。
+\item $n=1$ 對應的頻率最低，該頻率為基頻、基音或第一諧音。
+\item 對於任意 $n\in\left\{x\middle|\frac{x-1}{2}\in\mathbb{N}\right\}$，其對應的頻率為基頻的 $n$ 倍，該頻率為第 $n$ 諧音或第 $\frac{n-1}{2}$ 泛音。
+\end{itemize}
+\subsubsection{兩端均為閉管端}
+長為$L$的管，兩端均為閉管端，形成駐波時：
+\[\lambda = \frac{2L}{n},\quad n\in\mathbb{N} \]
+\[\nu = \frac{nv}{2L},\quad n\in\mathbb{N} \]
+\begin{itemize}
+\item 共有 $n$ 個位移腹點/聲壓節點、$n+1$ 個位移節點/聲壓腹點。
+\item $n=1$ 對應的頻率最低，該頻率為基頻、基音或第一諧音。
+\item 對於任意 $n\in\mathbb{N}\land n>1$，其對應的頻率為基頻的 $n$ 倍，該頻率為第 $n$ 諧音或第 $n-1$ 泛音。
+\end{itemize}
+
+\section{散射（Scattering）}
+散射泛指使得粒子或波動前進方向改變的事件。
+\ssc{散射角（Scattering angle）}
+散射前後粒子或波動前進方向的夾角。
+\subsection{瑞利散射（Rayleigh Scattering）}
+令物體半徑$r$，物體距離$R$，光的波長$\lambda$，入射光強度$I_0$，散射光強度$I$，散射角$\theta$，電常數$\varepsilon_0$。
+\[\frac{2\pi r}{\lambda}\gg1\]
+時可近似為：
+\[I=I_0\frac{1+\cos^2(\theta)}{2R^2}\left(\frac{2\pi}{\lambda}\right)^4\left(\frac{n^2-1}{n^2+2}\right)^2r^6\]
+\subsection{天空顏色}
+太陽光中短波長的藍光（約450 nm）比紅光（約650 nm）更容易被大氣瑞利散射，因此我們白天看到的天空是藍色的。黃昏與日出時，太陽接近地平線，陽光須經過更長的大氣層，藍光被大量散射，因此天空呈現紅色。
+
+
+\section{共振/共鳴（Resonance）}
+\subsection{自然頻率（Natural frequency）}
+一振動體的自然頻率指可在該振動體上形成駐波的特定頻率，一振動體可有許多自然頻率。
+\subsection{共振/共鳴}
+共振指當外界傳入的波頻率等於物體的自然頻率，就可以產生駐波，減少能量的散逸。如：振動單擺，附近相同擺長的單擺也會跟著振動；以與容器中水波（兩端皆自由）自然頻率相同的頻率拍打水面會引起較大幅度的振動；芬地海灣的振動頻率恰同潮汐頻率故潮差較大；調諧質量阻尼器（Tuned mass damper）之自然頻率同主要結構，當主結構振動時會反向振動，使能量消散。
+\subsection{聲音共振}
+共振可將物體振動能量有效地轉換成聲波能量。如：琴弦或音叉振動時，若振動逕向四周散逸則聲音較小，若加上音箱則聲音較大，若振動頻率恰為音箱自然頻率之一，則更大。
+\subsection{電磁波共振}
+\subsubsection{天線共振}
+電磁波的波長與天線的長度匹配（例如四分之一波長或半波長），會產生共振，使高效地輻射或接收電磁波。
+\subsubsection{光學腔（optical cavity）/共振腔（resonating cavity）/光學共振器（optical resonator）/耦合器（coupler）}
+電磁波在腔體中多次反射，當某些頻率與腔體匹配時，會產生共振。
+\ssc{樂音}
+\sssc{樂音之參數}
+\begin{itemize}
+\item 樂音係由樂器振動物之各自然頻率之正弦波組成，通常以基頻之振幅最大。
+\item 樂音之音調（Musical pitch）即其基頻，音色取決於各諧音疊加之波形。
+\item 響度、音調、音色（Timbre, tone color, or tone）為樂音之三要素。
+\end{itemize}
+\sssc{弦樂器原理}
+琴弓拉過提琴琴弦或指甲撥動吉他琴弦時所引發的振動實包含不同頻率，但僅弦線固有頻率相同者才會被共鳴放大。按壓吉他之琴衍（Fret）使可振動的弦長變短，改變固有頻率。弦樂器之弦經摩擦後溫度逐漸升高而膨脹鬆弛，使張力變小，故波速變慢，頻率變低，音調變低。
+\sssc{管樂器原理}
+吹氣所引發的空氣振動實包含不同頻率，但僅與樂管內空氣柱固有頻率相同者才會被共鳴放大。管樂器經吹奏者之熱氣吹入管內使氣柱溫度升高，故聲速變快，頻率變高，音調變高。
+
+
+\sct{實驗}
+\ssc{液體折射率測定實驗}
+保麗龍上置方格紙，方格紙上置一半圓形薄壁透明壓克力皿，直邊恰與方格紙一直線重合，令為$x$軸，圓心恰與方格紙一兩垂直線交點重合，令為原點，令皿在第三、四象限，皿內盛半滿透明液體，圓心處插一長針，第二象限任一處插一針，以直線單色光源於該點向圓心照射，該點與圓心連線與$y$軸正向之夾角為入射角，於第四象限平視觀察，找到皿圓弧上一處使得該點與前述二長針於視線上呈一直線，於該處插一長針，該點與圓心連線與$y$軸負向之夾角為折射角。自入射角 10° 至 80° 依序測量折射角，以司乃耳定律計算折射率。若液體折射率較大，後數次實驗可能發生全反射而無法觀察到第二象限之長針。
+\ssc{壓克力磚折射率測定實驗}
+保麗龍上置方格紙，方格紙上置一透明壓克力磚，磚須為一凸柱體，底面須有兩夾角小於 90° 的直邊（可以但無須平行，小者佳），其一恰與方格紙一直線重合，令為$x$軸，令另一直邊為直線$L$，任取一點圓心為原點使得$y$軸通過壓克力磚並交兩直邊，令壓克力磚在第三、四象限，原點處插一長針，第二象限任一處插一針，以直線單色光源於該點向原點照射，該點與圓心連線與$y$軸正向之夾角為第一次折射入射角，於第四象限平視觀察，找到$L$上一處使得該點與前述二長針於視線上呈一直線，令為$A$，於該處插一長針，該點與圓心連線與$y$軸負向之夾角為第一次折射折射角，90° 減去該點與圓心連線與$L$之夾角為第二次折射入射角，再於第四象限較$A$距離原點更遠之處找到一處使得該點與前述三長針於視線上呈一直線，90° 減去該點與$A$連線與$L$之夾角為第二次折射折射角。測量$A$與原點距離，並自第一次折射入射角 10° 至 80° 依序測量各角度，以司乃耳定律計算折射率。若$x$軸與$L$夾角太大，後數次實驗可能發生全反射而無法觀察到第二象限之長針。
+\ssc{可見光的透鏡、面鏡、狹縫繞射與干涉實驗}
+可見光源、屏幕（如須）、與欲使用之透鏡、面鏡、單或多狹縫片依實驗所須位置夾於光凳軌道上實驗：
+\bit
+\item 實像屏幕法：屏幕上成像最清晰處即像得位置。
+\item 虛像視差法：即通過左右擺頭找到使得像與參考物在觀測角改變時視相對位置不變的參考物位置，該位置即像的位置。
+\item 狹縫繞射與干涉：於屏幕上成像。
+\eit
+\ssc{微波的駐波、反射、折射與偏振實驗}
+微波發射器與接收器或探測板、與欲使用之金屬反射平板、盛有發泡聚苯乙烯顆粒之發泡聚苯乙烯盒稜鏡模型、金屬光柵偏振片依實驗所須位置夾於光凳軌道上實驗，數位接收器數值或串聯毫安培計接收器之毫安培計數值表示接收的波振幅的相對大小：
+\bit
+\item 駐波：發射器與金屬反射平板相對，連接接收器的探測板置於其中，材質須不阻擋微波通過，找到使得接收的波振幅最大與最小之處，分別為腹點與節點，相鄰兩腹點、相鄰兩節點距離為波長的一半，相鄰一腹點一節點距離為波長的四分之一。
+\item 反射：使用附角度計與旋轉底座之光凳，將金屬反射平板夾於旋轉底座上，找到使得接收的波振幅最大的角度。
+\item 折射：使用附角度計與旋轉底座之光凳，將聚苯乙烯稜鏡模型置於旋轉底座上，找到使得接收的波振幅最大的角度。
+\item 偏振：發射器與接收器相對，兩金屬光柵偏振片夾於其間，其會吸收或反射電場平行狹縫方向的微波而允許電場垂直狹縫方向的微波通過，較靠近發射器者為起偏片，另一者為檢偏片，改變兩者金屬柵方向夾角，找到使得接收的波振幅最大與最小者，應分別為 0° 與 90°。
+\eit
+\ssc{水波槽（Ripple tank）實驗}
+\bit
+\item 水波槽：一個透明的玻璃水槽，上方裝有強光源與起波器，下方鋪大張白紙，實驗前用水平儀確保水波槽底部水平。
+\item 起波器：以馬達驅動以製造週期水波，以改變可變電阻調整頻率，可裝上不同物體製造不同波，原先裝置為筆尖狀點波源/圓形波源，裝上長形木桿可製造直線波源/平行波源。
+\item 觀察：正位移（向上為正）相當於凸透鏡，在白紙上呈現亮紋；負位移相當於凹透鏡，在白紙上呈現暗紋。白紙上兩相鄰同亮度的等亮度線之距離稱視波長。若上方光源為平行光，則視波長等於實際波長；若上方光源為點光源，則實際波長等於視波長乘以光源到水面長度除以光源到白紙長度。
+\item 反射：邊界與壓克力塊、軟橡皮管等障礙物接近自由端反射，欲使邊界不反射時，以海綿條等粗糙而軟之物作為阻波器吸收能量。障礙物反射時，其高應高過水波波峰。可將強光源換為閃頻儀並使與起波器同頻率閃動，以觀察相同相位。
+\item 折射：以壓克力塊平放於水中，高度低於水面，作為淺水區。深水區波速大、波長大，相當於光疏介質；淺水區波速小、波長小，相當於光疏介質。水波行進到波速不同的區域時，頻率不變，波長改變，行進方向遵守司乃耳定律。深水區水深宜在0.5至1.5公分，淺水區水深宜約0.2公分，頻率不宜高於13.5赫茲，否則水深對波速影響太小，不易觀察。
+\item 干涉：兩同頻率、同波形、同振幅圓形水面波在勻波速介質中干涉，節線在白紙上投影為穩定不動的灰色線；腹線在紙上為亮度連續性變化的亮暗相間斑紋中通過亮斑最亮處與暗斑最暗處的線。
+\item 繞射：可用石蠟製成狹縫與小障礙物，波前進時遇到之可觀察到其不再以直線方式前進而會擴展成扇形往各方向傳播。障礙物長或狹縫開口長$b$，$b\leq\lambda$時繞射明顯，$b\gg \lambda$時幾乎不繞射而呈現直進。
+\eit
+\ssc{玻璃管共鳴管實驗}
+初始配置時，將圓柱玻璃管固定於支架上，與蓄水器以連通管相連，蓄水器置於管底附近高度，裝水至八分滿，慢慢提高直到水面接近管口零刻度處。在玻璃管口上方敲擊音叉產生單頻聲波，音叉振動方向應與管長方型平行，且不可碰到玻璃管，與玻璃管口宜約距一至二公分，音叉頻率宜400赫茲以上。將蓄水器慢慢下降，使玻璃管水面也跟著下降，當聽到明顯的聲音時，表示聲波在管內空氣柱中形成駐波，在該位置附近慢慢升降水面數次，以找出精確的最大聲位置為共鳴點，以橡皮圈套在圓柱玻璃管上紀錄水面高度。再將水面下降，按照上法找尋其他共鳴點，直到降到最低。理論上，第一個（水面最高）之共鳴點的空氣柱長度略小於四分之一波長（與四分之一波長的差為管口修正量，在管口半徑遠小於聲波波長的假設下駐波的聲壓節點約在管口處上方0.61倍管口半徑處），而後每個共鳴點（水面依次下降）空氣柱長度增加二分之一波長。紀錄所有共鳴點位置，以相鄰兩個明顯共鳴聲音之水面高度差為半個聲波波長，乘以音叉頻率得到聲速測量值，並測量空氣溫度計算聲速標準值，並比較之。以不同頻率實驗之。若頻率太小會觀察不到駐波；若音叉波長與玻璃管半徑關係使得可產生平行水面的駐波會使垂直駐波難以分辨。
+\ssc{活塞筒共鳴管實驗}
+將附手動式活塞的共鳴塑膠圓筒和單頻電子式音源裝置於支架上，音源發聲口末端位於塑膠圓筒的開口。將圓筒之活塞上升至接近筒口的零刻度處，按下音源的切換開關使發出聲波，將活塞慢慢拉下，使圓筒空氣柱長度慢慢增加。當找到一聲音極大位置，即共鳴點時，在此位置附近緩慢升降活塞數次，以定出精確的共鳴位置。再將活塞下拉，按照上法找尋其他共鳴位置，直到降到最低。理論上，第一個（空氣柱最短）之共鳴點的空氣柱長度略小於四分之一波長（與四分之一波長的差為管口修正量），而後每個共鳴點空氣柱長度增加二分之一波長。紀錄所有共鳴點位置，以相鄰兩個明顯共鳴聲音之空氣柱長度差為半個聲波波長，乘以電子音源頻率得到聲速測量值，並測量空氣溫度計算聲速標準值，並比較之。以不同頻率實驗之。
+\end{document}

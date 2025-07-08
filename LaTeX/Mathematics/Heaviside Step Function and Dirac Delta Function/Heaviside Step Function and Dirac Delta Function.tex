@@ -1,0 +1,30 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Heaviside Step Function and Dirac Delta Function}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\sct{Heaviside Step Function and Dirac Delta Function}
+\ssc{Heaviside step function (黑維塞階躍函數)/unit step function (單位階躍函數)}
+\[H(x)=\begin{cases}0,\quad &x<0\\\frac{1}{2},\quad &x=0\\1,\quad &x>0\end{cases},\]
+where $H(0)$ is sometimes defined to be 1 or other values instead.
+\[H'(x)=\delta(x).\]
+\ssc{Dirac delta function (狄拉克 δ 函數)}
+\[
+\delta(x) =
+\begin{cases}
+\infty, & x = 0, \\
+0, & x \neq 0.
+\end{cases}
+\]
+\[
+\forall \epsilon > 0:\,\int_{a-\epsilon}^{a+\epsilon} f(x) \delta(x-a) \, \mathrm{d}x = f(a).
+\]
+\[
+\int _{-\infty }^{\infty }\delta(x) \, \mathrm{d}x = 1.
+\]
+\[\int_0^x\delta(t)\,\mathrm{d}t=H(x).\]
+\end{document}

@@ -1,0 +1,654 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{原子}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{原子（Atom）}
+\sct{原子構造的發現}
+\subsection{J. J. 湯姆森的陰極射線（Cathode ray）實驗發現電子（electron）與測得其荷質比}
+\subsubsection{氣體放電管（Gas discharge tube）/陰極射線管（Cathode ray tube）/真空管（Vacuum tube）}
+一密閉玻璃管，內置二金屬極板，加以數千至數萬伏特之高壓直流電源，測量其電流，以抽氣機抽氣：
+\bit
+\item 氣體壓力較高時電子撞擊氣體分子機會較高，故難順利打至對面。
+\item 管內壓力降至約 \scinote{6}{-2} atm 時，氣體開始發出光輝，即氣體電子躍遷產生的原子發射光譜，並測得電流。
+\item 當壓力降至約 \scinote{2.6}{-5} atm 以下，無光輝，但仍測得電流通過。
+\eit
+該自陰極射出、使測得電流之射線，稱陰極射線，即電子束。
+\subsubsection{J. J. 湯姆森的陰極射線實驗}
+\bit
+\item 湯姆森在氣體放電管正極後方管壁塗以螢光劑為螢幕，將之接通數千至數萬伏特之高壓直流電源，並抽成真空（指將壓力降至\scinote{2.6}{-5} atm 以下），測得電流，且管壁出現青色螢光。
+\item 湯姆森在玻璃管中設障礙物（十字形金屬片），在螢幕形成相同形狀陰影，顯示有未知直線前進之射線自陰極射出，故名之陰極射線（Cathode ray）。
+\item 赫茲提出陰極射線是電磁波。
+\item 湯姆森在玻璃管中設轉輪，其轉動，顯示陰極射線為粒子束。
+\item 湯姆森使陰極射線通過小洞，沿軸前進，進入電場與/或磁場中，發現其偏折：
+\bit
+\item 其在電場中的偏轉方向顯示陰極射線的粒子帶負電。
+\item 其先經均勻磁場與電場的速度選擇器或以相同加速電壓發射，速率$v$，再經寬度$L$偏向板提供均勻電場量值$E$，接著自離開偏向板至螢幕長度$D$，測量其到達螢幕時的偏向位移量值$Y$，其荷質比$\frac{e}{m}$可由下式得出：
+\[Y=\frac{1}{2}\frac{eE}{m}\qty(\frac{L}{v})^2+\frac{eE}{m}\frac{L}{v}\frac{D}{v}=\frac{eEL}{mv^2}\left(\frac{L}{2}+D\right)\]
+其中在離開偏向板後的偏向角$\theta$服從：
+\[\tan\theta=\frac{eEL}{mv^2}\]
+\item 其先經均勻磁場與電場的速度選擇器篩選出速率$v$或以相同加速電壓$V$發射，接著進入均勻磁場$B$無電場行迴旋運動，由其迴旋半徑$r$知其荷質比$\frac{e}{m}$：
+\[\frac{e}{m}=\frac{v}{Br}\]
+或
+\[\frac{e}{m}=\frac{2V}{B^2r^2}.\]
+\eit
+\item 湯姆森發現不同氣體的放電管及不同金屬的陰極板其陰極射線之性質皆相同，顯示為同一粒子所構成，並測得此粒子之荷質比為\scinote{1.759}{11} C/kg，命名此粒子為電子（electron），顯示原子並非物質結構的最小單位而是還有其他內部結構，因此獲得1906年諾貝爾物理獎。
+\eit
+\subsubsection{葡萄乾布丁模型（Plum pudding model）}
+湯姆森提出，原子是一個直徑約0.1奈米、質量約為原子質量的圓球，如布丁，正電荷均勻分布於球體內，帶負電的電子散布其中，如葡萄乾，圓球的正電荷與電子的負電荷量值相等。
+\subsubsection{亥姆霍茲線圈電子荷質比實驗}
+電子荷質比實驗裝置有塗有螢光的劑真空玻璃球、玻璃球兩側相距$R$的$N$匝半徑$R$線圈，稱亥姆霍茲線圈、玻璃球下方以一加速電壓射出電子的電子槍、玻璃球旁測量迴旋運動半徑的標尺，測量時，開啟電源，調整加速電壓$V$、亥姆霍茲電流$I$，亥姆霍茲線圈提供平行於軸的均勻磁場量值$B$：
+\[B=\frac{8\mu_0NI}{\sqrt{125}R}\]
+可見一圓周，該圓周半徑即電子迴旋運動之半徑，由其迴旋半徑知其荷質比$\frac{e}{m}$：
+\[\frac{e}{m}=\frac{2V}{B^2r^2}.\]
+\subsection{密立坎的油滴實驗（Oil-drop experiment）測得電子電量}
+\bit
+\item 平行金屬極板分別接直流電源正負極，以噴霧器噴出微小油滴，通過金屬板中央的小孔進入極板間，照明光自一側射入，觀察者觀察油滴運動。
+\item 油滴通過噴霧器噴嘴時因摩擦而易帶電，欲使之更易帶電可由一側以X射線照射兩極板間，使氣體游離，使電子吸附於油滴上。
+\item 令$k=6\pi\nu a$，其中$a$為油滴半徑、$\nu$為油滴黏滯性係數/動力黏度（Kinematic viscosity）。切斷極板電源時，質量$m$油滴受重力$g$以速度$v$運動，空氣阻力$F=-kv$，測量終端速度$u=\frac{mg}{k}$，質量$m$即：
+\[m=\frac{4\pi\rho}{3}\qty(\frac{9\nu u}{2\rho g})^{\frac{3}{2}}\]
+\item 接通極板電源$E$（向下為正）時，質量$m$、電荷$q$（負值）油滴終端速度變為$w=\frac{mg+qE}{k}$。
+\item 發現油滴帶電荷均為一值之整數倍，油滴帶電荷的最大公因數即電子電荷量值，今測得為 \(1.602 \times 10^{-19}\) C，得電子質量 \(9.107 \times 10^{-31}\) kg，再由法拉第電解定律指出 1 莫耳電子電量為 $96485$ C 可得亞佛加厥常數為 \scinote{6.02}{-23} 個/莫耳。
+\eit
+\subsection{拉塞福的 α 粒子金箔散射實驗}
+\subsubsection{實驗裝置}
+一真空暗室內，鐳放射源裝於鉛座內，放射出的 α 粒子（即$^4_2$He$^{2+}$）通過小孔形成細窄粒子束，打在約1微米的薄金箔 $^{197}_{79}$Au 上，金箔後置硫化鋅螢光屏，一 α 粒子打在其上產生一亮點，鉛座、金箔與螢光屏經一傳動軸連接至真空室外用於更換，螢光屏後一望遠鏡用於觀察螢光屏上的亮點，望遠鏡和真空室可繞傳動軸轉動以觀測不同角度散射的 α 粒子。
+\subsubsection{實驗結果}
+\bit
+\item 多數穿透，表示原子內部大部分空間必空無一物。
+\item 約每 8000 顆中有一顆做超過直角的大角度散射，有些甚至 180° 反彈，表示原子內部有電子以外的物質與 α 粒子發生強烈相互作用而排斥之。
+\item α 粒子可將電子撞開，使原子電離而帶正電，表示原子內部電子以外的物質帶正電荷。
+\eit
+與葡萄乾布丁模型預測不符。
+\subsubsection{行星模型（Planetary model）}
+拉塞福提出行星模型：
+\bit
+\item 原子中心存在帶正電的原子核，原子的質量幾乎都集中在原子核上，原子核的直徑僅約原子直徑的萬分之一。
+\item 電子在原子核外繞之運動，類似行星繞恆星運動。
+\item 原子核所帶正電量與原子內所有電子的電量量值和相等。
+\item 原子內除原子核與電子外其餘空間無物質存在。
+\eit
+無法解釋之處：
+\bit
+\item 電子環繞原子核為變速度運動，依古典電磁理論應逐漸失去動能並放出電磁波，軌道半徑逐漸縮小，而非實際的穩定情況。
+\item 光源中大量原子中的大量電子軌道半徑不同，故因加速度而放出的電磁波頻率不同，故應放出連續光譜，而非實際的離散特徵光譜。
+\item 當 α 粒子能量太高時發現散射結果與拉塞福散射預測有偏差。
+\eit
+
+
+\section{原子光譜（Atomic spectrum）與波耳模型（Bohr Model）}
+\subsection{約定（Convention）}
+\bit
+\item 電子伏特（Electron volt, eV）：能量單位，等於基本電荷乘以伏特。
+\item $\pi$：圓周率
+\item $h$：普朗克常數（Planck constant）$=\scinote{6.62607015}{-34}$ J s $=\scinote{4.135667696}{-15}$ eV s
+\item $\hbar$：約化普朗克常數（reduced Planck constant）$=\frac{h}{2\pi}$
+\item $e$：基本電荷（Elementary charge）$=\scinote{1.602176634}{-19}$ C
+\item $c$：真空光速（Speed of light in vacuum）$=299792458$ m/s
+\item $\varepsilon_0$：真空電容率（Vacuum permittivity）$\approx\scinote{8.854187817}{-12}\text{\ A}^2\tx{\ s}^4\tx{\ kg}^{-1}\tx{\ m}^{-3}$
+\item $\mu_0$：真空磁導率（Vacuum permeability）$\approx 1.25663706127(20)\times 10^{-6}\text{\ H m}^{-1}\approx 4\pi\times 10^{-7} \text{\ H m}^{-1}$
+\item $m_e$：電子質量$=0.511\text{\ MeV/}c^2=9.109\times 10^{-31}\text{\ kg}=0.000549\text{\ u}$
+\item $f$：頻率
+\item $\lambda$：波長
+\item $Z$：原子序（Atomic number）
+\item $n$：主量子數（Principal quantum number）
+\eit
+\subsection{光譜/光學頻譜（Spectrum）}
+指複色光經稜鏡分光後，依照光的頻率排列成之圖案。分為頻率連續分布的連續光譜（Continuous spectrum）與頻率離散分布的特徵光譜（Characteristic spectrum），後者又分為明線或明帶的發射光譜（Emission spectrum）與暗線或暗帶的吸收光譜（Absorption spectrum）。
+\sssc{原子光譜（Atomic spectrum）/線狀光譜}
+指原子發射光譜/明線光譜與吸收光譜/暗線光譜，屬特徵光譜，前者之明線與後者之暗線重合，各元素不同，故可用光譜儀鑑定元素。外加磁場或電場會影響之。來自電子向較低能階躍遷。
+
+1859年，克希荷夫與本生發現各元素氣體發射光譜各不相同。
+\subsection{氫原子光譜}
+\subsubsection{弗朗和斐的弗朗和斐線（Fraunhofer lines）}
+1814：弗朗和斐造大型稜鏡行色散實驗，發現太陽光譜中存在 500 多條暗線，稱弗朗和斐線。該等譜線為氫原子吸收光譜。
+\subsubsection{埃格斯特朗的太陽光譜研究}
+1868：埃格斯特朗著「太陽光譜研究」，其中發表標準太陽光譜圖表，以 \tenpow{-10} m 為單位，精確至六位有效數字。後人將 \tenpow{-10} m 稱為埃格斯特朗/埃/Ångström/Angstrom/\AA 以紀念之。
+
+埃格斯特朗在氣體放電光譜中找到氫原子巴耳末系列光譜中的 H$_\text{α}$ n=3$\rightarrow$2 波長 6562.10\AA 紅光、H$_\text{β}$ n=4$\rightarrow$2 波長 4860.74\AA 藍綠光、H$_\text{γ}$ n=5$\rightarrow$2 波長 4340.1\AA 藍紫光、H$_\text{δ}$ n=6$\rightarrow$2 波長 4101.2\AA 紫光譜線並精確測量其波長。
+\subsubsection{巴耳末公式（Balmer's formula）}
+1885年巴耳末提出氫原子光譜可見光區前四條譜線（H$_\text{α}$ n=3$\rightarrow$2 波長 6562.10\AA 紅光、H$_\text{β}$ n=4$\rightarrow$2 波長 4860.74\AA 藍綠光、H$_\text{γ}$ n=5$\rightarrow$2 波長 4340.1\AA 藍紫光、H$_\text{δ}$ n=6$\rightarrow$2 波長 4101.2\AA 紫光譜線）遵循巴耳末公式：
+\[\lambda = \frac{\lambda_0 \cdot n^2}{n^2 - 4}\]
+其中 $\lambda_0 = 364.56$ nm，$n = 3, 4, 5, 6$。
+\subsubsection{氫原子光譜的芮德伯公式（Rydberg formula）}
+1888年芮德伯提出之經驗公式，指出氫原子光譜的所有譜線均符合：
+\[\frac{1}{\lambda} = R_H \left( \frac{1}{n_1^{\phantom{1}2}} - \frac{1}{n_2^{\phantom{2}2}} \right),\quad n_1<n_2\in\mathbb{N}\cup\{\infty\}\]
+其中$R_H$稱芮德伯常數（Rydberg constant），測量值為：
+\[R_H\approx\scinote{1.09678}{-2}\text{\ nm}^{-1}\approx\frac{1}{91.1760\text{\ nm}}\approx\scinote{3.28806}{15}\text{\ Hz\ }c^{-1}\]
+\subsection{原子光譜}
+\subsubsection{類氫原子/似氫原子（Hydrogen-like atom）/單電子原子}
+指$_2$He$^+$, $_3$Li$^{2+}$ 等具有一個電子的原子或離子。
+\subsubsection{類氫原子光譜的芮德伯公式}
+對於原子序$Z$的類氫原子：
+\[\frac{1}{\lambda} = R_HZ^2 \left( \frac{1}{n_1^{\phantom{1}2}} - \frac{1}{n_2^{\phantom{2}2}} \right),\quad n_1<n_2\in\mathbb{N}\cup\{\infty\}\]
+\subsubsection{芮德伯–瑞茲組合原理（Rydberg–Ritz combination principle）}
+任何原子光譜的譜線頻率，必然是另外兩條譜線的頻率之和，或是另外兩條譜線的頻率之差（亦可兩者都是）。
+\subsubsection{莫斯利定律（Moseley's law）}
+1913年莫斯利，以電子轟擊不同金屬板得到 X 射線特徵輻射，提出的經驗定律。X 射線特徵輻射頻率$f$、原子序$Z$，常數$A$、$b$，則：
+\[f=A(Z-b)^2\]
+其中$A$可以表示成：
+\[A=\frac{1}{m^2}-\frac{1}{n^2},\quad m,n\in\mathbb{N},\quad m\leq n\]
+\subsection{波耳模型（Bohr Model）}
+1913年，波耳提出原子的波耳模型，成功解釋氫原子與類氫原子光譜，但不適用於多電子原子之光譜。
+\subsubsection{第一假設：存在定態（stationary state）}
+電子在某些特定橢圓軌道上作迴旋運動（後修正為環上駐波從而解釋定態的存在與主量子數），稱穩定態/定態（stationary state），此時不吸收或放出能量與電磁波。最內之定態稱$n=1$或 L，向外每層$n$增加1或後一個大寫字母，其中$n$稱主量子數（principal quantum number）。
+\subsubsection{第二假設：角動量與能量量子化}
+定態軌道運動的角動量量值被量子化為約化普朗克常數的正整數倍。電子在每個定態軌道上時，原子都具有一個特定的能量，稱能階（energy level）。假設原子核不動（後修正為原子核與電子互繞運動方與芮德伯常數測量值吻合）。
+
+令一原子序$Z$的氫原子或類氫原子中，一處於主量子數$n$、半徑$r$定態軌道的電子速率$v$、頻率$f$，相對於無限遠處之能量$E$。
+\[\text{庫侖定律：}\frac{m_ev^2}{r}=\frac{Ze^2}{4\pi\varepsilon_0r^2}\]
+\[\text{角動量量子化假設：}m_evr=n\hbar\]
+速率、頻率與半徑：
+\[v=\frac{n\hbar}{m_er}=\frac{Ze^2}{2\varepsilon_0hn}\propto\frac{Z}{n}\]
+\[f=\frac{nh}{m_er^2}=\frac{Ze^2}{4\pi\varepsilon_0hnr}=\frac{m_eZ^2e^4}{4\varepsilon_0^{\phantom{0}2}h^3n^3}\propto\frac{Z^2}{n^3}\]
+\[r=\frac{n^24\pi\varepsilon_0\hbar^2}{m_eZe^2}=\frac{n^2a_0}{Z}\propto\frac{n^2}{Z}\]
+其中 $a_0$ 為波耳半徑（Bohr radius） ，即氫原子 $n=1$ 定態軌道半徑：
+\[a_0=\frac{4\pi\varepsilon_0\hbar^2}{m_ee^2}\approx0.0529\text{\ nm}\]
+能量：
+\[\begin{aligned}
+E&=-\frac{Ze^2}{4\pi\varepsilon_0 r}+\frac{m_ev^2}{2}\\
+&=-\frac{Ze^2}{4\pi\varepsilon_0 r}+\frac{Ze^2}{8\pi\varepsilon_0r}\\
+&=-\frac{Ze^2}{8\pi\varepsilon_0r}\\
+&=-
+\frac{m_eZ^2e^4}{32\pi^2\varepsilon_0^{\phantom{0}2}\hbar^2n^2}\\
+&=-
+\frac{m_eZ^2e^4}{8\varepsilon_0^{\phantom{0}2}h^2n^2}\\
+&=-\frac{Z^2k}{n^2}\\
+&\propto\frac{Z^2}{n^2}
+\end{aligned}\]
+其中 $k$ 為 $^1_1\mathrm{H}$ 的游離能（Ionization energy）：
+\[\begin{aligned}
+k&=\frac{m_ee^4}{8\varepsilon_0^{\pht{0}2}h^2}\\
+&\approx13.6\text{\ eV/個}\\
+&\approx\scinote{2.18}{-18}\text{\ J/個}\\
+&\approx1312\text{\ kJ/mol}\\
+&\approx313.6\text{\ kcal/mol}
+\end{aligned}\]
+靜電位能$U$、動能$K$：
+\[E=\frac{U}{2}=-K=-\frac{\hbar^2}{2m_er^2}=-\frac{m_ev^2}{2}=-\frac{nhf}{2}\]
+\subsubsection{第三假設：電子躍遷}
+電子只允許在不同能階（含游離），即不同主量子數（含無限大），之間躍遷（transition），躍遷時吸收（負指釋放）之能量為躍遷後能階能量減去躍遷前能階能量。由較低能階躍遷到高能階以熱、電或光等形式吸收能量，以光即產生暗線光譜；電子由高能階躍遷到低能階以光釋放能量，產生明線光譜。以光吸收或放出能量時，以單一光子為之，其中單一光子之能量為$hf$。
+
+在原子核不動的假設下，電子躍遷自$n_1$至$n_2$吸收之能量$\Delta E$為：
+\[\Delta E=Z^2k\left(\frac{1}{n_1^{\phantom{1}2}}-\frac{1}{n_2^{\phantom{2}2}}\right)\]
+以之解釋芮德伯公式，預測：
+\[\frac{1}{\lambda}=\frac{\Delta E}{hc}=\frac{m_eZ^2e^4}{8\varepsilon_0^{\pht{0}2}h^3c}\left(\frac{1}{n_1^{\phantom{1}2}}-\frac{1}{n_2^{\phantom{2}2}}\right)\]
+故波耳模型給出的芮德伯常數理論值為：
+\[R_H=\frac{m_ee^4}{8\varepsilon_0^{\pht{0}2}h^3c}\approx\scinote{1.0973731568157}{-2}\text{\ nm}\]
+但測量值為：
+\[R_H\approx\scinote{1.09678}{-2}\text{\ nm}^{-1}\]
+此差別係因為原子核不動的假設是錯誤的。
+\subsubsection{考慮原子核運動修正波耳模型解釋芮德伯公式}
+若考慮原子核與電子的雙質點互繞運動：
+
+令原子核質量$M$，$\mu$為原子核質量與電子質量的縮減質量（reduced mass），即：
+\[\mu=\frac{1}{\frac{1}{M}+\frac{1}{m_e}}=\frac{Mm_e}{M+m_e}\]
+令原子核和電子距離$r$，相對質心角速率$\omega$，則角動量和量值$L$為：
+\[L=m_e\qty(\frac{Mr}{m_e+M})^2\omega+M\qty(\frac{m_er}{m_e+M})^2\omega=\mu r^2\omega\]
+代入角動量量子化假設：
+\[\mu r^2\omega=n\hbar\]
+故修正後的理論值$R_H'$應為：
+\[R_H'=\frac{\mu e^4}{8\varepsilon_0^{\pht{0}2}h^3c}\]
+此一值即與測量值吻合。
+
+令波耳模型給出的芮德伯常數理論值$R_H$、考慮原子核運動的修正理論值$R_H'$：
+\[\frac{R_H'}{R_H}=\frac{m_e}{\mu}=\frac{M+m_e}{M}\]
+對於氫原子：
+\[\frac{R_H'}{R_H}\approx\frac{1840}{1839}\approx1.005\]
+\subsection{氫原子光譜的譜線系列}
+氫原子光譜的一個譜線系列的$n_1$相同，依發現者命名。每一系列中之排序自頻率低至頻率高，頻率最低者（$n_1$與$n_2$之差最小）為第一條光譜線、頻率最高者（$n_2 = \infty$）為最後一條譜線。一系列中，頻率愈高，與下一譜線之頻率差愈小。
+\subsubsection{來曼（Lyman）系列}
+$n_1 = 1$，紫外光區。
+\bit
+\item $n_2=\infty$：波長 = 91.2 nm
+\item $n_2=6$：波長 = 93.8 nm
+\item $n_2=5$：波長 = 95.0 nm
+\item $n_2=4$：波長 = 97.3 nm
+\item $n_2=3$：波長 = 102.6 nm
+\item $n_2=2$：波長 = 121.6 nm
+\eit
+\subsubsection{巴耳末（Balmer）系列}
+$n_1 = 2$，可見光區（前七條）與紫外光區（剩餘的）。
+\bit
+\item $n_2=\infty$：波長 = 364.7 nm
+\item $n_2=6$：波長 = 410.3 nm，H$_\text{δ}$
+\item $n_2=5$：波長 = 434.2 nm，H$_\text{γ}$
+\item $n_2=4$：波長 = 486.3 nm，H$_\text{β}$
+\item $n_2=3$：波長 = 656.5 nm，H$_\text{α}$
+\eit
+\subsubsection{帕申（Paschen）系列/瑞茲–帕申（Ritz–Paschen）系列}
+$n_1 = 3$，紅外光區。
+\bit
+\item $n_2=\infty$：波長 = 820.6 nm
+\item $n_2=6$：波長 = 1094.1 nm
+\item $n_2=5$：波長 = 1282.2 nm
+\item $n_2=4$：波長 = 1875.6 nm
+\eit
+\subsubsection{布拉克（Brackett）系列}
+$n_1 = 4$，紅外光區。
+\bit
+\item $n_2=\infty$：波長 = 1458.8 nm
+\item $n_2=6$：波長 = 2625.9 nm
+\item $n_2=5$：波長 = 4052.3 nm
+\eit
+\subsubsection{蒲芬德（Pfund）系列}
+$n_1 = 5$，紅外光區。
+\bit
+\item $n_2=\infty$：波長 = 2279.4 nm
+\item $n_2=6$：波長 = 7459.9 nm
+\eit
+\ssc{定態核外電子為環上物質波駐波}
+根據德布羅意的物質波假說，電子的物質波波長$\lambda$為：
+\[\lambda=\frac{h}{m_ev}\]
+令一核外電子繞原子核之平均軌道為半徑$r$之圓環：
+\[2\pi r=n\lambda,\quad n\in\mathbb{N}\]
+代入角動量：
+\[m_evr=\frac{hr}{\lambda}=n\hbar\]
+與波耳的角動量量子化假設相同，由此可知定態電子為繞核環上的物質波駐波，且圓周長除以其物質波波長即主量子數。
+\subsection{激發（Excitation）與激發態（Excited state）}
+\subsubsection{基態（Ground state）}
+指無電子躍遷之原子或無躍遷之電子，可以無限期存在，如 $_9\rmF = (2, 7)$。
+\subsubsection{激發態/受激態（Excited state）}
+指有電子躍遷之原子或躍遷至較高能階之電子，會自發躍遷回更低能量狀態，如 $_9\rmF = (2, 6, 1)$。基態主量子數$n$的電子的第$k$受激態為主量子數$n+k$。
+\subsubsection{游離態（Ionized state）}
+指有電子游離之原子或游離之電子，如 $_9\rmF^+ = (2, 6)$。
+\sssc{激發（Excitation）}
+指從基態變成激發態的過程。
+\sssc{去激發（de-excitation）}
+指從激發態變成基態的過程。
+\subsubsection{激發來源/（能量）泵浦/幫浦（來源）（pumping source）}
+指激發電子之方法。
+\bit
+\item 以電子撞擊：非彈性碰撞，將恰等於能階差的部分能量給予電子供躍遷，剩餘則作為電子與原子的動能。
+\item 以光子撞擊：需光子能量$E = hf$恰等於能階差才能激發，故有吸收光譜。
+\item 加熱：無序動能的增加在微觀上增加了電子的平均動能及電子雲碰撞的統計頻率，從而增加了電子雲有效碰撞的統計頻率。
+\eit
+\sssc{生命期（Lifetime）}
+停留在某個激發態的時間。典型激發態生命期多為幾 $10^{-9}$ s。
+\sssc{原子激發態（excited state）的亞/介穩（定）（metastable）（激發）態}
+指原子激發態中處於能量局部極小值者，因為回到基態需要跨越能量障壁故生命期較長，有時可達幾 $10^{-3}$ s。
+\sssc{居量反轉（population inversion）}
+指介穩態原子數較基態原子數更多。
+\subsubsection{雷射/激光（Light Amplification by Stimulated Emission of Radiation, Laser）}
+利用激發來源使居量反轉，再透過光子誘導使自介穩態躍遷回基態的原子多於自基態躍遷至介穩態的原子，接著在兩互相平行的反射鏡間反射，其中通過可以調整光的性質的增益介質（gain medium），形成一光學腔（optical cavity）/共振腔（resonating cavity）/光學共振器（optical resonator）/耦合器（coupler），最終在光足夠大可以穿透反射鏡時向外發出單一波長、相同相位、相同偏振性的光。雷射光束的能量有低有高，低者如條碼掃描器、中者如雷射筆、高者可達 500 mW 以上，如用於熱核融合等實驗的極高能、極短時間雷射脈衝功率極高，可產生一億攝氏度高溫，使氘和氚核融合。
+
+
+\section{原子軌域/軌道（Atomic Orbital, AO）與電子組態（Electron Configuration）}
+\ssc{原子軌域/軌道（Atomic orbital, AO）}
+每個原子軌域是時間獨立薛丁格方程（Time-Independent Schrödinger Equation, TISE）在受原子核電場束縛的電子的一個波函數的近似（對於多電子原子）或解析（對於類氫原子）定態解（stationary state solution），描述核外電子在某個位置出現的機率。每個原子軌域最多可以容納兩個電子，並須遵守包立不相容原理（Pauli exclusion principle）。
+
+不確定性原理指出，電子的位置與動量無法同時準確得知，因此電子不具有明確的軌跡，只能以機率方式描述其出現在某一位置的可能性。
+
+一個原子中的一個原子軌域可由三個量子數（quantum numbers）唯一確定，即主量子數（main quantum number）$n$、角量子數（azimuthal quantum number）$\ell$與磁量子數（magnetic quantum number）$m_\ell$；一個原子中的一個電子可由四個量子數唯一確定，即主量子數$n$、角量子數$\ell$、磁量子數$m_\ell$與自旋量子數（spin quantum number）。
+\sssc{電子雲（electron cloud）/電子密度圖（electron density map）}
+將電子在原子核外出現之機率以點狀之疏密（或顏色）表示的一種原子軌域的視覺化，其形狀由該機率波函數給出。有時或簡化繪製為原子軌域形狀，原子軌域形狀指電子在原子核外出現自機率密度高繪製累積機率達一定值（通常為 $90\%$ 或 $95\%$）的區域，如 1s 軌域 $90\%$ 邊界為半徑 $140$ pm 之圓球、$95\%$ 邊界為半徑 $160$ pm 之圓球、機率密度峰值為距原子核 $52.9$ pm。
+\sssc{主量子數（main quantum number）$n$}
+記作 $n$，代表（主）殼層（shell），決定原子軌域的尺寸，並在類氫原子中唯一決定電子的能階、在多電子原子中與角量子數（azimuthal quantum number）共同決定電子的能階。
+\sssc{（軌域）角量子數（(orbital) azimuthal quantum number）/（軌域）角動量量子數（(orbital) angular momentum quantum number）/副量子數}
+記作 $\ell$，代表副殼層/亞殼層（subshell），決定原子軌域的形狀，並在多電子原子中共同決定電子能量。
+
+主量子數 $n$ 的殼層中存在的副殼層的角量子數遵循：
+\[\ell\in\{x\in\mathbb{N}_0\mid x<n\}\]
+
+稱主量子數愈大之軌域愈外，主量子數相同則稱角量子數愈大之軌域愈外。
+\sssc{磁量子數（magnetic quantum number）}
+記作 $m_\ell$，代表原子軌域的方位，決定可容納的二個電子的自旋磁矩方向。
+
+角量子數 $\ell$ 的副殼層中存在的軌域的磁量子數遵循：
+\[m_\ell\in\{x\in\mathbb{Z}\mid\abs{x}\leq\ell\}\]
+
+在角量子數 $\ell$ 的副殼層中，有 $2\ell+1$ 個原子軌域，它們有不同磁量子數，即不同的方位，且在無外加交互作用下能量均相同。故主量子數 $n$ 的殼層中，有 $n^2$ 個原子軌域，對於類氫原子，它們在無外加交互作用下能量均相同。
+\sssc{波包（wave packet）}
+一個原子軌域被電子雲密度為零的封閉曲面（稱波節（node））分層，即波函數的各個波包（wave packet）。層之數目同主量子數，且一層中的最大值向外逐層遞增，故機率密度最大處必在最外層，故相同角量子數與磁量子數下主量子數愈大，機率最大值處愈靠外。以 $n$s 軌域為例，徑向上的機率密度函數自中心極大值嚴格遞減至節點，再嚴格遞增至下一極大值，以此類推，包含中心極大值總計$n$個極大值，且一層中的最大值向外逐層遞增。
+\sssc{原子軌域的種類}
+\bctf\icg[width=0.7\textwidth]{Hydrogen_Density_Plots.png}\efct
+\bctf\icg[width=0.9\textwidth]{spdf.png}\cpt{Geek3, 2018.}\efct
+副殼層以主量子數 $n$ 和角量子數 $\ell$ 命名；原子軌域的種類依照角量子數劃分，同種原子軌域的波包互為相似形。
+\begin{longtable}[c]{|p{0.1\textwidth}|p{0.1\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|p{0.2\textwidth}|}
+\hline
+角量子數 $\ell$ & 副殼層名稱 & 副殼層歷史名稱 & 原子軌域種類歷史名稱 & 原子軌域數目 & 原子軌域方位與形狀（以原子核為原點） \\\hline
+\endhead
+0 & $n$s & s 軌域（s orbital） & 銳軌域（sharp orbital）  & 1 & $s$：以原點為圓心的圓球（唯一具球對稱性、無方向性的一種原子軌域） \\\hline
+1 & $n$p & p 軌域（p orbital） & 主軌域（principal orbital） & 3 & $p_x,p_y,p_z$：各該方向上的雙橢圓體（two ellipsoids）/啞鈴（dumbbell）形（在另二軸的平面上電子機率密度為零） \\\hline
+2 & $n$d & d 軌域（d orbital） & 漫軌域（diffuse orbital） & 5 & $d_{x^2-y^2},d_{xy},d_{xz},d_{yz}$：四梨形瓣（four pear-shaped lobes）/雙啞鈴形/四片花瓣形/蝴蝶形；$d_{z^2}$：一環面（torus）與二垂直之的相對的梨形瓣 \\\hline
+3 & $n$f & f 軌域（f orbital） & 基軌域（fundamental orbital） & 7 & 略 \\\hline
+4 & $n$g & g 軌域（g orbital） & 無 & 9 & 略 \\\hline
+$\geq 5$ & \multicolumn{2}{|c|}{依字母序類推} & 無 & $2\ell+1$ & 略 \\\hline
+\end{longtable}\FloatBarrier
+\subsubsection{（電子）（自）旋/旋轉量子數（(electron) spin quantum number）}
+記作 $m_s$，描述電子自旋狀態，必為 $\pm \frac{1}{2}$，$m_s=\frac{1}{2}$ 稱自旋向上（spin-up）$\uparrow$、$m_s=-\frac{1}{2}$ 稱自旋向下（spin-down）$\downarrow$。
+\subsubsection{可容納電子數}
+一個原子軌域可容納兩個電子、角量子數 $\ell$ 的副殼層可容納 $2\cdot(2\ell+1)$ 個電子、主量子數 $n$ 的殼層可容納 $2n^2$ 個電子。
+\subsubsection{總自旋角動量（total spin angular momentum）}
+記作 $s$，等於一個副殼層中所有電子的自旋量子數之和的絕對值。
+\subsubsection{（自旋）多重度（(spin) multiplicity）}
+一個總自旋角動量 $s$ 的副殼層的自旋多重度定義為 $2s+1$。
+\subsubsection{總角動量量子數（total angular momentum quantum number）}
+記作 $j$，等於將角動量方向與所處副殼層角動量方向相同的電子取自旋量子數$=\frac{1}{2}$、與所處副殼層角動量方向相同的電子取自旋量子數$=-\frac{1}{2}$下，一個副殼層中所有電子自旋量子數之和加上副殼層的角量子數$\ell$，再取絕對值。必有：
+\[\frac{1}{2}\leq |\ell-s|\leq j\leq \ell+s\leq 2\ell+\frac{1}{2}\land j+\frac{1}{2}\in\mathbb{N}.\]
+\subsubsection{量子數記法（quantum number notation）}
+一個原子軌域記為一個三元序組 $(n,\ell,m_\ell)$；一個核外電子記為一個四元序組 $(n, \ell, m_{\ell}, m_s)$；一個副殼層與其電子填充記為一個四元序組 $(n, \ell, s, j)$。
+\sssc{原子記法（atomic notation）}
+一個填充有一個電子的副殼層（令其自旋量子數為 1/2）記為其名稱與下標總角動量量子數 $j$，如：量子數記法 $(1,0,1/2,1/2)$ 等同於原子記法 1s$_{1/2}$、量子數記法 $(2,0,1/2,1/2)$ 等同於原子記法 2s$_{1/2}$、量子數記法 $(2,1,1/2,1/2)$ 等同於原子記法 2p$_{1/2}$、量子數記法 $(2,1,1/2,3/2)$ 等同於原子記法 2p$_{3/2}$。
+\sssc{X 射線記法（X-ray notation）}
+一個殼層的記法為 $n=1$ 稱 K、$n=2$ 稱 L，$n=3$ 稱 M，以此依字母序類推；一個副殼層記為其所屬殼層名稱與一下標，下標之決定乃通過將其所屬殼層的所有副殼層的所有可能電子填充方式依照「角量子數小者在前、相同角量子數者總角動量量子數小者在前」排序，該電子填充為第 $k$ 個（始於 1）則下標 $k$，如：量子數記法 $(1,0,1/2,1/2)$ 等同於 X 射線記法 K$_1$、量子數記法 $(2,0,1/2,1/2)$ 等同於 X 射線記法 L$_1$、量子數記法 $(2,1,1/2,1/2)$ 等同於 X 射線記法 L$_2$、量子數記法 $(2,1,1/2,3/2)$ 等同於 X 射線記法 L$_3$。
+\ssc{原子軌域的能階與電子填充}
+\sssc{電子組態/電子排序/電子構型（Electron configuration）}
+指電子在原子、分子或其他物理結構中的軌域上的排序及排列形態。 
+\sssc{簡併能階（Degenerate energy level）}
+如果一個能階對應於一個量子系統的兩個或多個不同的可測狀態，那麼這個能階就是簡併的。將一些軌域視為同一能階稱簡併性（degeneracy）。
+\subsubsection{包立不相容原理（Pauli exclusion principle）}
+一個原子中，任兩個電子不會有完全相同的四個量子數，即一個原子軌域只能容納兩個自旋方向相反的電子。違反者不存在。
+\sssc{原子的電子組態的記法}
+依「主量子數小者在前、相同主量子數者角量子數小者在前」排序，寫下各副殼層或原子軌域名稱，並上標其中電子數，或在每個名稱正上方標以其中電子的自旋方向（$\uparrow$/$\upharpoonleft$ 與 $\downarrow$/$\downharpoonright$），有多個電子時，成對者（一個自旋向上的電子與一個自旋向下的電子）先成對排於左起。
+
+若電子組態的始起一段等同於某惰性氣體基態的電子組態，則該段可簡寫為$\left[\text{該惰性氣體的元素符號}\right]$。
+
+電子組態又可簡寫為一個序組 (K殼層電子數, L殼層電子數, M殼層電子數, $\ldots$)。通常僅用於電子數不大於 20 之原子。
+
+原子的電子組態的各種記法比較：
+\[\begin{aligned}
+_{15}\mathrm{P}&=1s^22s^22p^63s^23p^3\\
+&=[\mathrm{Ne}]3s^23p^3\\
+&=(2,8,5)\\
+&=[\mathrm{Ne}]3s^23p_x^{\phantom{x}1}3p_z^{\phantom{y}1}3p_z^{\phantom{z}1}\\
+&=[\mathrm{Ne}]\overset{\upharpoonleft\downharpoonright}{3s}\overset{\upharpoonleft\upharpoonleft\upharpoonleft}{3p}\\
+_{20}\mathrm{Ca}&=1s^22s^22p^63s^23p^64s^2\\
+&=[\mathrm{Ar}]4s^2\\
+&=(2,8,8,2)\\
+&=[\mathrm{Ar}]4s^2\\
+&=[\mathrm{Ar}]\overset{\upharpoonleft\downharpoonright}{4s}\\
+_{47}\mathrm{Ag}&=1s^22s^22p^63s^23p^63d^{10}4s^24p^64d^{10}5s\\
+&=[\mathrm{Kr}]4d^{10}5s\\
+&=[\mathrm{Kr}]\overset{\upharpoonleft\downharpoonright\upharpoonleft\downharpoonright\upharpoonleft\downharpoonright\upharpoonleft\downharpoonright\upharpoonleft\downharpoonright}{4d}\overset{\upharpoonleft}{5s}
+\end{aligned}\]
+\subsubsection{遞建原理/構造原理/構築原理/阿法包原理（Aufbau principle or building-up principle）/馬德隆規則（Madelung rule）}
+一個基態原子的電子一個接一個進入最低能階軌域。激發態不須遵循之。
+
+\bit
+\item 類氫原子：主量子數愈大者能階愈高，遵循波耳模型。
+\item 多電子原子：$(n+\ell)$愈大者能階愈高，$(n+\ell)$相同則主量子數愈大者能階愈高，即能階：1s<2s<2p<3s<3p<4s<3d<4p<5s$\ldots$，即如下圖，以右上至左下為一列、左上至右下為列之順序，一列中右上至左下能階遞增，一列最左下至下一列最右上能階亦增：
+\[\begin{array}{cccccc}
+1s\\
+2s & 2p \\
+3s & 3p & 3d \\
+4s & 4p & 4d & 4f \\
+5s & 5p & 5d & 5f & $\ldots$ \\
+6s & 6p & 6d & $\ldots$ \\
+7s & 7p & $\ldots$ \\
+$\vdots$ & $\vdots$ &
+\end{array}\]
+\eit
+\subsubsection{洪德定則（Hund's rule）}
+對於給定電子組態，要再填入一顆電子形成基態原子（激發態不須遵循）時，會填入使得填入後能量最低的原子軌域，填入後能量最低者之決定依照洪德定則，惟有少許例外：
+\begin{enumerate}
+\item 自旋多重度最大者能量最低，因此填入當最低能階副殼層低於半滿時會填入與既有電子相同自旋方向者於該副殼層的空軌域中。
+\item 自旋多重度相同者角量子數最大者能量最低。
+\item 最外副殼層半滿或更少的原子中，總角動量量子數最低者能量最低；最外副殼層超過半滿的原子中，總角動量量子數最高者能量最低。
+\end{enumerate}
+\subsubsection{洪德定則之例外}
+因原子軌域全滿、全空時最穩定，半滿時次之，故部分（但不是全部）次低能階原子軌域差一個電子即全滿或半滿之元素其電子組態不遵循洪德定則，口訣：逢四逢九，一五一十，亦有其他例外，通常週期數愈大者，不遵循洪德定則者愈多。
+\[\begin{aligned}
+& _{24}\rmCr = [\rmAr] 3d^5 4s^1\\
+& _{42}\rmMo = [\rmKr] 4d^5 5s^1\\
+& _{29}\rmCu = [\rmAr] 3d^{10} 4s^1\\
+& _{47}\rmAg = [\rmKr] 4d^{10} 5s^1\\
+& _{79}\rmAu = [\rmXe] 4f^{14} 5d^{10} 6s^1\\
+& _{57}\rmLa = [\rmXe] 5d^1 6s^2\\
+& _{58}\rmCe = [\rmXe] 4f^1 5d^1 6s^2\\
+& _{89}\rmAc = [\rmRn] 6d^1 7s^2\\
+& _{90}\rmTh = [\rmRn] 6d^2 7s^2\\
+& _{78}\rmPt = [\rmXe] 4f^{14} 5d^9 6s^1
+\end{aligned}\]
+\subsubsection{離子的電子組態}
+\begin{itemize}
+\item 陰離子：遵循遞建原理、洪德定則。
+\item 陽離子：最外主殼層之最外副殼層優先移去電子。 
+\item 若一主族元素離子與一元素之電子數相同，則電子組態相同。 
+\item 若一過渡元素離子與一元素之電子數相同，電子組態不必然相同，不相同者如：$\rm{Fe}^{2+}=[\rm{Ar}]3d^6$、$\rm{Cr}=\rm{Ar}3d^54s^1$。
+\end{itemize}
+\subsection{不同原子同一原子軌域能量比較}
+\begin{itemize}
+\item 不同元素同一電荷數原子之同一軌域：原子序愈大，引力愈大，位能愈小，能量愈小。
+\item 同一元素不同電荷數原子之同一軌域：電荷數愈小，電子愈多，原子半徑愈大，引力愈小，位能愈大，能量愈大。
+\item 有例外，如$_7$N之2p<$_8$O之2p，因前者副殼層半滿。
+\end{itemize}
+
+
+\section{元素週期律/（元素）週期性（趨勢）（Periodic Trends）}
+\subsection{簡史}
+\sssc{德貝萊納三元素組（Döbereiner's triads）}
+1829年德貝萊納提出，列出四組每組三個化性相似的元素：(Ca, Sr, Ba)、(Cl, Br, I)、(S, Se, Te)、(Li, Na, K)。
+\subsubsection{紐蘭的八度律（Law of Octaves）}
+1864年紐蘭提出，認為元素的原子量每相差八，其化學性質相似。
+\subsubsection{門得列夫的原子量元素週期表}
+1869年門得列夫提出，認為元素的性質隨原子量的增大週期性重複，並依照原子量排列當時已知的六十三種元素，並成功預言部分元素，但氬、鉀、鈷、鎳、碲、碘的原子量所示位置與化學性質不符。
+\subsubsection{莫斯利的 X 射線光譜頻率與原子序正比與原子序元素週期表}
+1914年，莫斯利利用 X 射線晶體繞射法觀察和測量了多種金屬化學元素的光譜，發現莫斯利定律，故認為原子序才是決定元素化學性質的主要因素，並以之排列元素週期表。 
+\ssc{現在的元素週期表（Periodic Table）}
+根據原子序排列，縱行稱族（Group）、橫列稱週期（Period），共7週期、18族、118元素，如下：
+\bctf\icg[width=1.0\tw]{Cambridge.jpg}\cpt{Cambridge University Press. 2014. https://doi.org/10.1017/CBO9781139096782.017.}\efct
+\bctf\icg[width=1.0\tw]{956-2018_orig.jpg}\cpt{LiFe 生活化學. 2018. Emperor Chemical Co., Ltd. https://www.lifechem.tw/periodictable.html.}\efct
+\sssc{週期（Period）}
+週期數即最外主殼層主量子數。
+\sssc{族（Group）}
+\bit
+\item 新式分類法：IUPAC 制定，由左至右編號1至18。
+\item 舊式分類法：新式分類法的1到18族依序為 IA, IIA, IIIB, IVB, VB, VIB, VIIB, VIIIB, VIIIB, VIIIB, IB, IIB, IIIA, IVA, VA, VIA, VIIA, VIIIA 族。
+\item 內過渡元素不適用族。
+\eit
+\sssc{分區（Block）}
+令週期數$n$。
+\begin{itemize}
+\item\tb{s 區（s-block）}：指遞建原理中最後填充電子的副殼層為 $n$s 者，即第一、二族及氦。
+\item\tb{p 區（p-block）}：指遞建原理中最後填充電子的副殼層為 $n$p 者，即第十三到十八族除了氦。
+\item\tb{d 區（d-block）}：指遞建原理中最後填充電子的副殼層為 $(n-1)$d 者。
+\item\tb{f 區（f-block）}：指遞建原理中最後填充電子的副殼層為 $(n-2)$f 者。
+\item\tb{主族元素（Main-group elements）/典型元素（Representative elements）/A 族元素}：指 s 區與 p 區。
+\item\tb{鹼金屬（Alkali metals）}：第1族除了氫。
+\item\tb{鹼土金屬（Alkaline earth metals）}：第2族。
+\item\tb{硼族元素（Boron group）}：第13族。
+\item\tb{碳族元素（Carbon group）}：第14族。
+\item\tb{氮族元素（Pnictogens）}：第15族。
+\item\tb{氧族元素（Chalcogens）}：第16族。
+\item\tb{鹵素（Halogens）}：第17族。
+\item\tb{貴族氣體（Noble gases）/惰性氣體（Inert gases）/稀有氣體/鈍氣}：第18族。
+\item\tb{過渡元素（Transition elements）/過渡金屬（Transition metals, TM）/B 族元素}：指主族元素以外的元素。門得列夫首提出此詞時代表第 8、9、10 族元素。
+\item\tb{鑭系元素（Lanthanide or lanthanoid）}：指原子序 57 至 71 的元素。
+\item\tb{錒系元素（Actinide or actinoid）}：指原子序 89 至 103 的元素。
+\item\tb{內過渡元素（Inner transition elements）/內過渡金屬（Inner transition metals, ITM）}：指鑭系元素與錒系元素。
+\item\tb{貧金屬（Poor metals）/後過渡金屬（Post-transition metals）/後過渡元素（Post-transition elements）}：指第十三族至第十七族的金屬元素。
+\end{itemize}
+\sssc{元素週期律/（元素）週期性（趨勢）（Periodic Trends）}
+指元素的各種性質在元素週期表中存在的特定模式。
+
+下關於各性質之元素週期性趨勢之描述多為近似，且多主要針對前五週期而言。
+\ssc{價（US: Valence, UK: Valency）}
+\sssc{價/價數（US: Valence, UK: Valency）/價電子（Valence electron）數}
+\begin{itemize}
+\item IUPAC 定義：某元素的原子或原子團能夠結合的最大一價原子（如氫或氯原子）數，或能替代該元素的一價原子數。
+\item 另一個定義：某元素原子在其氫化物中結合的氫原子數，或某元素原子在其氧化物中結合的氧原子數的二倍。
+\end{itemize}
+\sssc{價電子（Valence electron）}
+在前述價之定義中參與化學鍵的電子。
+\sssc{價軌域（Valence orbital）/價副殼層}
+指價電子所在的軌域種類/副殼層。
+\sssc{價殼層（Valence shell）}
+指價電子所在的殼層。
+\sssc{元素週期性}
+\bit
+\item 同族：化學性質相似，除氦外價電子數相同。
+\item 同週期：價殼層相同，週期數等於其最外殼層主量子數。
+\item 主族元素：價電子為最外主殼層之所有電子，價電子數等於其A族數。
+\item 過渡元素：價電子數無簡單方法判斷。
+\end{itemize}
+\subsection{原子半徑（Atomic radius）}
+\bctf\icg[width=0.9\tw]{AN.png}\cpt{Dot145, 2010.}\efct
+\subsubsection{原子半徑（Atomic radius）}
+通常指共價半徑（covalent radius）與金屬半徑（metallic radius），分別指共價鍵或金屬鍵鍵結的兩該元素原子之原子核距離（核間距）之一半。
+
+共價單鍵之鍵長約等於兩原子共價半徑之和。
+
+原子半徑約 30 pm 到 3000 pm；氦原子最小，半徑約 31 pm；氫原子次之，半徑約 53 pm；元素週期表上元素以銫原子最大，半徑約 298 pm。
+\sssc{離子半徑（Ionic radius）}
+指離子晶體結構中單原子離子的半徑使得兩種單原子離子形成的離子晶體其相鄰兩種離子之核間距約為兩種離子之離子半徑之和。
+\sssc{凡得瓦半徑（Van der Waals radius）}
+元素分子晶體中相鄰未鍵結原子核間距之一半。
+\sssc{測量}
+原子核間距離可用X射線繞射法測得。
+\subsubsection{元素週期性}
+\begin{itemize}
+\item 同族：隨原子序增而增，因價軌域層數增加。
+\item 同週期：隨原子序增而減，因核電荷引力增加大於電子間斥力增加。過渡元素多例外，一般第十族反彈向上，第十二或十三族反彈向下。同族週期增減一的影響約為同週期減增0.5-1.5個副殼層的影響。
+\item 同元素：隨核外電子數增而增，增減一個電子的影響約為同週期增減1.25-2.25個副殼層的影響。
+\item 同電子組態：隨原子序增而減。
+\item 略可近似為：先看週期，週期愈大半徑愈大；不同元素者次看原子序，原子序愈大半徑愈小；同元素者次看核外電子數，核外電子愈多半徑愈大。
+\end{itemize}
+\sssc{氟斥效應}
+指第二週期半徑較小、電子間斥力較大所造成的影響。如：
+\bit
+\item 電子親和力：Cl>F>Br>I、S>O
+\item 鍵能：\ce{Cl2}>\ce{Br2}>\ce{F2}>\ce{I2}
+\eit
+\sssc{原子容}
+一莫耳原子在固態的體積。
+\bit
+\item 第一週期：\ce{He}>\ce{H2}。
+\item 第二週期：8A最大、1A次之、3A最小。
+\item 第三至六週期：1A最大、8A次之、3A最小。
+\eit
+\subsection{熔沸點}
+一般為共價網狀固體>金屬、離子晶體>分子晶體，惟金屬跨度較大。
+
+第三週期元素熔沸點：
+\begin{itemize}
+\item 熔點：Si>Al>Mg>Na>\ce{S8}>\ce{P4}>\ce{Cl2}>Ar
+\item 沸點：Si>Al>Mg>\ce{S8}>Na>\ce{P4}>\ce{Cl2}>Ar
+\end{itemize}
+其中 Si 為共價網狀固體，Al、Mg、Na 為金屬固體，\ce{S8}、\ce{P4} 為分子固體，\ce{Cl2} 為雙原子分子氣體，Ar 為單原子氣體。
+\subsection{游離能（Ionization energy, IE）}
+\bctf\icg[width=0.9\tw]{IE.png}\caption{First ionization energies. Double sharp, 2021.}\efct
+\sssc{定義}
+指氣體原子或陽離子移去束縛力最弱的電子到無窮遠處所需之能量，即價軌域與無限遠處的能量差。游離前非陰離子者必大於零。
+\sssc{連續游離能}
+基態氣體原子，由外向內依序游離，第$i$個游離的電子的游離能為第$i$游離能$IE_i$。未聲明時，通常指$IE_1$。
+\sssc{測定方法}
+在陰極射線管裝入約 \scinote{6}{-2}至\scinote{2.6}{-5} atm 的低壓氣體，加以電壓，測電流。若提高電壓到某一值時電流強度劇增，該電壓稱游離電位，所相當之能量即游離能，第$i$次電流劇增為$IE_i$。
+\subsubsection{影響因素}
+\begin{itemize}
+\item 電子離核愈遠，$IE$愈小。
+\item 核電荷愈大，對電子束縛力愈大，$IE$愈大。
+\item 價軌域全滿、半滿較穩定，增加$IE$。 
+\item 遮蔽效應：內層電子會減弱原子對外層電子的吸引力，使$IE$降低。
+\end{itemize}
+\subsubsection{元素週期性}
+\begin{itemize}
+\item 同族：隨原子序增而減，因外層電子離核較遠，且內層電子數較多（遮蔽效應）。
+\item 同週期：隨原子序增而鋸齒狀遞增，因外層電子距核距差不大，而質子數增故核電荷吸引力增。但過渡元素增勢較緩且多例外。
+\item 同週期逆勢下降：同週期同淨電荷數之原子中，$i+1$個價電子者的價軌域能量高於$i$個價電子者的價軌域能量時（如因全滿、半滿），前者的游離能小於後者，即逆勢下降，如：
+\begin{itemize}
+\item 前三週期：二個價電子者>三個價電子者，因為前者 $n$s 全滿，較穩定。
+\item 第二週期$IE_1$、$IE_2$及第三週期$IE_1$：五個價電子者>六個價電子者，因為前者 $n$p 半滿，較穩定。
+\end{itemize}
+逆勢下降者仍較上一週期上一族者大，如 $IE_1$：B>Mg, S>N。
+\item $IE_{i+1}$對原子序之圖形略同$IE_i$對原子序之圖形向原子序正向移一單位、能量正向移一些之圖形。
+\item He 為$IE_1$最大之元素，2372 kJ/mol；Cs 為自然界$IE_1$最小之元素，376 kJ/mol。
+\item 第一列過渡元素：
+\begin{itemize}
+\item $IE_1$：Zn最大、Sc最小，Zn 遠大於 Sc 至 Cu。
+\item $IE_2$：Cu最大、Sc最小。
+\item $IE_3$：Zn最大、Sc最小。
+\end{itemize}
+\end{itemize}
+\subsubsection{同一元素比較}
+\begin{itemize}
+\item $\forall i < j\colon IE_i < IE_j$。
+\item 若 $IE_i$ 與 $IE_{i+1}$ 所游離的電子在不同副殼層，或 $IE_{i+1}$ 游離前價軌域恰全滿或半滿，則 $IE_i\ll IE_{i+1}$。
+\item 因價電子數多斥力較大，若最後填入的數顆電子在同一副殼層，則游離該等電子的$IE$大約正比於游離前的$\frac{Q^+Q^-}{r}$，其中$Q^+$為質子數、$Q^-$為電子數、$r$為原子半徑。如：IIA之$\frac{IE_2}{IE_1}\approx 2$，IIIA之$\frac{IE_3}{IE_2}\approx\frac{3}{2}$，但IIIA之$\frac{IE_2}{IE_1}\gg 2$。
+\end{itemize}
+\subsection{電子親和力（Electoron affinity, EA）}
+\bctf\icg[width=0.9\tw]{EA.png}\cpt{DePiep, 2012.}\efct
+\sssc{定義}
+指氣體陰離子移去束縛力最弱的電子到無窮遠處所需之能量，即價軌域與無限遠處的能量差。
+
+電子親和力過去的定義為現今定義（以上所述之定義）之相反數，此不用。
+\sssc{連續電子親和力}
+一原子的第$i$電子親和力$EA_i$定義為該原子的$(-i)$價基態離子游離一個電子變成$(-i+1)$價基態離子所須吸收的能量，即第$(-i+1)$游離能$IE_{-i+1}$。未聲明時，通常指$EA_1$。
+\subsubsection{影響因素、元素週期性與同一元素比較}
+\begin{itemize}
+\item 電子親和力$EA_i$視為$IE_{-i+1}$，影響因素與同一元素比較同$IE$，元素週期性略同$IE$但同族隨週期增電子親和力減勢較不明顯。
+\item 多為正，因放出電子須吸熱，但鈹、鎂、氮、8A 為負，因價軌域全滿或半滿。
+\item 無論元素，所有$EA$均小於所有$IE$；Cl 為$EA_1$最大之元素，349 kJ/mol，小於自然界$IE_1$最小之元素 Cs 之$IE_1$。
+\item 第一週期$EA_1$：H>0>He
+\item 第二週期$EA_1$：7A>6A>4A>1A>3A>0>5A>2A>8A
+\item 第三週期$EA_1$：7A>6A>4A>5A>1A>3A>0>2A>8A
+\item 第四至五週期主族元素$EA_1$：7A>6A>4A>5A>1A>3A>2A>0>8A
+\item 氟斥效應，Cl>F>Br>I、S>O。
+\end{itemize}
+\subsection{電負度/陰電性（Electronegativity, EN）}
+\bctf\icg[width=0.9\tw]{EN.jpg}\cpt{DMacks, 2013.}\efct
+\sssc{鮑林電負度（Pauling electronegativity）}
+1932年，鮑林依原子在多元素化合物中對共價鍵中電子之相對吸引能力提出電負度（electronegativity），設定氟的電負度為 4.0（電負度最大，最活潑非金屬），以之為基準得其他之電負度，一般不討論惰性氣體。此採之。
+\sssc{馬利肯電負度（Mulliken electronegativity）}
+1934年馬利肯提出，等於第一游離能與第一電子親和力之和除以二再除以一電子伏特。此不用。
+\subsubsection{元素週期性}
+\begin{itemize}
+\item 同週期：電負度略隨原子序增而增。過渡元素較不守此原則而多相近且變化較不規則。
+\item 同族：電負度略隨原子序增而減。
+\item 主族元素：$n$週期$m$族元素電負度約在$(n-1)$週期$(m-2)$族與$(m-1)$族電負度之間。
+\item Cs 為自然界電負度最小者，0.7，即最活潑金屬。
+\item 氫電負度2.2；第二週期除氖外第$i$A族電負度約為$0.5(i+1)$。
+\end{itemize}
+\subsection{金屬性與非金屬性}
+\sssc{定義}
+\bit
+\item 金屬性一般指還原性、氫化物/氧化物/氫氧化物溶於水鹼性、延展性、（因自由電子流動）、導熱性（因自由電子碰撞）等性質。
+\item 非金屬性一般指氧化性、氫化物溶於水酸性、延展性差、導電性差、導熱性差等性質。
+\item 該等性質有相似的元素週期性。
+\eit
+\sssc{元素週期性}
+電負度愈大，金屬性愈弱，非金屬性愈強；電負度愈小，金屬性愈強，非金屬性愈弱。
+\sssc{導電性}
+金屬與石墨為導體，具高導電性。金屬導電性隨溫度上升而下降（因原子振動加劇，使自由電子不易通過），並一般隨微量雜質占比增加而下降。
+
+NTP 導電性：Ag>Cu>Au>Al>Rh>Zn>Ni>Ca>Fe>Pt>Pd>Sn>Cr>Pb>Ti>Hg。
+\sssc{類金屬（Metalloid）}
+已確定為類金屬者包括硼、矽、鍺、砷、銻、碲。導電性介於金屬與非金屬間。純質導電性一般不太高，但 p 型或 n 型摻雜後導電度上升。
+\sssc{酸鹼性}
+\bit
+\item 一元素的可溶氫氧化物或氫化物，電負度大於氫者溶液為酸，電負度小於氫者溶液為鹼，電負度愈大，溶液愈酸。
+\item 一元素的可溶含氧酸，通常中心原子氧化態愈高，因中心原子電負度愈大，故溶液愈酸，但磷例外，酸性：\ce{H3PO3}>\ce{H3PO2}>\ce{H3PO4}。
+\eit
+\ssc{對角線關係/對角線規則（Diagonal relationship）}
+指部分元素與下一週期下一族的元素的一些性質相似，具有此種關係者如：
+\bit
+\item 鋰與鎂：
+\bit
+\item 磷酸鋰與磷酸鎂難溶於水，碳酸鋰、碳酸鎂微溶於水，其它鹼金屬碳酸鹽和磷酸鹽則易溶於水。
+\item 碳酸鋰與碳酸鎂受熱分解成氧化物與二氧化碳，其它鹼金屬碳酸鹽則需極高溫度才分解。
+\item 鋰與鹼土金屬可在氮氣中燃燒生成氮化物，其它鹼金屬則否。
+\item 鋰與鎂可以形成較穩定的共價有機金屬化合物，其他鹼金屬與鹼土金屬則將極不穩定。
+\item 氯化鋰與氯化鎂具有強吸水性，其他鹼金屬氯化物則弱。
+\eit
+\item 鈹與鋁：許多鈹與鋁的化合物具有共價性。
+\item 硼與矽：
+\bit
+\item 元素態為類金屬，其他硼族元素則否。
+\item 三氧化二硼與二氧化矽均為共價鍵結、無定形態均穩定，其他硼族元素則否。
+\item 硼烷和矽烷穩定者多，其他硼族元素則否。
+\eit
+\item 碳與磷：
+\bit
+\item 元素態有多種同素異形體。
+\item 甲酸酸性強於碳酸，且具還原性可被氧化成二氧化碳；亞磷酸與次磷酸酸性強於磷酸，且具還原性分別可被氧化成磷酸與亞磷酸。
+\eit
+\eit
+\end{document}

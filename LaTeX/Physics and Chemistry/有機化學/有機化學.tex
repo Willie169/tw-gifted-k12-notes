@@ -1,0 +1,3183 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{有機化學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{有機化學（Organic Chemistry）}
+此文件因字型問題將「金翁」（U+9393）一字寫作「金翁」二字。
+\section{有機化合物（Organic Compounds）}
+\subsection{定義}
+\begin{itemize}
+\item 有機化合物定義：含碳化合物除了碳的元素態、含碳共價網狀固體、碳氧化物、碳硫化物、碳酸、碳酸鹽、氰氣、氰化氫、氰鹽、氰酸、異氰酸、氰酸鹽、雷酸、異雷酸、雷酸鹽、硫氰、硫氰酸、異硫氰酸、硫氰酸鹽、金屬碳化物。
+\item 無機化合物定義：不是有機化合物的化合物。
+\item 有機化合物 1828 年前生機論/生命力學說（Vitalism）定義：只能來自生物體而不可人工合成的物質。
+\end{itemize}
+\subsection{簡史}
+\begin{itemize}
+\item 1828：烏勒（Friedrich Wöhler）成功將無機的氰酸銨\ce{NH4OCN}變成有機的尿素\ce{CO(NH2)2}，推翻生機論。
+\item 1844：科貝爾（Hermann Kolbe）用無機物合成醋酸。
+\item 1856：帕金（William Henry Perkin）試圖將燃燒剩下的煤泥合成葵寧（quinine）用作治療瘧疾時意外將衣服染成紫色，發明苯胺紫（mauveine）。
+\item 1865：克古列（Friedrich August Kekulé）提出苯環單雙鍵交替排列的結構。
+\item 1902：費雪（Hermann Emil Fischer）合成苯肼，引入肼類於醣類結構研究，用費雪投影式描述醣類的立體異構現象，確定了咖啡因、茶鹼、尿酸等物質都是嘌呤的衍生物並合成嘌呤，確定了胺基酸通過肽鍵形成多肽並合成之，獲得諾貝爾化學獎。
+\item 1905：拜爾（Adolf von Baeyer）合成靛藍、靛紅和酚酞。
+\item 1923：普雷格爾（Fritz Pregl）提出有機化合物的微量分析技術，僅需3到5毫克純物質即可準確分析元素，獲得諾貝爾化學獎。
+\item 1940：伍德沃德（Robert Burns Woodward）合成奎寧、膽固醇、葉綠素等。
+\item 1965：伍德沃德因合成維生素12的研究等獲得諾貝爾化學獎。
+\end{itemize}
+\subsection{官能基/官能團（Functional Group or Characteristic Group）}
+官能基是指分子中表現出有機化合物特徵的部分（moiety），使含有相同官能基的物質具有相似的性質。非主基團（principal group）的官能基稱為取代基（substituent）。
+\subsection{同分異構（Isomerism）}
+\subsubsection{結構異構（Structural Isomerism）}
+\begin{itemize}
+\item \tb{鏈異構（Chain isomerism）}：指化合物分子中的原子骨架連接方式不同，如新戊烷、正戊烷和異戊烷。
+\item \tb{位置異構（Positional isomerism）}：官能基在分子中位置不同，如2-戊醇和3-戊醇。
+\item \tb{官能基異構（Functional group isomerism）}：分子中存在不同的官能基，如乙醇和二甲醚。
+\end{itemize}
+\subsubsection{立體異構（Stereoisomerism）}
+立體異構物指具有相同原子連接順序，但原子在空間排列不相同的同分異構物。
+\begin{itemize}
+\item \tb{幾何（Geometric）/順反（Cis–trans）異構}：由於存在雙鍵或環，這些分子的自由旋轉受阻，產生同分異構物。
+\item \tb{對映/對掌異構（Enantiomerism）}：指兩分子互為鏡像關係且不能重合，即單立體中心的中心手性異構。
+\item \tb{立體手性/中心手性（Central chirality）}：指分子有一原子為手性中心/立體中心（Stereocenter），使得該原子上兩個官能基的位置交換後會產生與原始分子立體異構的分子。
+\item \tb{軸手性（Axial chirality）}：指分子有一根手性軸，多個基團圍繞軸排布，使得其排布方式使得分子無法與其鏡像重合。
+\item \tb{平面手性（Planar chirality）}：指分子有一個手性平面，多個基團圍繞平面排布，使得其排布方式使得分子無法與其鏡像重合。
+\item \tb{固有手性（Inherent chirality）}：分子的固有曲率產生的手性。
+\item \tb{手性異構（Chiral isomerism）/光學異構（Optical isomerism）}：指中心手性、軸手性、平面手性或固有手性產生的異構，具有手性異構的分子稱手性的（Chiral）。
+\item \tb{Conformational isomerism (構型/構像異構)/Rotamer (構型/構像異構物)}: Rotamers are chemical species that differ from one another due to rotations about one or more single bonds.
+\end{itemize}
+\subsection{不飽和（Unsaturation）}
+\subsubsection{飽和與不飽和}
+有多鍵者稱不飽和，否則稱飽和。
+\subsubsection{不飽和度（Degree of Unsaturation, DoU）/缺氫指數（Index of Hydrogen Deficiency, IHD）/雙鍵當量（Double bond equivalent, DBE）/π 鍵數（π bond number, π.B.N.）}
+每個$k$鍵貢獻$2k-2$個不飽和度，每個環（橋環中主環為一環，其餘一橋為一環）貢獻$2$個不飽和度，所有官能基貢獻的不飽和度相加為該分子的不飽和度$\Omega$。
+\subsubsection{通式}
+一組分元素主族元素的共價分子或離子團（可帶任意整數倍基本電荷的淨電荷、可僅有一個原子）：第一族元素原子數（令其為$H$），加上第十七族元素原子數（令其為$F$），加上第十八族元素原子數（令其為$K$）的兩倍，加上第一、二、十三族元素原子的形式電荷（令其為$f$）的二倍，加上第一、二、十三族元素原子的非鍵結電子數（令其為$l$），加上第十四、十五、十六、十七、十八族元素原子的同一週期第十八族元素價電子數減去自身價電子數（含鍵結軌域中的所有電子）（令其為$o$），加上$k$鍵級的鍵的數量的$2k-2$倍（令其為$b$），加上結構中環數（令其為$r$）的二倍，等於，$2$，加上第十三族元素原子數（令其為$B$），加上第十四族元素原子數（令其為$C$）的二倍，加上第十五族元素原子數（令其為$N$），加上淨電荷數（令其為$e$），即：
+\[H+F+2K+2f+I+o+b+2r=2+B+2C+N+e.\]
+舉例（省略者為零）：
+\begin{itemize}
+\item 鋰：$H=l=1$、$H+I=2$。
+\item 氫負一價離子：$H=1$、$f=-1$、$l=2$、$e=-1$、$H+2f+I=2+e$。
+\item 氫正一價離子：$H=1$、$f=1$、$e=1$、$H+2f=2+e$。
+\item 硼：$l=3$、$B=1$、$I=2+B$。
+\item 碳正四價離子：$o=8$、$e=4$、$C=1$、$o=2+2C+e$。
+\item 碳負四價離子：$e=-4$、$C=1$、$0=2+2C+e$。
+\item 三氯甲烷：$H=1$、$F=3$、$C=1$、$H+F=2+2C$。
+\item 苯：$H=6$、$b=6$、$r=1$、$C=6$、$H+b+2r=2+2C$。
+\item 氧氣：$b=2$。
+\item 臭氧：$b=2$。
+\item 一氧化氮：$o=1$、$b=2$、$N=1$、$o+b=2+N$。
+\item 二氧化氮：$o=-1$、$b=4$、$N=1$、$o+b=2+N$。
+\item 硫酸根：$o=-4$、$b=4$、$e=-2$、$o+b=2+e$
+\item 六氟化氙：$F=6$、$K=1$、$o=-6$、$F+2K+o=2$。
+\item 苯磺胺：$H=7$、$o=-4$、$b=10$、$r=1$、$C=6$、$N=1$、$H+o+b+2r=2+2C+N$。
+\item 3-甲氧基丁酸乙酯：$H=14$、$b=2$、$C=7$、$H+b=2+2C$。
+\item N-甲基-N-苯基-丁-2-烯醯胺：$H=13$、$b=10$、$r=1$、$C=11$、$N=1$、$H+b+2r=2+2C+N$。
+\item 1,2,3-三硝酸丙三酯：$H=5$、$b=6$、$C=3$、$N=3$、$H+b=2+2C+N$。
+\end{itemize}
+\sssc{偶數律}
+若所有鍵均有正整數鍵級，則一個分子或離子團中具有奇數個鍵結的原子個數必為偶數。
+\subsection{一般性質}
+\sssc{種類}
+有機化合物種類超過2000萬種，遠多於無機化合物，其中鍵結多為共價鍵。
+\subsubsection{密度}
+多數具有二個以上鹵基者、部分具有一個鹵基者、部分具硝基者與部分芳香族密度大於水，其餘密度小於水。
+
+同狀態之同系物密度與分子量正相關。
+\subsubsection{揮發性}
+分子間作用力小於離子鍵，故有機化合物通常熔、沸點較低，揮發性較大，許多有氣味。
+\subsubsection{水溶性}
+除碳數較少之部分有機化合物外，多為非電解質、不溶於水、易溶於有機物，與水混合有明顯界面。
+\sssc{熔點}
+取決於晶型、氫鍵等，一般低於無機化合物。
+\subsubsection{沸點}
+四碳以上無芳香環相近分子量有機化合物沸點略為：一級醯胺>二級醯胺>三級醯胺>羧酸>醇>酮>一級胺>醛>二級胺>羧酸酯>三級胺>醚>烷
+
+三碳以下無芳香環相近分子量有機化合物沸點略為：一級醯胺>二級醯胺>三級醯胺>羧酸>醇>酮>醛>一級胺>二級胺>羧酸酯>醚>三級胺>烷
+
+有芳香環則因均有共軛 π 體系，醯胺的共軛對沸點相對影響力下降，氫鍵相對影響力較大，如相近分子量苯羧酸>三級苯醯胺。
+
+\begin{longtable}[c]{|c|c|c|}
+\hline
+化合物 & 分子量 & 沸點（°C）\\\hline\endhead
+2-甲基丙烷 & 58 & -10\\\hline
+丁烷 & 58 & -0.45\\\hline
+甲乙醚 & 60 & 8\\\hline
+甲酸甲酯 & 60 & 32\\\hline
+丙醛 & 58 & 48\\\hline
+丙酮 & 58 & 57\\\hline
+2-丙醇 & 60 & 82\\\hline
+1-丙醇 & 60 & 97\\\hline
+乙酸 & 60 & 118\\\hline
+丙胺 & 59 & 47\\\hline
+N-甲基乙胺 & 59 & 34\\\hline
+N,N-二甲基甲胺 & 59 & 2.9\\\hline
+乙醯胺 & 59 & 220\\\hline
+N-甲基甲醯胺 & 59 & 199\\\hline
+N,N-二甲基甲醯胺 & 73 & 153\\\hline
+丙酸 & 74 & 141\\\hline
+正丁醇 & 74 & 118\\\hline
+丁酮 & 72 & 80\\\hline
+正丁醛 & 72 & 76\\\hline
+正戊烷 & 72 & 36\\\hline
+乙醚 & 74 & 35\\\hline
+正丁胺 & 73 & 78\\\hline
+乙酸甲酯 & 74 & 57\\\hline
+N,N-二甲基乙胺 & 73 & 37\\\hline
+\end{longtable}\FB
+\subsubsection{酸性}
+$[\ce{H^+}]$：硫酸>三氯乙酸>乙二酸>苯磺酸>氯乙酸>溴乙酸>柳酸>甲酸>苯甲酸>乙酸>丙酸>碳酸>酚>醇
+\subsubsection{鹼性}
+$[\ce{OH^-}]$：二級胺>一級胺>三級胺>氨>苯胺>醯胺
+\sssc{化性}
+一般較不安定，高溫下一般易分解，有機反應一般斷鍵較多而較慢，一般可燃。
+
+
+\section{IUPAC Nomenclature of Organic Compounds 與中文系統命名法}
+\subsection{IUPAC Nomenclature of Organic Compounds}
+The International Union of Pure and Applied Chemistry (IUPAC) provides a systematic method for naming organic chemical compounds. The nomenclature is based on the structure of the compound and follows specific rules to ensure that each compound has a unique and unambiguous name.
+\subsection{國立編譯館
+《化學命名原則》概述}
+\begin{itemize}
+\item 多數同 IUPAC 惟翻譯成中文。
+\item 位置以阿拉伯數字表示，其間加,，後加-。
+\item 碳數前綴，一至十用天干、其餘用中文數字，排序依數字小至大。
+\item k碳烷基非主基團時稱k基。
+\item 多鍵為主基團時，位置阿拉伯數字置於碳數之前。
+\item 環前綴環，多環前綴中文數字表環數加環。
+\item 雜原子用其元素名，環另有他名。此從中國化學會
+《有機化合物中文命名原則》，雜原子用其元素名加雜，環以無雜時之環名或他名。
+\item 鏈中-某基團-結構稱亞某基。
+\item 高級結構加於低級結構的某位置上稱位置-(低級結構-位置-亞基)-高級結構。
+\item 命名：前綴-取代基序號-取代基個數取代基名稱主鏈名稱。
+\end{itemize}
+\subsection{Some Functional Groups or Characteristic Groups}
+\begin{itemize}
+\item Carboxyl acid (羧酸) R-C(=O)-O-H
+\item Ester (酯) R-C(=O)-O-R'
+\item Amide (醯胺) R-C(=O)-N(-R')-R''
+\item Imide (醯亞胺) R-N(-C(=O)-R'')-C(=O)-R'
+\item Nitrile (腈) R-C$\equiv$N
+\item Aldehyde (醛) R-C(=O)-H
+\item Thioaldehyde (硫醛) R-C(=S)-H
+\item Carbonyl group (羰基)/Acyl group (醯基) -C(=O)-
+\item Ketone (酮) R-C(=O)-R'
+\item Thioketone (硫酮) R-C(=S)-R'
+\item Hydroxy group (羥基) -O-H（酸性羥基不視為羥基，且另有他名）
+\item Phenol (酚) *6(C(-OH)-C(-R)=C(-R')-C(-R'')=C(-R''')-C(-R'''')=)
+\item Thiols (硫醇) R-S-H
+\item Hydroperoxide (氫過氧基) -O-O-H
+\item Amine (胺) R-N(-R')-R''
+\item Imine (亞胺) R-C(-R')=N-R''
+\item Alkane (烷) R-C(-H)(-H)-C(-H)(-H)-R'
+\item Alkene (烯) R-C(-H)=C(-H)-R'
+\item Alkyne (炔) R-C$\equiv$C-R'
+\item Alkyl group (烷基) -C(-H)(-H)-C(-H)(-H)-
+\item Alkenyl group (烯基) -C(H)=C(H)-（位置標編號較小者，另一原子不是下一編號時在位置後括號另一原子之編號；芳香環中的烯基不視為烯基，但命名時仍用烯基）
+\item Alkynyl group (炔基)-C$\equiv$C-（位置標編號較小者，另一原子不是下一編號時在位置後括號另一原子之編號）
+\item Ether (醚) R-O-R'
+\item Peroxide (過氧化物) R-O-O-R'
+\item Benzene (苯) *6(C(-R)-C(-R')=C(-R'')-C(-R''')=C(-R'''')-C(-R''''')=)
+\item Phenyl group (苯基) -*6(C-C(-H)=C(-H)-C(-H)=C(-H)-C(-H)=)
+\item Fluoro group (氟基) R-F
+\item Chloro group (氯基) R-Cl
+\item Bromo group (溴基) R-Br
+\item Iodo group (碘基) R-I
+\item Nitro group (硝基) -N(=O)>O
+\item Nitroso group (亞硝基) -N=O
+\item Sulfonyl group (磺酸基) -S(=O)(=O)-
+\item Phosphoric acid group (磷酸基) -O-P(=O)(-OH)-OH
+\item Phosphonic acid group (亞磷酸基) -P(=O)(=O)-OH
+\item Hypophosphorous acid group (次磷酸基) -P(=O)(=O)-OH
+\item Quaternary ammonium ion (四級銨根) [R-N(-R')(-R'')-R''']$^+$
+\end{itemize}
+\subsubsection{Suffixes and Functional Replacement Analogues for IUPAC Preferred Names, in Decreasing Order of Seniority}
+Identify the functional group with the highest precedence according to IUPAC rules. This group will determine the suffix of the compound’s name.
+\begin{itemize}
+\item Carboxylic acids
+\begin{itemize}
+\item –COOH carboxylic acid
+\item –(C)OOH oic acid
+\end{itemize}
+\item Carboperoxoic acids
+\begin{itemize}
+\item –CO-OOH carboperoxoic acid 
+\item –(C)O-OOH peroxoic acid 
+\end{itemize}
+\item Carboperoxoic acids modified by replacement with S, Se, and/or Te 
+\begin{itemize}
+\item –CS-OOH carboperoxothioic acid 
+\item –(C)S-OOH peroxothioic acid 
+\item –CSe-OOH carboperoxoselenoic acid 
+\item –(C)Se-OOH peroxoselenoic acid 
+\item –CO-SOH carbo(thioperoxoic) SO-acid 
+\item –(C)O-SOH (thioperoxoic) SO-acid 
+\item –CO-OSH carbo(thioperoxoic) OS-acid 
+\item –(C)O-OSH (thioperoxoic) OS-acid
+\end{itemize}
+\item Carboxylic acids modified by replacement with S, Se, and/or Te 
+\begin{itemize}
+\item –CS-OH carbothioic O-acid 
+\item –(C)S-OH thioic O-acid 
+\item –CO-SH carbothioic S-acid 
+\item –(C)O-SH thioic S-acid 
+\item –CO-SeH carboselenoic Se-acid 
+\item –(C)O-SeH selenoic Se-acid 
+\item –CS-SH carbodithioic acid 
+\item –(C)S-SH dithioic acid 
+\end{itemize}
+\item Carboximidic acids 
+\begin{itemize}
+\item –C(=NH)-OH carboximidic acid 
+\item –(C)(=NH)-OH imidic acid Carboximidoperoxoic acids 
+\item –C(=NH)-OOH carboximidoperoxoic acid 
+\item –(C)(=NH)-OOH imidoperoxoic acid \end{itemize}
+\item Carboximidoperoxoic acids modified by replacement with S, Se, and/or Te 
+\begin{itemize}
+\item –C(=NH)-SOH carboximido(thioperoxoic) SO-acid 
+\item –(C)(=NH)-SOH imido(thioperoxoic) SO-acid 
+\item –C(=NH)-OSH carboximido(thioperoxoic) OS-acid 
+\item –(C)(=NH)-OSH imido(thioperoxoic) OS-acid 
+\item –C(=NH)-SSH carbo(dithioperox)imidic acid 
+\item –(C)(=NH)-SSH (dithioperox)imidic acid 
+\item –C(=NH)-SeSH carboximido(selenothioperoxoic) SeS-acid 
+\item –(C)(=NH)-SeSH imido(selenothioperoxoic) SeS-acid Carboximidic acids modified by replacement with S, Se, and/or Te 
+\item –C(=NH)-SH carboximidothioic acid 
+\item –(C)(=NH)-SH imidothioic acid 
+\end{itemize}
+\item Carbohydrazonic acids 
+\begin{itemize}
+\item –C(=NNH2)-OH carbohydrazonic acid 
+\item –(C)(=NNH2)-OH hydrazonic acid Carbohydrazonoperoxoic acids 
+\item –C(=NNH2)-OOH carbohydrazonoperoxoic acid 
+\item –(C)(=NNH2)-OOH hydrazonoperoxoic acid 
+\end{itemize}
+\item Carbohydrazonoperoxoic acids modified by replacement with S, Se, and/or Te 
+\begin{itemize}
+\item –C(=NNH2)-SOH carbohydrazono(thioperoxoic) SO-acid 
+\item –(C)(=NNH2)-SOH hydrazono(thioperoxoic) SO-acid 
+\item –C(=NNH2)-OSH carbohydrazono(thioperoxoic) OS-acid 
+\item –(C)(=NNH2)-OSH hydrazono(thioperoxoic) OS-acid 
+\item –C(=NNH2)-TeTeH carbo(ditelluroperoxo)hydrazonic acid 
+\item –(C)(=NNH2)-TeTeH (ditelluroperoxo)hydrazonic acid 
+\end{itemize}
+\item Carbohydrazonic acids modified by replacement with S, Se, and/or Te 
+\begin{itemize}
+\item –C(=NNH2)-SH carbohydrazonothioic acid 
+\item –(C)(=NNH2)-SH hydrazonothioic acid 
+\end{itemize}
+\item Sulfonic acids 
+\begin{itemize}
+\item –SO2-OH sulfonic acid Sulfonoperoxoic acids 
+\item –SO2-OOH sulfonoperoxoic acid 
+\end{itemize}
+\item Sulfonoperoxoic acids modified by replacement with S, Se and/or Te 
+\begin{itemize}
+\item –S(O)(S)-OOH sulfonoperoxothioic acid 
+\item –SO2-SOH sulfono(thioperoxoic) SO-acid 
+\item –SO2-OSH sulfono(thioperoxoic) OS-acid 
+\item –SS2-OOH sulfonoperoxodithioic acid 
+\end{itemize}
+\item Sulfonic acids modified by replacement with S, Se and/or Te 
+\begin{itemize}
+\item –SO2-SH sulfonothioic S-acid 
+\item –S(O)(S)-OH sulfonothioic O-acid 
+\item –S(S)(S)-SH sulfonotrithioic acid 
+\end{itemize}
+\item Sulfonimidic acids 
+\begin{itemize}
+\item –S(O)(=NH)-OH sulfonimidic acid Sulfonimidoperoxoic acids 
+\item –S(O)(=NH)-OOH sulfonimidoperoxoic acid 
+\end{itemize}
+\item Sulfonimidoperoxoic acids modified by replacement with S, Se, or Te 
+\begin{itemize}
+\item –S(O)(=NH)-SOH sulfonimido(thioperoxoic) SO-acid 
+\item –S(O)(=NH)-OSH sulfonimido(thioperoxoic) OS-acid Sulfonimidic acids modified by replacement with S, Se or Te 
+\item –S(O)(=NH)-SH sulfonimidothioic S-acid 
+\end{itemize}
+\item Sulfonodiimidic acids 
+\begin{itemize}
+\item –S(=NH)2-OH sulfonodiimidic acid Sulfonodiimidoperoxoic acids 
+\item –S(=NH)2-OOH sulfonodiimidoperoxoic acid Sulfonodiimidoperoxoic acids modified by replacement with S, Se, and/or Te 
+\item –S(=NH)2-SOH sulfonodiimido(thioperoxoic) SO-acid 
+\item –S(=NH)2-OSH sulfonodiimido(thioperoxoic) OS-acid Sulfonodiimidic acids modified by replacement with S, Se, and/or Te 
+\item –S(=NH)2-SeH sulfonodiimidoselenoic acid 
+\end{itemize}
+\item Sulfonohydrazonic acids 
+\begin{itemize}
+\item –S(O)(=NNH2)-OH sulfonohydrazonic acid Sulfonohydrazonoperoxoic acids 
+\item –S(O)(=NNH2)-OOH sulfonohydrazonoperoxoic acid Sulfonohydrazonoperoxoic acids modified by replacement with S, Se, and/or Te 
+\item –S(S)(=NNH2)-OOH sulfonohydrazonoperoxothioic acid Sulfonohydrazonic acids modified by replacement with S, Se and/or Te 
+\item –S(S)(=NNH2)-OH sulfonohydrazonothioic O-acid 
+\item –S(O)(=NNH2)-SH sulfonohydrazonothioic S-acid 
+\end{itemize}
+\item Sulfonodihydrazonic acids 
+\begin{itemize}
+\item –S(=NNH2)2-OH sulfonodihydrazonic acids Sulfonodihydrazonoperoxoic acid 
+\item –S(=NNH2)2-OOH sulfonodihydrazonoperoxoic acid Sulfonodihydrazonoperoxoic acids modified by replacement with S, Se, and/or Te 
+\item –S(=NNH2)2-SOH sulfonodihydrazono(thioperoxoic) SO-acid Sulfonodihydrazonic acids modified by replacement with S, Se, and/or Te 
+\item –S(=NNH2)2-SH sulfonodihydrazonothioic acid 
+\end{itemize}
+\item Sulfinic acids 
+\begin{itemize}
+\item –SO-OH sulfinic acid Sulfinoperoxoic acid 
+\item –SO-OOH sulfinoperoxoic acid Sulfinoperoxoic acid modified by replacement with S, Se, and/or Te 
+\item –S(S)-OOH sulfinoperoxothioic acid 
+\item –SO-SOH sulfino(thioperoxoic) SO-acid 
+\item –SO-OSH sulfino(thioperoxoic) OS-acid Sulfinic acids modified by replacement with S, Se, and/or Te 
+\item –SS-OH sulfinothioic O-acid 
+\item –SO-SeH sulfinoselenoic Se-acid 
+\end{itemize}
+\item Sulfinimidic acids 
+\begin{itemize}
+\item –S(=NH)-OH sulfinimidic acid Sulfinimidoperoxoic acids 
+\item –(=NH)-OOH sulfinimidoperoxoic acid Sulfinimidoperoxoic acids modified by replacement with S, Se and/or Te 
+\item –S(=NH)-OSH sulfinimido(thioperoxoic) OS-acid Sulfinimidic acids modified by replacement with S, Se, and/or Te 
+\item –S(=NH)-SH sulfinimidothioic acid 
+\end{itemize}
+\item Sulfinohydrazonic acids 
+\begin{itemize}
+\item –S(=NNH2)-OH sulfinohydrazonic acid Sulfinohydrazonoperoxoic acids 
+\item –S(=NNH2)-OOH sulfinohydrazonoperoxoic acid Sulfinohydrazonoperoxoic acids modified by replacement with S, Se and/or Te 
+\item –S(=NNH2)-SSeH sulfinohydrazono(selenothioperoxoic) SSe-acid Sulfinohydrazonic acids modified by replacement with S, Se, and/or Te 
+\item –S(=NNH2)-TeH sulfinohydrazonotelluroic acid 
+\end{itemize}
+\item Selenonic acids 
+\begin{itemize}
+\item –SeO2-OH selenonic acid (as for sulfonic acids) 
+\end{itemize}
+\item Seleninic acids 
+\begin{itemize}
+\item –SeO-OH seleninic acid (as for sulfinic acids) 
+\end{itemize}
+\item Telluronic acids 
+\begin{itemize}
+\item –TeO2-OH telluronic acid (as for sulfonic acids) 
+\end{itemize}
+\item Tellurinic acids 
+\begin{itemize}
+\item –TeO-OH tellurinic acid (as for sulfinic acids) 
+\end{itemize}
+\item Carboxamides 
+\begin{itemize}
+\item –CO-NH2 carboxamide 
+\item –(C)O-NH2 amide Carboxamides modified by replacement with S, Se, and/or Te 
+\item –CS-NH2 carbothioamide 
+\item –(C)S-NH2 thioamide 
+\end{itemize}
+\item Carboximidamides 
+\begin{itemize}
+\item –C(=NH)-NH2 carboximidamide 
+\item –(C)(=NH)-NH2 imidamide 
+\end{itemize}
+\item Carbohydrazonamides 
+\begin{itemize}
+\item –C(=NNH2)-NH2 carbohydrazonamide 
+\item –(C)(=NNH2)-NH2 hydrazonamide 
+\end{itemize}
+\item Sulfonamides 
+\begin{itemize}
+\item –SO2-NH2 sulfonamide 
+\end{itemize}
+\item Sulfonamides modified by replacement with S, Se, and/or Te Sulfinohydrazides modified by replacement with S, Se, and/or Te 
+\begin{itemize}
+\item –S(Se)-NHNH2 sulfinoselenohydrazide 
+\end{itemize}
+\item Sulfinimidohydrazides 
+\begin{itemize}
+\item –S(=NH)-NHNH2 sulfinimidohydrazide 
+\end{itemize}
+\item Sulfinohydrazonohydrazides 
+\begin{itemize}
+\item –S(=NNH2)-NHNH2 sulfinohydrazonohydrazide 
+\end{itemize}
+\item Selenonohydrazides 
+\begin{itemize}
+\item –SeO2-NHNH2 selenonohydrazide (as for sulfonohydrazides) 
+\end{itemize}
+\item Seleninohydrazides 
+\begin{itemize}
+\item –Se(O)-NHNH2 seleninohydrazide (as for sulfinohydrazides) 
+\end{itemize}
+\item Telluronohydrazides 
+\begin{itemize}
+\item –TeO2-NHNH2 telluronohydrazide (as for sulfonohydrazides) 
+\end{itemize}
+\item Tellurinohydrazides 
+\begin{itemize}
+\item –Te(O)-NHNH2 tellurinohydrazide (as for sulfinohydrazides) 
+\end{itemize}
+\item Nitriles 
+\begin{itemize}
+\item –CN carbonitrile 
+\item –(C)N nitrile 
+\end{itemize}
+\item Aldehydes 
+\begin{itemize}
+\item –CHO carbaldehyde 
+\item –(C)HO al Aldehydes modified by replacement with S, Se, and/or Te 
+\item –CHS carbothialdehyde 
+\item –(C)HS thial 
+\item –CHSe carboselenaldehyde 
+\item –(C)HSe selenal 
+\item –CHTe carbotelluraldehyde 
+\item –(C)HTe tellural 
+\end{itemize}
+\item Ketones, pseudoketones, and heterones 
+\begin{itemize}
+\item >(C)=O one 
+\end{itemize}
+\item Ketones, pseudoketones, and heterones modified by replacement with S, Se, and/or Te 
+\begin{itemize}
+\item >(C)=S thione 
+\item >(C)=Se selone (not selenone) 
+\item >(C)=Te tellone (not tellurone) 
+\end{itemize}
+\item Hydroxy compounds 
+\begin{itemize}
+\item –OH ol Hydroxy compounds modified by replacement with S, Se, and/or Te 
+\item –SH thiol 
+\item –SeH selenol 
+\item –TeH tellurol 
+\end{itemize}
+\item Hydroperoxides 
+\begin{itemize}
+\item –OOH peroxol Hydroperoxides modified by replacement with S, Se, and/or Te 
+\item –OSH OS-thioperoxol 
+\item –SOH SO-thioperoxol (not sulfenic acid) 
+\end{itemize}
+\item Amines 
+\begin{itemize}
+\item –NH2 amine 
+\end{itemize}
+\item Imines
+\begin{itemize}
+\item =NH imine
+\end{itemize}
+\end{itemize}
+\subsection{Parent Chain}
+\subsubsection{Parent Chain and Carbon Numbering}
+A parent chain is a continuous chain (hydrocarbon) of carbon atoms in the structure. Locate it according to the following principles, where he earlier principle must take precedence. The parent chain determines the root name of the compound.
+\begin{enumerate}
+\item If the compound has a functional group with seniority (priority), the parent chain has to include the carbon atom attached to the functional group.
+\item Choose the one(s) with the most of the rings.
+\item Choose the one(s) that includes the most of the multiple bonds (double or triple bonds).
+\item Choose the one(s) with the most of carbon atoms, namely, the longest one.
+\item Choose the one(s) with the most of substituents.
+\item Assign numbers to the carbon atoms in the parent chain (candidates), starting from the end closest to the principal functional group, or to a multiple bond if there's no other principal functional group. Choose the ones that make the principal functional group or a multiple bond has the lowest possible number. If there are multiple functional groups or multiple bonds, choose and number in a way that gives the lowest possible numbers to the alphabetically highest retaining groups or bonds.
+\end{enumerate}
+\subsection{Prefixes of the Number of Carbons}
+Count the number of carbons in the parent chain and assign the corresponding prefix.
+\begin{itemize}
+\item 1: Meth-
+\item 2: Eth-
+\item 3: Prop-
+\item 4: But-
+\item 5: Pent-
+\item 6: Hex-
+\item 7: Hept-
+\item 8: Oct-
+\item 9: Non-
+\item 10: Dec-
+\item 11: Undec-
+\item 12: Dodec-
+\item 13: Tridec
+\item 14: Tetradec-
+\item 15: Pentadec-
+\item 16: Hexadec-
+\item 17: Heptadec-
+\item 18: Octadec-
+\item 19: Nonadec-
+\item 20: Eicos-
+\item 21: Henicos-
+\item 22-29: Replace "dec" of 12-19 with "cos"
+\item 30: Triacont-
+\item Other multiples of ten less than one hundred: Replace "dec" of 14-19 with "cont"
+\item Others less than one hundred: Replace "cos" of 21-29 with the largest multiple of ten that is less than it
+\item 100: hect-
+\end{itemize}
+\subsection{Cyclic compounds}
+\subsubsection{Cyclo- Rings}
+Cyclic compounds are compounds with cyclic structures. The prefix cyclo- is also used in the name of them.
+\begin{enumerate}
+\item Use cyclo- with the parent name for single cyclic compounds.
+\item If the multi-ring system is not fused but connected as a chain or branch, use cyclo- with the parent name.
+\item Smaller cyclic rings connected to a main structure are named as substituents.
+\end{enumerate}
+For example, Cyclohexane is a single cyclic hydrocarbon, 1-Cyclopropylbutane is a cyclopropane ring as a substituent on a butane chain), and 1-Cyclopropyl-2-methylcyclohexane has a cyclopropyl group at position 1 and a methyl group at position 2 of cyclohexane.
+\subsubsection{O- (Ortho-)/M- (Meta-)/P- (Para-) Notation}
+For two characteristic groups attached on a ring:
+\begin{itemize}
+\item o- (ortho-) (鄰): located on two adjacent carbons in the ring.
+\item m- (meta-) (間): located on two alternate carbons in the ring.
+\item p- (para-) (對): located on two opposite carbons in the ring.
+\end{itemize}
+For example, o-Cresol is 2-Methylphenol, m-Cresol is 3-Methylphenol, and p-Cresol is 4-Methylphenol. 
+
+In IUPAC nomenclature nowadays, the o-/m-/p- notation is replaced by the carbon numbering.
+\sssc{指示氫（indicated hydrogen）}
+環異構體可使用相同名稱，而該名稱可以用標出一個或數個附加給沒有雙鍵的碳原子上的「額外」的氫原子在結構式中的位置的辦法予以說明時，則用位碼及碼後附加一個斜體大寫H來標明這樣的氫原子，從而達到對各個異構體名稱的限定，置於名稱之前。
+\subsubsection{稠環（Fused Rings）}
+\bit
+\item 「單邊稠」或「單邊互稠」多環烴若含有最大數目的非累積雙鍵，含有兩個以上的五元或多員環，則選定若干組分環的名稱作為詞頭，放在基本組分之前，附加組分應儘可能簡單。如二苯並菲。
+\item 異構體時將基本組分的周邊用a、b、c等字母來區別，最先用「a」表示邊「1,2」，「b」標示邊「2,3」（在某些情況下是「2,2a」），順次循周將各邊都編上字母。將稠合邊給以儘可能前面的字母的編號，可把另一個組分上稠合位置的數目編號放在字母編號之前。這些數目編號應採用儘可能小的數字，書寫順序應和基本組分字母編號的方向相一致。如蒽並[2,1-a]並四苯。
+\eit
+\subsubsection{Spiro Rings}
+The Spiro- prefix is used for bicyclic compounds where two rings share a single common atom. The IUPAC rules for naming spiro compounds are as follows:
+\begin{enumerate}
+\item The term spiro is prefixed to the name of the parent chain.
+\item The sizes of the two rings are specified in ascending order in square brackets (e.g., [x.y], where x and y are the number of atoms in each ring, excluding the shared spiro atom).
+\item The numbering begins at the spiro atom and continues around the smaller ring first, then the larger ring.
+\end{enumerate}
+For example, Spiro[2.2]pentane is a compound with two three-membered rings sharing one atom, Spiro[4.5]decane is a compound with a five-membered and a six-membered ring sharing one atom.
+\subsubsection{Bicyclo- Rings}
+The bicyclo- prefix is used for bridged ring systems, where two or more rings are connected by shared carbon atoms. Rules are:
+\begin{enumerate}
+\item The structure is named as bicyclo[x.y.z], where x is the number of carbons in the longest bridge, y is the number of carbons in the second longest bridge, and z is number of carbons in the shortest bridge.
+\item Start numbering at one bridgehead and move through the longest bridge first, followed by the second longest, and finally the shortest.
+\item Use the total number of carbons (including bridgeheads) to determine the base name of the structure. For example, Bicyclo[2.2.1]heptane has seven carbons total.
+\item Carbon numbering and substituent naming is the same as straight chain compounds.
+\end{enumerate}
+For example, Bicyclo[3.1.1]heptane is a bicyclic system with: 3 carbons in the longest bridge, 1 carbon in the second bridge, and 1 carbon in the shortest bridge.
+\subsubsection{Tricyclo- Rings}  
+The tricyclo- prefix is used for compounds containing three interconnected rings with at least two bridgehead carbons. These systems are typically composed of three bridges connecting two bridgehead carbons. The IUPAC rules for naming tricyclo compounds are as follows:  
+\begin{enumerate}  
+\item The structure is named as \textbf{tricyclo[x.y.z.w]}, where:  
+\begin{itemize}  
+\item \( x \), \( y \), and \( z \) are the number of carbons in each bridge, arranged in descending order.  
+\item \( w \) is used if there is a direct connection between two numbered carbons with no carbons in between. This is indicated as \( 0^{m,n} \), where \( m \) and \( n \) are the positions of the connected carbons, each of which has a bridgehead as $1$, which is chosen to make $m$ and $n$ as small as possible.
+\end{itemize}  
+\item Numbering begins at one bridgehead and proceeds through the longest ring to the shortest rung and finally the other bridgehead.
+\item The total number of carbons (including the bridgeheads) determines the base name of the structure, such as tricyclo[3.2.1.0$^{2,4}$]octane for an eight-carbon system.  
+\item Substituents are numbered to give the lowest possible locants, consistent with the numbering of the parent ring system.  
+\end{enumerate}  
+\noindent  
+For example, \textbf{Tricyclo[3.2.1.0$^{2,4}$]octane} is named as follows:  
+\begin{itemize}  
+\item The base name is "octane" because the structure has eight carbons in total.  
+\item It has three bridges: 3 carbons, 2 carbons, and 1 carbon.  
+\item The $0^{2,4}$ indicates a direct connection between carbons 2 and 4 without any carbons in between.  
+\end{itemize}
+\subsubsection{漢奇-威德曼雜環命名系統（Hantzsch-Widman nomenclature for heterocyclic compounds）}
+用於命名不超過十元的雜環母體氫化物。
+
+雜原子優先級以此順序依次降低：F、Cl、Br、I、O、S、Se、Te、N、P、As、Sb、Bi、Si、Ge、Sn、Pb、B、Al、Ga、In、Tl、Hg。
+
+編號以最高級雜原子為一號，雜原子與碳一同編號。
+\subsection{Configuration Descriptors}
+\subsubsection{R/S Notation or Cahn-Ingold-Prelog (CIP) Configuration}
+The R (Rectus) and S (Sinister) notation of a compound, also known as Cahn-Ingold-Prelog (CIP) configuration, is determined using a step-by-step process based on the spatial arrangement of groups attached to a stereocenter (a chiral center). 
+\begin{enumerate}
+\item Identify the stereocenter: Look for a carbon atom bonded to four different groups. This carbon is the stereocenter.
+\item Assign priorities to the groups: Use the Cahn-Ingold-Prelog (CIP) priority rules:
+\begin{enumerate}[label=\roman*.]
+\item Compare the atomic numbers (原子序) of the atoms directly attached to the stereocenter. The higher the atomic number, the higher the priority.
+\item If two atoms have the same atomic number, compare the atomic numbers of the atoms bonded to those atoms. Continue down the chain until a difference is found.
+\item Double or triple bonds are treated as if the bonded atom is duplicated or triplicated (e.g., a C=O group is treated as if it were bonded to two oxygen atoms).
+\end{enumerate}
+\item Orient the molecule: Position the molecule so that the group with the lowest priority (4th priority) is pointing away from you. This is typically shown as a dashed wedge in structural diagrams.
+\item Trace the path of the three higher-priority groups: Imagine moving from the highest priority group (1) to the second (2), and then to the third (3). Determine if this path is clockwise or counterclockwise. If the path is clockwise, the configuration is R (rectus); if counterclockwise, it is S (sinister).
+\end{enumerate}
+R/S notation is part of IUPAC nomenclature.
+\subsubsection{E/Z Notation}
+For a double bond, if the two highest seniority groups are on opposite sides, it is called E; otherwise it is called Z.  Lone pair and lone unpaired electron are lower than any groups.
+
+E/Z notation is part of IUPAC nomenclature.
+\subsubsection{Cis/Trans Notation}
+For a double bond or a ring structure, if two similar or identical groups are on the same side, it's called cis- (順式); otherwise, it's called trans- (反式).
+
+For example, "trans-1-Bromo-1,2-dichloroethene" is "(E)-1-Bromo-1,2-dichloroethene", "cis-1-Bromo-1,2-dichloroethene" is "(Z)-1-Bromo-1,2-dichloroethene"; "cis-1,3-Dimethylcyclohexane" is "(1R,3S)-1,3-dimethylcyclohexane", and "trans-1,3-Dimethylcyclohexane" is "(1R,3R)-1,3-dimethylcyclohexane".
+
+In IUPAC nomenclature nowadays, the cis/trans notation is replaced by the E/Z notation for double bonds and the R/S notation for rings.
+\subsubsection{N-/Iso-/Neo- Notation}
+\begin{itemize}
+\item n- (正): no substituent.
+\item iso- (異): one substituent
+\item neo- (新): two substituents.
+\end{itemize}
+For example, N-Pentane is Pentane, Isopentane is 2-Methylbutane, and Neopentane is 2,2-Dimethylpropane.
+
+In IUPAC nomenclature nowadays, the n-/iso-/neo- notation is replaced by the characteristic groups attached on the parent chain.
+\sssc{金翁（wēng）離子（Onium ion）}
+金翁離子指非金屬元素或其擬似物之氫化物經質子化而獲得的正一價陽離子，與其中部分或全部的氫被取代基取代的正一價陽離子，與它們的衍生物，如：\ce{(\text{IIIA})H4+}、\ce{(\text{IVA})$_n$H$_{2n+3}$^+}、\ce{(\text{VIA})H4+}、\ce{H3(\text{VIA})+}、\ce{H3+}、\ce{H2(\text{VIIA} or Pseudohalogen)+}。IUPAC 系統命名中稱為 -ium/金翁，前可標數字表位置，惟氮金翁特稱銨。
+\subsubsection{費雪投影（Fischer projection）與 D/L Notation}
+以結構式或鍵線式繪製開鏈式投影，碳鏈鉛直排列，最接近羰基碳的碳鏈末端位於最上方，手性碳上的四個基團中，水平方向的基團指向觀察者，而垂直方向的基團背向觀察者。最後一個手性碳（距離羰基最遠的手性碳）上的羥基位置決定該醣的 D/L 型：若羥基位於右側，則為 D 型（D-form）；若羥基位於左側，則為 L 型（L-form）。D/L notation 標示在分子名稱之前，如 D-葡萄糖。
+
+IUPAC 不用，而以 R/S notation 表示。
+\sssc{哈沃斯透視/哈沃斯投影（Haworth projection）與 α/β Notation}
+以結構式或鍵線式繪製氧雜類投影，開鏈式的羰基碳在環化時成為異頭碳（anomeric carbon），與某個碳上的羥基的氧鍵結成氧雜環，原先的羰基氧獲得質子而成為羥基（異頭羥基），原先的羥基氧成為氧雜原子。由費雪投影轉換為哈沃斯投影時，原費雪投影中左側的基團位於環的上方，右側的基團則位於環的下方。若異頭羥基與氧雜原子另一側的第一個手性碳上的基團（常是羥甲基）在環的異側，稱為 α-異構物；若在同側，則稱為 β-異構物。 α/ β notation 標記在 D/L notation 之前，如 β-D-葡萄糖。
+
+IUPAC 不用，而以 R/S notation 表示。
+\subsubsection{旋光性（Optical rotation）}
+光通過某些物質，偏振面發生了旋轉，這個現象稱為旋光現象。平面偏光向左稱左旋光 (+)，平面偏光向右稱右旋光 (-)，作為前綴，在 L/D 之後，如 L-(+)-葡萄糖。
+\subsubsection{λ}
+λ (lambda) is used to specify the electronic state of a heteroatom in a coordination complex or organometallic compound. Specifically, it indicates the oxidation state or valence state of a non-carbon central atom (such as phosphorus, sulfur, or silicon), particularly when it differs from its common valence.
+
+The λ$^n$ notation appears before the element name and represents the number of valence electrons around the heteroatom. The number n in λ$^n$ is determined by counting both bonding and non-bonding electron pairs.
+
+For example, λ$^5$-P denotes a phosphorus (usually with three valence electrons) with five valence electrons, such as in \ce{P4O10}.
+\subsection{Assembling Name}
+\begin{itemize}
+\item Identify any substituents connected to the parent chain.
+\item Combine the substituents and the parent chain name. The position of a group is represented by numbers starting from the smallest number. The numbers are used as locants and separated from the name of the parent chain suffix by "-" and are suffixed before the group name.
+\item If there are two or more identical characteristic group, add numbers in front of the group, separate their positions with ",", and list them together. e.g., "1,2-dimethyl-".
+\item If there are two or more characteristic group attached to the same carbon atom, list them alphabetically, regardless of their seniority.
+\item After the groups are listed in order of the smallest position number, the parent chain name with the main characteristic group suffix is listed.
+\end{itemize}
+\subsection{其他}
+\subsubsection{希臘字母碳代號}
+常用於生物化學。自主基團所接的碳依序稱 α、β、γ、δ，以此類推；碳鏈上最後一碳（最遠離主基團者）稱 ω，以 ω 碳為一向主官能基方向數，第$i$與$i+1$個碳間有雙鍵稱 ω-$i$，如 ω-3。
+\subsubsection{元數}
+有$k$個某基者稱$k$元，某基為主官能基時名稱為某基位置-某$k$某基類化合物名稱，如甘油為丙三醇。
+\subsubsection{級數}
+$k$級某原子指接有$k+1$個非氫的原子的某原子，一級（primary, 1°）又稱伯，二級（secondary, sec-, 2°）又稱仲，三級（tertiary, tert-, 3°）又稱叔。對於中心原子可接多個基團的基團（如胺基的氮），該原子為$k$級者稱$k$級某基；對於機構固定的基團，其所接的主鏈碳為$k$級者稱$k$級某基（如一級羥基）；某類化合物主基團為$k$級者屬$k$級某類化合物（如一級醇）。
+
+
+\section{Simplified molecular input line entry specification, SMILES (簡化分子線性輸入規範)}
+\ssc{Atoms}
+Atoms are represented by the standard abbreviation of the chemical elements in square brackets, such as \texttt{[Au]} for gold. Brackets may be omitted for atoms which:
+\begin{enumerate}
+\item are in the "organic subset" of B, C, N, O, P, S, F, Cl, Br, or I, and
+\item have no formal charge, and
+\item have the number of hydrogens attached implied by the SMILES valence model (typically their normal valence, but for N and P it is 3 or 5, and for S it is 2, 4 or 6), and
+\item are the normal isotopes, and
+\item are not chiral centers,
+\end{enumerate}
+
+Hydrogen attached to atoms without brackets may be omited or written as a separate atom. For example, water may be written as \texttt{O} or \texttt{[H]O[H]}.
+
+All other elements must be enclosed in brackets, and have charges and hydrogens shown explicitly.
+
+Hydrogen attached to atoms with brackets may be written in brackets or written as a separate atom. For example, water may be written as \texttt{[OH2]} or \texttt{[H2O]}.
+
+When brackets are used, charges are written after atoms in brackets by \texttt{+} for a positive charge and by \texttt{-} for a negative charge. For example, ammonium may be written as \texttt{[NH4+]}. If there is more than one charge, it is normally written as digit and less commonly written as the signs repeated as many times as the ion has charges. For example, titanium(IV) may be written as \texttt{[Ti+4]} or \texttt{[Ti++++]}.
+
+Isotopes are specified with a number equal to the integer isotopic mass preceding the atomic symbol. For example, ethane in which one atom is carbon-14 is written as \texttt{[14C]([H])([H])C}.
+\ssc{Bonds}
+A bond or non-bond is represented using one of the symbols \texttt{. - = \# \$ : / \textbackslash}.
+\ben
+\item Single bonds may be omitted or written as \texttt{-} and are implied by adjacency in the SMILES string. For example, ethanol may be written as \texttt{C-C-O}, \texttt{CC-O} or \texttt{C-CO}, but is usually written \texttt{CCO}. However, single bonds between atoms in lowercase, which indicates aromaticity, must be written as \texttt{-}; see \textbf{Aromaticity} below.
+\item Double, triple, and quadruple bonds are represented by the symbols \texttt{=}, \texttt{\#}, and \texttt{\$} respectively. For example, carbon dioxide may be written as \texttt{O=C=O}, hydrogen cyanide may be written as \texttt{C\#N}, and gallium arsenide may be written as \texttt{[Ga+]\$[As-]}.
+\item An additional type of bond is a "non-bond", indicated with \texttt{.}, to indicate that two parts that are adjacent in the SMILES string are not bonded together. For example, aqueous sodium chloride may be written as \texttt{[Na+].[Cl-]}.
+\item An aromatic "one and a half" bond may be indicated with \texttt{:}; see \textbf{Aromaticity} below.
+\item Single bonds adjacent to double bonds may be represented using \texttt{/} or \texttt{\textbackslash} to indicate stereochemical configuration. SMILES permits, but does not require, specification of stereoisomers; however, we will not describe it here.
+\een
+\ssc{Rings}
+Ring structures are written by breaking each ring at an arbitrary point to make an acyclic structure and adding numerical ring closure labels to show connectivity between non-adjacent atoms with the same numerical ring closure labels after it in the SMILES string.
+
+For example, cyclohexane may be written as \texttt{C1CCCCC1}, dioxane may be written as \texttt{O1CCOCC1}, and decalin (decahydronaphthalene) may be written as \texttt{C1CCCC2C1CCCC2}.
+
+SMILES does not require that ring numbers be used in any particular order, and permits ring number zero. Also, it is permitted to reuse ring numbers after the first ring has closed. For example, bicyclohexyl is usually written as \texttt{C1CCCCC1C2CCCCC2}, but it may also be written as \texttt{C0CCCCC0C0CCCCC0}.
+
+Either or both of the digits may be preceded by a bond type to indicate the type of the ring-closing bond. For example, cyclopropene is usually written \texttt{C1=CC1}, but if the double bond is chosen as the ring-closing bond, it may be written as \texttt{C=1CC1}, \texttt{C1CC=1}, or \texttt{C=1CC=1}.
+
+Ring-closing bonds may not be used to denote multiple bonds. For example, \texttt{C1C1} is not a valid alternative to \texttt{C=C} for ethylene. However, they may be used with non-bonds. For example, propane, which is more commonly written \texttt{CCC}, may also be written as \texttt{C1.C2.C12}.
+\ssc{Aromaticity}
+Aromatic rings such as benzene may be written in one of three forms:
+\ben
+\item in Kekulé form with alternating single and double bonds, e.g. \texttt{C1=CC=CC=C1},
+\item using the aromatic bond symbol :, e.g. \texttt{C:1:C:C:C:C:C1}, or
+\item by writing the constituent B, C, N, O, P and S atoms in lower-case forms \texttt{b}, \texttt{c}, \texttt{n}, \texttt{o}, \texttt{p} and \texttt{s}, respectively.
+\een
+In the latter case, bonds between two aromatic atoms are assumed (if not explicitly shown) to be aromatic bonds. Thus, benzene, pyridine, and furan can be represented respectively by the SMILES \texttt{c1ccccc1}, \texttt{n1ccccc1}, and \texttt{o1cccc1}.
+
+Aromatic nitrogen bonded to hydrogen must be represented as \texttt{[nH]}. For example, imidazole may be written as \texttt{n1c[nH]cc1}.
+
+Single bonds between atoms in lowercase, which indicates aromaticity, must be written as \texttt{-}. For example, biphenyl may be written as \texttt{c1ccccc1-c2ccccc2}.
+\ssc{Branches}
+Branches are written in parentheses. The first atom within the parentheses, and the first atom after the parenthesized group, are both bonded to the same branch point atom, which is the last atom before the parentheses. The bond symbol between the last atom before the parentheses and the first atom within the parentheses must appear inside the parentheses; however, single bonds may be omitted. For example, propionic acid may be written as \texttt{CCC(=O)O}, and fluoroform may be written as \texttt{FC(F)F} or \texttt{FC(-F)F}.
+
+Branches bonded to the same branch point atom may be written in any order. The only caveats to such rearrangements are:
+\bit
+\item If ring numbers are reused, they are paired according to their order of appearance in the SMILES string. Some adjustments may be required to preserve the correct pairing.
+\item If stereochemistry is specified, adjustments must be made; see \textbf{Stereochemistry} below.
+\eit
+
+The one form of branch which does not require parentheses are ring-closing bonds: the SMILES fragment \texttt{C1N} is equivalent to \texttt{C(1)N}.
+
+
+\section{有機反應機制（Mechanism of Organic Reaction）}
+\ssc{碳正離子（Carbocation）}
+碳原子上帶有顯著部分正電荷的任何偶電子陽離子，如碳金翁離子。碳空的 2p 軌域可以與該碳上的鍵形成超共軛，碳具有+1形式電荷的結構稱經典碳正離子（classical carbocations），碳參與3c–2e鍵的結構稱為非經典碳正離子（non-classical carbocations）。
+\subsection{親核（Nucleophilic）與親電（Electrophilic）試劑}
+\subsubsection{親核試劑（Nucleophile, Nu$^-$）}
+親核試劑是電子雲密度較高的分子或離子，容易提供電子對給其他物質，能攻擊電子不足的部位（如碳正離子），在反應中作為電子供體，即路易斯鹼（Lewis base）。常帶有負電荷（如\ce{OH-}、\ce{X-}）、孤電子對（lone pair）（如\ce{H2O}、\ce{NH3}、\ce{R-OH}）或為極性分子中的負偶極，負偶極或負離子愈受極化愈親核。
+\subsubsection{親電（子）試劑（Electrophile, E$^+$）}
+親電子試劑是電子雲密度較低的分子或離子，容易從其他物質接受電子對，在反應中作為電子對受體，即路易斯酸（Lewis acid）。常帶有正電荷（如碳正離子）、為具有空軌域的金屬離子（如\ce{AlCl3}、\ce{FeBr3}）或為極性分子中的正偶極（如 C=O 中的 C、C-Cl 中的 C）。
+\subsection{誘導效應（Inductive effect）與共振效應（Mesomeric/resonance effect）}
+\subsubsection{供電子誘導效應（electron-donating inductive effect, +I）}
+指供電子基團通過 σ 鍵向相鄰原子推送電子密度的效應。供電子基團為高電子密度的基團，常帶有負電荷或低電負度。供電子基團（electron-donating group, EDG）距離愈遠，效應愈弱。
+\subsubsection{吸電子誘導效應（electron-withdrawing inductive effect, -I）}
+指吸電子基團通過 σ 鍵自相鄰原子吸引電子密度的效應。吸電子基團為低電子密度的基團，常帶有正電荷或高電負度。吸電子基團（electron-withdrawing group, EWG）距離愈遠，效應愈弱。
+\subsubsection{供電子共振效應（electron-donating mesomeric/resonance effect, +M, +R）}
+指供電子基團通過離域 π 鍵向相鄰原子推送電子密度的效應。其影響力通常大於誘導效應。供電子基團為可參與共振的高電子密度基團，帶有孤電子或離域電子。
+\subsubsection{吸電子共振效應（electron-withdrawing mesomeric/resonance effect, -M, -R）}
+指吸電子基團通過離域 π 鍵自相鄰原子吸引電子密度的效應，只發生於具有 π 鍵的基團。其影響力通常大於誘導效應。吸電子基團為可參與共振的低電子密度基團，基團與主鏈連接之原子上帶有與較高電負度原子間之 π 鍵。
+\subsubsection{強度}
+以氫$=0$為標準。
+\bit
+\item +I：氧負離子 > 羧酸根離子 > 磺酸根離子 > 三級烷基 > 二級烷基 > 一級烷基 > 氚基 > 氘基。
+\item -I：四級銨根離子 > 三級銨根離子 > 二級銨根離子 > 一級銨根離子 > 硝基 > 磺醯基 > 磺酸基 > 腈基 > 醛基 > 酮基 > 醯氟基 > 醯氯基 > 醯溴基 > 醯碘基 > 酸酐基 > 羧酸基 > 酯基 > 醯胺基 > 氟基 > 氯基 > 溴基 > 碘基 > 羥基 > 醚基 > 硫代羥基 > 硫代醚基 > 炔基 > 芳香基 > 烯基。
+\item +M：氧負離子 > 一級胺基 > 二級胺基 > 三級胺基 > 醚基 > 羥基 > N-醯基胺基 > 醯氧基 > 硫代醚基 > 硫代羥基 > 芳香基 > 碘基 > 溴基 > 氯基 > 氟基。
+\item -M：硝基 > 磺醯基 > 磺酸基 > 腈基 > 醛基 > 酮基 > 醯氟基 > 醯氯基 > 醯溴基 > 醯碘基 > 酸酐基 > 羧酸基 > 酯基 > 醯胺基。
+\item 供電子總效應：氧負離子 > 一級胺基 > 二級胺基 > 三級胺基 > 醚基 > 羥基 > N-醯基胺基 > 醯氧基 > 硫代醚基 > 硫代羥基 > 羧酸根離子 > 磺酸根離子 > 芳香基 > 三級烷基 > 二級烷基 > 一級烷基 > 氚基 > 氘基。
+\item 吸電子總效應：四級銨根離子 > 三級銨根離子 > 二級銨根離子 > 一級銨根離子 > 硝基 > 磺醯基 > 磺酸基 > 腈基 > 醛基 > 酮基 > 醯氟基 > 醯氯基 > 醯溴基 > 醯碘基 > 酸酐基 > 羧酸基 > 酯基 > 醯胺基 > 氟基 > 氯基 > 溴基 > 碘基。
+\eit
+\subsubsection{對相鄰基團的影響}
+\begin{itemize}
+\item 供電子效應：增加電子密度，增加親核性、減少親電性，降低酸性、提高鹼性，穩定吸電子與帶正電荷基團。
+\item 吸電子效應：減少電子密度，增加親電性、減少親核性，提高酸性、降低鹼性，穩定供電子與帶負電荷基團。
+\end{itemize}
+\subsubsection{對自身電子密度與酸鹼性的影響}
+\begin{itemize}
+\item 供電子效應：減少電子密度，增加親電性、減少親核性，提高酸性、降低鹼性。
+\item 吸電子效應：增加電子密度，增加親核性、減少親電性，降低酸性、提高鹼性。
+\end{itemize}
+\subsubsection{對苯環電子密度的影響}
+\begin{itemize}
+\item 供電子效應：增加鄰與對位的電子雲密度。
+\item 吸電子效應：減少鄰與對位的電子雲密度。
+\end{itemize}
+\subsection{瓦爾登翻轉（Walden inversion）}
+化學反應中，分子在手性中心發生的構型轉換。
+\subsection{取代反應（Substitution reaction）}
+分子中的一個原子或原子團被其他原子或原子團取代的反應。
+\subsubsection{SN1 機制/單分子親核取代}
+形成碳正離子中間體，發生在三級或某些二級鹵烷。
+\subsubsection{SN2 機制/雙分子親核取代}
+單步協同進行，有瓦爾登翻轉，發生在甲基、一級或某些二級鹵烷。
+\subsubsection{親核加成-消去機制（nucleophilic addition-elimination mechanism）}
+形成四面體中間體。
+\subsubsection{芳香親電取代（Electrophilic aromatic substitution, SEAr）}
+發生在芳香環上，如硝化、磺化、鹵化、烷基化、醯基化。
+\subsubsection{自由基取代（Radical Substitution, RS）}
+如鹵素與烴發生取代反應產生鹵烴。
+\subsection{加成反應（Addition Reactions）}
+指 π 鍵被打斷並鍵結新基團的反應，每斷一 π 鍵可鍵結二個基團，通常是放熱反應。
+\subsubsection{親電加成（Electrophilic Addition, AE）與馬可尼可夫法則（Markovnikov’s rule/Markownikoff's Rule）}
+指親電試劑攻擊不飽和分子的 π 鍵，使其斷裂並形成親電中間體（如烯的加成反應中為碳正離子），後由親核試劑進行攻擊並與之鍵結，形成最終產物。如烯、炔的鹵化反應與水合反應。
+
+遵循馬可尼可夫法則，即親電試劑中的正電基團（如氫）較傾向加在鍵結氫較多的碳原子上，使負電基團（如鹵素）加在鍵結氫較少的碳原子上，進而獲得更穩定的中間體。
+
+常以酸為催化劑，因為酸可以提供質子作為攻擊不飽和分子並開啟反應的親電試劑。
+\subsubsection{自由基加成（Radical Addition, RA）}
+自由基加成反應指自由基攻擊不飽和分子的 π 鍵，使其斷裂並形成自由基中間體，後另一分子再與該中間體結合，形成最終產物。
+\subsubsection{親核加成（Nucleophilic Addition, AN）}
+常發生在羰基。
+\subsubsection{固相催化劑催化氫化加成反應的 Horiuti-Polanyi 機制}
+以鎳、銠、鈀、鉑等催化 π 鍵被打斷而與氫鍵結的氫化加成反應的 Horiuti-Polanyi 機制為：
+\begin{enumerate}
+\item 氫氣在催化劑上的解離成活化氫。
+\item 在碳上添加第一個氫原子；此步驟可逆，烷基可以恢復為烯烴，並從催化劑上脫離，可實現順式-反式異構化。
+\item 在碳上添加第二個氫原子；此步驟不可逆。
+\end{enumerate}
+\subsection{消去反應/消除反應（Elimination Reactions, E）}
+指脫去基團並產生 π 鍵的反應，每脫去二個基團可鍵結出一個 π 鍵。
+\subsubsection{E1 機制/單分子消去}
+先形成碳正離子，後失去質子形成雙鍵。
+\subsubsection{E2 機制/雙分子消去}
+單步協同進行，要求 β-氫與脫去基團反式共平面。如一級鹵烷與強鹼反應形成烯烴。
+\subsection{重排反應（Rearrangement Reactions）}
+指碳骨架重組。
+
+
+\section{烴類（Hydrocarbons）}
+\subsection{烴類與芳香族的分類}
+\begin{itemize}
+\item \tb{烴類/碳氫化合物（Hydrocarbons）}：只含碳和氫的化合物。
+\item \tb{芳香環（Aromatic ring）}：擁有共軛 π 鍵的平面環體系。因多有濃郁氣味而得名。
+\item \tb{芳香烴（Aromatic hydrocarbons）}：具有芳香環的烴。
+\item \tb{脂肪烴（Aliphatic hydrocarbons）}：非芳香烴的烴。
+\item \tb{環（狀）烴（Cyclic hydrocarbons）}：有環的烴。
+\item \tb{鏈（狀）烴（Acyclic hydrocarbons）}：無環的烴。
+\item \tb{脂環烴（Alicyclic hydrocarbons）}：同時是脂肪烴和環烴的化合物。
+\item \tb{脂芳烴（Arenes）}：具有苯環上鍵結烷、烯或炔取代基之結構的烴類。
+\item \tb{多環芳香烴（Polycyclic Aromatic Hydrocarbons, PAH）}：具有多個芳香環的芳香烴。
+\item \tb{芳香族（Aromatic compounds, Ar）}：具有芳香環的化合物。
+\item \tb{亞甲基（Methanediyl group）}：-C(H$_2$)- 或 =CH$_2$。
+\item \tb{次甲基（Methine group）}：$\equiv$ CH 或 =C(H)- 或 -C(H)(-)-。
+\end{itemize}
+\subsection{烷烴（Alkane）/飽和烴}
+\subsubsection{結構}
+\begin{itemize}
+\item 通式：\( \text{C}_n\text{H}_{2n+2} \)。
+\item 最簡單直鏈烷：甲烷。
+\item 最簡單環烷：環丙烷。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 熔沸點：
+\bit
+\item 正烷熔點、沸點、同溫壓下液相密度隨碳數增加而增加，惟丙烷之熔點低於甲、乙烷。
+\item 異構物熔點與對稱性正相關，沸點接觸面積正相關，如熔點：新戊烷>正戊烷>異戊烷、沸點：正戊烷>異戊烷>新戊烷。
+\item 同碳數之環烷分子結構較直鏈烷穩定且接觸面積較大，故凡得瓦力較大、沸點較高。
+\item 常溫常壓下：1至4碳烷為無色、無臭、無毒氣體，常作為燃料；5至17碳烷為無色、無臭、無毒液體，常作為有機溶劑；18碳以上為固體，俗稱石蠟（paraffin），常作為塗料。
+\eit
+\item 對水溶解度：不溶於水，溶於有機溶劑，密度小於水。
+\item 化性：穩定，常溫壓下不與強酸、強鹼、氧化劑、還原劑反應，高溫、催化劑、紫外光下等則可發生取代、燃燒、裂解、脫去反應。但鍵角60°的環丙烷和鍵角88°的環丁烷不穩定。
+\item 一般烷類碳數愈小價值愈高。天然氣與石油是烷類主要來源。
+\eit
+\sssc{正己烷}
+常作為油漆之溶劑。
+\sssc{腺烷/甾（zāi）烷/腺甾烷（Gonane）/全氫環戊烷並[a]菲/(1R,2S,10S,11R,15S)-四環[8.7.0.0$^{2,7}$.0$^{11,15}$]十七烷}
+\ce{C17H28}，三個環己烷和一個環戊烷的稠環。
+\subsection{烯烴（Alkene）}
+\subsubsection{結構}
+\begin{itemize}
+\item 通式：\( \text{C}_n\text{H}_{2n-2} \)。
+\item 最簡單直鏈烯：乙烯。
+\item 最簡單環烯：環丙烯。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 正烯熔點、沸點隨碳數增加而增加。
+\item 不溶於水，小分子均無色、密度小於水、無臭。
+\item 化性較烷活潑，易發生加成反應。
+\end{itemize}
+\subsubsection{乙烯}
+無色、易燃、活潑氣體。為許多日用品上游原料，如乙醇、乙酸、聚乙烯。植物生長激素，可催熟果實。
+\subsubsection{丙烯}
+許多日用品上游原料，如酒精、口罩、防護衣。
+\subsection{炔烴（Alkyne）}
+\begin{itemize}
+\item 通式：\( \text{C}_n\text{H}_{2n} \)。
+\item 最簡單直鏈炔：乙炔。
+\item 因參鍵穩定鍵角接近平角，角張力大，故常溫下穩定的最簡單環炔為環辛炔。
+\item 末端炔（terminal alkynyl）：參鍵位於末端的炔類。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 不溶於水，小分子均無色、密度小於水、無臭。
+\item 化性較烯、烷活潑，易發生加成反應。
+\end{itemize}
+\subsubsection{乙炔/電石氣}
+為重要工業原料。莫耳燃燒熱1300kJ，與氧混合燃燒產生溫度高達3300攝氏度，稱乙炔氧焰（oxyacetylene torch），可用氧炔吹管焊接及切割金屬。可催熟水果。
+\subsection{末端炔陰離子（terminal alkynyl anion）}
+\subsubsection{末端炔陰離子結構}
+R-C$\equiv$C$\cdot^-$
+\subsubsection{乙炔陰離子}
+結構 [$\cdot$C$\equiv$C$\cdot$]$^{2-}$。與金屬形成離子化合物稱乙炔鹽或金屬碳化物，如碳化鈣/乙炔鈣、乙炔銅(I)、乙炔銀。
+\ssc{卡賓（Carbene）/碳烯/碳賓}
+具二價碳的電中性化合物，碳上有一對孤電子，最簡單者為亞甲基卡賓 H-C-H，其他卡賓可視為其取代。可作為單牙配體。通常不穩定，但一些具有孤電子對的碳是氮雜環的一員的卡賓，稱氮雜環卡賓，較穩定。
+\ssc{卡拜（Carbyne）}
+具一價碳的電中性化合物，碳上有三個孤電子，最簡單者為次甲基卡拜 H-C，其他卡拜可視為其取代。可作為單牙配體。通常不穩定。
+\subsection{芳香烴}
+\sssc{芳香環結構}
+\bit
+\item 芳香環為具有強共軛 π 體系與芳香性的環。
+\item 芳香環基團在化學式中泛稱 Ar，沒有取代基（可有雜原子）的單獨芳香環在化學式中泛稱 ArH。
+\eit
+\subsubsection{性質}
+\begin{itemize}
+\item 芳香環的離域 π 電子增加其吸電子性與穩定性，化性異於烯，較烯、炔基安定，較烷基電負性更高。
+\item 不與弱鹼性過錳酸鉀反應，環乙烯則迅速被氧化。
+\item 常溫壓無催化劑下不與鹵素或鹵化氫發生其親電反應，環乙烯則與之發生加成反應。
+\item 以催化劑或高溫下等的取代反應為主，一般條件下不發生親電加成反應，烯、炔則易發生親電加成反應。
+\item 通常以煤焦油分餾製備，或以煤焦油或汽油分餾再經裂解、萃取、環化、取代等製程製備。
+\item 常用於製藥、塑膠、清潔劑、染料、火藥與製造其他芳香烴。
+\end{itemize}
+\subsubsection{苯/安息油（Benzene, PhH）/環己-1,3,5-三烯}
+\begin{itemize}
+\item 苯基 -C$_6$H$_5$ 可稱 Ph。
+\item 碳碳鍵級 1.5、碳碳鍵長 1.39Å，介於碳碳雙鍵 1.34Å 與碳碳單鍵 1.54Å 間。
+\item 無色、易燃、有特殊氣味的揮發性液體，難溶於水，溶於有機溶劑，密度小於水，有毒，致癌。熔點5.5°C，沸點80.1°C。
+\item 過去為常見工業與實驗室用有機溶劑，近年發現可能誘發白血病而漸被甲苯取代，如油漆、鞣皮、黏著劑等。
+\item 苯甲基又稱苄（biàn）基。
+\end{itemize}
+\subsubsection{甲苯（Tolunene）}
+無色、易燃、有特殊氣味的揮發性液體，熔點-95°C，沸點110.6°C，難溶於水，溶於有機溶劑，密度小於水，性質與苯相似，有毒，致癌，常見工業與實驗室用有機溶劑，常用於油漆、鞣皮、黏著劑、製造 TNT 等。
+\sssc{環戊二烯陰離子（Cyclopentadienyl anions, Cp, Cp$^-$）/茂）}
+\ce{C5H5-}，芳香環，常見單牙配體，茂與金屬的錯合物稱茂金屬（Metallocene），$k$個茂配體配位一個氧化態$n$的金屬M，即 $k$(η$^5$-環戊二烯陰離子)M($n$)，俗稱 $k$茂M($n$)。
+\sssc{環辛四烯陰離子（Cyclooctatetraenide anion, Cot, Cot$^{2-}$）}
+\ce{C8H8-}，芳香環，常見單牙配體。
+\subsubsection{萘（nài）（Naphthalene）/焦油腦/苯並苯}
+白色片狀、有特殊氣味的揮發性晶體，難溶於水，熔點80.5°C，沸點217.9°C，具昇華性。煤焦油分餾所得中油再經純化、蒸餾等而得。殺菌性極強，可用於除臭、驅蟲、防腐，如市售萘丸。可用於製造靛藍（Indigo dye）染料。
+\subsubsection{駢苯（Acene, polyacene）}
+若干個苯環在對邊稠合的多環芳香烴。
+\subsubsection{菲（Phenanthrene）/苯並[a]萘}
+\subsubsection{蒽（ēn）（Anthracene）/綠油腦/苯並[b]萘}
+無色片狀、有藍紫色螢光的揮發性晶體，難溶於水，熔點218°C，沸點340°C，具昇華性。煤焦油分餾所得綠油再經純化、蒸餾等而得。可用於製造茜素黃（Alizarine Yellow R）染料。
+\subsubsection{芘（bĭ）（Pyrene）/苯並[def]菲}
+無色固體。
+\sssc{茚（yìn）（Indene）/環戊二烯並苯}
+\sssc{茚三酮/寧希德林/寧海準（Ninhydrin）/2,2-二羥基(環戊烯並苯)-1,3-二酮}
+白色固體，可溶於乙醇或丙酮，實驗室常用蛋白質檢測噴劑。
+\sssc{聯苯（Biphenyl）}
+無色至淡黃色片狀晶體，有特殊香味。
+\sssc{多氯聯苯（Polychlorinated biphenyl, PCBs）}
+聯苯上至少一個氫被氯取代的化合物。通常為無色至深黃色之間，氯愈多通常顏色愈深、密度愈大，致癌、劇毒，被《關於持久性有機汙染物的斯德哥爾摩公約》（Stockholm Convention on Persistent Organic Pollutants）禁止生產。
+\sssc{茜素黃（Alizarine Yellow R）/2-羥基-5-[(E)-(4-硝基苯基)二亞胺基]苯甲酸鈉}
+黃色染料，酸鹼指示劑，酸式顏色黃，鹼式顏色紅，變色範圍 pH 10.1-12.0。
+\subsection{鹵烴}
+\subsubsection{性質}
+\begin{itemize}
+\item 熔沸點：碘代>溴代>氯代>氟代>無取代基。
+\item 鍵能：C-F>C-H>C-Cl>C-Br>C-I。
+\item C-F鍵極為穩定。
+\item 三鹵甲烷又稱鹵仿（haloform），四鹵甲烷又稱四鹵化碳。
+\item NTP下，一至四氟甲烷、氯甲烷、溴甲烷為氣體，二至四氯甲烷、二至三溴甲烷、一至二碘甲烷為液體，四溴甲烷、三至四碘甲烷為固體。
+\end{itemize}
+\subsubsection{三氯甲烷/氯仿}
+有毒性。常作為溶劑與萃取劑。曾用作麻醉劑。
+\subsubsection{四氯化碳/四氯甲烷}
+有毒性。常作為溶劑與萃取劑。曾用作織物乾洗劑與滅火彈/滅火球中之滅火劑，現少用。
+\sssc{1,2-二溴乙烷（EDB）}
+有毒性。曾用作汽油抗爆震添加劑與農藥，現少用於之，但仍作為薰蒸劑用於木製品防蟲蛀。
+\subsubsection{1,2,3,4,5,6-六氯環己烷/六氯化苯（Benzene hexachloride, BHC）/加丹（Lindane）/蟲必死}
+是有效的殺蟲劑，不易被微生物分解，被《關於持久性有機汙染物的斯德哥爾摩公約》禁止生產。
+\subsubsection{1,1'-(2,2,2-三氯乙基-1,1-二亞基)雙(4-氯苯)/1,1,1-三氯-雙-2,2(4-氯苯基)乙烷/雙對氯苯基三氯乙烷（dichloro-diphenyl-trichloroethane）/滴滴涕（DDT）}
+硬性殺蟲劑，曾於二戰期間廣泛用於控制瘧疾與登革熱，在環境中極難分解，並會在動物脂肪內蓄積，為致癌物。鳥類體內含 DDT 會使產下無法孵化的軟殼蛋。現多已禁用，被《關於持久性有機汙染物的斯德哥爾摩公約》限制生產。
+\subsubsection{氟氯烷（Chlorofluorocarbons, CFCs）、氫氯烷（Hydrochlorocarbons, HCFCs）、氫氟氯烷（Hydrochlorofluorocarbons, HCFCs）、氫氟烷（Hydrofluorocarbons, HFCs）、全氟烷（Perfluorocarbons, PFCs）}
+無腐蝕性、無毒、低沸點液體或氣體，可用於製造冷媒、製冷劑、噴霧劑等。
+\begin{itemize}
+\item 氟氯烷：具有良好的製冷效果，但對臭氧層破壞嚴重，根據《蒙特婁議定書》規範已禁止使用。
+\item 氫氯烷與氫氟氯烷：仍含有氯，對臭氧層有影響，但比 CFCs 低，正在逐步淘汰。
+\item 全氟烷：無氫、無氯，不破壞臭氧層，但全球暖化潛勢（Global warming potential, GWP）極高，一般不作為主流制冷劑。
+\item 氫氟烷：無氯，不破壞臭氧層，但有高全球暖化潛勢，為現在制冷劑的主流。
+\end{itemize}
+
+
+\section{含氮族或氧族的有機化合物}
+\subsection{醇}
+\subsubsection{結構}
+\begin{itemize}
+\item 示性式：\ce{ROH}
+\item 鏈狀飽和醇通式 C$_n$H$_{2n+2}$O。
+\item 一級醇（伯醇）：1-丙醇（正丙醇）、2-丙醇（異丙醇）、1-丁醇（正丁醇、第一丁醇）、2-甲基-1-丙醇（異丁醇）等。
+\item 二級醇（仲醇）：2-丁醇（第二丁醇、仲丁醇）等。
+\item 三級醇（叔醇）：2-甲基-2-丙醇（第三丁醇、新丁醇、叔丁醇）等。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 極性：碳數愈大，極性愈小。
+\item 分子間氫鍵：醇有分子間氫鍵，碳數愈小者愈顯著。
+\item 熔點：比相近分子量的醛、酮高。同碳數級數愈低熔點愈高，因較少支鏈者分子排列較緊密，但實際情況受晶格影響更大，有對稱性者可能更高。
+\item 沸點：比相近分子量的醛、酮高。同碳數級數愈低沸點愈高，因較少支鏈者分子排列較緊密。
+\item 對水溶解度：碳數小者可溶。同碳數級數愈低對水溶解度愈低，因碳鏈愈長。直鏈醇三碳以下混溶於水，四、五碳微溶於水。
+\item 斷R-OH鍵的反應性：甲醇<一級醇<二級醇<三級醇，同級碳數小者<小於碳數多者。
+\item 斷RO-H鍵的反應性：甲醇>一級醇>二級醇>三級醇，同級碳數小者>小於碳多者。
+\end{itemize}
+\subsubsection{丁醇的同分異構物比較}
+\begin{longtable}[c]{|c|c|c|c|c|}
+\hline
+名稱 & 級數 & 熔點（攝氏度） & 沸點（攝氏度） & 對水溶解度（克每一百克水）\\\hline\endhead
+1-丁醇 & 1° & -90 & 118 & 7.9\\\hline
+2-甲基-1-丙醇（異丁醇） & 2° & -108 & 108 & 10\\\hline
+2-丁醇 & 2° & -114 & 99.5 & 12.5\\\hline
+2-甲基-2-丙醇（新丁醇） & 3° & -25.5 & 83 & $\infty$\\\hline
+\end{longtable}\FB
+\subsubsection{甲醇/木精}
+無色液體，沸點64.7°C，混溶於水。不可飲用，具神經毒性，代謝後形成甲酸鹽，性極毒，毒性在攝取後數小時開始，易致失明，甚至致死，乙醇為解毒劑，攝取大量乙醇可使人體優先代謝乙醇，以待甲醇排泄。木材乾餾可得。常作為燃料或製造甲醛。
+\subsubsection{乙醇/酒精}
+\bit
+\item 無色液體，沸點78°C，混溶於水，醣類發酵可得。
+\item 可作為汽油添加劑，可增加辛烷值，但成本一般較高。
+\item 香水通常以乙醇與水約5比1作為溶劑。
+\item 具輕神經毒性，可飲用，過量導致噁心嘔吐，長期飲用傷肝。
+\item 95\%乙醇水溶液會形成共沸物。
+\item \tb{藥用/醫用酒精}：70\%-95\%乙醇水溶液，用於消毒。75\%乙醇水溶液消毒效果最佳，因濃度太高反而會使細菌表面的蛋白質凝固，形成硬膜保護細菌，阻止酒精進一步進入。
+\item \tb{無水酒精}：將95\%乙醇水溶液加入生石灰所得約99.5\%乙醇水溶液。
+\item \tb{絕對酒精}：將無水酒精加入金屬鎂所得純乙醇。
+\item \tb{工業用/變性酒精}：甲醇與乙醇的混合液，或含汽油、色素等。
+\eit
+\subsubsection{2-丙醇/異丙醇}
+無色液體，混溶於水。常作為有機溶劑或消毒劑。
+\subsubsection{乙二醇/水精/甘醇}
+無色液體，沸點198°C，混溶於水，黏稠，有甜味，有毒性。60\%水溶液常作為寒帶地區汽車水箱抗凍劑。聚對苯二甲酸乙二酯之原料。
+\subsubsection{丙三醇/甘油}
+無色油狀液體，沸點290°C，混溶於水，較乙二醇更黏稠，有甜味。吸溼性強，常作為皮膚保溼劑，常添加於化妝品、墨水、牙膏、清潔劑等。酯化反應常用醇，如製備硝化甘油、肥皂。
+\subsubsection{3,7-二甲基-1,6-辛二烯-3-醇/芳樟醇（Linalool）}
+薰衣草香味的來源。
+\sssc{2,2,2-三氯乙-1,1-二醇/水合三氯乙醛}
+無色透明、具氣味、揮發性固體，易溶於水。安眠藥與鎮靜劑，現少用。
+\sssc{(2S,3R,4S)-戊-1,2,3,4,5-五醇/木糖醇（Xylitol）}
+人工甜味劑/代糖，不在口中分解故不會造成齲齒，普遍用於糖果與口香糖。
+\sssc{(2S,3S,4R,5R)-己-1,2,3,4,5,6-六醇/甘露醇（Mannitol）}
+人工甜味劑/代糖，不在口中分解故不會造成齲齒，普遍用於糖果與口香糖。
+\sssc{腺甾醇（Gonan-3-ol）/(1R,2S,3S,10S,11R,15S)-四環[8.7.0.0$^{2,7}$.0$^{11,15}$]十七-3-醇}
+\ce{C17H28O}，最簡單的固醇（Sterol）。
+\sssc{膽固醇（Cholesterol）/膽甾醇/(1R,3aS,3bS,7S,9aR,9bS,11aR)-9a,11a-二甲基-1-[(2R)-6-甲基庚-2-基]-四環[8.7.0.0$^{2,7}$.0$^{11,15}$]十七-1-烯-7-醇}
+\ce{C27H46O}，一種固醇，細胞膜上有之以穩定構造，亦為許多激素的原料，但血液中膽固醇濃度過高可能與脂肪酸結合，易阻塞血管，引起心血管疾病。
+\sssc{（神經）鞘胺醇（Sphingosine）/(2S,3R,4E)-2-胺基十八-4-烯-1,3-二醇}
+\subsection{酚}
+\subsubsection{結構}
+苯環上接羥基，以羥基所在的碳為一號碳。
+\subsubsection{性質}
+\begin{itemize}
+\item 極性：有但小，易溶於有機溶劑。
+\item 對水溶解度：微或難溶於水。溶於強鹼，發生取代反應形成酚鹽。酚鹽可溶於水。 
+\item 電子雲密度：羥基會大幅提高鄰位與對位的電子雲密度。
+\item 熔沸點：高於苯和相似脂芳烴。
+\item 物性：類似醇。
+\end{itemize}
+\subsubsection{苯酚/石炭酸}
+無色或白色晶體，熔點 41°C，沸點181.7°C（高於甲苯 110.6°C），微溶於水，極弱酸，$K_a=\scinote{1.28}{-10}$，遠弱於碳酸、羧酸，不使藍色石蕊試紙變色，不與碳酸氫鈉作用，酚鹽水溶液通入二氧化碳會形成碳酸氫根與白色混濁苯酚析出。常用於製造阿斯匹靈等藥物、酚甲醛樹脂等聚合物。
+\sssc{雙酚 A（Bisphenol A, BPA）/4,4′-(丙烷-2,2-二基)二苯酚}
+難溶於水，致癌物，常用於聚合物。
+\sssc{萊克多巴胺/4-[3-[N-[2-羥基-2-(4-羥基苯基)乙基]胺基]丁基]苯酚}
+最常見的瘦肉精，添加於豬、牛等飼料中，可促進動物體內蛋白質的合成，增加生長瘦肉、減少生長脂肪。最初研發作為氣喘用藥，但未通過 FDA 人體試驗。
+\sssc{1,2-苯二酚/兒茶酚}
+\subsection{醚}
+\subsubsection{結構}
+\begin{itemize}
+\item 醇的羥基的氫被烴基取代稱醚。示性式ROR$'$，稱\rmR\rmR'醚。R與R'不同屬不對稱醚，否則屬對稱醚。R為某基的對稱醚稱二某醚或某醚。
+\item 鏈狀飽和醚通式 C$_n$H$_{2n+2}$O，與同碳數鏈狀飽和醇互為異構物。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 極性：極小，與多數有極溶劑互溶。
+\item 對水溶解度：難溶於水，密度小於水。常作為有機溶劑、萃取劑。
+\item 化性：穩定，不易反應，不與金屬、鹼、氧化劑、還原劑反應，蒸氣易燃。
+\item 熔沸點：遠低於同碳數醇，高於同碳數烷，揮發性大，須慎防蒸氣燃燒。
+\end{itemize}
+\subsubsection{甲醚/二甲醚}
+沸點 -24°C，唯一 NTP 下為氣態之醚。曾用作吸入性麻醉劑，因過敏、噁心等副作用，現少用。
+\sssc{乙醚/二乙醚}
+無色、易燃、具刺激性氣味、高揮發性液體，沸點 34.6°C。曾用作吸入性麻醉劑，因過敏、噁心等副作用，現少用。
+\subsection{醛與酮}
+\subsubsection{醛的結構}
+\begin{itemize}
+\item RC(=O)H，示性式 \ce{RCHO} 或 \ce{RCOH}。
+\item 鏈狀飽和醛通式 C$_n$H$_{2n}$O，最簡單分子為甲醛。
+\item 命名無須加醛基所在碳代號表示位置，因為一定是一號碳。
+\item 芳香醛結構：Ar-C(=O)H
+\end{itemize}
+\sssc{酮的結構}
+\begin{itemize}
+\item RC(=O)R$'$，示性式：RCOR'。
+\item 鏈狀飽和酮通式 C$_n$H$_{2n}$O，與同碳數的鏈狀飽和醛互為異構物，最簡單分子為丙酮。
+\item 以含羰基的最長碳鏈上最靠近羰基的一端為一號碳，命名須標位置，如戊-2-酮。
+\item α-羥基酮/鄰羥基酮/酮醇結構：RC(=O)C(H)(OH)R'
+\end{itemize}
+\sssc{酮-烯醇互變異構（Keto-Enol Tautomerism）}
+烯醇指雙鍵碳上連有羥基的一類化合物。酮-烯醇互變異構是指酮或醛和烯醇之間的重排反應的化學平衡，中性與酸性時酮或醛占多數，因為碳氧雙鍵更加穩定，鹼性則對烯醇式有利。
+\begin{itemize}
+\item 酸催化機制：羰基的氧被質子化， α-碳上的氫被去除，形成碳正離子（carbocation）。而後可形成碳碳雙鍵，同時氧獲得氫成為羥基。
+\item 鹼催化機制：鹼奪取 α-氫（即羰基旁的氫），形成共軛穩定的烯醇負離子（enolate ion）。負離子可再與水反應獲得質子，形成烯醇 式。
+\end{itemize}
+對於 β-二酮或 β-酮醛，其一者轉變為烯醇式可形成分子內氫鍵，故非極性溶液中使一酮一烯醇式較有利，極性溶液中不利於分子內氫鍵使二酮式較有利。
+\sssc{還原酮}
+自碳鏈一末端碳（含）至酮基碳（不含）的每個碳上都有一個羥基和一個氫的酮，在鹼性溶液中可經過酮-烯醇互變異構反應產生醛基而具有還原性。
+\subsubsection{性質}
+\begin{itemize}
+\item 極性：碳數愈大，極性愈小。
+\item 分子間氫鍵：羰基為強氫鍵受體，但羰基沒有氫鍵供體。
+\item 對水溶解度：三碳以下醛、四碳以下酮可溶於水；甲醛、乙醛和丙酮可與水混溶。低碳數對水溶解度酮>醛。
+\item 熔沸點：較同碳數醇低、較同碳數醚高。酮>醛。甲醛、乙醛為氣體，低碳數者為高揮發性液體。
+\item 氣味：低分子量者有刺激性臭味。
+\item 醛的化性：活潑，強還原劑，可與裴林試液、本氏液與多侖試劑反應。但芳香醛不可與裴林試液或本氏液反應，只能與多侖試劑反應。
+\item 酮的化性：安定，常溫下除催化氫化為二級醇外少有反應。
+\end{itemize}
+\begin{longtable}[c]{|c|c|c|c|c|}
+\hline
+物質 & 分子量 & 熔點 & 沸點 & 對水溶解度\\\hline\endhead
+甲醛 & 30 & -117 & -19 & 混溶\\\hline
+乙醛 & 44 & -123.5 & 20.2 & 混溶\\\hline
+丙醛 & 58 & -81 & 48 & 20\\\hline
+丙酮 & 58 & -95 & 56 & 混溶\\\hline
+丁醛 & 72 & -99 & 76 & 7.6\\\hline
+丁酮 & 72 & -86 & 80 & 29\\\hline
+\end{longtable}\FB
+\subsubsection{甲醛/蟻醛}
+\bit
+\item 無色、具刺激性氣味氣體，沸點-19°C，混溶於水，有毒，有致癌風險，易燃。
+\item 常用於製造酚甲醛樹脂、尿素甲醛樹脂、三聚氰胺-甲醛樹脂等。
+\item 建材中常用的塗料與溶劑，但有具氣味之蒸氣且可能使人不適，現逐漸少用，有廣告詞稱不含甲醛。
+\item \tb{福馬林（Formalin）}：重量百分比37\%的甲醛水溶液，可作為防腐劑。
+\eit
+\sssc{乙醛}
+\bit
+\item 無色、具刺激性氣味氣體，沸點20.2°C，混溶於水，易燃。
+\item 乙醇在體內代謝成乙醛，是飲酒造成宿醉與傷肝的主因。
+\eit
+\subsubsection{丙酮}
+\bit
+\item 無色、有氣味液體，沸點56.3°C，混溶於水，易燃。
+\item 去除指甲油的去光水、去漬油與油漆的溶劑，實驗室與化學工業重要有機溶劑。實驗室常以之洗滌玻璃器材去除殘留的水分。
+\eit
+\subsubsection{環己二烯二酮/苯醌}
+有共軛效應，共軛能遠低於苯，無芳香性。
+\bit
+\item 3,5-環己二烯-1,2-二酮/1,2-苯醌：次要結構 2,4,6-環己三烯-1,2-二氧離子；不穩定而不常見。
+\item 1,4-苯二酚氧化成2,5-環己二烯-1,4-二酮/1,4-苯醌：次要結構 1,3,5-環己三烯-1,4-二氧離子；較穩定。
+\eit
+\subsubsection{3-甲氧基-4-羥基苯甲醛/香草醛}
+甜香的香草味之來源。
+\subsection{羧酸}
+\subsubsection{結構}
+\begin{itemize}
+\item 示性式 \ce{RCOOH}。
+\item 飽和直鏈一元羧酸通式 \rmC$_n$\rmH$_{2n}$\rmO$_2$，最簡單者為甲酸 \ce{HCOOH}。
+\item 羧酸根具氧負離子與雙鍵間的共振，使較穩定。
+\item 二酸為碳鏈兩端各有一個羧酸基。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 極性：大於同碳數醇、醛、酮，碳數愈大，極性愈小。
+\item 對水溶解度：碳數小者可溶。四碳以下直鏈羧酸可與水混溶。
+\item 分子間氫鍵：有，強度強於同碳數醇，碳數愈小者愈顯著，易形成二聚體（dimer），即C=O的O與-OH的H間形成氫鍵，兩分子間共兩氫鍵，有機溶劑中尤容易發生。
+\item 熔沸點：均比相近分子量的醇高。
+\item 酸鹼：弱酸，碳數愈大酸解離常數愈小，有腐蝕性。
+\item 氣味：低分子量者有刺激性臭味。
+\item 化性：除甲酸與乙二酸具還原性外穩定。
+\end{itemize}
+\begin{longtable}[c]{|c|c|}
+\hline
+酸 & 解離常數\\\hline\endhead
+甲酸 & \scinote{1.77}{-4}\\\hline
+苯甲酸 & \scinote{6.2}{-5}\\\hline
+乙酸 & \scinote{1.8}{-5}\\\hline
+氯乙酸 & \scinote{1.55}{-3}\\\hline
+三氯乙酸 & \scinote{3}{-1}\\\hline
+溴乙酸 & \scinote{1.4}{-3}\\\hline
+丙酸 & \scinote{1.34}{-5}\\\hline
+乙二酸 & $K_{a1}=$\scinote{5.9}{-2}，$K_{a2}=$\scinote{6.4}{-5}\\\hline
+柳酸 & \scinote{1.05}{-3}\\\hline
+\end{longtable}\FB
+\subsubsection{甲酸/蟻酸}
+\bit
+\item 沸點100.8°C，無色刺激性液體。
+\item 具還原性，分子量最小的有機酸。
+\item 螞蟻、蜜蜂等螫咬時會分泌，會腐蝕皮膚，產生紅腫刺痛。
+\item 工業上作為橡膠乳汁的凝固劑。
+\eit
+\subsubsection{乙酸/醋酸（Acetic acid, AcH）}
+\bit
+\item \ce{CH3COO-}可簡寫為\ce{Ac-}
+\item 熔點 16.7°C，沸點118.5°C，無色刺激性液體。
+\item \tb{冰醋酸}：重量百分濃度99\%以上的乙酸凝固點 16.7°C，冬天易凝固成冰狀固體，故高純度的乙酸俗稱冰醋酸。
+\item \tb{食用醋}：含約5\%醋酸的水溶液。
+\item \tb{市售醋酸}：含約36\%醋酸的水溶液。
+\item 化學工業及醫藥的原料。
+\eit
+\subsubsection{乙二酸/草酸（ox）}
+\bit
+\item 最簡單二元羧酸。草酸根離子（ox$^{2-}$ or ox）為常見雙牙配體，可除鏽等。
+\item 無色透明晶體，強還原劑，弱酸。
+\item 草酸鉀存在於許多植物（如菠菜）中故得名。
+\item 草酸鈉常用於標定氧化劑滴定液。草酸鹽作為還原劑時，因其反應較慢，可使實驗溫度約 60-75°C 以增加反應速率，但溫度不可高於 90°C 以免草酸根分解，若時間較多亦可用室溫水。
+\item 過量攝取含草酸根物質可能形成草酸鈣結晶，在膀胱或腎臟形成結石。
+\eit
+\subsubsection{苯甲酸/安息香酸/苄酸}
+\bit
+\item 白色晶體，易昇華，微溶於水。
+\item 常用於製藥。
+\item \tb{苯甲酸鈉}：易溶於水，弱鹼，有抗菌與防腐作用，常作為醬油、蜜餞、碳酸飲料等食品的防腐劑。
+\eit
+\subsubsection{檸檬酸/3-甲酸基-3-羥基戊二酸}
+自然在柑橘類水果中產生的防腐劑，也是食物酸味添加劑。
+\sssc{2-羥基乙酸/乙醇酸}
+無色固體，易溶於水。
+\sssc{2-羥基丙酸/乳酸（Lactic acid）}
+具手性，無色液體，可與水混溶。乳酸發酵產物。
+\sssc{2-苯二甲酸/酞酸、3-苯二甲酸與4-苯二甲酸/對酞酸}
+$K_{a1}$：鄰>間>對；$K_{a2}$：對>間>鄰；因分子內氫鍵。
+\sssc{鄰苯二甲酸氫鉀（Potassium hydrogen phthalate or Potassium 2-carboxybenzoate, KHP）}
+為單質子酸式鹽固體，純度高、穩定性佳，不會形成水合物，常用於標定鹼性滴定液。
+\sssc{酒石酸（Tartaric acid）/2,3-二羥基丁二酸}
+具手性，白色固體，可溶於水，弱酸，存在於葡萄等水果中。
+\sssc{L-酒石酸鉀鈉（Potassium sodium tartrate）/羅謝爾鹽（Rochelle salt）}
+L-酒石酸鉀鈉和 L-酒石酸一鉀是首個被發現具壓電性的物質，最早由 Élie Seignette 合成，具潮解性，可用於麥克風、耳機，但不耐水。
+\sssc{2,2$′$2$′′$,2$′′′$-(乙烷-1,2-二胺基-N$^1$,N$^1$$'$,N$^2$,N$^2$$'$-四基)四乙酸根離子（EDTA$^{4-}$ or EDTA）}
+常見六牙配體，可捕捉過渡金屬離子形成穩定螯合物，廣泛用於各類清潔用品中以去除重金屬，醫藥上用於金屬中毒的解毒劑。
+\sssc{十六（烷）酸/軟脂（肪）酸}
+\ce{CH3(CH2)14COOH}，白色固體。
+\sssc{十八（烷）酸/硬脂（肪）酸}
+\ce{CH3(CH2)16COOH}，白色固體。與氫氧化鈉水溶液反應製得\tb{硬脂酸鈉/肥皂}\ce{C17H35COONa(s)}與水；與氫氧化鉀水溶液反應製得\tb{硬脂酸鉀/軟肥皂}\ce{C17H35COOK(s)}與水。
+\subsection{胺}
+\subsubsection{結構}
+\begin{itemize}
+\item 氨的有機衍生物稱胺，即氮帶一l.p.與三b.p.。
+\item 鏈狀飽和胺通式\rmC$_n$\rmH$_{2n+3}$\rmN。
+\item 以包含胺基的最長碳鏈為主鏈，最靠近胺基之碳為一號碳，N 原子上的其他基團則在字首表示 N- 表示位置。
+\item 一級胺：NH$_2$R。如：甲胺、2-甲基丁胺、4-甲基苯胺、1-甲基苯乙胺（安非他命）等。
+\item 二級胺：NHRR'。如：N-甲基甲胺（二甲胺）、N-甲基苯胺等。
+\item 三級胺：NRR'R''。如：N,N-二甲基甲胺（三甲胺）、N-甲基-N-乙基苯胺、4-溴-N,N-二甲基苯胺等。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 極性：有，分子量愈小略愈大。
+\item 分子間氫鍵：三級胺外有同種分子分子間弱氫鍵，胺基-NH為供體、N為受體，弱於醇間之氫鍵；氮可為氫鍵受體。
+\item 對水溶解度：分子量愈小略愈大，低分子量者易溶於水，高分子量者如三乙胺、苯胺等難溶於水。pH值愈小因酸鹼中和使溶解度愈大，如苯胺可溶於酸。銨鹽易溶於水。
+\item 熔沸點：分子量愈大與級數愈小略愈大，分子量較低者為氣體，如甲胺、乙胺。沸點比相近分子量的醇小。一級胺沸點與相近分子量的醛相近。
+\item 氣味：低分子量者有特殊刺激性臭味，類似氨氣味或魚腥味。胺與酸中和成為銨鹽後易溶於水而揮發性下降，可大幅降低臭味。
+\item 酸鹼：溶於水增加一質子形成銨鹽，故水溶液呈弱鹼性。
+\item 供電子共振效應：當胺作為共振中的供電子基團時，胺的親核性增加，鹼解離常數降低。如苯胺的鹼解離常數$\scinote{4.6}{-10}$。
+\item 受供電子誘導效應：當氮上鍵結供電子基團時，胺的親核性減少，鹼解離常數增加。如鹼解離常數：二甲胺>甲胺>三甲胺>氨，其中三甲胺較小係因立體障礙。
+\item 生物中的胺類稱生物胺，如組織胺、血清胺、多巴胺。分子量較大的胺類常可影響神經系統，如咖啡因、安非他命、古柯鹼、海洛因、嗎啡。
+\end{itemize}
+\begin{longtable}[c]{|c|c|c|c|c|}
+\hline
+化合物 & 熔點（°C） & 沸點（°C） & 鹼解離常數 & 溶解度（克每一百克水）\\\hline\endhead
+氨 & -78 & -33 & \scinote{1.8}{-5} & 90 \\\hline
+甲胺 & -93 & -7.5 & \scinote{5}{-4} & $\infty$ \\\hline
+二甲胺（N-甲基甲胺） & -96 & 7.5 & \scinote{5.4}{-4} & $\infty$ \\\hline
+三甲胺（N,N-二甲基甲胺） & -117 & 3 & \scinote{6}{-5} & $\infty$ \\\hline
+乙胺 & -80 & 17 & \scinote{5.1}{-4} & $\infty$ \\\hline
+丙胺 & -83 & 320 & \scinote{4.7}{-4} & $\infty$ \\\hline
+苯胺 & -6 & 184 & \scinote{4.6}{-10} & 3.7 \\\hline
+環己胺 & -18 & 135 & \scinote{4.0}{-10} & $\infty$ \\\hline
+\end{longtable}\FB
+\sssc{甲胺與乙胺}
+無色、易燃、具特殊刺激性氣味、有毒氣體，易溶於水，蛋白質與魚類腐敗的惡臭主要來自甲胺與乙胺。
+\subsubsection{N,N-二甲基甲胺/三甲胺}
+魚腥味、海鮮、蝦醬、魚露的氣味來自之。可利用醋或檸檬去除之。
+\subsubsection{苯胺}
+具特殊臭味、無色或淡黃色油狀液體，久置於空氣中會被氧化成褐色，微溶於水，弱鹼，可溶於酸。常用於製造染料、聚合物。
+\subsubsection{3,4-二羥基苯乙胺/多巴胺}
+大腦分泌的神經傳導物質，可以讓人感覺良好、愉快。
+\sssc{組織胺（Histamine）/2-(1H-1,3-二氮雜環戊-2,4-二烯-4-基)乙胺}
+\sssc{三聚氰胺/1,3,5-三氮雜環己-1,3,5-三烯-2,4,6-三胺/密胺（Melamine）}
+氰胺（Cyanamide）/胺基氰\ce{CN2H2}的三聚體。具共軛，共軛能遠低於苯，無芳香性。
+\sssc{N$^1$,N$^1$$'$-(乙烷-1,2-二基)二(乙烷-1,2-二胺)}
+常見四牙配體。
+\ssc{亞胺}
+\sssc{結構}
+\bit
+\item 一級醛亞胺：R-C(-H)=N-H
+\item 二級醛亞胺：R-C(-H)=N-R'
+\item 一級酮亞胺：R-C(-R')=N-H
+\item 二級酮亞胺：R-C(-R')=N-R''
+\item 命名：(N-氮上基團)(碳上基團)碳上基團亞胺
+\eit
+\subsection{磺酸}
+\subsubsection{結構}
+RS(=O)$_2$OH，\ce{RSO3H}的酸性較\ce{RCOOH}強得多。
+\subsubsection{苯磺酸}
+解離常數\scinote{1.58}{-3}
+\sssc{甲基橙（Methyl orange）/4-[(E)-[4-(N,N-二甲基胺基)苯基]二亞胺基]苯磺酸鈉}
+酸鹼指示劑，酸式顏色紅，鹼式顏色黃，變色範圍 pH 3.1-4.4。
+\ssc{黃原酸（Xanthogenic acid）}
+\subsubsection{結構}
+ROC(=S)SH，酸，通常不穩定。
+\ssc{醯基}
+\subsubsection{結構}
+RC(=O)OR$'$。RC(=O)O- 其中 R 為 $k$ 碳烷基稱 $k+1$ 醯基；RC(=O)O- 稱 R 甲醯基；RC(=O)OR 其中 R 為較醯基更高級的基團稱碳醯二 R 或碳醯 R。
+\subsection{醯鹵}
+\subsubsection{結構}
+RC(=O)X
+\subsubsection{性質}
+\begin{itemize}
+\item HC(=O)X 不穩定，通常不存在。
+\item 化性：活潑，醯碘>醯溴>醯氯>醯氟>酸酐，醯碘極不穩定。
+\item 多具刺激性臭味。
+\end{itemize}
+\sssc{碳醯氯/碳醯二氯/二氯甲醛/二氯化羰/光成氣/光氣（Phosgene）}
+\ce{COCl2}，結構 O=C(-Cl)-Cl。無色、乾草味、有毒氣體，重要工業原料。
+\subsection{磺醯基}
+\subsubsection{結構}
+RS(=O)$_2$OR$'$
+\subsection{磺醯鹵}
+\subsubsection{結構}
+RS(=O)$_2$X
+\subsubsection{性質}
+化性：磺醯碘>磺醯溴>磺醯氯>磺醯氟；磺醯鹵較同鹵之醯鹵穩定。
+\subsection{（酸）酐（acid anhydride）與酸性氧化物（acidic oxide）}
+\subsubsection{（酸）酐（acid anhydride）}
+一或多個酸脫水形成的衍生物，簡稱酐，有時特指有機酸酐。
+\subsubsection{有機（酸）酐}
+一或多個有機酸脫水形成的衍生物，有時特指羧酸酐。
+\subsubsection{酸性氧化物}
+可以與鹼反應生成鹽和水，或與水反應形成酸的氧化物。無機酸酐均為酸性氧化物；酸性氧化物均為廣義酸酐。
+\subsubsection{無機酸酐}
+\begin{itemize}
+\item 二氧化碳：一分子碳酸脫一分子水的酐
+\item 三氧化硫：一分子硫酸脫一分子水的酐
+\item 二氧化硫：一分子亞硫酸脫一分子水的酐
+\item 焦硫酸 HOS(=O)(=O)OS(=O)(=O)OH：二分子硫酸脫二分子水的酐
+\item 五氧化二氮 O=N(=O)ON(=O)=O：二分子硝酸脫一分子水的酐
+\item 五氧化二氯 O=Cl(=O)OCl(=O)=O：二分子氯酸脫一分子水的酐
+\item 七氧化二氯 O=Cl(=O)(=O)OCl(=O)(=O)=O：二分子過氯酸脫一分子水的酐
+\item 十氧化四磷/五氧化二磷/2,4,6,8,9,10-六氧-1λ$^5$,3λ$^5$,5λ$^5$,7λ$^5$-四磷酸三環[3.3.1.1$^{3,7}$]癸烷-1,3,5,7-四氧化物：四分子磷酸脫四分子水的酐
+\item 六氧化四磷/三氧化二磷/2,4,6,8,9,10-六氧-1,3,5,7-四磷酸三環[3.3.1.1$^{3,7}$]癸烷：四分子亞磷酸脫四分子水的酐
+\item 二氧化矽：每單元偏矽酸\ce{H2SiO3}脫一分子水的酐
+\end{itemize}
+\subsubsection{羧酸酐}
+\begin{itemize}
+\item 結構：具有兩個醯基鍵合於同一氧原子上的有機化合物，即 R-C(=O)-O-C(=O)-R'，稱R（酸）R'（酸）酐。R與R'不同屬不對稱酐，否則屬對稱酐。兩個某酸脫水形成的對稱酐稱二某（酸）酐或某（酸）酐。屬有機酸酐。
+\item 內（羧酸）酐：具有環內（羧酸）酐基的化合物，即氧雜環的氧雜原子兩旁的碳上各鍵結有一 =O。
+\item 氣味：低分子量者有刺激性臭味。
+\item 對水溶解度：遇水分解成二個羧酸。
+\item 化性：活潑。較羧酸更易參與醯（基）化反應，但水解遠較醯化反應更易發生，故欲使酐參與醯化反應須乾燥環境。觸碰到人體應視同強酸處理，立刻以大量水沖洗。
+\end{itemize}
+\subsubsection{磺酸酐}
+\begin{itemize}
+\item 結構：具有兩個磺醯基鍵合於同一氧原子上的有機化合物，即 R-S(=O)$_2$-O-S(=O)$_2$-R'，稱R磺酸R'磺酸酐。R與R'不同屬不對稱酐，否則屬對稱酐。兩個某磺酸脫水形成的對稱酐稱二某磺酸酐或某磺酸酐。屬有機酸酐。焦硫酸\ce{HO3SOSO3H}不視為磺酸酐。
+\item 化性：較同R與R'的羧酸酐穩定。
+\end{itemize}
+\subsubsection{乙酸酐/乙酐}
+化工及醫藥的原料。
+\subsection{酯}
+\subsubsection{酯類}
+具有酸性羥基的某酸的至少一酸性羥基（指可解離出質子的羥基）被另氧基取代的化合物稱某酸另酯，屬某酸酯。有時專指羧酸酯。
+\subsubsection{羧酸酯結構}
+\begin{itemize}
+\item 示性式\ce{RCOOR}$'$。
+\item 內（羧酸）酯：具有環內（羧酸）酯基 -C(=O)-O- 的化合物，即氧雜環的氧雜原子其中一旁的碳上鍵結有一 =O。
+\item 鏈狀飽和羧酸酯通式\ce{C$_n$H$_{2n}$O2}，與同碳數鏈狀飽和羧酸互為異構物。
+\end{itemize}
+\subsubsection{羧酸酯性質}
+\begin{itemize}
+\item 極性：極性小，與多數有機溶劑互溶。
+\item 對水溶解度：除甲酸甲酯可溶於水外均不溶於水。密度小於水。常用作噴漆之溶劑。
+\item 熔沸點：較相近分子量的醛、酮略小。分子量小者多為液體，碳數小者蒸氣壓較大；分子量大者多為固體，稱蠟（wax）。
+\item 氣味：低碳數之酯類多為具有芳香味道的揮發性液體，許多水果與酒類的香味來自之。
+\end{itemize}
+\sssc{氰酸酯結構}
+ROC$\equiv$N
+\sssc{異氰酸酯結構}
+RN=C=O
+\sssc{黃原酸酯結構}
+ROC(=S)SR'
+\sssc{甲酸甲酯}
+無色揮發性液體，沸點 31.5°C，可溶於水與有機溶劑，蒸氣與空氣混合可能爆炸。
+\sssc{乙酸乙酯}
+無色、易燃、具特殊氣味、揮發性液體，沸點77°C，微溶於水，易溶於有機溶劑，可作為指甲油去除劑。
+\subsubsection{乙酸-3-甲基丁酯/乙酸異戊酯/香蕉油}
+香蕉的香味來自之。
+\subsubsection{丁酸甲酯}
+蘋果的香味來自之。
+\subsubsection{乙酸辛酯}
+柑橘的香味來自之。
+\sssc{苯甲酸膽固醇酯（Cholesteryl benzoate）/苯甲酸[(1R,3aS,3bS,7S,9aR,9bS,11aR)-9a,11a-二甲基-1-[(2R)-6-甲基庚-2-基]-四環[8.7.0.0$^{2,7}$.0$^{11,15}$]十七-1-烯-7-酯}
+是最早發現的一種液晶，由萊尼澤（Friedrich Richard Reinitzer）於1888 年發現其熱致液晶現象：加熱至145.5°C，產生彩色渾濁糊狀物，再加熱至178.5°C光彩消失，呈透明澄清液體，冷卻回178.5°C再現渾濁。
+
+1888年，雷曼（Otto Lehmann）利用偏光顯微鏡觀察其渾濁狀態，證實其為具有組織方位性的液體，確認液晶的存在。
+\sssc{1,2-苯二甲酸二(2-乙基己基)酯（DEHP）、1,2-苯二甲酸二(7-甲基辛基)酯（DINP）與1,2-苯二甲酸二(8-甲基壬基)酯（DIDP）}
+塑化劑，廣泛用於聚氯乙烯產品，其中 DEHP 為最常用的塑化劑，可能影響雄性激素導致男性內分泌紊亂，可能致癌，可能具生殖毒性。
+\subsection{醯胺}
+\subsubsection{結構}
+\begin{itemize}
+\item 醯胺類是將羧酸官能基中的OH換成胺基。羰基的碳與胺基的氮間的鍵稱醯胺鍵或肽鍵。
+\item 共軛：具有碳氧雙鍵與氮的孤電子對間的共軛，主要結構為$\mathrm{RC(=O)NR'R''}$，次要結構為$\mathrm{RC(O^-)N^+R'R''}$。
+\item 鏈狀飽和醯胺類通式\ce{C$_n$H$_{2n+1}$ON}，最簡單分子為甲醯胺$\mathrm{HC(=O)NH_2}$。
+\item 以包含醯胺基的最長碳鏈為主鏈，上有醯胺基的O與N的碳為一號碳，接在N上的基團在字首標示N-。如：N,N-二甲基甲醯胺 $\mathrm{HC(=O)N(CH_3)_2}$。
+\item 級數同其胺基之級數，稱一、二、三級醯胺。
+\item 部分 N-另基某醯胺俗稱某醯另胺或某醯胺另。
+\item 內醯胺：具有環內醯胺基 -C(=O)-N- 的化合物，即氮雜環的氮雜原子其中一旁的碳上鍵結有一 =O。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 極性：有，分子量愈小略愈大。
+\item 分子間氫鍵：除三級醯胺外有，位於羰基的氧與-NH的氫間。
+\item 對水溶解度：可與水形成分子間氫鍵，故分子量愈小略愈大，碳數小於 5 者易溶於水。
+\item 熔沸點：鏈狀飽和醯胺較同碳數的鏈狀飽和羧酸高，其中甲醯胺為液體，其餘為無色晶體。
+\item 酸鹼：因為共軛大幅降低親核性，水溶液呈中性或極弱鹼性。酸鹼中易水解。
+\item 化性：具有共軛結構與分子間氫鍵故較胺更穩定，一般無法參與醯基取代反應。
+\end{itemize}
+\subsubsection{乙醯胺苯}
+可退燒止痛，有毒，傷肝腎，現已被對4-乙醯胺基苯酚等取代，但仍為許多藥品製造過程的中間產物。
+\subsubsection{碳醯二胺/尿素（Urea）/脲（niào）}
+H$_2$N-C(=O)-NH$_2$。生物中在肝合成，是哺乳動物排出的體內含氮代謝物，可作為植物肥料與化工原料。
+\subsection{磺醯胺}
+\subsubsection{結構}
+\begin{itemize}
+\item 共軛：具有兩硫氧雙鍵與氮的孤電子對間的共軛，主要結構為$\mathrm{RS(=O)(=O)NR'R''}$，次要結構為$\mathrm{RS(=O)(O^-)N^+R'R''}$與$\mathrm{RS(O^-)(=O)N^+R'R''}$。
+\item 最簡單磺醯胺為磺醯胺$\ce{HSO2NH2}$。
+\item 鏈狀飽和有機磺醯胺類通式\ce{C$_n$H$_{2n+3}$SO2N}，最簡單分子為甲磺醯胺$\ce{CH3SO2NH2}$。
+\item 以包含磺醯胺基的最長碳鏈為主鏈，鍵結磺胺基的S的碳為一號碳，接在N上的基團在字首標示N-。如：N,N-二甲基甲磺醯胺。
+\item 級數同其胺基之級數，稱一、二、三級磺醯胺。
+\end{itemize}
+\subsubsection{4-胺基苯磺醯胺/磺胺}
+是人類控制與治癒細菌感染的第一個有效化學藥物，是許多藥品製造過程的中間產物。
+\subsection{醯亞胺}
+\subsubsection{結構}
+RC(=O)N(R')C(=O)R''
+\ssc{硫醇}
+\sssc{結構}
+R-SH
+\ssc{硫醚}
+\sssc{結構}
+R-S-R$'$
+\subsection{硝基}
+\subsubsection{結構}
+\begin{itemize}
+\item 結構為$\mathrm{-N^+(=O)O^-}$。
+\item 共軛：具有氮氧雙鍵與氧的孤電子對間的共軛。
+\end{itemize}
+\subsubsection{性質}
+\begin{itemize}
+\item 極性：硝基的氮原子帶有部分正電荷，而氧原子帶部分負電荷，具強極性，會增加對水溶解度。
+\item 吸電子共振效應：極強，故硝基是苯環的間位定位基、4-硝基苯酚（p$K_a=7.15$）的酸性比苯酚（p$K_a=9.95$）強得多。
+\item 化性：具親電性、強氧化性。部分含有硝基的有機化合物（如TNT、硝化甘油等）因氧化性高而具爆炸性，可在適當條件下發生劇烈氧化還原反應釋放大量能量。
+\end{itemize}
+\subsubsection{硝基甲烷}
+\ce{CH3NO2}，具極性，室溫下液態，化工與有機合成原料，可燃、有毒、具爆炸性。
+\sssc{2,4-二硝基甲苯（DNT）}
+爆炸物。
+\subsubsection{2,4,6-三硝基甲苯（TNT） /黃色炸藥/棕色炸藥}
+\ce{C6H2(NO2)3CH3}，爆炸物，現通常三段硝化合成。
+\subsubsection{1,2,3-三硝酸丙三酯/硝化甘油（NTG, NG）/硝酸甘油/硝酸甘油酯/三硝酸甘油酯}
+\ce{CH2(ONO2)CH(ONO2)CH2(ONO2)}。無色或微黃色的液體，常用於心血管疾病用藥和爆炸物，如狹心症急救藥。
+\ssc{腈}
+\sssc{結構}
+R-C$\equiv$N，R 為 $k$ 碳烷者稱 $k+1$ 腈。
+\ssc{膦/有機磷}
+磷化氫的至少一個氫被取代的有機化合物，類似胺。
+\ssc{雜環}
+\sssc{呋（fū）喃（nán）（Furan or oxole）/氧雜環戊-2,4-二烯}
+\ce{C4H4O}，有芳香性。呋喃醣（Furanose）/氧雜五員環醣無芳香性。
+\sssc{1H-吡（bĭ）咯（luò）（1H-pyrrole）/氮雜環戊-2,4-二烯}
+\ce{C4H5N}，有芳香性。
+\sssc{1H-咪（mī）唑（zuò）（1H-imidazole）/1,3-二氮雜環戊-2,4-二烯}
+\ce{C3H4N2}，有芳香性。
+\sssc{㗁（è）唑（Oxazole）/1-氧雜-3-氮雜環戊-2,4-二烯}
+\ce{C3H3NO}，有芳香性。
+\sssc{異㗁唑（Isoxazole）/1-氧雜-2-氮雜環戊-2,4-二烯}
+\ce{C3H3NO}，有芳香性。
+\sssc{2H-吡喃（2H-pyran）/氧雜環己-2,4-二烯}
+\ce{C5H6O}，無芳香性。
+\sssc{4H-吡喃（4H-pyran）/氧雜環己-2,5-二烯}
+\ce{C5H6O}，無芳香性。
+\sssc{吡啶（dìng）（Pyridine, py）/氮雜環己-1,3,5-三烯/氮雜苯}
+\ce{C5H5N}，有芳香性，常見單牙配體。
+\sssc{嘧（mì）啶（Pyrimidine）/1,3-二氮雜環己-1,3,5-三烯/二氮雜苯}
+\ce{C4H4N2}，有芳香性。
+\sssc{1H-吲（yĭn）哚（duŏ）（1H-indole）/靛基質/1H-(苯並[b]吡咯)/苯並[b]氮雜環戊-2,4-二烯}
+\ce{C8H7N}，有芳香性。
+\sssc{3H-吲哚（3H-indole）/3H-(苯並[b]吡咯)/苯並[b]氮雜環戊-2,5-二烯}
+\ce{C8H7N}，有芳香性。
+\sssc{9H-嘌呤（9H-purine）/9H-(咪唑並[4,5-d]嘧啶)/(1,3-二氮雜環戊-2,4-二烯)並[4,5-d](1,3-二氮雜環己-1,3,5-三烯)}
+\ce{C5H4N4}，有芳香性。
+\sssc{腺嘌呤（Adenine, A）/9H-嘌呤-6-胺/(1,3-二氮雜環戊-2,4-二烯)並[4,5-d](1,3-二氮雜環己-1,3,5-三烯)-6-胺}
+\ce{C5H5N5}，SMILES: C1=NC2=NC=NC(=C2N1)N
+\sssc{胞嘧啶（Cytosine, C）/4-胺基-1H-嘧啶-2-酮/4-胺基-1,3-二氮雜環己-3,5-二烯-2-酮}
+\ce{C4H5N3O}，SMILES: C1=C(NC(=O)N=C1)N
+\sssc{鳥（糞）嘌呤（Guanine, G）/2-胺基-1H,9H-嘌呤-6-酮/2-胺基[(1,3-二氮雜環戊-1,4-二烯)[4,5-d](1,3-二氮雜環己-2-烯)]-6-酮}
+\ce{C5H5N5O}，SMILES: C1=NC2=C(N1)C(=O)NC(=N2)N
+\sssc{尿嘧啶（Uracil, U）/1H,3H-嘧啶-2,4-二酮/1,3-二氮雜環己-5-烯-2,4-二酮}
+\ce{C4H4N2O2}，SMILES: C1=CNC(=O)NC1=O
+\sssc{胸腺嘧啶（Thymine, T）/5-甲基-1H,3H-嘧啶-2,4-二酮/5-甲基尿嘧啶/5-甲基-1,3-二氮雜環己-5-烯-2,4-二酮}
+\ce{C5H6N2O2}，SMILES: CC1=CNC(=O)NC1=O
+\sssc{靛紅（Isatin）/1H-吲哚-2,3-二酮/(苯並[b]氮雜環戊-2-烯)-2,3-二酮}
+\sssc{吡啶氯鉻酸鹽（Pyridinium chlorochromate, PCC）/氯鉻酸(氮雜環己-1,3,5-三烯-1-金翁離子)}
+\ce{(C5H5NH)(CrO3Cl)}，常用弱氧化劑，還原成氯化吡啶/氯化(氮雜環己-1,3,5-三烯-1-金翁離子)與三氧化二鉻，還原半反應：
+\[\ce{2(C5H5NH)(CrO3Cl)(aq) + 6H+(aq) + 6e- -> 2(C5H5NH)Cl(aq) + Cr2O3(s) + 3H2O(l)}\]
+\sssc{喹（kúi）啉（lín）（Quinoline）/苯[b]氮雜環己-1,3,5-三烯}
+\ce{C9H7N}
+\sssc{三(8-羥基喹啉)鋁/三[8-羥基(苯[b]氮雜環己-1,3,5-三烯)]鋁}
+\ce{Al(C9H6NO)3}，有機半導體材料。
+\sssc{2,2'-聯吡啶（bipy or bpy）/2,2'-聯二(氮雜環己-1,3,5-三烯)}
+\ce{(C5H4N)2}，常見雙牙配體。
+\sssc{1,10-二氮雜菲（phen）/二(氮雜環己-2,4,6-三烯)並[a,c]苯}
+\ce{(C5H3N)2C2H2}，常見雙牙配體。
+\sssc{2,2';6',2"-三聯吡啶（terpy or tpy）/2,2';6',2"-三聯(氮雜環己-1,3,5-三烯)}
+\ce{(C5H4N)2C5H3N}，常見三牙配體。
+\sssc{卟吩（Dihydroporphyrin）/(2Z,6Z,11Z,17Z)-21,22,23,24-四氮雜五環[16.2.1.1$^{3,6}$.1$^{8,11}$.1$^{13,16}$]二十四-1(21),2,4,6,8(23),9,11,13,15,17,19-十一烯}
+\bct\bfH\ctr\icg[width=0.4\textwidth]{Porphyrin.svg.png}\ef\FB\ect
+\ce{(C4H2NH)2(C4H2N)2(CH)4}，SMILES: C1=CC2=CC5=CC=C(C=C4C=CC(C=C3C=CC(=CC1=N2)N3)=N4)N5，四個吡咯以 2,5'-(次甲-1,1,-二基) 相連的大環結構，常見四牙配體，其衍生物稱 Porphyrin，如葉綠素 c$_1$, c$_2$、血基質。
+\sssc{2,3-二氫卟吩（2,3-Dihydroporphyrin）/(2Z,6Z,11Z,17Z)-21,22,23,24-四氮雜五環[16.2.1.1$^{3,6}$.1$^{8,11}$.1$^{13,16}$]二十四-1(21),2,4,6,8(23),11,13,15,17,19-十烯}
+\bct\bfH\ctr\icg[width=0.4\textwidth]{Chlorin.svg.png}\ef\FB\ect
+\ce{(C4H2NH)2(C4H2N)(C4H4N)(CH)4}，SMILES: C1CC2=NC1=CC3=CC=C(N3)C=C4C=CC(=N4)C=C5C=CC(=C2)N5，三個吡咯與一個 3H,4H-吡咯以 2,5'-(次甲-1,1,-二基) 相連的大環結構，常見四牙配體，其衍生物稱 Chlorin，如葉綠素 a, b, d, f。
+\sssc{葉綠素 a（Chlorophyll a）/[(5Z,10Z,14Z,17S,18S,19Z,22R)-2-甲基-3-(乙-1-烯-2-基)-7,12,18-三甲基-8-乙基-17-[2-((2E)-3,7,11,15-四甲基-十六-2-烯-1-基氧基)乙醯基]-21-酮基-22-甲氧基甲醯基-23,24,25,26-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(24),10,12,14,16(26),19-十烯-23,25-二負離子-κ$^4$-N$^{23}$,N$^{24}$,N$^{25}$,N$^{26}$]鎂}
+\ce{C55H72O5N4Mg}，屬 Chlorin，綠色色素，吸收光進行光化學反應將水分解釋出氧氣，在產氧光合作用的電子傳遞鏈起到重要作用，所有進行產氧光合作用的生物皆有。
+\sssc{葉綠素 b（Chlorophyll b）/[(5Z,10Z,14Z,17S,18S,19Z,22R)-2-甲基-3-(乙-1-烯-2-基)-7-甲醯基-8-乙基-17-[2-((2E)-3,7,11,15-四甲基-十六-2-烯-1-基氧基)乙醯基]-12,18-二甲基-21-酮基-22-甲氧基甲醯基-23,24,25,26-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(24),10,12,14,16(26),19-十烯-23,25-二負離子-κ$^4$-N$^{23}$,N$^{24}$,N$^{25}$,N$^{26}$]鎂}
+\ce{C55H70O6N4Mg}，屬 Chlorin，綠色色素，輔助吸收光，存在於多數行產氧光合作用的植物。
+\sssc{葉綠素 c$_1$（Chlorophyll c$_1$）/[(5Z,10Z,14Z,17S,18S,19Z,22R)-2-甲基-3-(乙-1-烯-2-基)-7,12,18-三甲基-8-乙基-17-丙烯酸基-21-酮基-22-甲氧基甲醯基-23,24,25,26-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(24),10,12,14,16(26),17,19-十一烯-23,25-二負離子-κ$^4$-N$^{23}$,N$^{24}$,N$^{25}$,N$^{26}$]鎂}
+\ce{C55H30O5N4Mg}，屬 Porphyrin，存在於一些藻類。
+\sssc{葉綠素 c$_2$（Chlorophyll c$_2$）/[(5Z,10Z,14Z,17S,18S,19Z,22R)-2-甲基-3-(乙-1-烯-2-基)-7,12,18-三甲基-8-乙烯基-17-丙烯酸基-21-酮基-22-甲氧基甲醯基-23,24,25,26-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(24),10,12,14,16(26),17,19-十一烯-23,25-二負離子-κ$^4$-N$^{23}$,N$^{24}$,N$^{25}$,N$^{26}$]鎂}
+\ce{C55H28O5N4Mg}，屬 Porphyrin，存在於一些藻類。
+\sssc{葉綠素 d（Chlorophyll d）/[(5Z,10Z,14Z,17S,18S,19Z,22R)-2-甲基-3-甲醯基-7,12,18-三甲基-8-乙基-17-[2-((2E)-3,7,11,15-四甲基-十六-2-烯-1-基氧基)乙醯基]-21-酮基-22-甲氧基甲醯基-23,24,25,26-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(24),10,12,14,16(26),19-十烯-23,25-二負離子-κ$^4$-N$^{23}$,N$^{24}$,N$^{25}$,N$^{26}$]鎂}
+\ce{C55H70O6N4Mg}，屬 Chlorin，存在於一些藍綠菌。
+\sssc{葉綠素 f（Chlorophyll f）/[(5Z,10Z,14Z,17S,18S,19Z,22R)-2-甲醯基-3-(乙-1-烯-2-基)-7,12,18-三甲基-8-乙基-17-[2-((2E)-3,7,11,15-四甲基-十六-2-烯-1-基氧基)乙醯基]-21-酮基-22-甲氧基甲醯基-23,24,25,26-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(24),10,12,14,16(26),19-十烯-23,25-二負離子-κ$^4$-N$^{23}$,N$^{24}$,N$^{25}$,N$^{26}$]鎂}
+\ce{C55H70O6N4Mg}，屬 Chlorin，存在於一些藍綠菌。
+\sssc{血基質 B（Heme B or haem B）/原血紅素 B/血紅質 B/[(5Z,10Z,14Z,19Z)-2,7,12,18-四甲基-3,8-二乙烯基-13,17-二丙酸基-21,22,23,24-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(22),10,12,14,16(24),17,19-十一烯-21,23-二負離子-κ$^4$-N$^{21}$,N$^{22}$,N$^{23}$,N$^{24}$]鐵(II)}
+\ce{C34H32O4N4Fe}，屬 Porphyrin，最常見的血基質。
+
+血基質/原血紅素/血紅質為血紅素的前體，在骨髓和肝臟中合成，呈紅色，有數種，以血基質 B 最常見。
+\sssc{血基質 A（Heme A or haem A）/原血紅素 A/血紅質 A/[(5Z,10Z,14Z,19Z)-2,7,12-三甲基-3-((1S,4E,8E)-1-羥基-5,9,13-三甲基-4,8,12-三烯-1-基)-8-乙烯基-13,17-二丙酸基-18-甲醯基-21,22,23,24-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(22),10,12,14,16(24),17,19-十一烯-21,23-二負離子-κ$^4$-N$^{21}$,N$^{22}$,N$^{23}$,N$^{24}$]鐵(II)}
+\ce{C49H56O6N4Fe}，屬 Porphyrin。
+\sssc{血基質 C（Heme C or haem C）/原血紅素 C/血紅質 C/[(5Z,10Z,14Z,19Z)-2,7,12,18-四甲基-3,8-二(1-硫氫基乙基)-13,17-二丙酸基-18-甲醯基-21,22,23,24-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(22),10,12,14,16(24),17,19-十一烯-21,23-二負離子-κ$^4$-N$^{21}$,N$^{22}$,N$^{23}$,N$^{24}$]鐵(II)}
+\ce{C34H36O4N4S2Fe}，屬 Porphyrin。
+\sssc{血基質 O（Heme O or haem O）/原血紅素 O/血紅質 O/[(5Z,10Z,14Z,19Z)-2,7,12,18-四甲基-3-((1S,4E,8E)-1-羥基-5,9,13-三甲基-4,8,12-三烯-1-基)-8-乙烯基-13,17-二丙酸基-21,22,23,24-四氮雜六環[16.2.1.2$^{13,15}$.1$^{6,9}$.1$^{11,14}$.1$^{16,19}$]二十-1,3,5,7,9(22),10,12,14,16(24),17,19-十一烯-21,23-二負離子-κ$^4$-N$^{21}$,N$^{22}$,N$^{23}$,N$^{24}$]鐵(II)}
+\ce{C49H58O5N4Fe}，屬 Porphyrin。
+\sssc{亞甲藍（Methylene blue）/氯化[3,7-二(二甲胺基)二苯並[b,e](1-硫雜-4-氮雜苯)-5-金翁]}
+\ce{C16H18N3SCl}，藍色，常用於染色生物玻片標本，以之染色細胞可見深藍色細胞核。5號硫帶正電荷，10號氮上無氫。氧化劑，氧化力與質子濃度正相關，還原半反應：
+\bma
+& \text{3,7-二(二甲胺基)二苯並[b,e](1-硫雜-4-氮雜苯)-5-金翁離子} + \mathrm{H}^+ + 2e^- \\
+\to & \text{3,7-二(二甲胺基)二苯並[b,e](1-硫雜-4-氮雜環己-2,5-二烯)}
+\eam
+還原後無色，5號硫不再帶正電荷，10號氮上有氫。可氧化\ce{Sn^{2+}}成\ce{Sn^{4+}}，照紫外光後可逆反應回到亞甲藍與\ce{Sn^{2+}}，移除紫外光再次氧化。
+\sssc{1,2-戴奧辛（1,2-dioxin）/1,2-二氧雜環己-3,5-二烯}
+\ce{C4H4O2}
+\sssc{1,4-戴奧辛（1,4-dioxin）/1,4-二氧雜環己-2,5-二烯}
+\ce{C4H4O2}
+\sssc{二苯駢-1,4-戴奧辛（Dibenzo-1,4-dioxin）/9,10-二氧雜蒽（Oxanthrene）/二苯並[b,e](1,4-二氧雜環己-2,5-二烯)}
+\ce{C12H8O2}
+\sssc{2,3,7,8-四氯二苯戴奧辛（2,3,7,8-TCDD）/2,3,7,8-四氯二苯並[b,e](1,4-二氧雜環己-2,5-二烯)}
+\ce{C12H4Cl4O2}，第一類致癌物，毒性最高的環境汙染物之一。
+\sssc{靛藍（Indigo dye）/[2(2')E]-(2,2'-苯並[b]氮雜環戊-2-烯)-3,3'-二酮}
+藍色粉末，溶於熱苯胺，不溶於乙醇，常見藍色染料，稱藍染，其及其一些衍生物沉積薄膜可用於有機半導體。過去由板藍根等靛藍植物加工製得，現化學合成。氧化劑，還原成靛白（Indigo white or leuco-indigo）/(2,2'-苯並[b]氮雜環戊-2,4-二烯)-3,3'-二酚，可溶於水。染色時先還原成靛白，使溶解後，將織物浸入，織物取出時靛白快速在空氣中還原成靛藍而呈藍色。
+\sssc{苯並[d](1-硫雜-2-氮雜環戊烷)-1,1,3-三酮/糖精（Saccharin）/E954}
+人工甜味劑/代糖，甜度約為等重蔗糖的300倍，唯甜中帶苦，耐熱，可能致癌。
+
+
+\section{親電取代反應}
+\subsection{芳香親電取代應}
+\subsubsection{鹵化反應}
+芳香環上的氫被鹵基取代。具有 +M 基團（如酚類之羥基）者因其大幅提高鄰位與對位的電子雲密度故常溫下即可在該等位置發生鹵化反應；苯、烷苯等則須經鐵粉或同鹵素與鐵 (III) 或鋁之鹽 \ce{FeX3}或\ce{AlX3} 催化；可以此辨別出具有強供電子基團的芳香族。
+\[\ce{C6H6 + Br2 ->[FeBr3] C6H5Br + HBr}\]
+\[\ce{C6H6 + Cl2 ->[FeCl3] C6H5Cl + HCl}\]
+\[\ce{\text{1,4-二甲苯} + Br2 ->[FeBr3] \text{2-溴-1,4-二甲苯 + HBr}}\]
+\[\ce{\text{1,4-二甲苯} + 2Br2 ->[FeBr3] \text{2,5-二溴-1,4-二甲苯 + 2HBr}}\]
+\[\ce{C6H5OH + 3Br2 -> \text{2,4,6-三溴苯酚} + 3HBr}\]
+\subsubsection{硝化反應}
+濃硝酸提供硝基經濃硫酸催化取代芳香環上的氫並脫水。
+\[\ce{C6H6 + HNO3 ->[H2SO4][\text{50°C}] C6H5NO2 + H2O}\]
+\[\ce{C6H5CH3 + 3HNO3 ->[H2SO4][\text{50°C}] C6H2(NO2)3CH3 + 3H2O}\]
+其中\ce{C6H2(NO2)3CH3}為 2,4,6-三硝基甲苯（TNT）。 
+\subsubsection{磺（酸）化反應}
+硫酸或磺醯鹵提供磺酸基團經加熱取代芳香環上的氫生成苯磺酸並脫水或鹵化氫。
+\[\ce{C6H6 + H2SO4 ->[$\Delta$] C6H5SO3H + H2O}\]
+\[\ce{C6H6 + HSO4Cl ->[$\Delta$] C6H5SO3H + HCl}\]
+\subsubsection{傅里德-克拉夫茨/傅-克（Friedel–Crafts）烷基化反應}
+鹵烷 \ce{RX} 提供烷基 R 經加熱與鐵粉或同鹵素與鐵(III)、鋁或鋅之鹽催化取代芳香環上的氫鍵並脫去 HX。
+\begin{itemize}
+\item 氯乙烷加苯生成乙苯加氯化氫：
+\[\ce{C6H6(l) + CH3CH2Cl(l) ->[\ce{AlCl3}, $\Delta$] C6H5CH2CH3(l) + HCl(g)}\]
+\item 2-氯丙烷加苯生成異丙基苯加氯化氫：
+\[\ce{C6H6(l) + CH(CH3)2Cl(l) ->[\ce{AlCl3}, $\Delta$] C6H5C(CH3)2(l) + HCl(g)}\]
+\end{itemize}
+\subsubsection{傅里德-克拉夫茨/傅-克（Friedel–Crafts）醯基化反應}
+\begin{itemize}
+\item 親核試劑為Ar-H，其中 Ar 為芳香環，苯酚、苯胺和催化劑發生副反應，後者猶甚，通常以苯或烷基苯為反應物；親電試劑為醯鹵或酸酐，但甲酸衍生基團無法作為親電試劑參與傅-克醯基化反應；經鹵素與鋁之鹽 \ce{AlX3} 等路易斯酸催化；產物為芳香酮 Ar-COR 與親核試劑脫落的質子鍵結至親電試劑的酸性羥基或取代其之基團上形成的化合物。屬於親電取代反應、醯（基）化反應。某酸衍生物為親電試劑且某酸為羧酸者又稱某醯化反應。
+\item 親電試劑反應性：$\text{醯溴} > \text{醯氯} > \text{酸酐}$
+\end{itemize}
+\[\ce{C6H6 + RCOCl -> RCOC6H5 + HCl}\]
+\[\ce{C6H6 + (RCO)(R$'$CO)O -> RCOC6H5 + R$'$COOH}\]
+\subsection{電石加水製備乙炔}
+\[\ce{CaC2(s) + 2H2O(l) -> Ca(OH)2(aq) + C2H2(g)}\]
+
+
+
+\section{自由基取代反應}
+\ssc{烷基的自由基取代反應}
+\subsubsection{鹵化反應}
+烷基的部分氫被鹵基取代，各碳-氫、碳鹵單鍵均可能斷鍵受鹵基取代，故除非完全反應使碳上沒有氫否則產物往往有多種：
+\[\ce{CH4 + $n$X2 -> CH$_{4-n}$X$_n$ + $n$HX}\]
+\[\ce{RCH$_{3-n}$X$_n$ + X2 -> RCH$_{2-n}$X$_{n+1}$ + HX}\]
+\[\ce{RCH$_{2-n}$X$_n$R$'$ + X2 -> RCH$_{1-n}$X$_{n+1}$ + HX}\]
+一般烷基僅發生於具烷基化合物氣體與氟、氯、溴、碘氣體在約 250-460°C  或紫外光照射下。但若自由基中間體因故較穩定，則反應更易發生，如與該烷基相鄰的碳上有 =O 時，可吸引自由基中間體中碳上的未成對電子，形成碳自由基醛/酮 RC(H)C(=O)R$'$ 與烯氧自由基 RC(H)=C(O)R$'$ 間的共振，使自由基中間體因共振穩定能而更穩定，故醛/酮基的 α 碳可以在酸性水溶液中與氯、溴、碘發生鹵化反應。
+\subsubsection{硝化反應}
+烷基與硝酸經加熱發生硝化反應，部分氫被硝基取代。如：
+\[\ce{CH4 + HNO3 ->[\text{>475°C}] CH3NO2 + H2O}\]
+
+
+\section{親核取代反應}
+\subsection{SN1 與 SN2 反應}
+\subsubsection{鹵基取代羥基}
+醇（親核試劑）與濃氫鹵酸（親電試劑）加熱發生取代反應產生鹵烴。
+\[\ce{ROH(l) + HX(aq) -> RX(g) + H2O(l)}\]
+\begin{itemize}
+\item 親核試劑反應性：甲醇<一級醇<二級醇<三級醇
+\item 親電試劑反應性：HF<HCl<HBr<HI
+\end{itemize}
+對於低碳數可溶於水的醇，反應前反應物均溶於水而使溶液澄清，反應後應生成物鹵烷不溶於水故呈油狀混濁。
+\subsubsection{羥基取代鹵基}
+鹵烴與過量濃氫氧化鈉或氫氧化鉀水溶液（不可用醇溶液否則醇發生 E2 消去反應生成烯；水無法提供羥基取代鹵基而須強鹼）共熱使鹵基被羥基取代，其中部分羥基的氫被鈉或鉀取代，故須再以過量氫鹵酸酸化：
+\[\ce{RX(l/s/aq) + MOH(aq) ->[$\Delta$] ROH(aq) + MX(aq)}\]
+\[\ce{RX(l/s/aq) + 2MOH(aq) ->[$\Delta$] ROM(aq) + MX(aq) + H2O(l)}\]
+\[\ce{ROM(aq) + HX(aq) -> ROH(aq) + MX(aq)}\]
+其中 R 是烷基或芳香環基，對於芳香環基須約 300°C 高溫與約 200 atm 高壓，M 是 Na 或 K，X 是 Cl 或 Br。
+\subsubsection{胺基取代鹵基}
+鹵某和氨反應成鹵化某基銨：
+\[\ce{RX + NH3 ->[$\Delta$] RNH3$^+$X$^-$}\]
+再以鹼中和，如：
+\[\ce{RNH3$^+$X$^-$(aq) + NH3(aq) -> RNH2 + NH4+(aq) + X-(aq)}\]
+\subsubsection{兩個羥基縮合得醚}
+在硫酸催化下，於150°C以下，醇可進行親核取代反應，兩分子醇生成一分子醚與一分子水，以乙醇為例：
+\[\ce{2C2H5OH ->[\ce{H2SO4}][\text{130°C-140°C}] C2H5OC2H5 + H2O}\]
+\subsubsection{末端炔親核取代反應}
+末端炔可和氯化亞銅或硝酸銀的濃氨水溶液（後者即多侖試劑（Tollens' reagent）\ce{[Ag(NH3)2]NO3(aq)}）中的\ce{[Cu(NH3)2]^+}與\ce{[Ag(NH3)2]^+}錯離子，發生 SN2 取代反應，末端的氫可被銅(I)離子或銀離子取代，分別產生紅色的炔銅(I)與灰白色的炔銀沉澱。炔銅(I)與炔銀不穩定，易爆炸。
+\subsection{芳香親核取代反應}
+\subsubsection{苯酚製備2-羥基苯甲酸（柳酸）的科爾貝-施密特反應（Kolbe-Schmitt）反應}
+\[\ce{C6H5OH(aq) + NaOH(aq) -> C6H5ONa(aq) + H2O(l)}\]
+\[\ce{C6H5ONa(aq) + CO2(g) + NaOH(aq) ->[\text{125-150°C, 4-7 atm}] C6H4(ONa)(COONa)(aq) + H2O(l)}\]
+\[\ce{C6H4(ONa)(COONa)(aq) + 2H+(aq) ->[\text{酸性環境}] C6H4(OH)(COOH) + 2Na+(aq)}\]
+其中羧酸基在鄰位者最多，對位者次之，因該等位置有較高電子密度與，又二氧化碳體積較大，在對位受到一定的立體障礙。
+
+氫氧化鈉溶液與二氧化碳可能產生副產物碳酸鈉或碳酸氫鈉。
+\subsection{二個酸基脫水形成酸酐}
+濃硫酸催化下發生，屬於親核加成-消除機制。
+\[\ce{RCOOH + R$'$COOH ->[H2SO4] \tx{RC(=O)OC(=O)R$'$}}\]
+\subsection{酸酐水解成二個酸基}
+多可自發發生，屬於親核加成-消除機制。
+\[\ce{\tx{RC(=O)OC(=O)R$'$} + H2O -> R$'$COOH + R$''$COOH}\]
+\subsection{酯化反應}
+\begin{itemize}
+\item 廣義酯化反應：指具有酸性羥基的酸或其任意數量酸性羥基被取代的化合物（如羧酸、醯鹵、酸酐、硝酸）作為親電試劑，具有非酸羥基的化合物（如醇、酚）或非酸某氧正離子（如醇鹽、酚鹽）作為親核試劑，發生反應，使前者酸性羥基或取代其之基團被後者脫去羥基上的氫後的基團取代，形成酯類，後者脫落的質子鍵結至前者的酸性羥基或取代其之基團上。屬於親核加成-消除機制、醯（基）化反應。酯化反應的逆反應為酯的水解反應。某酸衍生物為親電試劑且某酸為羧酸者又稱某醯化反應。
+\item 因勒沙特列原理，酯化反應通常以可脫水的濃硫酸催化，並於乙醇等有機溶劑中進行，若在水中則難反應。
+\item 狹義酯化反應：指形成羧酸酯的廣義酯化反應。
+\item 親核試劑反應性：$\text{酚鹽} > \text{甲醇鹽} > \text{一級醇鹽} > \text{二級醇鹽} > \text{三級醇鹽} > \text{甲醇} > \text{一級醇} > \text{二級醇} > \text{三級醇} > \text{酚}$
+\item 親電試劑反應性：$\text{醯溴} > \text{醯氯} > \text{酸酐} > \text{羧酸}$
+\end{itemize}
+\subsubsection{醇與羧酸發生費雪酯化反應（Fischer esterification）/費雪–施派爾酯化反應（Fischer–Speier esterification）形成酯與水}
+醇（親核）與羧酸（親電）經濃硫酸催化發生酯化反應產生酯類與水，其中水由羧酸基提供OH、醇基提供H；逆反應為水解反應。
+\[\ce{RCOOH + R$'$OH ->[H2SO4] RCOOR$'$ + H2O}\]
+\subsubsection{醇與酸酐形成酯與羧酸}
+\[\ce{ROH + (R$'$CO)(R$''$CO)O ->[H2SO4] ROCOR$'$ + R$''$COOH}\]
+\subsubsection{醇與醯鹵形成酯與鹵化氫}
+\[\ce{ROH + R$'$COX ->[H2SO4] ROCOR$'$ + HX}\]
+\subsubsection{2-羥基苯甲酸（柳酸）製備 2-乙醯氧基苯甲酸（乙醯柳酸/阿斯匹靈）}
+在無水酸性環境下，2-羥基苯甲酸（柳酸），加乙酐經硫酸催化，或加乙醯氯經吡啶（氮雜苯）催化，柳酸斷羥基的O-H鍵，乙酐斷C-O鍵或乙醯氯斷C-Cl鍵，乙酐或乙醯氯提供的乙醯基鍵結到苯環上原羥基的氧上得到 2-乙醯氧基苯甲酸（乙醯柳酸/阿斯匹靈），羥基提供的H鍵結到乙酐提供的乙醯氧基上得到乙酸或羥基提供的H鍵結到乙醯氯提供的氯上得到氯化氫，屬於廣義酯化反應，其中柳酸作為親核試劑，乙酐或乙醯氯作為親電試劑，乙醯氯者氯化氫再與吡啶（氮雜苯）生成穩定鹽類使反應不致逆向進行，惟乙醯氯沸點低、遇水易分解、有刺激性臭味，一般使用乙酐者。
+\[\ce{C6H4(OH)(COOH) + (CH3CO)2O ->[\ce{H2SO4}] C6H4(OCOCH3)(COOH) + CH3COOH}\]
+\[\ce{C6H4(OH)(COOH) + CH3COCl ->[\ce{C5H5N}] C6H4(OCOCH3)(COOH) + HCl}\]
+\subsubsection{2-羥基苯甲酸（柳酸）製備 2-羥基苯甲酸甲酯（冬青油）}
+柳酸與甲醇發生酯化反應製備 2-羥基苯甲酸甲酯（冬青油），屬費雪酯化反應，其中柳酸作為親電試劑，甲醇作為親核試劑。
+\subsubsection{1,2,3-丙三醇（甘油）與硝酸製備1,2,3-三硝酸丙三酯（硝化甘油）}
+一分子1,2,3-丙三醇與三分子濃硝酸經濃硫酸催化得1,2,3-三硝酸丙三酯。
+\subsubsection{1,2-苯二甲酸酐與 2-乙基己醇製備 1,2-苯二甲酸二(2-乙基己基)酯（DEHP）}
+由 1,2-苯二甲酸酐（1,2-苯二甲酸形成的內酐，SMILES: C1=CC=C2C(=C1)C(=O)OC2=O）與 2-乙基己醇，在高溫與催化劑條件下，經酯化反應製得 1,2-苯二甲酸二(2-乙基己基)酯。
+\subsection{酯的水解反應}
+\begin{itemize}
+\item 反應速率：經鹼催化>經酸催化>無催化。
+\item 產率：鹼性環境（不可逆）>中性環境>酸性環境。
+\item 屬親核加成-消除機制。
+\end{itemize}
+\subsubsection{酸催化與無催化水解反應}
+為酸與醇/酚酯化反應的逆反應。酸可同時催化酯化與酯的水解反應。
+\[\text{酯 + \ce{H2O ->} 酸 + 醇}\]
+\subsubsection{鹼催化水解反應/皂化反應}
+生成物為酸鹽與醇/酚，不可逆。鹼只能催化酯的水解反應而不能催化酯化反應。為較慢的放熱反應。可加入酒精作為溶劑使混合充分。
+\[\text{酯 + \ce{OH- ->} 酸鹽 + 醇/酚}\]
+如：
+\[\text{單/二/三酸甘油酯 + 1/2/3KOH/NaOH \ce{->} 1/2/3脂肪酸鈉/鉀 + 甘油}\]
+\subsection{醯胺化反應}
+\begin{itemize}
+\item 醯胺化反應：類似酯化反應，惟親核試劑為-NH（如氨、一、二級胺、胺基酸等）；親電試劑為羧酸或其任意數量其酸性羥基被取代的化合物（如羧酸、醯鹵、酸酐、酯）；產物為一或二級醯胺與親核試劑脫落的質子鍵結至親電試劑的酸性羥基或取代其之基團上形成的化合物。屬於親核加成-消除機制、醯（基）化反應。某酸衍生物為親電試劑且某酸為羧酸者又稱某醯化反應。
+\item 通常以加熱或酵素催化而較少以酸催化，因為在酸性環境胺通常會優先與酸中和形成銨鹽而非參與酯化反應。通常於乙醇等有機溶劑中進行，若在水中則難反應。
+\item 胺基中的氮具有一對孤電子對，較羥基中的氧電負度更小、更難形成氫鍵，故更親核，使醯胺化反應較酯化反應有更大的平衡常數。
+\item 親核試劑反應性：$\text{氨} > \text{一級胺} > \text{二級胺}$，醯胺因共軛結構較穩定、銨鹽因已為陽離子而不具有親核性、三級胺的氮上沒有氫離子，故無法作為醯胺化反應的親核試劑。
+\item 親電試劑反應性：$\text{醯溴} > \text{醯氯} > \text{酸酐} > \text{羧酸} > \text{酯}$
+\item 以酯為親電試劑、氨為親核試劑，產生醯胺與醇，又稱酯的氨解反應。
+\end{itemize}
+\subsubsection{氨與羧酸形成一級醯胺與水}
+\[\ce{NH3 + RCOOH ->[$\Delta$] RCONH2 + H2O}\]
+\subsubsection{一級胺與羧酸形成二級醯胺與水}
+\[\ce{RNH2 + R$'$COOH ->[$\Delta$] R$'$CONHR + H2O}\]
+\subsubsection{二級胺與羧酸形成三級醯胺與水}
+\[\ce{RR$'$NH + R$''$COOH ->[$\Delta$] R$''$CONRR$'$ + H2O}\]
+\subsubsection{氨與酸酐形成一級醯胺與羧酸}
+\[\ce{NH3 + (RCO)(R$'$CO)O ->[$\Delta$] RCONH2 + R$'$COOH}\]
+\subsubsection{一級胺與酸酐形成二級醯胺與羧酸}
+\[\ce{RNH2 + (R$'$CO)(R$''$CO)O ->[$\Delta$] R$'$CONHR + R$''$COOH}\]
+如苯胺與乙酐形成 N-苯基乙醯胺與乙酸：
+\[\ce{C6H5NH2 + (CH3CO)2O ->[$\Delta$] C6H5NHCOCH3 + CH3COOH}\]
+\subsubsection{二級胺與酸酐形成三級醯胺與羧酸}
+\[\ce{RR$'$NH + (R$''$CO)(R$'''$CO)O ->[$\Delta$] R$''$CONRR$'$ + R$'''$COOH}\]
+\subsubsection{氨與醯鹵形成一級醯胺與鹵化銨}
+醯鹵與氨形成一級醯胺與鹵化銨：
+\[\ce{2NH3 + RCOX -> RCONH2 + NH4^+X^-}\]
+\subsubsection{一級胺與醯鹵形成二級醯胺與鹵化氫或二級醯胺與鹵化一級銨}
+醯鹵與鹼解離常數較小的一級胺形成二級醯胺與鹵化氫：
+\[\ce{RNH2 + R$'$COX -> R$'$CONHR + HX}\]
+醯鹵與鹼解離常數較大的一級胺形成二級醯胺與鹵化一級銨：
+\[\ce{2RNH2 + R$'$COX -> R$'$CONHR + RNH3^+X^-}\]
+如 4-胺基苯酚與乙醯氯形成 4-乙醯胺基苯酚與氯化氫：
+\[\ce{\text{4-胺基苯酚} + CH3COCl -> \text{4-乙醯胺基苯酚} + HCl}\]
+苯胺與乙醯鹵形成 N-苯基乙醯胺與鹵化苯銨：
+\[\ce{2C6H5NH2 + CH3COX ->[$\Delta$] C6H5NHCOCH3 + C6H5NH3$^+$X$^-$}\]
+\subsubsection{二級胺與醯鹵形成三級醯胺與鹵化氫或三級醯胺與鹵化二級銨}
+醯鹵與鹼解離常數較小的二級胺形成三級醯胺與鹵化氫：
+\[\ce{RR$'$NH + R$''$COX -> R$''$CONRR$'$ + HX}\]
+醯鹵與鹼解離常數較大的二級胺形成三級醯胺與鹵化二級銨：
+\[\ce{2RR$'$NH + R$''$COX -> R$''$CONRR$'$ + RR$'$NH2^+X^-}\]
+\subsubsection{氨與酯形成一級醯胺與醇/酯的氨解反應}
+\[\ce{NH3 + RCOOR$'$ ->[$\Delta$] RCONH2 + R$'$OH}\]
+如乙酸甲酯與氨形成乙醯胺與甲醇：
+\[\ce{CH3COOCH3 + NH3 -> CH3CONH2 + CH3OH}\]
+\subsubsection{一級胺與酯形成二級醯胺與醇}
+\[\ce{RNH2 + R$'$COOR$''$ ->[$\Delta$] R$'$CONHR + R$''$OH}\]
+如乙酸甲酯與甲胺形成 N-甲基乙醯胺與甲醇：
+\[\ce{CH3COOCH3 + CH3NH2 -> CH3CONHCH3 + CH3OH}\]
+\subsubsection{二級胺與酯形成三級醯胺與醇}
+\[\ce{RR$'$NH + R$''$COOR$'''$ ->[$\Delta$] R$''$CONRR$'$ + R$'''$OH}\]
+\subsubsection{胺基酸間形成醯胺鍵/肽鍵（Peptide bond）}
+胺基酸的羧酸基與另一個胺基酸的胺基脫去一水分子鍵結形成的共價鍵稱醯胺鍵/肽鍵，通常經酵素催化，常見於生物中製造肽或蛋白質。
+\[\ce{NH2CHRCOOH + NH2CHR$'$COOH -> NH2CHRCONHCHR$'$COOH}\]
+\subsection{醯胺的水解反應}
+\bit
+\item 無催化劑反應速率甚慢。
+\item 以酸或鹼催化時，因產物會與酸或鹼中和，須不斷補充酸或鹼。
+\item 屬親核加成-消除機制。
+\eit
+\subsubsection{酸催化水解反應}
+生成物為酸與銨鹽。酸只能催化醯胺的水解反應而不能催化醯胺化反應。
+\[\text{醯胺 + \ce{H2O ->} 酸 + 銨鹽}\]
+如：
+\[\text{N-甲基乙醯胺} + \ce{H2O -> CH3COOH + CH3NH3+}\]
+\[\text{蛋白質} + (n-1)\ce{H2O ->} n\text{胺基酸}\]
+\[\ce{\text{4-乙醯胺基苯酚} + H2O -> CH3COOH + \text{4-胺基苯酚}}\]
+\subsubsection{鹼催化與無催化水解反應}
+生成物為酸鹽與胺，在鹼中不可逆。鹼只能催化醯胺的水解反應而不能催化醯胺化反應。
+\[\text{醯胺 + \ce{OH- ->} 酸鹽 + 胺}\]
+如：
+\[\text{N-甲基乙醯胺} + \ce{OH- -> CH3COO- + CH3NH2}\]
+
+
+\section{加成反應}
+\subsection{催化氫化反應}
+鎳、鈀或鉑等催化，烯、炔、芳香烴等不飽和有機化合物可以斷 π 鍵氫化。烯、炔、芳香烴的完全氫化的產物為烷類，如苯加三分子氫變成環己烷；不飽和脂肪酸完全氫化的產物為飽和脂肪酸，如液態玉米油等經氫化產生固態的人造奶油。
+\subsection{親電加成反應}
+芳香烴因為其離域 π 鍵而不會進行親電加成。
+\subsubsection{鹵化反應}
+烯類加鹵素的產物為二鹵烷類；一炔類加一鹵素的產物為二鹵烯類（通常反式/E 異構物較多）；炔類完全鹵化的產物為四鹵烷類；苯經紫外光照射三分子氯氣反應產生 1,2,3,4,5,6-六氯環己烷（無法經氯化鐵(III)、氯化鋁、鐵粉等催化而得）；\ce{Br2}的溶液（通常用四氯甲烷為溶劑）呈紅棕色，溴烴則無色，故常以此褪色反應測定非離域 π 鍵數。
+\subsubsection{氫鹵化反應}
+炔的氫鹵化反應以硫酸汞與硫酸的稀酸水溶液為催化劑。
+\begin{itemize}
+\item 一分子烯與一分子鹵化氫反應得鹵烷，如乙烯+氯化氫 $\rightarrow$ 氯乙烷。
+\item 一分子炔與一分子鹵化氫反應得鹵烯，如乙炔+氯化氫 $\rightarrow$ 氯乙烯、1-丁烯-3-炔（乙烯基乙炔） +氯化氫 $\rightarrow$ 2-氯-1,3-丁二烯。
+\item 一分子炔與二分子鹵化氫完全反應得二鹵烷，如乙炔+2氯化氫 $\rightarrow$ 二氯乙烷。
+\end{itemize}
+\sssc{氧氯化反應（Oxychlorination）}
+工業上以乙烯與氯化氫經氯化銅(II)催化製備 1,2-二氯乙烷的反應，由於氯化氫較氯氣便宜故是 1,2-二氯乙烷的主要生產方式，1,2-二氯乙烷則可進一步用於裂解成氯乙烯。
+\ben
+\item 氯化銅(ΙΙ)鹵化乙烯為 1,2-二氯乙烷：
+\[\ce{C2H4(g) + 2CuCl2(s) -> 2CuCl(s) + C2H4Cl2(g)}\]
+\item 氧氣將氯化銅(I)再生為氯化銅(II)：
+\[\ce{O2(g) + 4CuCl(s) -> 2CuOCuCl2(s)}\]
+\[\ce{2HCl(g) + CuOCuCl2(s) -> 2CuCl2(s) + H2O(l)}\]
+\een
+全反應：
+\[\ce{2C2H4(g) + 4HCl(g) + O2(g) ->[\ce{CuCl2}] 2C2H4Cl2(g) + 2H2O(l)}\]
+\subsubsection{烯的水合反應}
+烯與水經酸（如稀硫酸）催化合成醇。
+\subsubsection{濃硫酸與乙烯合成硫酸乙酯}
+硫酸與乙烯合成硫酸乙酯\ce{CH3CH2OSO3H}。
+\subsubsection{炔的水合反應}
+炔與水經硫酸汞與硫酸的稀酸水溶液催化合成烯醇，而後很快地經由酮-烯醇互變轉變成更穩定的醛或酮：
+\bit
+\item 乙炔變成乙醛：
+\[\ce{(CH)2 + H2O ->[HgSO4, H2SO4] CH3CHO}\]
+\item 其他炔變成酮（乙炔以外的末端炔因馬可尼可夫法則而主產物為甲基酮而非醛）：
+\[\ce{RCCR$'$ + H2O ->[HgSO4, H2SO4] RCH2COR$'$}\]
+\eit
+\subsubsection{三級烯與醇製備醚}
+三級烯（參與雙鍵之碳其一其上無氫）與醇可經酸催化透過碳正離子機制（酸催化機制）得到醚，如：
+\[\tx{2-甲基丙烯} + \tx{甲醇} \ce{->[\ce{H+}]} \tx{甲基-2-甲基丙基醚}\]
+\sssc{乙炔製備苯}
+\[\ce{3C2H2(g) ->[\tx{500°C, 石英管}] C6H6(g)}\]
+\sssc{乙炔偶聯反應（Dimerization of acetylene）製備丁-1-烯-3-炔（乙烯基乙炔）}
+\[\ce{2C2H2(g) ->[\text{80-84°C},\ce{CuCl(aq) + NH4Cl(aq) + HCl(aq)}] CH2CHCCH(g)}\]
+
+
+\section{消去反應}
+\subsection{飽和烴的裂解反應（cracking reaction）}
+裂解反應指斷 σ 鍵並形成 π 鍵產生分子量更小的二或多個分子的反應。常見為熱裂解（thermal cracking）/裂煉。其中碳-氫鍵斷裂產生氫氣者稱脫氫反應。
+\sssc{輕油裂解}
+輕油裂解廠在隔絕空氣、約 800°C 高溫與觸媒作用下，使輕烷類發生熱裂解反應，生成分子量較小的烷類、烯類、氫氣、芳香烴等較高經濟價值的產物，如：
+\[\ce{C4H10 -> CH3CH2CHCH2 + H2}\]
+\[\ce{C4H10 -> CH3(CH)2CH3 + H2}\]
+\[\ce{C4H10 -> CH3CHCH2 + CH4}\]
+\[\ce{C4H10 -> CH2CH2 + CH3CH3}\]
+\[\ce{C5H12 -> H2 + CH2CH2 + CH3CH3}\]
+裂解產物經催化劑作用可製成合成汽油。
+\sssc{乙烷製備乙烯}
+工業上分別以乙烷、1,2-二氯乙烷在500°C高溫與\ce{Cr2O3}催化下脫氫、氯化氫製備乙烯、氯乙烯，分別可接著用於生產聚乙烯、聚氯乙烯：
+\[\ce{C2H6(g) -> C2H4(g) + H2(g)}\]
+\[\ce{C2H4Cl2(g) -> C2H3Cl(g) + HCl(g)}\]
+其中 1,2-二氯乙烷通過乙烯與氯化氫經氧氯化反應製備，該反應中部分的氯化氫可由前述 1,2-二氯乙烷消去反應中回收而得，兩者相加之全反應為：
+\[\ce{2C2H4(g) + 2HCl(g) + O2(g) ->[\ce{CuCl2},\ce{Cr2O3}] 2C2H3Cl(g) + 2H2O(l)}\]
+\sssc{飽和烴的脫氫環化（dehydrocyclization）反應}
+經約500°C高溫與\ce{Pt}或\ce{V2O5}催化脫四分子氫，可用正己烷製備苯、用（某基$\ldots$）k+6 烷製備（某基$\ldots$）k 苯。
+\subsection{鹵烷的 E2 消去反應脫氫得烯}
+\subsubsection{鹵烷與醇鈉的自發消去反應}
+鹵烷與醇鈉自發發生 E2 消去反應脫氫得烯，是烯的氫化加成反應的逆反應：
+\[\ce{\text{鹵某烷} + \text{另醇鈉} -> \text{某烯} + \text{另醇} + \text{鹵化鈉}}\]
+\subsubsection{鹵烷與氫氧化鈉醇溶液的消去反應}
+鹵烷與氫氧化鈉/鉀的醇溶液（不可用水溶液否則發生親核取代反應生成醇）共熱發生 E2 消去反應脫去一氫一鹵得烯：
+\[\ce{RHX + MOH(alc) ->[$\Delta$] R + H2O + MX}\]
+其中 RHX 是鹵烷（H 在 β 碳、Χ 在 α 碳），R 是烯，M 是 Na 或 K，X 是 Cl 或 Br。
+\subsection{醇 E1 消去反應脫水得烯}
+在硫酸催化下，於150°C以上，醇可進行消去反應，一分子醇生成一分子烯與一分子水，中間產物為碳正離子：
+\[\ce{C2H5OH ->[H2SO4][\text{170°C-180°C}] C2H4 + H2O}\]
+
+
+\sct{酸鹼反應}
+\subsection{羥基的氫被金屬陽離子取代生成氫氣}
+羥基某/某醇/某酚/某酸的羥基斷RO-H鍵，氫被金屬陽離子取代，形成某基氧鹽/某酸鹽與氫氣。反應性：羧酸$\gg$酚>水$\gg$甲醇>一級醇>二級醇>三級醇。
+\subsubsection{鹼金屬加入酚或醇中}
+反應溫和，無火花，故通常以過量乙醇處理實驗用剩的鹼金屬。若為醇水溶液則鹼金屬優先與水反應。醇與鹼（如氫氧化鈉水溶液）不反應。
+\[\ce{2ROH(l) + 2Na(s) -> 2RONa(alc) + H2(g)}\]
+\subsubsection{羧酸與鹼和比氫活潑的金屬反應}
+羧酸可與鹼、比氫活潑的金屬反應：
+\[\ce{RCOOH(aq) + NaHCO3(s) -> RCOONa(aq) + H2O(l) + CO2(g)}\]
+\[\ce{RCOOH(aq) + Mg(s) -> (RCOO)2Mg(aq) + H2(g)}\]
+\subsubsection{酚與強鹼中和反應}
+酚可溶於強鹼產生苯氧鹽溶液，如苯酚溶於氫氧化鈉水溶液：
+\[\ce{C6H5OH(s) + NaOH(aq) -> C6H5ONa(aq) + H2O(l)}\]
+苯酚溶於碳酸鈉水溶液：
+\[\ce{C6H5OH(s) + Na2CO3(aq) -> C6H5ONa(aq) + NaHCO3(aq)}\]
+但酚不溶於碳酸氫鈉水溶液或氨水。
+\subsubsection{羧酸與鹼中和反應}
+\[\ce{RCOOH + OH- -> RCOO- + H2O}\]
+\[\ce{RCOOH + HCO3- -> RCOO- + H2O + CO2}\]
+
+
+\section{氧化反應}
+\subsection{飽和烴的燃燒反應}
+是目前的重要能源。以下是一些常見烷類的莫耳燃燒熱（每莫耳物質完全燃燒時釋放的熱量）與熱值（每克物質完全燃燒時釋放的熱量）：
+\begin{longtable}[c]{|c|c|c|c|}
+\hline
+化合物 & 化學式 & 莫耳燃燒熱 (kJ/mol) & 熱值 (kJ/g) \\ \hline\endhead
+甲烷 & \ce{CH4} & 890.8 & 55.5 \\ \hline
+乙烷 & \ce{C2H6} & 1560.0 & 51.9 \\ \hline
+正丙烷 & \ce{C3H8} & 2220.0 & 50.4 \\ \hline
+正丁烷 & \ce{C4H10} & 2877.0 & 49.5 \\ \hline
+正戊烷 & \ce{C5H10} & 3509.0 & 48.6 \\ \hline
+正己烷 & \ce{C6H14} & 4193.0 & 48.0 \\ \hline
+正庚烷 & \ce{C7H16} & 4819.0 & 47.6 \\ \hline
+正辛烷 & \ce{C8H18} & 5471.0 & 47.2 \\ \hline
+\end{longtable}\FB
+隨著碳數增加，烷類的莫耳燃燒熱上升，但熱值略微下降。這是因為碳氫比的變化導致每單位質量所含的能量密度減少。
+\subsection{乙炔的燃燒反應}
+乙炔和氧或空氣的混合氣體有爆炸性，乙炔氧焰可達3000°C，工業上常用於焊接金屬：
+\[\ce{2C2H2(g) + 5O2(g) -> 4CO2(g) + 2H2O(l) + 2600\tx{\ kJ}}\]
+\subsection{烯類氧化成二醇}
+烯 \tx{RC(H)=C(H)R'} 可用室溫或低溫中性或弱鹼的稀過錳酸鉀水溶液氧化成二醇 \tx{RC(H)(OH)C(H)(OH)R'}，是常用的烯類檢驗法：
+\[\ce{3RC(H)C(H)R$'$ + 2MnO4- + 4H2O -> 3RC(H)(OH)C(H)(OH)R$'$ + 2MnO2 + 2OH-}\]
+\subsection{炔類氧化成二氧化碳或羧酸}
+炔類可用室溫或低溫中性或弱鹼的稀過錳酸鉀水溶液氧化，是常用的炔類檢驗法：
+\bit
+\item 一分子乙炔被氧化成二分子二氧化碳：
+\[\ce{3C2H2 + 10MnO4- + 2H2O -> 6CO2 + 10MnO2 + 10OH-}\]
+\item 一分子末端炔 RC$\equiv$CH 被氧化成一分子羧酸根離子與一分子二氧化碳：
+\[\ce{3RCCH + 8MnO4- + H2O -> 3RCOO- + 3CO2 + 8MnO2 + 5OH-}\]
+\item 一分子非末端炔 RC$\equiv$CR' 被氧化二分子羧酸根離子：
+\[\ce{RCCR$'$ + 2MnO4- -> RCOO- + R$'$COO- + 2MnO2}\]
+\eit
+\subsection{環烷氧化為二酸}
+環$k$烷被過錳酸鉀水溶液氧化成$k$二酸。
+\subsection{芳香環上一、二級烷基氧化成甲酸基}
+芳香環上的一、二級烷基可用高溫酸性過錳酸鉀水溶液氧化為甲酸基團，但若為 α 碳（與苯環相接的碳）上沒有氫的三級烷基（如叔丁基）則無法被氧化。如：
+\begin{itemize}
+\item 1,4-二甲基苯被過錳酸鉀氧化成 1,4-苯二甲酸：
+\[\ce{C6H4(CH3)2 + 4KMnO4 -> C6H4(COOH)2 + 4MnO2 + 4KOH}\]
+\item 1,4-二甲基苯被二鉻酸鉀氧化成 1,4-苯二甲酸：
+\[\ce{C6H4(CH3)2 + 2K2Cr2O7 + 9H+ -> C6H4(COOH)2 + 4Cr(OH)3 + 4KOH + 3H2O}\]
+\item 乙苯被過錳酸鉀氧化成苯甲酸：
+\[\ce{C6H5(CH2CH3) + 4KMnO4 -> C6H5(COOH) + 4KOH + 4MnO2 + CO2}\]
+\item 乙苯被二鉻酸鉀氧化成苯甲酸：
+\[\ce{C6H5(CH2CH3) + 2K2Cr2O7 + 6H2O -> C6H5(COOH) + 4KOH + 4Cr(OH)3 + CO2}\]
+\end{itemize}
+\subsection{甲醇、一級醇、二級醇、苯二酚、α-羥基酮、醛氧化成醛、羧酸或酮}
+\sssc{氧化劑}
+\begin{itemize}
+\item \tb{過錳酸鉀水溶液}：氧化力最強。氧化力與質子濃度正相關。酸性環境還原為二價錳離子，中性或弱鹼性環境還原為二氧化錳，強鹼性環境還原為錳酸根。可立即將一級醇氧化成羧酸，不適合用於欲取出醛時。可氧化苯二酚。
+\item \tb{酸性二鉻酸鉀水溶液}：氧化力次之。氧化力與質子濃度正相關，鹼性中多數二鉻酸鉀變為鉻酸鉀而失去氧化力。還原為三價鉻離子。可將一級醇氧化為羧酸，及時蒸餾可獲得部分醛，但仍不適合用於欲取出醛時。可氧化苯二酚。
+\item \tb{吡啶氯鉻酸鹽（Pyridinium chlorochromate, PCC）}\ce{(C5H5NH)(CrO3Cl)}：氧化力溫和。適合用於欲將一級醇氧化為醛並收集時。無法氧化苯二酚。
+\item \tb{空氣}：氧化力最弱，不能氧化羥基，但可以氧化醛（不含甲酸）。
+\end{itemize}
+\sssc{還原劑}
+甲醇、一級醇、二級醇、 α-羥基酮具還原性可被氧化，三級醇和無 α-羥基的酮在一般條件下無法被氧化，可藉此辨別之。醇的氧化乃斷O-H鍵。還原力：醛>甲醇>一級醇>二級醇，三級醇與無 α-羥基的酮無還原力。
+\subsubsection{甲醇、一級醇、α-一級羥基酮氧化成醛或羧酸}
+甲醇、一級醇氧化成同碳數醛，α-一級羥基酮氧化成同碳數 α-酮醛，若氧化劑未消耗盡則醛再氧化成同碳數羧酸（α-酮醛氧化成同碳數 α-酮酸）。醇的沸點高於醛，對反應速率較慢者，如以 PCC 為氧化劑時，可通過蒸餾收集冷凝液獲得醛。空氣中不氧化。
+
+氧化成醛半反應：
+\[\ce{RCH2OH -> RCHO + 2H+ + 2e-}\]
+氧化成羧酸半反應：
+\[\ce{RCH2OH + H2O -> RCOOH + 4H+ + 4e-}\]
+
+\tb{乙二醇開裂（Glycol Cleavage）}：斷碳碳單鍵同時氧化該二碳得兩個甲酸：
+\[\ce{5(CH2OH)2(aq) + 6MnO4-(aq) + 18H+(aq) -> 10HCOOH(aq) + 6Mn^{2+}(aq) + 14H2O(l)}\]
+
+\textbf{酒精檢測}：酒精會很快經血液進入肺部，而可測量呼出氣體的酒精濃度估算血液的酒精濃度，中華民國的酒測值標準為吐氣酒精濃度不得超過0.15mg/L、血液酒精濃度不得超過0.03\%。
+\begin{itemize}
+\item \tb{二鉻酸鹽檢測管}：氧化乙醇得乙酸，橘紅色二鉻酸根變為綠色三價鉻離子：
+\[\ce{3C2H5OH + 2Cr2O7^{2-} + 16H+ -> 3CH3COOH + 4Cr^{3+} + 11 H2O}\]
+再以光度計測量，可換算成酒精濃度。
+\item\tb{電化學酒測器}：為燃料電池，陽極發生氧化半反應：
+\[\ce{C2H5OH + H2O -> CH3COOH + 4H+ + 4e-}\]
+陰極發生還原半反應：
+\[\ce{O2 + 4H+ + 4e- -> 2H2O}\]
+產生微弱電流，與酒精含量成正比，測量之可換算成酒精濃度。具高選擇性，對乙醇敏感而不易受其他氣體如丙酮或一氧化碳影響。現臺灣臨檢之手持式酒測器為此。
+\end{itemize}
+\subsubsection{二級醇氧化成酮}
+二級醇氧化成同碳數酮，α-二級羥基酮氧化成同碳數 α-二酮，酮類若無 α-羥基在一般條件下無法再被氧化。空氣中不氧化。
+
+氧化半反應：
+\[\ce{RCH(OH)R$'$ -> RC(O)R$'$ + 2H+ + 2e-}\]
+\subsubsection{苯二酚氧化成環己二烯二酮（苯醌）}
+1,2-苯二酚氧化成 3,5-環己二烯-1,2-二酮（1,2-苯醌）、1,4-苯二酚氧化成 2,5-環己二烯-1,4-二酮（1,4-苯醌），須強氧化劑方能氧化之，氧化半反應：
+\[\ce{C6H4(OH)2 -> 5C6H4O2 + 2H+ + 2e-}\]
+1,2-苯醌不穩定，易發生水解還原反應變回1,2-苯二酚；1,4-苯醌較穩定，但仍不耐酸鹼。
+\sssc{醛氧化成羧酸}
+醛的還原性高於醇，在常溫下空氣中即可氧化成羧酸，空氣中氧化：
+\[\ce{2RCHO + O2 -> 2RCOOH}\]
+水中氧化半反應：
+\[\ce{RCHO + H2O -> RCOOH + 2H+ + 2e-}\]
+\subsection{羧酸氧化}
+\subsubsection{甲酸氧化成二氧化碳與水}
+\[\ce{5HCOOH + 2MnO4- + 6H+ -> 5CO2 + 2Mn^{2+} + 8H2O}\]
+\subsubsection{乙二酸（草酸）氧化成二氧化碳與水}
+\[\ce{5(COOH)2 + 2MnO4- + 6H+ -> 10CO2 + 2Mn^{2+} + 8H2O}\]
+\[\ce{3(COOH)2 + Cr2O7^{2-} + 14H+ -> 6CO2 + 2Cr^{3+} + 7H2O}\]
+因斷鍵多，較一般離子間氧化還原反應慢。前者的\ce{Mn^{2+}}可自催化反應。
+\ssc{烷基的氨氧化（Ammoxidation）反應}
+烷基與氨氣和氧氣反應形成腈與水：
+\[\ce{2RCH3 + 2NH3 + 3O2 -> 2RCN + 6H2O}\]
+如丙烯與氨氣和氧氣反應形成丙烯腈與水。
+
+
+\section{還原反應}
+\subsection{醛或酮氫化還原成醇}
+\begin{itemize}
+\item 以鎳、鈀或鉑等催化。
+\item 醛加氫氣還原成一級醇。
+\item 酮加氫氣還原成二級醇。
+\end{itemize}
+\subsection{硝基還原成胺基}
+\subsubsection{以氫氣還原}
+以鎳、鈀或鉑等催化，發生：
+\[\ce{RNO2 + 3H2(g) -> RNH2(s) + 2H2O(l)}\]
+如：
+\[\ce{C6H5NO2 + 3H2(g) -> C6H5NH2(s) + 2H2O(l)}\]
+\subsubsection{以金屬還原}
+在約30\%鹽酸中以鐵、鋅等金屬為還原劑，使硝基某還原成鹵化某銨溶液或某胺，對於芳香環上硝基需加熱：
+\[\ce{RNO2 + 3Fe(s) + 7H+(aq) -> RNH3$^+$(aq) + 3Fe^{2+}(aq) + 2H2O(l)}\]
+\[\ce{RNO2 + 3Zn(s) + 7H+(aq) -> RNH3$^+$(aq) + 3Zn^{2+}(aq) + 2H2O(l)}\]
+\[\ce{RNO2 + 3Fe(s) + 6H+(aq) -> RNH2(aq) + 3Fe^{2+}(aq) + 2H2O(l)}\]
+\[\ce{RNO2 + 3Zn(s) + 7H+(aq) -> RNH2(aq) + 3Zn^{2+}(aq) + 2H2O(l)}\]
+鹵化某銨者再以鹼中和形成某胺，以碳酸鈉為例：
+\[\ce{2RNH3$^+$Cl$^-$(aq) + Na2CO3(aq) -> 2RNH2(s) + CO2(g) + H2O(l) + 2NaCl(aq)}\]
+
+
+\section{其他反應}
+\subsection{水煤氣（Water gas）製備甲醇}
+工業上將水煤氣 \ce{H2(g) + CO(g)} 在 400°C、5000 atm 下以氧化鉻(III)與氧化鋅或氧化銅(II)催化下製備甲醇：
+\[\ce{CO(g) + 2H2(g) ->[\tx{400°C, 5000 atm}, \ce{ZnO$\cdot$Cr2O3}\tx{或}\ce{CuO$\cdot$Cr2O3}] CH3OH(g)}\]
+\subsection{水煤氣製備甲烷}
+水煤氣在 100°C、1 atm 下以鎳或鉑等催化下可得甲烷：
+\[\ce{CO(g) + 3H2(g) ->[\tx{100°C, 1 atm}] CH4(g) + H2O(l)}\]
+\ssc{甲酸分解成一氧化碳與水}
+\[\ce{HCOOH(aq) ->[\tx{濃}\ce{H2SO4(aq)}] CO(g) + H2O(l)}\]
+\ssc{酚環與鐵(III)離子錯合}
+六個苯環上氧負離子與一個鐵(III)離子錯合形成六配位數錯離子，色紫。常將酚類加於氯化鐵(III)水溶液中顯現紫色以檢驗之。
+\begin{itemize}
+\item 六分子苯酚與\ce{Fe^{3+}}錯合：
+\[\ce{6C6H5OH(aq) + Fe^{3+}(aq)\text{(黃)} -> [Fe(C6H5O)6]^{3-}(aq)\text{(紫)} + 6H^+(aq)}\]
+\item 1,2-苯二酚（兒茶酚）與\ce{Fe^{3+}}錯合：
+\[\ce{3C6H4(OH)2(aq) + Fe^{3+}(aq)\tx{(黃)} -> [Fe(C6H4O2)3]^{3-}\text{(紫)} + 6H+(aq)}\]
+\item 酚環上鄰位或對位有供電子基團：會增加苯氧負離子的電子密度，使其更容易與\ce{Fe^{3+}}錯合，因此通常能形成更穩定的錯合物。如：柳酸根離子\ce{C6H4(O^-)(COO^-)}錯合強而顏色深（-\ce{COOH}為吸電子基團不利錯合，但 -\ce{COO-}為供電子基團利於錯合，故錯合物主要為後者形式）。
+\item 酚環上鄰位或對位有吸電子基團：會降低酚氧負離子的電子密度，使其與\ce{Fe^{3+}}的錯合能力減弱甚至消失。如：1,4-二硝基酚錯合弱而顏色淺。
+\item 立體位阻影響：當酚環上的取代基體積較大且靠近羥基時，可能降低錯合物的穩定性。如：2,6-二叔丁基酚由於兩個叔丁基的空間障礙，導致錯合反應受阻。
+\end{itemize}
+\ssc{乙醇氯化製備 2,2,2-三氯乙-1,1-二醇（水合三氯乙醛）}
+乙醇溶於酸中，通入氯氣，不可在鹼中，否則發生鹵仿反應形成鹵仿與羧酸根離子：
+\ben
+\item 氯氣自身氧化還原產生次氯酸：
+\[\ce{Cl2(aq) + H2O(l) <=> HCl(aq) + HOCl(aq)}\]
+\item 乙醇被次氯酸氧化成乙醛：
+\[\ce{CH3CH2OH(aq) + HOCl(aq) -> CH3CHO(aq) + HCl(aq) + H2O(l)}\]
+\item 乙醛被自由基取代成 2-氯乙醛：
+\[\ce{CH3CHO(aq) + Cl2(aq) -> CH2ClCHO(aq) + HCl(aq)}\]
+\item 2-氯乙醛被自由基取代成 2,2-二氯乙醛：
+\[\ce{CH2ClCHO(aq) + Cl2(aq) -> CHCl2CHO(aq) + HCl(aq)}\]
+\item 2,2-二氯乙醛被自由基取代成 2,2,2-三氯乙醛：
+\[\ce{CHCl2CHO(aq) + Cl2(aq) -> CCl3CHO(aq) + HCl(aq)}\]
+\item 2,2,2-三氯乙醛水合成 2,2,2-三氯乙-1,1-二醇，因三氯甲基強烈吸電子，使 2,2,2-三氯乙醛為強親電試劑，迅速水合，而 α 碳沒有吸電子基團的醛類則不易水合：
+\[\ce{CCl3CHO(aq) + H2O(l) -> CCl3CH(OH)2(aq)}\]
+\een
+全反應：
+\[\ce{CH3CH2OH(aq) + 4Cl2(aq) + H2O(l) -> CCl3CH(OH)2(aq) + 5HCl(aq)}\]
+\ssc{鹵仿反應（Haloform reaction）}
+以氯、溴、碘和甲基仲醇或甲基酮在鹼中製備氯、溴、碘仿的反應。
+\ben
+\item 鹵素自身氧化還原產生次鹵酸，其中 X=Cl, Br, I：
+\[\ce{X2 + 2OH- -> X- + OX- + H2O}\]
+\item 以甲基仲醇為原料者，先被次鹵酸氧化成甲基酮：
+\[\tx{RC(OH)CH$_3$} + \ce{OX- + OH- ->} \tx{RC(=O)CH$_3$} + \ce{X- + H2O}\]
+\item 甲基酮在鹼中經由酮-烯醇互變異構變為甲烯醇鹽：
+\[\tx{RC(=O)CH$_3$} + \ce{OH- <=>} \tx{RC(O$^-$)=CH$_2$} + \ce{H2O <=>} \tx{RC(=O)C$^-$H$_2$} + \ce{H2O}\]
+\item 甲烯醇鹽被次鹵酸攻擊氧化成鹵甲基酮：
+\[\tx{RC(=O)C$^-$H$_2$} + \ce{OX- + H2O ->} \tx{RC(=O)CH$_2$X} + \ce{2OH-}\]
+\item 鹵甲基酮在鹼中經由酮-烯醇互變異構變為鹵甲烯醇鹽：
+\[\tx{RC(=O)CH$_2$X} + \ce{OH- <=>} \tx{RC(O$^-$)=CHX} + \ce{H2O <=>} \tx{RC(=O)C$^-$HX} + \ce{H2O}\]
+\item 鹵甲烯醇鹽被次鹵酸攻擊氧化成二鹵甲基酮：
+\[\tx{RC(=O)C$^-$HX} + \ce{OX- + H2O ->} \tx{RC(=O)CHX$_2$} + \ce{2OH-}\]
+\item 二鹵甲基酮在鹼中經由酮-烯醇互變異構變為二鹵甲烯醇鹽：
+\[\tx{RC(=O)CHX$_2$} + \ce{OH- <=>} \tx{RC(O$^-$)=CX$_2$} + \ce{H2O <=>} \tx{RC(=O)C$^-$X$_2$} + \ce{H2O}\]
+\item 二鹵甲烯醇鹽被次鹵酸攻擊氧化成三鹵甲基酮：
+\[\tx{RC(=O)C$^-$X$_2$} + \ce{OX- + H2O ->} \tx{RC(=O)CX$_3$} + \ce{2OH-}\]
+\item 三鹵甲基酮在鹼中被氫氧根離子攻擊形成羧酸與三鹵化碳負離子：
+\[\tx{RC(=O)CX$_3$} + \ce{OH- ->} \tx{RC(O$^-$)(OH)CX$_3$} \ce{->} \tx{RC(=O)OH} + \ce{CX3-}\]
+\item 羧酸與三鹵化碳負離子質子交換形成羧酸根離子與鹵仿：
+\[\tx{RC(=O)OH} + \ce{CX3- ->} \tx{RC(=O)O$^-$} + \ce{CHX3}\]
+\een
+全反應：
+\[\tx{RC(OH)CH$_3$} + \ce{4X2 + 6OH- ->} \tx{RC(=O)O$^-$} + \ce{CHX3 + 5X- + 5H2O}\]
+或
+\[\tx{RC(=O)CH$_3$} + \ce{3X2 + 4OH- ->} \tx{RC(=O)O$^-$} + \ce{CHX3 + 3X- + 3H2O}\]
+\ssc{氰酸銨製備尿素}
+\[\ce{NH4OCN(s) ->[$\Delta$] (NH2)2CO(s)}\]
+
+
+\section{有機金屬化合物（Organometallic Compounds）}
+指具有碳金屬鍵的有機物。
+\ssc{有機錫化合物（Organotin）}
+指具有碳錫鍵的有機物。
+\sssc{二烴基錫與一烴基錫}
+毒性低，可作為 PVC 熱穩定劑，修補缺陷並吸收鹽酸。
+\sssc{三烴基錫}
+低碳者劇毒，可作為殺生物劑。
+\sssc{三丁基錫化合物（Tributyltin, TBT）}
+指具有\ce{(C4H9)3Sn}基團的化合物，劇毒，常作為殺菌劑。過去曾加入船舶塗料作為殺生物劑，最常見為氧化三丁基錫\ce{((C4H9)3Sn)2O}，但會汙染海洋並通過生物富集作用（biomagnification）於食物鏈（food chain）遞增。
+\ssc{有機鉛化合物（Organolead）}
+指具有碳鉛鍵的有機物，多劇毒。
+\sssc{四乙基鉛（Tetraethyllead, TEL）}
+\bit
+\item 無色黏稠劇毒親油性液體。
+\item 小米基利（Thomas Midgley Jr.）發明，1921年發現其抗爆震特性，始作為抗震劑添加到汽油中，稱含鉛汽油，辛烷值較無添加汽油大幅提升，使引擎效率大幅提升。2021年含鉛汽油在全球範圍內全面淘汰。
+\item 工業上以鈉、鉛和氯乙烷製備：
+\[\ce{4C2H5Cl(g) + 4Na(s) + Pb(s) -> (C2H5)4Pb(l) + 4NaCl(s)}\]
+\eit
+\ssc{有機汞化合物（Organomercury）}
+指具有碳汞鍵的有機物，其中汞氧化數為 +2。多具毒性。
+\ssc{有機鈦化合物（Organotitanium）}
+指具有碳鈦鍵的有機物，其中鈦氧化數一般為 +4。用於許多化工製程的催化劑。
+\ssc{有機鋁化合物（Organoaluminium）}
+指具有碳鋁鍵的有機物，其中鋁氧化數為 +3。用於許多化工製程的催化劑。
+
+
+\section{燃料（Fuel）與無定形碳（Amorphous carbon）}
+\ssc{化石燃料（Fossil fuel）}
+由史前生物埋藏的遺骸在地殼中自然形成的以碳或烴類為主要成分的可燃混合物，如天然氣、石油、煤等。
+\ssc{天然氣（Natural gas）}
+是古代動植物埋於地下，在一定的地質條件下天然生成的可燃氣體，存在於地殼上層部分，為烴類和非烴類氣態混合物，主要成分為甲烷，次要成分為乙烷，並含有約2\%的氦氣，主要用於燃料，以氣態或液態運輸，熱值約 33-50 MJ/kg。
+\ssc{石油（Petroleum）}
+\subsubsection{石油/原油（Petroleum）}
+是古代動植物埋於地下，在一定的地質條件下天然生成的可燃、黏稠、深褐色液體，存在於地殼上層部分，主要成分是烷烴，亦可能含有硫、氧、氮、磷等元素，不同油田的石油成分和外貌有異，主要用於燃料、溶液、化肥、殺蟲劑、潤滑油和塑膠等。開採後通常先經分餾為各餾出溫度之產品再行使用或再加工。
+\subsubsection{石油氣（Petroleum gas）與液化石油氣（liquefied/liquid petroleum gas, LPG）}
+餾出溫度30°C以下，主要成分為丙烷，次要成分為丁烷，亦可能含有甲烷和乙烷，經加壓或降溫液化得液化石油氣，主要用於燃料，作為家用燃料時儲於高壓鋼筒中並人為添加含硫化合物使有臭味以助於發現外洩，熱值約 46-50 MJ/kg。
+\subsubsection{石油醚（Petroleum ether）}
+餾出溫度20-60℃，主要成分為戊烷和己烷，主要用於有機溶劑。
+\subsubsection{汽油（US: Gasoline/UK: Petrol）}
+餾出溫度60-200°C，主要成分為C5至C12脂肪烴，無色液體，具特殊臭味、易揮發、易燃，主要用於汽機車燃料，熱值約 46-48 MJ/kg，抗爆震的能力按辛烷值量度，為方便辨識不同辛烷值的汽油有時會加入不同色素。
+\subsubsection{煤油（Kerosene）}
+餾出溫度150-300°C，主要成分為C9至C16脂肪烴，主要用於飛機燃料，熱值約 44-48 MJ/kg。
+\subsubsection{柴油（Diesel）}
+餾出溫度200-400°C，主要成分為C10至C20脂肪烴，主要用於柴油車燃料，熱值約 42-44 MJ/kg。
+\subsubsection{石蠟（Paraffin, paraffin wax, or petroleum wax）}
+餾出溫度300-600°C，主要成分為C16至C40脂肪烴，主要作為潤滑油（Lubricant/lube）、機油（Motor oil）、容器塗敷劑、水果表面保鮮、增色與防霉塗料、蠟燭、蠟筆、蠟紙、封入劑。
+\subsubsection{瀝青（Asphalt or bitumen）}
+分餾塔底的的黏稠殘渣，主要用於道路鋪設。
+\sssc{凡士林（Vaseline）/石油膏}
+25碳以上烷類膏狀物，常作為潤滑劑、瀉藥等。
+\sssc{引擎爆震/敲缸（Engine knocking）與辛烷值（Octane number, O.N.）}
+引擎爆震/敲缸指汽油蒸氣在汽缸內燃燒不正常造成的溫度和壓力上升、引擎效率降低與產生敲擊聲，可能引起過熱甚至活塞損壞。辛烷值是交通工具所使用汽油的抗爆震程度之量測指標，正庚烷在高溫壓下較容易引發自燃造成爆震，其辛烷值定為0，而異辛烷的爆震現象很小，其辛烷值定為100，如果測得一種汽油在標準發動機試驗中所產生的爆震程度相當於體積百分濃度$x$\%異辛烷和$(100-x)$\%正庚烷的混合液所產生的爆震程度，那麼其辛烷值便稱為$x$。現無鉛汽油一般添加多支鏈成分、烯烴或芳香烴以提高辛烷值。
+\sssc{石油化學工業/石化工業（Petrochemical industry）}
+以石油為原料的化學工業，其產品稱石油化學產品/石化產品。
+\ssc{煤（Coal）/煤炭/石炭}
+是古代植物埋於地下，在一定的地質條件下天然生成的主要成分為非定形碳的黑色或棕黑色沉積岩，存在於地殼上層部分，稱煤床或煤層，主要作為燃料。
+\sssc{泥炭/草炭/泥煤（Peat）}
+含碳量<25\%，是沼澤的產物，主要存在於高緯度地區，可作為民生燃料。
+\sssc{褐煤（Lignite or brown coal）}
+含碳量25-35\%，主要作為燃料，用於火力發電等，汙染物排放較多。
+\sssc{次煙煤/亞煙煤（Sub-bituminous coal）}
+含碳量35-45\%，熱值 19.3-26.7 MJ/kg，主要作為燃料，用於火力發電等。
+\sssc{煙煤（Bituminous coal）/生煤}
+含碳量<86\%且熱值 >24.4 MJ/kg，主要作為燃料，用於火力發電、煉鐵等。
+\sssc{無煙煤（Anthracite）/硬煤（hard coal）/石煤（stone coal）}
+含碳量>86\%，質硬，密度較高，主要作為燃料，熱值約 26-33 MJ/kg，用於火力發電、冶金等。
+\ssc{煤氣（Coal gas）}
+由煤製成的可燃氣體產物。
+\sssc{焦爐煤氣（Coke oven gas, COG）}
+煤乾餾的氣態產物，主要成分為氫氣、甲烷和一氧化碳，主要用於工業與民生燃料。
+\sssc{水煤氣（Water gas）}
+煤和水蒸氣共熱製成的氣體產物，成分約為莫耳分率各約 0.5 的一氧化碳與氫氣，主要用於合成甲醇、燃料、製備氫氣等。
+\ssc{煤溚（dá）/煤焦油（Coal tar）分餾的產物}
+\sssc{煤溚（dá）/煤焦油（Coal tar）}
+煤乾餾的液態產物，為濃稠、黑色、具燒焦味的液體。
+\subsubsection{輕（質）油（Light oil）}
+餾出溫度170°C以下，約占百分之二到五，主要成分為苯、甲苯、二甲苯，可用於製造苯胺、燃料、染料、溶劑、香料、爆炸物。
+\subsubsection{中（質）油（Middle oil）}
+餾出溫度170-230°C，約占百分之八到十，主要成分為苯酚、萘，可用於製造殺蟲劑、消毒劑。
+\subsubsection{重（質）油（Heavy oil）}
+餾出溫度230-270°C，約占百分之八到十，主要成分為苯酚、萘、甲酚，可用於製造靛藍染料、防腐劑。
+\subsubsection{綠油（Anthracene）}
+餾出溫度270-360°C，約占百分之十五到二十五，主要成分為蒽，可用於製造茜素黃染料。
+\subsubsection{煤焦油瀝青/柏油（Pitch）}
+分餾塔底的黏稠殘渣，約占百分之五十五到六十六，主要成分為蒽、菲、芘、碳等，可用於道路鋪設、屋頂防水、燃料、防腐劑，因健康危害多被石油瀝青取代，現稱柏油路者多為石油瀝青與混凝土。
+\ssc{無定形碳（Amorphous carbon）}
+\sssc{煤焦/焦煤/焦炭（Coke）}
+煤乾餾的固態產物，冶金工業便宜的金屬還原劑，主要用於煉鐵，部分用於其他冶金用途與製造合成煤氣。
+\sssc{碳黑（Carbon black）}
+低氧下強熱來自煤或石油的烴類製得的黑色無定形碳，常作為黑色顏料與輪胎製造時之添加劑：
+\[\ce{4C$_m$H$_n$(g) + $n$O2(g) -> $4m$C(s) + $2n$H2O(g)}\]
+\sssc{木炭（Charcoal）}
+低氧下強熱木材或其他植物材料製得的黑色無定形碳，常作為燃料。
+\sssc{骨碳（Bone char or bone charcoal）/骨黑（Bond black）/動物碳（Animal charcoal）}
+低氧下強熱動物骨骼製得的黑色、多孔無定形碳，常作為水淨化的吸附劑與黑色顏料。
+\sssc{活性碳（Active/Activated carbon）/活性炭（Active/Activated charcoal）}
+多孔、堆積密度低、比表面積大、黑色粉末狀或顆粒狀無定形碳，常作為液體與氣體淨化的吸附劑。
+
+
+\section{聚合物（Polymer）}
+\ssc{定義}
+\begin{itemize}
+\item 聚合物是由高分子/巨分子（macromolecule）組成的混合物。高分子是指相對分子質量較高的分子，其結構由實際上或概念上來自低相對分子質量分子（稱單體（monomer））的多個重複單元（稱結構單元（structural unit）/單體單元（monomeric unit））組成。如聚乙烯(-C(H$_2$)-C(H$_2$)-)$_n$的單體為乙烯、單體單元為-C(H$_2$)-C(H$_2$)-。
+\item 殘基（residue）：生化學上稱縮合聚合物中的單體單元。
+\item 聚合物的（平均）分子量為該等高分子的平均分子量，通常在 10$^3$ 以上。
+\item 高分子中單體單元的數目稱聚合度（Degree of polymerization, DP）；聚合物的平均分子量除以單體單元式量稱平均聚合度。
+\item 重複結構單元（Constitutional Repeating Unit, CRU）：重複形成規則單鏈聚合物鏈的最小結構單元。
+\item 系統命名：聚（poly）加上重複結構單元或單體名。
+\eit
+\ssc{依來源分類}
+\begin{itemize}
+\item 天然聚合物：澱粉、纖維素、蛋白質、DNA、天然橡膠等。
+\item 人造聚合物：
+\bit
+\item 合成聚合物：聚乙烯、聚氯乙烯、耐綸、達克綸、合成橡膠、矽橡膠等。塑膠材料之單體通常由石油中提煉出。
+\item 再生聚合物：將天然聚合物或/與廢棄物再處理製成。如醋酸纖維素。
+\eit
+\eit
+\ssc{依單體種類數目分類}
+\sssc{同元聚合物/均聚物/同聚物（Homopolymer）}
+由一種單體聚合而成的聚合物。如：澱粉、纖維素、聚氯乙烯等。
+\sssc{共聚物（Copolymer）/異聚物/雜聚物（heteropolymer）}
+由兩種以上單體聚合而成的聚合物。如：蛋白質、DNA、耐綸、達克綸、ABS等。
+
+分為：
+\bit
+\item \tb{無規（atactic）共聚物}：各種單體的排序沒有規律。
+\item \tb{隨機（random）/統計（statistical）共聚物}：各種單體的排序遵循一定的統計規律。
+\item \tb{交替（alternating）共聚物}：各種單體嚴格交替。
+\item \tb{嵌段（block）共聚物}：由多個較長的只有一種單體的鏈構成。
+\item \tb{梯度（gradient）共聚物}：各種單體組成比例沿鏈改變。
+\item \tb{接枝（graft）共聚物}：具較長支鏈且主鏈與支鏈遵循不同規則的支鏈型共聚物。
+\end{itemize}
+\ssc{依高分子鏈間的排列方式分類}
+\sssc{線型/鏈狀聚合物}
+可分為：
+\bit
+\item 直鏈型：沒有支鏈。
+\item 支鏈型：有支鏈。
+\eit
+\sssc{交聯（cross-linked）/網狀聚合物}
+高分子鏈間以支鏈交聯。
+\sssc{熱塑性塑膠（thermoplastic/thermosoftening plastic）}
+為鏈狀聚合物，低於其玻璃轉換溫度時為固態，超過其玻璃轉換溫度時為熔融狀態，可重新塑型，故可回收再利用。如聚乙烯及其類似物、聚甲基丙烯酸甲酯、聚對苯二甲酸乙二酯、聚2-羥基丙酸、聚乙酸乙烯酯。
+\sssc{熱固性塑膠（thermosets/thermosetting plastic）}
+為交聯聚合物，預聚物加熱至超過某溫度後即發生反應不可逆地固化，而後即無法再軟化。
+\bit
+\item \tb{預聚物（prepolymer/pre-polymer）}：已反應至中等分子量狀態的單體或單體體系。
+\item \tb{固化（curing）}：硬化或韌化高分子形成熱固性聚合物的過程。
+\eit
+熱固性聚合物不容易熔化變形，通常質硬、耐高溫，但難以回收再利用。如：硫化橡膠、酚甲醛樹脂、尿素甲醛樹脂、三聚氰胺-甲醛樹脂等。
+\ssc{依聚合方式分類}
+\sssc{加成聚合}
+具有 π 鍵的單體，通常在觸媒催化下，斷 π 鍵並與鄰近單體以 σ 鍵鍵結，形成加成聚合物，過程中沒有脫去任何原子。如：
+\begin{itemize}
+\item 乙烯加成聚合成聚乙烯
+\item 苯乙烯加成聚合成聚苯乙烯
+\item 氯乙烯加成聚合成聚氯乙烯
+\item 四氟乙烯加成聚合成聚四氟乙烯
+\item 丙烯加成聚合成聚丙烯
+\item 乙炔加成聚合成聚乙炔
+\end{itemize}
+\sssc{縮合聚合}
+當單體具有兩個以上的官能基，聚合時分子間官能基互相反應，藉由脫去一分子水、醇、氨或鹵化物等小分子，而形成縮合聚合物。兩單體單元間連接的方式為某基團者屬聚某類。如：
+\bit
+\item 二醇脫水縮合聚合成聚醚類；
+\item 二醇與二酸脫水縮合聚合成聚酯類（Polyester, PES）；
+\item 二胺與二酸脫水縮合聚合成聚醯胺類（Polyamides, PA）；
+\item 羥基酸脫水縮合聚合成聚酯類。
+\eit
+\ssc{立構規整性（tacticity）}
+指特定的非主鏈官能基的排列位置特性，分為：
+\bit
+\item \tb{無規（atactic）聚合物}：特定的官能基沒有規律地出現。
+\item \tb{等規（isotactic）聚合物}：特定的官能基總是在主鏈的同一側出現
+\item \tb{間規（syndiotactic）聚合物}：特定的官能基在主鏈的兩側交替出現。
+\eit
+\ssc{聚合物的性質}
+與其單體單元種類、聚合度、官能基、支鏈程度、鏈間交聯、排列方式等有關。通常：
+\bit
+\item 主鏈性質與單體差異甚大，支鏈官能基則與單體相似，但受到誘導效應與共振效應等影響。
+\item 排列愈整齊，密度、硬度、熔點與耐熱程度愈高。
+\item 支鏈或取代基愈多，愈難緊密堆疊，使密度和熔點較低。
+\item 受到光、熱、氧氣、水或水氣、腐蝕性氣體或液體等作用會逐漸劣化或老化。
+\item 混合物，難以形成晶體，無固定熔沸點。
+\eit
+\ssc{依性質分類}
+\sssc{可生物分解/降解（Biodegradable）聚合物}
+如聚乳酸。
+\sssc{導電（性）聚合物（Conductive polymer）/導電（性）塑膠}
+具有長程單雙鍵交錯的共軛系統，其中的離域電子可導電，通常質輕、可撓曲性高、易加工。如：聚乙炔、聚丁二烯、聚苯胺。
+\sssc{樹脂（Resin）}
+指可轉化為聚合物的固體或高黏度液體，有時也指前述樹脂所轉化成的聚合物。
+\sssc{塑膠（Plastic）}
+指以合成聚合物為主要成分，可加入適當添加劑如塑化劑、阻燃劑、潤滑劑、著色劑等，加工製成的材料。如聚乙烯及其類似物、聚甲基丙烯酸甲酯、聚對苯二甲酸乙二酯。
+\sssc{橡膠（Rubber）}
+指具有彈性的熱塑性高分子材料。
+\subsection{聚乙烯（Polyethylene, PE）及其類似物}
+均為熱塑性。主要以齊格勒-納塔催化劑（Ziegler–Natta catalyst）或菲力普斯催化劑（Phillips catalyst）/Phillips supported chromium 催化劑非勻相催化其單體的加成聚合反應製備，少數以茂金屬（Metallocene）催化劑非勻相催化其單體的加成聚合反應製備。
+\sssc{齊格勒-納塔催化劑（Ziegler–Natta catalyst）}
+可催化 α-烯烴的加成聚合反應，通常為鈦/鋁化合物催化劑與有機鈦/鋁化合物助催化劑混合成的固相催化劑，常見者如 \ce{TiCl4$\cdot$Al(C2H5)3}、\ce{AlCl3$\cdot$Ti(OR)4}。
+\sssc{菲力普斯催化劑（Phillips catalyst）/Phillips supported chromium}
+主要用於催化乙烯的加成聚合反應，為附著在矽膠（Silica gel）上的\ce{CrO3(s)}。
+\sssc{低密度聚乙烯（LDPE or PE-LD）}
+在高壓下聚合，反應速率較快，支鏈較多，結構較鬆散，質軟，拉伸強度低，不耐腐蝕。耐熱70至90°C，不可微波。多數防水薄膜、背心塑膠袋為之。
+\sssc{高密度聚乙烯（HDPE or PE-HD）}
+在低壓下聚合，反應速率較慢，支鏈較少，分子排列緊密，拉伸強度高，不透明。耐熱90至110°C，不可微波。常用於硬質容器、硬管、玩具。多數市售飲品、清潔用品的不透明容器為之。高密度聚乙烯瓶瓶底有一橫線。
+\sssc{聚氯乙烯（Polyvinyl chloride, PVC, vinyl, polyvinyl, or V）}
+不溶於大部分有機溶劑，但耐熱僅60至80°C，不可微波。常用於雨衣、水管、電纜包管、書包、塑膠地墊、塑膠地板、塑膠廚具。
+\sssc{聚丙烯（Polypropylene, PP）}
+熔點高、熱穩定性佳、密度低、耐腐蝕、不易產生有毒物質。耐熱100至140°C，可微波。常用於熱飲杯、杯蓋、可加熱塑膠盒、皮革、電絕緣材料、奶瓶。市售可加熱容器多為之。
+\sssc{聚苯乙烯（Polystyrene, PS）}
+質硬於聚乙烯、軟於聚對苯二甲酸乙二酯。可透明、安定性佳，但不耐油與有機溶劑。耐熱70至90°C，不可微波。可加熱成型製成多種塑膠用品。可製成\tb{發泡聚苯乙烯（Expanded Polystyrene, EPS）/保麗龍/保麗綸/泡沫塑膠（foamed plastic/polymeric foam）}。常用於包裝緩衝材料、保麗龍、養樂多瓶、文具、膜。
+\sssc{聚四氟乙烯（Polytetrafluoroethylene, PTFE）/特夫綸/鐵氟龍（Teflon）}
+耐冷 -190°C，耐熱260°C，可微波。耐強酸鹼、耐強氧化劑。常用於不沾鍋塗膜、墊片（Gaspet）、閥襯料（Valve packing）、電絕緣材料、軸承、滴定管活塞、代用血管。
+\sssc{聚(1,1-二氯乙烯)/聚偏二氯乙烯（Polyvinylidene chloride, PVDC）}
+常用於包裝膜。
+\sssc{聚丙烯腈（Polyacrylonitrile, PAN）/奧綸/奧龍/人造羊毛}
+有支鏈基團-C$\equiv$N，一種合成纖維。耐熱220至300°C，不可微波。耐氯、耐漂白劑、耐酸鹼、耐化學藥品、耐張力較強。常用於地毯、帳篷、帆布、織物。
+\sssc{聚乙烯醇（Polyvinyl alcohol, PVA）}
+通常以聚乙酸乙烯酯水解製成。可溶於極性溶劑。對皮膚無毒，常用於醫療器材、史萊姆。加入硼砂（Borax）\ce{Na2B4O5(OH)4}與碳酸氫鈉水溶液時可逆地形成氫鍵交聯，交聯愈多黏性愈大，稱\tb{史萊姆（slime）}。
+\ssc{聚醯胺}
+\sssc{耐綸-66（nylon 66）/聚(1,6-己二酸)-(1,6-己二胺)/聚[N-(6-胺亞基己基)-6-甲醯亞基己醯胺]}
+\tb{耐綸/尼龍（nylon）}是杜邦公司的一系列合成纖維，品名為耐綸加上各種不同單體的碳數作為後綴，強度比天然纖維更為強韌，且纖維鏈間有許多氫鍵故具彈性，抗皺、耐洗滌，不耐氯、不耐漂白劑、耐稀酸鹼，常用於織物、塑膠材料。
+
+耐綸-66指有兩種不同單體，均為6個碳。
+\[\ce{$n$(CH2)4(COOH)2 + $n$(CH2)6(NH2)2 -> HO[CO(CH2)4CONH(CH2)6NH]$_n$H + $(2n-1)$H2O}\]
+\sssc{耐綸-6（nylon 6）/聚己內醯胺/聚氮雜環庚烷-2-酮/聚(6-胺基己酸)/聚[6-甲醯亞基己胺亞基]}
+耐綸6指有一種單體，為6個碳。
+
+水解斷醯胺鍵得 6-胺基己酸：
+\[\ce{(CH2)5CONH + H2O -> NH2(CH2)5COOH}\]
+脫水縮合聚合：
+\[\ce{$n$NH2(CH2)5COOH -> H[NH(CH2)5CO]$_n$OH + $(n-1)$H2O}\]
+\sssc{諾美斯（Nomex）/聚(1,3-苯二甲酸)-(1,3-苯二胺)}
+HO-[C(=O)C$_6$H$_4$C(=O)-N(H)C$_6$H$_4$N(H)]$_n$-H
+\ssc{聚酯}
+\sssc{聚(1,4-苯二甲酸)-(1,2-乙二醇)/聚對苯二甲酸乙二酯（Polyethylene terephthalate, PET, PETE）/達克綸（Dacron）/特麗綸（Terylene）/的確涼/聚[4-甲酸酯亞基苯甲酸乙亞基酯]}
+\[\ce{$n$C6H4(COOH)2 + $n$(CH2)2(OH)2 -> HO[COC6H4COO(CH2)2O]$_n$H + $(2n-1)$H2O}\]
+杜邦公司研發。熱塑性，合成纖維。耐水、耐氯、耐漂白劑、耐酸鹼、耐化學藥品、耐有機溶劑、高強度、彈性佳、質輕、抗皺、耐洗滌、可透明、吸溼性低、不透氣；強鹼中可分解回單體故易回收；不耐熱，耐熱溫度約60至85°C，不可微波。
+
+常用於織物、塑膠容器、薄膜、包裝；寶特瓶材質為之；多數市售冷飲、清潔用品、食品的透明容器、聚酯纖維織物、窗簾為之；聚對苯二甲酸乙二酯瓶瓶底有一圓點；用於織物通常與天然纖維混合紡織，以增加吸水力，可製成彈性衣料。寶特瓶再生纖維技術可將廢棄的寶特瓶抽製成紗，製成環保再生纖維，如環保球衣。
+\sssc{聚甲基丙烯酸甲酯（Polymethyl methacrylate, PMMA）/聚(2-甲基丙烯酸甲酯)/壓克力（acrylic）（樹脂）/有機玻璃}
+熱塑性。可透明，質硬。耐熱60至93°C。常用於培養皿、鏡片、太陽能板、廣告招牌、保齡球、義肢。
+\sssc{聚乙酸乙烯酯（Polyvinyl acetate, PVAc）}
+熱塑性。透明，黏性佳。常用於黏著劑。
+\sssc{聚(2-羥基丙酸)/聚乳酸（Polylactic acid, PLA）}
+熱塑性。耐熱45至50°C，可微波，玻璃轉化溫度60-65°C以上變軟、變形。水解成乳酸。可生物降解。可由玉米澱粉轉化而成，壽命短，1-2年後質地變脆，高溫、潮溼、含氧且具微生物的土壤中可分解，無毒，可被代謝，一般所稱環保塑膠多為之。生物相容性佳，無毒。常用於冷飲杯、免洗餐具、包裝袋、農作物用薄膜、透明塑膠蛋盒、餐具、紡織纖維、可分解手術縫線、骨釘、骨板。可混合其他塑膠以提升耐熱性，但影響回收。
+\sssc{聚(2-羥基乙酸)/聚乙醇酸（Polyglycolide or poly(glycolic acid), PGA）}
+熱塑性。不耐熱，玻璃轉化溫度35-40°C。水解成 2-羥基乙酸。可生物降解。生物相容性佳，無毒。
+\sssc{聚(2-羥基丙酸)-(2-羥基乙酸)/聚(乳酸)-(乙醇酸)（PLGA, PLG, or poly(lactic-co-glycolic) acid）}
+無規或有規共聚物。不耐熱。水解成 2-羥基丙酸與 2-羥基乙酸。可生物降解。生物相容性佳，無毒。在人體內水解成小分子鏈段排出體外，故可作為藥物載體或用於生醫工程等。
+\sssc{聚胺基甲酸酯/聚胺酯（Polyurethanes, PUR, PU）}
+指以胺基甲酸酯基−NH−(C=O)−O−連接的一類聚合物，通常由異氰酸酯斷C=N π 鍵與二醇斷O-H鍵將H鍵結於N加成聚合而成。常用於泡沫塑膠、廚房海綿、纖維。
+\sssc{聚碳酸酯（Polycarbonate, PC）}
+指以碳酸酯基−OC(=O)O−連接的一類聚合物，最常見者為聚(碳酸)-(雙酚 A)，常用於容器，不耐酸與高溫，會產生致癌物雙酚 A。工業上用二醇與光氣反應製備：
+\[\ce{$n$HOROH + $(n-1)$COCl2 -> }\tx{H[-ORO-C(=O)-]$_n$H} + (2n-2)\ce{HCl}\]
+\ssc{聚醚}
+\sssc{聚醚醚酮（Polyetheretherketone, PEEK) /聚[4-羥基-4'-(4-羥基苯氧基)二苯甲酮]/聚[4-[4-(苯甲醯基)苯氧基]-4-苯基氧亞基]}
+4-羥基-4'-(4-羥基苯氧基)二苯甲酮脫水縮合聚合而成。熱塑性塑膠，常用於醫療、航太。
+\ssc{橡膠}
+1,3-丁二烯衍生物橡膠：常作為橡皮擦、輪胎等，用途廣，除天然橡膠外來自石油提煉。
+\sssc{天然橡膠/聚異戊二烯/聚(2-甲基-1,3-丁二烯)}
+割開橡膠樹皮所流出的乳汁中，含有順式聚(2-甲基-1,3-丁二烯)懸浮粒，平均聚合度5000，可以保護割開的橡膠樹傷口。
+
+聚(2-甲基-1,3-丁二烯)由2-甲基-1,3-丁二烯加成聚合，2、3號碳間鍵結 π 鍵，相鄰單體的1、3號碳間鍵結 σ 鍵。
+\[\ce{$n$CH2C(CH3)CHCH2 -> [CH2C(CH3)CHCH2]$_n$}\]
+
+使用天然橡膠的歷史可追溯至15世紀以前，印地安人用橡膠樹幹滲出的汁液做成具有彈性的小球或是塗在衣服或腳上以防水。
+
+熱塑性橡膠，具疏水性和弱彈性，玻璃轉換溫度低，受熱時失去彈性、軟黏易變形，遇冷時或氧化後硬脆。
+\sssc{聚(1,3-丁二烯)/聚丁二烯（Polybutadiene, PB）/丁二烯橡膠（Butadiene rubber, BR）/布納橡膠（Buna rubber）}
+合成橡膠。分順反。布納得名於 butadiene 的字首與過去拜耳公司曾以鈉為催化劑製造之。耐磨性和耐熱性優於天然橡膠。常用於製造輪胎。
+\sssc{聚(2-氯-1,3-丁二烯)/氯丁二烯橡膠（Chloroprene rubber, CR）/氯丁橡膠/新平橡膠/紐普韌（neoprene）}
+合成橡膠。分順反。
+
+1937年杜邦公司發明以乙炔為原料製造之，先用二分子乙炔加成聚合成一分子 1-丁烯-3-炔（乙烯基乙炔），再將 1-丁烯-3-炔加氯化氫氫鹵化加成成 2-氯-1,3-丁二烯，最後加成聚合 2-氯-1,3-丁二烯：
+\[\ce{$n$CH2CClCHCH2 -> [CH2CClCHCH2]$_n$}\]
+
+耐酸鹼，彈性佳，玻璃轉化溫度低。遇熱增加交聯而變脆。常用於傳輸帶、絕緣材料。常用於製造電纜、電線、輸油管、帳篷、橡皮艇。
+\sssc{丙烯腈-丁二烯橡膠（Nitrile Butadiene Rubber, NBR）/丁腈橡膠/布納-N橡膠（Buna-N rubber）/聚(丙烯腈)-(1,3-丁二烯)}
+丙烯腈斷C$\equiv$N的兩個 π 鍵與1,3-丁二烯加成聚合而成，具有側鏈-C-N。合成橡膠。耐熱、耐腐蝕。常用製造於傳輸帶。
+\sssc{苯乙烯-丁二烯橡膠（Styrene-butadiene rubber, SBR）/丁苯橡膠/布納 S 橡膠（Buna S rubber）/聚(苯乙烯)-(1,3-丁二烯)}
+約25\%苯乙烯與75\%1,3-丁二烯加成聚合而成，具有側鏈苯基。合成橡膠。耐熱、耐腐蝕。是目前產量最多的橡膠。常用於製造輪胎、球鞋、橡皮管、雨衣。
+\sssc{丙烯腈-丁二烯-苯乙烯（Acrylonitrile-butadiene-styrene, ABS）橡膠/聚(丙烯腈)-(1,3-丁二烯)-(苯乙烯)}
+合成橡膠。耐熱、耐腐蝕。常用於汽車零件。
+\sssc{矽橡膠/聚矽氧（polysiloxane）/矽氧樹脂/矽膠/矽利康（silicone）}
+指主鏈是[-O-Si-]$_n$的聚合物，如二羥基二甲基矽烷聚合成聚二甲基矽氧烷。（註：矽膠有時指 silica gel）
+
+縮合聚合：
+\[n\tx{Si(-R)(-R')(-OH)-OH} \ce{->} \tx{H[-O-Si(-R)(-R')-]$_n$OH} + (n-1)\tx{H2O}\]
+其中R、R'是有機基團，通常是甲基、乙基或苯基。
+
+聚矽氧是支鏈有機主鏈無機的合成聚合物。藉由改變鏈長、R 的種類、鏈間的交聯等，可改變性質，可為液體、凝膠或固體，適用溫度範圍廣，耐高低溫、無味、不溶於水與有機、無機溶劑，常用於醫療器材、防水膠條、軟手機殼、墊圈、汽車零件、廚具、玩具、餐具、密封劑、電絕緣材料，部分聚合物較低的聚矽氧為黏稠液體，可用於排除胃腸道脹氣與胃鏡檢查等。
+\sssc{加硫橡膠/硫化橡膠（Vulcanized rubber）/熟橡膠}
+由固特異（C. Goodyear）於1839年發明，將橡膠（天然橡膠、氯丁橡膠、矽橡膠等）加入環八硫粉末處理，使部分原先具有雙鍵的碳加成反應與硫鍵結，形成跨鏈交聯的硫橋，每個硫橋約2-6個硫，互以單鍵鍵結，為熱固性橡膠。
+
+網狀結構可避免拉伸時斷裂，並在外力消失後更易恢復原狀。在製造過程中加入的硫愈多，質愈硬但彈性愈差。
+
+含硫量 30-50\% 為不易變形、質硬的硬橡膠，常作為燈座、鋼筆桿等；含硫量 8至20\% 為高彈性、不易斷裂的橡膠，常作為輪胎、雨衣、鞋底、橡皮管、手套、橡皮筋等。
+\sssc{其他橡膠添加劑}
+製造過程中可加入適當添加劑，改變橡膠性質，如：
+\bit
+\item 加入碳黑可增加強度和耐久性，多數輪胎為加入碳黑的丁二烯橡膠、丙烯腈-丁二烯橡膠、苯乙烯-丁二烯橡膠或丙烯腈-丁二烯-苯乙烯橡膠。
+\item 加入抗氧化劑可防止橡膠氧化變得硬脆。
+\item 加入色素使具顏色。
+\item 打入空氣或加入碳酸胺可製成\tb{泡沫橡膠}，其中後者係因反應：
+\[\ce{(NH4)2CO3(s) ->[$\Delta$] 2NH3(g) + CO2(g) + H2O(g)}\]
+\eit
+\ssc{再生纖維/人造絲}
+人造纖維的一種，由植物纖維再經化學處理製成。
+\sssc{嫘（léi）縈（Rayon）}
+Viscose 法製造嫘縈：纖維素在氫氧化鈉水溶液中部分羥基變成-O$^-$Na$^+$，接著與\ce{CS2}反應，進行黃化反應，變成黃原酸鈉基團-OC(=S)S$^-$Na$^+$。
+\sssc{醋酸纖維素}
+在濃硫酸催化下，使纖維素的羥基和乙酐進行酯化反應而變成乙酸酯基-OC(=O)CH$_3$。
+\sssc{硝化纖維素（Nitrocellulose）}
+在濃硫酸催化下，使纖維素的羥基和濃硝酸進行酯化反而變成硝酸酯基-ON$^+$(=O)O$^-$。
+
+\tb{賽璐珞（Celluloid）}：早期以樟腦的酒精溶液加入硝化纖維素中製成的合成樹脂，可作為象牙的替代品，可製造玩具、刷柄、幻燈片、炸藥等，易燃，摩擦後易起火，現少用。
+\ssc{纖維比較}
+\sssc{植物纖維}
+易染色、易漂白、耐氯系漂白劑、易皺、吸溼性佳、棉乾燥時尚耐張力但潮溼時強度下降，其餘不耐張力、尚耐稀酸、不耐鹼，燃燒時氣味似紙張燃燒且不會捲曲。如棉、麻。常用於製造再生纖維、織物、造紙、作為生質能源燃料。
+\sssc{再生纖維}
+易染色、易漂白、耐氯系漂白劑、易皺、吸溼性佳、不耐張力、不耐酸鹼、手感柔滑，燃燒時氣味似紙張燃燒且不會捲曲，許多具蠶絲般的光澤，較不易傳熱。 如嫘縈、醋酸纖維素、硝化纖維素。市售衣料中通常與棉或合成纖維混合紡織，以彌補其缺點。
+\sssc{動物纖維}
+抗皺、吸溼性佳、不耐氯系漂白劑、不耐酸鹼、彈性佳，燃燒時發出氮（含硫者與硫）燃燒的臭味且會縮捲。如蠶絲、羊毛。常用於織物。
+\sssc{合成纖維}
+抗皺、易洗快乾、耐張力、耐磨、彈性佳、免燙、易生靜電、不怕蟲咬，聚醯胺類不耐氯系漂白劑、不耐氧化劑、不耐酸、耐鹼、吸溼性佳、遇極性溶劑時強度下降、耐低極性溶劑，聚酯類耐氯系漂白劑、耐氧化劑、耐酸、耐多數有機與無機溶劑、不耐鹼、吸溼性差，燃燒時發出惡臭且末端會結成小球狀。如耐綸-66、耐綸-6、奧綸、達克綸。常用於織物、塑膠材料等。
+\ssc{熱固性樹脂}
+\sssc{尿素甲醛（Urea-formaldehyde, UF）樹脂}
+尿素加甲醛得羥甲基尿素：
+\[\ce{CO(NH2)2 + HCHO -> H2NCONHCH2OH}\]
+脫水縮合聚合：
+\[\ce{$n$H2NCONHCH2OH -> H[$-$HNCONHCH2$-$]$_n$OH + $(n-1)$H2O}\]
+合成樹脂，熱固性。常用於泡沫、電器外殼、黏著劑。
+\sssc{酚（甲）醛（Phenol formaldehyde, PF）樹脂}
+苯酚加甲醛得羥甲基苯酚：
+\[\ce{HOC6H5 + HCHO -> HOC6H4CH2OH}\]
+脫水縮合聚合形成苯酚以鄰位或對位亞甲基橋連的交聯聚合物。
+
+合成樹脂，熱固性。耐熱、質硬、抗化學藥劑、不導電。電木/膠木（Bakelite）的原料，常用於電氣設備的絕緣材料、廚具把手、耐熱面板、防火、玻璃纖維樹脂、黏合夾板、黏著劑。
+\sssc{三聚氰胺-甲醛（Melamine formaldehyde, MF）樹脂/(1,3,5-三氮雜環己-1,3,5-三烯-2,4,6-三胺)-甲醛樹脂/三聚氰胺樹脂（Melamine resin）/美耐皿}
+三聚氰胺以氧橋連的交聯聚合物。合成樹脂，熱固性。常用於餐具、泡沫、家具、黏著劑。
+\ssc{離子交換樹脂（Ion-exchange resin）/離子交換聚合物（Ion-exchange polymer, ionex）}
+\bit
+\item 通常多孔、比表面積大，使易捕獲離子。
+\item 骨架常用交聯聚苯乙烯，次常用交聯聚丙烯或交聯聚乙烯。
+\item 支鏈酸性基團用於陽離子交換、支鏈鹼性基團用於陰離子交換。
+\eit
+\sssc{強酸性陽離子（strongly acidic cation, SAC）交換樹脂}
+通常具有磺酸基團，如聚苯乙烯磺酸常用於製造去離子水、聚苯乙烯磺酸鈉常用於軟化硬水。
+\sssc{弱酸性陽離子（weakly acidic cation, WAC）交換樹脂}
+通常具有羧酸基，常用於軟化硬水。
+\sssc{強鹼性陰離子（strongly basic anion, SBA）交換樹脂}
+通常具有四級銨根基團，如聚苯乙烯三甲基銨，可去除二氧化矽、二氧化碳。
+\sssc{弱鹼性陰離子（weakly basic anion, WBA）交換樹脂}
+通常具有一至三級胺基，如聚乙烯胺常用於不需要去除二氧化矽、二氧化碳時。
+\ssc{導電聚合物（Conductive polymer）}
+\sssc{聚乙炔（Polyacetylene or polyethyne）}
+聚乙炔 [-C=C-]$_n$ 一般導電性不高。反式聚乙炔為銀白色、順式聚乙炔為黑色。反式較順式離域性更高、更穩定、更易導電。摻雜後可大幅提升導電性，並可製成 p 型或 n 型半導體，用於有機發光二極體等。缺點是較易氧化。
+\bit
+\item 1958年，納塔（Giulio Natta）利用\ce{AlCl3$\cdot$Ti(OR)4}觸媒加成聚合乙炔氣體，首次製造出聚乙炔。
+\item 1967年，白川英樹加入超量1000倍的催化劑，原預計得到順式聚乙炔黑色粉末，卻首次製造出亮銀色、可導電的反式聚乙炔薄膜，具薄弱的導電性。
+\item 將乙炔在溶於甲苯或正己烷中，再加入齊格勒-納塔催化劑，在-78°C可獲得黑色的順式聚乙炔，在150°C可獲得銀白色的反式聚乙炔。
+\item 1977年，白川英樹、麥克德爾米德（Alan Graham MacDiarmid）與希格（Alan Jay Heeger）發現用碘蒸氣摻雜可以提高聚乙炔的電導率至原先的一千萬倍以上，而以其他強氧化劑來部分氧化聚乙炔也有類似效果，共同獲2000年諾貝爾化學獎。
+\eit
+\sssc{聚對苯乙炔（Poly(p-phenylene vinylene), PPV）}
+[-c1ccc(cc1)C=C-]$_n$，導電聚合物，導電性優於聚乙炔，可能用於有機發光二極體、太陽能電池等。
+\sssc{聚苯胺（Polyaniline, PANI）}
+[[-c1ccc(cc1)N(H)-]$_n$[-c1ccc(cc1)N=C1C=CC(C=C1)=N-]$_m$]$_x$，單體為苯胺，導電聚合物，可用於充電電池電極等，是商用量最多的導電聚合物。
+\sssc{p 型摻雜}
+摻雜碘或溴等強氧化劑，氧化導電聚合物的一些位置，形成 \ce{I3-} 或 \ce{Br-} 與碳正離子電洞，以聚乙炔為例：
+\[\ce{[CH]$_n$ + $\frac{3x}{2}$I2 -> [CH]$_n^{\phantom{n}x+}$ + $x$I3-}\]
+\[\ce{[CH]$_n$ + $\frac{x}{2}$Br2 -> [CH]$_n^{\phantom{n}x+}$ + $x$Br-}\]
+\sssc{n 型摻雜}
+摻雜鈉等強還原劑，還原導電聚合物的一些位置，形成 \ce{Na+} 與注入共軛 π 系統中的自由電子，以聚乙炔為例：
+\[\ce{[CH]$_n$ + $x$Na -> [CH]$_n^{\phantom{n}x-}$ + $x$Na+}\]
+\ssc{塑膠分類標誌（Resin identification code）}
+編號寫於三角形內。
+\bit
+\item 1：聚對苯二甲酸乙二酯（PET or PETE）
+\item 2：高密度聚乙烯（HDPE or PE-HD）
+\item 3：聚氯乙烯（PVC or V）
+\item 4：低密度聚乙烯（LDPE or PE-LD）
+\item 5：聚丙烯（PP）
+\item 6：聚苯乙烯（PS）
+\item 7：其他（Others or O）
+\eit
+\ssc{塑化劑/增塑劑（Plasticizer）}
+添加到材料中以使材料更柔軟、更靈活、增加其可塑性、降低其黏度和/或減少製造過程中處理過程中的摩擦的物質，以酯類最常用，如 1,2-苯二甲酸二(2-乙基己基)酯（DEHP）、1,2-苯二甲酸二(7-甲基辛基)酯（DINP）、1,2-苯二甲酸二(8-甲基壬基)酯（DIDP）。
+
+
+\section{脂類（Lipid）}
+\subsection{定義}
+\begin{itemize}
+\item\tb{脂肪酸（Fatty acids）}：碳數為12至20個（部分認為4至28個）且碳數為偶數的長鏈羧酸（RCOOH），可有多鍵，可有小支鏈（如甲基、乙基）。在自然界中，脂肪酸的碳鏈長度變化很大，最常見的是16、18和20個碳。
+\item\tb{Fatty acyls}：脂肪酸與其綴合物與衍生物之總稱。
+\item\tb{甘油酯（Glycerolipids）}：單、二、三酸甘油脂，以甘油（丙三醇）為骨架，單、二、三酸分別指一、二、三個羥基與脂肪酸形成脂肪酸酯基。
+\item\tb{狹義油脂}：三酸甘油酯的混合物。
+\item\tb{廣義油脂}：脂肪酸的任何酯。
+\item\tb{脂溶性分子（fat-soluble molecule）}：溶於油脂的分子。
+\item\tb{甘油磷脂（Glycerophospholipids）}：甘油酯的其中一個脂肪酸被磷酸基團取代，如卵磷脂/磷脂醯膽鹼（Phosphatidylcholine）、磷脂乙醇胺（Phosphatidylethanolamine）。
+\item\tb{（神經）鞘脂（sphingolipids）}：含有（神經）鞘胺醇（Sphingosine）骨架且部分羥基被脂肪酸取代的脂溶性分子。
+\item\tb{類固醇（steroid）/甾體/類甾醇/甾族化合物/美國仙丹}：任何自腺烷附加和/或取代官能基的化合物。
+\item\tb{固醇（Sterol）/甾醇}：類固醇中，腺烷的3號碳上的一個氫被羥基取代形成 S 構型者。
+\item\tb{醣脂（Saccharolipid）}：脂肪酸取代單醣主鏈上的一些官能基的化合物。
+\item\tb{聚酮（Polyketides）}：由交替的酮或其還原形式組成鏈的化合物。
+\item\tb{脂類（Lipid）}：Fatty acyls、甘油酯、甘油磷脂、鞘脂、固醇、三甲基-2-烯-1-醇/異戊烯醇、醣脂、聚酮的總稱。
+\item\tb{磷脂（Phospholipids）}：含磷酸基團的脂類，如甘油磷脂與鞘磷脂。
+\item\tb{脂肪（Fat）}：狹義指固態油脂，廣義指油脂。
+\item\tb{油（Oil）}：液態油脂。
+\end{itemize}
+\subsection{三酸甘油酯（Triglyceride）}
+\subsubsection{性質}
+\begin{itemize}
+\item 中性。難溶於水，可溶於汽油、苯等有機溶劑。
+\item 可以與酸和鹼反應。
+\item 可經皂化反應製作肥皂。
+\item 澄清無臭無味。
+\item 油脂為混合物。
+\end{itemize}
+\subsubsection{飽和與不飽和脂肪酸}
+\begin{itemize}
+\item \tb{定義}：脂肪酸碳鏈無雙鍵者稱飽和脂肪酸，有雙鍵稱不飽和脂肪酸。
+\item \tb{單/多元不飽和脂肪酸}：不飽和脂肪酸只包含一雙鍵稱單（元）不飽和脂肪酸（Monounsaturated fatty acid），包含更多雙鍵者則稱多（元）不飽和脂肪酸（Polyunsaturated fatty acid）。
+\item \tb{狀態}：脂肪的飽和度影響其狀態，愈飽和者，分子愈緊密，分子間作用力愈強，愈穩定，愈耐高溫，熔點愈高。
+\item \tb{動物性脂肪}：飽和度通常較高，故常溫多為固態，存在於的動物皮下、肌肉、骨髓表面等。豬油約為40\%飽和、 50\%單元不飽和、10\%多元不飽和。魚油飽和度較一般動物性脂肪低，常溫下為液態。
+\item \tb{植物性脂肪}：飽和度通常較低，故常溫多為液態，存在於植物種子等。椰子油和棕櫚油飽和度較一般植物性脂肪高，略低於常溫即成固態。
+\item \tb{氧化分解}：因為碳碳雙鍵更活躍，更容易氧化，因此不飽和脂肪酸較易氧化。脂肪酸分解產生一些分子量較小、揮發性較高的化合物，如醛、酮和酸。受光照射時，氧化速率增加。因此，不飽和油最好放在不透明的容器中或存放在櫥櫃中。
+\item \tb{健康}：飽和脂肪酸性質較安定，但因為熔點較高，較易阻塞血管，攝取過量易導致心血管疾病。不飽和脂肪酸遇高溫易氧化酸敗，但有助於降低總膽固醇量。
+\item \tb{碘價}：指與碘加成反應，每100克樣品消耗的碘克數。可用於測量脂肪酸的不飽和度。碘價越高，碳碳雙鍵越多，不飽和度愈高。
+\item \tb{油的選用}：油炸宜用碘價低的油，如豬油，方不容易變質；低溫烹飪，可以使用碘價高的油，如葡萄籽油、亞麻籽油等。
+\item \tb{酸敗}：油脂暴露於空氣遇水分解，並生成具特殊臭味的有機酸。
+\item \tb{酸價}：中和1克油所需的氫氧化鉀毫克數，通常以乙醇、乙醚等比例混合液為溶劑並加入廣用指示劑。代表油中游離脂肪酸的含量。品質良好之精製油酸價在 0.2 mg KOH/g 以下。
+\item \tb{高溫}：高溫下，油容易與空氣和水反應，釋放游離脂肪酸，使酸價上升，產生更多的過氧化物或總極性化合物等，更容易引起癌症和肝病，不飽和度高者尤易。
+\end{itemize}
+
+\begin{longtable}[c]{|c|c|}
+\hline
+油脂 & 碘價 (g \ce{I2}/100 g)\\\hline\endhead
+椰子油 & 8-10\\\hline
+奶油 & 25-40\\\hline
+牛脂 & 38-46\\\hline
+棕櫚油 & 37-54\\\hline
+豬油 & 46-70\\\hline
+橄欖油 & 75-95\\\hline
+花生油 & 85-105\\\hline
+玉米油 & 115-130\\\hline
+葵花油 & 130-145\\\hline
+\end{longtable}\FB
+\subsubsection{反式脂肪酸（Trans fatty acid）}
+\begin{itemize}
+\item \tb{反式脂肪酸}：含有反式雙鍵（雙鍵碳上的兩個氫原子位於不同側）的脂肪酸。
+\item \tb{自然界中的反式脂肪酸}：自然界中的不飽和脂肪酸多為順式脂肪酸，天然的反式脂肪酸只微量存在於反芻動物的脂肪和乳汁中，是其胃中某些細菌合成的。
+\item \tb{不飽和脂肪酸的氫化反應}：可增加液態植物油中飽和脂肪酸的比例，製成人造奶油/植物奶油/瑪琪琳（Margarine），提高熔點與穩定性，使其不易變質與延長保存期限。反式脂肪為氫化過程的一個中間產物，因反式雙鍵的分子能量較低且更穩定。不完全氫化油/部分氫化油中含有較多反式脂肪，完全氫化油則否，但完全氫化油熔點太高，無應用價值，故一般不完全氫化。
+\item \tb{健康}：反式脂肪熔點較高，易提高低密度膽固醇，比飽和或順式脂肪更易增加罹患冠狀動脈疾病、高血脂、脂肪肝等的風險，且幾無益處，故建議完全不食用。
+\end{itemize}
+
+
+\section{界面活性劑/表面活性劑（Surfactant）}
+指同時具有親水端與親油端（疏水端）的分子。
+\ssc{原理}
+界面活性劑具有親水基團和親油（疏水）基團的結構，前者如離子端，後者如長碳鏈端，使其既溶於極性溶劑又溶於非極性溶劑。
+
+界面活性劑可降低兩液體間或液體和固體間的表面張力，使溶液更易於滲入纖維或汙垢。
+
+界面活性劑超過一定濃度時，於水中會聚集形成球狀結構，稱微胞（Micelle），其外部為親水端、內部為親油端，可溶於水且可將油滴溶於其內部。攪動或碰撞使大微胞分解成小微胞，微胞互相排斥，使原本不互溶的非極性層與極性層不再分層，稱此過程為乳化，稱此液乳液。
+
+界面活性劑在水中被攪動或碰撞，形成薄液膜包圍住氣體時，稱泡沫。
+
+碳鏈長度愈短，吸附油汙能力愈差，洗滌效果愈差。令主碳鏈 C$_m$H$_{2m+1}$，12$\leq$m$\leq$18 者清潔能力佳，多數清潔劑屬之。
+
+病毒外層多包覆一層磷脂質與蛋白質組成的包膜，與界面活性劑接觸夠久（一般約20秒以上）可溶解磷脂質，消滅病毒。
+\ssc{依碳鏈電荷分類}
+\sssc{非離子界面活性劑}
+如單月桂酸甘油酯，存在於一些植物，常作為殺菌劑與消炎劑，添加到食品、化妝品等中。
+\sssc{陽離子界面活性劑}
+常用作織物柔軟劑，摻入洗衣精中，消除衣物的負靜電荷。如十八烷基三甲基氯化銨\ce{CH3(CH2)17N(CH3)3Cl}。
+\sssc{陰離子界面活性劑}
+常添加在肥皂、洗髮精和牙膏中，作為發泡劑。如十二烷基硫酸鈉（Sodium dodecyl sulfate, SDS）/月桂基硫酸鈉（Sodium lauryl sulfate, SLS）\ce{CH3(CH2)11OSO3Na}、十八酸鈉/硬脂酸鈉 \ce{C17H35COONa}。
+\sssc{兩性界面活性劑}
+同時帶有陰離子和陽離子基團，具有耐濃酸、鹼、鹽的特性，良好的乳化性、分散性、抗靜電性與殺菌性，廣泛用於沐浴乳、洗手液、泡沫洗面劑等。如椰油醯胺丙基羥磺基甜菜鹼。
+\ssc{軟性與硬性清潔劑}
+\sssc{軟性清潔劑}
+無支鏈者。生物可分解，BOD=COD，無長期泡沫汙染。市面上多為此種。
+\sssc{硬性清潔劑}
+有支鏈者。生物無法分解，BOD<COD，會造成長期泡沫汙染。
+\ssc{肥皂（Soup）}
+\sssc{定義}
+指脂肪酸鈉/鉀鹽，即\ce{RCOOM}，其中R為烷基，M為Na或K，或有時專指硬脂肪酸鈉 \ce{C17H35COONa}。硬脂肪酸鉀俗稱軟肥皂。
+\sssc{性質}
+\bit
+\item \tb{酸鹼}：弱鹼性，會溶解動物纖維，故不宜以肥皂洗滌動物纖維織物。
+\item 生物可分解。
+\item \tb{皂垢}：肥皂遇硬水會反應形成脂肪酸鈣（鈣皂）和脂肪酸鎂（鎂皂）白色固體沉澱，稱皂垢，故肥皂無法在硬水中正常使用。
+\item \tb{酸性環境}：肥皂遇酸性環境會中和形成 RCOOH，失去清潔能力。
+\end{itemize}
+\ssc{合成清潔劑}
+\sssc{定義}
+由石化原料製成的清潔劑，主要分為烷苯磺酸鹽類與烷基硫酸鹽類。
+\sssc{性質}
+中性或極弱鹼性。遇硬水、酸性環境均可正常使用。
+\sssc{烷苯磺酸鹽（Alkylbenzene sulfonates, ABS）}
+\ce{R(C6H6)SO3M}，其中R為烷基，M為Na或K。
+\begin{itemize}
+\item \tb{直鏈烷苯磺酸鹽（Linear alkylbenzene sulfonate, LAS）}：R無支鏈，如十二烷基苯磺酸鈉\ce{C12H25(C6H6)SO3Na}。
+\item \tb{支鏈烷苯磺酸鹽（Branched alkylbenzene sulfonates, BAS）}：R有支鏈。
+\end{itemize}
+\sssc{烷基硫酸鹽類}
+\ce{ROSO3M}，其中R為烷基，M為Na或K。如十二烷基硫酸鈉為一般家用清潔劑。
+\sssc{磷酸鹽}
+某些清潔劑會添加磷酸鹽，降低水的硬度，增強去汙能力，但會造成水質優氧化。
+\ssc{起雲劑（Clouding agent）}
+\sssc{成分}
+由水、食用膠（阿拉伯膠）、乳化劑（脂類）、食用油（如葵花油、棕櫚油）等食品添加物混合製成。
+\sssc{原理}
+乳化劑作為界面活性劑，使液態食品不分層。常用於飲品、乳製品與醬料，製造懸浮雲霧及濃稠狀視覺效果。
+\sssc{缺點}
+\bit
+\item 食用油成本較高，且放久後可能酸敗而變黃發臭。
+\item 曾有不肖業者使用塑化劑製造黑心起雲劑。
+\eit
+
+
+\section{醣類（Saccharide）}
+\subsection{定義}
+生化學上定義醣類指碳數大於等於三的多羥基醛或多羥基酮及其縮聚物與衍生物的總稱。
+\ssc{糖（Sugar）}
+指具有甜味的特定一種醣類，但有時亦作為醣類（Saccharide）的代稱，如還原糖（Reducing sugar）。
+\ssc{結構}
+\sssc{碳水化合物（Carbohydrate）}
+除少數例外，如去氧醣或胺基醣，通式為\ce{C_m(H2O)_n}，故又稱碳水化合物。
+\sssc{直鏈/開鏈（open-chain）/線型（linear）式結構}
+為羥基醛或羥基酮。
+\sssc{環狀結構}
+為氧雜環，部分醣類可形成不同元數的氧雜環。
+\sssc{手性}
+幾乎所有天然的醣類都是 D 構型。
+\subsection{醣類的基團}
+\sssc{醛糖}
+開鏈式結構具有醛基的醣類，如葡萄糖、半乳糖、核糖。
+\sssc{酮糖}
+開鏈式結構具有酮基的醣類，如果糖。
+\sssc{還原糖（Reducing sugar）}
+在鹼性溶液中能生成醛基的醣類，即具有還原性的醣類，即可與裴林試液、本氏液與多侖試劑反應的醣類。所有醛醣都是還原糖。所有開鏈式中自碳鏈一末端碳（含）至酮基碳（不含）的每個碳上都有一個羥基和一個氫的酮醣，即所有環狀式中氧雜原子旁的碳有羥基的酮，都是還原糖，因為在鹼性溶液中，前者可經過酮-烯醇互變異構反應產生醛基，後者可經過斷氧雜原子與碳的鍵產生醛基。所有沒有去氧的單醣、去氧核糖、乳糖、麥芽糖、纖維二糖都是還原糖。
+\sssc{非還原糖}
+一般較還原糖反應性低，在生物體內較穩定，適合用於儲存醣類，如蔗糖、海藻糖、所有多醣。
+\ssc{縮合與水解}
+\sssc{縮合}
+兩個醣類分子各提供一個羥基發生脫水縮合反應，形成醚鍵，稱醣苷鍵/苷鍵/配醣鍵（Glycosidic bond）。
+\sssc{水解}
+醣類縮合反應的逆反應，斷醣苷鍵形成兩個羥基。因水解而改變旋光性稱轉化，如右旋光的蔗糖水解轉化為左旋光，因果糖的左旋光較葡萄糖的右旋光大。
+\subsection{單醣（Monosaccharides）}
+\begin{itemize}
+\item 定義：含有三至七個碳原子，在稀酸中不水解的醣類。
+\item 通常無色的晶型固體，可溶於水，可與水形成氫鍵，無法水解。因含羥基與羰基，具醇及醛或酮的化性。醣類的基本單位。
+\item 有$k$個碳的單醣稱k碳醣或k醣，英文用碳數數字前綴，中文十以內用天干、超過十用中文數字。
+\item 自羰基碳（含）至最後一個手性碳有$k-1$個碳者可形成$k$元氧雜環結構，其中$k\geq 5$。
+\item 無去氧無取代基$k$碳醣通式\ce{CH2O}$_k$，去一氧減一O，一胺基去氧增一N、一H並減一O。
+\end{itemize}
+\ssc{三碳醣}
+\sssc{D-甘油醛/(R)-2,3-二羥基丙醛}
+最簡單的醛糖。最簡單的手性醣。
+\sssc{1,3-二羥基丙酮}
+最簡單的酮糖。沒有手性。
+\ssc{四碳醣}
+\sssc{D-赤藻糖（Erythrose）/(2R,2R)-2,3,4-三羥基丁醛}
+\sssc{D-蘇糖（Threose）/(2S,2R)-2,3,4-三羥基丁醛}
+\ssc{五碳醣}
+\sssc{D-阿拉伯糖（Arabinose）/(2S,3R,4R)-2,3,4,5-四羥基戊醛}
+最簡單的環狀醣。
+\sssc{D-來蘇糖（Lyxose）/(2S,3S,4R)-2,3,4,5-四羥基戊醛}
+最簡單的環狀醣。
+\sssc{D-核糖（Ribose）/(2R,3R,4R)-2,3,4,5-四羥基戊醛}
+最簡單的環狀醣。β-D-核糖是RNA 組成物之一。右旋光。
+\sssc{D-木糖（Xylose）/(2R,3S,4R)-2,3,4,5-四羥基戊醛}
+最簡單的環狀醣，有氧雜五員環與氧雜六員環形式。
+\sssc{D-2-去氧核糖（Deoxyribose）/(3S,4R)-3,4,5-三羥基戊醛}
+β-D-去氧核糖是DNA 組成物之一。右旋光。
+\ssc{六碳醣}
+\sssc{D-葡萄糖（Glucose）/(2R,3S,4R,5R)-2,3,4,5,6-五羥基己醛}
+\bit
+\item 有氧雜五員環與氧雜六員環形式。在水溶液中的比例約為 β-D-氧雜六員環葡萄糖64\%、α-D-氧雜六員環葡萄糖36\%、D-葡萄糖1\%，其餘極微量。右旋光。
+\item 光合作用的產物，是所有生物中最重要的糖。新陳代謝的主要能量來源。人體血液中通常含有濃度約1％的葡萄糖，稱血糖，濃度恆定。人體通過小腸絨狀突吸收消化後的葡萄糖，進食後增加血糖濃度。糖尿病（diabetes mellitus, diabetes, DM）患血糖過高，醫學上以測量空腹血糖檢驗之，症狀如多食、多飲、多尿及體重下降，急性併發症如糖尿病酮酸血症（Diabetic ketoacidosis, DKA）與高滲性高血糖狀態（Hyperosmolar hyperglycemic state, HHS）/高滲透壓非酮酸狀態（Hyperosmolar non-ketotic state, HONK），慢性併發症如心血管疾病、慢性腎臟病、糖尿病足（Diabetic foot）、腦血管意外（Cerebrovascular accident, CVA）/中風（Stroke）等。市面上的血糖劑多利用葡萄糖之還原性來定量血糖濃度。
+\item 葡萄糖提供生物熱量：4 kcal/g。
+\eit
+\sssc{D-果糖（Fructose）/(2S,3R,3R)-1,3,4,5,6-五羥基己-2-酮}
+\begin{itemize}
+\item 與葡萄糖為官能基異構物。有氧雜五員環與氧雜六員環形式。在水溶液中的比例約為 β-D-氧雜五員環果糖70\%、α-D-氧雜五員環果糖22\%、β-D-氧雜六員環果糖7\%、α-D-氧雜六員環果糖1\%，其餘極微量。左旋光。
+\item 主要存在於蜂蜜和水果中。
+\item 是天然糖中甜度最高的，為蔗糖1.7倍。
+\item 食用果糖後血糖升高較葡萄糖不顯著。可經肝臟轉換為葡萄糖，或轉換為甘油醛與其他產物。可能導致非酒精性脂肪肝病（Nonalcoholic fatty liver disease, NAFLD）、新陳代謝紊亂、心臟病、糖尿病及痛風（Gout）風險增加。
+\end{itemize}
+\sssc{D-半乳糖（Galactose）/(2R,3S,4S,5R)-2,3,4,5,6-五羥基己醛}
+\begin{itemize}
+\item 與葡萄糖為手性異構物。有氧雜五員環與氧雜六員環形式。在水溶液中的比例約為 β-D-氧雜六員環半乳糖61\%、 α-D-氧雜六員環半乳糖34\%，其餘極微量。右旋光。
+\item 在自然界中通常不單獨存在，主要來自乳糖的分解。
+\item 腦組織成分，嬰兒大腦發育的重要營養素。
+\end{itemize}
+\sssc{D-甘露糖（Mannose）/(2S,3S,4R,5R)-2,3,4,5,6-五羥基己醛}
+右旋光。與葡萄糖為手性異構物。
+\sssc{葡萄糖胺/2-胺基-2-去氧葡萄糖}
+葡萄糖第二個碳的羥基換成胺基。退化性關節炎用藥維骨力為葡萄糖胺的硫酸鹽。
+\subsection{雙醣（Disaccharide）}
+\begin{itemize}
+\item 定義：兩個單醣分子脫水縮合而成的化合物。
+\item 性質：仍有羥基可與水形成分子間氫鍵者可溶於水（多數雙醣屬之），部分有甜味，部分為結晶或黏稠漿狀。即使合成雙醣的兩個單醣相同，醣苷鍵鍵結位置不同也有不同的物理與化學性質。
+\end{itemize}
+\ssc{兩個六碳醣的雙醣}
+\sssc{蔗糖（Sucrose）}
+\begin{itemize}
+\item α-D-葡萄糖-(1$\to$2)-β-D-果糖。右旋光。水解轉化為左旋光，因果糖的左旋光較葡萄糖的右旋光大。非還原糖。白色晶體，易溶於水。
+\item 製造蔗糖的主要原料是甘蔗和甜菜。
+\item 冰糖、砂糖、紅糖主要成分。
+\item 體內以蔗糖酶分解。被口腔細菌分解後會產生酸性物質，造成蛀牙風險。
+\end{itemize}
+\subsubsection{麥芽糖（Maltose）/飴糖}
+\begin{itemize}
+\item α-D-葡萄糖-(1$\to$4)-β-D-葡萄糖。右旋光。β-D-葡萄糖可開環形成醛基，故為還原糖。白色晶體，易溶於水。
+\item 主要存在於麥芽中。
+\item 體內以麥芽糖酶分解。
+\item 常作為食品添加劑、製作糖果。
+\end{itemize}
+\subsubsection{乳糖（Lactose）}
+\begin{itemize}
+\item β-D-半乳糖-(1$\to$4)-α-D-葡萄糖。右旋光。β-D-葡萄糖可開環形成醛基，故為還原糖。白色晶體，易溶於水。
+\item 主要存在於動物乳汁、甜菜和樹膠中，是唯一主要來自動物的常見糖。占牛乳2-8\%。人乳中含量高於牛乳，故母乳較牛乳為更佳的嬰兒食品。
+\item 體內以乳糖酶分解。有利生物對鈣離子的吸收。
+\end{itemize}
+\subsubsection{海藻糖（Trehalose）}
+\bit
+\item α-D-葡萄糖-(1$\to$1)-α-D-葡萄糖。右旋光。非還原醣。
+\item 普遍存在於微生物、植物與節肢動物中。
+\eit
+\subsubsection{幾丁二糖（Chitobiose）}
+β-D-葡萄糖胺-(1$\to$4)-β-D-葡萄糖胺。右旋光。β-D-葡萄糖胺可開環形成醛基，故為還原醣。
+\subsubsection{纖維二糖（Cellobiose）}
+β-D-葡萄糖-(1$\to$4)-β-D-葡萄糖。右旋光。以4號碳與另一 β-D-葡萄糖鍵結的β-D-葡萄糖可開環形成醛基，故為還原醣。
+\subsection{寡醣/低聚醣（Oligosaccharide）}
+\begin{itemize}
+\item 定義：三到十（含）個單醣分子單醣脫水縮合而成的化合物。
+\item 具甜味但較單、雙醣低，熱量亦較等質量的單、雙醣低，約 0 至 2.5 kcal/g，不易被人體分解、吸收，口腔細菌無法分解，故不會造成蛀牙，常作為健康飲料添加物。
+\item 可促進排便與腸道益生菌生長，進而抑制有害菌，維持消化道健康。
+\item 可由澱粉與/或雙醣經生化技術與酵素反應製得。
+\item 存在於大蒜、洋蔥、牛蒡、蘆筍、大豆、番茄、香蕉等。
+\item 如：果寡糖。
+\end{itemize}
+\subsection{多醣（Polysaccharide）}
+\begin{itemize}
+\item 定義：十一個以上單醣分子脫水縮合聚合而成的高分子，屬於聚醚。
+\item 除少數聚合度極低者外，無甜味、不溶於水、非還原醣，但可形成膠體溶液。
+\item 不能通過細胞膜，不可直接被吸收，須先水解成單醣才能被細胞吸收利用。
+\item 具儲存能量和組成結構作用的重要生物高分子。
+\item 均一多醣：由同一種單醣分子縮合聚合而成的高分子。
+\item 不均一多醣：由不同種單醣分子縮合聚合而成的高分子。
+\end{itemize}
+\ssc{澱粉（Starch）與肝醣（Glycogen）}
+\sssc{結構}
+α-D-葡萄糖 (1$\to$4) 縮合聚合而成的聚醚，主鏈與支鏈在分支/分枝點以支鏈 (1$\to$6) 主鏈連接，分為：
+\bit
+\item \tb{直鏈澱粉（Amylose）}：沒有支鏈，通式 (\ce{C6H10O5})$_n$。聚合度一般較低，許多僅數百。
+\item \tb{分支/分枝澱粉（Amylopectin）}：平均分支間距約24-30個葡萄糖單元。聚合度一般在千至萬量級，高於直鏈澱粉而小於肝臟肝醣。
+\item \tb{肝醣（Glycogen）/動物澱粉（Animal starch）}：平均分支間距約8-12個葡萄糖單元。肌肉肝醣聚合度一般較低；肝臟肝醣聚合度則較高，一般為數萬。
+\eit
+\sssc{澱粉性質}
+\begin{itemize}
+\item 主要存在於植物種子與塊根、塊莖中。綠色植物進行光合作用形成葡萄糖，然後聚合成澱粉。
+\item 可作為酒精發酵的來源。
+\item 不同的植物直鏈與分枝澱粉含量比不同，一般植物75-80\%是分枝澱粉，糯米95-100\%是分枝澱粉，因此煮熟後有黏性。
+\item 難溶於水，但分子量較小的直鏈澱粉可溶於熱水。
+\item 水中烹煮時澱粉顆粒脹裂成漿糊故使更易消化。
+\item 稀酸或酶催化水解澱粉，使降低聚合度稱糊精，為小分子多醣，接著再水解成麥芽糖，最後水解成葡萄糖。
+\eit
+\sssc{肝醣性質}
+是動物體內的能量儲存物質，儲存於肝臟和肌肉中，水解快速，當葡萄糖供應不足時，可立即水解為血糖。
+\sssc{澱粉–碘液測試}
+50°C以下，直鏈澱粉與\ce{I2}會生成深藍色錯合物、分枝澱粉與\ce{I2}會生成紫紅色錯合物、肝醣與\ce{I2}則否。其錯合之原理為澱粉分子的螺旋狀葡萄糖長鏈可以形成疏水空穴，使碘分子能夠嵌入其中，產生顏色，但當溫度升高到50°C以上時，澱粉螺旋結構會逐漸打開，不利於碘分子嵌入。可用澱粉和碘互相檢驗存在與否，如滴以棕色碘液檢驗澱粉、加入直鏈澱粉溶液檢驗碘、使用具有碘化鉀與直鏈澱粉的白色潮溼碘化鉀–澱粉試紙檢驗氧化劑。
+\ssc{纖維素（Cellulose）}
+\sssc{結構}
+β-D-葡萄糖 (1$\to$4) 縮合聚合而成的聚醚，通式 (\ce{C6H10O5})$_n$，聚合度一般為10$^5$以上，較澱粉大。
+\sssc{性質}
+\begin{itemize}
+\item 植物細胞壁、棉、麻等的主要成分，是自然界中最廣泛分布和最豐富的多醣，棉花幾乎是純纖維素。蠶絲、羊毛等動物纖維則不是纖維素而是蛋白質。
+\item 人體無法分解或吸收它，但它可以幫助腸胃蠕動並清潔腸道。反芻動物的瘤胃中有細菌具有纖維素酶可分解之。
+\item 不溶於水。
+\item 每個單體單元具有三個羥基，可和酸發生酯化反應。
+\item 稀酸與高溫高壓下水解，水解較澱粉難。
+\item 可用於造紙，因化性安定，可作為濾紙。纖維素質紙張浸於硫酸，使性質改變，再用水洗清，得質較硬、防水與油、薄而半透明的硫酸紙/描圖紙（Tracing paper）。
+\end{itemize}
+\ssc{幾丁質（Chitin）/甲殼素}
+\sssc{結構}
+β-D-葡萄糖胺 (1$\to$4) 縮合聚合而成的聚醚，通式(\ce{C6H11O4N})$_n$。
+\sssc{性質}
+\begin{itemize}
+\item 結構似纖維素，但因含氮故強度更高。
+\item 存在於節肢動物的外骨骼與真菌的細胞壁中。
+\end{itemize}
+\subsection{醣類甜味劑}
+\sssc{（相對）甜度}
+（相對）甜度為定義蔗糖為100的甜度度量。
+\begin{itemize}
+\item 果糖：173
+\item 蔗糖：100
+\item 葡萄糖：74
+\item 麥芽糖：40
+\item 半乳糖：32
+\item 乳糖：16
+\end{itemize}
+\subsubsection{精製（蔗）糖}
+\begin{itemize}
+\item 原料：甘蔗。
+\item 生長期：需經一至一年半的生長才能收成。
+\item 製程：甘蔗採收後切段，榨取汁，經清潔、脫色、濃縮、結晶和糖漿分離處理。
+\item 種類：根據蔗糖的純度，可分為黑糖、白糖、冰糖等。
+\end{itemize}
+\subsubsection{反式糖漿}
+\begin{itemize}
+\item 原料：蔗糖。
+\item 製程：蔗糖加熱和酸分解成葡萄糖和果糖，形成反式糖。
+\item 性質：含有果糖和葡萄糖，因此不容易形成晶體，處於黏稠的液體狀態，具有透明、液態和價格便宜的特性，比傳統蔗糖應用範圍更廣。
+\end{itemize}
+\subsubsection{高果糖糖漿（High fructose syrup, HFCS）}
+\begin{itemize}
+\item 原料：玉米。
+\item 生長期：僅需兩到三個月即可收成。
+\item 製程：酵素將玉米澱粉水解成葡萄糖，並部分轉化為果糖。
+\item 性質：含有果糖和葡萄糖，因此不容易形成晶體，處於黏稠的液體狀態，具有透明、液態和價格便宜的特性，比傳統蔗糖應用範圍更廣。
+\item 種類：常見有HFCS-42和HFCS-55。
+\end{itemize}
+
+
+\section{胺基酸（Amino acid）與蛋白質（Protein）}
+\subsection{胺基酸（Amino acid）}
+\subsubsection{結構}
+胺基酸有胺基和羧基。胺基酸的胺基連接在 α碳上稱 α-胺基酸，連接在 β碳上稱 β-胺基酸，以此類推。生物學中，胺基酸通常特指 α-胺基酸。α-胺基酸之通式：\ce{NH2CHRCOOH}。幾乎所有胺基酸都是 L 構型。
+\subsubsection{性質}
+\begin{itemize}
+\item \tb{兩性物質}：胺基酸的胺基與羧酸基分別可形成銨陽離子與羧酸負離子基團，胺基酸在酸性中銨陽離子與羧酸基團較多，在鹼性中胺基與羧酸負離子基團較多，在中性中銨陽離子與羧酸負離子基團較多。
+\item \tb{等電點（Isoelectric point）}：使一胺基酸或其衍生物總電荷為零（即銨陽離子與羧酸負離子基團數量相同）的 pH 值。
+\end{itemize}
+\subsubsection{（胜）肽（Peptide）}
+胺基酸單體脫水縮合聚合形成的聚合物，屬聚醯胺。
+
+名稱：兩個胺基酸分子脫去一水分子聚合稱二（胜）肽（Dipeptide）；三個胺基酸分子脫去二水分子聚合稱三（胜）肽（Tripeptide）；四個胺基酸分子脫去三水分子聚合稱四（胜）肽（Tetrapeptide）；二至二十個胺基酸分子脫水聚合稱寡肽（Oligopeptide）；四以上個胺基酸分子脫水聚合稱多（胜）肽（Polypeptide）（鏈）；四以上個胺基酸分子脫水聚合且分子量大於等於5808（亦有稱5000、10000）者稱蛋白質。分子量5808係來自於人類之胰島素（Insulin）分子量5808。
+
+逆序排列為不同物質，有不同性質。
+\subsection{蛋白質胺基酸（Proteinogenic amino acids）/基本胺基酸}
+大多數蛋白質以以下20種 α-胺基酸中的數種為單體。
+\subsubsection{甘胺酸（Glycine, Gly, G）/2-胺基乙酸}
+最簡單胺基酸，無色晶體，易溶於水，有甜味。多數蛋白質中僅少量，膠原蛋白（collagen）中約三分之一為之。
+\subsubsection{絲胺酸（Serine, Ser, S）/2-胺基-3-羥基丙酸}
+\subsubsection{蘇胺酸（Threonine, Thr, T）/
+2-胺基-3-羥基丁酸}
+\subsubsection{天門冬胺酸（Aspartic acid, Asp, D）/2-胺基丁二酸}
+\subsubsection{麩/谷胺酸（Glutamic acid, Glu, E）/2-胺基戊二酸}
+麩胺酸是脊椎動物神經系統中最豐富的興奮性神經傳導物質（neurotransmitter）。
+
+麩胺酸一鈉為味精主要成分，味精為一種烹飪調味品。
+\subsubsection{丙胺酸（Alanine, Ala, A）/2-胺基丙酸}
+\subsubsection{纈胺酸（Valine, Val, V）/2-胺基-3-甲基丁酸}
+\subsubsection{白/亮胺酸（Leucine, Leu, L）/2-胺基-4-甲基戊酸}
+\subsubsection{異白/亮胺酸（Isoleucine, Ile, I）/2-胺基-3-甲基戊酸}
+\subsubsection{半胱胺酸（Cysteine, Cys, C）/2-胺基-3-氫硫基丙酸}
+\subsubsection{甲硫胺酸（Methionine, Met, M）/2-胺基-4-甲硫基丁酸}
+\subsubsection{天門冬醯胺（Asparagine, Asn, N）/2-胺基-3-胺基甲醯丙酸}
+\subsubsection{麩/谷醯胺酸（Glutamine, Gln, Q）/2-胺基-4-胺基甲醯丁酸}
+\subsubsection{離/賴胺酸（Lysine, Lys, K）/2,6-二胺基己酸}
+\subsubsection{苯丙胺酸（Phenylalanine, Phe, F）/2-胺基苯丙酸}
+\subsubsection{酪胺酸（Tyrosine, Tyr, Y）/2-胺基-4-羥基苯丙酸}
+\subsubsection{色胺酸（Tryptophan, Trp, W）/2-胺基-3-[(苯並[b]氮雜環戊-2,4-二烯)]-3-基)丙酸}
+血清素與褪黑激素以之合成。
+\subsubsection{精胺酸（Arginine, Arg, R）/2-胺基-5-[N-(胺基亞胺甲基)胺基]戊酸}
+\subsubsection{脯胺酸（Proline, Pro, P）/(氮雜環戊烷-2-基)甲酸}
+\subsubsection{組（織）胺酸（Histidine, His, H）/2-胺基-3-(1,3-二氮雜環戊-2,4-二烯-4-基)丙酸}
+\subsubsection{必須胺基酸（Essential amino acids）}
+\begin{itemize}
+\item \tb{必須胺基酸}：蛋白質胺基酸中人體無法自行合成者，共9種，分別是苯丙胺酸、纈胺酸、色胺酸、甲硫胺酸、異白胺酸、白胺酸、離胺酸、蘇胺酸、組胺酸。
+\item \tb{非必須胺基酸}：其餘11種蛋白質胺基酸。
+\item \tb{完整蛋白質}：包含所有必需胺基酸的蛋白質。
+\item \tb{不完整蛋白質}：不是完整蛋白質的蛋白質。
+\item 含有完整蛋白質的食物包括肉、魚、蛋、牛奶、大豆、藜麥、蕎麥等。穀物中的賴胺酸較少，大豆中的甲硫胺酸較少，可以互補。
+\end{itemize}
+\ssc{蛋白質結構（Protein structure）}
+\sssc{蛋白質一級結構（Protein primary structure）}
+胺基酸透過肽鍵聚合的序列結構。
+\sssc{蛋白質二級結構（Protein secondary structure）}
+指蛋白質局部殘基之間由C=O和N-H基團生成氫鍵形成的二級結構，會提升安定性與固定局部構形。
+\sssc{螺旋（Helix）}
+蛋白質二級結構。肽鏈呈螺旋狀，相鄰週期間形成氫鍵。對於L-胺基酸以右手螺旋為主，對於D-胺基酸以左手螺旋為主。
+\bit
+\item \tb{3$_{\tx{10}}$-螺旋（3$_{\tx{10}}$ Helix）}：
+\bit
+\item 每週期殘基數（Residues per turn）：3.0
+\item 每個殘基沿著螺旋軸方向的位移（Translation per residue）：0.20 nm
+\item 螺旋半徑（Radius of helix）：0.19 nm
+\item 螺距（Pitch）：0.60 nm
+\eit
+\item \tb{α-螺旋（α Helix）}：最常見。
+\bit
+\item 每週期殘基數（Residues per turn）：3.6
+\item 每個殘基沿著螺旋軸方向的位移（Translation per residue）：0.15 nm
+\item 螺旋半徑（Radius of helix）：0.23 nm
+\item 螺距（Pitch）：0.54 nm
+\eit
+\item \tb{π-螺旋（π Helix）}：
+\bit
+\item 每週期殘基數（Residues per turn）：4.4
+\item 每個殘基沿著螺旋軸方向的位移（Translation per residue）：0.11 nm
+\item 螺旋半徑（Radius of helix）：0.28 nm
+\item 螺距（Pitch）：0.48 nm
+\eit
+\eit
+\sssc{β-褶板/β-摺疊（β-sheet, β-pleated sheet）}
+蛋白質二級結構。肽鏈摺疊形成連續的 β 鏈相鄰排列，一條 β 鏈上的N-H基團與相鄰 β 鏈上的C=O基團建立氫鍵，因碳的四個鍵為正四面體排列故呈褶板而非平板。
+\bit
+\item \tb{反平行（Antiparallel）}：連續的 β 鏈交替方向，使得一條鏈的 N 端與下一條鏈的 C 端相鄰，羰基和胺基之間的鏈間氫鍵處於平面狀態，鏈間穩定性最強。
+\item \tb{平行（Parallel）}：連續的 β 鏈方向相同。
+\eit
+\sssc{牛腦海綿狀病變（Bovine spongiform encephalopathy, BSE）/狂牛症（Mad cow disease）}
+錯誤摺疊（應為 α-螺旋處變成 β-褶板）的\tb{朊粒蛋白/普里昂蛋白（Prion protein, PrP）}以指數級的方式誘導正常摺疊的普里昂蛋白錯誤摺疊引起的疾病，症狀包括行為異常、行走困難和體重減輕。
+\sssc{蛋白質三級結構（Protein tertiary structure）}
+蛋白質經過折疊（fold）形成的三維空間結構。
+
+折疊涉及的相互作用如：
+\bit
+\item 兩個半胱胺酸殘基之間形成的\tb{雙硫鍵（disulfide bonds）/二硫橋（disulfide bridges）}-S-S-。
+\item \tb{氫鍵與凡德瓦力}。
+\item \tb{（分子）伴侶（(molecular) chaperones）}：協助蛋白質折疊的分子。
+\eit
+\sssc{球狀蛋白質（Globular protein/spheroprotein）}
+疏水性的部分面向疏水核心，親水性的部分則面向周圍的蛋白質，具有一定的水溶性。
+\sssc{蛋白質四級結構（Protein quaternary structure）}
+多個蛋白質，稱亞基（subunits），形成的多亞基複合物結構。
+\ssc{常見寡肽}
+\sssc{阿斯巴甜（Aspartame）/(3S)-3-胺基-4-(N-((2S)-1-甲氧基-1-氧-3-苯基丙-2-基)胺基-4-氧丁酸/L-α-天門冬胺醯-L-苯丙胺酸甲酯}
+二肽，人工甜味劑/代糖，熱量約4 cal/g，甜度約為等重蔗糖的180倍，可能致癌。
+\ssc{常見蛋白質}
+\sssc{絲蛋白（Fibroin）}
+\bit
+\item 一級結構：(Gly-Ser-Gly-Ala-Gly-Ala)$_n$，不含硫。
+\item 主要二級結構：反平行 β-褶板
+\item 不溶於水。
+\item 蠶絲的主要成分。
+\item 有強韌的結構及較高的抗拉強度。
+\eit
+\sssc{角蛋白（Keratin）}
+一類蛋白質的總稱。
+\bit
+\item 一級結構：含有大量半胱胺酸、丙胺酸、甘胺酸、絲胺酸，含雙硫鍵，由半胱胺酸提供，可形成跨鏈交聯，增加穩定度。
+\item 主要二級結構：α-螺旋。
+\item 毛髮、指甲、皮膚、爪子、角、羽毛的主要成分。
+\eit
+\sssc{血紅素（Hemoglobin, Hb, Hgb）/血紅蛋白}
+高等生物體內紅色含鐵(II)的攜氧結合蛋白，有四個亞基結合成四級結構，其中每個亞基具有一個血基質，其中的 \ce{Fe^{2+}} 除了四個血基質原有的配位數外，另有一個由蛋白質中組胺酸殘基的氮提供孤電子對的配位數，攜帶氧分子時由氧分子的氧提供孤電子對形成六配位數，未攜氧時由水等小分子填補或空著成為五配位數。故一個血紅素最多可以攜帶四個氧分子。
+
+血紅素中的 \ce{Fe^{2+}} 在六配位數時為低自旋，配體八面體排列，離子半徑較小，嵌入血基質平面中；在五配位數時為高自旋，配體四角錐排列，離子半徑較大，不能嵌入血基質平面中而是向組胺酸殘基配體那面高出 70-80 pm。
+
+肺中氧氣濃度高，由勒沙特列原理可知反應向氧氣作為配體進行，使血紅素呈鮮紅色，稱充氧血；體循環中氧氣濃度低，由勒沙特列原理可知反應向氧氣脫離鐵(II)進行，使血紅素呈暗紅色，稱缺氧血。
+
+高極性的一氧化碳提供孤電子對與血紅素結合的能力是無極性的氧氣的約200倍，故血液中有一氧化碳時即會取代氧氣使紅血球失去攜氧能力，使細胞組織缺氧死亡，可通過呼吸高壓純氧以高濃度氧氣使反應向氧氣取代一氧化碳進行而解毒。
+
+哺乳動物中血紅素占紅血球乾重的97\%、總重的35\%。
+
+人類的主要血紅素：
+\bit
+\item \tb{血紅素 A（HbA）/α$_2$β$_2$/成人血紅素（adult hemoglobin）}：由一對 α 鏈和一對 β 鏈組成，占成人血紅素的 96\%-98\%。
+\item \tb{血紅素 A$_2$（HbA$_2$）/α$_2$δ$_2$}：由一對 α 鏈和一對 δ 鏈組成，占成人血紅素的 1.5\%-3.5\%。
+\item \tb{血紅素 F（HbF）/α$_2$γ$_2$/胎兒血紅素（fetal hemoglobin or foetal haemoglobin）}：由一對 α 鏈和一對 γ 鏈組成，在成人血紅素中僅少量，是人類胎兒的主要血紅素。 
+\eit
+\subsection{蛋白質與生物}
+\begin{itemize}
+\item 蛋白質提供生物熱量：4 kcal/g。
+\item 蛋白質構成生物組織的重要成分，如毛髮、蹄角、皮膚、肌肉、指甲、羽毛、種子、血紅素、酶、激素和抗體。
+\item 消化：食物中的蛋白質進入消化道後，最終分解為胺基酸。之後，身體使用胺基酸作為原料形成各種結構和大小的蛋白質。
+\item 蛋白質攝取量：根據膳食參考攝取量第8版，成年人的建議蛋白質攝取量為每公斤體重1.1克。
+\end{itemize}
+\subsection{蛋白質的反應}
+\sssc{變性（Denaturation）與分解}
+變性指蛋白質或核酸的天然二級、三級和/或四級結構部分或全部改變的過程，導致其生物活性的喪失。
+
+造成變性的方法如：高溫、極端低溫、酸鹼、金屬離子（如銅鹽、鉛鹽、汞鹽）、有機溶劑（如甲醛、尿素、酒精）、高強度輻射（如紫外線）。
+\begin{itemize}
+\item 加熱或加入有機溶劑可能破壞氫鍵、造成疏水基團暴露而聚集凝固，如乳品的高溫殺菌、蛋加熱後凝固、肉加熱後變硬。
+\item 醇、酸、鹼可能破壞氫鍵與二、三、四級結構。
+\item 酸、鹼、酶可能使水解。
+\item 金屬離子可能與之錯合而凝聚，許多蛋白質可作為金屬中毒解毒劑即因此。
+\item 因細菌分解作用而腐敗，可能釋出氨氣、硫化氫、硫醇類等臭且有毒之氣體，可能造成食物中毒。
+\end{itemize}
+\subsubsection{黃蛋白反應（Xanthoproteic reaction）/薑黃反應}
+具芳香環的肽，遇濃硝酸變性形成白色沉澱，受熱則變黃，再加入氨水則呈橙色。
+\subsubsection{茚三酮反應/寧海準反應（Ninhydrin reaction）}
+脯胺酸以外的 α-胺基酸與茚三酮反應產生藍紫色亞胺衍生物，脯胺酸與茚三酮反應產生黃色物質。觸摸皮膚會變藍紫色。在法醫學上，使用茚三酮反應可採集嫌疑犯在犯罪現場留下來的指紋，因為手汗中含有多種胺基酸，遇茚三酮後起顯色反應。
+\subsubsection{梅納反應/梅拉德反應（Maillard reaction）/羰胺反應}
+指食物中醣類與胺基酸或蛋白質在常溫或加熱時發生的一系列非酶褐變反應，生成棕黑色的大分子物質類黑精/擬黑素（Melanoidin），以及具有不同氣味的中間體分子，包括還原酮、醛和雜環化合物等。
+\subsubsection{米倫反應（Millon reaction）}
+米倫試劑為硝酸汞溶於稀硝酸的混合液，含有酚的蛋白質溶液中加入米倫試劑，會產生通常是紅色的沉澱，加熱則變為磚紅色。
+\subsubsection{雙縮脲試驗（Biuret test）}
+先加入雙縮脲試劑 A（氫氧化鈉溶液），振盪均勻以營造鹼性環境，再加入雙縮脲試劑B（硫酸銅與酒石酸鉀鈉的混合溶液），振盪均勻。若含有具二個以上醯胺鍵的蛋白質，溶液變成紫色，顏色深淺與醯胺鍵濃度略成正比。
+\ssc{酶/酵素（Enzyme）}
+生物體內的蛋白質催化劑。
+\sssc{酶促反應（enzymatic reaction）/酶催化反應}
+指酶催化的反應，其中反應物稱受質/底物（substrate），生成物稱產物（product）。
+
+酶催化劑常呈真溶液或膠體溶液，分別屬於勻相與非勻相催化，但後者接觸面積亦甚大。酵素的催化效率通常很高，極微量的酵素即可使大量受質反應，一些酶可以將反應速率提高數百萬倍。
+
+不一定發生於生物體內。
+\sssc{特異性/專一性（Specificity）}
+指酵素必須與特定底物結合才能催化反應，如麥芽糖酶只能催化麥芽糖的水解。酶通常對其結合的底物以及催化的化學反應具有非常強的特異性，可以區分出非常相似的底物分子。特異性是透過互補形狀、電荷和親水/疏水特性等實現。鎖鑰模型（Lock and key model）以鎖喻酵素、以鑰匙喻底物，但酵素實際參與反應時並非剛性結合，而具有過渡變化。
+\sssc{輔酶（coenzyme）/輔基}
+一種低分子量、非蛋白質的化合物或離子，作為可解離的化學基團或電子載體參與酶促反應，是酶的輔催化劑（catalyst support）。
+\sssc{結構}
+酵素多為球狀蛋白質，分子量通常在100000以上。許多須與輔酶結合成拼合蛋白質方能參與反應。
+\sssc{活性部位/活性點（active site）/活化中心（active center）}
+指參與反應的部位。無論酵素分子如何巨大，其表面通常只有少數部分為活性部位。
+\sssc{溫度效應}
+過高溫會永久破壞酵素高級結構，低溫則一般僅降低活性而不破壞結構。人體中的酶多在 25-45°C 或 35-55°C 活性較高。
+\sssc{pH 值效應}
+酵素高級結構與/或活性受酸鹼影響。人體中的酶，胃中作用者在 pH$\approx 2.0$ 活性最佳、腸中作用者在 pH$\approx 8.5$ 活性最佳，其餘多在 pH 6-8 活性較高。
+\sssc{人體內的酶}
+\bit
+\item 口腔：唾液澱粉酶（Salivary amylase）。
+\item 胃：胃蛋白酶（Pepsin）、胃脂肪酶（Gastric lipase），pH$\approx 2.0$。
+\item 胰液：胰蛋白酶（Trypsin）、胰澱粉酶（Pancreatic amylase）、胰脂肪酶（Pancreatic lipase）、核酸酶（Nucleases），pH$\approx 8.5$。
+\item 腸液：麥芽糖酶（Maltase）、乳糖酶（Lactase）、蔗糖酶（Sucrase），pH$\approx 8.5$，乳糖不耐症（Lactose intolerance）係因基因缺陷使體內缺乏乳糖酶。
+\item 肝臟：乙醛去氫酶（Acetaldehyde dehydrogenase, ALDH）、細胞色素P450（Cytochrome P450, CYP450, CYP）、丙胺酸轉胺酶（Alanine transaminase, ALT）/丙胺酸胺基轉移酶（Alanine aminotransferase, ALAT）/（血清）谷胺酸丙酮酸轉胺酶（(Serum) glutamate pyruvate transaminase, SGPT）、天門冬胺酸轉移酶（Aspartate transaminase, AST）/天門冬胺酸胺基轉移酶（Aspartate aminotransferase, AspAT, ASAT, AAT）/（血清）麩胺酸草醯乙酸轉胺酶（(Serum) glutamic oxaloacetic transaminase, GOT, SGOT）、鹼性磷酸酶（Alkaline phosphatase, ALP）。
+\item 細胞代謝：己糖激酶（Hexokinase）、磷酸果糖激酶（Phosphofructokinase）、丙酮酸激酶（Pyruvate kinase）等糖解酶（Glycolytic enzymes）、三羧酸循環酶（TCA Cycle enzymes）、超氧化物歧化酶（Superoxide dismutase, SOD）、谷胱甘肽過氧化酶（Glutathione peroxidase）、谷胱甘肽轉移酶（Glutathione S-transferase）。
+\item 遺傳物質合成：引物酶（Primase）、RNA聚合酶（RNA polymerase, RNAP, RNApol）、DNA解旋酶（DNA helicase）、單股DNA結合酶（Single-strand DNA-binding protein）、DNA拓樸異構酶（DNA topoisomerases）、DNA聚合酶（DNA polymerase, DNAP, DNApol）、DNA連接/黏合酶（DNA ligase）、端粒酶（Telomerase）。
+\eit
+\sssc{木瓜酵素/木瓜蛋白酶（Papain or papaya proteinase）}
+木瓜等水果中存在的酵素，常用以軟化較硬的肉纖維，如市售嫩肉中用之。
+
+
+\section{核苷酸（Nucleotide）與核酸（Nucleic acid）}
+\subsection{核苷酸（Nucleotide）}
+由一個核糖或去氧核糖、一個含氮鹼基、一個或多個磷酸基團 O$^-$(-P(=O)(-OH)-O-)$_n$ 組成。
+
+核糖或去氧核糖含C、H、O；於三號碳加入含氮鹼基為核苷（Nucleoside）或去氧核苷；含C、H、O、N；再於五號碳加入磷酸基團（磷酸間、磷酸與核糖間脫水縮合，前者為酸酐化，後者為酯化，即除最後一個磷酸為磷酸基外，其餘為羥基磷醯基）為核糖核苷酸或去氧核糖核苷酸，含C、H、O、N、P。
+
+核苷酸的一種名稱為（去氧核糖者加d）[含氮鹼基簡稱][磷酸基團數，T為3、D為2、M為1]P，如 ATP 指三磷酸腺苷/腺苷三磷酸/腺嘌呤核苷三磷酸（Adenosine triphosphate）/腺嘌呤三磷酸核糖核苷酸。
+\ssc{核酸（Nucleic acid）}
+核糖核酸或去氧核糖核酸，是由單磷酸核苷酸序列中，五碳醣的五號碳（在核苷酸結構中為二號碳，但生化學一般仍以原先作為核糖或去氧核糖時的編號討論）上的磷酸基團上的羥基，與相鄰單體五碳醣的三號碳（在核苷酸結構中為四號碳）上的羥基脫水縮合，聚合而成的長鏈狀聚合物。5' 端（5-prime end）的最後一個核苷酸五碳醣的五號碳連接了一個磷酸基團，3' 端（3-prime end）的最後一個核苷酸五碳醣的三號碳上帶有一個羥基。
+
+核酸與蛋白質一樣分為四級結構，如核酸二級結構的螺旋。
+
+核酸是存在於所有生物中的大型生物有機分子，具有編碼、傳遞及表達遺傳信息的功能。
+\sssc{去氧核糖核酸（Deoxyribonucleic acid, DNA）}
+含氮鹼基包括 A 腺嘌呤，C 胞嘧啶，G 鳥嘌呤和 T 胸腺嘧啶，故DNA 有四種核苷酸單體：dAMP、dTMP、dCMP。
+
+DNA 在生物中為雙股螺旋結構，大多是鏈狀，少部分呈環狀，分子量一般都很大。生物與具之的部分病毒中主要功能是遺傳資訊的儲存。
+
+DNA 雙股螺旋的三種主要結構為 A-DNA、B-DNA、Z-DNA。
+\sssc{核醣核酸（Ribonucleic acid, RNA）}
+含氮鹼基包括 A 腺嘌呤，C 胞嘧啶，G 鳥嘌呤和 U 尿嘧啶，故RNA 有四種核苷酸單體：AMP、UMP、CMP 與 GMP。
+
+RNA 在生物中通常為單股螺旋結構，大多是鏈狀，少部分呈環狀，分子量一般較 DNA 小很多。生物中主要功能是遺傳資訊的轉譯與表達（合成蛋白質），部分病毒用之儲存遺傳資訊。
+\ssc{含氮鹼基互補配對原則（Complementary pairing principle of nitrogen-containing bases）}
+DNA 與 RNA 正常情況下的鹼基對包含：
+\begin{itemize}
+\item 腺嘌呤與以兩個氫鍵與尿嘧啶配對：腺嘌呤的六號碳上的胺基氮作為供體，尿嘧啶的四號碳上的酮基氧作為受體；尿嘧啶的三號氮作為供體，腺嘌呤的一號氮作為受體。
+\bct\bfH\ctr\icg[width=0.4\textwidth]{AU.png}\ef\FB\ect
+\item 腺嘌呤與以兩個氫鍵與胸腺嘧啶配對：腺嘌呤的六號碳上的胺基氮作為供體，胸腺嘧啶的四號碳上的酮基氧作為受體；胸腺嘧啶的三號氮作為供體，腺嘌呤的一號氮作為受體。
+\bct\bfH\ctr\icg[width=0.4\textwidth]{AT.png}\ef\FB\ect
+\item 鳥嘌呤以三個氫鍵與胞嘧啶配對：胞嘧啶的四號碳上的胺基氮作為供體，鳥嘌呤的六號碳上的酮基氧作為受體；鳥嘌呤的一號氮作為供體，胞嘧啶的三號氮作為受體；鳥嘌呤的二號碳上的胺基氮作為供體，胞嘧啶的二號碳上的酮基氧作為受體。
+\bct\bfH\ctr\icg[width=0.4\textwidth]{GC.png}\ef\FB\ect
+\end{itemize}
+
+
+\section{維生素/維他命（Vitamin）}
+一類有機化合物的統稱，是生物體所需要的微量營養成分。
+\subsection{必需維生素}
+共13類，其中維生素 A、D、E、K 為脂溶性，可通過細胞膜，其餘為水溶性，不可通過細胞膜。
+\sssc{定義}
+滿足以下四個特點稱必需維生素：
+\begin{itemize}
+\item 外源性：人體自身不可合成或合成量不足生理所需，需食物補充。（維生素D人體能經紫外線照射合成，但較重要故仍被視為必需維生素。）
+\item 微量性：人體所需量很少，但是可以發揮巨大作用，通常在體內扮演輔酶等角色。
+\item 調節性：能夠調節人體新陳代謝或能量轉變。
+\item 特異性：缺乏後人體將呈現特有的病態。
+\end{itemize}
+\sssc{維生素A/視黃醇（Retinol）衍生物/(2E,4E,6E,8E)-3,7-二甲基-9-(2,6,6-三甲基環戊-1-烯-1-基)壬-2,4,6,8-四烯-1-醇衍生物}
+包含視黃醇、視黃醛、視黃酯、β-胡蘿蔔素（β-Carotene）等，缺乏會造成夜盲症、乾眼症等眼疾。
+\sssc{維生素B1/硫胺素（Thiamine）/2-[3-[(4-胺基-2-甲基-1,3-氮雜環己-1,3,5-三烯-5-基)甲基]-4-甲基-1-硫雜-3-氮雜環戊-2,4-二烯-3-金翁-5-基]乙醇}
+缺乏會造成腳氣病等。
+\sssc{維生素B2/菸鹼醯胺（Nicotinamide）/氮雜環己-1,3,5-三烯-3-甲醯胺}
+缺乏會造成口腔潰瘍等口腔疾病。
+\sssc{維生素B3/菸鹼酸（Nicotinic acid）/氮雜環己-1,3,5-三烯-3-甲酸}
+缺乏會造成糙皮病等。
+\sssc{維生素B5/泛酸（Pantothenic acid）/3-[(2R)-N-(2,4-二羥基-3,3-二甲基丁醯基)胺基]丙酸}
+缺乏會造成感覺異常等。
+\sssc{維生素B6/吡哆衍生物/2-甲基-3-羥基-4,5-二羥甲基氮雜環戊-1,3,5-三烯衍生物}
+包含吡哆醇、吡哆醛和吡哆胺等。缺乏會造成貧血。
+\sssc{維生素B7/生物素（Biotin）/5-[(3aS,4S,6aR)-2-酮-(硫雜環戊烷-[3,4-d]1-氧雜-2,5-二氮雜環戊烷)-4-基]戊酸}
+缺乏會造成皮膚炎等。
+\sssc{維生素B9/葉酸（Folate or folacin）/(2S)-2-[[[4-[[N-[2-胺基-4-酮-(1,3-二氮雜環己-1,5-二烯[5,6-b]1,4-二氮雜環己-4,5-二烯)-6-基]甲基]胺基]苯基]醯基]胺基]戊二酸}
+孕婦缺乏會造成嬰兒出生缺陷等。
+\sssc{維生素B12/鈷胺素（Cobalamin）}
+包含一類鈷六配位數配位化合物；其中四牙配體咕啉（Corrin）是一種四氮雜環分子，在內圈的十五員環里，有四個氮原子作為配體；咕啉上又鍵結一單磷酸苯並咪唑核苷酸的磷酸基，苯並咪唑又作為一配體。缺乏會造成貧血。
+\sssc{維生素C/抗壞血酸（Ascorbic acid）/(R)-3,4-二羥基-5-((S)-1,2-二羥乙基)氧雜環戊-3-烯-2-酮}
+缺乏會造成壞血病。常用食品抗氧化劑，維生素C氧化成 (R)-5-((S)-1,2-二羥乙基)氧雜環戊-2,3,4-三酮 的半反應：
+\[\ce{C6H8O6 -> C6H6O6 + 2H+ + 2e-}\]
+\sssc{維生素D}
+包含一類開環甾體。缺乏會造成佝僂病。
+\sssc{維生素E}
+包含：
+\begin{itemize}
+\item α-生育酚（α-Tocopherol）/(2R)-2,5,7,8-四甲基-2-[(4R,8R)-4,8,12-三甲基十三烷基]-(苯[3,4-b]-氧雜環己-2-烯)-6-酚
+\item β-生育酚（β-Tocopherol）/(2R)-2,5,8-三甲基-2-[(4R,8R)-4,8,12-三甲基十三烷基]-(苯[3,4-b]-氧雜環己-2-烯)-6-酚
+\item γ-生育酚（γ-Tocopherol）/(2R)-2,7,8-三甲基-2-[(4R,8R)-4,8,12-三甲基十三烷基]-(苯[3,4-b]-氧雜環己-2-烯)-6-酚
+\item δ-生育酚（δ-Tocopherol）/(2R)-2,8-二甲基-2-[(4R,8R)-4,8,12-三甲基十三烷基]-(苯[3,4-b]-氧雜環己-2-烯)-6-酚
+\item α-生育三烯酚（α-Tocotrienol）/(2R)-2,5,7,8-四甲基-2-[(3E,7E)-4,8,12-三甲基十三-3,7,11-三烯基]-(苯[3,4-b]-氧雜環己-2-烯)-6-酚
+\item β-生育三烯酚（β-Tocotrienol）/(2R)-2,5,8-三甲基-2-[(3E,7E)-4,8,12-三甲基十三-3,7,11-三烯基]-(苯[3,4-b]-氧雜環己-2-烯)-6-酚
+\item γ-生育三烯酚（γ-Tocotrienol）/(2R)-2,7,8-三甲基-2-[(3E,7E)-4,8,12-三甲基十三-3,7,11-三烯基]-(苯[3,4-b]-氧雜環己-2-烯)-6-酚
+\item δ-生育三烯酚（δ-Tocotrienol）/(2R)-2,8-二甲基-2-[(3E,7E)-4,8,12-三甲基十三-3,7,11-三烯基]-(苯[3,4-b]-氧雜環己-2-烯)-6-酚
+\end{itemize}
+
+常用食品抗氧化劑。缺乏會造成神經系統疾病。
+\sssc{維生素K1/葉綠醌/葉綠基甲萘醌（Phylloquinone）/2-甲基-3-[(2E)-3,7,11,15-四甲基十六碳-2-烯-1-基]-(環戊-1-烯[3,4-a]苯)-1,4-二酮}
+缺乏會造成凝血酶缺乏。
+\sssc{維生素K2/甲萘醌（Menadione）/2-甲基-(環戊-1-烯[3,4-a]苯)-1,4-二酮}
+缺乏會造成凝血酶缺乏。
+
+
+\section{藥物}
+\ssc{藥物使用}
+\sssc{藥物劑量}
+藥物劑量指藥物的正確使用量，以標示為準。若無分年齡標示一般標示為18-60歲成人最有效治療劑量，此時60歲以上藥物劑量約為標示藥物劑量 3/4，兒童藥物劑量約為標示藥物劑量*兒童質量/65 kg（成人平均質量）。
+\sssc{藥物選擇}
+會出現過敏等不良反應者應立即停用。
+
+大約六成的人在使用任意一種非類固醇抗發炎藥（Non-steroidal anti-inflammatory drug, NSAID）後發炎症狀會有改善，若其一不起作用或會過敏等，通常建議使用他種。
+\ssc{胃藥}
+\sssc{制酸劑（Antacid）}
+\begin{itemize}
+\item 藥物：
+\bit
+\item \tb{速效型}（易溶於水）：$\text{NaHCO}_3$。
+\item \tb{長效型}（微或難溶於水）：$\text{Al(OH)}_3$、$\text{Mg(OH)}_2$、$\text{CaCO}_3$、$\text{MgCO}_3$。
+\eit
+\item 療效：弱鹼，可中和胃酸。胃乳成分主要為氫氧化鋁。
+\item 副作用：
+\begin{itemize}
+\item 含碳酸根或碳酸氫根者，碳酸根或碳酸氫根與胃酸作用產生二氧化碳引發脹氣，反應式\ce{HCO3- + H+ -> CO_2 + 
+H2O}、\ce{CO3^{2-} + 2H+ -> CO2 + H2O}。
+\item 部分藥品會因併用制酸劑降低藥效或增強副作用，如pH上升使鐵劑形成不溶性沉澱，降低吸收率。
+\item 含鋁者易造成便秘、噁心、嘔吐，不適用血液透析病患，含鎂者易造成下痢，常混合使用。
+\end{itemize}
+\end{itemize}  
+\sssc{氫離子幫浦阻斷劑（Proton-pump inhibitor）}
+\begin{itemize}
+\item 藥物：耐適恩等。
+\item 療效：阻斷氫離子幫浦（主動運輸），阻止氫離子進入胃液，直接減少胃液分泌，幫助十二指腸潰瘍癒合、減少胃灼熱。
+\item 副作用：過度服用造成無法消化蛋白質。
+\end{itemize}
+\ssc{非麻醉型非類固醇鎮痛與消炎劑}
+\sssc{柳酸/水楊酸（Salicylic acid）/2-羥基苯甲酸}
+\begin{itemize}
+\item 發現：柳樹樹皮中含有柳酸。希臘、蘇美、黎巴嫩、亞述和北美原住民有使用樹皮或其提取物止痛的文獻或傳統。
+\item 療效：過去用於止痛，現少用於此。具去角質功效，現常用於治療青春痘。
+\item 實驗室製備：
+\[\ce{C6H6 + Cl2 ->[FeCl3(aq)] C6H5Cl + HCl}\]
+\[\ce{C6H5Cl + 2OH- ->[\text{300°C 200 atm 濃} NaOH(aq)] C6H5O- + Cl- + H2O}\]
+\[\ce{C6H5O- + CO2 + OH- ->[\text{濃} NaOH(aq)] C6H4(O-)(COO-) + H2O}\]
+\[\ce{C6H4(O-)(COO-) + 2H+ ->[HCl(aq)] C6H4(OH)(COOH)}\]
+\end{itemize}
+\sssc{阿斯匹靈（Aspirin）/乙醯柳酸/乙醯水楊酸/2-乙醯氧基苯甲酸}
+\begin{itemize}
+\item 發現：1897年德國拜耳公司工程師霍夫曼為替父親解決關節炎，用乙酐將柳酸乙醯化得量產。
+\item 療效：阻斷局部神經傳導，使其失去知覺。消炎、解熱、止痛、退燒，可治療風溼性關節炎，屬 NSAID。具抗凝血功效，可預防血管栓塞、中風和心臟病的發作。
+\item 副作用：弱酸，刺激胃，不適合高胃酸患者，過量可能導致腸胃出血，常搭配胃藥服用。有抑制血小板凝集與血管收縮的抗凝血功效，亦為心血管疾病用藥，但手術前須停用。血友病、出血性潰瘍者不可用。
+\item 實驗室製備：
+\[\ce{C6H6 + Cl2 ->[FeCl3(aq)] C6H5Cl + HCl}\]
+\[\ce{C6H5Cl + 2OH- ->[\text{300°C 200 atm 濃} NaOH(aq)] C6H5O- + Cl- + H2O}\]
+\[\ce{C6H5O- + CO2 + OH- ->[\text{濃} NaOH(aq)] C6H4(O-)(COO-) + H2O}\]
+\[\ce{C6H4(O-)(COO-) + 2H+ ->[HCl(aq)] C6H4(OH)(COOH)}\]
+\[\ce{C6H4(OH)(COOH) + (CH3CO)2O ->[H2SO4] C6H4(OOCCH3)(COOH) + CH3COOH}\]
+\end{itemize}
+\sssc{乙醯胺酚（Acetaminophen, APAP）/撲熱息痛（Paracetamol）/普拿疼/4-乙醯胺基苯酚}
+\begin{itemize}
+\item 療效：阻斷局部神經傳導，使其失去知覺。解熱、止痛，無消炎功效，故不屬 NSAID，常見於感冒藥中。胃壁吸收，作用快，但不適用於酒精中毒或肝損傷。
+\item 副作用：對胃無刺激性，為許多感冒藥成分。可能導致肝功能異常，肝炎患者不可過量。
+\item 實驗室製備：
+\[\ce{C6H6 + Cl2 ->[FeCl3(aq)] C6H5Cl + HCl}\]
+\[\ce{C6H5Cl + 2OH- ->[\text{300°C 200 atm 濃} NaOH(aq)] C6H5O- + Cl- + H2O}\]
+\[\ce{C6H4O- + H+ ->[HCl(aq)] C6H5OH}\]
+\[\ce{C6H5OH + NO3- + H+ ->[\text{濃} HNO3(aq) + H2SO4(aq)] C6H4(OH)(NO2)}\]
+\[\text{蒸餾法去除沸點 216°C 的 2-硝基苯酚，留下沸點 279°C 的 4-硝基苯酚}\]
+\[\ce{C6H4(OH)(NO2) + 3Fe + 7H+ ->[$30\%$ HCl(aq), $\Delta$] C6H4(OH)(NH2) + 3Fe^{2+} + 2H2O}\]
+\[\ce{C6H4(OH)(NH2) + (CH3CO)2O ->[$\Delta$] C6H4(OH)(NHOCCH3) + CH3COOH}\]
+\end{itemize}
+\sssc{冬青油/柳酸甲酯/2-羥基苯甲酸甲酯}
+\begin{itemize}
+\item 療效：味甜而辣，局部塗抹可促進局部血液循環，產生局部皮膚血管擴張、膚色發紅等刺激反應，影響相應部位的皮膚、肌肉、神經與關節，以達消腫、消炎、鎮痛和止癢。曼秀雷敦藥膏、萬金油、白花油等含有冬青油。
+\item 副作用：影響血液鐵(II)離子活動，誤食可能造成酸中毒，故鮮少內服用。
+\item 實驗室製備：
+\[\ce{C6H6 + Cl2 ->[FeCl3(aq)] C6H5Cl + HCl}\]
+\[\ce{C6H5Cl + 2OH- ->[\text{300°C 200 atm 濃} NaOH(aq)] C6H5O- + Cl- + H2O}\]
+\[\ce{C6H5O- + CO2 + OH- ->[\text{濃} NaOH(aq)] C6H4(O-)(COO-) + H2O}\]
+\[\ce{C6H4(O-)(COO-) + 2H+ ->[HCl(aq)] C6H4(OH)(COOH)}\]
+\[\ce{C6H4(OH)(COOH) + CH3OH ->[H2SO4] C6H4(OH)(COOCH3)}\]
+\end{itemize}
+\sssc{布洛芬/伊布洛芬（Ibuprofen）/2-(4-(2-甲基丙基)苯基)丙酸}
+\begin{itemize}
+\item 療效：阻斷局部神經傳導，使其失去知覺。消炎、鎮痛、解熱、退燒，屬 NSAID。適用於經痛、偏頭痛、類風溼性關節炎。
+\item 副作用：哮喘加重、懷孕後期服用可能有害。胃出血風險較阿斯匹靈低，但會提高心臟、腎、肝衰竭風險。
+\end{itemize}
+\ssc{麻醉型止痛劑}
+\sssc{嗎啡（Morphine）}
+\bct\bfH\ctr\icg[width=0.4\textwidth]{m1.png}\ef\FB\ect
+\begin{itemize}
+\item 發現：1803-1805年德國瑟圖納首次分離出來，是首個自植物體內分離的活性成分。1827年美國默克藥廠以罌粟分離達商業販售。
+\item 療效：直接作用於中樞神經系統，改變人體感覺。可口服、肛門塞劑、皮下注射、靜脈注射、脊髓注射。適用於中重度疼痛、心肌梗塞、臨盆、外科手術等。
+\item 副作用：成癮性毒品。過量導致呼吸抑制、血壓下降、昏迷甚至死亡。
+\end{itemize}
+\sssc{海洛因（Heroin）}
+\bct\bfH\ctr\icg[width=0.4\textwidth]{m2.png}\ef\FB\ect
+\begin{itemize}
+\item 發現：1874年阿爾德·賴特利用罌粟製成的嗎啡所製成。現多化學合成。
+\item 療效：為類鴉片藥物（指具有類似嗎啡作用的藥物）。
+\item 副作用：成癮性毒品。
+\end{itemize}
+\sssc{古柯鹼（Cocaine）}
+\bct\bfH\ctr\icg[width=0.5\textwidth]{m3.png}\ef\FB\ect
+\begin{itemize}
+\item 發現：南美洲人自古嚼古柯葉。1855年德國斐德烈提煉出，1859年尼曼純化。
+\item 副作用：成癮性。毒品。
+\end{itemize}
+\ssc{類固醇（Steroid）/美國仙丹}
+\begin{itemize}
+\item \textbf{自然分泌}：類固醇亦為人體正常情況下會分泌的荷爾蒙。
+\item \textbf{療效}：抑制免疫系統，可強力抑制發炎。適用於不明原因發炎性疾病、風溼性關節炎、紅斑性狼瘡、氣喘等。
+\item \textbf{副作用}：依賴性。情緒搖擺不定，水牛肩、月亮臉等身型改變、影響小孩生長，局部性吸入少量類固醇無顯著影響。應依醫囑，不可突然停藥。
+\end{itemize}
+\ssc{抗菌劑（Antiseptic）}
+針對細菌感染病。
+\sssc{磺胺類藥物（Sulfonamides）}
+\bit
+\item 藥物：4-胺基苯磺醯胺（PABA）/磺胺的類似物，如：
+\begin{itemize}
+\item 磺胺二甲異嘧啶（Sulfisomidine）/4-胺基-N-(4,6-二甲基-1,3-二氮雜環己-1,3,5-三烯-2-基)苯-1-磺醯胺
+\item 呋塞米（Furosemide）/4-氯-2-[(氧雜環戊-2,4-二烯-2-甲基)胺基]-5-胺基磺醯基苯甲酸
+\item 磺胺甲㗁唑（Sulfamethoxazole, SMZ, SMX）/磺胺甲異㗁唑/4-胺基-N-(5-甲基-1-氧雜-2-氮雜環戊-2,4-二烯-3-基)-苯磺胺
+\item 發現：1932年德國拜耳公司化學家多麥克發現，一種紅色工業染料有抗菌活性，德國病理與細菌學家竇馬柯研究，促使第一種磺胺藥物問世。現多以化學方法合成。
+\item 療效：4-胺基苯磺醯胺是細菌合成葉酸途徑的必經中間產物，磺胺類藥物與之競爭細菌體內的二氫葉酸合成酶，占據其活性位置，從而抑制細菌合成葉酸，干擾細菌代謝、繁殖。適用於砂眼、泌尿道感染、鏈球菌、梅毒、葡萄球菌發炎等細菌感染病。
+\item 副作用：傷肝腎，可能造成藥物過敏，可能導致肝衰竭，故在已開發國家已幾乎被抗生素取代。
+\end{itemize}
+\eit
+\sssc{抗生素（Antibiotic）}
+\bit
+\item 藥物：
+\begin{itemize}
+\item 青黴素/盤尼西林（Penicillin）：人類第一種發現的抗生素。
+\bct\bfH\ctr\icg[width=0.5\textwidth]{m4.png}\ef\FB\ect
+\item 四環（黴）素（Tetracycline）
+\item 土黴素（Oxytetracycline）
+\item 鏈黴素（Streptomycin）
+\eit
+\item 發現：1922年佛萊明在細菌培養液發現青黴素。
+\item 療效：殺死或抑制他種細菌生長。適用於心內膜炎、肺炎、細菌型結膜炎、尿道炎、中耳炎等細菌感染病。
+\item 副作用：濫用使細菌產生抗藥性，故不可中斷，需按時服藥。
+\end{itemize}
+\end{document}

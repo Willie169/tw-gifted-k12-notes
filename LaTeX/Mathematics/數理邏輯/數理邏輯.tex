@@ -1,0 +1,38 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{數理邏輯}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{數理邏輯（Mathematical Logic）}
+\ssc{陳述（Statement）/命題（Proposition）}
+一個陳述性句子，要麼為真，要麼為假，但不能同時為真或假，如「2+2=4」。
+\ssc{表達式（Expression）}
+表達式是表示值或數學物件的符號組合，例如數字、變數、運算子和函數。 它本身不斷言任何內容，並且在對其進行評估之前不能將其分類為真或假，如「2 + 2」。
+\ssc{條件（Condition）}
+指定必須滿足的要求或限制的陳述。
+\ssc{非命題（Negation）}
+「$\neg P$」稱「$P$」的非命題。
+\ssc{否命題（Inverse）}
+「$\neg P \implies \neg Q$」為「$P \implies Q$」的否命題。
+\ssc{逆命題（Converse）}
+「$Q \implies P$」為「$P \implies Q$」的逆命題。
+\ssc{否逆/逆否命題（Contraposition）/對偶命題}
+「\( \neg B \implies \neg A\)」為「\( A \implies B \)」的逆否命題。逆否命題$\iff$原命題。
+\ssc{邏輯的笛摩根定律}
+\[\neg (P\land Q)\iff (\neg P)\lor (\neg Q)\]
+\[\neg (P\lor Q)\iff (\neg P)\land (\neg Q)\]
+\ssc{充分條件（Sufficient condition）}
+ 「如果\( A \) 為真則保證\( B \) 為真」$\equiv$「條件\( A \) 是條件\( B \) 的充分條件」$\equiv$「\( A \implies B \)」。
+\ssc{必要條件（Necessary condition）}
+「如果\( A \) 為真則保證\( B \) 為真」$\equiv$「條件\( B \) 是條件\( A \) 的必要條件」$\equiv$「\( A \implies B \)」$\equiv$「\( \neg B \implies \neg A\)」。
+\ssc{充要條件（Sufficient and necessary condition）/充分必要條件}
+「\( (A \implies B) \land (B \implies A) \)」$\equiv$「\( A \iff B\)」$\equiv$「條件\( A \) 是條件\( B \) 的充分必要條件」$\equiv$「條件\( B \) 是條件\( A \) 的充分必要條件」。
+\end{document}

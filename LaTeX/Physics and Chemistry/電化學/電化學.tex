@@ -1,0 +1,249 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{電化學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{電化學（Electrochemistry）}
+電化學是探討電位差導致化學變化或化學變化涉及電子轉移的學科。
+\subsection{氧化態（Oxidation state）/氧化數（Oxidation number）}
+方便計算參與反應的原子獲得或失去的電荷而定義的假想電荷，概念為將共用電子對指定給電負度較大的原子，得到電子氧化數為負，失去電子氧化數為正。
+
+平均氧化數：同一元素原子的氧化數之算數平均數。
+
+氧化數判別規則：
+\begin{enumerate}
+\item 對於任意原子、離子團，其氧化數和等於其所帶的電荷數。Ex: \ce{Fe^{3+}}（+3）、\ce{Zn^{2+}}（+2）。
+\item 具共振者，一原子的氧化數為其在每個共振結構的氧化數的加權平均，每個共振結構分別視為無共振之結構計算。下為無共振之結構的氧化數判別。
+\item 元素態的物質，原子的氧化數為零。Ex: \ce{Na}（0）、\ce{Cl2}（0）。
+\item 化合物中，F恆為-1；1A族恆為+1；2A族恆為+2；Al恆為+3。Ex: NaCl（Na為+1）、HF（F為-1）。
+\item 金屬氫化物中，氫的氧化數為-1。Ex: NaH（H為-1）、LiH（H為-1）。非金屬氫化物中，氫的氧化數為+1。Ex:\ce{H2O}（H為+1）、\ce{CH4}（H為+1）。
+\item 一般氧化物中，氧的氧化數為-2。Ex: \ce{CO2}（O為-2）、\ce{H2O}（O為-2）。過氧化物中，氧的氧化數為-1。 Ex: \ce{H2O2}（O為-1）、\ce{Na2O2}（O為-1）。超氧化物中，氧的氧化數為-0.5。 Ex: \ce{KO2}（O為-0.5）、\ce{CsO2}（O為-0.5）。\ce{OF2}中，氧的氧化數為+2。\ce{O$_x$F2} ($x\geq 2$) 中，與氟連接的氧的氧化數為+1。
+\item 主族元素的氧化數不得超過其價電子數；過渡元素的氧化數不得超過八；所有元素的氧化數不得低於其價電子數減八。
+\item 相對法：正氧化數者視為將電荷取自與其有鍵結的原子，負氧化數者視為將電荷給予與其有鍵結的原子，使電負度大之非金屬原子滿足八隅體優先於使電負度小之非金屬原子滿足八隅。Ex: 乙醇\ce{C2H5OH}（甲基中的C為+3，另一C為+1）, \ce{PCl3}（Cl為-1，P為+3）。
+\end{enumerate}
+
+金屬在化合物中之命名：通常將氧化數括號於其後，如氧化鐵(II)\ce{FeO}、氧化鐵(III)\ce{Fe3O2}；或常見氧化數中最高者用原名，較之低之常見氧化數前綴亞，如氧化亞鐵\ce{FeO}、氧化鐵\ce{Fe3O2}；或各組分元素前綴其莫耳數最簡單整數比，金屬為一則省略，如一氧化鐵\ce{FeO}、三氧化二鐵\ce{Fe3O2}。
+\subsection{氧化還原反應（Redox reaction）}
+\begin{itemize}
+\item \tb{氧化還原反應}：氧化指失去電子，即氧化數增加；還原指得到電子，即氧化數減少。非氟得到氧或非金屬失去氫為氧化；非氟失去氧或非金屬得到氫為還原。
+\item \tb{狹義的氧化還原反應}：氧化指得到氧；還原指失去氧。
+\item \tb{半反應（Half-reaction）}：氧化半反應指失去電子的半反應，即氧化數上升的半反應；還原半反應指獲得電子的半反應，即氧化數下降的半反應。氧化半反應與還原半反應必同時發生，但不一定發生在同一處。
+\item \tb{氧化劑（Oxidant or oxidizing agent, Ox）與還原劑（Reductant or reducing agent, Red）}：氧化劑指氧化還原反應中獲得電子者，即氧化數降低者；還原劑指氧化還原反應中失去電子者，即氧化數增加者。氧化劑、還原劑可對反應兩側定義，如：\ce{2I- + Br2 <=> 2Br- + I2}中，\ce{I-}、\ce{Br-}為還原劑，\ce{Br2}、\ce{I2}為氧化劑。氧化數小於最大常見氧化數、大於最小者常見氧化數者常兼具氧化性與還原性，如：\ce{NO2-}、\ce{H2O2}、\ce{SO2}、\ce{SO3^{2-}}、\ce{HSO3^{-}}。
+\item \tb{氧化力（Oxidizing power or oxidizing capacity）/氧化性/氧化劑強度與還原力（Reducing power or reducing capacity）/還原性/還原劑強度}：氧化力指一物質使其他物質氧化的能力，還原電位愈大氧化力愈強；還原力指一物質使其他物質還原的能力。氧化力與還原力受物質本質、濃度、反應熱等影響，氧化電位愈大還原力愈強。
+\item \tb{（共軛）氧化還原偶/對（(Conjugate) redox couple）}：指一對相差數個電子的原子或離子團，其中氧化數較大者為共軛氧化劑，氧化數較小者為共軛還原劑。共軛氧化劑之氧化力愈強，共軛還原劑之還原力愈弱。類似於共軛酸鹼對。
+\item \tb{氧化還原反應的方向}：氧化還原反應傾向於向弱氧化劑和弱還原劑進行，強氧化劑反應物對應的產物是弱還原劑，強還原劑反應物對應的產物是強還原劑，可以此判定氧化力與還原力。如：\ce{2KI + Br2 -> 2KBr + I2}、\ce{Cu^{2+} + Fe -> Cu + Fe^{2+}}。
+\item \tb{自身氧化還原反應/歧化/不對稱/不均反應（Disproportionate reaction）反應}：指一個物質中含有一個元素而生成兩種以上含有該元素的產物且其各產物中該元素的氧化數有增加者亦有減少者的反應。
+\item \tb{反自身氧化還原反應/歸中反應（Comproportionation）}：指自身氧化還原反應的逆反應。
+\item \tb{氧化還原反應式的平衡}：半反應法分別平衡兩半反應式，其中使用 $e^-$ 平衡電荷，再根據電荷守恆平衡反應式；氧化數法根據氧化數守恆（即電荷守恆）平衡反應式。
+\end{itemize}
+\ssc{燃燒（Combustion）}
+\sssc{可燃性（Combustibility）}
+物質在達到一定的溫度時可以在空氣或氧氣中燃燒的特性，這個溫度叫做燃點（Fire point）。
+\sssc{燃燒（Combustion or burning）}
+可燃物與氧化劑的高溫放熱氧化還原反應。
+\sssc{完全燃燒（Complete combustion）}
+形成之產物最穩定的與氧氣的燃燒反應。
+\sssc{莫耳燃燒熱（molar heat of combustion）}
+$\Delta H_c$，一莫耳物質完全燃燒後回到原先溫度與體積所放出的淨熱能，必不為負。
+
+不可燃物其標準莫耳燃燒熱定為零，如\ce{N2}、\ce{NO}、\ce{NO2}。
+
+燃燒反應，其生成物莫耳生成熱減反應物莫耳生成熱必等於反應物莫耳燃燒熱減去生成物莫耳燃燒熱。
+\subsection{常見氧化劑與還原劑}
+\sssc{食品抗氧化劑（還原劑）}
+\bit
+\item 維生素C/抗壞血酸：可抗壞血病；可將食物中的\ce{NO2-}還原成NO，以防止\ce{NO2-}使血紅素中的\ce{Fe^{2+}}氧化，使失去攜氧能力。
+\item 維生素 E：可降低人體內高活性的自由基，減緩衰老；可防止食物中油脂被氧化）
+\item 亞硝酸鈉：抗氧化劑、防腐劑、增色劑。
+\item 二氧化硫：抗氧化劑、防腐劑、增色劑。
+\item 亞硫酸氫鈉：抗氧化劑、防腐劑、增色劑。
+\eit
+\subsubsection{氧化劑}
+鹵素（氟為常見中最強氧化劑，但弱於罕見且極不穩定的惰性氣體氟化物）、過氧化氫、臭氧、氧氣、鹵氧酸（次氯酸鈉氯系漂白劑）、過錳酸根（強，常用於滴定）、二氧化錳、二鉻酸根（酸中穩定，強）、氫氧自由基（極強，奈米二氧化鈦照紫外光可產生）、濃硫酸（稀者氧化力弱）、硝酸根、鉛(IV)（鉛蓄電池負極板為二氧化鉛）、鐵(III)、銅(II)、鈰(IV)（強，還原成鈰(III)，黃色硫酸鈰常用於滴定）。
+\subsubsection{還原劑}
+氫氣（燃料電池）、硫化氫（強）、二氧化硫、亞硫酸根、亞硝酸根、硫代硫酸根（常用弱還原劑）、氨與其衍生物、過氧化氫（與強氧化劑）、一氧化碳、烴類、鐵(II)、錫(II)、還原電位為負的金屬。
+\sssc{自身氧化還原反應}
+\ce{X2(aq) + 2OH-(aq) -> X-(aq) + OX-(aq) + H2O(l)}、\ce{3X2(aq) + 6OH-(aq) -> 5X-(aq) + XO3-(aq) + 3H2O(l)}、\ce{P4(s) + OH-(aq) + H2O(l) -> PH3(g) + H2PO2-(aq)}、\ce{3MnO4^{2-}(aq) + 2H2O(l) -> 2MnO4-(aq) + MnO2(s) + 4OH-(aq)}、\ce{S2O3^{2-}(aq) + 2H+(aq) -> H2O(l) + SO2(g) + S(s)}、\ce{3HNO2(aq) -> HNO3(aq) + 2NO(g) + H2O(l)}、\ce{2KClO3(s) -> 2KCl(s) + 3O2(g)}、\ce{2H2O2(aq) -> 2H2O(l) + O2(g)}
+\subsection{氧化還原滴定（Oxidation-reduction titration）}
+\subsubsection{過錳酸鉀滴定法滴定還原劑}
+\ben
+\item 將過錳酸鉀水溶液以硫酸酸化作為滴定液，不可用鹽酸因為會發生\ce{2MnO4- + 10Cl- + 16H+ -> 2Mn^{2+} + 5Cl2 + 8H2O}產生有毒氯氣，不可用硝酸因為硝酸具氧化力會和待測還原劑反應而影響滴定結果。
+\item 以草酸鈉水溶液標定過錳酸鉀水溶液。
+\item 以過錳酸鉀水溶液滴定未知濃度還原劑，深紫色過錳酸根還原成粉紅色\ce{Mn^{2+}}，半反應\ce{MnO4-(aq) + 5e- + 8H+(aq) -> Mn^{2+}(aq)}。
+\item 滴定終點為溶液淡紫色不消退。
+\item 容器中可能殘留棕黑色汙痕，為\ce{MnO2}，可用草酸洗除，發生\ce{2MnO2(s) + 2H2C2O4(aq) + 4H+(aq) -> 4H2O(l) + 4CO2(g) + 2Mn^{2+}(aq)}。
+\een
+\subsubsection{二鉻酸鉀滴定法滴定還原劑}
+\ben
+\item 將已知濃度之二鉻酸鉀水溶液以硫酸酸化作為滴定液，不可用鹽酸因為會發生\ce{Cr2O7^{2-} + 6Cl- + 14H+ -> 2Cr^{3+} + 3Cl2 + 7H2O}產生有毒氯氣，不可用硝酸因為硝酸具氧化力會和待測還原劑反應而影響滴定結果。
+\item 滴定未知濃度還原劑，橘色二鉻酸根還原成綠色\ce{Cr^{3+}}，半反應\ce{Cr2O7^{2-}(aq) + 6e- + 14H+(aq) -> 2Cr^{3+}(aq) + 7H2O(l)}。
+\item 滴定終點為溶液橘色消退。
+\een
+\subsubsection{直接碘滴定法滴定還原劑}
+\ben
+\item 以已知碘濃度之碘液作為滴定液，待測液中加入澱粉作為指示劑。
+\item 滴定未知濃度還原劑，碘還原成碘離子，半反應\ce{I2(aq) + 2e- -> 2I-(aq)}。
+\item 滴定終點為溶液呈藍色不消退，因\ce{I2}與澱粉形成深藍色錯合物。
+\een
+\sssc{間接碘滴定法滴定氧化劑}
+\ben
+\item 以過量無須已知濃度的碘化鉀水溶液還原未知濃度氧化劑，碘離子氧化成碘，半反應\ce{2I-(aq) -> I2(aq) + 2e-}，溶液黃褐。
+\item 以已知濃度之硫代硫酸鈉水溶液作為滴定液，滴定前一步驟獲得之混合溶液，反應式\ce{I2(aq) + 2S2O3^{2-}(aq) -> 2I-(aq) + S4O6^{2-}(aq)}。
+\item 待溶液黃色變淺後加入澱粉，溶液變成藍色。澱粉不宜過早加入，因大量碘與澱粉結合成穩定藍色錯合物使不易與硫代硫酸根反應。
+\item 滴定終點為溶液藍色消退變為無色。
+\een
+\ssc{無電（極）電鍍（Electroless plating）/非電解電鍍}
+藉還原劑將擬鍍金屬正離子還原為金屬而吸附於欲鍍物上的方法，為自發氧化還原反應故無須外電源，逕將欲鍍物浸入電鍍液中即可，亦不受欲鍍物形狀、大小、導電性等限制，許多非導體經適當前處理後即可進行無電電鍍。有時也會先將非導體以無電電鍍鍍上一層薄金屬（如銅）使可導電，再作為有電電鍍的欲鍍物鍍上其他金屬。無電電鍍如：
+\bit
+\item 多侖試劑\ce{[Ag(NH3)2]NO3(aq)}中滴加強還原劑發生銀鏡反應。
+\item 以次磷酸鈉為還原劑無電電鍍：
+\[\ce{H2PO2- + 3OH- -> HPO3^{2-} + 2H2O(l) + 2e-},\quad E^{\circ}_{\tx{ox}}=1.65 \tx{\ V}\]
+\[\ce{Ni^{2+} + 2e- -> Ni(s)},\quad E^{\circ}_{\tx{red}}=-0.23 \tx{\ V}\]
+\eit
+\subsection{電極（Electrode）}
+\begin{itemize}
+\item \tb{正極（Positive electrode）}：輸出正電壓或自外電源輸入正電壓的極。
+\item \tb{負極（Negative electrode）}：輸出負電壓或自外電源輸入負電壓的極。
+\item \tb{陽極（Anode）}：氧化半反應發生處。
+\item \tb{陰極（Cathode）}：還原半反應發生處。
+\item \tb{參考電極（Reference electrode）}：電位被定義為一特定值的電極。將待測電極和參考電極連接，測量待測電極相對於參考電極電位差，該電位差加上參考電極被定義的電位即為待測電極的電位。
+\item \tb{標準氫電極（Standard hydrogen potential, SHE）}：使用鉑黑（Platinum black）作為電極材料，通入 1 bar 的純氫氣，將電極浸入到活度為 1 的酸性溶液中（如HCl），得到的反應「$\text{2H}^+ + 2e^- \rightleftharpoons \text{H}_2 (\text{g})$」的電極。
+\item \tb{活性電極（Active electrode）}：參與反應、質量改變的電極。
+\item \tb{惰性電極（Inert electrode）}：不參與反應的電極，如金、鉑，以及常溫常壓且無強氧化性離子（如\ce{NO3-}）溶液中的石墨、不鏽鋼等。
+\item \tb{氣體（擴散）電極（Gas (diffusion) electrode, GDE）}：凝相和氣相界面結合的電極，以發生凝相和氣相之間的電化學反應，如標準氫電極。
+\end{itemize}
+\subsection{氧化還原電位（Redox potential, Oxidation/reduction potential, ORP）}
+\sssc{標準（電極/還原）電位（Standard (electrode/reduction) potential）}
+$E^{\circ}$、$E^{\circ}_{\text{red}}$或$E_0$，一還原半反應的標準（電極/還原）電位定義為，所有反應均維持在標準條件，即溫度 25 °C，每個參與反應的離子具有單位活度，每個參與反應的氣體具有 1 bar 分壓，每個參與反應的金屬以其純狀態，每個參與反應的固體以其最穩定晶型下，以標準氫電極的電位為 0.0000 V，將發生該半反應的半電池和標準氫電極半電池串聯，測得之該待測電極的電位。
+
+一氧化半反應的\tb{標準氧化電位（Standard oxidation potential）}$E^\circ_{\text{ox}}$定義為其逆反應的$E^\circ$乘以負一。
+\subsubsection{能斯特方程式（Nernst equation）}
+一還原半反應的\tb{還原電位（Reduction potential）}$E_{\text{red}}$服從能斯特方程式：
+\[\begin{aligned}
+& E_{\text{red}} = E^\circ -\frac{RT}{NF}\ln\qty(\frac{\alpha_{\text{red}}}{\alpha{Ox}})\\
+& R:\,\text{理想氣體常數}\\
+& T:\,\text{絕對溫度}\\
+& F:\,\text{法拉第常數}=eN_A\approx 96485\tx{\ C/mol}\\
+& N:\,\text{反應中轉移的電子數}\\
+& E_{\text{red}}:\,\text{還原電位}\\
+& E^{\circ}:\,\text{標準還原電位}\\
+& \alpha_{\text{red}}:\,\text{生成物活度}\\
+& \alpha{Ox}:\,\text{反應物活度}
+\end{aligned}\]
+
+一氧化半反應的\tb{氧化電位（Oxidation potential）}$E_{\text{ox}}$定義為其逆反應的$E_{\text{red}}$乘以負一。
+
+標準條件下：
+\[\frac{RT\ln(10)}{F}\approx 0.05916\approx \frac{1}{16.90331}\]
+
+若生成物與反應物活性係數相同，則：
+\[\begin{aligned}
+E_{\text{red}} &= E^\circ+\frac{RT\ln(10)}{NF}\log\qty(\frac{[\tx{ox}]}{[\tx{red}]})\\
+[\tx{red}]&:\,\text{生成物濃度}\\
+[\tx{ox}]&:\,\text{反應物濃度}
+\end{aligned}\]
+
+與自由電子活度（Electron activity）關係：
+\[\begin{aligned}
+& \frac{\text{p}e}{E_{\text{red}}} = \frac{NF}{RT\ln(10)}\\
+& e^-:\,\text{自由電子活度}\\
+& \text{p}e = -\log(e^-)
+\end{aligned}\]
+
+氧化電位愈大，還原力愈大；還原電位愈大，氧化力愈大。
+\sssc{自由能}
+一個還原半反應或氧化半反應服從：
+\[\Delta G=-FNE\]
+其中$\Delta G$為反應後相對於反應前的吉布斯自由能差，$N$為反應中轉移的電子數，$F$為法拉第常數，$E$對於還原半反應和氧化半反應分別為還原電位和氧化電位。
+
+\[\Delta G^{\circ}=-FNE^{\circ}\]
+其中$E$對於還原半反應和氧化半反應分別為標準還原電位和標準氧化電位。
+\subsubsection{氧化還原反應的電動勢}
+\bit
+\item 一個氧化還原反應的標準電動勢$E^{\circ}_{\text{reaction}}$=還原半反應的$E^{\circ}_{\text{red}}$+氧化半反應的$E^{\circ}_{\text{ox}}$。一個氧化還原反應的電動勢$E_{\text{reaction}}$=還原半反應的$E_{\text{red}}$+氧化半反應的$E_{\text{ox}}$。
+\item 反應式相加，標準電動勢相加；反應式逆寫標準電動勢變號；反應式係數同乘以$n$倍，標準電動勢不變。反應式相加，電動勢相加；反應式逆寫電動勢變號；反應式係數同乘以$n$倍，電動勢不變。
+\item $E_{\text{reaction}}>0$表自發反應，$E_{\text{reaction}}<0$表非自發反應，$E_{\text{reaction}}=0$表反應達平衡。無外電動勢串聯時，反應的方向會趨向使得電動勢會逐漸下降，直到電動勢等於零時達平衡。
+\end{itemize}
+\sssc{自由能—氧化態圖（Free energy-oxidation state diagram）/弗洛斯特圖（Frost diagram）}
+是單一種元素的氧化態與自由能的關係圖。縱軸為$NE^\circ_{\tx{red}}$，其中$N$為反應中轉移的電子數，$E^\circ_{\tx{red}}$為自該氧化態還原為元素態的還原半反應的標準還原電位；橫軸為氧化態。
+
+單一種元素以不同氧化態存在的形式互相比較之下，$E^\circ_{\tx{red}}$越大代表存在趨勢越強。
+\ssc{電池（Cell）}
+\begin{itemize}
+\item 電池（Cell）：發生電位差導致化學變化或化學變化導致電位差的裝置。
+\item 氧化還原電池（Redox cell）/電化電池（Electrochemical cell）/電池（Battery）：發生化學變化導致電位差的裝置。
+\item 電解電池（Electrolytic cell）：發生電位差導致化學變化的裝置。
+\item 一次電池（Primary battery/cell）：單次放電即無法再次使用的氧化還原電池，如碳鋅電池、鹼性電池、水銀電池。
+\item 二次電池（Secondary battery/cell）/充電電池（Rechargeable battery/cell）/蓄電池（Storage battery/cell）：可充電的氧化還原電池，如鉛蓄電池、鎳氫電池、鋰離子電池。
+\item 燃料電池（Fuel cell）：以觸媒將燃料的化學能不經燃燒轉為電能的電池，非一次電池，亦非二次電池，不可充電，但可充燃料，燃料如氫氣、甲醇、乙醇、甲烷等，置於陽極，通常具轉換效率高、低汙染之優點。
+\end{itemize}
+\subsection{氧化還原電池（Redox cell）/電化電池（Electrochemical cell）}
+正極為陰極，負極為陽極，各於電解液（Electrolyte）中，稱半電池（Half-cell），兩電極以外電路（通常為導線）連接，兩半電池電解液以內電路（通常為鹽橋或多孔隔膜）連接，使兩半電池串聯成封閉迴路。氧化還原電池通過自發氧化還原反應，將化學能轉化為電能。若不將兩半電池分開，逕將該自發氧化還原反應的反應物同置一電解液使接觸，則化學能會轉換為熱能而散失。
+\sssc{負/陽極}
+氧化劑（金屬固體、氫氣或氨氣）於電解液中，發生氧化半反應形成陽離子（金屬陽離子、氫離子或銨根離子）釋放於電解液中。電解液僅用於導電，不參與反應，更換其中電解質不影響電壓。
+\sssc{正/陰極}
+導體固體插於陽離子（金屬陽離子、氫離子或銨根離子）之溶液中，溶液中陽離子發生還原半反應（形成元素態金屬鍍於導體固體上或釋出氫氣或氨氣）。導體固體僅用於導電，不參與反應，更換之不影響電壓。
+\sssc{內電路}
+用於溝通電路並平衡電荷使兩半電池保持電中性。
+\bit
+\item 鹽橋：不與各半電池之各金屬陽離子反應的電解質溶液隔開兩半電池。通常以 U 型玻璃管裝滿之，再以沾有該溶液的脫脂棉球塞住兩管口製成。常用硝酸鉀水溶液。鹽橋不可重複使用。
+\item 多孔隔膜：只允許部分離子通過的隔膜隔開兩半電池。
+\eit
+\sssc{電池反應}
+負/陽極金屬固體氧化半反應的氧化電位必須大於正/陰極金屬陽離子還原半反應的還原電位方能發生反應。若發生反應，則：
+\bit
+\item 氧化還原電池的電動勢即全反應的電動勢。
+\item 外電路電流由正/陰極流向負/陽極，電荷載子為電子，由負/陽極流向正/陰極。
+\item 內電路電流由負/陽極流向正/陰極，電荷載子為溶液中的離子，陽離子由負/陽極游向正/陰極，陰離子由正/陰極游向負/陽極。
+\eit
+\sssc{符號}
+「負極 | 負極溶液陽離子 || 正極溶液陽離子 | 正極」，其中 | 表不同物質狀態界面，|| 表鹽橋或多孔隔膜。如「Zn(s) | Zn$^{2+}$(aq) || Cu$^{2+}$(aq) | Cu(s)」。
+\sssc{濃度（差）電池（Concentration cell）}
+兩半電池電解液內為同種金屬離子，但一者濃度較另一者高，低者為負/陽極，高者為正/陰極。如「Cu | 0.01M Cu$^{2+}$ || 0.1M Cu$^{2+}$ | Cu」。
+\subsection{電解（Electrolysis）}
+負極為陰極，正極為陽極，於同一電解槽中或用隔膜相隔置於電解質溶液或熔融態離子化合物中，正極與負極分別與外電源正極與負極連接，陰極由還原電位最大的物質被還原析出，陽極由氧化電位最大的物質被氧化析出，所須電壓須大於等於其全反應之逆反應的電動勢，該電壓稱標準電壓，超過該電壓稱過電壓。常用於製造強氧化劑、強還原劑、精煉金屬、製造化工原料等。
+\subsubsection{電解通式}
+常溫常壓下非極稀（極稀因還原電位與氧化電位甚小而相當於電解水）之水溶液電解大致通式：
+\begin{itemize}
+\item 負/陰極半反應\text{\ \{}\\
+\texttt{if\ (}水溶液中的陽離子為IA$^{+}$、IIA$^{2+}$、Al$^{3+}$、Mn$^{2+}$\texttt{)}\ce{2H2O(l) + 2e- -> H2(g) + 2OH-(aq)}\texttt{;}\\
+\texttt{else if\ (}水溶液中的陽離子為H$^+$\texttt{)}\ce{2H+(aq) + 2e- -> H2(g)}\texttt{;}\\
+\texttt{else}\ce{M^{n+}(aq) + ne- -> M(s)}\texttt{;}\texttt{\}}
+\item 正/陽極半反應\text{\ \{}\\
+\texttt{if 正/陽極電極為活性電極\texttt{)}\ce{M(s) -> M^{n+}(aq) + ne-}\texttt{;}\\
+\texttt{else if\ (}水溶液中的陰離子為F$^-$、稀Cl$^-$、最高氧化數酸根}\texttt{)}\ce{2H2O(l) -> O2(g) + 4H+(aq) + 4e-}\texttt{;}\\
+\texttt{else if\ (}水溶液中的陰離子為OH$^-$\texttt{)}\ce{4OH-(aq) -> O2(g) + 2H2O(l) + 4e-}\texttt{;}\\
+\texttt{else\ }\ce{A^{n-}(aq) -> A(aq) + ne-}\texttt{;}\texttt{\}}
+\end{itemize}
+\subsubsection{法拉第電解定律（Faraday's laws of electrolysis）}
+\[n=\frac{m}{M}=\frac{q}{NF}\]
+其中$n$為電解析出物質之莫耳數 (mol)，$m$為電解析出物質之質量 (g)，$M$為電解析出物質之式量 (g/mol)，$N$為反應中轉移的電子數，$q$為通入之電量 (C)，$F$為法拉第常數。
+\begin{itemize}
+\item 法拉第第一電解定律（Faraday's first law of electrolysis）：在電解過程中，物質在電極生成的質量，與通過電極的電量成正比。
+\item 法拉第第二電解定律（Faraday's second law of electrolysis）：在電解過程中，使用相同的電量，不同物質在電極生成的質量，與該物質的當量重量成正比。
+\end{itemize}
+\ssc{常見電解電池}
+\subsubsection{電解水}
+\begin{itemize}
+\item 負/陰極半反應：\ce{2H+(aq) + 2e- -> H2(g)}或\ce{2H2O(l) + 2e- -> H2(g) + 2OH-(aq)}
+\item 正/陽極半反應：\ce{2H2O(l) -> O2(g) + 4H+(aq) + 4e-}或\ce{4OH-(aq) -> O2(g) + 2H2O(l) + 4e-}
+\item 全反應：\ce{2H2O -> 2H2(g) + O2(g)}
+\end{itemize}
+標準電壓 1.23 V。
+\subsubsection{電鍍（Electroplating）}
+以擬鍍金屬正離子的可溶性電解質溶液為電解槽液，以欲鍍物（需可導電）為負極，正極常用擬鍍金屬但亦可用其他導體，施加外電壓使擬鍍金屬正離子還原為金屬而吸附於欲鍍物上。
+
+電鍍時，溫度太高可能使離子游動過快而沉澱粒子粗大，溫度太低可能使離子活性太低而得氫氣且耗電，一般於18至40攝氏度。
+
+擬鍍鋅等還原電位小於\ce{H+}的金屬時，宜用鹼性電解液，因標準還原電位\ce{H+}>\ce{Zn^{2+}}>\ce{H2O}，鹼性條件可減少氫氣的干擾。
+
+欲鍍物宜先打磨再以蒸餾水與丙酮分別沖洗後方電鍍。
+\end{document}

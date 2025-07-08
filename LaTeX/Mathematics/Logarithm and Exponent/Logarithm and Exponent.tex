@@ -1,0 +1,115 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Logarithm and Exponent}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{Logarithm (對數) and Exponent (指數)}
+\ssc{Definition}
+In the following definitions, $\arg(x\in\mathbb{C}_{\neq 0})$ represents the argument (輻角) of $x$. If we replace $\arg(x)$ with the principal argument (輻角主值) of $x$, we get the definition of the principal branch (主分支) of them.
+\sssc{Positive integer exponent (正整數指數)}
+The exponent of $a\in\mathbb{R}$ to the power of $n\in\mathbb{N}$, denoted as $a^n$, is defined as
+\[a^n\coloneq\prod_{k=1}^na.\]
+\sssc{Euler's number (歐拉數/尤拉數)}
+The Euler's number, denoted as $e$, is defined as
+\[e\coloneq\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n.\]
+\sssc{Natural logarithm (自然對數)}
+The natural logarithm of $x$, denoted as $\ln(x)$ or $\log_e(x)$, is defined as:
+\[\ln(x)\coloneq\begin{cases}
+\int_1^x\frac{1}{t}\,\mathrm{d}t,\quad & x\in\mathbb{R}_{>0},\\
+\ln|x|+i\arg(x),\quad & x\in\mathbb{C}_{\neq 0},
+\end{cases}\]
+\sssc{Logarithm (對數)}
+The logarithm of $x$ to the base $a$, denoted as $\log_a(x)$, is defined as
+\[\log_a(x)\coloneq\frac{\ln(x)}{\ln(a)},\quad a,x\in\mathbb{C}_{\neq 0}\land a\neq 1,\]
+where $a$ is called the base (底數) and $x$ is called the argument (真數).
+\sssc{Common logarithm (常用對數)}
+$\log_{10}(x)$ is called the common logarithm of $x$, also denoted as $\log(x)$.
+\sssc{Exponent (指數)}
+The exponent of $a$ to the exponent or power of $n$, denoted as $a^n$, is defined as
+\[a^n\coloneq\begin{cases}
+e^{n\ln(a)},\quad & a\in\mathbb{C}_{\neq 0}\land n\in\mathbb{C},\\
+0,\quad & a=0\land n\in\mathbb{R}_{>0},
+\end{cases}\]
+where $a$ is called the base (底數) and $n$ is called the exponent (指數) or power (冪次).
+\sssc{Root (根號)}
+The $y$th root ($y$次方根) of $w\in\mathbb{C}$, denoted as $\sqrt[y]{w}$ is defined as the principal branch of $w^{\frac{1}{y}}$, where $\sqrt{\phantom{w}}$ is called the radical symbol, radical sign, root symbol, or surd (根號).
+\sssc{Scientific notation (科學記號)}
+Scientific notation refers to the representation of a real number in the form of $a\times 10^n$, where $1\leq |a|<10\land n\in\mathbb{Z}$.
+\sssc{Characteristic (首數) and mantissa (尾數)}
+Given a common logarithm $\log(x)$, the characteristic of it is defined as $\lfloor\log(x)\rfloor$, and the mantissa of it is defined as $\log(x)-\lfloor\log(x)\rfloor$.
+\sssc{Logarithmic function (對數函數)}
+$f(x)=k\log_a(x)$ where $a>0\land a\neq 1\land k\in\mathbb{R}_{\neq 0}$ is called a logarithmic function with base $a$, of which the domain is $\mathbb{R}_{>0}$ and the range is $\mathbb{R}$.
+\sssc{Exponential function (指數函數)}
+$f(x)=ka^x$ where $a\neq 0\land k\in\mathbb{R}_{\neq 0}$ is called an exponential function with base $a$, of which the domain is $\mathbb{R}$ and the range is $\mathbb{R}_{>0}$.
+\sssc{Natural exponential function (自然指數函數)}
+$e^x$ is called the natural exponential function.
+\sssc{Exponential growth (指數成長)}
+Exponential growth usually refers to a functional that satisfies $f'(x)=kf(x)$ where $k\in\mathbb{R}$, that is, $f(x)=e^{kx}+c$ where $k,c\in\mathbb{R}$.
+\ssc{Laws}
+\sssc{Logarithmic laws (對數律)}
+\[\begin{aligned}
+& \log_a(r)+\log_a(s)=\log_a(rs)\\
+& \log_a(r)-\log_a(s)=\log_a\left(\frac{r}{s}\right)\\
+& \log_{a^m}(r^n)=\frac{n}{m}\log_a(r)\\
+& \log_a(b)=\frac{\log_c(b)}{\log_c{a}}\\
+& a^{\log_c(b)}=b^{\log_c(a)}
+\end{aligned}\]
+\sssc{Exponential laws (指數律)}
+\[\begin{aligned}
+& a^r\cdot a^s=a^{r+s},\\
+& (a^r)^s=a^{rs},\\
+& (a\cdot b)^r=a^r\cdot b^r
+\end{aligned}\]
+\sssc{Derivative function of natural exponential function}
+\[\frac{\mathrm{d}}{\mathrm{d}x} e^x=e^x\]
+\begin{proof}
+\bma
+\frac{\mathrm{d}}{\mathrm{d}x} e^x &= \lim_{\Delta x \to 0} \frac{e^{x + \Delta x} - e^x}{\Delta x}\\
+&= \lim_{\Delta x \to 0} \frac{e^x \cdot e^{\Delta x} - e^x}{\Delta x}\\
+&= e^x \cdot \lim_{\Delta x \to 0} \frac{e^{\Delta x} - 1}{\Delta x}\\
+&= e^x \cdot \lim_{\Delta x \to 0} \frac{\lim_{n\to\infty}\sum_{i=0}^n\frac{\left(\Delta x\right)^{i}}{i!} - 1}{\Delta x}\\
+&= e^x \cdot \lim_{\Delta x \to 0} \frac{\lim_{n\to\infty}\sum_{i=1}^n\frac{\left(\Delta x\right)^{i}}{i!}}{\Delta x}\\
+&= e^x \cdot \lim_{\Delta x \to 0} \sum_{i=1}^n\frac{\left(\Delta x\right)^{i-1}}{i!}\\
+&= e^x
+\eam
+\end{proof}
+\sssc{Derivative function of natural logarithmic function}
+\[\frac{\mathrm{d}}{\mathrm{d}x} \ln(x) = \frac{1}{x}\]
+\begin{proof}
+\bma
+\frac{\mathrm{d}}{\mathrm{d}x} \ln(x) &= \lim_{\Delta x \to 0} \frac{\ln(x + \Delta x) - \ln(x)}{\Delta x} \\
+&= \lim_{\Delta x \to 0} \frac{\ln\left(\frac{x + \Delta x}{x}\right)}{\Delta x}\\
+&= \lim_{\Delta x \to 0} \frac{\ln\left(1 + \frac{\Delta x}{x}\right)}{\Delta x}\\
+&= \lim_{\frac{\Delta x}{x} \to 0} \frac{\ln(1 + \frac{\Delta x}{x})}{\frac{\Delta x}{x}} \cdot \frac{1}{x}\\
+&= \frac{1}{x}
+\eam
+\end{proof}
+\sssc{Taylor expansion of logarithmic function}
+The Taylor expansion of the logarithmic function $k\log_a(x)$ at $x=b$ is
+\[k\log_a(x)=k\log_a(b)+\sum_{n=1}^{\infty}\frac{k(-1)^{n+1}}{n(\ln a)b^n}(x-b)^n,\quad\left|\frac{x-b}{b}\right|<1.\]
+\sssc{Taylor expansion of exponential function}
+The Taylor expansion of the exponential function $ka^x$ at $x=b$ is
+\[ka^x=\sum_{n=0}^{\infty}\frac{ka^b(\ln a)^n}{n!}(x-b)^n.\]
+\sssc{Inverse}
+For any $a>0\land a\neq 1\land b\neq 0$, the logarithmic function $k\log_a\left(\frac{x}{b}\right)$ and the exponential function $ba^{\frac{x}{k}}$ are inverses of each other, that is, they are symmetric about $y=x$.
+\ssc{Values}
+\[\log 2\approx 0.3010,\quad\log e\approx 0.4343,\quad\log 3\approx 0.4771,\quad\log\pi\approx 0.4971,\quad\log 4\approx 0.6021,\quad\log 5\approx 0.6990,\]
+\[\log 6\approx 0.7782,\quad\log 7\approx 0.8451,\quad\log 8\approx 0.9031,\quad\log 9\approx 0.9542,\quad\log 11\approx 1.0414,\quad\log 12\approx 1.0792.\]
+\[\ln 2\approx 0.6931,\quad\ln 3\approx 1.0986,\quad\ln\pi\approx 1.1447,\quad\ln 4\approx 1.3863,\quad\ln 5\approx 1.6094,\quad\ln 6\approx 1.7918,\]
+\[\ln 7\approx 1.9459,\quad\ln 10\approx 2.3026,\quad\ln 11\approx 2.3980,\quad\ln 12\approx 2.4849,\quad\frac{1}{\ln 2}\approx 1.4427.\]
+\[\sqrt{2}\approx 1.4142,\quad\sqrt{e}=1.6487,\quad\sqrt{3}\approx 1.7321,\quad\sqrt{\pi}\approx 1.7725,\quad\sqrt{5}\approx 2.2361,\]
+\[\sqrt{6}\approx 2.4495,\quad\sqrt{7}\approx 2.6458,\quad\sqrt{10}\approx 3.1623,\quad\sqrt{11}\approx 3.3166,\quad\sqrt{13}\approx 3.6056,\]
+\[\sqrt{14}\approx 3.7417,\quad\sqrt{15}\approx 3.8730,\quad\sqrt{17}\approx 4.1231,\quad\sqrt{19}\approx 4.3590,\quad\sqrt{21}\approx 4.5826,\]
+\[\frac{\sqrt{5}+1}{2}\approx 1.6180,\quad\frac{\sqrt{5}-1}{2}\approx 0.6180,\quad\frac{\sqrt{6}+\sqrt{2}}{4}\approx 0.9659,\quad\frac{\sqrt{6}-\sqrt{2}}{4}\approx 0.2588,\]
+\[\frac{\sqrt{10+2\sqrt{5}}}{4}\approx 0.9511,\quad\frac{\sqrt{10-2\sqrt{5}}}{4}\approx 0.5878.\]
+\[\langle a_n=n^2\rangle_{n=1}^{20}=1,4,9,16,25,36,49,64,81,100,121,144,169,196,225,256,289,324,361,400.\]
+\[\langle a_n=n^2\rangle_{n=21}^{30}=441,484,529,576,625,676,729,784,841,900.\]
+\[\langle a_n=n^2\rangle_{n=31}^{40}=961,1024,1089,1156,1225,1296,1369,1444,1521,1600.\]
+\[\langle a_n=n^{-1}\rangle_{n=1}^{15}=1,0.5,0.\ol{3},0.25,0.2,0.1\ol{6},0.\ol{142857},0.125,0.\ol{1},0.1,0.\ol{09},0.08\ol{3},0.\ol{076923},0.0\ol{714285},0.0\ol{6}.\]
+\[\frac{1}{\sqrt{2}}\approx 0.7071,\quad\frac{1}{\sqrt{3}}\approx 0.5774,\quad\frac{1}{\sqrt{5}}\approx 0.4772,\quad\frac{1}{2\sqrt{2}}\approx 0.3536,\quad\frac{1}{2\sqrt{3}}\approx 0.2887,\quad\frac{1}{2\sqrt{5}}\approx 0.2236.\]
+\[\arg\min(x^x)=\frac{1}{e}\approx 0.3680,\quad\min(x^x)=\qty(e^{-1})^{\qty(e^{-1})}\approx 0.6922,\quad e^e\approx 15.1543.\]
+\end{document}

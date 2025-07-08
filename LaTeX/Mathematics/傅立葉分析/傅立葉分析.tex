@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{傅立葉分析}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{傅立葉分析（Fourier Analysis）}
+傅立葉分析指將函數分解為多個正弦函數之和的分析。其分解過程稱為傅立葉轉換（或變換）（Fourier transform）。
+\subsection{傅立葉級數（Fourier series）}
+\[\qty(f(x) = \sum_{n=-\infty}^{\infty} F_n e^{inx})\iff\qty(F_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-inx} \, \mathrm{d}x)\]
+其中 \( F_n \) 為複振幅。\\
+對於實函數可以寫成：
+\[ f(x)={\frac {a_{0}}{2}}+\sum _{n=1}^{\infty }\left(a_{n}\cos(nx)+b_{n}\sin(nx)\right)\]
+其中$a_n$和$b_n$是實頻率分量的振幅。
+\subsection{傅立葉（積分）轉換與逆轉換}
+\[ \hat{f}(\mathbf{k}) = \mathcal{F}(f)(\mathbf{k}) = \int_{\mathbb{R}^d} f(\mathbf{x}) e^{-2\pi i \mathbf{k} \cdot \mathbf{x}} \, \mathrm{d}\mathbf{x} \]
+其中：\( \mathbf{x} \) 是實空間中的變量，相當空間中的位置向量或時間變量，為一個 $d$-維向量；\( \mathbf{k} \) 是頻率空間中的變量，相當傅立葉級數中於每個正弦波的波數，也是一個 $d$-維向量；$f(\mathbf{x})$符合：
+\[ \abs{\int_{\mathbb{R}^d} \qty|f(\mathbf{x})| \, \mathrm{d}\mathbf{x}} < \infty \]
+\raggedright\textbf{證明：}\\
+\raggedright\textit{Statement.}\\
+For all \( f\qty(\mathbf{x}) \) such that \( \abs{\int_{\mathbb{R}^d} f\qty(\mathbf{x})\, \mathrm{d}\mathbf{x}}<\infty \), the following holds true:
+\[\qty(F\qty(\mathbf{k}) = \int_{\mathbb{R}^d} f\qty(\mathbf{x}) e^{-i \mathbf{k}\cdot\mathbf{x}} \, \mathrm{d}\mathbf{x})\iff\qty(f(\mathbf{x}) = \frac{1}{2\pi} \int_{\mathbb{R}^d} F(\mathbf{k}) e^{i \mathbf{k} \mathbf{x}} \, \mathrm{d}\mathbf{k})\]
+\begin{proof}\mbox{}\\
+We begin by assuming that \( F(\mathbf{k}) = \int_{\mathbb{R}^d} f(\mathbf{x}) e^{-i \mathbf{k} \cdot \mathbf{x}} \, \mathrm{d}\mathbf{x} \).
+First, we show that the inverse Fourier transform of \( F(\mathbf{k}) \) recovers \( f(\mathbf{x}) \):
+\[\begin{aligned}
+f(\mathbf{x}) &= \frac{1}{2\pi} \int_{\mathbb{R}^d} F(\mathbf{k}) e^{i \mathbf{k} \cdot \mathbf{x}} \, \mathrm{d}\mathbf{k} \\
+&= \frac{1}{2\pi} \int_{\mathbb{R}^d} \left( \int_{\mathbb{R}^d} f(\mathbf{x}') e^{-i \mathbf{k} \cdot \mathbf{x}'} \, \mathrm{d}\mathbf{x}' \right) e^{i \mathbf{k} \cdot \mathbf{x}} \, \mathrm{d}\mathbf{k}.
+\end{aligned}\]
+By changing the order of integration, we get:
+\[\begin{aligned}
+f(\mathbf{x}) &= \frac{1}{2\pi} \int_{\mathbb{R}^d} f(\mathbf{x}') \left( \int_{\mathbb{R}^d} e^{-i \mathbf{k} \cdot \mathbf{x}'} e^{i \mathbf{k} \cdot \mathbf{x}} \, \mathrm{d}\mathbf{k} \right) \, \mathrm{d}\mathbf{x}' \\
+&= \frac{1}{2\pi} \int_{\mathbb{R}^d} f(\mathbf{x}') \left( \int_{\mathbb{R}^d} e^{i \mathbf{k} \cdot (\mathbf{x} - \mathbf{x}')} \, \mathrm{d}\mathbf{k} \right) \, \mathrm{d}\mathbf{x}'.
+\end{aligned}\]
+The integral inside is a known result of the Dirac delta function:
+\[
+\int_{\mathbb{R}^d} e^{i \mathbf{k} \cdot (\mathbf{x} - \mathbf{x}')} \, \mathrm{d}\mathbf{k} = 2\pi \delta(\mathbf{x} - \mathbf{x}').
+\]
+Therefore,
+\[\begin{aligned}
+f(\mathbf{x}) &= \frac{1}{2\pi} \int_{\mathbb{R}^d} f(\mathbf{x}') \cdot 2\pi \delta(\mathbf{x} - \mathbf{x}') \, \mathrm{d}\mathbf{x}' \\
+&= \int_{\mathbb{R}^d} f(\mathbf{x}') \delta(\mathbf{x} - \mathbf{x}') \, \mathrm{d}\mathbf{x}' \\
+&= f(\mathbf{x}).
+\end{aligned}\]
+This completes the proof that the inverse Fourier transform of \( F(\mathbf{k}) \) gives back \( f(\mathbf{x}) \), thus proving the statement.
+\end{proof}
+\end{document}

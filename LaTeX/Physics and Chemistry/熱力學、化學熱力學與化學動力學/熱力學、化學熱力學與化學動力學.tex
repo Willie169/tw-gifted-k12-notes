@@ -1,0 +1,1029 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{熱力學、化學熱力學與化學動力學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{熱力學（Thermodynamics）、化學熱力學（Chemical Thermodynamics）與化學動力學（Chemical Kinetics）}
+\section{熱力學系統、狀態與過程}
+\subsection{熱力學系統（Thermodynamic system）}
+指用於熱力學研究的有限宏觀區域，是熱力學的研究對象。它的外部空間被稱為這個系統（system）的環境（surrounding）。一個系統的邊界（boundary）將系統與它的外部隔開。這個邊界既可以是真實存在的，也可以是假想出來的，但必須將這個系統限制在一個有限空間裡。系統與其環境可以在邊界進行物質、功、熱或其它形式能量的傳遞。而熱力學系統可以從它的邊界（或邊界的一部分）所允許的傳遞類型進行分類。
+\begin{longtable}[c]{|c|c|c|c|}
+\hline
+熱力學系統類型 & 物質傳遞 & 功傳遞 & 熱傳遞 \\ \hline\endhead
+\tb{開放系統（Open system）} & 可 & 可 & 可 \\ \hline
+\tb{密閉/封閉系統（Closed system）} & 不可 & 可 & 可 \\ \hline
+\tb{絕熱系統（Insulated system）} & 不可 & 可 & 不可 \\ \hline
+\tb{力學孤立系統（Mechanically isolated system）} & 不可 & 不可 & 可 \\ \hline
+\tb{孤立系統（Isolated system）} & 不可 & 不可 & 不可 \\ \hline
+\end{longtable}
+\FB
+\subsection{熱力學狀態（Thermodynamic state）}
+\bit
+\item \tb{熱力學狀態（Thermodynamic state）}：指一組描述熱力學系統的狀態。
+\item \tb{狀態函數（State function）}：是系統狀態的函數，其值僅取決於系統目前的狀態，而與系統如何到達該狀態的路徑無關，又稱狀態變數。
+\item \tb{熱力學平衡狀態}：指除非被引發熱力學過程的熱力學操作中斷，否則將保持不變的熱力學狀態。
+\item 系統的每個平衡狀態分別由一組適當的熱力學狀態函數完全指定，只要一熱力學系統中有足夠多的已知狀態函數，其他的就已被確定，而所需要的狀態函數數量視系統複雜程度而定。
+\eit
+\subsection{熱力學過程（Thermodynamic process）/熱力學路徑（Thermodynamic path）}
+\bit
+\item \tb{熱力學過程（Thermodynamic process）/熱力學路徑（Thermodynamic path）}：指系統熱力學狀態改變的過程，系統的改變是由從初始熱力學平衡狀態到最終狀態的轉變來定義的，例如所有化學反應都是熱力學過程。在經典熱力學中實際過程常被忽略，但非平衡熱力學考慮的是系統狀態接近熱力學平衡的過程。
+\item \tb{路徑函數（Path function）/過程函數（Process function）}：是系統從一個狀態變到另一個狀態的過程的函數。
+\item \tb{熱力學循環（Thermodynamic cycle）}：一熱力學系統經過一系列熱力學過程，最終回到初始狀態的過程。
+\eit
+\subsection{常數}
+\subsubsection{波茲曼常數（Boltzmann constant）}
+\[k_B=1.380649\cdot 10^{-23}\,\text{J}\cdot\text{K}^{-1}\]
+\subsubsection{亞佛加厥常數（Avogadro constant）}
+\[N_A=6.02214076\times 10^{23} \tx{ mol}^{-1}\]
+\subsubsection{（理想）氣體常數（(Ideal) gas constant）}
+\[R=k_BN_A \approx 8.31446261815324 \tx{\ J K}^{-1}\tx{\ mol}^{-1}\approx 0.082057338 \tx{\ L atm K}^{-1}\tx{\ mol}^{-1}\]
+\subsection{狀態函數}
+\subsubsection{質量（mass）}
+$m$ (kg)
+\subsubsection{壓力（pressure）}
+$p$ (N/m$^2$)。指分子對單位面積接觸表面碰撞的作用力。
+\subsubsection{體積（volume）}
+$V$ (m$^3$)
+\subsubsection{密度（density）}
+\(\rho\) (kg/m\(^3\))。單位體積的質量。
+\subsubsection{質量比容（Mass specific volume）}
+$\frac{V}{m}=\frac{1}{\rho}$ (m$^3$/kg)。單位質量的體積
+\subsubsection{莫耳比容（Molar specific volume）/莫耳體積（Molar volume）}
+$\frac{V}{n}$ (m$^3$/mol)。單位莫耳的體積。
+\subsubsection{絕對溫度（Absolute temperature）/克爾文溫度（Kelvin temperature）/熱力學溫度（Thermodynamic temperature）}
+$T$ (K)
+\subsubsection{莫耳數（Number of moles）}
+$n$ (mole)
+\subsubsection{粒子數（Number of particles）}
+$N$ (個)。第$i$種粒子的粒子數為$N_i$。單位個有時或視為無因次。
+\subsubsection{內能（Internal energy）/熱能（Thermal energy）}
+$U$ (J)。指系統所含有的能量，但不包含因外部力場而產生的系統整體之動能（即有序動能）與位能。
+\subsubsection{焓（Enthalpy）}
+$H$ (J)
+\[H = U + pV\]
+\subsubsection{熵（Entropy）}
+$S$ (J/K)。用於描述一個系統的無序程度。
+\subsubsection{吉布斯能（Gibbs energy）/吉布斯自由能（Gibbs free energy）}
+$G$ (J)
+\[G = H - TS\]
+\subsubsection{亥姆霍茲能（Helmholtz energy）/亥姆霍茲自由能（Helmholtz free energy）}
+$F$ (J)
+\[F = U - TS\]
+\subsubsection{公升莫耳濃度}
+每公升所含某物質之莫耳數，對於物質 X 記作 [X]，單位 M = mol/L。
+\sssc{立方公尺莫耳濃度}
+$\phi$ (mol m$^{-3}$)，每立方公尺所含某物質之莫耳數。
+\subsection{路徑函數、物質性質與其他}
+\subsubsection{速率}
+$v$ (m/s)
+\subsubsection{對系統外作的體積功/膨脹功}
+$W$ (J)
+\[\delta W = -p\mathrm{d}V \]
+\subsubsection{熱量（Heat）}
+$Q$ (J)。由於溫度差而在系統之間傳遞的能量，自系統外獲得為正。
+\subsubsection{化學勢（Chemical potential）}
+\(\mu_i\) (J/個)。其它粒子數量與所有狀態函數不變下，單位該物質粒子變化的吉布斯自由能變化：
+\[\mu _{i}=\left({\frac {\partial G}{\partial N_{i}}}\right)_{N_{j\neq i},\tx{\ all other state functions}}\]
+\subsubsection{質量潛熱（Latent heat）/質量相變焓（Heat of transformation）}
+$L_m$ (J/kg)。單位質量物質相變時吸收的能量。
+\subsubsection{莫耳潛熱/莫耳相變焓}
+$L$ (J/mol)。單位莫耳物質相變時吸收的能量。
+\subsubsection{反應熱（Heat of reaction）}
+$\Delta H$ (J)。化學反應後生成物的焓減去反應前反應物的焓。
+\subsubsection{反應進度（Extent of reaction）}
+$\xi$ (mol)。用於量化反映化學反應或其他熱力學過程進行程度的量。
+\sssc{催化活度/活性/活力（Catalytic activity）}
+(kat)。每秒使反應進度提高一莫耳的催化劑定義為具有一開特（katal, kat）的催化活度。
+\subsubsection{反應速率（Reaction rate）}
+$r$ (M/s 等)。指定溫下反應物消耗量或生成物生成量的時變率，其中量指體積莫耳濃度或正比於之的其他單位。
+\subsubsection{活化能（Activation energy）}
+$E_a$ (J)。化學反應的活化能。
+\subsubsection{（莫耳）熱容（Heat capacity）}
+$C$ (J K$^{-1}$ mol$^{-1}$)
+\[C = \frac{\delta Q}{\mathrm{d}T}\,n^{-1}\]
+\bit
+\item 定容莫耳熱容$C_V$：定容下，溫度升高$\mathrm{d}T$，吸收熱量$\delta Q$均轉變為系統內能，即$\delta Q = \mathrm{d}U$。
+\item 定壓莫耳熱容$C_p$：定壓下，溫度升高$\mathrm{d}T$，吸收熱量$\delta Q$部分轉變為系統內能，部分對外做體積功$\mathrm{d}W = p\mathrm{d}V$，即$\delta Q = \mathrm{d}U + p\mathrm{d}V$。
+\eit
+\subsubsection{絕熱指數（Adiabatic index）/等熵膨脹係數（Isentropic expansion factor）/熱容比（Heat capacity ratio）}
+$\gamma$
+\[\gamma = \frac{C_p}{C_V}\]
+\subsubsection{比熱容（Specific heat capacity）}
+$c$ (J/K)
+\[c=\frac{\delta Q}{m\Delta T}\]
+\sssc{擴散通量（Diffusion flux）}
+$\mb{J}$ (mol m$^{-2}$ s$^{-1}$)，單位時間內擴散通過某單位面積的淨物質量，方向與物質淨流向相同。
+\sssc{擴散係數（Diffusion coefficient）/（質量）擴散率（(Mass) diffusivity）}
+$D$ (m$^2$ s$^{-1}$)，是一個比例常數，反映了物質擴散的速度，與物質本身的性質、溫度、壓力等因素有關。
+
+
+\section{熱力學基本定律}
+\ssc{焦耳（Joule）熱功當量（Mechanical equivalent of heat）實驗}
+焦耳利用重物緩緩等速下降經滑輪帶動水中的葉片轉動而攪動水使水溫因摩擦生熱升高，使得重物減少的重力位能轉換為水的內能，測得 1 卡（Calorie, cal）= 4.186 焦耳（Joule, J）。
+\subsection{熱力學第零定律/熱力學平衡定律}
+如果兩個系統都與第三個系統處於熱平衡，則它們彼此之間也處於熱平衡。
+\subsection{熱力學第一定律/能量守恆定律（Law of conservation of energy）}
+不適用於核反應。
+\sssc{熱力學第一定律/能量守恆定律}
+對於一系統：
+\bma
+\mathrm{d}U &= \delta Q - \delta W\\
+&= T\mathrm{d}S + p \delta V + \sum _{i=1}^{n}\mu {i}\,\mathrm {d} N_i
+\eam
+\sssc{封閉系統焓表述}
+對於一封閉系統：
+\[\mathrm{d}H = \delta Q - V\delta p \]
+\sssc{（赫斯）（反應熱加成/恆定熱總和）定律（Hess's/The law (of constant heat summation/of additivity of reaction heat)）}
+熱力學過程的焓與從初始狀態到最終狀態所採取的路徑無關，即焓是狀態函數。
+\sssc{波恩-哈伯循環（Born–Haber cycle）}
+根據赫斯定律，以各已知反應熱求得待求反應熱的方法。
+\subsection{反應熱（Heat of reaction）}
+\sssc{反應熱（Heat of reaction）}
+反應熱$\Delta H$=生成物的焓-反應物的焓。對於定溫過程或微分過程，$\Delta H$=正反應活化能$E_a-$逆反應活化能$E_r$=生成物的位能-反應物的位能。
+
+反應熱依賴於溫度但效應多不顯著，不依賴於活化能、反應機構、各物質濃度。
+
+\bit
+\item \tb{放熱/散熱（exothermic）過程}：$\Delta H<0$的過程。
+\item \tb{吸熱（endothermic）過程}：$\Delta H>0$的過程。
+\eit
+\sssc{標準反應熱}
+25°c、1bar 下的反應熱。
+\sssc{標準莫耳生成熱（Standard molar heat of formation）/標準（莫耳）生成焓（Standard (molar) enthalpy of formation）}
+$\Delta H_f$，由成分元素的最常見或最穩定狀態化合成一莫耳有興趣物質的反應熱。25°C、1bar 下，元素的的最常見或最穩定狀態（如石墨、斜方硫、氧氣、白磷）的標準莫耳生成熱訂為零。
+
+其相反數稱標準莫耳分解熱/標準（莫耳）分解焓。
+\subsection{熱力學第二定律/熵增原理}
+熱力學第二定律是古典物理唯一沒有可逆性的定律。
+\subsubsection{孤立系統熵增表述}
+對於一孤立系統：
+\[\mathrm{d}S \geq 0\]
+\subsubsection{克勞修斯表述（Clausius statement）}
+不可能把熱量從低溫物體傳遞到高溫物體而不產生其他影響。
+\subsubsection{克耳文-普朗克表述（Kelvin-Planck statement）}
+不可能從單一熱源吸收能量，使之完全變為有用功而不產生其他影響。
+\subsubsection{黑首保勞-肯南表述（Hatsopoulos-Keenan statement）}
+對於一個有給定能量，物質組成，參數的系統，存在這樣一個穩定的平衡態：其他狀態總可以通過可逆過程達到之。
+\subsection{克勞修斯定理（Clausius theorem）}
+對於一封閉系統，一個熱力學微分過程必然：
+\[\mathrm{d}S \geq \frac{\delta Q}{T}\]
+\bit
+\item \tb{不可逆過程}：$\mathrm{d}S > \frac{\delta Q}{T}$
+\item \tb{可逆過程}：$\mathrm{d}S = \frac{\delta Q}{T}$，熵的克勞修斯定義即此。
+\eit
+\subsection{吉布斯能變化判斷定壓過程}
+對於定壓封閉系統：
+\[\mathrm{d} G = \mathrm{d} H - T \mathrm{d} S - S\mathrm{d} T = \mathrm{d} U + p\mathrm{d} V - T \mathrm{d} S - S\mathrm{d} T = \delta Q + W + p\mathrm{d} V - T \mathrm{d} S - S\mathrm{d} T = Q - T \mathrm{d} S - S\mathrm{d} T \leq - S\mathrm{d} T\]
+\bit
+\item \tb{自發（spontaneous）過程}：一個熱力學過程具有自發性（spontaneity）的必要條件是$\mathrm{d} G < - S\mathrm{d} T$。吉布斯自發過程必為克勞修斯不可逆過程。
+\item \tb{平衡狀態（equilibrium state）}：一個熱力學過程處於平衡狀態的必要條件是任何自該狀態的微分過程之$\mathrm{d} G = - S\mathrm{d} T$。
+\item \tb{平衡（equilibrium）過程}：指$\mathrm{d} G = - S\mathrm{d} T$的熱力學過程。吉布斯平衡過程必為克勞修斯可逆過程。
+\item \tb{不會發生}：不會發生$\mathrm{d} G > - S\mathrm{d} T$的熱力學過程。
+\item \tb{放能（exergonic）過程}：$\mathrm{d}G<0$的過程。
+\item \tb{吸能（endergonic）過程}：$\mathrm{d}G>0$的過程。
+\eit
+\subsection{亥姆霍茲能變化判斷定容過程}
+對於一定容封閉系統：
+\[\mathrm{d} F = \mathrm{d} U - T \mathrm{d} S - S\mathrm{d} T = \delta Q - T \mathrm{d} S - S\mathrm{d} T\leq - S\mathrm{d} T\]
+\bit
+\item \tb{平衡狀態}：一個熱力學過程處於平衡狀態的必要條件是任何自該狀態的微分過程之$\mathrm{d} F  = - S\mathrm{d} T$。
+\item \tb{平衡過程}：指$\mathrm{d} F = - S\mathrm{d} T$的熱力學過程。吉布斯平衡過程必為克勞修斯可逆過程。
+\item \tb{不會發生}：不會發生$\mathrm{d} F > - S\mathrm{d} T$的熱力學過程。
+\item \tb{放能（exergonic）過程}：$\mathrm{d}F<0$的過程。
+\item \tb{吸能（endergonic）過程}：$\mathrm{d}F>0$的過程。
+\eit
+\ssc{化學勢（Chemical potential）}
+\sssc{標準化學勢（standard chemical potential）}
+\(\mu^0\) 。指標準狀態（通常取 0°C, 1 bar）下的化學勢。
+\sssc{微分過程的化學勢}
+\[\qty(\frac{\partial\mu}{\partial p})_{\tx{all other state functions}}=\frac{V}{n}\]
+\[\qty(\frac{\partial\mu}{\partial T})_{\tx{all other state functions}}=S\]
+由此可以通過積分此二式和代入標準化學勢獲得任意已知狀態的化學勢。
+\subsection{卡諾定理（Carnot's theorem）}
+\subsubsection{表述}
+\bit
+\item 在相同的高溫熱源和低溫熱源間工作的一切可逆熱機的效率都相等。
+\item 在相同的高溫熱源和低溫熱源間工作的一切熱機中，不可逆熱機的效率不可能大於可逆熱機的效率。
+\eit
+可用熱力學第一定律和第二定律得出。
+\subsubsection{可逆熱機}
+可逆熱機的一種實作為卡諾熱機，即進行卡諾循環的熱機。卡諾循環步驟：
+\bit
+\item 可逆等溫膨脹：此等溫的過程中系統從高溫熱庫吸收了熱量且全部拿去作功。
+\item 等熵（可逆絕熱）膨脹：移開熱庫，系統對環境作功，其能量來自於本身的內能。
+\item 可逆等溫壓縮：此等溫的過程中系統向低溫熱庫放出了熱量。同時環境對系統作正功。
+\item 等熵（可逆絕熱）壓縮：移開低溫熱庫，此絕熱的過程系統對環境作負功，系統在此過程後回到原來的狀態。
+\item 可逆熱機的熱效率$\eta$只取決於始狀態的溫度$T_1$與末狀態的溫度$T_2$。令從環境中吸收的熱量$Q_1$和放出的熱量$Q_2$：
+\[\eta = \frac{\left|Q_1-Q_2\right|}{\left|Q_1\right|} = 1 - \frac{T_2}{T_1}\]
+\eit
+\subsection{熱力學第三定律/絕對零度定律}
+當系統的溫度趨近於絕對零度（指絕對溫標（Absolute scale of temperature）/克耳文溫標（Kelvin scale of temperature）$0$ K）時，任何過程之熵變趨近於零，系統的熵趨近於該系統熵之最小值。
+\subsection{吉布斯-杜漢方程式（Gibbs-Duhem equation）}
+對於一系統：
+\[\displaystyle \sum _{i=1}^{n}N_{i}\mathrm {d} \mu _{i}=-S\mathrm {d} T+V\mathrm {d} p\]
+\subsection{絕熱等熵關係}
+對於絕熱等熵過程：
+\[pV^{\gamma}=\text{constant}\]
+\subsection{波茲曼熵公式（Boltzmann's entropy formula）}
+\[\begin{aligned}
+S_0&: \text{當系統的溫度趨近於絕對零度時的熵}\\
+\Omega&: \text{The number of real microstates corresponding to the system's macrostate}
+\end{aligned}\]
+\[S-S_0 = k_B \cdot \ln(\Omega)\]
+為熵的波茲曼定義。
+
+
+\section{物質的狀態（State）與相（Phase）}
+\subsection{物質的狀態（State of Matter）}
+一個物質的狀態是物質存在的宏觀形式之一，主要由粒子的運動與排列決定。四種古典物質狀態包含固態、液態、氣態和等離子態，另存在許多非古典物質狀態。
+\subsubsection{固態（Solid, s）}
+\begin{itemize}
+\item 粒子組成：基態原子或離子（團）。
+\item 物理性質：具有固定的形狀和體積；不可流動；多數難壓縮，但亦有易壓縮者；多數不可擴散或擴散極慢；屬於凝（Condensed）態。
+\item 粒子運動與排列：多數固態為晶體，僅剩振動自由度，轉動、平移自由度受極大限制；但部分固態，如非晶固體，具有轉動自由度。粒子間相對位置固定於一定範圍內；距離小；作用力大；晶體（crystal）中粒子依固定規則有序排列。
+\end{itemize}
+\subsubsection{液態（Liquid, l）}
+\begin{itemize}
+\item 粒子組成：基態原子或離子（團）。
+\item 物理性質：具有固定的體積但無固定的形狀；可以流動，但部分有黏性而較難流動；多數難壓縮，但亦有易壓縮者；可以擴散；屬於凝態、流體（Fluid）。
+\item 粒子運動與排列：粒子具有振動、轉動、平移自由度，粒子可自由游動，但部分物質有不同程度的黏滯性。粒子間相對位置不固定；距離小，多數小於同條件下固態；作用力小，但大於同條件下氣態；無固定排列，但可能因為氫鍵等有較常出現的特定相對位置或角度。
+\end{itemize}
+\subsubsection{氣態（Gas, g）}
+\begin{itemize}
+\item 粒子組成：基態原子（團）。
+\item 物理性質：無固定的形狀和體積；自由流動；易壓縮；可以充滿任何容器；擴散極快；屬於流體。
+\item 粒子運動與排列：粒子具有振動、轉動、平移自由度，粒子自由游動。粒子間相對位置不固定；距離大，大於同條件下凝態；作用力極小；無特定排列。
+\end{itemize}
+\subsubsection{等離子態/電漿態（Plasma）}
+\begin{itemize}
+\item 條件：溫度或輻射等提供的高能量使電子游離，常見於高溫環境如太陽或閃電中。
+\item 粒子組成：電子和離子。
+\item 物理性質：無固定的形狀和體積；可以流動；可以壓縮；擴散極快；屬於流體；具有電荷，受到勞侖茲力影響，具有一些類似金屬的電磁性質。
+\item 粒子運動與排列：粒子具有振動、轉動、平移自由度，粒子自由游動且非常劇烈。高能使可發生電子躍遷、游離事件。離子與電子質量相差極大，具有不同的運動情況。
+\end{itemize}
+\subsubsection{玻色-愛因斯坦凝聚態（Bose-Einstein Condensate, BEC）}
+\begin{itemize}
+\item 條件：極低溫。
+\item 粒子組成：玻色子的物質波波長大於其間距時形成的宏觀量子狀態。
+\item 物理性質：特性由量子力學主導。
+\item 粒子運動與排列：粒子動量極小，熵與焓極小。
+\end{itemize}
+\subsubsection{液晶態（Liquid Crystal, LC）}
+\begin{itemize}
+\item 粒子組成：基態原子（團）。
+\item 物理性質：介於液態和固態之間的中間態，具有液體的流動性和結晶固體的某些物理、化學與光學特性；液晶晶型有柱狀、盤狀、圓錐狀等，柱狀者較多，晶格長度通常不超過3奈米；可視為液態的一種，除粒子有序排列與其造成者外，物理性質與液態相似；屬於凝態、流體。通常是有機物。
+\item 粒子運動與排列：粒子具有振動自由度；轉動與平移自由度依物質受不同程度限制。粒子部分有序排列。
+\item 熱致液晶（Thermatropic Liquid Crystal）：指具有液晶相的物質有兩個熔點，在較低溫者之下為一般固體，在兩者之間為液晶，在較高溫者之上為一般液體。
+\item 弗里德里克斯轉變（Fréedericksz transition）：當對未變形狀態的液晶施加足夠強的電場或磁場時產生的液晶相變。於1927年由 Vsevolod Konstantinovich Frederiks 與 A. Repiewa 發現。
+\end{itemize}
+\subsubsection{超流態/超臨界流態（Superfluid）}
+\begin{itemize}
+\item 粒子組成：基態原子（團）。
+\item 物理性質：介於氣態和液態之間，零黏度，能夠無摩擦地流動，擴散性與溫度大於液態、壓力與密度大於氣態；屬於凝態、流體。
+\item 粒子運動與排列：粒子具有振動、轉動、平移自由度，粒子可自由游動。粒子間相對位置不固定；距離小。
+\end{itemize}
+\subsubsection{非晶固態/玻璃態（Glass/Vitreous）/過冷液態}
+\begin{itemize}
+\item 條件：液態冷卻而不結晶，如玻璃、柏油、塑膠。
+\item 粒子組成：基態原子（團）。
+\item 玻璃轉變溫度/玻璃轉化溫度（Glass-transition temperature, Tg）：在玻璃轉變溫度以上時表現出一些液態的特性，在其以下時則表現出一些固態的特性。非平衡態，不同於一般固–液相變。
+\item 物理性質：玻璃轉變溫度以下，可視為固態的一種，除粒子無序排列與其造成者外，物理性質與固態相似。玻璃轉變溫度以上，可視為黏滯性極大的液體，物理性質類似液態但難以流動。
+\item 分子排列與運動：玻璃轉變溫度以下，粒子僅剩振動自由度，轉動、平移自由度受極大限制。玻璃轉變溫度以上，粒子具有振動、轉動自由度，平移自由度受限制。粒子間相對位置固定於一定範圍內；距離小；作用力大；無序排列。
+\end{itemize}
+\subsection{相（Phase）}
+\sssc{相的定義}
+某種或多種物質呈現某種物質狀態時，若該物質或這些物質所占的體積內的分子均勻分布，則這片區域就是一個相。同一純物質同一個物質狀態可以有多個相，例如斜方硫與單斜硫。
+\sssc{相變（Phase transformation）}
+相變指物質從一個相變成另一個相的過程。
+\sssc{常見的相變}
+\begin{itemize}
+  \item 凝固/固化（Solidification）：由流態轉變為固態的過程。
+  \item 熔化（Melting）：由固態轉變為液態的過程。
+  \item 汽化（Vaporization）：轉變為氣態的過程。
+  \item 蒸發（Evaporation）：凝態表面上部分分子因溫度增加而獲得足夠能量，而逸出成為氣態的過程。
+  \item 沸騰（Boiling）：氣相氣壓小於等於凝相的飽和蒸氣壓，而使凝態內部和表面各處分子快速地從凝相轉變為氣相的過程。
+  \item 凝結（Condensation）：由氣態轉變為凝態的過程。
+  \item 液化（Liquefaction）：轉變為液態的過程。
+  \item 離子化/游離（Ionization）：轉變為等離子態的過程。
+  \item 昇華（Sublimation）：由固態轉變為氣態的過程。
+  \item 凝華（Deposition）：由氣態轉變為固態的過程。
+\end{itemize}
+\subsubsection{純物質相變焓（Heat of transformation）的性質}
+\bit
+\item 物質之汽化熱必大於其熔化熱。如水的熔化熱為 334 kJ/kg = 80 kcal/kg = 6.0 kJ/mol、液相變為氣相的汽化熱為 2266 kJ/kg = 540 kcal/kg = 40.8 kJ/mol。
+\item 晶體之熔化熱受其晶格能影響並與其正相關。熔化熱愈高熔點不一定愈高。
+\item 同壓下不同純物質，汽化熱愈高，沸點愈高。
+\eit
+\sssc{相平衡（Phase equilibrium）}
+當兩相或多相處於相平衡時，化學勢相等。相平衡並不代表不反應，多數的相平衡為正逆反應速率相等的動態平衡。
+\sssc{克勞修斯–克拉佩龍方程（Clausius-Clapeyron equation）}
+在純物質相圖的異相平衡壓力–溫度曲線上：
+\[\frac{\mathrm{d}p}{\mathrm{d}T}=\frac{L}{T\,\Delta\qty(\frac{V}{n})}\]
+其中：
+\bit
+\item $\frac{\mathrm{d}p}{\mathrm{d}T}$是共存曲線任意點的切線斜率。
+\item $L$是該點發生的一個跨越該線之相變的莫耳相變焓。
+\item $T$是相平衡溫度。
+\item $\Delta\qty(\frac{V}{n})$是該相變前後的莫耳比容變化。
+\eit
+\subsubsection{升溫或降溫過程溫度–熱量曲線圖}
+定壓下物質升溫或降溫的曲線圖，橫軸為外界提供的熱量或釋放至外界的熱量（以$\dv{H}{t}$方向為正），縱軸為溫度。對於純物質：某相時該線之斜率正比於該相之比熱；溫度不變之線段為相變過程，且該溫壓條件為該二相之平衡條件。
+\sssc{（飽和）蒸氣壓（(Saturated) vapor pressure）}
+飽和蒸氣壓$p^\circ$為物質的凝相與氣相達平衡時氣相的壓力，是溫度的函數。
+
+令液體體積可忽略，在$T_1$、$T_2$下飽和蒸氣壓$p_1$、$p_2$：
+\[\ln\left(\frac{p_2}{p_1}\right)=\frac{LM}{R}\left(\frac{1}{T_1}-\frac{1}{T_2}\right)\]
+\begin{proof}\mbox{}\\
+令莫耳比容$\nu\coloneq\frac{V}{n}$，克勞修斯-克拉佩龍方程指出：
+\[\frac{\mathrm{d}p}{\mathrm{d}T}=\frac{L}{T \Delta \nu}\]
+推導：
+\[\begin{aligned}
+&\nu_{\text{g}}\gg\nu_{\text{l}}\\
+\Rightarrow &\Delta \left(\nu\right)\approx \nu_{\text{g}}=\frac{RT}{pM}\\
+\Rightarrow &\frac{\mathrm{d}p}{\mathrm{d}T}=\frac{pLM}{T^2 R}\\
+\Rightarrow &\frac{\mathrm{d}p}{p}=\frac{LM}{R}\frac{\mathrm{d}T}{T^2}\\
+\Rightarrow &\int\frac{\mathrm{d}p}{p}=\frac{LM}{R}\int\frac{\mathrm{d}T}{T^2}\\
+\Rightarrow &\ln(p)=-\frac{LM}{RT}+C\\
+\Rightarrow &\ln\left(\frac{p_2}{p_1}\right)=\frac{LM}{R}\left(\frac{1}{T_1}-\frac{1}{T_2}\right)
+\end{aligned}\]
+\end{proof}
+
+若氣相壓力大於凝相的飽和蒸氣壓，則氣相的化學勢較大，會發生淨凝結（液化或凝華）；若氣相壓力小於凝相的飽和蒸氣壓，則凝相的化學勢較大，會發生淨汽化（蒸發或昇華）。
+\subsubsection{相圖（Phase graph）}
+相圖是描述物質在不同狀態下之相的圖表，顯示了不同相之間的平衡條件。相圖一般以溫度為橫軸，壓力（指該物質的氣相分壓，即蒸氣壓）為縱軸，亦有另增體積為$z$軸者，在圖上將異相平衡的條件以曲線繪出，彼等線圍出的區域即為各相所屬之區域。
+\bct\bfH\ctr\icg[width=0.6\textwidth]{phase.jpg}\ef\FB\ect
+\sssc{臨界點（Critical point）}
+該點的溫度稱臨界溫度，是物質能液化的最高溫度。該點的氣壓稱臨界氣壓，是恰小於臨界溫度時物質液化所需的最小壓力。當溫度高於臨界溫度且與壓力高於臨界壓力且尚不足以游離電子時，物質呈超臨界流相。
+
+在臨界溫度以上，不再有飽和蒸氣壓的概念。在臨界壓力以上升溫通過臨界溫度或在臨界溫度以上增壓通過臨界壓力時，原先液相與氣相的分界消失，而成為超臨界流體。此種過程並非典型的相變，而是密度連續變化，分子始終均勻分布，僅有熱容效應的吸熱增壓或增溫，而無相變焓，可視為克勞修斯–克拉佩龍方程中的相變焓和莫耳比容變化都是零。
+
+二氧化碳臨界點31.2攝氏度、72.9大氣壓，二氧化碳的超臨界流相常用於萃取咖啡因等。
+\sssc{三相點（Triple point）}
+固相、液相、氣相平衡的點，即固相的飽和蒸氣壓等於液相的飽和蒸氣壓等於氣壓的點。
+\sssc{純物質的固液平衡線}
+\bit
+\item 多數物質之此線斜率為正，代表固相密度大於液相，如二氧化碳。
+\item 少數物質斜率為負，代表固相密度小於液相，如水、銻、鉍、生鐵。水的固相密度小於液相造成鐵線切冰冰不斷的復冰現象、溜冰時壓力大冰面的水復結為冰故溜冰速度極快。
+\eit
+\sssc{過冷/超冷凍（Supercooling）現象}
+指液體溫度降低到低於熔點仍未凝固的現象，冷卻曲線先以液態下降到凝固點之下，當出現晶種開始升溫並開始凝固，到達凝固點時開始恆溫凝固，直到全部凝固後開始以固體的比熱降溫。
+\sssc{（正常）熔（化）點（Melting point, m.p.）}
+一大氣壓下液相與固相化學勢相同的溫度。
+\sssc{（正常）沸（騰）點（Boiling point, b.p.）}
+一大氣壓下液相與氣相化學勢相同的溫度，即液相飽和蒸氣壓為一大氣壓的溫度。
+\sssc{（正常）昇華點（Sublimation point, s.p.）}
+一大氣壓下固相與氣相化學勢相同的溫度，即固相飽和蒸氣壓為一大氣壓的溫度。
+
+
+\section{氣體動力論（Kinetic theory of gases）}
+\subsection{理想氣體分子假設}
+\bit
+\item 遵守馬克思威-波茲曼理想氣體分子速率機率分布函數。
+\item 除碰撞外，無分子間作用力，即無分子間位能，即氣體分子的內能等於其總動能。
+\item 分子不斷直線平移運動，不會轉動與振動。
+\item 分子有質量，無體積，無形狀。
+\item 所有碰撞皆為完全彈性碰撞。
+\item 氣體無法液化或固化。
+\item 在任一時刻，向各方向運動的分子數目皆相同。
+\item 分子數量足夠大，以至於對該問題進行統計處理和假設是合理的。
+\item $T \ll \frac{mc^2}{k_B}$，即相對論效應可忽略。
+\eit
+\subsection{馬克思威-波茲曼分布（Maxwell-Boltzmann distribution）}
+\sssc{馬克思威-波茲曼分布}
+馬克思威-波茲曼分布描述理想氣體粒子在熱力學平衡狀態的速率機率分布。
+\[\begin{aligned}
+P(v)&: \text{分子數占總分子數比例}\\
+a &= \sqrt{\frac{k_BT}{m}}\\
+P(v) &= \sqrt{\frac{2}{\pi}}\frac{v^2}{a^3}e^{\frac{-v^2}{2a^2}},\quad 0<v<\infty
+\end{aligned}\]
+\subsubsection{方均根速率}
+\[\sqrt{\langle v^2 \rangle}=v_{rms} = \sqrt{3}a\]
+恰有一半的分子其速率$< v_{rms}$，一半的分子其速率$> v_{rms}$，即：
+\[\int_0^{v_{rms}} P(v) \,\mathrm{d}v = \int_{v_{rms}}^{\infty} P(v) \,\mathrm{d}v = \frac{1}{2}\]
+\subsubsection{最大可能速率/最概然速率/速率分布之眾數}
+\[v_p = \sqrt{2}a\]
+\subsubsection{平均速率}
+\[\langle v \rangle = \sqrt{\frac{8}{\pi}}a\]
+\subsubsection{平均相對速率}
+\[\langle \left|\vec{v_1} - \vec{v_2}\right| \rangle =v_{rel} = 4\sqrt{\frac{1}{\pi}}a\]
+\ssc{氣體壓力}
+\sssc{氣體壓力}
+一體積$V$容器中氣體分子總數$N$、方均根速率$v_{\text{rms}}$、一個氣體分子的質量$m$、氣體碰撞對器壁造成的壓力$p$，則：
+\[p=\frac{Nmv_{\text{rms}}^{\pht{\text{rms}}2}}{3V}\]
+\begin{proof}\mbox{}\\
+考慮正方體容器中，一個分子在平行於一邊長方向上的運動。令該方向速度分量 \( v_x \)，則這個分子與與其運動方向垂直的器壁碰撞時，產生動量變化：
+\[ \Delta p_x = 2mv_x \]
+由於在長度 \( L \) 的線段上運動，兩次碰撞同一器壁之間的行進距離為 \( 2L \)，所以單個分子的碰撞頻率為：
+\[ \frac{v_x}{2L} \]
+單個分子對容器壁的平均力是：
+\[ F_{ix} = \frac{(\Delta p_x) v_x}{2L} = \frac{mv_x^{\pht{x}2}}{L} \]
+所有 \( N \) 個分子對容器壁的總力為：
+\[ F_{\text{total}} = N \cdot \frac{mv_x^{\pht{x}2}}{L} \]
+\( L = \sqrt[3]{V} \)，器壁面積 \( A = L^2 \)，所以壓力為：
+\[ p = \frac{F_{\text{total}}}{A} = \frac{N \cdot \frac{mv_x^{\pht{x}2}}{L}}{L^2} = \frac{N m v_x^{\pht{x}2}}{L^3} = \frac{N m v_x^{\pht{x}2}}{V} \]
+在三維空間中，分子的總速度平方 \( v^2 = v_x^2 + v_y^2 + v_z^2 \)，所以有：
+\[ \overline{v^2} = \overline{v_x^{\pht{x}2}} + \overline{v_y^{\pht{y}2}} + \overline{v_z^{\pht{z}2}} = 3 \overline{v_x^{\pht{x}2}} \]
+因此，
+\[ \overline{v_x^{\pht{x}2}} = \frac{1}{3} \overline{v^2} \]
+代入得，
+\[ p = \frac{N m \overline{v_x^{\pht{x}2}}}{V} = \frac{N m \frac{1}{3} \overline{v^2}}{V} = \frac{1}{3} N m \frac{\overline{v^2}}{V} \]
+根據定義，均方根速度 \( v_{\text{rms}} \) 是：
+\[ v_{\text{rms}} = \sqrt{\overline{v^2}} \]
+所以，
+\[ p = \frac{Nmv_{\text{rms}}^{\pht{\text{rms}}2}}{3V} \]
+將容器分割成兩個部分，則從兩部分通過界面到達另一部分的分子們速率、分子數與壓力相同，速度與力的方向相反，通過將任意容器分割成若干個正方體容器，可知任意容器均遵循此定律。
+\end{proof}
+\sssc{道耳頓（分壓）定律（Dalton's law (of partial pressures)）}
+互不反應的理想氣體混合物，各組分氣體的分壓（partial pressure）等於總壓乘以其莫耳分率。
+\subsection{理想氣體方程式（Ideal gas law）}
+由馬克思威-波茲曼分布與氣體壓力公式可得到理想氣體方程式：
+\[pV = Nk_BT = nRT \]
+其中：
+\[V\propto\frac{1}{p}\]
+稱\tb{波以耳（Boyle）定律}；
+\[V\propto T\]
+稱\tb{查理定律（Charles's law）}或\tb{查理–給呂薩克定律（Charles and Gay-Lussac's Law）}；
+\[\frac{1}{p}\propto T\]
+稱\tb{給呂薩克定律（Gay-Lussac's law）}；
+\[V\propto n\]
+稱\tb{亞弗加厥定律}。
+
+並可推得：
+\[pM=\rho RT\]
+\[v_{rms}=\sqrt{\frac{3k_BT}{m}}=\sqrt{\frac{3RT}{M}}=\sqrt{\frac{3p}{\rho}}\]
+\[\langle v \rangle = \sqrt{\frac{8k_BT}{\pi m}}=\sqrt{\frac{8RT}{\pi M}}=\sqrt{\frac{8p}{\pi \rho}}\]
+\sssc{通量（flux）}
+單位體積分子數$N$、平均速率$v$理想氣體的通量（單位面積單位時間通過該面的分子數）$f$為：
+\[f=\frac{Nv}{4}=N\sqrt{\frac{k_BT}{2\pi m}}=N\sqrt{\frac{RT}{2\pi M}}\]
+\sssc{標準溫度與壓力（Standard temperature and pressure, STP）/標準狀況（Standard conditions (for temperature and pressure)）}
+1982 年以前，STP 指的是溫度 273.15 K（0 °C）與絕對壓力 1 atm（101.325 kPa）；自 1982 年起，STP 變更定義為溫度 273.15 K（0 °C）與絕對壓力 1 bar（100 kPa）。STP 下理想氣體約 22.4 L/mol。
+\sssc{常態溫度與壓力（Normal temperature and pressure, NTP）/常態狀況（Standard conditions (for temperature and pressure)）}
+1982 年以前，NTP 指的是溫度 298.15 K（25°C）與絕對壓力 1 atm（101.325 kPa）；自 1982 年起，NTP 變更定義為溫度 298.15 K（25 °C）與絕對壓力 1 bar（100 kPa）。NTP 下理想氣體約 24.5 L/mol。
+\ssc{真實氣體}
+\sssc{理想氣體和真實氣體的比較}
+\begin{longtable}[c]{|c|c|c|}
+\hline
+& 理想氣體 & 真實氣體 \\\hline\endhead
+分子體積 & 無 & 有 \\\hline
+分子作用力 & 無 & 有 \\\hline
+分子碰撞 & 完全彈性 & 非完全彈性 \\\hline
+適用理想氣體方程式 & 是 & 否 \\\hline
+\end{longtable}\FB
+\sssc{凡得瓦方程式（Van der Waals equation）}
+真實氣體更接近凡得瓦方程式，其中$a$, $b$為與物質種類相關的係數：
+\[\qty(p + \frac{a}{V^2})\qty(V - b) = nRT\]
+\sssc{可壓縮性因子（Compressibility factor）}
+可壓縮性因子$Z$定義為：
+\[Z=\frac{pV}{nRT}\]
+\sssc{真實氣體的偏差}
+可壓縮性因子在低溫低壓時與壓力負相關，其餘情況與壓力正相關。
+
+真實氣體分子間作用力愈小及分子大小除以分子間距大小愈小，愈接近理想氣體，即愈高溫、低壓、低極性、無氫鍵、沸點低、分子量小、凡得瓦力小等愈接近理想氣體。
+
+
+\sct{布朗運動（Brownian motion）與擴散（作用）（Diffusion）}
+\ssc{布朗運動（Brownian motion）}
+\bit
+\item 1827 年，布朗（Robert Brown）觀察到花粉微粒的不規則折線運動，後發現微粒均有之，且顆粒愈小愈活躍，稱布朗運動。
+\item 1905 年，愛因斯坦（Albert Einstein）從分子運動觀點發表布朗運動第一個可用實驗檢驗的定量理論，預言微粒平均運動路徑長與溫度、微粒大小、微粒濃度、液體年的等因素的關係。
+\item 1908 年，佩蘭（Jean Baptiste Perrin）驗證愛因斯坦布朗運動理論，使原子論受廣泛接受。
+\eit
+\ssc{擴散（Diffusion）}
+流體不受外力通過布朗運動從高化學勢區向低化學勢區淨運輸的過程。
+\sssc{菲克第一定律（Fick's First Law）}
+從高濃度區域往低濃度流的通量大小與濃度對空間位置的梯度成正比：
+\[\mb{J}=-D\nabla\phi\]
+\sssc{菲克第二定律（Fick's second law）}
+由質量守恆定律與菲克第一定律導出：
+\[\frac{\partial\phi}{\partial t}=D\nabla^2\phi\]
+\sssc{氣體隙流/通孔擴散的格雷姆定律（Graham's Law）}
+隙流/通孔擴散指流體擴散通過小孔的過程，格雷姆定律指出，在氣體中各處的密度差別不大的情況下，各組分氣體隙流速率與分子量平方根反比。
+
+
+\section{能量均分定理（Equipartition theorem）}
+描述在熱平衡狀態下，系統中的每個獨立的能量存儲模式（如平動、轉動、振動等）會依自由度均分能量，每個自由度平均會有 \( N \frac{1}{2} k_B T \) 的能量。考慮相對論效應的影響，該定理依然成立，但在量子效應的影響下失效。
+
+低溫時，部分能量形式會依序消失，莫耳熱容會顯著減少，應改用其他模型。
+\subsection{能量存儲模式}
+\subsubsection{平動}
+\bit
+\item 理想氣體：三個方向，三個自由度，\( \frac{3}{2}Nk_BT \) 的能量。
+\item 理想晶體：無。
+\eit
+\subsubsection{轉動}
+\bit
+\item 理想氣體單原子分子、理想晶體：無。
+\item 理想氣體直線形分子：兩個方向，兩個自由度，\( Nk_BT \) 的能量。
+\item 理想氣體非直線形分子：三個方向，三個自由度，\( \frac{3}{2} Nk_BT \) 的能量。
+\eit
+\subsubsection{振動}
+一個振動分為動能與位能兩個自由度，故有 \( Nk_B T \) 的能量。
+\bit
+\item 低溫：無。
+\item 高溫理想共價鍵：一個振動，兩個自由度，故有 \( Nk_B T \) 的能量。
+\item 高溫理想晶體構造單位間：依\tb{杜隆-泊替定律（Dulong-Petit law）}，有三個振動，六個自由度，故有 \( 3 Nk_B T \) 的能量。
+\eit
+\subsection{莫耳熱容}
+\bit
+\item 理想氣體單原子分子：$C_V=\frac{3}{2} R$、$C_p=\frac{5}{2}R$
+\item 低溫理想氣體直線形分子：$C_V=\frac{5}{2}R$、$C_p=\frac{7}{2}R$
+\item 高溫理想氣體$n$共價鍵直線形分子：$C_V=\frac{5+2n}{2}R$、$C_p=\frac{7+2n}{2}R$
+\item 低溫理想氣體非直線形分子：$C_V=3R$、$C_p=4R$
+\item 高溫理想氣體$n$共價鍵非直線形分子：$C_V=(3+n)R$、$C_p=(4+n)R$
+\item 低溫理想晶體：$C_V=0$
+\item 高溫理想晶體：$C_V=3R$
+\eit
+
+
+\section{化學動力學（Chemical Kinetics）/反應動力學（Reaction Kinetics）}
+速率常數$k$，或加下標。
+\subsection{總論}
+\subsubsection{反應速率（Reaction rate）}
+指定溫下反應物消耗量或生成物生成量的時變率，其中量指體積莫耳濃度或正比於之的其他單位（下稱濃度）。
+\sssc{影響反應速率的因素比較}
+\begin{longtable}[c]{|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|}
+\hline
+影響因素 & 濃度增加 & 升溫 & 加入催化劑 \\ \hline
+改變反應自發與否 & 可能改變 & 可能改變 & 不變 \\ \hline
+活化能（低限能） & 不變 & 高中：不變；實際：可能改變但多不顯著 & 正逆反應等量變小 \\ \hline
+反應熱 & 不變 & 可能改變但多不顯著 & 不變 \\ \hline
+總碰撞頻率 & 變大 & 變大 & 不變 \\ \hline
+有效碰撞頻率 & 變大 & 變大 & 正逆反應等倍放大 \\ \hline
+有效碰撞分率 & 不變 & 變大 & 正逆反應等倍放大 \\ \hline
+速率常數 & 不變 & 變大 & 正逆反應等倍放大 \\ \hline
+產率 & 可能改變 & 可能改變 & 不變 \\ \hline
+\end{longtable}\FB
+\subsection{（反應）速率定律（式）/方程式（(Reaction) rate law/equation）}
+反應速率與反應物濃度的定量關係式。
+\subsubsection{（反應）速率定律（式）/方程式（(Reaction) rate law/equation）}
+令一只有一個速率決定步驟（rate-determining step）的反應：
+\[\sum_{i=1}^ma_i\mathbf{A}_i\ce{->}\sum_{i=i}^nb_i\mathbf{B}_i\]
+有催化劑與溶劑$\qty(\mathbf{C}_1,\mathbf{C}_2,\ldots,\mathbf{C}_o)$，其中：
+\[\mathscr{S}=\{\mathbf{A}_1,\mathbf{A}_2,\ldots,\mathbf{A}_p,\mathbf{B}_1,\mathbf{B}_2,\ldots,\mathbf{B}_q,\mathbf{C}_1,\mathbf{C}_2,\ldots,\mathbf{C}_s\},\quad p\leq m\land q\leq n\land s\leq o\]
+是所有前有提及之物質中可變濃度者之集合，並假設所有有效接觸面積不變。
+
+則速率定律式為：
+\[r=k\prod_{\mathbf{S}_i\in\mathscr{S}}[\mathbf{S}_i]^{c_i}\]
+
+其中：
+\begin{itemize}
+\item $[\mathbf{A}]$指$\mathbf{A}$的體積莫耳濃度，並可以替換成任意與之正比的度量。
+\item $r$：反應速率，可為任意$-\dv{[\mathbf{A}_i]}{t}$或$\dv{[\mathbf{B}_i]}{t}$。
+\item $a_i$：反應式中反應物$\mathbf{A}_i$的平衡係數。
+\item $b_i$：反應式中生成物$\mathbf{B}_i$的平衡係數。
+\item $c_i$：$\mathbf{S}_i$的反應級數（order）。
+\item $\sum_{\mathbf{S}_i\in\mathscr{S}}c_i$：反應（總）級數，稱該反應為$\sum_{\mathbf{S}_i\in\mathscr{S}}c_i$級反應（$\sum_{\mathbf{S}_i\in\mathscr{S}}c_i$th-order reaction）。
+\item $k$：（反應）速率常數/係數（(reaction) rate constant/coefficient）。
+\end{itemize}
+\subsubsection{說明}
+\begin{itemize}
+\item 化學反應中一般將接觸面積變化不大的固體、稀溶液中的溶劑視為不可變濃度，後者如 NTP 稀水溶液中水的濃度可視為恆為 $\frac{500}{18}$ M。
+\item 壓力影響氣相物質的濃度，但對凝相物質幾乎沒有影響（除非改變晶型等）。對於理想氣體，分壓正比於體積莫耳濃度，故對於偏差較小的情況可使用之作為濃度單位。理想氣體的分壓$p$與體積莫耳濃度$C_M$關係為：
+\[p=C_MRT\]
+\item 反應總級數$x$的反應稱$x$級反應。由速率常數的單位可推得反應總級數，$x$級反應速率常數之單位為$M^{1-x}s^{-1}$。速率常數的單位常省略不寫。
+\item 反應速率之不同選擇間，速率常數互為乘上一個常數。令$1\leq f\neq g\leq p$、$1\leq h\neq i\leq q$，$k_f$、$k_g$、$k_h$與$k_i$分別為選用$-\dv{[\mathbf{A}_f]}{t}$、$-\dv{[\mathbf{A}_g]}{t}$、$\dv{[\mathbf{B}_h]}{t}$與$-\dv{[\mathbf{B}_i]}{t}$作為反應速率時的速率常數，則：
+\[-\dv{[\mathbf{A}_f]}{t}\frac{1}{a_f}=-\dv{[\mathbf{A}_g]}{t}\frac{1}{a_g}=\dv{[\mathbf{B}_h]}{t}\frac{1}{b_h}=\dv{[\mathbf{B}_i]}{t}\frac{1}{b_i}\]
+\[\frac{k_f}{a_f}=\frac{k_g}{a_g}=\frac{k_h}{b_h}=\frac{k_i}{b_i}\]
+\item 速率常數依賴於反應物本性、溫度、反應活化能，不依賴於反應熱、反應物或生成物濃度。
+\item 測量時，以實驗先測得各反應物級數，接著再以反應速率推得速率常數。
+\item 半生期（Half-life）$t_{1/2}$：指一反應物濃度減半所需時間，正比於速率常數的倒數，可能依賴於初始濃度。
+\item 放射性衰變可視為單一反應物一級反應，惟濃度改為莫耳數。
+\item 秒錶反應（clock reaction）/化學鐘（chemical clock）：由於可檢測量的時鐘物種的存在，在可預測的誘導時間之後出現可觀察的特性。
+\end{itemize}
+\subsubsection{單一反應物基元反應速率定律式形式與半生期（Half-life）}
+令一基元反應只有單一反應物，其濃度$a$作為時間的函數，$t=0$時濃度$a_0$，反應速率$r=-\dv{a}{t}$，速率常數$k$，濃度單位$M$、時間單位$s$：
+\begin{longtable}[c]{|p{0.1\textwidth}|p{0.15\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.15\textwidth}|}
+\hline
+反應級數 & 速率定律式微分形式 & 速率定律式積分形式 & 半生期 & 速率常數單位 \\\hline
+0 & $r=k$ & $a=a_0-kt$ & $\frac{a_0}{2k}$ & M s$^{-1}$ \\\hline
+1 & $r=ka$ & $a=a_0\cdot e^{-kt}$ & $\frac{\ln(2)}{k}\approx\frac{0.693}{k}$ & s$^{-1}$ \\\hline
+2 & $r=ka^2$ & $a=\frac{a_0}{1+a_0\cdot kt}$ & $\frac{1}{ka_0}$ & M$^{-1}$ s$^{-1}$ \\\hline
+\end{longtable}\FloatBarrier
+\subsection{碰撞理論（Collision theory）}
+\sssc{主張}
+\ben
+\item 反應物粒子必須相互碰撞，才有可能發生化學反應。
+\item 不是所有的碰撞都會發生化學反應。能夠發生化學反應的碰撞稱為有效碰撞（effective collision）。
+\item 化學反應速率的快慢取決於有效碰撞的頻率。
+\een
+\subsubsection{低限能（Threshold energy）}
+阿瑞尼斯（Svante Arrhenius）提出。$E_a$，發生有效碰撞所需的最低動能。只有動能超過低限能的粒子才有可能發生有效碰撞。該能量在反應中轉換為電位能（斷鍵等）。必為正。
+
+碰撞理論中有效碰撞分率理論值不考慮立體因子（Steric factor），故：
+\[\text{有效碰撞分率理論值}=\frac{\text{有效碰撞頻率理論值}}{\text{總碰撞頻率}}=\frac{\text{超越低限能分子數}}{\text{總分子數}}\]
+\sssc{立體因子（Steric factor）}
+$\rho$，只有適當的碰撞位置與方向（化學鍵生成與斷裂處等）方能引發化學反應，例如 \ce{CO(g) + NO2(g) -> CO2(g) + NO(g)} 中 \ce{CO} 之 \ce{C} 與 \ce{NO2} 之一 \ce{O} 以足夠相對速率碰撞。立體因子定義為速率常數的實驗值與碰撞理論預測值之間的比率。
+
+考慮立體因子（Steric factor）後的實際情況：
+\[\text{有效碰撞分率}=\frac{\text{有效碰撞頻率}}{\text{總碰撞頻率}}=\rho\cdot\frac{\text{超越低限能分子數}}{\text{總分子數}}=\rho\cdot\text{有效碰撞分率理論值}\]
+\subsubsection{活化複合體/活化錯合物（Activated complex）與活化能（Activation energy）}
+波拉尼（Polányi Mihály）等提出。化學反應的過程中，碰撞開始後、產物生成前，會先經過一個（後經反應機構（Reaction mechanism）修正，應為每個基元反應（Elementary reaction）經過一個）動能減少、位能增加的一高位能、極不穩定的過渡（狀）態（Transition state），其原鍵結未完全破壞，新鍵結未完全形成，稱活化複合體/活化錯合物（Activated complex），其存在時間極短，不易偵測，其位能減去最初反應物之位能為該反應的（正反應）活化能（(forward reaction) activation energy）$E_a$（後經反應機構修正，反應的（正反應）活化能為其反應過程中位能最高時的位能減去最初反應物之位能），其值等於該反應的低限能（Threshold energy）。活化複合體會接著減少位能、增加動能，轉變成生成物或變回原來的反應物。活化複合體之位能減去最終生成物之位能為逆反應活化能$E_r$（reverse reaction activation energy）（後經反應機構修正，逆反應活化能為其反應過程中位能最高時的位能減去最終生成物之位能）。
+
+活化能依賴於反應物本性、反應機構（活化複合體種類）、催化劑、抑制劑，不依賴於反應熱、各物質濃度，高中：不依賴於溫度；實際：依賴於溫度但效應多不顯著。
+
+活化能愈大，能量障壁愈高，反應愈難發生，反應速率愈慢，速率常數愈小；活化能愈小，能量障壁愈低，反應愈易發生，反應速率愈快，速率常數愈大。
+\subsection{反應機構/反應機理（Reaction mechanism）}
+有時也視為碰撞理論的一部分。
+\sssc{碰撞理論與反應速率定律式的矛盾}
+\bit
+\item 碰撞理論無法解釋為何部分反應物的濃度對反應速率沒有影響，如\ce{NO2(g) + CO(g) -> NO(g) + CO2(g)}的速率定律式為$r=k[\ce{NO2}]^2$。
+\item 碰撞理論預測大於二個反應物粒子的反應之反應物應難以瞬間同時碰撞，但實際上許多大於二個反應物粒子的反應反應速率甚快，如\ce{H2O2(aq) + 3I-(aq) + 2H+(aq) -> I3-(aq) + 2H2O(l)}。
+\eit
+\sssc{主張}
+化學反應不一定是單一步驟完成，而是由一系列連續而無法再分解為更簡單步驟的基元/基本反應/步驟（Elementary reaction/step）所構成。
+
+一個合理的反應機構須滿足：
+\bit
+\item 所有基本步驟相加會得到該反應的反應式。
+\item 由反應機構推導出的速率定律式應與實驗結果一致。
+\eit
+\subsubsection{基元/基本反應/步驟（Elementary reaction/step）}
+只有一個步驟的反應。假設所有接觸面積不變，其各可變濃度反應物之平衡係數即其在速率定律式中之級數，其餘物質均不在速率定律式中。令有基元反應：
+\[\sum_{i=1}^ma_i\mathbf{A}_i\ce{->}\sum_{i=i}^nb_i\mathbf{B}_i\]
+反應物中：
+\[\{\mathbf{A}_1,\mathbf{A}_2,\ldots,\mathbf{A}_p\},\quad p\leq m\]
+為可變濃度物質，其餘反應物為不可變濃度物質，則該反應的速率定律式為：
+\[r=k\prod_{i=1}^p[\mathbf{A}_i]^{a_i}\]
+
+多數基元反應為一或二級。如 \ce{CO(g) + NO2(g) -> CO2(g) + NO(g)}。
+\subsubsection{中間產物/反應中間體（Reaction intermediate）}
+非基元反應中，於反應過程中先被釋放出來，而後又參與反應，不出現於淨反應中之物質。
+\subsubsection{速率決定/控制步驟（Rate-determining step, RDS, r/d step）/瓶頸反應}
+指一個反應機構中速率最慢（即正反應活化能最大）的基元反應步驟，其決定了整個反應的速率：
+\begin{itemize}
+\item 如果速率決定步驟之反應物為全反應之反應物的子集，則全反應之速率定律式即速率決定步驟之速率定律式。
+\item 如果速率決定步驟之前有其他步驟且速率決定步驟遠慢於其前所有步驟，則其前步驟幾乎處於平衡狀態，稱預平衡（Pre-equilibrium）/快速平衡（fast equilibrium）。此時應將速率決定步驟的反應物中屬全反應中之中間產物者，改以其前步驟之平衡常數乘以各全反應中之反應物與生成物之濃度或其倒數表示，代入速率決定步驟之速率定律式中，並將各須乘上的平衡常數、速率決定步驟之速率定律式的速率常數與全反應之反應速率與速率決定步驟之反應速率之比值之積作為新的速率常數，方得全反應之速率定律式。
+\end{itemize}
+\subsubsection{氫氣與氯化碘生成碘與氯化氫之反應}
+全反應：
+\[\ce{H2(g) + 2ICl(g) ->[$\Delta$] I2(g) + 2HCl(g)}\]
+
+反應機構：
+\begin{enumerate}
+\item \ce{H2(g) + ICl(g) -> HI(g) + HCl(g)}（慢），反應速率：$r_1=-\dv{[\ce{H2}]}{t}=k_1[\ce{H2}][\ce{ICl}]$
+\item \ce{HI(g) + ICl(g) -> I2(g) + HCl(g)}（快）
+\end{enumerate}
+
+說明：
+\begin{itemize}
+\item 速率決定步驟為第一步驟。
+\item \ce{HI(g)}為中間產物。
+\item 全反應之速率定律式為：
+\[r=-\dv{[\ce{H2}]}{t}=k_1[\ce{H2}][\ce{ICl}]\]
+\end{itemize}
+\subsubsection{三氯甲烷與氯氣生成四氯化碳與氯化氫之反應}
+全反應：
+\[\ce{CHCl3(g) + Cl2(g) -> CCl4(g) + HCl(g)}\]
+
+反應機構：
+\begin{enumerate}
+\item \ce{Cl2(g) -> 2Cl(g)}（快），平衡常數：$K_1=\frac{[\ce{Cl}]^2}{[\ce{Cl2}]}$
+\item \ce{Cl(g) + CHCl3(g) -> CCl4(g) + H(g)}（慢），反應速率：$r_2=-\dv{[\ce{CHCl3}]}{t}=k_2[\ce{Cl}][\ce{CHCl3}]$
+\item \ce{H(g) + Cl(g) -> HCl(g)}（快）
+\end{enumerate}
+
+說明：
+\begin{itemize}
+\item 速率決定步驟為第二步驟。
+\item \ce{Cl(g)}、\ce{H(g)}為中間產物。
+\item 全反應之速率定律式為：
+\[\begin{aligned}
+r&=-\dv{[\ce{Cl}]}{t}=r_2=k_2[\ce{Cl}][\ce{CHCl3}]\\
+&=k_2\sqrt{K_1}[\ce{Cl2}]^{\frac{1}{2}}[\ce{CHCl3}]
+\end{aligned}\]
+\end{itemize}
+\subsubsection{臭氧生成氧氣之反應}
+全反應：
+\[\ce{2O3(g) -> 3O2(g)}\]
+
+反應機構：
+\begin{enumerate}
+\item \ce{O3(g) -> O2(g) + O(g)}（快），平衡常數：$K_1=\frac{[\ce{O2}][\ce{O}]}{[\ce{O3}]}$
+\item \ce{O3(g) + O(g) -> 2O2(g)}（慢），反應速率：$r_2=\text{[\ce{O3}] 被此反應消耗速率}=k_2[\ce{O3}][\ce{O}]$
+\end{enumerate}
+
+說明：
+\begin{itemize}
+\item 速率決定步驟為第二步驟。
+\item \ce{O(g)}為中間產物。
+\item 全反應之速率定律式為：
+\[\begin{aligned}
+r&=-\dv{[\ce{O3}]}{t}=2r_2=2k_2[\ce{O3}][\ce{O}]\\
+&=2k_2K_1[\ce{O3}]^2[\ce{O2}]^{-1}
+\end{aligned}\]
+\end{itemize}
+\subsubsection{臭氧在一氧化氮催化下生成氧氣之反應}
+全反應：
+\[\ce{2O3(g) ->[\ce{NO}] 3O2(g)}\]
+
+反應機構：
+\begin{enumerate}
+\item \ce{O3(g) + NO(g) -> O2(g) + NO2(g)}（快），平衡常數：$K_1=\frac{[\ce{NO2}][\ce{O2}]}{[\ce{O3}][\ce{NO}]}$
+\item \ce{NO2(g) -> NO(g) + O(g)}（慢），反應速率：$r_2=\text{[\ce{NO2}] 被此反應消耗速率}=k_2[\ce{NO2}]$
+\item \ce{O3(g) + O(g) -> 2O2(g)}（快）
+\end{enumerate}
+
+說明：
+\begin{itemize}
+\item 速率決定步驟為第二步驟。
+\item \ce{NO(g)}為催化劑。
+\item \ce{NO2(g)}、\ce{O(g)}為中間產物。
+\item 全反應之速率定律式為：
+\[\begin{aligned}
+r&=-\dv{[\ce{O3}]}{t}=2r_2=2k_2[\ce{NO2}]\\
+&=2k_2K_1[\ce{O3}][\ce{NO}][\ce{O2}]^{-1}
+\end{aligned}\]
+\end{itemize}
+\subsection{溫度效應}
+溫度增加，所有反應之速率均增加，吸熱反應平衡狀態右移，放熱反應平衡狀態左移，反應機構與各活化能均不變。
+\subsubsection{阿瑞尼斯方程（Arrhenius equation）}
+令一反應速率常數$k$、指數前因子（Pre-exponential factor）$A$、活化能$E_a$，阿瑞尼斯方程指出速率常數作為絕對溫度的函數的近似：
+\[k=Ae^{-\frac{E_a}{RT}}\]
+其中指數前因子一個依賴於反應與反應機構但不依賴於溫度、各物質濃度的常數。
+\subsubsection{溫度與超過低限能的粒子比例正相關}
+超過低限能的反應物粒子增加，有效碰撞分率增加，是溫度效應的主要原因。
+
+令波茲曼常數$k_B$，$a = \sqrt{\frac{k_BT}{m}}$，粒子速率$v$，反應物粒子質量$m$，$u=\sqrt{\frac{2E_a}{m}}$，有效碰撞分率理論值=超過低限能的粒子比例$P$：
+\[\begin{aligned}
+P=&\int_u^\infty \sqrt{\frac{2}{\pi}}\frac{v^2}{a^3} e ^{\frac{-v^2}{2a^2}}\,\mathrm{d}v \\
+=& \sqrt{\frac{2}{\pi}} \frac{u}{a}  e ^{-\frac{u^2}{2a^2}} + 1 - \text{erf}\left(\frac{u}{\sqrt{2}a}\right)\\
+=& \sqrt{\frac{4E_a}{k_BT\pi}} e^{-\frac{2E_a}{k_BT}} + 1 - \text{erf}\left(\sqrt{\frac{E_a}{k_BT}}\right)
+\end{aligned}\]
+\subsubsection{溫度與總碰撞頻率正相關}
+溫度增加，通量增加，總碰撞頻率增加，總碰撞頻率與平均速率成正比，是溫度效應的次要原因。以 \ce{H2(g) + I2(g) -> 2HI(g)} 為例，700 K 反應速率約是 556 K 的 1445 倍，但平均速率僅約 1.12 倍，可見此非主因。
+\subsubsection{近似}
+理想氣體間活化能 50 kJ mol$^{-1}$ 的反應，溫度增加$\Delta T$，反應速率自$r_1$變為$r_2$：
+\[\frac{r_2}{r_1} \approx 2^{\frac{\Delta T}{10}}\]
+
+通常分子較大者溫度效應愈大。如一些蛋白質變性，溫度增加$\Delta T$，反應速率自$r_1$變為$r_2$：
+\[\frac{r_2}{r_1} \approx 50^{\frac{\Delta T}{10}}\]
+\subsection{物質本性對反應速率的效應}
+\subsubsection{常溫常壓下各類反應速率通則}
+\begin{itemize}
+\item 涉及化學鍵的破壞或形成能量愈大，反應速率通常愈慢，如反應速率(\ce{CH4 + Br2 -> CH3Br + HBr})>(\ce{C2H4 + Br2 -> CH2BrCH2Br})
+\item 不涉及化學鍵的破壞或形成者，涉及電子之轉移愈多，反應速率通常愈慢。
+\item 不涉及化學鍵的破壞或形成亦不涉及電子之轉移者，反應速率通常甚快。
+\item 所有反應物與生成物均為水中離子的反應通常甚快。
+\item 無機反應通常快於有機反應，離子間反應通常快於分子間反應。
+\item 涉及共價網狀固體的破壞者通常極慢，幾乎無法觀察到反應發生。
+\item 立體結構愈複雜的反應物，立體因子通常愈小，反應速率愈慢，惟立體障礙的影響通常遠小於電子轉移與化學鍵破壞或形成。
+\item 流體勻相反應產生安定產物者通常較有固體參與的反應快。
+\item 愈多步驟與須愈多粒子碰撞的反應通常愈慢。
+\item 通常：阿瑞尼斯酸鹼中和（極快，$10^{-7}$ 秒內完成99\%）>錯離子生成（極快，因需成鍵故較阿瑞尼斯酸鹼中和慢，如\ce{Cu^{2+}(aq) + 4NH3(aq) -> Cu(NH3)4^{2+}(aq)}）$\approx$沉澱（極快，因需排入晶格故較阿瑞尼斯酸鹼中和慢，如\ce{Ba^{2+}(aq) + SO4^{2-}(aq) -> BaSO4(s)}）>離子電子轉移反應（快，如\ce{Fe^{2+} + Ce^{4+} -> Fe^{3+} + Ce^{3+}}）>氧化還原反應有斷鍵重組者（中，斷鍵重組愈多愈慢，斷鍵較少者如 \ce{5Fe^{2+} + MnO4-(aq) + 8H+(aq) -> 5Fe^{3+}(aq) + Mn^{2+}(aq) + 4H2O(l)}，斷鍵較多者如 \ce{5C2O4^{2-}(aq) + 2MnO4-(aq) + 16H+(aq) -> 10CO2(g) + 2Mn^{2+}(aq) + 8H2O(l)}）>有機反應（慢甚至幾乎不反應，常需催化或高溫高壓等方進行，其中通常斷非共振 π 鍵>斷共振非芳香 π 鍵>斷芳香性共軛 π 鍵或 σ 鍵，路易斯酸鹼中和>自由基機制）>燃燒反應（如 \ce{2H2(g) + O2(g) -> 2H2O(l)} 10$^{17}$ 秒方約一半的氫氣反應）。
+\end{itemize}
+\subsubsection{反應物活性}
+同類型反應，反應物活性愈大愈快，如：
+\bit
+\item (\ce{2K(s) + 2H2O(l) -> 2KOH(aq) + H2(g)})>(\ce{2Na(s) + 2H2O(l) -> 2NaOH(aq) + H2(g)})
+\item (\ce{H2(g) + F2(g) -> 2HF(g)})>(\ce{H2(g) + Cl2(g) -> 2HCl(g)}>(\ce{H2(g) + Br2(l) -> 2HBr(g)}>(\ce{H2(g) + I2(s) -> 2HI(g)}
+\eit
+\subsubsection{溶劑對有機反應速率的效應}
+\begin{itemize}
+\item 溶劑解離出質子的能力愈大，SN1、E1、AE 反應通常愈快，SN2、AN 反應通常愈慢。
+\item 溶劑形成分子間氫鍵的能力愈大，SN1、E1 反應通常愈快，SN2、E2、AN 反應通常愈慢。
+\item 溶劑極性愈大，SN1、E1 反應通常愈快，SN2、E2 反應通常愈慢。
+\end{itemize}
+\sssc{一些較快的分子反應}
+涉及分子的反應通常慢，但一些反應速率較快，如：
+\bit
+\item 碳酸鹽固體投入酸性溶液，碳酸根與氫離子反應成水與二氧化碳，如：\ce{CaCO3(s) + 2HCl(aq) -> CaCl2(aq) + H2O(l) + CO2(g)}
+\item \ce{NH3(g) + HCl(g) -> NH4Cl(s)}，白色煙霧狀，數秒。
+\item \ce{2NO(g) + O2(g) -> 2NO2(g)}、\ce{3NO(g) + O3(g) -> 3NO2(g)}，紅棕色，約7-8秒
+\item \ce{H2(g) + F2(g) -> 2HF(g)}，活性極大，在暗處仍極快。
+\item \ce{H2(g) + Cl2(g) -> 2HCl(g)}，活性大，照光處極快。
+\item \ce{P4(s) + 5O2(g) -> P4O10(s)}、\ce{P4(s) + 3O2(g) -> P4O6(s)}，白磷在空氣中易自燃，須存放在液體中。雖成鍵甚多，但反應不慢。
+\eit
+\subsection{接觸面積效應}
+\sssc{比表面積（Specific surface area, SSA）}
+物質顆粒的表面積除以體積。顆粒愈小或孔洞愈多，比表面積愈大。
+\sssc{勻相反應（Homogeneous reaction）}
+反應物能混合成單一相而沒有界面的反應。通常為流體溶液。如所有氣態反應、阿瑞尼斯酸鹼中和反應。勻相反應物之影響可用速率定律式表示。
+\sssc{非勻相/異相反應（Heterogeneous reaction）}
+反應物不能混合成單一相而具有界面的反應。通常為液相與氣相、不互溶的液相與液相、液相與固相或氣相與固相。如活性金屬固體與酸溶液的反應、固體的燃燒反應。
+
+與主要流相反應物不同相者以接觸面積而非體積莫耳濃度影響反應速率，基元反應速率正比於其有效接觸面積。若增加接觸面積，碰撞次數會增加，故可加快反應速率，但不會增加產率。
+
+相似反應，非勻相反應通常較勻相反應慢。
+
+固體反應物之接觸面積一般可視為正比於其表面積。
+
+接觸面積常視為常數。
+\sssc{增加固體接觸面積的方法}
+\bit
+\item 攪拌，同時可增加溫度，常用於溶解反應。
+\item 將固體研磨成更小顆粒，如鐵釘在純氧只能加熱至通紅的熱源可以使等質量相同成分的鋼絲絨劇烈燃燒、粉末狀固體溶解或與液態溶液反應較塊狀固體快。
+\eit
+\sssc{粉塵爆炸/塵爆（Dust explosion）}
+粉塵（Dust）定義為顆粒直徑小於500微米的顆粒，因比表面積大，反應速率快。
+
+粉塵爆炸指懸浮在空間中的可燃粉塵快速燃燒爆炸。
+
+粉塵爆炸的條件為：
+\bit
+\item 適當濃度的可燃粉塵懸浮在空間中，
+\item 有足夠的氧化劑（通常是空氣中的氧氣），與
+\item 火源或強烈振動或摩擦等產生高溫。
+\eit
+
+較容易發生粉塵爆炸的粉塵有鋁粉、鋅粉、鎂粉、鐵粉、塑膠原料粉末、穀物粉末、糖分、奶粉、花粉等，適當濃度下，只要接觸到火源或高溫，一旦少數顆粒被點燃，很快就能再點燃其他粉塵導致爆炸。
+\ssc{催化劑/觸媒（Catalyst）}
+\sssc{催化劑/觸媒（Catalyst）}
+參與反應，而後又釋放出來，不出現於淨反應中、反應前後質量不變之物質，催化劑通過改變反應機構，等量降低正反應與逆反應的活化能（和與其相等的低限能），造成正反應與逆反應的速率常數、有效碰撞頻率、有效碰撞分率均等倍放大，這種現象稱催化（catalysis）。
+
+催化劑會縮短反應達到平衡或耗盡一種反應物的時間，但不改變平衡狀態與平衡常數、產率、反應熱、動能分布，也不會讓原先不自發的反應變得自發。
+
+催化劑不同產物可能不同，如：
+\[\ce{CO(g) + 3H2(g) ->[\ce{Ni}\tx{, 100°C, 1 atm}] CH4(g) + H2O(l)}\]
+\[\ce{CO(g) + 2H2(g) ->[\ce{ZnO$\cdot$Cr2O3}\tx{, 400°C, 5000 atm}] CH3OH(g)}\]
+
+不存在可以通過改變反應機構從而增加反應活化能的物質。
+\sssc{（反應）抑制劑（(Reaction) inhibitor）}
+抑制催化劑降低活化能之能力的物質。
+\subsubsection{勻相催化}
+催化劑與反應物能混合成單一相而沒有界面的催化。可通過增加催化劑之濃度來增加其與反應物間的碰撞頻率，從而加快反應速率。勻相催化劑之影響可用速率定律式表示。通常催化效率較佳，但通常較不易回收重複使用。如：
+\bit
+\item \ce{2O3(g) ->[\tx{\ce{Cl2(g)}或\ce{NO(g)}或含氯化合物(g)}] 3O2(g)}
+\item \ce{2H2O2(aq) ->[\tx{\ce{Fe^{2+}(aq)}\text{或}\ce{Fe^{3+}(aq)}\text{或}\ce{I-(aq)}}] 2H2O(l) + O2(g)}
+\item \ce{HCOOH(aq) ->[\ce{H+}] CO(g) + H2O(l)}
+\item 質子催化順丁烯二酸變為反丁烯二酸。
+\item 質子催化甲酸分解成一氧化碳與水。
+\item 部分酶促反應。
+\eit
+\sssc{非勻相催化}
+催化劑與反應物不能混合成單一相而具有界面的催化。反應模式為，反應物擴散到催化劑表面並吸附於其表面，進行反應後離開，故反應速率正比於非勻相催化劑的有效接觸面積。通常較易回收重複使用，但通常催化效率較差。固態催化劑多製成多孔結構或粉末以增加接觸面積，如空氣過濾器、口罩、活性碳。如：
+\bit
+\item \ce{2H2O2(aq) ->[\ce{MnO2(s)}] 2H2O(l) + O2(g)}
+\item \ce{2KClO3(aq) ->[\ce{MnO2(s)}] 2KCl(aq) + 3O2(g)}
+\item 哈柏法（Haber process）製備氨。
+\item 接觸法（Contact process）製備硫酸
+\item 汽機車觸媒轉化器。
+\item 鐵、鎳、銠、鈀、鉑、五氧化二釩等固相催化劑催化氫化反應。
+\item 齊格勒-納塔催化劑（Ziegler–Natta catalyst）、菲力普斯催化劑（Phillips catalyst）/Phillips supported chromium 催化劑或茂金屬（Metallocene）催化劑催化烯類的加成聚合反應。
+\eit
+
+膠體溶液的分散質作為溶液中物質反應的催化劑屬於非勻相催化，但因接觸面積甚大，故多亦甚快。如：
+\bit
+\item 奈米顆粒催化反應。
+\item 部分酶促反應。
+\eit
+\sssc{輔/助催化劑（Catalyst support）/載體（Carrier）}
+增加非勻相催化反應接觸面積的物質，通常是比表面積較大的固體物質。
+\sssc{光觸媒（Photocatalyst）}
+指加速光化學（photochemical）反應的催化劑，而這種現象稱光催化（photocatalysis），如汽機車觸媒轉化器。
+\sssc{自催化（Autocatalysis）}
+指一個化學反應所生成之部分產物為該反應之催化劑。如：
+\[\ce{5C2O4^{2-}(aq) + 2MnO4-(aq) + 16H+(aq) ->[\ce{Mn^{2+}(aq)}] 2Mn^{2+}(aq) + 10CO2(g) + 8H2O(l)}\]
+
+
+\section{化學平衡（Chemical equilibrium）}
+平衡常數$K$，或加下標。
+\ssc{可逆反應（Reversible reaction）}
+指反應物間能互相反應形成生成物，生成物間亦能互相反應形成反應物的反應。由熱力學可知，所有化學反應都是可逆的。惟有時將其中一側反應速率遠大於另一側之反應式微不可逆反應。
+\subsection{化學平衡（Chemical equilibrium）}
+指一孤立系統中所有化學反應的正逆反應速率（取同一物質）均相等的狀態，此時反應物和生成物濃度、分壓、顏色、體積、溫度等巨觀性質不再改變，但正逆反應速率均大於零，呈現動態平衡（dynamic equilibrium）。反應物耗盡不是該反應達成化學平衡。
+\ssc{熱力（學）控制（Thermodynamic control）與動力（學）控制（Kinetic control）}
+\bit
+\item 若一化學反應，其正逆反應的活化能都較低（相對於當時的內能而言），容易達成化學平衡，則稱熱力學控制。
+\item 若一化學反應，其逆反應的活化能較高（相對於當時的內能而言）而反應速率極慢，難以達成化學平衡，則稱動力學控制。
+\eit
+\ssc{平衡常數（Equilibrium constant）}
+由伯特洛（Berthelot）首先發現此性質，由古伯格（Guldberg）和瓦格（Waage）於1893年提出並發展。
+\sssc{（化學）平衡定律式/平衡常數表示式}
+令孤立系統中一可逆反應：
+\[\sum_{i=1}^ma_i\mathbf{A}_i\ce{<=>}\sum_{i=i}^nb_i\mathbf{B}_i\]
+其中$(\mathbf{A}_i)_{i=1}^p$與$(\mathbf{B}_i)_{i=1}^q$是可變濃度物質，其餘為不可變濃度物質，並假設所有不可變濃度物質均不影響化學平衡。
+
+則平衡定律式為：
+\[K=\frac{\prod_{i=1}^q\qty(\lim_{t\to\infty}[\mathbf{B}_i])^{b_i}}{\prod_{i=1}^p\qty(\lim_{t\to\infty}[\mathbf{A}_i])^{a_i}}\]
+
+其中：
+\begin{itemize}
+\item $\lim_{t\to\infty}[\mathbf{A}]$指平衡狀態時$\mathbf{A}$的體積莫耳濃度，並可以替換成任意與之正比的度量。
+\item $a_i$：反應式中反應物$\mathbf{A}_i$的平衡係數。
+\item $b_i$：反應式中生成物$\mathbf{B}_i$的平衡係數。
+\eit
+\sssc{質量作用定律（Law of mass action）}
+由古伯格和瓦格提出。指出，反應之平衡常數等於正反應速率常數除以逆反應速率常數，等於平衡狀態生成物濃度之係數次方之積除以反應物濃度之係數次方之積。
+\begin{proof}\mbox{}\\
+令一基元反應，各反應物濃度的係數次方之積對時間的函數$\mathbf{A}(t)$，各生成物濃度的係數次方之積對時間的函數$\mathbf{B}(t)$，以$\mathbf{A}$消耗速率為反應速率的正反應速率常數$j$，以$\mathbf{A}$生成速率為反應速率的逆反應速率常數$k$。有：
+\[\frac{\mathrm{d}\mathbf{A}}{\mathrm{d}t}=k\mathbf{B}-j\mathbf{A}\]
+令：
+\[\mathbf{A}(0)=a\]
+\[\mathbf{B}(0)=b\]
+依據質量守恆定律：
+\[\mathbf{A}+\mathbf{B}=a+b\]
+求$\mathbf{A}(t)$、$\mathbf{B}(t)$和平衡常數$K=\frac{\lim_{t\to\infty}\mathbf{B}}{\lim_{t\to\infty}\mathbf{A}}$：
+\[\frac{\mathrm{d}\mathbf{A}}{\mathrm{d}t}=-(j+k)\mathbf{A}+k(a+b)\]
+令：
+\[\mathbf{A}=ce^{-(j+k)t}+d\]
+\[-c(j+k)e^{-(j+k)t}=-c(j+k)e^{-(j+k)t}-d(j+k)+k(a+b)\]
+\[d=\frac{k(a+b)}{j+k}\]
+\[c+d=a\]
+\[c=\frac{ja-kb}{j+k}\]
+\[\mathbf{A}=\frac{ja-kb}{j+k}e^{-(j+k)t}+\frac{k(a+b)}{j+k}\]
+\[\mathbf{B}=a+b-\mathbf{A}=-\frac{ja-kb}{j+k}e^{-(j+k)t}+\frac{j(a+b)}{j+k}\]
+\[\lim_{t\to\infty}\mathbf{A}=\frac{k(a+b)}{j+k}\]
+\[\lim_{t\to\infty}\mathbf{B}=\frac{j(a+b)}{j+k}\]
+\[K=\frac{\lim_{t\to\infty}\mathbf{B}}{\lim_{t\to\infty}\mathbf{A}}=\frac{j}{k}\]
+由於基元反應係數即級數，連乘後全反應的平衡定律式必可將級數次方約分為係數次方。
+\end{proof}
+\subsubsection{說明}
+\bit
+\item 正反應係數和$x$、逆反應係數和$y$之可逆反應，平衡常數之單位為$M^{x-y}$。平衡常數的單位常省略不寫。
+\item 反應式逆寫，平衡常數變為原平衡常數之倒數；反應式乘以$n$倍，平衡常數變為原平衡常數之$n$次方；反應式相加，平衡常數相乘；反應式減去另一反應式，平衡常數除以該反應式的平衡常數。
+\item 反應式兩側有相同物質但不同相時不可相約分，例如碘的萃取：
+\[\ce{I2(aq) <=> I2(CClO4)}\]
+\item 對於一個可逆反應，所有相同溫度的平衡狀態中，都有相同的平衡常數，即一可逆反應之平衡常數僅依賴於溫度與反應本身，不依賴於反應機構、各物質濃度。
+\item 對於孤立系統中的一個可逆反應，若兩初始狀態依反應式當量比在兩側間移動使有相同的反應進度（計算時常移動到使其中一側至少一個反應物耗盡），並使溫度與壓力相同或溫度與體積相同，可以得到相同的狀態，則該二初始狀態之平衡狀態相同。
+\eit
+\sssc{溫度效應}
+令正反應活化能$E_a$、指數前因子$A$，逆反應活化能$E_r$、指數前因子$B$，阿瑞尼斯方程與質量作用定律指出，平衡常數$K$近似為：
+\[K=\frac{Ae^{-\frac{E_a}{RT}}}{Be^{-\frac{E_r}{RT}}}=\frac{A}{B}e^{-\frac{\Delta H}{RT}}\]
+\sssc{數值近似}
+一般計算時：
+\begin{itemize}
+\item 平衡常數$>10^5$可視為反應不可逆向右。
+\item 平衡常數$<10^{-5}$可視為反應不可逆向左。
+\item 量級差 5 以上之數相加減，小者可視為0。
+\end{itemize}
+\ssc{非平衡狀態}
+\sssc{反應商（Reaction quotient）}
+反應商$Q$定義為將當下狀態之濃度代入平衡常數表示式中，即：
+\[K=\frac{\prod_{j=1}^q[\mathbf{B}_j]^{d_j}}{\prod_{i=1}^p[\mathbf{A}_i]^{c_i}}\]
+\begin{itemize}
+\item $Q<K\iff$正反應速率大於逆反應速率，反應向右進行。
+\item $Q=K\iff$正反應速率等於逆反應速率，反應處於平衡狀態。
+\item $Q>K\iff$正反應速率小於逆反應速率，反應向左進行。
+\end{itemize}
+\sssc{勒沙特列原理（Le Chatelier principle）}
+化學平衡達成後，若改變系統中的某些因素，如濃度、壓力、溫度，往往會破壞平衡狀態，此時反應就會朝向試圖抵銷造成平衡狀態破壞的改變的方向移動。
+\begin{itemize}
+\item 對於濃度，可以平衡常數求出。
+\item 對於溫度，放熱反應溫度升高時平衡常數變小，吸熱反應溫度升高時平衡常數變大。
+\item 對於改變壓力、體積、填充或取出反應物、生成物或不活潑氣體等，可分別就濃度與溫度因此的改變討論。
+\end{itemize}
+\ssc{各種平衡常數與其衍生常數}
+\sssc{莫耳分率平衡常數（Mole fraction equilibrium constant）}
+$K_x$，指所有濃度皆以莫耳分率表示時的平衡常數。
+\sssc{濃度平衡常數（Concentration equilibrium constant）}
+$K_c$，指所有濃度皆以體積莫耳濃度表示時的平衡常數。
+\sssc{壓力平衡常數（Pressure equilibrium constant）}
+$K_p$，指所有濃度皆以（有效）分壓表示時的平衡常數。
+
+令孤立系統中一只有一個速率決定步驟的可逆反應：
+\[\sum_{i=1}^ma_i\mathbf{A}_i\ce{<=>}\sum_{i=i}^nb_i\mathbf{B}_i\]
+其中$(\mathbf{A}_i)_{i=1}^p$與$(\mathbf{B}_i)_{i=1}^q$是可變濃度物質，其餘為不可變濃度物質，並假設所有有效接觸面積不變。
+
+\[K_p=K_c(RT)^{\sum_{i=1}^qb_i-\sum_{i=1}^pa_i}\]
+\sssc{解離常數（Dissociation constant）}
+$K_h$，指解離/分解（Dissociation）反應的平衡常數。
+\subsubsection{同離子效應（Common ion effect）}
+指有相同種類離子在溶液中時，解離時會出現該種離子之物質解離度降低，如氯化銀在硝酸銀或氯化鈉溶液中溶解度降低。
+\subsubsection{溶（解）度積（常數）（Solibility product (constant)）}
+$K_{sp}$，指溶解反應的濃度平衡常數。
+\subsubsection{離子積（Ion product）}
+$Q$，溶解度積常數的平衡定律式中各物質皆為離子時的反應商。
+\begin{itemize}
+\item $Q<K\iff$溶液未飽和。
+\item $Q=K\iff$溶液恰飽和。
+\item $Q>K\iff$溶液過飽和。
+\end{itemize}
+\subsubsection{解離度（Degree of dissociation）}
+\[\alpha\coloneq\frac{\text{平衡時分解的莫耳數}}{\text{全部未分解時的莫耳數}}\]
+常以解離百分率（Percent dissociation）表示。
+\subsubsection{定溫定容氣相反應與無同離子效應稀溶液反應解離常數與解離度關係}
+令定溫定容理想氣體氣相反應或無同離子效應溶質體積不計溶液反應：
+\[A \ce{<=>} \sum_{i=1}^nb_iB_i\]
+有平衡常數$K$，所有濃度使用相同單位，解離度$\alpha$，全部均未解離時$A$的濃度 $Z$，$b=\sum_{i=1}^nb_i$，則：
+\[K=Z^{b-1}\frac{\alpha^b}{1-\alpha}\prod_{i=1}^nb_i^{b_i}\]
+\subsubsection{無同離子效應稀溶液溶解度積常數與溶解度關係}
+令無同離子效應溶質體積不計溶解反應：
+\[A\ce{<=>}\sum_{i=1}^nb_iB_i\]
+有溶解度積常數$K_{sp}$，無同離子效應下體積莫耳溶解度$S$，$b=\sum_{i=1}^nb_i$，則：
+\[K_{sp}=S^b\prod_{i=1}^nb_i^{b_i}\]
+\subsubsection{無旁觀物質的定溫令定壓氣相反應與液相反應解離常數與解離度關係}
+無旁觀物質的定溫定壓理想氣體氣相反應或溶劑莫耳數不計液相反應：
+\[A \ce{<=>} \sum_{i=1}^nb_iB_i\]
+有平衡常數$K$，所有濃度使用相同單位，解離度$\alpha$，全部均未解離時$A$的濃度 $Z$，$b=\sum_{i=1}^nb_i$，則：
+\[K=\qty(\frac{Z}{1+\alpha(b-1)})^{b-1}\frac{\alpha^b}{1-\alpha}\prod_{i=1}^nb_i^{b_i}\]
+\subsection{常見反應的平衡常數}
+\begin{longtable}{|p{0.6\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|}
+\hline
+反應 & 攝氏度 & 平衡常數\\\hline
+\ce{H2(g) + I2(g) <=> 2HI(g)} & 448 & $K_p=50$\\\hline
+\ce{N2O4(g) <=> 2NO2(g)} & 100 & $K_p=0.066$ atm\\\cline{1-3}
+& 25 & $K_p=0.113$ atm\\\cline{1-3}
+& 0 & $K_p=58$ atm\\\hline
+\ce{N2(g) + 3H2(g) <=> 2NH3(g)} & 450 & $K_p=4.28\times 10^{-5}$ atm$^{-2}$\\\hline
+\ce{H2O(l) <=> H+(aq) + OH-(aq)} & 25 & $K_c=1.0\times 10^{-14}$ M$^2$\\\hline
+\ce{AgI(s) <=> Ag+(aq) + I-(aq)} & 25 & $K_c=8.3\times 10^{-17}$ M$^2$\\\hline
+\end{longtable}\FB
+\end{document}

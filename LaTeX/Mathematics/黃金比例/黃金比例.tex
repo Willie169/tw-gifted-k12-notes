@@ -1,0 +1,42 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{黃金比例}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{黃金比例（Golden Ratio）}
+\subsection{黃金比例（Golden ratio）}
+黃金比例\(\Phi=\frac{\sqrt{5}+1}{2}\approx1.618\)。\newline
+黃金比例之倒數\(\frac{1}{\phi}=\frac{\sqrt{5}-1}{2}\approx0.618\)。
+\subsection{黃金分割點}
+定義：\(\overline{AB}\)上取一點\(C\)，使\(\frac{\overline{AB}}{\overline{AC}}=\frac{\overline{AC}}{\overline{CB}}\)，此時C點稱線段\(\overline{AB}\)之黃金分割點，且\(\frac{\overline{AB}}{\overline{AC}}=\frac{\overline{AC}}{\overline{CB}}=\Phi\)。
+\subsection{黃金矩形（Golden rectangle）}
+定義：矩形\(ABCD\)使\(\frac{\overline{AB}}{\overline{AD}}=\Phi\)。\newline
+分割：將黃金矩形\(ABCD\)分成二塊，其一\(ABFE\)為正方形，則其二\(DEFC\)為黃金矩形。
+\subsection{黃金三角形（Golden triangle）}
+定義：腰長與底長之比值為黃金比例或其倒數之等腰三角形，即頂角\(\frac{\pi}{5}\)或\(\frac{3\cdot\pi}{5}\)之等腰三角形。
+
+頂角\(\frac{\pi}{5}\)之等腰三角形之分割：取一腰，其上取一點，使底邊及底邊二端點與該點之連線為一頂角\(\frac{\pi}{5}\)之等腰三角形；取該三角形不與原三角形之邊重合之腰，其上取一點，使底邊及底邊二端點與該點之連線為一頂角\(\frac{\pi}{5}\)之等腰三角形；後不斷取新三角形不與前一三角形之邊重合之腰，其上取一點，使底邊及底邊二端點與該點之連線為一頂角\(\frac{\pi}{5}\)之等腰三角形。依此法，每次分割均產生一頂角\(\frac{\pi}{5}\)之等腰三角形及一頂角\(\frac{3\cdot\pi}{5}\)之等腰三角形。
+\subsection{直角黃金三角形}
+定義：三邊長比例為\(1:\sqrt{\Phi}:\Phi\)之直角三角形。
+\subsection{正五角星形（Pentagram）}
+性質：令正五角星形\(AFBGCHDIEJ\)外接五邊形\(ABCDE\)及內接五邊形\(FGHIJ\)，則點\(J\)為線段\(\overline{BE}\)的黃金分割點、點F為線段\(\overline{BJ}\)的黃金分割點、內接五邊形邊長為外接五邊形邊長的\(\frac{1}{\Phi^2}=\frac{3-\sqrt{5}}{2}\)倍、\(\overline{AF}\)為外接五邊形邊長的\(\frac{\sqrt{5}-1}{2}\)倍。
+\subsection{黃金螺線（Golden spiral）}
+定義：自原點向外展開的螺線以極座標方程表示為\(r=a\cdot\Phi^{\frac{2\cdot\theta}{\pi}}\)，其中\(a\)為常數。\(a\)為正則螺線逆時針向外展開，為負則螺線順時針向外展開，為零則圖形僅一點；\(|a|\)愈大，螺線相鄰二層間距愈大。\newline
+以黃金矩形近似：將黃金矩形分割之各正方形依序作圓心角\(\frac{\pi}{2}\)之扇形，半徑為該正方形之邊長，第一個扇形之圓心為靠近剩餘黃金矩形的二頂點任一者，其餘扇形之圓心為最靠近前一扇形圓心者。\newline
+以頂角\(\frac{\pi}{5}\)之等腰三角形近似：取其分割之各頂角\(\frac{3\cdot\pi}{5}\)之等腰三角形，以頂角為圓心，腰為半徑，作圓心角\(\frac{3\cdot\pi}{5}\)之扇形。
+\subsection{黃金角（Golden angle）}
+定義：將圓周長依\(1:\Phi\)分割成二段，較小之弧長對應之圓心角稱之。其值為\(2\cdot\pi-\frac{2\cdot\pi}{\Phi}\approx137.5^\circ\)。
+\subsection{費波納契數列（Successione di Fibonacci）}
+費波納契數列第\(n\)項\(a_n=\frac{1}{\sqrt{5}}\cdot(\frac{1+\sqrt{5}}{2})^n-\frac{1}{\sqrt{5}}\cdot(\frac{1-\sqrt{5}}{2})^n\)。\newline
+\(lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\frac{1+\sqrt{5}}{2}\)
+\subsection{生成螺線（Generative spiral）}
+若用顯微鏡觀察新芽頂端，可見所有植物的主要徵貌，包含葉子、花瓣、萼片、小花（floret）等，之生長過程，在頂端的中央有一圓形的組織，稱「頂尖」（apex）；而在頂尖的周圍有微小隆起物一個接一個的形成，這些隆起稱「原基」（primordium）。成長時，每一個原基自頂尖移開（頂尖從隆起處向外生長，新的原基在原地），最後長成葉子、花瓣、萼片等，每一原基並希望其生成之器官能夠獲得最大的生長空間，故原基與原基隔得相當開，且較早產生的原基移開得較遠，與頂尖之距離較長。若依照原基的生成時間順序描出原基的位置，可畫出一條捲繞得非常緊的螺線，稱「生成螺線」（generative spiral）。相鄰兩原基之間的角度，稱「發散角」（divergence angle）。 在發散角固定的假設下，使原基盡可能緊密排列的發散角為黃金角。當發散角為黃金角時，同時可見左右旋螺線，即一組順時針、一組逆時針，稱「斜列線」（parastichy）。兩組螺線的數目是相鄰的費波納契數。若發散角非黃金角，則原基非盡可能緊密排列，且僅可見一組斜列線。
+\end{document}

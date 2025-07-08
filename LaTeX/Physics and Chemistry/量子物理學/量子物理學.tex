@@ -1,0 +1,345 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{量子物理學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{量子物理學（Quantum Physics）}
+\ssc{約定（Convention）}
+\bit
+\item 任意向量$\mathbf{a}$，$\hat{\mathbf{a}}$指與$\mathbf{a}$同向的單位向量。
+\item 任意純量$A$與非零向量$\mathbf{B}$，向量$\mathbf{C}=\frac{A}{\mathbf{B}}$表示$\mathbf{C}$使得$\mathbf{B}\cdot \mathbf{C}=A$且$\abs{A}=\abs{\mathbf{B}}\cdot \abs{\mathbf{C}}$，即$\mathbf{B}\cdot \mathbf{C}=A$且$\mathbf{B}\parallel\mathbf{C}$。
+\item \tb{光強度（Light intensity）}：電磁波垂直波向量截面上單位面積的輻射通量/輻射功率，即該面的輻照度與輻出度。
+\item \tb{電子伏特（Electron volt, eV）}：能量單位，等於基本電荷乘以伏特。
+\item $\pi$：圓周率$\approx 3.14159265359$
+\item $k_B$：波茲曼常數（Boltzmann constant）$=\scinote{1.38064852}{-23}$ J K$^{-1}$
+\item $h$：普朗克常數（Planck constant）$=\scinote{6.62607015}{-34}$ J s $=\scinote{4.135667696}{-15}$ eV s
+\item $\hbar$：約化普朗克常數（reduced Planck constant）$=\frac{h}{2\pi}$
+\item $e$：基本電荷（Elementary charge）$=\scinote{1.602176634}{-19}$ C
+\item $N_A$：亞佛加厥常數（Avogadro constant）$=$\scinote{6.02214076}{23} mol$^{-1}$
+\item $c$：光速，即$\frac{1}{\sqrt{\mu\varepsilon}}$，其中$\mu$為磁導率、$\varepsilon$為電容率
+\item $m_e$：電子質量$\approx\scinote{9.1093837139}{-31}\text{\ kg}\approx5.485799090442×10^{-4}\text{\ u}\approx0.51099895069\text{\ MeV/}c^2$，其中$c$為真空光速$=299792458$ m/s。
+\item $T$：絕對溫度
+\item $f$：頻率
+\item $\lambda$：波長
+\item $\mathbf{k}$：波向量，即量值$\frac{2\pi}{\lambda}$、方向為波行進方向的向量
+\item $k$：波數，即$\frac{2\pi}{\lambda}$
+\item $\boldsymbol{\lambda}$：有向波長，即$\lambda\hat{\mathbf{k}}$
+\item $m$：質量
+\item $E$：能量
+\item $\mb{p}$：動量
+\eit
+\ssc{黑體輻射（Black body radiation）與量子論（Quantum Theory）}
+\sssc{熱輻射（Thermal radiation）}
+\bit
+\item 具有內能（即溫度大於絕對零度）的物體，都能放出電磁波，稱熱輻射，為連續光譜。
+\item 亞原子帶電粒子經常進行無規的熱振動，其加速度產生熱輻射，由於有多種振動模式，故為連續光譜。
+\item 在同一溫度時，物體的熱輻射頻譜和強度均與物體材料性質無關。
+\item 輻射強度分布的極大值處之頻率與波長稱峰值頻率與峰值波長。
+\item 恆星顏色來自其熱輻射。
+\item 物體吸收之淨熱量減去對外之淨體積功為其內能變化量。
+\item 溫度與峰值波長大致關係：
+\bit
+\item 300 K：紅外線，如活體人類。
+\item 1000 K：紅。
+\item 2000 K：橘黃，如白熾燈泡的鎢絲。
+\item 6000 K：白，如太陽表面。
+\item 30000 K：紫外線，如閃電。
+\eit
+\eit
+\subsubsection{黑體（Black body）}
+\bit 
+\item \tb{黑體（Black body）}：一個物體吸收所有落在它上面的電磁波輻射而完全沒有反射，並僅放出熱輻射，稱黑體輻射（Black body radiation）。
+\item \tb{空腔（Cavity）}：具一小孔的空腔。入射輻射只能在空腔內不斷反射或被吸收，故近似黑體，其輻射與空腔壁材質、形狀等無關，僅和空腔溫度有關。
+\item \tb{恆星}：因反射光相較於熱輻射微不足道，故近似黑體。
+\eit
+\subsubsection{瑞立–京士定律（Rayleigh–Jeans law）}
+瑞立和京士根據古典電磁學與熱力學解釋黑體輻射，指出，體積$V$空腔內輻射以駐波形式存在，其節點在壁上，單位頻率駐波數目$N_f$與頻率$f$關係為：
+\[\frac{\mathrm{d}N_f}{\mathrm{d}f}=\frac{8\pi f^2V}{c^3}\]
+即單位波長駐波數目$N_{\lambda}$與波長$\lambda$關係為：
+\[\frac{\mathrm{d}N_{\lambda}}{\mathrm{d}\lambda}=\frac{8\pi V}{\lambda^4}\]
+按照波茲曼分布，處於能量$E$之機率$P(E)$服從：
+\[P(E)\propto e^{\frac{-E}{k_BT}}\]
+在能量連續假設下的平均能量為：
+\[\langle E\rangle=\frac{\int_0^{\infty}EP(E)\,\mathrm{d}E}{\int_0^{\infty}P(E)\,\mathrm{d}E}=k_BT\]
+可得瑞立–京士定律頻率形式，即絕對溫度$T$時單位頻率輻射能量體積密度$B(f,T)$ (J s$^{-1}$ m$^{-2}$) 為：
+\[B(f,T)=\frac{8\pi f^2k_BT}{c^3}\]
+或瑞立–京士定律波長形式，即絕對溫度$T$時單位波長輻射能量體積密度$B(\lambda,T)$ (J m$^{-4}$) 為：
+\[B(\lambda,T)=\frac{8\pi k_BT}{\lambda^4}\]
+瑞立–京士定律的預測可以解釋長波長輻射，卻在紫外光以下波長遠大於測量值，稱紫外災變（ultraviolet catastrophe），顯示古典電磁理論的缺陷。
+\subsubsection{普朗克的能量量子化（Quantization of energy）假設}
+1900年普朗克提出振子振盪能量非連續的量子論（Quantum theory），開創近代物理。他假設空腔腔壁有許多帶電振子（Oscillator），各有振動頻率，並可吸收及放出輻射能量，令振子頻率為$f$，振子的能量$E$僅能為某一最小能量$\mathcal{E}=hf$稱能量量子（energy quantum）的整數倍，稱能量量子化（Quantization of energy），即：
+\[E=n\mathcal{E}=nhf\]
+其中$h$為普朗克常數；$n$為任意正整數，稱量子數。
+\subsubsection{普朗克定律（Planck's law）}
+按照波茲曼分布，處於能量$E$之機率$P(E)$服從：
+\[P(E)\propto e^{\frac{-E}{k_BT}}\]
+在普朗克能量量子化假設下的平均能量為：
+\[\langle E\rangle=\frac{\sum_{n=0}^{\infty}nhfP(nhf)}{\sum_{n=0}^{\infty}P(nhf)}=\frac{hf}{e^{\frac{hf}{k_BT}}-1}\]
+可得普朗克定律頻率形式，即絕對溫度$T$時單位頻率輻射能量體積密度$B(f,T)$ (J s$^{-1}$ m$^{-2}$) 為：
+\[B(f,T)=\frac{8\pi hf^3}{c^3}\frac{1}{e^{\frac{hf}{k_BT}}-1}\]
+或普朗克定律波長形式，即絕對溫度$T$時單位波長輻射能量體積密度$B(\lambda,T)$ (J m$^{-4}$) 為：
+\[B(\lambda,T)=\frac{8\pi hc}{\lambda^5}\frac{1}{e^{\frac{hc}{\lambda k_BT}}-1}\]
+普朗克定律在高頻率下，由於指數項迅速增大，輻射能量密度趨於零，成功解決紫外災變，獲1918年諾貝爾物理獎。
+
+能量量子極小，以\tenpow{15} Hz（接近紫光頻率）的振子為例，其能量量子僅約\scinote{6.63}{-19} J，故巨觀上看來能量幾乎是連續的。
+
+宇宙微波背景（Cosmic Microwave Background, CMB）經測量幾乎完美服從普朗克定律。
+\subsubsection{維恩位移定律（Wien's displacement law）}
+峰值波長$\lambda_{\max}$與絕對溫度$T$呈反比，其乘積稱維恩位移常數$b$：
+\[b=\lambda_{\max} T \approx \scinote{2.8977729}{-3} \tx{\ m K}\]
+\subsubsection{維恩近似（Wien's approximation）/維恩分布定律（Wien's distribution law）}
+當$\frac{hf}{k_BT}\gg 0$時對普朗克定律的近似：
+\[B(f,T)=\frac{8\pi hf^3}{c^3}e^{-\frac{hf}{k_BT}}\]
+\[B(\lambda,T)=\frac{8\pi hc}{\lambda^5}e^{-\frac{hc}{\lambda k_BT}}\]
+\sssc{發射率（Emissivity）}
+黑體的發射率定為1，物體的發射率定為相同條件下其輻射出射度除以黑體的輻射出射度。
+\subsubsection{史特凡-波茲曼定律（Stefan-Boltzmann law）/史特凡定律（Stefan's law）}
+稱物體表面單位面積單位時間內輻射放出或吸收的能量為輻射功率密度。令物體放出/吸收的輻射功率密度$j$、物體/外界絕對溫度$T$、史特凡-波茲曼常數或稱史特凡常數$\sigma$、發射率$\epsilon$，史特凡-波茲曼定律指出：
+\[j=\epsilon\sigma T^4\]
+其中史特凡-波茲曼常數$\sigma$為：
+\[\sigma=\frac{2\pi^5k_B^{\pht{B}2}}{15c^2h^3}\approx\scinote{5.67}{-8}\tx{\ W m$^{-2}$ K$^4$}\]
+\ssc{光量子論（Light quantum theory）}
+愛因斯坦提出。
+\sssc{光量子（light quantum）/光子（photon）}
+\bit
+\item 光有粒子性，由一個個能量團組成，該能量團稱光量子（light quantum），後改稱光子（photon）。
+\item 相同頻率的電磁波中，每個光子的能量相同，是其最小能量單位。
+\item 光子不可分割。
+\item 光強度等於每個光子的能量$hf$乘以截面單位時間單位面積通過的光子數目。
+\item 光在不同場景可以表現出波動和粒子的特性，稱波粒二象性（Wave-particle duality）。
+\item 每個光子的能量$E$為：
+\[E=hf=\hbar\omega=\f{hc}{\lambda}=\hbar ck\]
+\eit
+
+真空中：
+\[hc\approx 1240\tx{\ eV\ nm}\approx\scinote{1.986}{-25}\tx{\ J m}\]
+
+紅光光子能量約1.77eV，綠光光子能量約2.25eV，紫光光子能量約3.1eV。
+\sssc{光子的動量}
+光子的動量$\mathbf{p}$為：
+\[\mb{p}=\frac{h}{\boldsymbol{\lambda}}\]
+\[\mathbf{k}=\frac{\mathbf{p}}{\hbar}\]
+\[E=|\mb{p}|c\]
+服從動量守恆定律，如一個物體放出一個動量$\mb{p}$的光子會獲得衝量$-\mb{p}$。
+
+牛頓力學中能量等於動量量值的平方除以質量再除以二的定義對光子不適用。
+\sssc{光壓/輻射壓（Radiation pressure）}
+古典物理中，一光在一單位法向量$\hat{n}$的表面（等效）反射，令$M_e$為入射光強度乘以入射角餘弦值的平方加上反射光強度乘以反射角餘弦值的平方（餘弦值的平方來自輻照度與輻出度分別為入射與反射光強度乘以入射與反射角餘弦值，與入射光與反射光單位波向量垂直表面分量。垂直入射光完全被吸收則$M_e$等於入射光強度；垂直入射光完全被反射則$M_e$等於兩倍入射光強度），即$M_e$為輻照度乘以入射角餘弦值加上輻出度乘以反射角餘弦值，則光壓$p$服從：
+\[p=\frac{M_e}{c}\]
+用坡印廷向量表示為：
+\[p=\frac{\langle(\mathbf{E}\times\mathbf{H})\cdot\hat{n}\rangle}{c}\]
+用光量子論表示為：
+\[p=\dv{\mathbf{p}}{t}\]
+\subsection{光電效應（Photoelectric effect）/外光電效應（External photoelectric effect）}
+指在光的照射下，物質材料中的電子逸出其表面的現象，該等電子稱光電子（Photoelectrons），光電子形成的電流稱光電流（Photocurrent）。
+\sssc{歷史}
+\bit
+\item 1887：赫茲火花隙實驗證實電磁波的存在，並發現紫外光照在負極板上會更易放電，後人知其為光電效應。
+\item 1899：J. J. 湯姆森利用紫外光照射陰極射線管陰極，發現極板表面會放射出電子，與陰極射線中的電子完全相同，稱該電子為光電子、該電流為光電流。
+\item 1902：雷納進行光電效應實驗並提出底限頻率，獲1905年諾貝爾物理獎。
+\item 1905：愛因斯坦提出光量子論解釋光電效應，獲1921年獲貝爾物理獎。
+\item 1916：原先不同意光量子論的密立坎發表其改良的光電效應實驗之結果，以截止電壓證實愛因斯坦光電方程式，獲1923年獲貝爾物理獎。
+\eit
+\sssc{實驗}
+光線從石英玻璃（因石英的能隙大於紫外光能量可令通過）中進入真空玻璃管內，照射到一極板$P$上，使放出光電子射向另一極板$C$，兩極板間可用微安培計測得電流。兩極板間連接可變電源（利用可變電阻改變電壓、利用扳手開關改變電極正負）。當發射極$P$為正、收集極$C$為負時可測量截止電壓（Cut-off voltage）/遏止電位（Stopping potential）$V_c$（阻止光電流流向收集極發生的電壓），得最大動能$K_m=eV_c$，其中$e$為基本電荷；當發射極$P$為負、收集極$C$為正時可測量飽和電流（Saturation current）（最大光電流，即使電壓改變仍無法更大）。
+\sssc{性質}
+\bit
+\item 若入射光頻率大於等於該物質的底限頻率（threshold frequency）$f_0$則立即產生光電子，若入射光頻率小於該物質的底限頻率則永不產生光電子，底限頻率與物質材料有關，與光強度大小無關。與古典電磁理論預測較低頻率光只要照射足夠時間即可提供足夠能量使產生光電子不符。
+\item 當施加順向電壓大於一值使所有光電子都足以射至收集極時，光電流均為飽和電流（Saturation current），再增大順向電壓亦不再增加。飽和電流與光強度正比。與古典電磁理論預測相符。
+\item 施加逆向電壓時光電流線性變小，使光電流為零的電壓稱截止電壓/遏止電壓（Cut-off voltage）$V_c$，為光電子的最大動能$K_m$除以基本電荷$e$，此電壓恰使具有最大動能的光電子亦不能達到收集極。光電子的最大動能與入射光頻率線性正相關，而與光強度無關。與古典電磁理論預測截止電壓與光強度線性正相關不符。
+\item 頻率在底限頻率以上的照射在材料表面的光的能量不必然全部被光電子吸收，稱入射光能量被吸收的機率為吸收係數$\alpha$，與物質材料有關。
+\eit
+\sssc{愛因斯坦光電方程式（Einstein's photoelectric equation）}
+愛因斯坦以光量子論解釋光電效應：
+\bit
+\item 光電效應的交互作用過程中，一個光子會把其全部能量轉移給一個電子。當入射光頻率大於底限頻率時，一個光子的能量才足夠使一個電子克服金屬的束縛而逸出，光子能量減去底限頻率光子能量剩餘的部分轉為光電子的動能。
+\item 飽和電流正比於吸收的光子數正比於入射光強度。
+\eit
+使一個光電子逸出某物質所需的最小能量，即電子的束縛能，稱該物質的功函數（Work function）$W$，未超過該能量則不發生光電效應。功函數與底限頻率關係為：
+\[W= h f_0\]
+愛因斯坦光電方程式指出，一個光子的動能$hf$整個被一個光電子吸收，$hf_0$用於脫離表面的束縛，剩餘能量則轉化為光電子的動能，故電子吸收光子後，若沒有再發生碰撞，則具有最大的動能：
+\[K_m=hf-W=h(f-f_0)\]
+由此可知截止電壓$V_c$（逆向為正）為：
+\[V_c=\frac{K_m}{e}=\frac{h}{e}(f-f_0)=\frac{hf}{e}-\frac{W}{e},\quad f\geq f_0\]
+其$x$截距$f_0$與$y$截距$-\frac{W}{e}$均與材料有關，但斜率$\frac{h}{e}$與材料無關。
+
+常見金屬的功函數：
+\begin{longtable}[c]{|c|c|}
+\hline
+金屬 & 功函數 (eV)\\\hline\endhead
+銫 & 1.95\\\hline
+鉀 & 2.29\\\hline
+鈉 & 2.36\\\hline
+鋰 & 2.93\\\hline
+釹 & 3.20\\\hline
+鋁 & 4.20\\\hline
+銀 & 4.64\\\hline
+銅 & 4.48\\\hline
+鐵 & 4.67\\\hline
+鉑 & 5.64\\\hline
+\end{longtable}\FB
+\sssc{能帶理論解釋功函數}
+令材料的費米能階$E_f$、基本電荷$e$、電子在無限遠真空處的能量$E_{\text{vac}}$，則功函數$W$為：
+\[W=E_{\text{vac}}-E_f\]
+\sssc{應用}
+常用於光電管（Phototube）、光控繼電器（Light-controlled relay）。
+\sssc{光電效應煙霧偵測器}
+光源放出光子，光電管不在光徑上而在一旁，煙霧偵測器中與外界相通的空氣乾淨時，不觸發光電效應，無電流，當煙霧進入時，塵粒反射光至光電管，安培計測得電流，觸發警報。此種煙霧偵測器較核衰變放射源游離空氣的煙霧偵測器少見。
+\subsection{X 射線（X-ray）}
+波長 0.01 nm$\sim$ 10 nm 的電磁波。
+\subsubsection{電子高速撞擊金屬靶產生的 X 射線制動輻射（Bremsstrahlung）與特徵輻射（Characteristic radiation）}
+\bit
+\item \tb{制動輻射（Bremsstrahlung）}：電子驟然減速所失去的動能以連續頻譜輻射分次或單次放出，單次放出時有最短波長$\lambda_m$，令電子最大動能$K$，$\lambda_m=\frac{hc}{K}$，是光的粒子性的表現。占大部分。
+\item \tb{特徵輻射（Characteristic radiation）}：電子將靶原子的電子擊出，使外層電子躍遷以填補之而放出。
+\eit
+\subsubsection{侖琴發現 X 射線}
+\bit
+\item 侖琴用黑色厚紙板包裹陰極射線管在暗房實驗，意外發現在距離陰極管約2公尺處一片塗有螢光劑的紙屏發出螢光，顯示有某種射線可穿越玻璃管，又陰極射線無法穿透如此長距離的空氣，且手置於螢幕前螢幕上會出現手骨形狀之影子，名之 X 射線。
+\item 侖琴以 X 射線拍攝侖琴夫人左手帶有戒指之手骨骼照片，為史上首張 X 光照片。
+\item 因 X 射線波長極短且穿透力高，初期未觀察到干涉現象，又其行進方向不受電磁場影響，故曾推測 X 射線是未知電中性粒子束。
+\item 侖琴提出制動輻射原理。
+\item 侖琴1901年獲首次諾貝爾獎之物理獎。
+\eit
+\subsubsection{勞厄方程式（Laue equations）}
+令晶格的原始平移向量（primitive translation vectors）為$\mathbf {a}$、$\mathbf{b}$與$\mathbf {c}$，即以晶體中一原子為原點，晶體中的原子均位於$p\mathbf {a} +q\mathbf {b} +r\mathbf {c} $，其中$p$、 $q$、$r$為整數。
+
+令反射波波向量減去入射波波向量為$\Delta\mathbf{k}$，則其必服從：
+\[\Delta\mathbf{k}\cdot\mathbf{a}=2\pi h\land\Delta\mathbf{k}\cdot\mathbf{b}=2\pi k\land\Delta\mathbf{k}\cdot\mathbf{c}=2\pi l\]
+使得$g$、$h$、$l$為整數，$(h,k,l)$稱米勒指數（Miller indices）。
+\subsubsection{布拉格公式（Bragg's law）}
+令 X 射線小掠射角$\theta$入射晶體時，繞射效應常可等效於以每層布拉格面（Bragg planes）/晶格面反射，入射角與反射角為$\frac{\pi}{2}-\theta$，散射角為$2\theta$，晶體布拉格面間距（Interplanar spacing）$d$。當不同布拉格面的反射波完全建設性干涉，稱發生繞射極大，此時的掠射角稱布拉格繞/掠射角，波長第$n$長的繞射極大稱第$n$級繞射極大，此時的掠射角稱第$n$級（布拉格）繞/掠射角$\theta$，第一級（布拉格）繞/掠射角簡稱（布拉格）繞/掠射角。第$n$級繞射極大之波長$\lambda$與掠射角$\theta$服從：
+\[n=\frac{2d\sin\theta}{\lambda}\in\mathbb{N}\]
+
+令晶體密度$\rho$，晶格點以簡單立方或 B1 型排列，每個立方中有$k$組最簡單整數比成分原子（即有$\frac{k}{N_A}$莫耳），莫耳質量 (kg/mol) $M$：
+\[d=\sqrt[3]{\frac{kM}{\rho N_A}}\]
+
+利用這個特性可以在底片上呈現亮點，反推晶體原子排列方式。
+\subsubsection{勞厄 X 射線晶體繞射}
+勞厄先令 X 射線通過兩小孔使留下單一方向光作為 X 射線源，將各種晶體置於陰極射線管 X 射線源與底片間，觀察到 X 射線的繞射圖案與其中亮點，是光的波動性的表現，故確認 X 射線為電磁波，並得知其波長小於10奈米。
+\subsubsection{布拉格 X 射線晶體繞射測定波長}
+布拉格父子先令 X 射線通過兩小孔使留下單一方向光作為 X 射線源，將各種晶體置於陰極射線管 X 射線源與底片間，觀察其繞射圖案，提出布拉格公式，並藉由繞射極大以已知結構晶體測量未知 X 射線波長，以已知波長 X 射線探知未知晶體布拉格面距離與結構。
+\subsection{物質波（Matter waves）/德布羅意波（de Broglie waves）、波粒二象性（Wave–particle duality）與互補性（Complementarity）}
+\sssc{簡史}
+\bit
+\item 1924：德布羅意（Louis de Broglie）提出物質波（Matter wave）假說，獲1929年諾貝爾物理獎。
+\item 1925：玻色（Satyendra Nath Bose）提出玻色–愛因斯坦統計（Bose–Einstein statistics）。
+\item 1925：海森堡（Werner Heisenberg）發表矩陣力學（Matrix mechanics）處理粒子運動，成功解釋原子光譜。
+\item 1926：費米與狄拉克（Paul Adrien Maurine Dirac）提出費米–狄拉克統計（Fermi–Dirac statistics）。
+\item 1926：薛丁格（Erwin Schrödinger）利用波函數（Wave function）描述物質波，並提出波函數必須遵循的微分方程，稱薛丁格方程（Schrödinger's equation），以波動力學（Wave mechanics）成功解釋原子光譜，獲1933年諾貝爾物理獎。矩陣力學與波動力學分別從粒子與波動的角度成功解釋原子光譜，薛丁格後並證明兩者的等價性，統稱量子力學（Quantum mechanics）。
+\item 1926：波恩（Max Born）提出物質波是粒子在空間出現機率的描述，既不是力學波也不是電磁波，波函數的平方描述粒子在某一時刻出現在某一位置的機率，澄清了物質波和粒子行為間的關係，獲1954年諾貝爾物理獎。
+\item 1927：達維森（Clinton Davisson)、格末（Lester Germer）以戴維森–革末實驗（Davisson–Germer experiment），即電子的鎳晶體繞射，證實電子的物質波，獲1937年諾貝爾物理獎。
+\item 1927：G. P. 湯姆森（George Paget Thomson）以電子的金屬箔繞射實驗證實電子的物質波，獲1937年諾貝爾物理獎。
+\item 1927：波耳發表互補性（Complementarity）。
+\item 1927：海森堡（Werner Heisenberg）提出不確定性原理（Uncertainty principle）。
+\item 1928：狄拉克提出狄拉克方程式（Dirac equation），與薛丁格方程共同作為量子力學的基本方程式，並開展相對論性量子力學（relativistic quantum mechanics），獲1933年諾貝爾物理獎。
+\item 1929：瓊斯（John Lennard-Jones）提出分子軌域理論（Molecular orbital theory）的許多內容。
+\item 1930：狄拉克（Paul Dirac）預測正電子（Positron）。
+\item 1932：安德森（Carl David Anderson）利用雲霧室（Cloud chamber）發現正電子，獲1926年諾貝爾物理獎。
+\item 1991：O. Carnal 和 J. Mlynek 做 α 粒子的楊格雙狹縫實驗。
+\eit
+\sssc{雲霧室（Cloud chamber）}
+令雲霧室中空氣含有過飽和的水蒸氣，易以凝結核為中心凝結成小水滴。當粒子束通過雲霧室時，會在粒子軌跡上形成一連串的小水滴，可觀察到粒子軌跡。
+\sssc{物質波（Matter waves）/德布羅意波（de Broglie waves）}
+任何具有動量之物質均具有波粒二象性，其波稱物質波或德布羅意波，波函數的平方描述粒子在某一時刻出現在某一位置的機率。令物質動量$\mathbf{p}$、動能$E$、物質波頻率$f$、角頻率$\omega$、波長$\lambda$、有向波長$\boldsymbol{\lambda}$、波向量$\mathbf{k}$、相速度$\mathbf{v}_p$、群速度$\mathbf{v}_g$：
+\[\mathbf{k}=\frac{\mathbf{p}}{\hbar}\]
+\[\boldsymbol{\lambda}=\frac{h}{\mathbf{p}}\]
+\[\omega=\frac{E}{\hbar}\]
+\[f=\frac{E}{h}\]
+\[\mathbf{v}_p=f\boldsymbol{\lambda}=\frac{\omega}{\mathbf{k}}=\frac{E}{\mathbf{p}}\]
+\[\mathbf{v}_g=\frac{\mathrm{d}\omega}{\mathrm{d}\mathbf{k}}=\frac{\mathrm{d}E}{\mathrm{d}\mathbf{p}}\]
+光量子論與物質波具有相同的形式：$\boldsymbol{\lambda}=\frac{h}{\mathbf{p}}$（惟光子不具有質量而不服從$E=\frac{|\mb{p}|^2}{2m}$），稱德布羅意–愛因斯坦關係式，但光量子論由波動性（具有波長與頻率）出發闡明光具有粒子性（具有動量與能量），而物質波則由粒子性（具有動量與能量）出發闡明物質具有波動性（具有波長與頻率）。
+\sssc{戴維森–革末實驗}
+1927年，戴維森和革末以電子束射擊鎳晶體表面，偵測繞射後電子束強度和繞射角的關係，發現與 X 光相似的繞射圖樣，並與物質波波長吻合，證實電子的物質波存在。
+
+電子槍發射能量 $E=$54 eV 的電子束入射布拉格面間距約$d= 0.91$ \AA 的鎳晶體，測得第一級布拉格繞射角$\theta$=65°，故波長：
+\[\lambda=2d\sin\theta\approx1.65\tx{\ \AA}\]
+與物質波預測：
+\[\lambda=\frac{h}{\sqrt{2m_eE}}\approx1.67\tx{\ \AA}\]
+吻合。
+\sssc{G. P. 湯姆森的電子的金屬箔繞射實驗}
+1927年，G. P. 湯姆森以電子束透射金屬箔，發現與 X 光相似的繞射圖樣，其中鋁箔布拉格面間距約 $4.0$ \AA。
+\subsubsection{瓊森的電子的楊格雙狹縫實驗}
+1961年，瓊森製造出極細的雙狹縫，用電子槍向雙狹縫射出電子，電子在屏幕上呈現亮點：較少時看似隨機，呈現粒子性；待累積至上萬顆後即慢慢顯現出與光的楊格雙狹縫干涉實驗相同的干涉條紋，呈現波動性。
+
+波長$\lambda$同調波通過平面上兩縫寬$a>\lambda$、中線相距$b>\lambda$的相鄰狹縫射向屏幕，屏幕平面平行狹縫平面，兩者距離$L$使得$L\gg a$、$L\gg b$，中央亮線場強$I_0$。對於屏幕上某點，令其與狹縫平面中線之最短連線與該點上狹縫平面法線之夾角$\theta$，則場強分布$I(\theta)$為：
+\[I(\theta) = I_0\left( \frac{\sin \left( \frac{\pi a \sin\theta}{\lambda} \right)}{\frac{\pi a \sin\theta}{\lambda}} \right)^2\left(\frac{\sin\qty(\frac{2\pi b\sin\theta}{\lambda})}{\sin\qty(\frac{\pi b\sin\theta}{\lambda})}\right)^2\]
+\sssc{O. Carnal 和 J. Mlynek 的 α 粒子的楊格雙狹縫實驗}
+1991年，O. Carnal 和 J. Mlynek 做出 α 粒子的楊格雙狹縫實驗，發現與光和電子的楊格雙狹縫干涉實驗具有相似的圖樣。
+\sssc{物質波的駐波}
+物質波的駐波可以穩定儲存能量，而不釋放能量至系統外。
+\bit
+\item 固定端間距是二分之一倍波長的正整數倍時方能形成固定端反射間駐波。
+\item 自由端間距是二分之一倍波長的正整數倍時方能形成自由端反射間駐波。
+\item 固定端與自由端距離是四分之一倍波長的正奇數倍時方能形成固定端反射與自由端反射間駐波。
+\item 圓周長是波長的正整數倍時方能形成圓環上駐波。
+\eit
+\sssc{非相對論性粒子受電壓加速的物質波}
+令物質波波長$\lambda$，加速電壓量值$V$，物質質量$m$、電荷$q$，不考慮相對論性：
+\[\lambda=\frac{h}{\sqrt{2mqV}}\]
+電子質量$m_e$：
+\[\frac{h^2}{m_e}\approx3.008\text{\ eV\ nm}^2\approx\scinote{4.820}{-37}\text{\ J m}^2\]
+常見粒子之數值如下：
+\begin{longtable}[c]{|c|c|c|c|}
+\hline
+粒子 & 質量 (kg) & 電荷除以基本電荷 & $\lambda\sqrt{V}$ (nm $\sqrt{\text{V}}$)\\\hline\endhead
+輕子 & \(\approx9.109 \times 10^{-31}\) & \(\pm1\) & 1.2265\\\hline
+質子 & \(\approx1.673 \times 10^{-27}\) & +1 & 0.0286\\\hline
+α 粒子 & \(\approx6.645 \times 10^{-27}\) & +2 & 0.0102\\\hline
+\end{longtable}\FB
+\sssc{非相對論性質點在均勻磁場作迴旋運動作為環上駐波}
+令均勻磁場量值$B$中一非相對論性質點質量$m$、電荷$q$，垂直磁場作速率$v$、半徑$r$、動量量值$p$、角動量量值$L$、角速率$\omega$、動能$E$的迴旋運動，物質波波長$\lambda$恰形成環上駐波使得：
+\[2\pi r=n\lambda,\quad n\in\mathbb{N}\]
+則：
+\[\frac{mv^2}{r}=qvB\]
+\[p=qBr\]
+\[\lambda=\frac{h}{qBr}\]
+\[2\pi r=\frac{nh}{qBr}\]
+\[r=\sqrt{\frac{n\hbar}{qB}}\]
+\[p=\sqrt{n\hbar qB}\]
+\[L=n\hbar\]
+\[v=\frac{\sqrt{n\hbar qB}}{m}\]
+\[\omega=\frac{qB}{m}\]
+\[E=\frac{n\hbar qB}{2m}\]
+自$n=n_1$躍遷至$n=n_2<n_1$的放出的能量相當於一頻率$f$的光子之能量，則：
+\[f=\frac{(n_1-n_2)qB}{4\pi m}\]
+\sssc{相同能量的物質波與電磁波}
+一質點質量$m$、動能$E$、物質波波長$\lambda_1$、動量量值$p_1$；一光子能量亦為$E$、波長$\lambda_2$、動量量值$p_2$：
+\[p_1=\sqrt{2mE}\]
+\[\lambda_1=\frac{h}{\sqrt{2mE}}\]
+\[p_2=\frac{E}{c}\]
+\[\lambda_2=\frac{hc}{E}\]
+\[\frac{\lambda_1}{\lambda_2}=\frac{p_2}{p_1}=\frac{1}{c}\sqrt{\frac{E}{2m}}\]
+\sssc{相同波長的物質波與電磁波}
+一粒子質量$m$、動能$E_1$、物質波波長$\lambda$、動量量值$p$；一光子能量$E_2$、波長亦為$\lambda$，故動量量值必亦為$p$：
+\[p=\sqrt{2mE_1}=\frac{E_2}{c}\]
+\[\lambda=\frac{h}{\sqrt{2mE_1}}=\frac{hc}{E_2}\]
+\[E_2^{\pht{2}2}=2mc^2E_1\]
+\[\frac{E_1}{E_2}=\frac{h}{2mc\lambda}\]
+\sssc{波粒二象性（Wave–particle duality）}
+波長愈長，即能量愈小，波動性愈顯著，粒子性愈不顯著；波長愈小，即能量愈大，粒子性愈顯著，波動性愈不顯著。
+\sssc{單粒子干涉}
+楊格雙狹縫干涉實驗中，讓射線源一次僅發射一個粒子射向雙狹縫，待粒子數累積後仍可在屏幕上觀察到干涉條紋。
+\sssc{單縫干涉}
+楊格雙狹縫干涉實驗中，讓任何時候都只有一條縫隙打開，只要路徑差足夠大，使得檢測到的光子可能來自任一縫隙，仍然可以觀察到干涉現象。
+\sssc{波粒二象性關係（Wave–particle duality relation）/Englert–Greenberger–Yasin duality relation}
+在光子、電子或其他具有動量的物質的楊格雙狹縫干涉實驗中：
+\bit
+\item 粒子路徑的確定性（definiteness）/可區分性（distinguishability）$D$：指觀測者獲取粒子路徑資訊的程度，是粒子資訊的度量。
+\item 干涉圖樣的可見性（visibility）$V$：是波資訊的度量。
+\eit
+遵循：
+\[D^2+V^2\leq 1\]
+\sssc{不確定性原理/測不準原理（Uncertainty principle）/海森堡不確定性原理（Heisenberg's indeterminacy principle）}
+1927年海森堡提出，位置測量的標準差$\sigma_x$與動量測量的標準差$\sigma_p$遵循：
+\[\sigma_x\sigma_p=\frac{\hbar}{2}\]
+\sssc{互補性（Complementarity）/互補原理（Complementarity principle）}
+指出兩個不相容的（incompatible）可觀察量（observable）無法同時被精確測量，例如波動性與粒子性、位置與動量，可以解釋不確定性原理與波粒二象性關係。
+\end{document}

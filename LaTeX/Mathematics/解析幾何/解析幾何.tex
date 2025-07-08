@@ -1,0 +1,199 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{解析幾何}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\sct{解析幾何（Analytic Geometry）}
+下：空間為歐幾里德空間；位置$\mathbf{x}=(x_1,x_2,\ldots)$；第$i$軸正方向單位向量$\mathbf{e}_i$；一向量空間中兩點$P$、$Q$，$\ora{PQ}\coloneq Q-P$；$\hat{n}$為單位向量，即使得$\abs{\hat{n}}=1$；$\hat{\mathbf{v}}$為$\mathbf{v}$方向單位向量，即使得$\mathbf{v}\cdot\hat{\mathbf{v}}=\abs{\mathbf{v}}$且$\abs{\hat{\mathbf{v}}}=1$。
+\ssc{正整數維空間}
+$n\in\mathbb{N}$
+\sssc{仿射子空間一般式}
+$\mathbb{R}^n$中，一$n-1$維仿射子空間可以表示成：
+\[\mathbf{n}\cdot\mathbf{x}+c=0\]
+稱此表達方法為一般式。
+\sssc{仿射子空間截距式}
+$\mathbb{R}^n$中，$n-1$維仿射子空間：
+\[E\colon\sum_{i=1}^n\frac{x_1}{a_1}=1\]
+必通過$a_i\mathbf{e}_i$，$\forall i\in\mathbb{N}\land i\leq n$，稱此表達方法為截距式，稱$a_i$為第$i$軸截距。
+\sssc{仿射子空間隱式方程/多面式}
+$\mathbb{R}^n$中，一個$m\in\mathbb{N}\land m<n$維仿射子空間$E$可表示成：
+\[\mathbf{A}\mathbf{x}=\mathbf{c},\quad\mathbf{A}\in\mathbb{R}^{(n-m)\times n}\land\operatorname{rank}(\mathbf{A})=n-m\land\mathbb{c}\in\mathbb{R}^{n-m}\]
+稱此表達方法為隱式方程或多面式，對於三維空間中的直線特稱兩面式。令$\mb{A}$的第$i$列為$\mb{A}_i$、$\mb{c}$的第$i$列為$\mb{c}_i$，則$\mb{A}_i\mathbf{x}=\mathbf{c}_i$代表一個$(n-1)$維仿射子空間，且這$(n-m)$個$(n-1)$維仿射子空間的交集為$E$。對於三維空間中的直線$E$，特稱所有使得$E\subseteq F$的$(n-1)$維仿射子空間$F$的集合為平面系。
+\sssc{直線參數式}
+$\mathbb{R}^n$中，一直線可表示成：
+\[\mathbf{x}=\mathbf{a}+\mathbf{v}t,\quad t\in\mathbb{R}\]
+稱$\mathbf{v}$為此直線之方向向量，稱此表達方法為參數式。
+\sssc{直線（對稱）比例式}
+$\mathbb{R}^n$中，直線：
+\[\forall i,j\in\mathbb{N}\land i<j\leq n\colon\frac{x_i-a_i}{v_i}=\frac{x_j-a_j}{v_j}\]
+與直線
+\[\mathbf{x}=(a_1,a_2,\ldots,a_n)+(v_1,v_2,\ldots,v_n)t,\quad t\in\mathbb{R}\]
+相同，稱前一種表達方法為（對稱）比例式。
+\sssc{點與仿射子空間關係}
+$\mathbb{R}^n$中，一$(n-1)$維仿射子空間$E\colon\mathbf{n}\cdot\mathbf{x}+c=0$與一點$\mathbf{P}$可能的關係與其充要條件為：
+\begin{itemize}
+\item $P$在$E$上$\iff\mathbf{n}\cdot\mathbf{P}+c=0$。
+\item $P$在$E$的$\mathbf{n}$方向半空間$\iff\mathbf{n}\cdot\mathbf{P}+c>0$。
+\item $P$在$E$的$-\mathbf{n}$方向半空間$\iff\mathbf{n}\cdot\mathbf{P}+c<0$。
+\end{itemize}
+\sssc{兩仿射子空間關係}
+$\mathbb{R}^n$中，$k$維仿射子空間$E$與$m$維仿射子空間，其中$k,m\in\mathbb{N}\land k\leq m<n$，可能的關係與其必要條件為：
+\begin{itemize}
+\item 重合：$k=m$
+\item 平行但不相交：$k=m$
+\item 相交但不平行。
+\item 歪斜（不平行也不相交）。
+\end{itemize}
+相交時，令它們的一個交點$P$，兩者在該點上分別有法空間（normal space）$N_PE$、$N_PF$，定義$E$與$F$的主夾角（principal angles）為$N_PE$與$N_PF$的主夾角。
+\sssc{點在仿射子空間的正射影點與對稱點}
+$\mathbb{R}^n$中，一$(n-1)$維仿射子空間$E\colon\mathbf{n}\cdot\mathbf{x}+c=0$與一點$P$，$E$上距離$\mathbf{P}$最短的點為$\mathbf{Q}$，稱$\mb{P}$在$E$的正射影點/投影點，則：
+\[\mathbf{Q}=\mathbf{P}-\frac{\mathbf{n}\cdot\mathbf{P}+c}{\abs{\mathbf{n}}^2}\mathbf{n}\]
+$E$與$\mathbf{P}$距離為：
+\[\abs{\mathbf{P}-\mathbf{Q}}=\frac{\abs{\mathbf{n}\cdot\mathbf{P}+c}}{\abs{\mathbf{n}}}\]
+稱$2\mb{Q}-\mb{P}$為$\mb{P}$以$E$為對稱面的對稱點。
+\sssc{平行仿射子空間間最短向量}
+$\mathbb{R}^n$中，兩平行$(n-1)$維仿射子空間$E\colon\mathbf{n}\cdot\mathbf{x}+c=0$與$F\colon\mathbf{n}\cdot\mathbf{x}+d=0$，$F$上一點$\mathbf{P}$，$E$上距離$\mathbf{P}$最短的點為$\mathbf{Q}$，則：
+\[\mathbf{Q}=\mathbf{P}-\frac{c-d}{\abs{\mathbf{n}}^2}\mathbf{n}\]
+$E$與$F$距離為：
+\[\abs{\mathbf{P}-\mathbf{Q}}=\frac{\abs{c-d}}{\abs{\mathbf{n}}}\]
+\sssc{不平行仿射子空間夾角與分角面}
+$\mathbb{R}^n$中，兩不平行$(n-1)$維仿射子空間$E\colon\mathbf{m}\cdot\mathbf{x}+c=0$與$F\colon\mathbf{n}\cdot\mathbf{x}+d=0$，則：
+\begin{enumerate}
+\item $E$、$F$夾角，稱兩面角，餘弦值為：
+\[\pm\frac{\mathbf{m}\cdot\mathbf{n}}{\abs{\mathbf{m}}\cdot\abs{\mathbf{n}}}\]
+若$\mathbf{m}\cdot\mathbf{n}\neq 0$，則$\pm$取與$\mathbf{m}\cdot\mathbf{n}$同號者為銳角餘弦值，取與$\mathbf{m}\cdot\mathbf{n}$異號者為鈍角餘弦值。
+\item $E$、$F$的角平分/分角仿射子空間為：
+\[\frac{\mathbf{m}\cdot\mathbf{x}+c}{\abs{\mathbf{m}}}=\pm\frac{\mathbf{n}\cdot\mathbf{x}+d}{\abs{\mathbf{n}}}\]
+若$\mathbf{m}\cdot\mathbf{n}\neq 0$，則$\pm$取與$\mathbf{m}\cdot\mathbf{n}$同號者為鈍角分角面，取與$\mathbf{m}\cdot\mathbf{n}$異號者為銳角分角面。
+\item $E$、$F$的交集為一$(n-2)$維仿射子空間，稱稜。
+\end{enumerate}
+\sssc{點積/內積的幾何意義}
+兩向量$\mb{a}$、$\mb{b}$夾角$\theta$，則
+\[\mb{a}\cdot\mb{b}=|\mb{a}\mb{b}\cos\theta|.\]
+\sssc{多點共仿射子空間}
+$\mathbb{R}^n$中，相異$k\leq n$點必共一$(k-1)$維仿射子空間。
+\sssc{多點決定超體積域與仿射子空間}
+$\mathbb{R}^n,\quad n\geq k$中，不共$(k-2)$維仿射子空間的$k$點的集合，可以決定一個$(k-1)$維超體積域，即其凸包，與一個$k$維仿射子空間，即其仿射包。
+\sssc{線性組合}
+$\mathbb{R}^n$中，不共$(n-2)$維仿射子空間的$n$點$P_1,P_2,\ldots,P_n$共一$(n-1)$維仿射子空間$E$，若：
+\[P_n=\sum_{i=1}^{n-1}c_iP_i\]
+且原點不在$E$上，則：
+\[\sum_{i=1}^{n-1}c_i=1\]
+（若原點在$E$上則不一定成立）
+\sssc{分點公式（Section formula）/加權重心公式}
+令$U$為所有由$\mathbb{R}^{n-1}$中不共$(n-2)$維仿射子空間的$n$點形成的序列形成的集合，$V$為所有由和為$1$的$n$個非零實數形成的序列形成的集合，$W$為所有由和為$1$的$n$個正實數形成的序列形成的集合，定義函數$f\colon U\to\mathbb{R}$使得$f(x)$為$x$的凸包的超體積，定義函數$g\colon S\to U,\quad S\subseteq U\times\mathbf{R}\times\mathbb{R}^{n-1}$使得$g(x,k,v)$為將$x$中的第$k$個元素換成$v$形成的序列，令序列$C$的第$k$個元素為$C_k$，則$\forall C\in V\land A\in U$：
+\[K=\sum_{k=1}^nC_kA_k\iff\left(\forall j,k\in\mathbb{N}\land j,k\leq n\colon\frac{f\left(g(A,j,K)\right)}{c_j}=\frac{f\left(g(A,k,K)\right)}{c_k}\right)\]
+$K$在$A$的仿射包中，特別地，若$C\in W$則$K$在$A$的凸包中。
+\sssc{正射影圖形體積}
+$\mathbb{R}^n$中，二$m$維仿射子空間$E$、$F$相交，其中$m\in\mathbb{N}\land m<n$，且$E$、$F$有主夾角$\theta_1,\theta_2,\ldots,\theta_m$，則$E$上一個$m$維圖形在$F$上的正射影的體積除以其原本體積為：
+\[\prod_{i=1}^{m}\abs{\cos\theta_i}.\]
+\sssc{超三角錐與超平行柱體積}
+$\mathbb{R}^n$中，$n$個向量形成的$n\times n$矩陣為$M$，則它們所張的超三角錐體積為$\frac{\abs{\det(M)}}{n!}$，它們所張的超平行柱體積為$\det(M)$。
+\sssc{過一點平面與座標軸所圍超三角錐體積最小值}
+$\mathbb{R}^n$中，過一點$\mathbf{P}=(p_1,p_2,\ldots,p_n)$的$n-1$維仿射子空間$E$與所有座標軸所圍成的超三角錐體積$V$，其中$\prod_{i=1}^np_i\neq 0$，則當$E$為：
+\[\sum_{i=1}^n\frac{x_i}{np_i}=1\]
+時，即第$i$軸截距$np_i$時，$V$有最小值：
+\[\frac{n^n\prod_{i=1}^n\abs{p_i}}{n!}.\]
+\begin{proof}\mbox{}\\
+設$E$為：
+\[\sum_{i=1}^nn_ix_i=1\]
+則$E$與各軸的交點為$\frac{\mb{e}_1}{n_1},\frac{\mb{e}_2}{n_2},\ldots,\frac{\mb{e}_n}{n_n}$，
+\[V=\frac{1}{n!\prod_{i=1}^n\abs{n_i}}\]
+限制條件：
+\[\sum_{i=1}^nn_ip_i=1\]
+利用拉格朗日乘數法：
+\[\mathcal{L}\coloneq\frac{1}{n!\prod_{i=1}^nn_i}+\lambda\sum_{i=1}^nn_ip_i-\lambda\]
+\[\frac{\partial\mathcal{L}}{\partial n_j}=\frac{-1}{n!\prod_{i=1}^nn_in_j}+\lambda p_j=0\]
+\[C\coloneq n_jp_j=\frac{1}{\lambda  n!\prod_{i=1}^nn_i}\]
+\[\sum_{i=1}^nn_ip_i=Cn=1\]
+\[C=\frac{1}{n}\]
+\[n_j=\frac{1}{np_j}\]
+\end{proof}
+\sssc{體積經線性變換}
+$\mathbb{R}^n$中，經$n\times n$階矩陣$\mathbf{A}$的線性變換後，任一$n$維圖形的體積會變為原來的$|\det(\mathbf{A})|$倍。
+\ssc{二維空間}
+\sssc{直線}
+\tb{一般式}：
+\[ax+by+c=0\]
+\tb{截距式}：
+$ab\neq 0$
+\[\frac{x}{p}+\frac{y}{q}=1\]
+其中$p=-\frac{c}{a}$、$q=-\frac{c}{b}$分別為$x$、$y$截距。
+
+\tb{斜截式}：
+$b\neq 0$
+\[y=mx+q\]
+其中$m=-\frac{a}{b}$為斜率。
+
+\tb{點斜式}：
+$b\neq 0$
+\[y-y_0=m(x-x_0)\]
+其中$(x_0,y_0)$為該直線上任一點。
+\sssc{直線、射線與線段參數式}
+設相異兩點$A(x_1,y_1)$、$B(x_2,y_2)$：
+\bit
+\item 直線$\olra{AB}$的參數式：
+\[\bcs x=x_1+(x_2-x_1)t\\y=y_1+(y_2-y_1)t\ecs,\quad t\in\mathbb{R}\]
+\item 射線$\ora{AB}$的參數式：
+\[\bcs x=x_1+(x_2-x_1)t\\y=y_1+(y_2-y_1)t\ecs,\quad t\geq 0\]
+\item 線段$\ol{AB}$的參數式：
+\[\bcs x=x_1+(x_2-x_1)t\\y=y_1+(y_2-y_1)t\ecs,\quad 0\leq t\leq 1\]
+\eit
+\sssc{分點公式擴展圖形}
+\[\begin{aligned}
+&\ora{AP}\coloneq x\ora{AB}+y\ora{AC},\quad x,y\in\mathbb{R}\\
+\Rightarrow &\bcs
+x+y=1&\iff P\tx{\ is on\ }\olra{BC},\\
+x+y=1\land xy\geq 0&\iff P\tx{\ is on\ }\ol{BC},\\
+x=0&\iff P\tx{\ is on\ }\olra{AC},\\
+0\leq y\leq 1\land x=0&\iff P\tx{\ is on\ }\ol{AC},\\
+y=0&\iff P\tx{\ is on\ }\olra{AB},\\
+0\leq x\leq 1\land y=0&\iff P\tx{\ is on\ }\ol{AB},\\
+x+y<1\land x>0\land y>0&\iff P\tx{\ is in\ }\Delta ABC\tx{（不含邊界）},\\
+x+y>1\lor x<0\lor y<0&\iff P\tx{\ is outside of\ }\Delta ABC
+\ecs
+\end{aligned}\]
+\sssc{兩直線關係}
+直線$\mathbf{L}\colon ax+by+c=0$、$\mathbf{M}\colon dx+ey+f=0$：
+\bit
+\item 平行（含重合）：$ae=bd$
+\item 垂直：$ad+be=0$
+\eit
+直線$\mathbf{F}\colon y=mx+p$、$\mathbf{G}\colon y=nx+q$：
+\bit
+\item 平行（含重合）：$m=n$
+\item 垂直：$mn=-1$
+\eit
+\section{三維空間}
+\sssc{叉積/外積的幾何意義}
+兩向量$\mb{a}$、$\mb{b}$夾角$\theta$，則
+\[|\mb{a}\times\mb{b}|=|\mb{a}\mb{b}\sin\theta|.\]
+\sssc{四面體與平行六面體體積}
+向量$\mathbf{A},\mathbf{B},\mathbf{C}$所張四面體體積為：
+\[\frac{1}{6}\abs{\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})}\]
+所張平行六面體體積為：
+\[\abs{\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})}\]
+\sssc{三垂線定理}
+設相異點$B$、$C$和直線$L$均在平面$E$上，$A$不在$E$上。如果下列三個命題中有兩個成立，則剩下的一個也必定成立。
+\[\ol{AB} \perp E\]
+\[\ol{BC} \perp L \text{\ at\ } C\]
+\[\ol{AC} \perp L \text{\ at\ } C\]
+\sssc{兩歪斜線}
+兩互相歪斜的直線$L\colon(x_0,y_0,z_0)+(a,b,c)t,\quad t\in\mathbb{R}$、$M\colon(x_1,y_1,z_1)+(d,e,f)k,\quad k\in\mathbb{R}$間必存在唯一公垂線，令為$S$，令$\mathbf{u}=(a,b,c)$，$\mathbf{v}=(d,e,f)$，$S$分別交$L$、$M$於$P$、$Q$，則：
+\[\ora{PQ}\cdot\mathbf{u}=\ora{PQ}\cdot\mathbf{v}=0\]
+
+令平行兩平面$E$、$F$分別包含$L$、$M$，則該二平面之法向量平行於$\qty(\mathbf{u}\times\mathbf{v})$，$M$上任一點與$E$距離=$L$上任一點與$F$距離=$L$與$M$的距離=$\ol{PQ}$。
+\sssc{各體公式}
+\[\tx{柱體體積}=\tx{底面積}\times \tx{高}\]
+\[\tx{錐體體積}=\frac{1}{3}\tx{底面積}\times \tx{高}\]
+\[\tx{球體體積}=\f{4}{3}\pi\times\tx{半徑}^3\]
+\[\tx{球體表面積}=4\pi\times\tx{半徑}^2\]
+\end{document}

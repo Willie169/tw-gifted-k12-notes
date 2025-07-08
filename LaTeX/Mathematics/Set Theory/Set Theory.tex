@@ -1,0 +1,251 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Set Theory}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{Set Theory (集合論)}
+\ssc{Basic Notations}
+\sssc{Set (集合/集)}
+A set, sometimes called a collection or family, is a collection of different things. Theses things are called elements (元素) or members (成員) if the set.
+
+If $a$ is an element of a set $S$, we say that $a$ belongs to $S$ or is in $S$, denoted as $a\in S$; if $b$ is not an element of a set $S$, we say that $b$ does not belong to $S$ or is not in $S$, denoted as $b\notin S$.
+\sssc{Specifying a set}
+A set may be specified either by listing its elements or by a property that characterizes its elements.
+
+\tb{Roster notation or enumeration notation} specifies a set by listing its elements between braces $\{\,\}$, separated by commas $,$, e.g. $\{\,\}$, $\{x\}$, and $\{x,y\}$. When there is a clear pattern for generating all set elements, one can use ellipses $\ldots$ for abbreviating the notation.
+
+\tb{Set-builder notation} specifies a set as being the set of all elements that satisfy some logical formula. More precisely, if $P(x)$ is a logical formula depending on a variable ⁠$x$, which evaluates to true or false depending on the value of $x$, then
+\[\{x\mid P(x)\}\]
+or
+\[\{x\colon P(x)\}\]
+denotes the set of all $x$ of which $P(x)$ is true, in which the vertical bar $\mid$ or the colon $\colon$ is read as "such that", and the the whole formula can be read as "the set of all $x$ such that $P(x)$ is true".
+\sssc{Empty set (空集合) and singleton (單元素集合)}
+A set with no element in it is called the empty set, denoted as $\varnothing$. A set with one element in it is called a singleton.
+\subsubsection{Subset (子集)}
+\[A\subseteq B\iff (x\in A\implies x\in B)\]
+\sssc{Superset (父集/母集/超集)}
+\[B\supseteq A\iff (x\in A\implies x\in B)\]
+\subsubsection{Intersection (交集)}
+\[A\cap B\coloneq\{x\mid x\in A \land x\in B\}\]
+\[\bigcap_{i=1}^n A_i\coloneq\left\{x\middle | \bigwedge_{i=1}^n x\in A_i\right\}\]
+\subsubsection{Union (聯集)}
+\[A\cup B\coloneq\{x\mid x\in A \lor x\in B\}\]
+\[\bigcup_{i=1}^n A_i\coloneq\left\{x\middle | \bigvee_{i=1}^n x\in A_i\right\}\]
+\subsubsection{Complement (差集)}
+\[A\setminus B\coloneq\{x\mid x\in A \land x\notin B\}\]
+\subsubsection{Cartesian product (笛卡爾積)}
+\[A\times B \coloneq \{(a,\,b)\mid a\in A \land b\in B\}\]
+\subsubsection{Power set (冪集合)}
+\[2^A\coloneq\{B\mid B\subseteq A\}\]
+\sssc{Set scalar arithmetic operation}
+\begin{itemize}
+\item If $\forall a\in A$, $sa$ is defined, $sA\coloneq\{sa:\,a\in A\}$.
+\item If $\forall a\in A$, $a+v$ is defined, $A+v\coloneq\{a+v:\,a\in A\}$.
+\end{itemize}
+\subsubsection{Kernel (核) of a set of sets}
+The kernel of a set $\mathcal {B}\neq \varnothing$ of sets is defined to be:
+\[\ker(\mathcal {B})\coloneq\bigcap_{B\in\mathcal {B}}B.\]
+\subsection{Zermelo–Fraenkel Set Theory (策梅洛-弗蘭克爾集合論)}
+Set theory, or more specifically, Zermelo–Fraenkel set theory, has been the standard way to provide rigorous foundations for all branches of mathematics since the first half of the 20th century. Zermelo–Fraenkel set theory with the axiom of choice included is abbreviated ZFC and denoted $\vdash_{ZFC}$; Zermelo–Fraenkel set theory with the axiom of choice excluded is abbreviated ZF and denoted $\vdash_{ZF}$; sometimes, either of them is denoted $\vdash$.
+\subsubsection{Axiom of extensionality (外延公理)}
+\[\forall x\forall y[\forall z(z\in x\Leftrightarrow z\in y)\Rightarrow x=y]\]
+\subsubsection{Axiom of regularity (正則公理)}
+\[\forall x\,(x\neq \varnothing \Rightarrow \exists y(y\in x\land y\cap x=\varnothing ))\]
+\subsubsection{Axiom of separation (分類公理)/Axiom schema of specification (規範公理模式)}
+Let $\varphi$ be any formula in the language of ZFC with all free variables among $x,z,w_{1},\ldots ,w_{n}$ so that $y$ is not free in 
+$\varphi$. Then:
+\[\forall z\forall w_{1}\forall w_{2}\ldots \forall w_{n}\exists y\forall x[x\in y\Leftrightarrow ((x\in z)\land \varphi (x,w_{1},w_{2},...,w_{n},z))]\]
+This axiom can be used to prove the existence of the empty set, denoted as $\emptyset$ or $\varnothing$.
+
+\tb{Axiom of empty set (空集公理)}：
+\[\exists x , \forall y , (y \notin x) \]
+The $\varnothing$ is defined as the $x$ above.
+\subsubsection{Pairing Axiom (配對公理)}
+\[ \forall x\forall y\exists z((x\in z)\land (y\in z))\]
+\subsubsection{Union Axiom (聯集公理)}
+\[ \forall {\mathcal {F}}\,\exists A\,\forall Y\,\forall x[(x\in Y\land Y\in {\mathcal {F}})\Rightarrow x\in A]\]
+Although this formula doesn't directly assert the existence of $\cup \mathcal {F}$, the set $\cup \mathcal {F}$ can be constructed from $A$ in the above using the axiom schema of specification:
+\[\cup \mathcal {F}=\{x\in A\mid\exists Y(x\in Y\land Y\in {\mathcal {F}})\}\]
+\subsubsection{Axiom schema of replacement (替代公理模式)}
+Let $\varphi$ be any formula in the language of ZFC with all free variables among $x,z,w_{1},\ldots ,w_{n}$ so that $B$ is not free in 
+$\varphi$. Then:
+\[ \forall A\forall w_{1}\forall w_{2}\ldots \forall w_{n}{\bigl [}\forall x(x\in A\Rightarrow \exists !y\,\varphi )\Rightarrow \exists B\ \forall x{\bigl (}x\in A\Rightarrow \exists y(y\in B\land \varphi ){\bigr )}{\bigr ]}\]
+\subsubsection{Axiom of Infinity (無窮公理)}
+\[ \exists X\left[\exists e(\forall z\,\neg (z\in e)\land e\in X)\land \forall y(y\in X\Rightarrow S(y)\in X)\right]\]
+\subsubsection{Power Set Axiom (冪集公理)}
+\[\forall A \exists P(A) \forall x (x \in P(A) \leftrightarrow x \subseteq A)\]
+The $P(A)$ above is called power set (冪集) and denoted as $2^A$.
+\subsubsection{Axiom of Choice (選擇公理)/Axiom of Well-ordering (良序公理)}
+\[ \forall X\left[\varnothing \notin X\implies \exists f\colon X\rightarrow \bigcup _{A\in X}A\quad \forall A\in X\,(f(A)\in A)\right]\]
+\ssc{Associativity, commutativity, and distributivity of intersection and union}
+\begin{itemize}
+\item Intersection has commutativity.
+\item Union has commutativity.
+\item Intersection has associativity and distributivity over intersection.
+\item Union has associativity and distributivity over union.
+\item Intersection has distributivity over union.
+\item Union has distributivity over intersection.
+\item Note: $(A\cap B)\cup C$ is not necessarily equal to $A\cap (B\cup C)$
+\end{itemize}
+\subsection{Russell's paradox or Russell's antinomy (羅素悖論)}
+According to the unrestricted comprehension principle, for any sufficiently well-defined property, there is the set of all and only the objects that have that property. Russell's paradox states that, let
+\[R\coloneq\{x\mid x\not \in x\}\]
+then
+\[R\in R\iff R\not \in R.\]
+
+\textit{Statement.} $\vdash_{ZFC}\,\nexists U = \{z \mid z\text{\ is a set\ }\}$.
+\begin{proof}\mbox{}\\
+Assume that $\exists U = \{z \mid z\text{ is a set}\}$. Let $A=\{x\in U \mid x\notin x\}$. $A \in A\iff (A\in U \land A\notin A)$, but $A\in A \iff \neg A \notin A$, so $A\notin A$, so $\neg(A \in U \land A \notin A)$, so $A \notin U$. $A$ is a set, so $A\in U$. $\Rightarrow\Leftarrow$.
+\end{proof}
+\ssc{De Morgan's Law (笛摩根定律)}
+\sssc{Universe (宇集)}
+The universe is now often defined as "when the sets under discussion are all subsets of a given set, the given set is called the universe", denoted as $U$.
+\sssc{Complement (補集/餘集)}
+If a set $A$ is a subset of a given universe $U$, then the complement of $A$ given $U$ is defined as $U\setminus A$, denoted as $A'$, $\overline{A}$, or $A^C$.
+\sssc{Complement laws}
+\[(A')'=A\]
+\[A\setminus B = A\cap B'\]
+\[A\subseteq B \iff B' \subseteq A'\]
+\sssc{De Morgan's Law (笛摩根定律)}
+\[(A\cup B)'=A'\cap B'\]
+\[(A\cap B)'=A'\cup B'\]
+\ssc{Ordered Set}
+\sssc{Partially ordered set, poset (偏序集)}
+A partially ordered set is an ordered pair $P=(X,\leq )$ consisting of a set $X$ (called the ground set of $P$) and a partial order $\leq$ on $X$. That is, for all $a,b,c\in X$ it must satisfy:
+\begin{enumerate}
+\item Reflexivity: $a\leq a$, i.e. every element is related to itself.
+\item Antisymmetry: $a\leq b\land b\leq a\implies a=b$, i.e. no two distinct elements precede each other.
+\item Transitivity: $a\leq b\land b\leq c\implies a\leq c$.
+\end{enumerate}
+When the meaning is clear from context and there is no ambiguity about the partial order, the set $X$ itself is sometimes called a poset.
+\sssc{Upward closure}
+Let $A$ be a subset of a poset $X$, the upward closure of $A$, denoted as $\uparrow A$, is defined as:
+\[\uparrow A \coloneq \{ x \in X : \,\exists a \in A \text{ s.t. } a \leq x \}.\]
+\sssc{Totally ordered set (全序集) or linearly ordered set (線性順序集)}
+A totally ordered set is an ordered pair $P=(X,\leq )$ consisting of a set $X$ (called the ground set of $P$) and a total order (aka, linear order) $\leq$ on $X$. That is, for all $a,b,c\in X$ it must satisfy:
+\begin{enumerate}
+\item Reflexivity: $a\leq a$, i.e. every element is related to itself.
+\item Antisymmetry: $a\leq b\land b\leq a\implies a=b$, i.e. no two distinct elements precede each other.
+\item Transitivity: $a\leq b\land b\leq c\implies a\leq c$.
+\item Strongly connectivity or totality: $a\leq b\lor b\leq a$.
+\end{enumerate}
+When the meaning is clear from context and there is no ambiguity about the total order, the set $X$ itself is sometimes called a totally ordered set.
+\ssc{Number System (數系)}
+\sssc{Natural numbers (自然數)}
+The natural numbers $\mathbb{N}$ are defined as positive integers, that is, 1, 2, 3, and so on, denoted as $\mathbb{N}^*$, $\mathbb{N}_1$, or $\mathbb{N}^+$, or non-negative integers, that is, 0, 1, 2, 3, and so on, denoted as $\mathbb{N}^0$ or $\mathbb{N}_0$.
+
+The \tb{Peano axioms (皮亞諾公理), Dedekind–Peano axioms, or Peano postulates (皮亞諾公設)} provide a formal definition of the natural numbers $\mathbb{N}$. Below, we define the natural numbers to include zero; the definition of natural numbers to exclude zero can be constructed by simply replace $0$ with $1$ in the following axioms.
+\bit
+\item $0$ is a natural number.
+\eit
+The next four axioms describe the equality relation. Since they are logically valid in first-order logic with equality, they are not considered to be part of "the Peano axioms" in modern treatments.
+\bit
+\item For every natural number $x$, $x=x$. That is, equality is reflexive.
+\item For all natural numbers $x$ and $y$, if $x=y$, then $y=x$. That is, equality is symmetric.
+\item For all natural numbers $x$, $y$, and $z$, if $x=y$ and $y=z$, then $x=z$. That is, equality is transitive.
+\item For all $a$ and $b$, if $b$ is a natural number and $a=b$, then $a$ is also a natural number. That is, the natural numbers are closed under equality.
+\eit
+The remaining axioms define the arithmetical properties of the natural numbers. The naturals are assumed to be closed under a single-valued "successor" function $S$.
+\bit
+\item For every natural number $n$, $S(n)$ is a natural number. That is, the natural numbers are closed under $S$.
+\item For all natural numbers $m$ and $n$, if $S(m)=S(n)$, then $m=n$. That is, $S$ is an injection.
+\item For every natural number $n$, $S(n)=0$ is false. That is, there is no natural number whose successor is $0$.
+\eit
+Axioms $1$, $6$, $7$, $8$ define a unary representation of the intuitive notion of natural numbers: the number $1$ can be defined as $S(0)$, $2$ as $S(S(0))$, etc. However, considering the notion of natural numbers as being defined by these axioms, axioms $1$, $6$, $7$, $8$ do not imply that the successor function generates all the natural numbers different from $0$. The intuitive notion that each natural number can be obtained by applying successor sufficiently many times to zero requires an additional axiom, which is sometimes called the \tb{axiom of induction}:
+\bit
+\item If $K$ is a set such that:
+\bit
+\item[] $0$ is in $K$, and
+\item[] for every natural number $n$, $n$ being in $K$ implies that $S(n)$ is in $K$,
+\eit
+then $K$ contains every natural number.
+\eit
+
+The axiomatization of arithmetic provided by Peano axioms is commonly called \tb{Peano arithmetic (皮亞諾算術)}.
+\bit
+\item \tb{Addition} is a function that maps two natural numbers to another one. It is defined recursively as:
+\[a+0=a,\]
+\[a+S(b)=S(a+b).\]
+\item \tb{Multiplication} is a function mapping two natural numbers to another one. Given addition, it is defined recursively as:
+\[a\cdot 0=0,\]
+\[a\cdot S(b)=a+(a\cdot b).\]
+\item \tb{Total order}: The field $\mathbb{N}$ is ordered, meaning that there is a total order $\leq$ such that for all natural numbers $x$, $y$ and $z$:
+\bit
+\item Preservation of order under addition:
+\[\forall x,y,z\in\mathbb{N}\colon x\leq y\implies x+z\leq y+z.\]
+\item Preservation of order under multiplication:
+\[\forall x,y\in\mathbb{N}\colon 0\leq x\land 0\leq y\implies 0\leq xy.\]
+\eit
+\eit
+\sssc{Integers (整數)}
+The set of integers $\mathbb{Z}$ can be constructive as follows. First construct the set of natural numbers excluding $0$ according to the Peano axioms, call this $P$. Then construct a set $P^-$ which is disjoint from $P$ and in one-to-one correspondence with $P$ via a function $\psi$. Finally let $0$ be some object not in $P$ or $P^-$. Then the integers are defined to be the union $P\cup P^{-}\cup \{0\}$.
+\sssc{Rational numbers (有理數)}
+The set of rational numbers (aka, the rationals) $\mathbb{Q}$ can be constructed as equivalence classes of ordered pairs of integers. Let $(\mathbb {Z} \times (\mathbb {Z} \setminus \{0\}))$⁠ be the set of the pairs $(m, n)$ of integers such that $n \neq 0$ and denoted as $\frac{m}{n}$. An equivalence relation is defined on this set by
+\[(m_{1},n_{1})=(m_{2},n_{2})\iff m_{1}n_{2}=m_{2}n_{1}.\]
+Addition and multiplication can be defined by the following rules:
+\[(m_{1},n_{1})+(m_{2},n_{2})\equiv (m_{1}n_{2}+n_{1}m_{2},n_{1}n_{2}),\]
+\[(m_{1},n_{1})\times (m_{2},n_{2})\equiv (m_{1}m_{2},n_{1}n_{2}).\]
+\sssc{Real numbers (實數)}
+Let $\mathbb{R}$ denote the set of all real numbers. Then:
+\bit
+\item \tb{Addition and multiplication}: The set $\mathbb{R}$ is a field under addition and multiplication. In other words,
+\bit
+\item Associativity of addition and multiplication:
+\[\forall x,y,z\in\mathbb{R}\colon x+(y+z)=(x+y)+z\land x\cdot(y\cdot z)=(x\cdot y)\cdot z.\]
+\item Commutativity of addition and multiplication:
+\[\forall x,y\in\mathbb{R}\colon x+y=y+x\land x\cdot y=y\cdot x.\]
+\item Distributivity of multiplication over addition:
+\[\forall x,y,z\in\mathbb{R}\colon x\cdot(y+z)=(x\cdot y)+(x\cdot z).\]
+\item Existence of additive identity:
+\[\forall x\in\mathbb{R}\colon x+0=x.\]
+\item Existence of multiplicative identity:
+\[0\neq 1,\]
+\[\forall x\in\mathbb{R}\colon x\times 1=x.\]
+\item Existence of additive inverses:
+\[\forall x\in\mathbb{R}\colon\exists(-x)\in\mathbb{R}\text{\ s.t.\ }x+(-x)=0.\]
+\item Existence of multiplicative inverses:
+\[\forall x\in\mathbb{R}\land x\neq 0\colon\exists x^{-1}\in\mathbb{R}\text{\ s.t.\ }x\cdot x^{-1}=1.\]
+\eit
+\item \tb{Total order}: The field $\mathbb{R}$ is ordered, meaning that there is a total order $\leq$ such that for all real numbers $x$, $y$ and $z$:
+\bit
+\item Preservation of order under addition:
+\[\forall x,y,z\in\mathbb{R}\colon x\leq y\implies x+z\leq y+z.\]
+\item Preservation of order under multiplication:
+\[\forall x,y\in\mathbb{R}\colon 0\leq x\land 0\leq y\implies 0\leq xy.\]
+\item The order is Dedekind-complete, meaning that every nonempty subset $S$ of $\mathbb{R}$ with an upper bound in $\mathbb{R}$ has a least upper bound (aka, supremum) in $\mathbb{R}$. This property applies to the real numbers but not to the rational numbers. For example, $\{x\in\mathbb{Q}\colon x^2<2\}$ has a rational upper bound (e.g., 1.42), but no least rational upper bound, because $\sqrt{2}$ is not rational.
+\eit\eit
+\sssc{Irrational numbers (無理數)}
+\[\mathbb{R}\setminus\mathbb{Q}.\]
+\sssc{Complex numbers (複數)}
+\[\mathbb{C}=\{a+bi\mid a,b\in\mathbb{R}\land i=\sqrt{-1}\}.\]
+\subsection{Cardinality (勢/基數/計數)}
+The cardinality is a measure of the size of a set, denoted as $|A|$ or $n(A)$. 
+\bit
+\item The cardinality of a finite set is the number of its elements.
+\item Two sets have the same cardinality if there exists a one-to-one correspondence between them.
+\item The cardinality of $\mathbb{N}$ is called the cardinality of countable infinity (可數無限勢), denoted as $\aleph_0$. A set with the same cardinality of $\mathbb{N}$ is called to be countable infinite (可數無限的).
+\item The cardinality of $\mathbb{R}$ is called the cardinality of continuity (連續勢), denoted as $\mathfrak{c}$. A set with the same cardinality of $\mathbb{R}$ is called to be uncountable infinite (不可數無限的).
+\eit
+\ssc{Interval (區間)}
+\begin{itemize}
+\item Open interval (開區間):
+\[(a,b)\coloneq\{x\mid a<x<b\}\]
+\item Right open interval (右開區間):
+\[[a,b)\coloneq\{x\mid a\leq x<b\}\]
+\item Left open interval (左開區間):
+\[(a,b]\coloneq\{x\mid a<x\leq b\}\]
+\item Half open interval (半開區間): A interval is a half open interval if it is either a right open interval or a left open interval.
+\item Closed interval (閉區間):
+\[[a,b]\coloneq\{x\mid a\leq x\leq b\}\]
+\item Infinite interval (無限區間):
+\[(a,\infty)\coloneq\{x\mid a<x\}\]
+\[[a,\infty)\coloneq\{x\mid a\leq x\}\]
+\[(-\infty,b)\coloneq\{x\mid x<b\}\]
+\[(-\infty,b]\coloneq\{x\mid x\leq b\}\]
+\[(-\infty,\infty)\coloneq\mathbb{R}\]
+\end{itemize}
+\end{document}

@@ -1,0 +1,513 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{圓錐曲線}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{圓錐曲線/圓錐截痕（conic section, quadratic curve）}
+\subsection{約定}
+若無另聲明：
+\begin{itemize}
+\item 參數屬於擴展實數系（extended real number system），即$\mathbb{R}\cup\{\infty,-\infty\}$。
+\item 若一表達式中某值為無限大，該表達式定義為其在該值趨近於無限大的極限，且允許該極限為無限大、負無限大或無意義。
+\item 定義無限大乘以任意正擴展實數為無限大；定義無限大乘以零無意義；定義任何數除以零無意義；定義無限大除以或減去無限大無意義。
+\item 若$\lim_{x\to\infty}f(x)=\infty$、$\lim_{x\to\infty}g(x)=\infty$，則定義$\lim_{x\to\infty}f(x)=\lim_{x\to\infty}g(x)$，與$\lim_{x\to\infty}f(x)-g(x)$或$\lim_{x\to\infty}\frac{f(x)}{g(x)}$無關。
+\item 圓錐和圓錐曲線均為某歐幾里德仿射空間（Euclidean affine space）的子集。
+\item 某點與空間中某方向無限遠處的距離定義為無限大；$A$點與空間中某方向無限遠處的距離減去$B$點與空間中某方向無限遠處的距離定義為$B-A$與該方向單位向量的點積。
+\item 位置表示依賴於座標時，使用笛卡爾右手座標系統。
+\item 表達式依賴空間時，使用該表達式所須的最小維度的歐幾里德仿射空間。
+\item 將一線段作為一值時，其值為其長度。
+\item 各等式或不等式僅考慮其兩側均有意義時。
+\end{itemize}
+\subsection{圓錐曲線定義}
+\subsubsection{圓錐曲線的等價定義}
+\begin{itemize}
+\item 圓錐截痕定義：圓錐曲線指三維空間（或大於三維空間中的一個三維超平面）中，一雙葉圓錐（double-napped cone）被一不通過其頂點的平面所截的截線。稱兩個同時與圓錐與該平面相切的球為丹德林球（Dandelin spheres）或焦球（focal spheres），其一的球心可以在無限遠處（拋物線）；稱該二丹德林球與該平面的切點為焦點。
+\item 兩焦點定義：圓錐曲線指平面上距兩不一定相異的定點（稱焦點（focus））的距離和為一大於兩焦點距離的定值（稱兩倍半主軸）的所有點的集合（圓、橢圓、拋物線），或平面上距兩相異的定點（稱焦點）的距離差的絕對值為一大於兩焦點距離的定值（稱兩倍半主軸）的所有點的集合（拋物線、雙曲線），其中一定點可在某方向無限遠處（拋物線）。
+\item 焦點-準線定義：對於$0\leq\varepsilon\leq 1$的離心率/偏心率（eccentricity）$\varepsilon$，圓錐曲線指平面上距一定點（稱焦點）的距離與距一定直線（稱準線（directrix））的距離之比值為離心率的所有點的集合，其中焦點不可在準線上，其中準線可在無限遠處（圓）；對於$\varepsilon>1$（雙曲線），圓錐曲線指前述集合及和該集合有相同漸近線（asymptote）、對稱軸與離心率的同種集合之聯集。
+\item 方程定義：圓錐曲線指平面上，任取原點定義笛卡爾座標後，$Ax^2+Bxy+Cy^2+Dx+Ey+F=0$的圖形，且$\det\begin{pmatrix} A & B/2 & D/2 \\ B/2 & C & E/2 \\ D/2 & E/2 & F \end{pmatrix}<0$。
+\item 半徑差不為零公切圓圓心軌跡定義：一平面上兩定圓，半徑差的絕對值不為零，其中可有一圓在某方向無限遠處且其半徑為無限大，圓錐曲線定義為同時外切兩圓或同時內切兩圓且一圓在公切圓內且另一圓在公切圓外的公切圓圓心軌跡或內切圓一圓且該圓在公切圓外並外切另一圓的公切圓圓心軌跡。
+\item 半徑和不為零公切圓圓心軌跡定義：一平面上兩定圓，半徑和不為零，其中可有一圓在某方向無限遠處且其半徑為無限大，圓錐曲線定義為同時內切兩圓且一圓在公切圓內且另一圓在公切圓外的公切圓圓心軌跡或內切圓一圓且該圓在公切圓內並外切另一圓的公切圓圓心軌跡。
+\end{itemize}
+\subsubsection{參數與相關圖形定義}
+\begin{itemize}
+\item \tb{離心率（eccentricity）}$\varepsilon$：圓錐曲線上的點與焦點的距離與其與準線的距離之比值。
+\item \tb{中心（center）}：對於圓、橢圓和雙曲線為幾何中心（對於雙曲線即兩漸近線的交點）；對於拋物線無幾何中心，此為方便表示，稱拋物線頂點（即對稱軸與拋物線的焦點）為中心。
+\item \tb{焦距（focal length）}$f$：中心與焦點的距離，對於拋物線特指非無限遠處的焦點與中心的距離。
+\item \tb{線性離心率（linear eccentricity）}$c$：兩焦點距離之一半。
+\item \tb{焦點準線距/焦點參數（focal parameter）}$p$：與某準線較近的焦點與該準線的距離。
+\item \tb{中心準線距}$d$：中心與準線的距離。
+\item \tb{主軸（major axis）}：通過中心與兩焦點的直線或最短線段。
+\item \tb{半主軸（semi-major axis）}$a$：主軸
+上以中心為一端點、長度為主軸與圓錐曲線兩交點的距離的一半但若僅一交點則為無限大（拋物線）的線段。
+\item \tb{弦（chord）}：連接圓錐曲線上的兩點的線段。
+\item \tb{焦半徑（focal radius）}：焦點與圓錐曲線上一點的連線段。
+\item \tb{焦弦（focal chord）}：過焦點連接一條圓錐曲線上的兩點的線段。
+\item \tb{正焦弦（latus rectum）}：垂直主軸的焦弦。
+\item \tb{半正焦弦（semi-latus rectum）}$\ell$：正焦弦上以焦點為一端點、長度為正焦弦長度的一半的線段。
+\item \tb{副軸（minor axis）}：垂直主軸於中心的直線，或垂直主軸於中心且長度為$2a\sqrt{|1-\varepsilon^2|}$且以中心為中點的線段。
+\item \tb{半副軸（semi-minor axis）}$b$：副軸
+上以中心為一端點、長度為$a\sqrt{|1-\varepsilon^2|}$的線段。
+\end{itemize}
+\subsubsection{分類}
+\begin{itemize}
+\item 圓：$\varepsilon=0$的圓錐曲線
+\item 橢圓：$0<\varepsilon<1$的圓錐曲線
+\item 拋物線：$\varepsilon=1$的圓錐曲線
+\item 雙曲線：$\varepsilon>1$的圓錐曲線
+\end{itemize}
+\subsubsection{性質}
+\[\begin{aligned}
+&c=a\varepsilon\\
+&p=\frac{b^2}{c}\\
+&\ell=\frac{b^2}{a}=p\varepsilon=a|1-\varepsilon^2|\\
+&cd=a^2\\
+&d=\frac{f}{\varepsilon^2}=\frac{a^2}{c}
+\end{aligned}\]
+\begin{itemize}
+\item 副軸平行正焦弦平行準線垂直主軸。
+\item 正焦弦是最短的焦弦。
+\item 中心與兩焦點必共線，該線即主軸。除拋物線外，中心為兩焦點之中點；除拋物線外，主軸與圓錐曲線交於兩點，且中心為該二點之中點。
+\item 必存在一個直角三角形使得其三邊長為半主軸、半副軸與線性離心率且半副軸必為一股長（含一邊長為零另二邊等長（圓）或兩邊無限長（拋物線））。
+\item 兩焦點與中心之距離的平均為線性離心率。
+\item 不論位置（$2$個平移自由度）、方向（$1$個旋轉自由度），圓錐曲線有兩個自由度。
+\item 不論位置（$2$個平移自由度）、方向（$1$個旋轉自由度）、大小（$1$個伸縮自由度），圓錐曲線有一個自由度。
+\item 圓錐曲線退化若且惟若$\ell=0$。
+\end{itemize}
+\subsection{圓（circle）}
+\subsubsection{性質}
+\[\begin{aligned}
+&\varepsilon=0\\
+&\text{主軸：任意過圓心直線}\\
+&a,b:\,\text{半徑}\\
+&a=b\\
+&2a,2b:\,\text{直徑}\\
+&\varepsilon=c=f=0\\
+&\ell=a=b\\
+&p=d=\infty
+\end{aligned}\]
+\begin{itemize}
+\item 圓上一點距焦點的距離為半徑。
+\item 任一過焦點/中心的直線為對稱軸。
+\item 若某點在一圓上，則其以任意過圓心直線為線對稱軸的對稱點亦在該圓上。
+\end{itemize}
+\subsubsection{圓}
+\begin{itemize}
+\item 標準式：
+\[\left(\frac{x-h}{a}\right)^2+\left(\frac{y-k}{a}\right)^2=1\]
+\item 準線方程：任意無限遠處直線
+\item 中心/圓心：$(h,k)$
+\item 焦點：$(h,k)$
+\item 主、副軸方程：任意互相垂直於$(h,k)$的一組直線。
+\item 參數式：
+\[(a\cos(t)+h,a\sin(t)+k),\quad0\leq t<2\pi\]
+\item 一般式形式：
+\[Ax^2+Ay^2+Dx+Dy+F=0,\quad\text{有實數解}\]
+\end{itemize}
+\subsubsection{直徑式}
+令兩點$P(x_1,y_1)$、$Q(x_2,y_2)$，則以$\overline{PQ}$為直徑的圓的方程式為：
+\[(x-x_1)(x-x_2)+(y-y_1)(y-y_2)=0\]
+\subsubsection{圓與直線關係}
+\begin{itemize}
+\item 相交於相異二點：相割。
+\item 相交於一點：相切
+\item 沒有交點：相離
+\end{itemize}
+\subsubsection{兩圓關係}
+\begin{itemize}
+\item 相交於相異二點：相割。
+\item 相交於一點且一圓在另一圓之內：內切
+\item 沒有交點且一圓在另一圓之內：內離
+\item 相交於一點且非一圓在另一圓之內：外切
+\item 沒有交點且非一圓在另一圓之內：外離
+\end{itemize}
+\subsection{橢圓（ellipse）}
+\subsubsection{性質}
+\[\begin{aligned}
+&\text{主軸：長軸}\\
+&\text{副軸：短軸}\\
+&a:\,\text{半長軸}\\
+&b:\,\text{半短軸}\\
+&ab\neq 0,\quad a>b\\
+&\varepsilon=\frac{\sqrt{a^2-b^2}}{a}\\
+&c=f=\sqrt{a^2-b^2}\\
+&\ell=\frac{b^2}{a}\\
+&p=\frac{b^2}{\sqrt{a^2-b^2}}\\
+&d=\frac{c}{\varepsilon^2}=\frac{a}{\varepsilon}=c+p=\frac{a^2}{\sqrt{a^2-b^2}}
+\end{aligned}\]
+\begin{itemize}
+\item 稱橢圓與主/長軸和副/短軸的四個交點為頂點。
+\item 橢圓上一點距兩焦點的距離和為兩倍半長軸。
+\item 主/長軸和副/短軸為對稱軸。
+\item 若某點在一橢圓上，則其以長軸或短軸為線對稱軸的對稱點亦在該橢圓上。
+\item 橢圓上各點相對於一焦點的平均距離為$a$。
+\end{itemize}
+\subsubsection{標準方向橢圓}
+\begin{itemize}
+\item 方向：主/長軸平行$x$軸
+\item 標準式：
+\[\left(\frac{x-h}{a}\right)^2+\left(\frac{y-k}{b}\right)^2=1\]
+\item 準線方程：
+\[x=\pm\frac{a^2}{\sqrt{a^2-b^2}}+h\]
+\item 中心/圓心：$(h,k)$
+\item 焦點：$(h\pm\sqrt{a^2-b^2},k)$
+\item 主/長軸方程：
+\[y=k\]
+\item 副/短軸方程：
+\[x=h\]
+\item 長軸頂點：$(h\pm a,0)$
+\item 短軸頂點：$(0,k\pm b)$
+\item 參數式：
+\[(a\cos(t)+h,b\sin(t)+k),\quad0\leq t<2\pi\]
+\item 一般式形式：
+\[Ax^2+Cy^2+Dx+Ey+F=0,\quad AC>0\land |A|<|C|\land\text{有實數解}\]
+\end{itemize}
+\subsubsection{兩焦點式}
+\begin{itemize}
+\item 兩焦點式：
+\[\sqrt{(x-\alpha)^2+(y-\beta)^2}+\sqrt{(x-\gamma)^2+(y-\delta)^2}=2a\]
+\item 焦點：$(\alpha,\beta)$與$(\gamma,\delta)$
+\item 中心：$\left(\frac{\alpha+\gamma}{2},\frac{\beta+\delta}{2}\right)$
+\item 主/長軸方程：
+\[(\alpha-\gamma)(y-\beta)=(\beta-\delta)(x-\alpha)\]
+\end{itemize}
+\subsection{拋物線（parabola）}
+\subsubsection{性質}
+\[\begin{aligned}
+&\varepsilon=1\\
+&\text{主軸：對稱軸、軸}\\
+&\text{副軸：頂點切線}\\
+&c=a=\infty\\
+&\ell=p=2d=2f\\
+&b=\text{無意義}
+\end{aligned}\]
+\subsubsection{標準方向拋物線}
+\begin{itemize}
+\item 方向：開口向$x$軸正方向
+\item 標準式：
+\[(y-k)^2=4f(x-h)\]
+\item 準線方程：
+\[x=-f+h\]
+\item 中心/頂點：$(h,k)$
+\item 焦點：$(h+f,k)$（與$(\infty,k)$）
+\item （主/對稱）軸方程：
+\[y=k\]
+\item 副軸方程：
+\[x=h\]
+\item 參數式：
+\[(ft^2+h,2ft+k),\quad t\in\mathbb{R}\]
+\item 一般式形式：
+\[Ax^2+Dx+Ey+F=0,\quad AE\neq 0\]
+\end{itemize}
+\subsubsection{焦點-準線式}
+\begin{itemize}
+\item 焦點-準線式：
+\[\sqrt{(x-\alpha)^2+(y-\beta)^2}=\frac{|mx+ny+r|}{\sqrt{m^2+n^2}}\]
+\item 焦點：$(\alpha,\beta)$
+\item 準線方程：$mx+ny+r$
+\item 頂點：
+\[\left( \alpha - \frac{m(m\alpha + n\beta + r)}{2(m^2+n^2)}, \beta - \frac{n(m\alpha + n\beta + r)}{2(m^2+n^2)} \right)\]
+\item （主/對稱）軸方程：
+\[n(x-\alpha)=m(y-\beta)\]
+\end{itemize}
+\subsection{雙曲線（hyperbola）}
+\subsubsection{性質}
+\[\begin{aligned}
+&\text{主軸：貫軸（transverse axis）}\\
+&\text{副軸：共軛軸（conjugate axis）}\\
+&a:\,\text{半貫軸（semi-transverse axis）}\\
+&b:\,\text{半共軛軸（semi-conjugate axis）}\\
+&ab\neq 0\\
+&\varepsilon=\frac{\sqrt{a^2+b^2}}{a}\\
+&c=f=\sqrt{a^2+b^2}\\
+&\ell=\frac{b^2}{a}\\
+&p=\frac{b^2}{\sqrt{a^2+b^2}}\\
+&d=\frac{c}{\varepsilon^2}=\frac{a}{\varepsilon}=c-p=\frac{a^2}{\sqrt{a^2+b^2}}
+\end{aligned}\]
+\begin{itemize}
+\item 一雙曲線在共軛軸兩側的部分稱其兩分支（branch）。
+\item 稱貫軸與雙曲線的兩交點為頂點。
+\item 距中心距離趨近於無限大時，雙曲線趨近於一對漸近線，兩者交叉於中心且線對稱於貫軸與共軛軸，且該二漸近線是以該雙曲線中心為兩焦點的退化雙曲線。
+\item 雙曲線上一點距兩焦點的距離差為兩倍半貫軸。
+\item 主/貫軸和副/共軛軸為對稱軸。
+\item 若某點在一雙曲線上，則其以貫軸或共軛軸為線對稱軸的對稱點亦在該雙曲線上。
+\item 對於任意雙曲線，存在唯一一個矩形，使得：其中心為雙曲線中心，其二邊垂直貫軸且長度為二倍半共軛軸。該矩形垂直貫軸的二邊分別與雙曲線之兩分支相切於貫軸上，另二邊平行貫軸且長度為二倍半貫軸，對角線在雙曲線的漸近線上且長度為二倍線性離心率，以其中心為圓心、線性離心率為半徑的圓通過雙曲線的兩焦點與矩形的四個頂點。
+\end{itemize}
+\subsubsection{共軛雙曲線（Conjugate hyperbola）}
+一雙曲線的共軛雙曲線為具有相同線性離心率和漸近線的另一不同雙曲線。原雙曲線的貫軸為共軛雙曲線的共軛軸，原雙曲線的共軛軸為共軛雙曲線的貫軸，原雙曲線的半貫軸等於共軛雙曲線的半共軛軸，原雙曲線的半共軛軸等於共軛雙曲線的半貫軸。
+\subsubsection{雙曲線族}
+雙曲線族指具有相同漸近線的雙曲線的集合。
+\subsubsection{標準方向雙曲線}
+\begin{itemize}
+\item 方向：主/貫軸平行$x$軸
+\item 標準式：
+\[\left(\frac{x-h}{a}\right)^2-\left(\frac{y-k}{b}\right)^2=1\]
+\item 準線方程：
+\[x=\pm\frac{a^2}{\sqrt{a^2+b^2}}+h\]
+\item 中心：$(h,k)$
+\item 頂點：$(h\pm a,k)$
+\item 焦點：$(h\pm\sqrt{a^2+b^2},k)$
+\item 主/貫軸方程：
+\[y=k\]
+\item 副/共軛軸方程：
+\[x=h\pm a\]
+\item 漸近線方程：
+\[\frac{x-h}{a}\pm\frac{y-k}{b}=0\]
+\item 參數式：
+\[(a\sec(t)+h,b\tan(t)+k),\quad0\leq t<2\pi\land t\neq\frac{\pi}{2}\land t\neq\frac{3\pi}{2}\]
+\item 一般式形式：
+\[Ax^2+Cy^2+Dx+Ey+F=0,\quad AC<0\land\frac{D^2}{4A}-\frac{E^2}{4C}+F<0\land\text{有實數解}\]
+\item 共軛雙曲線標準式：
+\[\left(\frac{y-k}{b}\right)^2-\left(\frac{x-h}{a}\right)^2=1\]
+\end{itemize}
+\subsubsection{兩焦點式}
+\begin{itemize}
+\item 兩焦點式：
+\[\abs{\sqrt{(x-\alpha)^2+(y-\beta)^2}-\sqrt{(x-\gamma)^2+(y-\delta)^2}}=2a\]
+\item 焦點：$(\alpha,\beta)$與$(\gamma,\delta)$
+\item 中心：$\left(\frac{\alpha+\gamma}{2},\frac{\beta+\delta}{2}\right)$
+\item 主/長軸方程：
+\[(\alpha-\gamma)(y-\beta)=(\beta-\delta)(x-\alpha)\]
+\end{itemize}
+\subsubsection{漸近線式}
+以$a_1x+b_1y+c_1=0$與$a_2x+b_2y+c_2=0$為漸近線的雙曲線可以表示為：
+\[(a_1x+b_1y+c_1)(a_2x+b_2y+c_2)=k\]
+其中$k=0$時為退化雙曲線，即該二漸近線。
+\subsubsection{至二漸近線距離乘積}
+半貫軸$a$、半共軛軸$b$的雙曲線上一點$P$至該雙曲線的二漸近線之距離的乘積$M$為：
+\[M=\frac{a^2b^2}{a^2+b^2}\]
+\subsubsection{等軸雙曲線}
+$\varepsilon=\sqrt{2}$的雙曲線，服從：
+\[a=b=\ell=\sqrt{2}p=\sqrt{2}d=\frac{c}{\sqrt{2}}\]
+\subsection{標準方向非退化圓錐曲線極座標方程}
+定義極座標$[r,\theta]=(x\cos\theta,y\sin\theta)$，則較$x$座標較小的焦點在原點的標準方向非退化圓錐曲線方程為：
+\[r=\frac{\ell}{1-\varepsilon\cos\theta}\]
+\subsection{圓錐曲線的判別}
+\subsubsection{一般式}
+討論一般式：
+\[Ax^2+Bxy+Cy^2+Dx+Ey+F=0\]
+，其中所有係數都是實數，且$ABC\neq 0$。
+
+令：
+\[Q=\begin{bmatrix} A & B/2 & D/2 \\ B/2 & C & E/2 \\ D/2 & E/2 & F \end{bmatrix}\]
+\[ M =
+\begin{bmatrix} A & B/2 \\ B/2 & C \end{bmatrix}\]
+\[N =
+\begin{bmatrix} D/2 \\ E/2 \end{bmatrix}\]
+
+又可以寫作：
+\[\begin{bmatrix} x & y & 1 \end{bmatrix}
+Q\begin{bmatrix} x \\ y \\ 1 \end{bmatrix} = 0\]
+
+又可以寫作：
+\[\begin{bmatrix} x & y \end{bmatrix}
+M\begin{bmatrix} x \\ y\end{bmatrix} + N^{\top}\begin{bmatrix} x \\ y\end{bmatrix} + f = 0\]
+\subsubsection{圖形判別式}
+圖形判別式$\det(M)=AC-\frac{B^2}{4}$，圖形含實圖形與虛圖形。
+\begin{itemize}
+\item $\det(M)>0$：不退化圖形為圓（當且僅當$A=C$且$B=0$）或橢圓；退化圖形為一點，即中心，發生於$F=\frac{AD^2}{4|A|^3}+\frac{CE^2}{4|C|^3}$。
+\item $\det(M)=0$：不退化圖形為拋物線；退化圖形為一對平行的直線，平行於退化前拋物線的對稱軸，發生於$AE=CD=0$，兩直線重合於$D^2+E^2=4(A+C)F$。（$A=B=C=0\land DE\neq 0$與退化前拋物線相切但不屬於圓錐曲線。）
+\item $\det(M)<0$：不退化圖形為雙曲線；退化圖形為一對交叉於退化前雙曲線中心的直線，發生於$F=\frac{AD^2}{4|A|^3}+\frac{CE^2}{4|C|^3}$。
+\end{itemize}
+\subsubsection{退化判別式}
+退化判別式$\det(Q)=\det(M)F-\frac{AE^2+CD^2}{4}=AC-\frac{AE^2+CD^2+BF^2}{4}$。
+\begin{itemize}
+\item $\det(Q)<0$（對於拋物線即$D^2+E^2>4(A+C)F$）：圖形為實圖形。
+\item $\det(Q)=0$（對於拋物線即$D^2+E^2=4(A+C)F$）：圖形為退化圖形。
+\item $\det(Q)>0$（對於拋物線即$D^2+E^2<4(A+C)F$）：圖形為虛圖形。
+\end{itemize}
+\subsubsection{轉軸與移軸不變性（rotation and translation invariance）}
+$\det(Q)$、$\det(M)$與$A+C$在轉軸，即：
+\[\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}\]
+和移軸，即：
+\[\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} x \\ y \end{bmatrix}+\begin{bmatrix} h \\ k \end{bmatrix}\]
+後不變。
+\subsubsection{中心的代數判定}
+令圖形的中心為$(x_0,y_0)$，有：
+\[(x_0,y_0)^{\top}=-M^{-1}N\]
+對於拋物線$M^{-1}$為$M$之偽逆。
+\subsubsection{方向的代數判定}
+主軸極角$\theta$服從：
+\[\tan(2\theta)=\frac{B}{A-C}\]
+\subsubsection{圓的判別式}
+設圖形是圓，令：
+\[\Delta_c=D^2+E^2-4F\]
+\begin{itemize}
+\item $\Delta_c>0$：圖形為實圓，圓心$(-\frac{D}{2},-\frac{E}{2})$，半徑$\frac{\sqrt{\Delta_c}}{2}$。
+\item 如果$\Delta_c=0$，圖形退化為一點$(-\frac{D}{2},-\frac{E}{2})$。
+\item 如果$\Delta_c<0$，圖形為虛圓，圓心$(-\frac{D}{2},-\frac{E}{2})$，半徑$\frac{\sqrt{\Delta_c}}{2}$。
+\end{itemize}
+\subsubsection{圓與直線幾何關係的代數判定}
+已知圓$\mathrm{C}:x^2+y^2+dx+ey+f=0$與直線$\mathbf{L}:ax+by+c=0$。
+
+將$\mathbf{L}$化為$y=f(x)$（或$x=g(y)$）代入$\mathrm{C}$，消去$y$（或$x$）得$\alpha x^2+\beta x+\gamma=0$（或$\alpha y^2+\beta y+\gamma=0$）。
+
+令$\Delta_\mathbf{L}=\beta^2-4\alpha\gamma$：
+\begin{itemize}
+\item $\Delta_\mathbf{L}>0$：圓$\mathrm{C}$與直線$\mathbf{L}$相割。
+\item $\Delta_\mathbf{L}=0$：圓$\mathrm{C}$與直線$\displaystyle\mathbf{L}$相切。
+\item $\Delta_\mathbf{L}<0$：圓$\mathrm{C}$與直線$\mathbf{L}$相離。
+\end{itemize}
+\subsection{雙葉圓錐/雙重圓錐（double-napped cone）}
+\subsubsection{定義}
+設空間中有一定直線（稱軸（axis））過一定點（稱頂點（vertex））。定義母線（generatrix）為一通過頂點並與軸夾一非零且非直角的定角度的直線，則所有母線形成的曲面稱雙葉圓錐。
+\subsubsection{標準方向雙葉圓錐}
+\begin{itemize}
+\item 方向：開口向$z$軸正負向
+\item 標準式：
+\[(x-\alpha)^2+(y-\beta)^2=\tan^2(\phi)(z-\gamma)^2\]
+其中$\alpha$、$\beta$、$\gamma$為常數，$0\leq\phi<\frac{\pi}{2}$，$\phi$是母線與軸的夾角。
+\item 軸：
+\[(\alpha,\beta,\gamma)+(0,0,1)t,\quad t\in\mathbb{R}\]
+\item 頂點：$(\alpha,\beta,\gamma)$
+\item 母線：任意$0\leq s\leq 1$的直線：
+\[(\alpha,\beta,\gamma)+\left(s,\sqrt{1-s^2},\cot^2(\phi)\right)t,\quad t\in\mathbb{R}\]
+\item 過$0\leq s\leq 1$的母線$(\alpha,\beta,\gamma)+\left(s,\sqrt{1-s^2},\cot^2(\phi)\right)t,\quad t\in\mathbb{R}$切圓錐之平面：
+\[s(x-\alpha)+\sqrt{1-s^2}(y-\beta)=\tan^2(\phi)(z-\gamma)\]
+\end{itemize}
+\subsubsection{圓錐截痕的離心率與丹德林球}
+$0\leq s\leq 1$且$\omega\neq 0$的平面：
+\[z=\cot(\theta)\left(s(x-\alpha)+\sqrt{1-s^2}(y-\beta)\right)+\omega+\gamma\]
+截雙葉圓錐：
+\[(x-\alpha)^2+(y-\beta)^2=\tan^2(\phi)(z-\gamma)^2\]
+其中$\alpha$、$\beta$、$\gamma$為常數，$0\leq\phi<\frac{\pi}{2}$，$\phi$是母線與軸的夾角，$0\leq\theta<\frac{\pi}{2}$，$\theta$是平面與軸的夾角。
+
+離心率為：
+\[\varepsilon=\frac{\cos\theta}{\cos\phi}\]
+\begin{itemize}
+\item 圓：$\theta=\frac{\pi}{2}$，$\varepsilon=0$
+\item 橢圓：$\theta>\phi$，$0<\varepsilon<1$
+\item 拋物線：$\theta=\phi$，$\varepsilon=1$
+\item 雙曲線：$\theta<\phi$，$\varepsilon>1$
+\end{itemize}
+
+兩丹德林球為：
+\begin{itemize}
+\item 球心：
+\[\left(\alpha,\beta,\frac{\omega\sin(\theta)}{\sin(\phi)+\sin(\theta)}+\gamma\right)\]
+半徑：
+\[\abs{\frac{\omega\sin\phi\sin\theta}{\sin\phi+\sin\theta}}\]
+\item 球心：
+\[\left(\alpha,\beta,\frac{\omega\sin(\theta)}{-\sin(\phi)+\sin(\theta)}+\gamma\right)\]
+半徑：
+\[\abs{\frac{\omega\sin\phi\sin\theta}{\sin\phi-\sin\theta}}\]
+\end{itemize}
+\subsection{公切圓圓心軌跡}
+\subsubsection{非拋物線}
+一平面上兩定圓$A$、$B$，兩圓圓心距離$f\geq 0$、兩圓半徑分別為$r\geq 0$與$s\geq 0$，$f,r,s\in\mathbb{R}$，則與該二圓均相切的動圓的圓心軌跡必由以下組成：
+\begin{itemize}
+\item 以兩圓圓心為焦點、$r+s$或$|r-s|$的圓、橢圓或雙曲線的一分支，或
+\item 過兩圓圓心的直線的一部分，或
+\item 兩圓圓心連線的中垂線，或
+\item 不存在。
+\end{itemize}
+令$P$與$A$圓心的距離為$\ol{PA}$、$P$與$B$圓心的距離為$\ol{PB}$，定義動點$P$軌跡方程（存在指有實解）：
+\begin{itemize}
+\item $F\colon\ol{PA}+r=\ol{PB}+s$：同時外切兩圓，存在於$f\geq|r-s|$。
+\item $G\colon\ol{PA}-r=\ol{PB}-s$：同時內切兩圓且公切圓同時在兩圓內或兩圓均在公切圓內，存在於$f\geq|r-s|$。
+\item $H\colon\ol{PA}-r=s-\ol{PB}$：同時內切兩圓且一圓在公切圓內且另一圓在公切圓外，存在於$f\leq r+s$。
+\item $I\colon\ol{PA}+r=-\ol{PB}-s$：存在於$f=r=s=0$。
+\item $J\colon\ol{PA}+r=\ol{PB}-s$：外切圓$A$、內切圓$B$且$B$在公切圓內，存在於$f\geq r+s$。
+\item $K\colon\ol{PA}-r=\ol{PB}+s$：內切圓$A$且$A$在公切圓內、外切圓$B$，存在於$f\geq r+s$。
+\item $L\colon\ol{PA}-r=-\ol{PB}-s$：內切圓$A$且$A$在公切圓外、外切圓$B$，存在於$f\leq r-s\geq 0$。
+\item $M\colon\ol{PA}+r=-\ol{PB}+s$：外切圓$A$、內切圓$B$且$B$在公切圓外，存在於$f\leq s-r\geq 0$。
+\end{itemize}
+$F$和$G$的圖形為：
+\begin{itemize}
+\item $f>r-s=0$（即兩同半徑圓相割、外切或外離）：$F$和$G$均為兩圓圓心連線的中垂線。
+\item $f=r-s=0$（即兩圓重合）：$F$和$G$均為整個平面。
+\item $f>|r-s|\neq 0$（即兩異半徑圓相割、外切或外離）：$F$和$G$為以兩圓圓心為焦點、$|r-s|$為兩倍半貫軸的雙曲線的兩分支，其中$F$在焦點-準線定義中的焦點為半徑較大的圓的圓心，$G$在焦點-準線定義中的焦點為半徑較小的圓的圓心。
+\item $f=|r-s|\neq 0$（即兩異半徑圓內切）：$F$為自半徑較大的圓的圓心向另一圓圓心的反方向的半直線，$G$為自半徑較小的圓的圓心向另一圓圓心的反方向的半直線，合起來為過兩圓圓心的直線扣除兩圓圓心連線段。
+\end{itemize}
+$H$和$I$的圖形為：
+\begin{itemize}
+\item $f=r=s=0$：$H$和$I$均為兩圓圓心。
+\item $f=0<r+s$（即兩圓同心）：$H$為以兩圓圓心為圓心、$r+s$為兩倍半徑的圓。
+\item $0<f<r+s$（即兩圓非同心內離、內切或相割）：$H$為以兩圓圓心為焦點、$r+s$為兩倍半長軸的橢圓。
+\item $f=r+s>0$（即兩圓外切）：$H$為兩圓圓心連線段。
+\end{itemize}
+$J$和$K$的圖形為：
+\begin{itemize}
+\item $f=r=s=0$：$J$和$K$均為整個平面。
+\item $f=r+s>0$（即兩圓外切）：$J$為自$A$的圓心向另一圓圓心的反方向的半直線，$G$為自$B$的圓心向另一圓圓心的反方向的半直線，合起來為過兩圓圓心的直線扣除兩圓圓心連線段。
+\item $f>r=s=0$：$J$和$K$均為兩圓圓心連線的中垂線。
+\item $f>r+s>0$（即兩圓外離）：$J$和$K$為以兩圓圓心為焦點、$r+s$為兩倍半貫軸的雙曲線的兩分支，其中$J$在焦點-準線定義中的焦點為$A$的圓心，$K$在焦點-準線定義中的焦點為$B$的圓心。
+\end{itemize}
+$L$和$M$的圖形為：
+\begin{itemize}
+\item $f=0<|r-s|$（即兩異半徑同心圓）：$L$和$M$存在者為以兩圓圓心為圓心、$|r-s|$為兩倍半徑的圓。
+\item $0<f<|r-s|$（即兩非同心圓內離）：$L$和$M$存在者為以兩圓圓心為焦點、$|r-s|$為兩倍半長軸的橢圓。
+\item $f=|r-s|\neq 0$（即兩異半徑圓內切）：$L$和$M$存在者為兩圓圓心連線段。
+\item $f=r-s=0$（即兩圓重合）：$L$和$M$為兩圓圓心。
+\end{itemize}
+所有情況的所有圖形為：
+\begin{itemize}
+\item $f>r+s>|r-s|>0$：兩異同焦點雙曲線。
+\item $f=r+s>|r-s|>0$：一雙曲線與通過兩圓圓心的直線。
+\item $r+s>f>|r-s|>0$：一雙曲線與一橢圓。
+\item $r+s>f=|r-s|>0$：一橢圓與通過兩圓圓心的直線。
+\item $r+s>|r-s|>f>0$：兩異同焦點橢圓。
+\item $r+s>|r-s|>f=0$：兩異同心圓。
+\item $f>r+s=|r-s|>0$：兩重合雙曲線。
+\item $f=r+s=|r-s|>0$：兩重合通過兩圓圓心的直線。
+\item $r+s=|r-s|>f>0$：兩重合橢圓。
+\item $r+s=|r-s|>f=0$：兩重合圓。
+\item $f>r+s>|r-s|=0$：一雙曲線與兩圓圓心連線的中垂線。
+\item $f=r+s>|r-s|=0$：兩圓圓心連線的中垂線與通過兩圓圓心的直線。
+\item $r+s>f>|r-s|=0$：一橢圓與兩圓圓心連線的中垂線。
+\item $r+s>f=|r-s|=0$：一圓與整個平面。
+\item $f>r=s=0$：兩重合兩圓圓心連線的中垂線。
+\item $f=r=s=0$：兩重合整個平面。
+\end{itemize}
+\subsubsection{拋物線}
+另討論一圓（不失一般性地令其為$B$）圓心在某方向無限遠處（此時$f=\infty$）且其半徑為無限大且$\infty>|f-s|>0$時，則$B$圓周在非無限遠處形成一條直線，令稱$L$，稱點$P$與直線$L$的以$P$在$B$圓內為負的有向距離為$\ol{PL}$，稱以$A$圓心在$B$圓內為負的$A$圓心距直線$L$有向距離為$p$，動點$P$軌跡方程（存在指在非無限遠處有實解，均不存在者省略）為：
+\begin{itemize}
+\item $G\colon\ol{PA}-r=\ol{PL}$：外切$A$於$B$外且切$L$於$B$外，或內切$A$於$B$內且切$L$於$B$內且公切圓在$A$內，發生於$p+r\geq 0$，即$f+r-s\geq 0$。
+\item $H\colon\ol{PA}-r=-\ol{PL}$：外切$A$於$B$內且切$L$於$B$內，或內切$A$於$B$外且切$L$於$B$外且公切圓在$A$內，發生於$p-r\leq 0$，即$f-r-s\leq 0$。
+\item $J\colon\ol{PA}+r=\ol{PL}$：外切$A$於$B$外且切$L$於$B$外，或內切$A$於$B$外且切$L$於$B$外且$A$在公切圓內，發生於$p-r\geq 0$，即$f-r-s\geq 0$。
+\item $M\colon\ol{PA}+r=-\ol{PL}$：外切$A$於$B$內且切$L$於$B$內，或內切$A$於$B$內且切$L$於$B$內且$A$在公切圓內，發生於$p+r\leq 0$，即$f+r-s\leq 0$。
+\end{itemize}
+$G$的圖形為：
+\begin{itemize}
+\item $p+r>0$：以$A$圓心為焦點、以$L$向$B$圓心方向平移$r$為準線的拋物線。
+\item $p+r=0$：$A$圓心向$B$圓心的反方向的半直線。
+\end{itemize}
+$H$的圖形為：
+\begin{itemize}
+\item $p-r<0$：以$A$圓心為焦點、以$L$向$B$圓心的反方向平移$r$為準線的拋物線。
+\item $p-r=0$：$A$圓心向$B$圓心方向的半直線。
+\end{itemize}
+$J$的圖形為：
+\begin{itemize}
+\item $p-r>0$：以$A$圓心為焦點、以$L$向$B$圓心的反方向平移$r$為準線的拋物線。
+\item $p-r=0$：$A$圓心向$B$圓心的反方向的半直線。
+\end{itemize}
+$M$的圖形為：
+\begin{itemize}
+\item $p+r<0$：以$A$圓心為焦點、以$L$向$B$圓心方向平移$r$為準線的拋物線。
+\item $p+r=0$：$A$圓心向$B$圓心的反方向的半直線。
+\end{itemize}
+所有情況的所有圖形為：
+\begin{itemize}
+\item $p+r>p-r>0$：$B$圓外兩不相交開向$B$圓心的反方向的拋物線。
+\item $p+r=p-r>0$：$B$圓外兩重合開向$B$圓心的反方向的拋物線。
+\item $p-r>p+r>0$：$B$圓外兩不相交開向$B$圓心的反方向的拋物線。
+\item $p-r>p+r=0$：$B$圓外一開向$B$圓心的反方向的拋物線與$A$圓心向$B$圓心的反方向的半直線。
+\item $p-r>0>p+r$：一開向$B$圓心的反方向的拋物線與一開向$B$圓心方向的拋物線交於$L$和$A$圓的兩交點。
+\item $p+r>p-r=0$：$B$圓外一開向$B$圓心的反方向的拋物線與過$A$、$B$圓心的直線。
+\item $p+r=p-r=0$：過$A$、$B$圓心的直線。
+\item $p-r=0>p+r$：$B$圓內一開向$B$圓心方向的拋物線與過$A$、$B$圓心的直線。
+\item $p+r>r-p>0$：$B$圓內兩不相交開向$B$圓心方向的拋物線。
+\item $p+r=r-p>0$：$B$圓內兩重合開向$B$圓心方向的拋物線。
+\item $r-p>p+r>0$：$B$圓內兩不相交開向$B$圓心方向的拋物線。
+\item $r-p>p+r=0$：$B$圓內一開向$B$圓心方向的拋物線與$A$圓心向$B$圓心的反方向的半直線。
+\item $r-p>0>p+r$：一開向$B$圓心的反方向的拋物線與一開向$B$圓心方向的拋物線交於$L$和$A$圓的兩交點。
+\end{itemize}
+\end{document}

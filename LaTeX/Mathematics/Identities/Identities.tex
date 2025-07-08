@@ -1,0 +1,27 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Identities}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{Identities (恆等式)}
+\[a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)\]
+\[a^3+b^3=(a+b)(a^2-ab+b^2)=(a+b)^3-3ab(a+b)\]
+\[a^3-b^3=(a-b)(a^2+ab+b^2)=(a-b)^3+3ab(a-b)\]
+\[(a^2+ab+b^2)(a^2-ab+b^2)=a^4+a^2b^2+b^4\]
+\[a^4+b^4+c^4-2(a^2b^2+b^2c^2+c^2a^2)=-(a+b+c)(-a+b+c)(a-b+c)(a+b-c)\]
+\[\sum_{k=1}^nk=\frac{n(n+1)}{2}\]
+\[\sum_{k=1}^nk^2=\frac{n(n+1)(2n+1)}{6}\]
+\[\sum_{k=1}^nk^3=\left(\frac{n(n+1)}{2}\right)^2\]
+\[\sum_{k=0}^{n}r^k=\frac{r^{n+1}-1}{r-1},\quad r\neq1\]
+\[z^n-a^n=(z-a)\sum_{k=0}^{n-1}z^ka^{n-1-k}=\prod_{k=0}^{n-1}\left(z-ae^{i\frac{2\pi k}{n}}\right),\quad z,a\in\mathbb{C}\]
+\[\begin{aligned}
+&\frac{1}{|z|-z}+\frac{1}{|z|-\ol{z}}=\frac{1}{|z|},\quad z\in\mathbb{C}\setminus\mathbf{R}_{\geq 0}\\
+&\frac{1}{|z|+z}+\frac{1}{|z|+\ol{z}}=\frac{1}{|z|},\quad z\in\mathbb{C}\setminus\mathbf{R}_{\leq 0}
+\end{aligned}\]
+\[\sum_{k=m}^{m+n-1}e^{i\frac{2\pi k}{n}}=0\]
+\[\sum_{k=m}^{m+n-1}\abs{e^{i\frac{2\pi k}{n}}-e^{i\frac{2\pi p}{n}}}^2=2n,\quad p\in\mathbb{N}\land m\leq p\leq m+n-1\]
+\end{document}

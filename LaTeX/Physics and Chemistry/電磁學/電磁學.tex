@@ -1,0 +1,2186 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{電磁學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\ch{電磁學（Electromagnetism）}
+
+
+\section{約定（Conventions）}
+\subsection{系統}
+無另標示時：
+\bit
+\item 位置表示依賴於座標時使用笛卡爾座標系統。
+\item 有因次量使用國際單位制。
+\item 符號依以下約定。
+\eit
+\subsection{常數}
+\begin{itemize}
+\item 真空光速（Speed of light in vacuum）：$c$ = 299792458 m s$^{-1}$，不確定度為零，用於定義 m
+\item 基本電荷（Elementary charge）：$e = 1.602176634 \times 10^{-19}$ C，不確定度為零，用於定義 A。
+\item 普朗克常數（Planck constant）：$h = 6.62607015 \times 10^{-34}$ J s，不確定度為零，用於定義 kg
+\item 約化普朗克常數：$\hbar=\frac{h}{2\pi}$
+\item 真空磁導率/真空磁導係數（Vacuum (magnetic) permeability）/磁常數（Magnetic constant）：$\mu_0 = \frac{2\alpha h}{e^2c}$ ，有 1.6$\times 10^{-10}$ 的相對不確定度，其中$\alpha$為精確結構常數（Fine-structure constant），等於0.0072973525643(11)，有 1.6$\times 10^{-10}$ 的相對不確定度。$\mu_0\approx 1.25663706127(20)\times 10^{-6}\text{\ H m}^{-1}\approx 4\pi\times 10^{-7} \text{\ H m}^{-1} = 4\pi\times 10^{-7} \text{\ N A}^{-2} = 4\pi\times 10^{-7} \text{\ V s A}^{-1} \text{\ m}^{-1}  = 4\pi\times 10^{-7} \text{\ kg m s}^{-2} \text{\ A}^{-2}$ 
+\item 真空電容率/真空電容係數（Vacuum permittivity）/電常數（Electric constant）：$\varepsilon_0 = \frac{1}{c^2\mu_0} \approx 8.854187817 \times 10^{-12} \text{\ F m}^{-1} = 8.854187817 \times 10^{-12} \text{\ A}^2\tx{\ s}^4\tx{\ kg}^{-1}\tx{\ m}^{-3}$，有 1.6$\times 10^{-10}$ 的相對不確定度
+\item 靜電力常數/庫侖常數（Coulomb's constant）：$k_e = \frac{1}{4\pi\varepsilon_0}$ N m$^2$ C$^{-2} \approx 8.9875517873681764 \times 10^{9}$ N m$^2$ C$^{-2}$
+\end{itemize}
+\subsection{時間純量}
+\begin{itemize}
+\item 時間：$t$ (s)
+\end{itemize}
+\subsection{能量相關純量}
+\begin{itemize}
+\item 能量：$E$ (J = m$^2$ kg s$^{-2}$)
+\item 功（Work）：$W$ (J)
+\item 功率（Power）：$P$ (W = Watt = 瓦特 = J/s)
+\item 能量（面積）密度：$u$ (J/m$^3$)
+\item 絕對溫度（Absolute temperature）：$\mathscr{T}$ (K)
+\item 輻射通量（Radiant flux）/輻射功率（Radiant power）/光度（Luminosity）：$\Phi_e$ (W)
+\item 頻率光譜通量（Spectral flux in frequency）：$\Phi_{\nu}$ (J)
+\item 波長光譜通量（Spectral flux in wavelength）：$\Phi_{\lambda}$ (W m$^{-1}$)
+\item 輻射強度（Radiant intensity）：$I_e$ (W sr$^{-1}$)
+\item 頻率光譜強度（Spectral intensity in frequency）：$I_{\nu}$ (J sr$^{-1}$)
+\item 波長光譜強度（Spectral intensity in wavelength）：$I_{\lambda}$ (W m$^{-1}$ sr$^{-1}$)
+\item 輻照度（Irradiance）、輻射出射度/輻出度（Radiant exitance）與光強度（Light intensity）：$M_e$ (W m$^{-2}$)
+\item 頻率光譜輻照度（Spectral irradiance in frequency）與頻率光譜出射度（Spectral exitance in frequency）：$M_{\nu}$ (J m$^{-2}$)
+\item 波長光譜輻照度（Spectral irradiance in wavelength）與波長光譜出射度（Spectral exitance in wavelength）：$M_{\lambda}$ (W m$^{-3}$)
+\item 輻射率（Radiance）：$L_e$ (W m$^{-2}$ sr$^{-1}$)
+\eit
+\subsection{位置向量空間相關}
+\begin{itemize}
+\item 位置向量：$\mathbf{r}$ (m)
+\item 微分定向長度元：$\mathrm{d}\mathbf{l}$ (m)
+\item 微分定向面積元：$\mathrm{d}\mathbf{S}$ (m$^2$)
+\item 微分體積元：$\mathrm{d}V$ (m$^3$)
+\item 長度/曲線：$l$ (m)
+\item 面積/曲面：$S$ (m$^2$)
+\item 體積/三維流形：$V$ (m$^3$)
+\end{itemize}
+\subsection{力向量}
+\begin{itemize}
+\item 力（Force）：$\mathbf{F}$ (N = kg m s$^{-2}$)
+\item 力密度（Force density）：$\mathbf{f}$ (N m$^{-3}$ = kg m$^{-2}$ s$^{-2}$)
+\item 力矩（Torque）：$\boldsymbol{\tau}$ (N m = kg m$^2$ s$^{-2}$)
+\item 壓力（Pressure）：$p$ (N m$^{-2}$)
+\end{itemize}
+\subsection{電磁場（Electromagnetic field）相關}
+\subsubsection{三維向量場}
+\begin{itemize}
+\item 電場（Electric field）/E場（E-field）：$\mathbf{E}$ (V m$^{-1}$ = N C$^{-1}$ = kg m s$^{-3}$ A$^{-1}$)
+\item 磁通量密度/磁感應強度（場）（Magnetic flux density (field)）/B場（B-field）/磁場（Magnetic field）：$\mathbf{B}$ (特斯拉 = Tesla = T = N A$^{-1}$ m$^{-1}$ = kg s$^{-2}$ A$^{-1}$)
+\item 磁向量勢（Magnetic vector potential）/向量勢（Vector potential）：$\mathbf{A}$ (V s m$^{-1}$)
+\item 電位移（場）（Electric displacement (field)）：$\mathbf{D}$ (C m$^{-2}$ = A s m$^{-2}$)
+\item 磁場強度（Magnetic field strength or Magnetic field intensity）/H場（H-field）：$\mathbf{H}$ (A m$^{-1}$)
+\end{itemize}
+\subsubsection{純量場}
+\begin{itemize}
+\item 電位能（Electric potential energy）：$U_e$ (J = N m = kg m$^2$ s$^{-2}$)
+\item 電位（Electric potential）/電純量勢（Electric scalar potential）/純量勢（Scalar potential）：$\phi$ (V = J/C = N m C$^{-1}$ = kg m$^2$ s$^{-3}$ A$^{-1}$)
+\item 電通量（Electric flux）：$\Phi_E$ (V m = kg m$^3$ s$^{-3}$ A$^{-1}$)
+\item 磁通量（Magnetic flux）：$\Phi_B$ (韋伯 = Weber = Wb = T m$^2$ = kg m$^2$ s$^{-2}$ A$^{-1}$ = V s)
+\end{itemize}
+\subsection{物體狀態函數與路徑函數、電荷、磁矩與電路相關}
+\subsubsection{實數}
+\begin{itemize}
+\item 電荷（Charge）：$q$ (庫侖 = Coulomb = C)
+\item 電極化率/電極化係數（Electric susceptibility）：$\chi_e$
+\item （絕對）電容率/電容係數（Permittivity）：$\varepsilon$ (F m$^{-1}$ = A$^2$ s$^4$ kg$^{-1}$ m$^{-3}$)
+\item 相對電容率/相對電容係數（Relative permittivity）/介電常數（Dielectric constant）：$\varepsilon_r$
+\item （體積）磁化率/磁化係數（Magnetic susceptibility）：$\chi_v$，有時為二階張量
+\item （絕對）磁導率/磁導係數（(Magnetic) permeability）：$\mu$ (H m$^{-1}$ = kg m s$^{-2}$ A$^{-2}$)，有時為二階張量
+\item 相對磁導率/相對磁導係數（Relative (magnetic) permeability）：$\mu_r$，有時為二階張量
+\item 電阻率（Resistivity）：$\psi$ (Ω m = kg$^1$ m$^3$ s$^{-3}$ A$^{-2}$)
+\item 電阻率的溫度係數（Temperature coefficient of resistance）：$\alpha_R$ (K$^{-1}$)
+\item 線（熱）膨脹係數（Linear coefficient of thermal expansion）：$\alpha_L$ (K$^{-1}$)
+\item 導電度/電導率（(Electrical) conductivity）：$\kappa$ (S m$^{-1}$ = siemen m$^{-1}$ = 西門子 m$^{-1}$ = kg$^{-1}$ m$^{-3}$ s$^3$ A$^2$)
+\item 旋磁比/磁旋比（Gyromagnetic ratio）：$\gamma$ (C kg$^{-1}$)
+\item （體積）（總）電荷密度（(Volume) (total) charge density）：$\rho$ (C m$^{-3}$ = A s m$^{-3}$)
+\item （體積）束縛電荷密度（(Volume) bound charge density）：$\rho_b$ (C m$^{-3}$ = A s m$^{-3}$)
+\item （體積）自由電荷密度（(Volume) free charge density）：$\rho_f$ (C m$^{-3}$ = A s m$^{-3}$)
+\item 表面（總）電荷密度（Surface (total) charge density）：$\rho$ (C m$^{-2}$ = A s m$^{-2}$)
+\item 表面束縛電荷密度（Surface bound charge density）：$\rho_b$ (C m$^{-2}$ = A s m$^{-2}$)
+\item 表面自由電荷密度（Surface free charge density）：$\rho_f$ (C m$^{-2}$ = A s m$^{-2}$)
+\item 電流（(Electric) current）：$I$ (A)
+\item 自由電流（Free current）：$I_f$ (A)
+\item 電壓（Voltage）/電位差（Electric potential difference）：$V$ (Volt = V)
+\item 電容（(Electric) capacitance）：$C$ (法拉 = Farad = F = C V$^{-1}$ = kg$^{-1}$ m$^{-2}$ s$^4$ A$^2$)
+\item 自感（Self-inductance）/電感（(Electric) inductance）：$L$ (亨利 = Henry = H = kg m$^2$ s$^{-2}$ A$^{-2}$)
+\item 互感（Mutual-inductance）：$M$ (H)
+\item 漏（電）感（Leakage inductance）：$L_l$ (H)
+\item 電感耦合係數（Inductive coupling factor）：$k_c$
+\item 電阻（(Electric) resistance）：$R$ (Ω = V A$^{-1}$)
+\item 容抗（(Electric) capacitive reactance）：$X_C$ (Ω)
+\item 感抗（(Electric) inductive reactance）：$X_L$ (Ω)
+\item 電抗（(Electric) reactance）：$X$ (Ω)
+\end{itemize}
+\subsubsection{複數或二維向量}
+\begin{itemize}
+\item （電）阻抗（(Electric) impedance）：$Z$ (Ω)
+\end{itemize}
+\subsubsection{三維向量}
+\begin{itemize}
+\item 速度：$\mathbf{v}$ (m/s)
+\item 漂移速度（Drift velocity）：$\mathbf{v}_d$ (m/s)
+\item 加速度：$\mathbf{a}$ (m/s$^2$)
+\item 角速度：$\boldsymbol{\omega}$ (s$^{-1}$ = Hz)
+\item 角動量：$\mathbf{L}$ (kg m$^2$ s$^{-1}$)
+\item 電動勢（Electromotive force, emf, EMF）：$\mathcal{E}$ (V)
+\item 動量：$\mathbf{p}$ (kg m/s)
+\item （電）極化密度（Polarization density）：$\mathbf{P}$ (C m$^{-2}$ = A s m$^{-2}$)
+\item 磁矩（Magnetic moment）/磁偶極矩（Magnetic dipole moment）：$\mathbf{m}$ (A m$^2$)
+\item （電）偶極矩（(Electric) dipole moment）：$\mathbf{e}$ (C m)
+\item 磁化強度（Magnetization）/M場（M-field）：$\mathbf{M}$ (A m$^{-1}$)
+\item （體積）（總）電流密度（(Volume) (total) current density）：$\mathbf{J}$ (A m$^{-2}$)
+\item （體積）極化電流密度（(Volume) polarization current density）：$\mathbf{J}_p$ (A m$^{-2}$)
+\item （體積）磁化電流密度（(Volume) magnetization current density）：$\mathbf{J}_m$ (A m$^{-2}$)
+\item （體積）束縛電流密度（(Volume) bound current density）：$\mathbf{J}_b$ (A m$^{-2}$)
+\item （體積）自由電流密度（(Volume) free current density）：$\mathbf{J}_f$ (A m$^{-2}$)
+\end{itemize}
+\subsection{波相關}
+\subsubsection{向量}
+\begin{itemize}
+\item 角波向量（Angular wave vector）：$\mathbf{k}$ (m$^{-1}$)
+\item 相速度方向單位向量：$\hat{\mathbf{v}}$
+\item 相速度（Phase velocity）：$\mathbf{v}$ (m/s)
+\item 群速度（Group velocity）：$\mathbf{v}_g$ (m/s)
+\end{itemize}
+\subsubsection{純量}
+\begin{itemize}
+\item 角頻率（Angular frequency）：$\omega$ (s$^{-1}$ = Hz)
+\item 頻率：$\nu$ (s$^{-1}$)
+\item 波長（Wavelength）：$\lambda$ (m)
+\item 波數（Wave number）：$k$ (m$^{-1}$)
+\item 折射率（Refractive Index）：$n$
+\item 相位角（Phase angle）：$\varphi$
+\item 相速率（Phase speed）：$v$
+\end{itemize}
+\subsection{數學}
+\subsubsection{符號}
+\begin{itemize}
+\item 對於向量$\mathbf{v}$，$\abs{\mathbf{v}}$表示其歐幾里得距離。
+\item 單位法向量：$\hat{n}$
+\item 零張量：零、$0$或$\mathbf{0}$
+\item 單位方陣：$\mathbf{I}$
+\item 任意純量$A$與非零向量$\mathbf{B}$，向量$\mathbf{C}=\frac{A}{\mathbf{B}}$表示$\mathbf{C}$使得$\mathbf{B}\cdot \mathbf{C}=A$且$\abs{A}=\abs{\mathbf{B}}\cdot \abs{\mathbf{C}}$，即$\mathbf{B}\cdot \mathbf{C}=A$且$\mathbf{B}\parallel\mathbf{C}$。
+\item 任意向量$\mathbf{a}$，$\hat{\mathbf{a}}$指與$\mathbf{a}$同向的單位向量。
+\item 拓樸空間 $(X,\tau)$ 中，集合 $C\subseteq X$ 被稱為不連通的，如果
+\[\exists A,B\in\tau\text{s.t. }A\cap B=\varnothing\land C\cap A\neq\varnothing\land C\cap B\neq\varnothing\land C\subseteq A\cup B.\]
+否則它被稱為連通的。
+\end{itemize}
+\subsubsection{疊加原理（Principle of superposition ）}
+指對於所有線性系統，兩個或多個刺激引起的淨響應是由每個刺激單獨引起的響應總和。電磁力學中的所有場、力和能量都服從之。
+\subsubsection{保守場（Conservative field）}
+線積分僅與起訖點有關而與路徑無關的場，即環路積分為零的場，即可以表示成另一個場的梯度的場，在$\mathbb{R}^3$即旋度為零的場。
+\subsubsection{等位/等勢（Equipotential/Isopotential）域}
+指一個子集，其中每個點都處於相同的勢（Potential），其中勢的梯度為保守場。$n$維中$\leq (n-1)$ 維的兩等位域恆不相交。令有保守場$\mathbf{G}$，勢$\mathbf{U}_G$使得$\mathbf{G}=-\nabla\mathbf{U}_G$，則$\mathbf{U}_G$的等位域恆與場$\mathbf{G}$垂直。當$\mathbf{G}$為靜電場，即在等電位面上移動的電荷不受靜電力作功。
+
+
+\section{電荷、電流、極化、磁化、勞侖茲力與電磁場（Charge, Current, Polarization, Magnetization, Lorentz Force, and Electromagnetic Field）}
+\subsection{自由空間（Free space）/真空（Vacuum）}
+電磁學中的自由空間或真空指沒有具有靜止質量的物質、光的相速度為真空光速、磁常數為真空磁常數的空間。
+\subsection{馬克士威方程組（Maxwell's equations）/馬克士威-黑維塞方程組（Maxwell–Heaviside equations）}
+是一組偏微分方程，由馬克士威於1862年提出，提出時包含勞侖茲力定律，現在則一般寫作四個方程，與勞侖茲力定律一起構成了古典電磁學的基礎，並適用於任意非相對論性情況。
+\subsection{電荷（Charge）}
+\subsubsection{電荷量子化（Charge quantization）}
+\bit
+\item 電子的電荷乘以負一被定義為基本電荷（Elementary charge）$e=\scinote{1.6021766208}{-19}$ C。
+\item 電子的電荷由密立坎（Millikan）於1909年以油滴實驗首次測得。
+\item 所有重子（Baryon）和輕子（Lepton）所帶的電荷皆為基本電荷的整數倍。
+\eit
+\subsubsection{電荷載子（Charge carrier）}
+指在電場作用下可自由運動的電荷，如金屬中的自由電子、半導體中的自由電子與電洞、電解質溶液與熔融態離子化合物的陰陽離子。
+\subsubsection{電荷守恆定律（Law of conservation of charge, chage conservation law）}
+一個系統如與外界無電荷交換，則該系統的總電荷維持定值。可從高斯磁定律與安培–馬可士威定律得出。
+\subsection{勞侖茲力（Lorentz force）/電磁力（Electromagnetic force）}
+\subsubsection{勞侖茲力定律（Lorentz force law）}
+\[\mathbf{F} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B})\]
+\begin{itemize}
+\item 電場$\mathbf{E}$與磁場$\mathbf{B}$以之定義。
+\item $q\mathbf{E}$ 稱勞侖茲力電（場）力項或電（場）力；$q\mathbf{v} \times \mathbf{B}$ 稱勞侖茲力磁（場）力項或磁（場）力。
+\item 磁場力對電荷不做功。
+\end{itemize}
+\subsubsection{勞侖茲力密度（Lorentz force density）}
+\[\mathbf{f} = \rho (\mathbf{E} + \mathbf{v} \times \mathbf{B}) = \rho \mathbf{E} + \mathbf{J}_f \times \mathbf{B}.\]
+\subsection{電通量（Electric flux）}
+曲面 $S$ 上的電通量$\Phi_{E}$定義為：
+\[\Phi_{E}=\iint _{S}\mathbf {E} \cdot \mathrm{d}\mathbf{S}.\]
+\subsection{磁通量（Magnetic flux）}
+曲面 $S$ 上的磁通量$\Phi_{B}$定義為：
+\[\Phi_{B}=\iint _{S}\mathbf {B} \cdot \mathrm{d}\mathbf{S}.\]
+對於均勻磁場$\mathbf{B}$通過定向（Oriented）平面$\mathbf{S}$，其磁通量可簡化為：
+\[\Phi_{B}=\mathbf{B}\cdot\mathbf{S}.\]
+\subsection{電極化（Polarization）}
+\subsubsection{（電）偶極矩（(Electric) dipole moment）}
+一物體的電偶極矩$\mb{e}$根據其在電場$\mathbf{E}$中所受電力矩$\boldsymbol{\tau}$定義為：
+\[\boldsymbol{\tau} = \mathbf{e} \times \mathbf{E}.\]
+\subsubsection{電偶極子（Electric dipole）}
+兩點電荷電荷$+q$、$-q$，稱電偶極子，自電荷$-q$指向電荷$q$的向量為$\mathbf{d}$，具有電偶極矩：
+\[\mathbf{e}=q\mathbf{d}.\]
+\subsubsection{（電）極化密度（Polarization current density）}
+定義為：
+\[\mathbf{P}=\dv{\mathbf{e}}{V}.\]
+\subsubsection{電位移（場）（Electric displacement (field)）}
+定義為：
+\[\mathbf{D} = \varepsilon_0 \mathbf{E} + \mathbf{P}.\]
+\subsubsection{電極化率/電極化係數（Electric susceptibility）}
+定義為：
+\[\mathbf{P}=\mathbf{P}_0+\varepsilon_0\chi_e\mathbf{E}.\]
+對於非線性材料，令$\chi_{ei}$為第$i$電極化率：
+\[\mathbf{P}=\mathbf{P}_0+\varepsilon_0\sum_{i=1}^{\infty}\chi_{ei}\mathbf{E}^i.\]
+對於不具有鐵電性的材料，$\mathbf{P}_0=0$。
+\subsubsection{相對電容率（Relative permittivity）/介電常數（Dielectric constant）}
+定義為：
+\[\varepsilon_r=(1+\chi_e).\]
+\subsubsection{電容率（Permittivity）}
+定義為：
+\[\varepsilon=\varepsilon_r\varepsilon_0,\]
+即：
+\[\mathbf{D} = \varepsilon\mathbf{E}.\]
+\subsection{磁化（Magnetization）}
+\subsubsection{磁矩（Magnetic moment）/磁偶極矩（Magnetic dipole moment）}
+一物體的磁偶極矩$\mb{m}$根據其在磁場$\mathbf{B}$中所受磁力矩$\boldsymbol{\tau}$定義為：
+\[\boldsymbol{\tau} = \mathbf{m} \times \mathbf{B}.\]
+\subsubsection{磁極（Magnetic pole）}
+定義$\mathbf{m}$自 S 極指向 N 極。
+\subsubsection{磁化強度（Magnetization）}
+定義為：
+\[\mathbf{M} = \dv{\mathbf{m}}{V}.\]
+\subsubsection{磁場強度（Magnetic field strength or Magnetic field intensity）/H場（H-field）}
+定義為：
+\[\mathbf{H} = \frac{\mathbf{B}}{\mu_0} - \mathbf{M}.\]
+\subsubsection{（體積）磁化率/磁化係數（Magnetic susceptibility）}
+定義為：
+\[\mathbf{M}=\chi_v\mathbf{H}.\]
+為實數或二階張量。
+
+磁化率$>0$者具有順磁性、鐵磁性、亞鐵磁性或反鐵磁性；磁化率$<0$者具有逆磁性。
+\subsubsection{相對磁導率（Relative magnetic permeability）}
+定義為：
+\[\mu_r=(1+\chi_v).\]
+\subsubsection{磁導率（Magnetic permeability）}
+定義為：
+\[\mu=\mu_r\mu_0,\]
+即：
+\[\mu\mathbf{H}=\mathbf{B}.\]
+\subsection{電荷密度（Charge density）}
+\subsubsection{（體積）（總）電荷密度（(Volume) (total) charge density）}
+定義為：
+\[\rho = \dv{q}{V}.\]
+\subsubsection{（體積）束縛電荷密度（(Volume) bound charge density）}
+定義為：
+\[\rho_b = -\nabla \cdot \mathbf{P}.\]
+\subsubsection{（體積）自由電荷密度（(Volume) free charge density）}
+定義為：
+\[\rho_f = \rho + \rho_b.\]
+\subsubsection{表面（總）電荷密度（Surface (total) charge density）}
+定義為：
+\[\sigma = \dv{q}{S}.\]
+\subsubsection{表面束縛電荷密度（Surface bound charge density）}
+定義為：
+\[\sigma_b = \mathbf{P}\cdot\hat{n}.\]
+\subsubsection{表面自由電荷密度（Surface free charge density）}
+定義為：
+\[\sigma_f = \sigma + \sigma_b.\]
+\subsection{電流（Electric current）與電流密度（Current density）}
+\subsubsection{電流}
+指通過一截面的電荷的平均定向移動，定義為單位時間內通過某一截面的電荷淨轉移量$I=\frac{\mathrm{d}q}{\mathrm{d}t}$。一電流元$\mathrm{d}\mathbf{l}I$定向為其正電荷移動方向。
+\subsection{漂移速度（Drift velocity）}
+帶同性電的電荷載子進行著無序的鋸齒狀熱運動，其電荷量加權平均速度稱漂移速度$\mathbf{v}_d$（帶異性電的電荷載子，如半導體中的電子與電洞，須分開討論），不受勞侖茲力時為零，受勞侖茲力時不為零。由於電子質量甚小，自由電子熱運動速率甚大。以截面積3平方毫米的銅線為例，電荷載子密度約8.5$\times 10^{28}$ m$^{-3}$，電子熱運動速率室溫下約2百千公尺每秒，當載流10安培，電子漂移速度約0.24毫米每秒。
+\subsubsection{（體積）（總）電流密度（(Volume) (total) current density）}
+令一微分體積域有電流$I$，方向為$\hat{\mathbf{l}} $，與之垂直的截面面積$S$，其電流密度定義為：
+\[\mathbf{J} = \lim_{S\to 0}\frac{\hat{\mathbf{l}} I}{S}.\]
+\subsubsection{（體積）極化電流密度（(Volume) polarization current density）}
+定義為：
+\[\mathbf{J}_p=\pdv{\mathbf{P}}{t}.\]
+\subsubsection{（體積）磁化電流密度（(Volume) magnetization current density）}
+定義為：
+\[\mathbf{J}_m=\nabla \times \mathbf{M}.\]
+\subsubsection{（體積）束縛電流密度（(Volume) bound current density）}
+定義為：
+\[\mathbf{J}_b = \mathbf{J}_p + \mathbf{J}_m.\]
+\subsubsection{（體積）自由電流密度（(Volume) free current density）}
+某點的自由電流密度為該處的電荷載子密度$\rho$乘以電荷載子速度$\mathbf{v}$：
+\[\mathbf{J}_f=\rho\mathbf{v}.\]
+某區域的（平均）自由電流密度，即點自由電流密度的體積積分除以體積，即平均電荷載子密度$\rho$乘以電荷載子電荷量加權平均速度（即漂移速度$\mathbf{v}_d$）：
+\[\mathbf{J}_f=\rho\mathbf{v}_d.\]
+服從：
+\[\mathbf{J}_f=\mathbf{J}-\mathbf{J}_b.\]
+\subsubsection{自由電流（Free current）}
+截面積$S$的自由電流為：
+\[\iint_S\mathbf{J}_f\,\mathrm{d}S.\]
+\subsection{場線（Field line）}
+場線於1851年由法拉第（Faraday）提出，用於表示向量場。
+\subsubsection{定義}
+\begin{itemize}
+\item 場線在該點的切線方向表示向量場在該點的方向。
+\item 場線在該點的疏密程度正比於向量場在該點的模長。
+\item 場線若非封閉，則起點/源頭點在一個散度為正的點或無限遠處，終點/匯聚點在一個散度為負的點或無限遠處。除起點與終點（如有）外，其餘點散度為零，即場線不在該點相交。
+\end{itemize}
+\subsubsection{電場線（Line of electric field）/電力線（Line of electric force）}
+電場線密度定義為電場，通過一曲面的電場線數目定義為其電通量。電荷密度為正的點，電場散度大於零，為電場線源頭；電荷密度為負的點，電場散度小於零，為電場線匯聚點；電荷密度為零的點，電場散度等於零，場線不可在電荷密度為零的點相交。
+\subsubsection{磁場線（Line of magnetic field）/磁力線（Line of magnet force）}
+磁場線密度定義為磁場，通過一曲面的磁場線數目定義為其磁通量。磁感應強度場散度為零，即場線不可相交，即場線為封閉曲線。
+\subsubsection{保守場線}
+保守場線是張緊的（Taut）。
+
+
+\section{靜電學（Electrostatics）}
+\subsection{詞彙定義}
+\subsubsection{靜電學}
+靜電學研究電場不隨時間改變下的電磁學。
+\subsubsection{靜電平衡（Electrostatic equilibrium）}
+當電荷分布不隨時間改變，則稱其處於靜電平衡。
+\subsubsection{靜電場（Electrostatic field）}
+指不隨時間改變的電場，為保守場，即旋度為零：
+\[\forall l\colon-\oint_{l}\mathbf{E}\cdot\mathrm{d}\mathbf{l}=0.\]
+隨時間改變的電場亦可分為靜電場與感應電場，其中靜電場服從庫侖定律靜電場形式，無旋度，可以表示成靜電場電位的散度；感應電場是電場減去靜電場，滿足法拉第電磁感應定律。
+\subsubsection{靜電力（Electrostatic force）/庫侖力（Coulomb force）}
+靜電場造成的勞侖茲力電力項，為保守力。
+\subsection{庫侖定律（Coulomb's law）與馬克士威第一方程（Maxwell's first equation）–高斯定律（Gauss' law）}
+\subsubsection{庫侖扭秤（Torsion balance）}
+\begin{itemize}
+\item 1777年庫侖發明庫侖扭秤，構造類似卡文迪西扭秤實驗（Cavendish experiment），可測量庫侖常數。
+\item 1785年庫侖提出庫侖定律並以扭秤實驗支持之。
+\end{itemize}
+\subsubsection{庫侖定律靜電力形式}
+原點上電荷$q$，其與$\mathbf{r}$的電荷$q_1$互相之靜電力/庫侖力$\mathbf{F}$服從：
+\[ \mathbf{F} = \frac{k_eqq_1\hat{\mathbf{r}}}{|\mathbf{r}|^2}=\frac{qq_1\hat{\mathbf{r}}}{4\pi\varepsilon_0|\mathbf{r}|^2}.\]
+\subsubsection{庫侖定律靜電場形式}
+原點上電荷$q$，其在$\mathbf{r}$產生的靜電場$\mathbf{E}$為：
+\[\mathbf{E}=\frac{k_eq\hat{\mathbf{r}}}{|\mathbf{r}|^2}=\frac{q\hat{\mathbf{r}}}{4\pi\varepsilon_0|\mathbf{r}|^2}.\]
+\subsubsection{高斯定律–微分形式}
+\[\nabla\cdot\mathbf{D}=\rho_f,\]
+即：
+\[\nabla\cdot\mathbf{E}=\frac{\rho}{\varepsilon_0}\]
+\subsubsection{庫侖定律證明高斯定律}
+\(\textit{Statement.}\) 已知電場疊加原理，則對於一靜止電荷，高斯定律微分形式為庫侖定律靜電場形式的必要條件。
+\begin{proof}\mbox{}\\
+庫侖定律闡明，原點上電荷$q$，其在$\mathbf{r}$產生的電場$\mathbf{E}$為：
+\[\mathbf{E}=\frac{k_eq\hat{\mathbf{r}}}{|\mathbf{r}|^2}=\frac{q\hat{\mathbf{r}}}{4\pi\varepsilon_0|\mathbf{r}|^2}.\]
+令體積域 $V$ 內電荷密度$\rho$：
+\[\mathbf{E}=\frac{\rho}{4\pi\varepsilon_0}\iiint_V\frac{\hat{\mathbf{r}}}{|\mathbf{r}|^2}\,\mathrm{d}^{3}\mathbf{r}.\]
+取方程兩邊對於 $ \mathbf {r} $的散度：
+\[\nabla\cdot\mathbf{E}=\frac{\rho}{4\pi\varepsilon_0}\iiint_V\nabla\cdot\frac{\hat{\mathbf{r}}}{|\mathbf{r}|^2}\,\mathrm{d}^{3}\mathbf{r}.\]
+注意到：
+\[\nabla\cdot\frac{\hat{\mathbf{r}}}{|\mathbf{r}|^2}=4\pi\delta(\mathbf{r}),\]
+其中$\delta(\mathbf{r}-\mathbf{r}_0)$為狄拉克$\delta$函數。
+\[\nabla\cdot\mathbf{E}=\frac{\rho}{4\pi\varepsilon_0}\iiint_V4\pi\delta(\mathbf{r})\,\mathrm{d}^{3}\mathbf{r}=\frac{\rho}{\varepsilon_0}.\]
+\end{proof}
+\subsubsection{高斯定律證明庫侖定律}
+\(\textit{Statement.}\) 已知電場疊加原理，則對於一靜止電荷，高斯定律微分形式為庫侖定律靜電場形式的充分條件。
+\begin{proof}\mbox{}\\
+高斯定律闡明：
+\[\nabla\cdot\mathbf{E}=\frac{\rho}{\varepsilon_0}.\]
+定義球座標系，以庫侖定律欲討論之電荷之位置為原點，徑向距離$r$、極角$\theta$與方位角$\varphi$。由於$\mathbf{E}$只依賴$r$：
+\[\nabla\cdot\mathbf{E}=\frac{1}{r^2}\frac{\mathrm{d}}{\mathrm{d} r}\left(r^2\mathbf{E}\right).\]
+在球坐標系中，積分體積域$V$的微分體積元素$\mathrm{d}V$為：
+\[\mathrm{d}V=r^2\sin(\theta)\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\varphi.\]
+故對於點電荷$q$，電荷密度$\rho$可以表示為：
+\[\rho=\frac{q\delta(\mathbf{r})}{4\pi|\mathbf{r}|^2},\]
+其中$\delta(\mathbf{r})$為狄拉克$\delta$函數。
+\[\nabla\cdot\mathbf{E}=\frac{q\delta(\mathbf{r})}{4\pi\varepsilon_0|\mathbf{r}|^2}.\]
+又，$\nabla\times\mathbf{E}=0$，得：
+\[\mathbf{E}=\frac{q\hat{\mathbf{r}}}{4\pi\varepsilon_0|\mathbf{r}|^2}.\]
+\end{proof}
+\subsubsection{高斯定律–積分形式}
+對於封閉三維流形$V$與$S=\partial V$，令$V$中總電荷$q$：
+\[\oiint_S\mathbf{D}\cdot\mathrm{d}\mathbf{S}=\iiint_V\rho_f\,\mathrm{d}V,\]
+即：
+\[\oiint_{S}\mathbf {E} \cdot \mathrm{d}\mathbf{S}=\frac{1}{\varepsilon_0}\iiint_V\rho\,\mathrm{d}V=\frac{q}{\varepsilon_0}.\]
+\subsection{靜電感應與起電}
+\subsubsection{靜電感應（Electrostatic induction）}
+當一帶電體靠近電中性的物體時，該物體的近端（靠近帶電體的區域）感應出異性電，遠端感應出等量同性電，此種電荷稱感應電荷，此種暫時性的電荷分離現象，稱為靜電感應。因靜電感應使異性電較同性電更近帶電體，故兩物相吸。當帶電體移走時，物體又會恢復成原來的狀態。
+
+導體（Conductor）至絕緣體（Insulator）皆可，惟金屬乃自由電子移動，故感應電荷較強；絕緣體電子無真正分離出，僅產生感應偶極，感應電荷輕微，亦稱極化現象。
+\subsubsection{感應起電（Charging by induction）}
+若在靜電感應時將該電中性體接地，其將帶與帶電體異性之電，稱感應起電。
+\subsubsection{接觸起電（Charging by contact）}
+將電位不同之物體與導體接觸，藉自由電子的轉移使兩者電位相等，稱為接觸起電。
+\subsubsection{摩擦起電（Charging by friction）}
+通過摩擦的方式，使物體之間的電子轉移，使兩物體帶上等量異性電荷，稱摩擦起電。如：絲綢摩擦玻璃棒使前者帶負電且後者帶正電、毛皮摩擦橡膠棒使前者帶正電且後者帶負電。
+
+導體至絕緣體皆可。電子轉移的原因是兩者電子親和力（Electron affinity, $EA$）或游離能（Ionization energy, $IE$的不同，摩擦後電子親和力或游離能較小者帶正電荷、電子親和力或游離能較大者帶負電荷。
+\subsubsection{驗電器（Electroscope）}
+一瓶，一金屬細桿穿過瓶口絕緣塞，桿上瓶內端連接兩金屬箔片（一般為金箔），瓶外端連接金屬球。金屬箔片不帶電時因自身重量閉合，帶電時則因兩金屬箔片帶同性電之勞侖茲力而張開，張角與電量正相關。
+\begin{itemize}
+\item 欲檢測一物體是否帶電：使驗電器不帶電，以物接觸之，若張開則物帶電，否則物不帶電。
+\item 欲檢測一物體是否為導體：使驗電器帶電、物不帶電，以物接觸之，若張角縮小則物為導體，否則物為絕緣體。
+\item 欲檢測一物的電性：使驗電器帶已知電性電，以物接觸之，若張角變大則物帶與驗電器同性之電，若張角變小則物不帶與驗電器同性之電，若張角先變小至閉合而後再次張開則物帶量值較驗電器所帶電更多的與驗電器異性之電。
+\end{itemize}
+\subsubsection{影印機/靜電成像技術（Electrostatic imaging）}
+\begin{itemize}
+\item 光電導材料（Photoconductive Material）：在黑暗中絕緣，但受光照後會導電。
+\item 感光鼓（photoreceptor drum）：覆有光電導材料的圓筒，影印前先使帶靜電。
+\item 曝光（Exposure）：文件被光源（如氙氣燈或雷射束）照亮，空白處光透射而過，將文件的影像投射到感光鼓上。鼓上未被光照的部分保持靜電荷，而被光照的部分靜電荷被中和。
+\item 顯影劑/碳粉（Toner）：感光鼓表面的靜電影像吸引帶相反電荷的碳粉，使碳粉附著在感光鼓的圖像區域上。碳粉通常由樹脂、顏料和帶電材料組成。
+\item 轉印：一張紙被輸送到感光鼓附近，帶與感光鼓同性之電的轉印電極提供較感光鼓靜電荷更強的靜電場，將碳粉圖像從感光鼓吸引並轉移到紙張上。
+\item 熱壓（Fuser）：高溫將碳粉融化並壓附到紙上，形成永久圖像。
+\end{itemize}
+\subsection{靜電場電位能（Electric potential energy）與電位（Electric potential）}
+\subsubsection{靜電場電位能}
+電荷$q$在位置$\mathbf{r}_1$相對於參考點$\mathbf{r}_{ref}$的靜電場電位能$U_e(\mathbf{r}_1)$為：
+\[\begin{aligned}
+U_e(\mathbf{r}_1) &= -W_{\mathbf{r}_{ref}\to\mathbf{r}_1}\\
+&= -\int_{\mathbf{r}_{ref}}^{\mathbf{r}_1} \mathbf{F}(\mathbf{r})\cdot\,\mathrm{d}\mathbf{r}\\
+&= -\int_{\mathbf{r}_{ref}}^{\mathbf{r}_1} q\mathbf{E}(\mathbf{r})\cdot\,\mathrm{d}\mathbf{r}
+\end{aligned}\]
+其中$\mathbf{E}$為靜電場。
+
+靜電力對電荷做功等於靜電場電位能變化乘以負一。
+
+靜電場電位能服從力學能守恆與歐拉-拉格朗日方程（Euler-Lagrange equation）。
+
+常以無限遠處為零位面。
+\subsubsection{靜電場電位}
+某處的靜電場電位$\phi$為非零測試電荷$q$在該處的電位能$U_e$除以其電荷$q$，令參考點$\mathbf{r}_{ref}$，即：
+\[\phi=-\int_{\mathbf{r}_{ref}}^{\mathbf{r}_1} \mathbf{E}(\mathbf{r})\cdot\,\mathrm{d}\mathbf{r}\]
+其中$\mathbf{E}$為靜電場。
+
+常以無限遠處為零位面。
+\subsubsection{單一靜電荷電位能與電位}
+以無限遠處為電位能與電位零位面，對於原點上單一靜電荷$q_0$場源，$\mathbf{r}$的電位$\phi(\mathbf{r})$為：
+\[\phi(\mathbf{r})=\frac{k_eq_0}{\abs{\mathbf{r}}}\]
+電荷$q$在位置$\mathbf{r}$的電位能$U_e(\mathbf{r})$為：
+\[U_e(\mathbf{r})=\frac{k_eq_0q}{\abs{\mathbf{r}}}\]
+\ssc{接地（Ground）}
+地球定義為一以無限遠處為零位面之電位恆為零的巨大導體；接地指將一物體與地球以導體相接使可與地球自由交換電荷。
+\subsection{靜電平衡導體}
+\subsubsection{靜電屏蔽（Electrostatic shielding）效應}
+令整個空間為$R$，其中有連通閉集$C$為導體，即其中電荷載子可以自由移動使處於靜電平衡，假設每個事件發生後$C$可以立即達成靜電平衡，令$C$除去$C$的極限點為開集$D$，令有簡單連通閉集$O\supseteq C$使得$O$的所有極限點都是$C$的極限點，令$O$除去$O$的極限點為開集$P$，令$P\setminus D$的閉子集的集合$\mathscr{B}$使得：
+\[\qty(\forall A\neq B\in\mathscr{B}\colon A\cap B=\varnothing)\land\bigcup_{A\in\mathscr{B}}A=P\setminus D.\]
+則當$C$處於靜電平衡時：
+\begin{itemize}
+\item $D$中任一點電場為零。
+\begin{proof}\mbox{}\\
+歸謬證之。假設$D$中一點有一非零電場$\mathbf{E}$，則該處自由電子受力$\mathbf{F}=-e\mathbf{E}$，故自由電子會移動，違反靜電平衡。
+\end{proof}
+\item $C$中任兩點電位相同，為等電位體。
+\begin{proof}\mbox{}\\
+歸謬證之。若$C$中存在兩點之電位差$V\neq 0$，令兩點間有路徑$l\subseteq C$，依據梯度定理：
+\[\int_{l}\nabla\phi\cdot\mathrm{d}\mathbf{l}=V\]
+則該路徑中存在一些部分使得：
+\[\nabla\phi\cdot\mathrm{d}\mathbf{l}=-\mathbf{E}\cdot\mathrm{d}\mathbf{l}\neq 0\]
+表示自由電子會移動，違反靜電平衡。
+\end{proof}
+\item $D$不帶電荷，即$C$之淨電荷分布於其表面。
+\begin{proof}\mbox{}\\
+歸謬證之。若$D$中封閉三維流形$V$帶電荷$q$，依據馬克士威第一方程，令$S=\partial V$，有：
+\[\varepsilon_0\iint_{S}\mathbf {E} \cdot \mathrm{d}\mathbf{S}=q\]
+違反$D$中任意點電場為零。
+\end{proof}
+\item $C\setminus D$若有非零電場則垂直於該表面。
+\begin{proof}\mbox{}\\
+歸謬證之。若$C\setminus D$存在不垂直該表面之電場，則違反$C$為等電位體。
+\end{proof}
+\item $\mathscr{B}$中的每個元素的極限點與其除去其極限點的開集帶等量異性電。
+\begin{proof}\mbox{}\\
+對於任一$A\in\mathscr{B}$，令一個閉集$B\supsetneqq A$且$B\subseteq A\cup D$，$B$的所有極限點的集合$S\subseteq D$，又$D$中任一點電場為零，依據高斯定律，$B$中淨電荷為：
+\[\varepsilon\oint_S\mb{E}\cdot\mathrm{d}\mb{S}=0\]
+又$B\setminus D=A$，故得證。
+\end{proof}
+\item 若$C$接地，則$\{R\setminus P\}\cap\mathscr{B}$中的每一個元素的電場不互相影響。
+\begin{proof}\mbox{}\\
+對於$\mathscr{B}$中的元素由前條可知。對於$R$，若$A\in\mathscr{B}$新增一電場，$C\cap A$中立即新增電荷以抵銷之，又$C$接地，故與$C\cap A$改變的電荷等量異性的電荷會傳給地球，使得$C\setminus A$不受之影響。
+\end{proof}
+\end{itemize}
+末二條稱靜電屏蔽效應，若靜電平衡導體不完全封閉某區域但在外電場垂直面上存在一些導體阻隔該區域，仍可達到一定屏蔽效果。
+\subsubsection{靜電平衡導體圓球}
+令有一半徑$R$的導體圓球或薄球殼，帶淨電荷$q$，以球心為原點，無外電場，若為薄球殼則其內空間無電荷，則：
+\begin{itemize}
+\item 其外（含表面）之電場與電位均同一位於原點的點電荷$q$產生者。
+\item 其內（不含表面）之電場為零，電位與表面同。
+\item 其表面之電荷平均分布。
+\end{itemize}
+即，圓球表面任一點之表面電荷密度$\sigma$、位置$\mathbf{r}$處，電場$\mathbf{E}(\mathbf{r})$、相對於無限遠處的電位$\phi_i(\mathbf{r})$、相對於球心的電位$\phi_c(\mathbf{r})$為：
+\[\begin{aligned}
+& \sigma=\frac{q}{4\pi R^2}\\
+& \mathbf{E}(\mathbf{r})=
+\begin{cases}
+& \frac{k_eq\hat{\mathbf{r}}}{\abs{\mathbf{r}}^2}=\frac{q\hat{\mathbf{r}}}{4\pi\varepsilon_0\abs{\mathbf{r}}^2},\quad\abs{\mathbf{r}}\geq R\\
+& 0,\quad\abs{\mathbf{r}}<R
+\end{cases}\\
+& \phi_i(\mathbf{r}) = 
+\begin{cases}
+& -\hat{\mathbf{r}}\int_\infty^{\abs{\mathbf{r}}}k_eqx^{-2}\,\mathrm{d}x=-\hat{\mathbf{r}}\left(-k_eqx^{-1}\right)\big\vert_\infty^{\abs{\mathbf{r}}}=\frac{k_eq}{\abs{\mathbf{r}}}=\frac{q}{4\pi\varepsilon_0\abs{\mathbf{r}}},\quad\abs{\mathbf{r}}\geq R\\
+& \frac{k_eq}{R}=\frac{q}{4\pi\varepsilon_0 R},\quad\abs{\mathbf{r}}<R
+\end{cases}\\
+& \phi_c(\mathbf{r}) = 
+\begin{cases}
+& k_eq\left(\frac{1}{\abs{\mathbf{r}}}-\frac{1}{R}\right)=\frac{q}{4\pi\varepsilon_0}\left(\frac{1}{\abs{\mathbf{r}}}-\frac{1}{R}\right),\quad\abs{\mathbf{r}}\geq R\\
+& 0,\quad\abs{\mathbf{r}}<R
+\end{cases}
+\end{aligned}\]
+\subsection{絕緣體圓球靜電平衡}
+令絕緣體指電荷恆平均分布之物體。令有一半徑$R$的絕緣體圓球$B$，帶淨電荷$q$，以球心為原點，無外電場，則：
+
+圓球任一點之（體積）電荷密度$\rho$為：
+\[\rho=\frac{3q}{4\pi R^3}\]
+位置$\mathbf{r}$處，電場$\mathbf{E}(\mathbf{r})$、相對於無限遠處的電位$\phi_i(\mathbf{r})$、相對於球心的電位$\phi_c(\mathbf{r})$為：
+\[\begin{aligned}
+& \mathbf{E}(\mathbf{r})=
+\begin{cases}
+& \frac{k_eq\hat{\mathbf{r}}}{\abs{\mathbf{r}}^2}=\frac{q\hat{\mathbf{r}}}{4\pi\varepsilon_0\abs{\mathbf{r}}^2},\quad\abs{\mathbf{r}}\geq R\\
+& \frac{k_eq\mathbf{r}}{R^3}=\frac{q\mathbf{r}}{4\pi\varepsilon_0 R^3},\quad\abs{\mathbf{r}}<R
+\end{cases}\\
+& \phi_i(\mathbf{r}) = 
+\begin{cases}
+& \frac{k_eq}{\abs{\mathbf{r}}}=\frac{q}{4\pi\varepsilon_0\abs{\mathbf{r}}},\quad\abs{\mathbf{r}}\geq R\\
+& \frac{k_eq}{R}-\int_R^{\abs{\mathbf{r}}}\frac{k_eqx}{R^3}\,\mathrm{d}x=\frac{k_eq}{R}-\frac{k_eq\abs{\mathbf{r}}^2}{2R^3}+\frac{k_eq}{2R}=\frac{3k_eq}{2R}-\frac{k_eq\abs{\mathbf{r}}^2}{2R^3}=\frac{3q}{8\pi\varepsilon_0 R}-\frac{q\abs{\mathbf{r}}^2}{8\pi\varepsilon_0 R^3},\quad\abs{\mathbf{r}}<R
+\end{cases}\\
+& \phi_c(\mathbf{r}) = 
+\begin{cases}
+& k_eq\left(\frac{1}{\abs{\mathbf{r}}}-\frac{1}{2R}\right)=\frac{q}{4\pi\varepsilon_0}\left(\frac{1}{\abs{\mathbf{r}}}-\frac{1}{2R}\right),\quad\abs{\mathbf{r}}\geq R\\
+& -\frac{k_eq\abs{\mathbf{r}}^2}{2R^3}=-\frac{q\abs{\mathbf{r}}^2}{8\pi\varepsilon_0 R^3},\quad\abs{\mathbf{r}}<R
+\end{cases}
+\end{aligned}\]
+\subsection{均勻電場}
+\subsubsection{帶電之無限大平板}
+令有一無限大平板表面電荷密度$\sigma$，平板厚度相對於$r$忽略，電荷可分離於兩表面或僅在一表面。則距離平板$r$之電場（正表遠板向，負表近板向）為：
+\[\begin{aligned}
+& \mathbf{E}(r)\\
+=& k_e\sigma r\int_{-\infty}^\infty\int_{-\infty}^\infty\left(r^2+x^2+y^2\right)^{-\frac{3}{2}}\,\mathrm{d}x\mathrm{d}y\\
+=& k_e\sigma r\int_0^{2\pi}\int_0^\infty\left(r^2+t^2\right)^{-\frac{3}{2}}t\,\mathrm{d}t\mathrm{d}\theta\\
+=& k_e\sigma r\frac{2\pi}{2}\\
+=& 2\pi k_e\sigma\\
+=& \frac{\sigma}{2\varepsilon_0}
+\end{aligned}\]
+若兩平板平行而置，帶均勻異號電，帶正電板相對於帶負電板電位差$V$，相距$d$，則兩板表面電荷密度量值均為$\sigma$，且整個空間的電場均為自帶正電板指向帶負電板方向量值$E$：
+\[E=\frac{V}{d}=4\pi k_e\sigma=\frac{\sigma}{\varepsilon_0}.\]
+\subsubsection{帶電粒子在均勻電場中的運動}
+令有一均勻電場$\mathbf{E}$，一質量$m$、電荷$q$的帶電質點以初速度$\mathbf{v}_0$自$\mathbf{r}_0$釋放，假設其僅受勞侖茲力，其所在地磁場為$\mathbf{B}$且為時間的函數，$t$為時間，則其位置$\mathbf{r}(t)$、速度$\mathbf{v}(t)$、加速度$\mathbf{a}(t)$、速率$v(t)$、動能$E_K(t)$為：
+\[\mathbf{r}(t)=\mathbf{r}_0+\mathbf{v}_0t+\frac{q}{2m}\mathbf{E}t^2+\frac{q}{m}\int_0^t\left(\int_0^s\mathbf{v}(u)\times\mathbf{B}\,\mathrm{d}u\right)\mathrm{d}s.\]
+\[\mathbf{v}(t)=\mathbf{v}_0+\frac{q}{m}\mathbf{E}t+\frac{q}{m}\int_0^t\mathbf{v}(u)\times\mathbf{B}\,\mathrm{d}u.\]
+\[\mathbf{a}(t)=\frac{q}{m}(\mathbf{E}+\mathbf{v}(t)\times\mathbf{B}).\]
+\[v(t)=|\mathbf{v}_0+\frac{q}{m}\mathbf{E}t|.\]
+\[E_K(t)=q\mathbf{E}\cdot(\mathbf{r}(t)-\mathbf{r}_0)+\frac{m}{2}\mathbf{v}_0^{\phantom{0}2}.\]
+\subsection{庫侖散射（Coulomb scattering）/拉塞福散射（Rutherford scattering）}
+帶電粒子受靜電力而發生的彈性散射。
+\sssc{約定}
+令質量$m\ll m_1$、帶異性電量值$q$、$Q$的兩質點，小質點以速度$\mb{v}_0$自無限遠處靠近，離去至無限遠處時速度$\mb{v}_1$，偏轉了$\theta$（稱散射角）即$\mb{v}_0\cdot\mb{v}_1=|\mb{v}_0||\mb{v}_1|\cos\theta$，大質點視為不動，以大質點為原點，小質點力學能守恆且角動量守恆（因靜電力指向原點），小質點初始位置垂直$\mb{v}_0$的分量$b$稱瞄準誤差/衝擊參數/撞擊參數（impact parameter），小質點最靠近大質點時位置$\mb{R}$，$R=\mb{R}$，$u=|\mb{v}_0|$庫侖常數$k$，小質點位置$\mb{r}$、速度$\mb{v}$，$\mb{b}$為$\mb{r}\times\mb{v}$方向量值$b$的向量。
+\sssc{能量觀點}
+力學能守恆：
+\[\frac{m}{2}|\mb{v}|^2+\frac{kQq}{|\mb{r}|}=\frac{m}{2}|\mb{v}_0|^2\]
+角動量守恆：
+\[m\mb{r}\times\mb{v}=m\mb{b}\times\mb{v}_0\]
+代入：
+\[\frac{m}{2}|\mb{v}_0|^2=\frac{m}{2}\abs{\frac{\mb{R}\times\left(\mb{b}\times\mb{v}_0\right)}{|\mb{R}|^2}}^2+\frac{kQq}{|\mb{R}|}\]
+\[\frac{mu^2}{2}=\frac{m}{2}\left(\frac{bu^2}{R}\right)^2+\frac{kQq}{R}\]
+令$D=\frac{2kQq}{mu^2}$：
+\[1=\frac{b^2}{R^2}+\frac{D}{R}\]
+解$R^2-RD-b^2=0$取正：
+\[R=\frac{D}{2}\qty(1+\sqrt{1+\qty(\frac{2b}{D})^2})\]
+故最短距離是撞擊參數的函數。$\min(R)=D$發生於$b=0$，此時$\theta=\pi$。
+\subsubsection{位置觀點}
+時間$t$，定義極座標系統$(r;\varphi)$使得$(r;0)$與$\qty(r;\frac{\pi}{2})$為一右手笛卡爾座標的$x$與$y$軸正向且初始位置$\varphi=0$。
+
+牛頓第三運動定律與庫侖定律給出一個微分方程：
+\[\frac{KQq}{r^2}=\frac{Dmu^2}{2r^2}=m\qty(\dv[2]{r}{t}-r\qty(\dv{\varphi}{t})^2)\]
+令$s=\frac{1}{r}$，$\omega=\dv{\varphi}{t}$，$L=mr^2\omega$：
+\[\dv{r}{t}=-s^{-2}\dv{s}{\varphi}\omega=-\frac{L}{m}\dv{s}{\varphi}\]
+\[\dv[2]{r}{t}=\dv{}{\varphi}\dv{r}{t}\dv{\varphi}{t}=-\frac{L^2s^2}{m^2}\dv[2]{s}{\varphi}\]
+代入：
+\[\frac{Dmu^2s^2}{2}=-\frac{L^2s^2}{m}\dv[2]{s}{\varphi}-\frac{L^2s^3}{m}\]
+\[\dv[2]{s}{\varphi}+s=-\frac{Dm^2u^2}{2L^2}=-\frac{D}{2b^2}\]
+特徵方程：
+\[\lambda^2+1=0\]
+\[\lambda=\pm i\]
+常數$A$、$B$，齊次解：
+\[s_h=A\cos\varphi+B\sin\varphi\]
+令特解$s_p$為常數：
+\[\dv[2]{s_p}{\varphi}+s_p=-\frac{D}{2b^2}\]
+\[s_p=-\frac{D}{2b^2}\]
+通解：
+\[s=A\cos\varphi+B\sin\varphi-\frac{D}{2b^2}\]
+代入初始條件$\varphi=0$時$s=0$且$\dv{r}{t}=-u$：
+\[A=\frac{D}{2b^2}\]
+\[\dv{r}{t}=-\frac{L}{m}\dv{s}{\varphi}=-ub\dv{s}{\varphi}=-u\]
+\[B=\dv{s}{\varphi}=\frac{1}{b}\]
+即：
+\[\frac{1}{r}=\frac{D}{2b^2}\qty(\cos\varphi-1)+\frac{1}{b}\sin\varphi\]
+為以大質點為距離該分支頂點較遠的焦點的一雙曲線分支。改用以兩質點距離最短時小質點位置為$x$軸正向、雙曲線中心為原點的平面直角座標表示為：
+\[\frac{x^2}{\qty(\frac{D}{2})^2}-\frac{y^2}{b^2}=1\]
+半貫軸為$b$，半共軛軸為$\frac{D}{2}$，線性離心率為：
+\[\sqrt{\qty(\frac{D}{2})^2+b^2}\]
+離心率為：
+\[\sqrt{\qty(\frac{D}{2b})^2+1}\]
+$R$為線性離心率加上半共軛軸即：
+\[R=\frac{D}{2}+\sqrt{\qty(\frac{D}{2})^2+b^2}\]
+\subsubsection{散射角}
+\[\tan\theta=\frac{Db}{\qty(\frac{D}{2})^2-b^2}\]
+\[\tan\frac{\theta}{2}=\frac{D}{2b}\]
+散射角是撞擊參數的函數。
+\subsubsection{拉塞福散射公式（Rutherford scattering formula）}
+令有一物體為一種帶電質點以體積密度$n$均勻分布之區域，且無其他物質在該區域，一密度均勻之帶電質點射線向該物體射出，該物體平行射線方向厚度$d$，射線中質點質量遠小於物體中質點。一物體中質點為圓心、所在面垂直射線、半徑$b$（即撞擊參數）的圓環上射線質點數$\mathrm{d}N$，該等質點在無限遠處散射射線所張立體角$\Omega$（即該等質點軌跡雙曲線之漸近線所張立體角）：
+\[\dv{N}{b}=2\pi bnd\]
+\[\dv{b}{\theta}=-\frac{D}{4}\csc^2\frac{\theta}{2}\]
+\[\dv{N}{\theta}=\frac{\pi D^2nd}{8}\sin\theta\csc^4\qty(\frac{\theta}{2})\]
+\[\dv{\Omega}{\theta}=2\pi\sin\theta\]
+得拉塞福散射公式：
+\[\dv{N}{\Omega}=\frac{D^2nd}{16}\csc^4\qty(\frac{\theta}{2})\]
+\subsection{電暈放電（Corona discharge）}
+導體表面電場足夠高時，附近的流體被電解成正負離子，與導體異性者會被導體吸引中和，同性者被導體排開，相當於導體放出自身電荷，稱電暈放電。空氣中欲電暈放電約需3百萬伏特每公尺的電場。
+\sssc{尖端放電效應}
+尖端放電效應指曲率較大處通常更可能電暈放電。
+
+設兩圓球或薄球殼之電位相同，則其上總電荷正比於其半徑，則其表面電荷密度反比於其半徑。這不嚴謹地暗示無外電場下靜電平衡的帶電導體上曲率較大處的電荷密度和電場通常均較高，此即尖端放電效應的原因。
+\subsubsection{避雷針/引雷針（Lightning rod）}
+避雷針是尖端氣體電暈放電效應的應用。當帶電雲層接近，避雷針尖端感應異性電，與空氣接觸放電使建築物的與雲層異性之電減少，而免遭雷擊。
+\subsubsection{靜電除塵器（Electrostatic precipitator, ESP）}
+靜電除塵器是尖端氣體電暈放電效應的應用。在排煙管的中心軸與外壁間施以高電壓，外壁接地，中心軸相對外壁為負電位且電場量值甚大使進入排煙管的氣體游離，其中負電者向管壁移動時撞擊煙塵使帶負電而累積在外壁上。
+\subsubsection{凡德格拉夫起電機/范氏起電機（Van de Graaff generator）}
+凡德格拉夫起電機是一種高壓靜電起電裝置，可產生高達數百萬伏特的靜電電壓。對底部的梳狀針通高壓電，針尖因尖端電暈放電效應而放電，電荷經由滾輪驅動的絕緣體運輸帶運輸到上方的空心金屬球上，分布到球的外表面並逐漸累積。常見演示包含：未接地的人觸碰金屬球，靜電使頭髮帶相同電荷，相互排斥；金屬球產生高壓電擊穿空氣，產生藍白色電光。
+\ssc{等位線實驗}
+電場形成盤可使用絕緣盤，其中放入正負兩圓柱形金屬電極，並注入電解質水溶液（如食鹽水），水深不超過電極高度；或使用碳質板，上放正負兩圓柱形金屬電極。為電極通直流電，另取正負兩探針與檢流計串聯，插於水中兩點，固定一探針，移動另一探針找到使得無電流的點，該等點電位相等。
+\section{電路學一（Electric Circuit I）}
+\subsection{電路（Electrical circuit）/（電流）迴路}
+\subsubsection{通路（Closed circuit）/電路（Electrical circuit）/（電流）迴路}
+導線與電路元件等組成的閉合導體網絡，為可供電流通過的封閉路徑。
+\subsubsection{斷路（Open circuit）}
+不可供電流通過的線路。
+\subsubsection{短路（Short circuit）}
+電路中電阻極小、電流極大的情形。
+\subsection{電路圖（Circuit diagram）}
+將電路元件以電路符號（Circuit symbols）表示繪出電路。
+\subsubsection{Wires}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[short, l=Wire] (3,0);
+\draw (5,0) to[crossing, l=Wire Crossing] (8,0);
+\draw (10,0) node[ground]{} (10,0) node[above]{ground};
+\end{circuitikz}
+\end{center}
+\subsubsection{Power Sources}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[V, l=Voltage Source] (3,0);
+\draw (5,0) to[I, l=Current Source] (8,0);
+\draw (10,0) node[battery1shape]{} (10,0.5) node[above]{Battery};
+\end{circuitikz}
+\end{center}
+\subsubsection{Switches}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[switch, l=Switch] (3,0);
+\draw (5,0) node[spdt]{} (5,0.5) node[above]{SPDT Switch};
+\end{circuitikz}
+\end{center}
+\subsubsection{Resistors}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[R, l=Resistor] (3,0);
+\draw (5,0) to[vR, l=Variable Resistor] (8,0);
+\draw (10,0) to[thermistor, l=Thermistor] (13,0);
+\end{circuitikz}
+\end{center}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[ldR, l=Light Dependent Resistor] (3,0);
+\draw (5,0) to[varistor, l=Varistor] (8,0);
+\end{circuitikz}
+\end{center}
+\subsubsection{Capacitors and Inductor}
+\begin{center}
+\begin{circuitikz}
+\draw (5,0) to[C, l=Capacitor] (8,0);
+\draw (10,0) to[L, l=Inductor] (13,0);
+\end{circuitikz}
+\end{center}
+\subsubsection{Diodes}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[D, l=Diode] (3,0);
+\draw (5,0) to[zDo, l=Zener Diode] (8,0);
+\draw (10,0) to[pDo, l=Photodiode] (13,0);
+\draw (15,0) to[led, l=LED] (18,0);
+\end{circuitikz}
+\end{center}
+\subsubsection{Transistors}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) node[npn]{} (0,1) node[above]{NPN Transistor};
+\draw (5,0) node[pnp]{} (5,1) node[above]{PNP Transistor};
+\draw (10,0) node[nmos]{} (10,1) node[above]{N-MOSFET};
+\draw (15,0) node[pmos]{} (15,1) node[above]{P-MOSFET};
+\end{circuitikz}
+\end{center}
+\subsubsection{Operational Amplifiers}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) node[op amp]{} (0,1) node[above]{Op-Amp};
+\end{circuitikz}
+\end{center}
+\subsubsection{Measuring Instruments}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[voltmeter, l=Voltmeter] (3,0);
+\draw (5,0) to[ammeter, l=Ammeter] (8,0);
+\draw (10,0) to[ohmmeter, l=Ohmmeter] (13,0);
+\end{circuitikz}
+\end{center}
+\subsubsection{Transformers}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) node[transformer]{Transformer} (3,0);
+\draw (5,0) node[transformer core]{Transformer Core} (8,0);
+\end{circuitikz}
+\end{center}
+\ssc{電壓（Voltage）/電位差（Electric potential difference）與電動勢（Electromotive force, emf, EMF）/開路電壓（Open-circuit voltage）}
+\sssc{電壓（Voltage）/電位差（Electric potential difference）}
+電壓或電位差$V$指兩點間之電位之差。
+\sssc{電動勢（Electromotive force, emf, EMF）/開路電壓（Open-circuit voltage）}
+某電動勢源，令為定向曲線$l$，其電動勢$\mathcal{E}$定義為每單位電荷沿$l$移動受外電場$\mathbf{E}$之勞侖茲力電力項所做的功，即無電流時末端電位減去始端電位，即：
+\[\mathcal{E}=\int_{l}\mathbf{E}\cdot\mathrm{d}\mathbf{l}.\]
+\subsection{電阻（(Electric) resistance）}
+\subsubsection{電阻（(Electric) resistance）}
+某電路元件的電阻$R$根據其上電壓$V$與電流$I$定義為：
+\[R=\frac{V}{I}.\]
+\subsubsection{電阻率（Resistivity）與電導率（Conductivity）}
+令一均勻相物質，截面積$S$，長度$l$，電阻率$\psi$與電導率$\kappa$定義為：
+\[R=\psi\frac{l}{S},\]
+\[\psi\kappa=1,\]
+寫成微分形式即：
+\[\mathbf{J}=\kappa\mathbf{E}.\]
+電阻率是材料特性，但受溫度與雜質影響。
+
+電阻率：導體>半導體>絕緣體，銀、銅、金等約為$10^{-9}$ Ω m，絕緣體約為$10^{17}$ Ω m，在20攝氏度時電阻率最低者為銀<銅<金<鋁，在1000攝氏度時電阻率最低者為金<銅<銀。
+\subsubsection{歐姆定律（Ohm's law）與歐姆（式）（Ohmic）/線性導體/物質}
+歐姆定律指某些物質的電阻不隨電壓或電流改變，由歐姆於1827年發現，即：
+\[\dv{\psi}{I}=0.\]
+符合歐姆定律者稱歐姆（式）/線性導體/物質，不符合歐姆定律者稱非歐姆（式）/非線性導體/物質，前者如大部分金屬，後者如二極體。
+\subsubsection{電阻率的溫度係數（Temperature coefficient of resistance）}
+令電阻率$\psi$、溫度$\mathscr{T}$、電阻率的溫度係數$\alpha_R$定義為：
+\[\alpha_R=\frac{1}{\psi}\pdv{\psi}{\mathscr{T}}.\]
+經實驗得知，金屬與半導體在約100K以上的溫度，電阻率與溫度呈線性關係，即電阻率的溫度係數為定值，即令溫度$\mathscr{T}_0$時的電阻率$\psi_0$，電阻率對溫度的函數為：
+\[\psi=\psi_0(1+\alpha_R(\mathscr{T}-\mathscr{T}_0)).\]
+金屬的電阻的成因為自由電子與雜質原子或受熱擾動的金屬陽離子碰撞產生，電子的電位能因而轉換成金屬的熱能，故對金屬而言一般溫度愈高電阻率愈高，即$\alpha_R$為正，且雜質愈多電阻率愈高，半導體則反之，$\alpha_R$為負，且加入特定其他物質可降低電阻率。
+\subsubsection{線（熱）膨脹係數（Linear coefficient of thermal expansion）}
+令長度$l$、溫度$\mathscr{T}$、線（熱）膨脹係數$\alpha_L$定義為：
+\[\alpha_L=\frac{1}{l}\pdv{l}{\mathscr{T}}.\]
+經實驗得知，許多物質的熱脹冷縮（Thermal expansion）體積與溫度呈線性關係，即線（熱）膨脹係數約為定值，令溫度$\mathscr{T}_0$時的長度$l_0$、電阻率$\psi_0$，長度對溫度的函數為：
+\[ l= l_0(1+\alpha_L(\mathscr{T}-\mathscr{T}_0)).\]
+\subsubsection{電阻的溫度效應}
+令某物質電阻率的溫度係數$\alpha_R$、線（熱）膨脹係數$\alpha_L$、長度$l$、面積$S$、溫度$\mathscr{T}_0$時的長度$l_0$、面積$S_0$、電阻率$\psi_0$、電阻$R_0$：
+\[\begin{aligned}
+R=&\psi\frac{l}{S}\\
+=&\psi_0(1+\alpha_R(\mathscr{T}-\mathscr{T}_0))\cdot\frac{l_0(1+\alpha_L(\mathscr{T}-\mathscr{T}_0))}{S_0(1+\alpha_L(\mathscr{T}-\mathscr{T}_0))^2}\\
+=&R_0\frac{1+\alpha_R(\mathscr{T}-\mathscr{T}_0)}{1+\alpha_L(\mathscr{T}-\mathscr{T}_0)}\\
+\approx & R_0(1+(\alpha_R-\alpha_L)(\mathscr{T}-\mathscr{T}_0)),\quad \alpha_L(\mathscr{T}-\mathscr{T}_0)<<1
+\end{aligned}\]
+銅的$\alpha_R$約3.9$\times 10^{-3}$ K$^{-1}$，$\alpha_L$約16.5$\times 10^{-6}$ K$^{-1}$，故電阻與溫度正相關，略線性正相關。
+\subsubsection{電阻式觸控螢幕（Resistive touchscreen）}
+螢幕由兩層導電膜組成，當按壓螢幕時，兩層膜接觸。接觸點的電阻變化會被測量，並透過運算轉換為觸控位置。不需要導電特性，可以用任何東西觸控。
+\subsection{電池（Battery）}
+電池指將化學能轉變成電能的裝置，一般由一或多個電化電池（Electrochemical cell）組成。電池的電動勢與極板距離、面積、通過的電流大小等無關。
+\subsubsection{端電壓（Terminal voltage）}
+端電壓$V$指電池正極的電位減去負極的電位。
+\subsubsection{內電阻（Internal resistance）}
+令電池端電壓$V$、電動勢/開路電壓$\mathcal{E}$、內電阻$R_i$，流過之電流強度$I$。
+
+供電時，供給外電路的電壓為端電壓，電流自電池負極經電池內移動到正極，單位電流電池消耗化學能之功率為電動勢：
+\[V=\mathcal{E}-IR_i.\]
+當供電給電阻$R_e$的外電路：
+\[V=\mathcal{E}-\frac{\mathcal{E}}{R_e+R_i}R_i=\frac{R_e\mathcal{E}}{R_e+R_i}.\]
+充電時，外電路供給的電壓為端電壓，電流自電池正極經電池內移動到負極，單位電流電池獲得化學能之功率為電動勢：
+\[V=\mathcal{E}+IR_i.\]
+理想電池沒有內電阻，即電動勢等於端電壓。
+
+實際電池隨化學能消耗而內電阻增加，端電壓減小，已知電池之端電壓對儲電量關係可通過測量端電壓得知剩餘的電量。
+
+常見的 1.5 V 碳鋅電池的在室溫下內電阻約 0.5 Ω，電動勢約 1.5 V。
+\subsection{穩態（Steady state）電路系統之電壓、電流與電阻}
+\tb{穩態電路系統}：指各點之淨電荷密度均不隨時間改變的電路系統，必遵循以下定則：
+\subsubsection{串聯（Series connection）}
+串聯電路元件，電壓和為總電壓，電流相同，電阻和為等效電阻。
+\subsubsection{並聯（Parallel connection）}
+並聯電路元件，電壓相同，電流和為總電流，電阻的倒數和為等效電阻的倒數。
+\subsubsection{克希荷夫電路定律（Kirchhoff's Circuit Laws）/克希荷夫定則（Kirchhoff's Rules）}
+1848年克希荷夫提出。
+\begin{itemize}
+\item \textbf{克希荷夫電流定律（Kirchhoff's current law）/克希荷夫第一定律（Kirchhoff's first law）/克希荷夫節/結點定則（Kirchhoff's junction rule）}：在某一節/結點相交的載流電路中，流入電流和與等於流出電流和，即任一節點必無電荷之聚積、產生或消滅。
+\item \textbf{克希荷夫電壓定律（Kirchhoff's voltage law）/克希荷夫第二定律（Kirchhoff's first law）/克希荷夫環路定則（Kirchhoff's loop rule）}：沿著任意閉合環路上，所有元件的電位變化和為零，即能量守恆。沿電流方向，經過電源電位會上升，經過電阻電位會下降。
+\end{itemize}
+\subsubsection{Y-Δ變換（Y-Δ transformation or wye-delta transformation）與Δ-Y變換（Δ-Y transformation or delta-wye transformation）}
+定義：
+\begin{itemize}
+\item Y型電路：可能與外電路相接的節點$N_1$、$N_2$、$N_3$，不與外電路相接的節點$N_0$，$N_0$與$N_1$以電阻$R_1$導線相接，$N_0$與$N_2$以電阻$R_2$導線相接，$N_0$與$N_3$以電阻$R_3$導線相接。
+\item Δ型電路：可能與外電路相接的節點$N_1$、$N_2$、$N_3$，$N_1$與$N_2$以電阻$R_1+R_2+\frac{R_1R_2}{R_3}$導線相接，$N_2$與$N_3$以電阻$R_2+R_3+\frac{R_2R_3}{R_1}$導線相接，$N_3$與$N_1$以電阻$R_3+R_1+\frac{R_3R_1}{R_2}$導線相接。
+\end{itemize}
+則此二電路等價。
+\subsection{電功率（Electric power）}
+\subsubsection{電（阻）器耗電的電功率}
+一電（阻）器耗電的電功率為電流通過該元件時的電位能變化率，即：
+\[P=\dv{U_e}{t}=IV=I^2R=\frac{V^2}{R}.\]
+該等能量可能被轉換成熱能、化學能、動能、光能等。
+\subsubsection{電池供電的電功率}
+電池供電的電功率為：
+\[P=\dv{U_e}{t}=I\mathcal{E}.\]
+\subsubsection{電流熱效應、焦耳熱（Joule heating）/歐姆熱（Ohmic heating）/電阻熱（Resistive heating or resistance heating）與焦耳第一定律（Joule's first law）/焦耳定律（Joule's law）/焦耳-冷次定律（Joule–Lenz law）}
+電流熱效應指電流通過帶有電阻的電路元件而產生熱的過程，其放出的熱稱焦耳熱/歐姆熱/電阻熱。其原因為電荷載子與電阻器中的原子碰撞而將部分動能給予原子變成該電阻器的內能，這也使得電荷載子的速率不因電場加速持續變大。
+
+若電阻所消耗的電位能全部轉換成熱能，則電功率等於熱功率，服從焦耳-冷次定律/焦耳定律：
+\[P=IV=I^2R=\frac{V^2}{R}.\]
+\subsubsection{輸電（Electric power transmission）}
+輸入電功率$P_i$不變，令輸電線為歐姆導體，其熱功率$P_h$與輸入電壓$V_i$的關係為：
+\[P_h=I^2R=\left(\frac{P_i}{V_i}\right)^2R=I^2R.\]
+即熱功率與平方輸入電壓呈反比，這就是為什麼長距離輸電要使用高壓電，以減熱功耗。
+\subsection{直流電（Direct current, DC）與交流電（Alternating current, AC）}
+\subsubsection{電池提供的直流電}
+不考慮內電阻改變時，電壓與電流均不隨時間改變。
+\subsubsection{單相交流電}
+$I_m$為最大瞬時電流，電流$I$對時間函數形如：
+\[I=I_m\sin(\omega t+\varphi).\]
+$V_m$為最大瞬時電壓，電壓$V$對時間函數形如：
+\[V=V_m\sin(\omega t+\varphi+\theta).\]
+其中$\omega$為角頻率，$\varphi$為初始相位角，$\theta$為電壓相對於電流的相位角差（一般為零）。
+
+週期：
+\[T=\frac{2\pi}{\omega}\]
+\begin{itemize}
+\item 方均根（Root mean square, RMS）電流：
+\[\begin{aligned}
+I_{rms}=&\sqrt{\frac{1}{T}\int_0^TI^2\,\mathrm{d}t}\\
+=&\sqrt{\frac{1}{T}\int_0^TI_m^{\phantom{m}2}\sin^2(\omega t+\varphi)\,\mathrm{d}t}\\
+=&\sqrt{\frac{I_m^{\phantom{m}2}}{2T}\int_0^T1-\cos(2\omega t+2\varphi)\,\mathrm{d}t}\\
+=&\frac{I_m}{\sqrt{2}}.
+\end{aligned}\]
+\item 方均根電壓：
+\[V_{rms}=\frac{V_m}{\sqrt{2}}.\]
+\item 瞬時功率：
+\[P=IV=I_mV_m\sin(\omega t+\varphi)\sin(\omega t+\varphi+\theta)=\frac{I_mV_m}{2}\qty(\cos\theta-\cos(2\omega t+2\varphi+\theta))\]
+\item 平均功率：
+\[\begin{aligned}
+\langle P\rangle=&\frac{1}{T}\int_0^TIV\,\mathrm{d}t\\
+=&\frac{I_mV_m}{T}\int_0^T\sin(\omega t+\varphi)\sin(\omega t+\varphi+\theta)\,\mathrm{d}t\\
+=&\frac{I_mV_m}{2T}\int_0^T\cos\theta-\cos(2\omega t+2\varphi+\theta)\,\mathrm{d}t\\
+=&\frac{V_mI_m\cos\theta}{2}\\
+=&V_{rms}I_{rms}\cos\theta.
+\eam
+\item 最大瞬時功率：$\frac{V_mI_m(1+\cos\theta)}{2}$
+\item 最小瞬時功率：$\frac{V_mI_m(-1+\cos\theta)}{2}$
+\end{itemize}
+
+一般交流電$\theta=0$，（有效）電壓指其方均根電壓，（有效）電流指其方均根電流，頻率為角頻率除以$2\pi$，如台電送出的電是 110 V 60 Hz，代表：
+\[V(t)=110\sqrt{2}\sin(120\pi t+\varphi)\]
+\sssc{三相電（Three-phase electrical power, 3ϕ）}
+三組振幅相等、頻率相等、相位角互相差120°的交流電，由有三個繞組的三相發電機產生，是工業上常用的電源。
+\subsubsection{整流（Rectification）}
+指將交流電轉換為直流電。令輸入交流電電壓$V_A$，輸出直流電電壓$V_D$。
+\bit
+\item \tb{半波整流（Half-wave rectification）}：理想半波整流的方均根電壓是原來的二分之一，
+\[V_D=\begin{cases}V_A,\quad V_A>0,\\0,\quad V_A\leq 0.\end{cases}\]
+\item \tb{全波整流（Full-wave rectification）}：理想全波整流的方均根電壓與原來相等，
+\[V_D=\abs{V_A}\]
+\eit
+\subsection{用電安全}
+\begin{itemize}
+\item 接地線：電器正常運作時電流只在設計好的迴路流動，而不與其導體外表接觸；漏電時則會與其導體外表接觸，當人體或其他接地導體接觸其導體外表時就會產生迴路。三腳插頭中的接地線將電器的導體外表接地，漏電時就可以將導體外表上的電荷導向接地線。
+\item 電器的額定值：電器額定電壓指其適用的電壓，額定電功率指該電壓下該電器的電功率。
+\item 最大安全電流容量：相同導線，電流愈大熱功率愈大，其最大安全電流容量指其不會過熱致不安全的最大電流。
+\item 保險絲（Fuse）與無熔絲開關（No Fuse Breaker, NFB）/模殼型斷路器（Molded-case Circuit Breaker, MCB）：與被保護電流串聯，當電流超過該保險絲/無熔絲開關之電流容量時稱過電流或超載，此時保險絲熔斷或無熔絲開關彈開。
+\end{itemize}
+
+
+\section{靜磁學（Magnetostatics）}
+\subsection{靜磁學}
+靜磁學研究磁場不隨時間改變下的電磁學。
+\subsection{靜磁場（Magnetostatic field）}
+指不隨時間改變的磁場，其旋度等於電流密度。
+\subsection{馬克士威第二方程（Maxwell's second equation）–高斯磁定律（Gauss's law for magnetism）/無磁單極（Absence of free magnetic poles）}
+\subsubsection{高斯磁定律–微分形式}
+\[\nabla \cdot \mathbf{B} = 0.\]
+\subsubsection{高斯磁定律–積分形式}
+對於封閉曲面$S$：
+\[\oiint_S\mathbf{B}\cdot\mathrm{d}\mathbf{S}=0.\]
+\subsection{磁偶極子產生的磁向量勢與磁場}
+位於原點磁矩$\mathbf{m}$的磁偶極子在$\mathbf{r}$產生的磁場$\mathbf{B}$為：
+\[\mathbf{B}=\frac{\mu_0}{4\pi}\frac{3\hat{\mathbf{r}}\left(\hat{\mathbf{r}}\cdot\mathbf{m}\right)-\mathbf{m}}{|\mathbf{r}|^3}.\]
+\subsection{簡史}
+\begin{enumerate}
+\item 1750年，米歇爾（John Michell）提出磁極間的作用力與其距離之平方成反比，後稱靜磁的庫侖定律。
+\item 1785年，庫侖以扭秤實驗證實了靜磁的庫侖定律。
+\item 1820年，厄斯特（Ørsted）發現載流導線的電流對鄰近的磁針會產生作用力，使磁針偏轉，從而得知電流磁效應，發現了電學與磁學的關聯。
+\item 同年，安培提出安培右手定則。
+\item 同年，必歐與沙伐提出必歐–沙伐定律（Biot–Savart law）。
+\item 同年，安培建立兩小段電流交互作用力的定律。
+\end{enumerate}
+\subsection{安培（Ampère）右手定則（Right-hand rule）}
+\begin{itemize}
+\item 用右手握住長直載流導線，大拇指的指向為電流的方向，則其餘四指彎曲所指的方向為磁場方向，即磁力線方向。
+\item 用右手握住圓形載流導線或載流螺線管（solenoid），四指彎曲所指的方向為其電流方向，則大拇指的指向為磁場方向，即磁力線方向。
+\end{itemize}
+\subsection{必歐–沙伐定律（Biot–Savart law）}
+\subsubsection{必歐–沙伐定律（Biot–Savart law）–微分形式}
+一電流元長度$\mathrm{d}l$（定向為電流方向）、載有電流強度$I$，在$\mathbf{r}$產生磁場$\mathrm{d}\mathbf{B}$：
+\[\mathrm{d}\mathbf{B}=\frac{\mu_0}{4\pi}\frac{I\,\mathrm{d}\mathbf{l}\times\hat{\mathbf{r}}}{\abs{\mathbf{r}}^2}.\]
+\subsubsection{必歐–沙伐定律（Biot–Savart law）–積分形式}
+電路$l$（定向為電流方向）上載有電流強度$I$（可不均勻），在$\mathbf{r}$產生磁場$\mathbf{B}$：
+\[\mathbf{B}=\frac{\mu_0}{4\pi}\int_{l}\frac{I\,\mathrm{d}\mathbf{l}\times\hat{\mathbf{r}}}{\abs{\mathbf{r}}^2}.\]
+\subsection{馬克士威第四方程（Maxwell's fourth equation）-安培環路定律（Ampère's circuital law）/安培定律（Ampère's law）/安培–馬克士威方程（Ampère–Maxwell equation）}
+描述變動電場產生磁場/電動生磁/電流磁效應。
+\subsubsection{安培–馬克士威方程–微分形式}
+\[\nabla \times \mathbf{H} = \mathbf{J}_f + \pdv{\mathbf{D}}{t}.\]
+即：
+\[\nabla\times\mathbf{B}=\mu_0\mathbf{J}+\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}.\]
+\subsubsection{安培–馬克士威方程–積分形式}
+對於封閉路徑$\mathbf{l}=\partial S$圍成的曲面$S$：
+\[\oint_{l}\mathbf{H}\cdot\mathrm{d}\mathbf{l}=\iint_S\mathbf{J}_f\cdot\mathrm{d}\mathbf{S}+\frac{\partial}{\partial t}\iint_S\mathbf{D}\cdot\mathrm{d}\mathbf{S}.\]
+即：
+\[\oint_{l}\mathbf{B}\cdot\mathrm{d}\mathbf{l}=\mu_0\iint_S\mathbf{J}\cdot\mathrm{d}\mathbf{S}+\mu_0\varepsilon_0\frac{\partial}{\partial t}\iint_S\mathbf{E}\cdot\mathrm{d}\mathbf{S}=\mu_0\iint_S\mathbf{J}\cdot\mathrm{d}\mathbf{S}+\mu_0\varepsilon_0\pdv{\Phi_E}{t}.\]
+若繞$\mathbf{l}$電流為逆時針為正均勻電流$I$：
+\[\oint_{l}\mathbf{B}\cdot\mathrm{d}\mathbf{l}=\mu_0I+\mu_0\varepsilon_0\pdv{\Phi_E}{t}.\]
+其中$\oint_{l}\mathbf{B}\cdot\mathrm{d}\mathbf{l}$稱磁環場積、當$l$為線圈稱安培環（Ampèrian loop）。
+\subsection{旋磁比/磁旋比（Gyromagnetic ratio）}
+旋磁比指磁偶極子的磁矩與角動量之比值。
+\subsection{載流導線產生磁場}
+\subsubsection{長直載流導線}
+長直載流導線上載有電流強度$I$，在徑向距離$r$產生磁場量值$B$：
+\[B=\frac{\mu_0I}{2\pi r}.\]
+\subsubsection{弧形載流導線}
+平面$S$上半徑$R$弧形載流導線$l$（定向為電流方向，長度$l$等於弧角$\theta$乘以$R$）上載有電流強度$I$（均勻），在$\mathbf{r}$產生磁場$\mathbf{B}$：
+\[\mathbf{B}=\frac{\mu_0I}{4\pi}\int_{l}\frac{\mathrm{d}\mathbf{l}\times\hat{\mathbf{r}}}{\abs{\mathbf{r}}^2}.\]
+過其圓心且垂直平面$S$的直線上，距離圓心$a$處的磁場量值$B$為：
+\[B=\frac{\mu_0IR^2}{2(a^2+R^2)^{\frac{3}{2}}}\frac{\theta}{2\pi}.\]
+\begin{proof}\mbox{}\\
+必歐–沙伐定律闡明：
+\[\mathrm{d}\mathbf{B}=\frac{\mu_0}{4\pi}\frac{I\,\mathrm{d}\mathbf{l}\times\hat{\mathbf{r}}}{\abs{\mathbf{r}}^2}.\]
+令圓心為原點，$S$在$xy$平面上，觀測點笛卡爾座標$(0,0,a)$，其中$a>0$，在$xy$平面上以過原點與導線一端（圓形導線則任取圓周上一點）的直線為極軸在$xy$平面上定義極角$\varphi$使得導線另一端（圓形導線則同一點）有極角$\theta$且電流流向極角增大方向。
+\[\begin{aligned}
+\mathrm{d}\mathbf{l}\times\mathbf{r}=&\hat{\mathbf{z}}\times(R\cos\varphi,R\sin\varphi,0)\times\mathbf{r}\\
+=&(-R\sin\varphi,R\cos\varphi,0)\times(-R\cos\varphi,-R\sin\varphi,a)\\
+=&(aR\cos\varphi,aR\sin\varphi,R^2).
+\end{aligned}\]
+代入得：
+\[\begin{aligned}
+&\int_{l}\,\mathrm{d}\mathbf{l}\times\hat{\mathbf{r}}\\
+=&\int_0^{\theta}\frac{aR\cos\varphi,aR\sin\varphi,R^2}{\sqrt{a^2+R^2}R}\,\mathrm{d}\varphi\\
+=&\theta\frac{0,0,R}{\sqrt{a^2+R^2}}.
+\end{aligned}\]
+\[\begin{aligned}
+\mathbf{B} &= \frac{\mu_0I}{4\pi}\theta\frac{0,0,R}{\sqrt{a^2+R^2}}\frac{1}{\abs{\mathbf{r}}^2}\\
+&=\hat{\mathbf{z}}\frac{\mu_0IR^2}{2(a^2+R^2)^{\frac{3}{2}}}\frac{\theta}{2\pi}.
+\end{aligned}\]
+\end{proof}
+當$a=0$，即圓心處：
+\[B=\frac{\mu_0I}{2R}\frac{\theta}{2\pi}.\]
+當$a\gg R$：
+\[B=\frac{\mu_0IR^2}{2a^3}\frac{\theta}{2\pi}.\]
+\subsubsection{亥姆霍茲線圈（Helmholtz coil）}
+由一對相同的半徑為$R$的圓形線圈平行且共軸而置，相距$R$，電流方向一致，每一線圈匝數令為$N$，則中心軸上距兩線圈同距離處磁場量值$B$為：
+\[B=\frac{\mu_0NIR^2}{2}\frac{2}{\left(\left(\frac{R}{2}\right)^2+R^2\right)^{\frac{3}{2}}}=\frac{8\mu_0NI}{\sqrt{125}R}.\]
+該處附近磁場近似為均勻，常用於物理實驗，如質譜儀實驗。
+\subsubsection{載流螺線管}
+無限長的直載流螺線管或無限大的載流圓形螺線管/螺線環（Toroid），令管半徑$R$，電流強度$I$（均勻），線圈線密度（指單位螺線管長度上的線圈匝數）$n$，管內中心軸處磁場量值$B$為：
+\[B=\mu_0I\int_{-\infty}^{\infty}\frac{nR^2}{2(a^2+R^2)^{\frac{3}{2}}}\,\mathrm{d}a.\]
+若線圈線密度均勻，因為$\int_{-\infty}^{\infty}\frac{R^2}{2(a^2+R^2)^{\frac{3}{2}}}\,\mathrm{d}a=1$，管內中心軸處磁場量值$B$為
+\[B=\mu_0nI.\]
+\begin{itemize}
+\item 管截面所在平面上，愈靠近管壁磁場量值愈小。
+\item 靠近中心軸處磁場量值接近管口小於遠離管口。
+\item 靠近管壁處磁場量值接近管口大於遠離管口。
+\item 管內遠離管口處可近似為無限長的載流螺線管。
+\end{itemize}
+\subsubsection{電磁鐵（Electromagnet）}
+載流螺線管內插軟鐵芯等磁化率高的物體可增加磁場，稱電磁鐵。若通交流電則等效磁矩方向不斷反轉，可用於產生相同頻率的振動。電磁鐵可用於起重機、電鈴、電話聽筒、揚聲器、磁浮列車等。
+\subsection{載流導線受磁力}
+\subsubsection{右手開掌定則（Right-hand rule）}
+磁場中的電流或運動帶電質點，右手張開，拇指指向電流或帶電質點速度方向，四指指向磁場方向，則掌心面向電流或運動帶電質點受力方向。
+\subsubsection{載流導線受磁力}
+電路元長度向量$\mathrm{d}\mathbf{l}$上自由電流強度$I$在磁場$\mathbf{B}$中受力$\mathrm{d}\mathbf{F}$：
+\[\mathrm{d}\mathbf{F}=I\mathrm{d}\mathbf{l}\times\mathbf{B}.\]
+\subsubsection{兩平行載流導線受磁力}
+兩平行載流導線，長度均為$l$，電流強度$I_1$、$I_2$，相距$r$，則每單位長度兩者相吸之力（負表相斥）為$F$：
+\[F=\frac{\mu_0I_1I_2}{2\pi r}l.\]
+過去 SI 制曾定義安培為兩平行載同電流導線在自由空間中相距一公尺且導線上每公尺長受磁力為 \scinote{2}{-8} 牛頓時導線上的電流強度。
+\subsubsection{載流導線在均勻磁場受磁力}
+載均勻電流$I$導線在均勻磁場$\mb{B}$所受磁力$\mb{F}$僅與該導線尾相對於頭的位移$\mb{l}$相關：
+\[\mb{F}=I\mb{l}\times\mb{B},\]
+而與其路徑無關；封閉載均勻電流導線在均勻磁場所受磁力為零。
+\subsubsection{磁軌砲（Railgun）}
+在兩平行磁軌軌間架設可滑動的導線，通電時自一磁軌流入經導線自另一磁軌流出，垂直磁軌段導線受向前磁力加速，推動其前砲丸射出。
+\subsubsection{動圈式揚聲器（Moving coil loudspeaker）}
+一可自由振動的短線圈套在一個圓柱形強磁鐵上，其中心軸為N極、外圍為S極，磁場垂直於導線。當交流電輸入線圈，線圈受磁力，其振動頻率為輸入交流電之頻率。許多揚聲器與耳機即使用此。
+\subsection{封閉電流分布域受磁力矩}
+\subsubsection{封閉載流迴路受磁力矩}
+載自由電流強度$I$的靜封閉迴路$\mathbf{l}=\partial S$（$l$定向為電流方向，$S$定向使電流逆時針流動，$I$不隨$l$變化），在磁場$\mathbf{B}$中受磁力矩$\boldsymbol{\tau}$服從：
+\[\boldsymbol{\tau}=\frac{I}{2}\oint_l\mathbf{r}\times(\mathrm{d}\mathbf{l}\times\mathbf{B})=I\iint_S(\mathrm{d}\mathbf{S}\times\mathbf{B}).\]
+\subsubsection{封閉電流分布體積域受磁力矩}
+載自由電流密度$\mathbf{J}_f$的靜封閉體積域$V$（封閉指\(\iiint_V \mathbf{J}_f \, \mathrm{d}V = 0\)），在磁場$\mathbf{B}$中受磁力矩$\boldsymbol{\tau}$服從：
+\[\boldsymbol{\tau}=\frac{1}{2}\iiint_V\mathbf{r}\times(\mathbf{J}_f\times\mathbf{B})\,\mathrm{d}V.\]
+\subsubsection{載流螺線管}
+磁場不隨管方向變化下，$N$匝載流螺線管在磁場中所受磁力矩為同電流同形狀單一環路的$N$倍。
+\subsubsection{均勻磁場中平面封閉載流迴路受磁力矩}
+載電流強度$I$的靜平面封閉迴路$\mathbf{l}=\partial S$（$l$定向為電流方向，$S$定向使電流逆時針流動）  ，在均勻磁場$\mathbf{B}$中受磁力矩$\boldsymbol{\tau}$服從：
+\[\boldsymbol{\tau}=I\mathbf{S}\times\mathbf{B}.\]
+\subsection{封閉自由電流分布域的等效磁矩}
+\subsubsection{封閉載流迴路}
+載均勻自由電流強度$I_f$的封閉迴路$\mathbf{l}=\partial S$（電流逆時針流動）的等效磁矩$\mathbf{m}$（根據其在均勻磁場$\mathbf{B}$中所受磁力矩$\boldsymbol{\tau}$定義為$\boldsymbol{\tau}=\mathbf{m}\times\mathbf{B}$）服從：
+\[\mathbf{m}=\frac{I_f}{2}\oint_l\mathbf{r}\times\mathrm{d}\mathbf{l}=I_f\iint_S\,\mathrm{d}\mathbf{S}.\]
+\subsubsection{封閉電流分布體積域}
+載自由電流密度$\mathbf{J}_f$的封閉體積域$V$的等效磁矩$\mathbf{m}$服從：
+\[\mathbf{m}=\frac{1}{2}\iiint_V\mathbf{r}\times\mathbf{J}_f\,\mathrm{d}V.\]
+\subsubsection{載流螺線管}
+$N$匝載均勻電流長度極小的直螺線管的等效磁矩為同電流同形狀單一環路的$N$倍。
+\subsubsection{平面封閉載流迴路}
+載電流強度$I_f$的平面封閉迴路$\mathbf{l}=\partial S$（$l$定向為電流方向，$S$定向使電流逆時針流動）  等效磁矩$\mathbf{m}$服從：
+\[\mathbf{m}=I_f\mathbf{S}\]
+\subsection{封閉電流分布域產生之遠場磁場}
+令封閉電流分布體積域的等效磁矩$\mathbf{m}=\frac{1}{2}\iiint_V\mathbf{r}\times\mathbf{J}\,\mathrm{d}V$；令封閉載流迴路$\mathbf{m}=I\iint_S\,\mathrm{d}\mathbf{S}$。其產生之磁向量勢與磁場的遠場近似服從磁偶極子產生磁向量勢與磁場之公式，即，令該電流域位於原點附近，其中微分體積元的位置$\mathbf{r}'$，觀察點位置$\mathbf{r}$，$|\mathbf{r}|\gg |\mathbf{r}'|$，則磁場$\mathbf{B}$近似為：
+\[\mathbf{B}\approx\frac{\mu_0}{4\pi}\frac{3\hat{\mathbf{r}}\left(\hat{\mathbf{r}}\cdot\mathbf{m}\right)-\mathbf{m}}{|\mathbf{r}|^3}.\]
+\subsection{拉莫爾進動（Larmor precession）}
+旋磁比$\gamma$、角動量$\mathbf{L}$、磁矩$\mathbf{m}=\gamma\mathbf{L}$的磁偶極子在靜磁場$\mathbf{B}$中。因平行磁場的磁矩分量$\frac{\mathbf{m}\cdot\mathbf{B}}{|\mathbf{B}|^2}\mathbf{B}$不貢獻力矩，令角動量垂直磁場的分量：
+\[\mathbf{L}_{\perp}=\frac{\mathbf{L}\times\mathbf{B}}{|\mathbf{B}|}\]
+以垂直$\mathbf{B}$的複數平面描述之。令初始角動量垂直磁場的分量$\mathbf{L}_{\perp0}$，磁力矩$\boldsymbol{\tau}=\mathbf{m}\times\mathbf{B}$給出一個微分方程：
+\[\frac{\mathrm{d}^2\mathbf{L}_{\perp}}{\mathrm{d}t^2}=\gamma\mathbf{L}_{\perp}\times\mathbf{B}.\]
+令角動量垂直磁場的分量繞$\mathbf{B}$轉動的角頻率$\omega$（稱拉莫爾頻率）為：
+\[\omega=|\gamma\mathbf{B}|\]
+令初始相位角$\varphi$為：
+\[\varphi=\arg(\mathbf{L}_{\perp0})\]
+解得：
+\[\mathbf{L}_{\perp}=|\mathbf{L}_{\perp}|e^{i(\omega t+\varphi)}.\]
+\[\frac{\mathrm{d}\mathbf{L}_{\perp}}{\mathrm{d}t}=|\mathbf{L}_{\perp}|\omega e^{i(\omega t+\varphi)}\]
+\subsection{轉動均勻帶電圓球}
+質量密度與電荷密度均勻、質量$m$、電荷$q$、半徑$R$的圓球以角速度$\boldsymbol{\omega}$轉動。
+\subsubsection{磁矩}
+\[\mathbf{m}=\frac{3qR^2}{10}\boldsymbol{\omega}.\]
+\begin{proof}
+\[\begin{aligned}
+\mathbf{m}&=\frac{1}{2}\int_V \mathbf{r}\times\mathbf{J}\,\mathrm{d}V\\
+&=\frac{3q}{8\pi R^3}\iiint_V\mathbf{r}\times(\boldsymbol{\omega}\times\mathbf{r})\,\mathrm{d}V\\
+&=\frac{3q}{8\pi R^3}\iiint_V-(\boldsymbol{\omega}\cdot\mathbf{r})\mathbf{r}+(\mathbf{r}\cdot\mathbf{r})\boldsymbol{\omega}\,\mathrm{d}V\\
+&=\frac{3q}{8\pi R^3}\iiint_V|\mathbf{r}|^2\boldsymbol{\omega}\,\mathrm{d}V\\
+&=\frac{3q}{8\pi R^3}\int_0^{2\pi}\int_0^{\pi}\int_0^Rr^4\sin\theta\boldsymbol{\omega}\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\varphi\\
+&=\frac{3q}{8\pi R^3}\int_0^{2\pi}\int_0^{\pi}\frac{R^5}{5}\sin\theta\boldsymbol{\omega}\,\mathrm{d}\theta\,\mathrm{d}\varphi\\
+&=\frac{3qR^2}{10}\boldsymbol{\omega}
+\end{aligned}\]
+\end{proof}
+\subsubsection{角動量}
+\[\mathbf{L}=\frac{3mR^2}{5}\boldsymbol{\omega}.\]
+\begin{proof}
+\[\begin{aligned}
+\mathbf{L}&=m\int_V|\mathbf{r}|^2\boldsymbol{\omega}\,\mathrm{d}V\frac{3}{4\pi R^3}\\
+&=\frac{3m}{4\pi R^3}\int_0^{2\pi}\int_0^{\pi}\int_0^Rr^4\sin\theta\boldsymbol{\omega}\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\varphi\\
+&=\frac{3mR^2}{5}
+\end{aligned}\]
+\end{proof}
+\subsubsection{旋磁比}
+\[\gamma=\frac{q}{2m}.\]
+\subsection{帶電質點在磁場中的運動}
+\subsubsection{速度選擇器}
+均勻磁場$\mathbf{B}$與電場$\mathbf{E}$中，射入帶電質點速度$\mathbf{v}$，彼等之方向使得$\mathbf{E}$與$\mathbf{v}\times\mathbf{B}$反向（即$\mathbf{E}$垂直於$\mathbf{v}$與$\mathbf{B}$），則將使得$\mathbf{E}=-\mathbf{v}\times\mathbf{B}$的帶電質點保持原方向，其餘依速度偏折到不同方向。
+\subsubsection{等速率螺旋運動}
+均勻磁場$\mathbf{B}$，射入帶電質點電荷$q$、質量$m$、速度$\mathbf{v}$。令磁場量值$B=|\mathbf{B}|$，垂直磁場速度分量量值$v=\frac{|\mathbf{v}\times\mathbf{B}|}{|\mathbf{B}|}$，平行磁場速度分量量值$u=\frac{\mathbf{v}\cdot\mathbf{B}}{|\mathbf{B}|}$。該帶電質點將作等速率螺旋運動，軌跡為螺旋線，將該運動拆成垂直磁場方向與平行磁場方向。
+\begin{itemize}
+\item 垂直磁場方向的運動為等速率迴旋運動，軌跡為圓周，令向心力量值$F$、半徑$r$稱迴旋半徑（Cyclotron radius）、角頻率$\omega$、週期$T$、頻率$f$稱迴旋頻率（Cyclotron frequency）：
+\[F=\frac{mv^2}{r}=qvB.\]
+\[r=\frac{mv}{qB}.\]
+\[\omega=\frac{qB}{m}.\]
+\[f=\frac{qB}{2\pi m}.\]
+\[T=\frac{2\pi m}{qB}.\]
+可知迴旋頻率與初速無關。
+\begin{itemize}
+\item 對於等$v$帶電質點射流，迴旋半徑與荷質比（Charge-to-mass ratio）呈反比：
+\[\frac{q}{m}=\frac{v}{Br}.\]
+\item 對於帶電質點射流由等電壓$V$施加發射者（$qV>0$）：
+\[qV=\frac{mv^2}{2}.\]
+\[r=\frac{\sqrt{2mqV}}{qB}.\]
+故迴旋半徑與根號荷質比呈反比：
+\[\frac{q}{m}=\frac{2V}{B^2r^2}.\]
+\end{itemize}
+\item 平行垂直磁場方向的運動為等速度直線運動，帶電質點在一個$T$中行進的距離$d$為螺距（Pitch）：
+\[d=uT=\frac{2\pi mu}{qB}.\]
+\item 每圈螺旋的路徑長為：
+\[\sqrt{(2\pi r)^2+d^2}=\frac{2\pi m}{qB}\sqrt{v^2+u^2}\]
+\end{itemize}
+\subsubsection{垂直電場與磁場中的擺線運動}
+一帶電$q$、質量$m$的質點，$t=0$時靜止於原點，在沿著$+y$軸的均勻靜電場$E\hat{\mathbf{y}}$及沿著$+z$軸的均勻靜磁場$B\hat{\mathbf{z}}$的作用下運動。由於質點始終在$xy$平面上，故令其位置$(x,y)$、速度$(v_x,v_y)$、加速度$(a_x,a_y)$、加速度時變率$(b_x,b_y)$。則：
+\[x=\frac{E}{B}t-\frac{mE}{qB^2}\sin\left(\frac{qB}{m}t\right)\]
+\[y=\frac{E}{B}-\frac{mE}{qB^2}\cos\left(\frac{qB}{m}t\right)\]
+\[v_x=\frac{E}{B}\left(1-\cos\left(\frac{qB}{m}t\right)\right)\]
+\[v_y=\frac{E}{B}\sin\left(\frac{qB}{m}t\right)\]
+\[a_x=\frac{E}{B}+\frac{qE}{m}\sin\left(\frac{qB}{m}t\right)\]
+\[a_y=\frac{qE}{m}\sin\left(\frac{qB}{m}t\right)\]
+\[b_x=\frac{q^2BE}{m^2}\sin\left(\frac{qB}{m}t\right)\]
+\[b_y=\frac{q^2BE}{m^2}\cos\left(\frac{qB}{m}t\right)\]
+軌跡為第一象限內沿$x$軸正向的擺線，與$x$軸最大距離為：
+\[\frac{2mE}{qB^2}\]
+動能$E_K$為：
+\[E_K=qEy\]
+即：
+\[v_x^{\phantom{x}2}+v_y^{\phantom{y}2}=\frac{2qEy}{m}\]
+\begin{proof}\mbox{}\\
+勞侖茲力方程給出：
+\[a_x=\frac{q}{m}v_yB\]
+\[a_y=\frac{q}{m}(E-v_xB)\]
+令$\omega$：
+\[\omega=\frac{qB}{m}\]
+\[a_x=\omega v_y\]
+\[a_y=\frac{\omega E}{B}-\omega v_x\]
+\[b_x=\omega a_y\]
+\[b_x=\frac{\omega^2E}{B}-\omega^2v_x\]
+$v_x$的特徵方程式：
+\[\lambda^2+\omega^2\]
+\[\lambda=\pm\omega i\]
+設：
+\[v_x=\alpha\cos(\omega t)+\beta\sin(\omega t)+C\]
+其中$\alpha$、$\beta$、$C$為常數。
+\[a_x=-\alpha\omega\sin(\omega t)+\beta\omega\cos(\omega t)\]
+\[b_x=-\alpha\omega^2\cos(\omega t)-\beta\omega^2\sin(\omega t)\]
+\[-\alpha\omega^2\cos(\omega t)-\beta\omega^2\sin(\omega t)=\frac{\omega^2E}{B}-\alpha\omega^2\cos(\omega t)-\beta\omega^2\sin(\omega t)-\omega^2C\]
+\[C=\frac{E}{B}\]
+代入初始條件$v_x(0)=0$：
+\[\alpha=-\frac{E}{B}\]
+\[v_x=-\frac{E}{B}\cos(\omega t)+\beta\sin(\omega t)+\frac{E}{B}\]
+\[a_y=\frac{E}{B}\omega\cos(\omega t)-\beta\omega\sin(\omega t)\]
+\[v_y=\frac{E}{B}\sin(\omega t)+\beta\cos(\omega t)\]
+代入初始條件$v_y(0)=0$：
+\[v_x=\frac{E}{B}(1-\cos(\omega t))\]
+\[v_y=\frac{E}{B}\sin(\omega t)\]
+\[v_x=\frac{E}{B}(1-\cos(\omega t))=\frac{E}{B}\left(1-\cos\left(\frac{qB}{m}t\right)\right)\]
+\[v_y=\frac{E}{B}\sin(\omega t)=\frac{E}{B}\sin\left(\frac{qB}{m}t\right)\]
+積分並代入初始條件$x(0)=y(0)=0$：
+\[x=\frac{E}{B}\left(t-\frac{1}{\omega}\sin(\omega t)\right)=\frac{E}{B}t-\frac{mE}{qB^2}\sin\left(\frac{qB}{m}t\right)\]
+\[y=\frac{E}{B}\left(1-\frac{1}{\omega}\cos(\omega t)\right)=\frac{E}{B}-\frac{mE}{qB^2}\cos\left(\frac{qB}{m}t\right)\]
+\end{proof}
+\subsubsection{質譜儀（Mass spectrometry, MS）}
+\begin{itemize}
+\item 等速率者：使帶電質點射流先通過速度選擇器，速度垂直磁場，至一板，速度為電場量值和磁場量值之比值者通過一縫隙，其餘攔下。通過者再進入與前述速度選擇器之磁場同向的均勻磁場中，作迴旋運動，過半圓周將落於板上。其落點與前述縫隙之平行板方向距離為兩倍迴旋半徑，與質荷比呈正比。
+\item 等電壓者：自一縫隙中發射以等電壓發射帶電質點，進入垂直其速度的均勻磁場，作迴旋運動，過半圓周將落於板上。其落點與前述縫隙之平行板方向距離為兩倍迴旋半徑，與根號質荷比呈正比。
+\end{itemize}
+檢測器檢測落點，得質譜（Mass spectrum），可推知莫耳質量，常用於檢測同位素、食安、有機化合物分析等。
+\subsubsection{迴旋加速器}
+兩片 D 形柱（指截面為半圓形之柱體），均提供垂直半圓面的同向均勻磁場，令磁場量值$B$，兩者平邊相對略成一圓，而中有無磁場之溝隙相隔。帶電質點，令質量$m$、電荷量值$q$，從溝隙中心略高於 D 形柱高垂直溝隙方向加電壓射出，令電壓量值$V$，於 D 形柱上時做迴旋運動（若帶電質點帶正電荷則 D 形柱磁場方向與帶電質點相對於初始發射處角速度反向，帶負電荷則同向），令迴旋週期$T$，每次通過溝隙時所加電壓同值異號，使之每次通過溝隙均加速並增加迴旋半徑，令第$i$次通過溝隙後帶電質點速率$v_i$、迴旋半徑$r_i$（初始發射視為第1次通過），當達最大半徑時離開 D 形柱進入實驗區（進行粒子對撞實驗等）。
+\[T=\frac{2\pi m}{qB}.\]
+\[v_1^{\phantom{0}2}=\frac{2qV}{m}.\]
+\[v_{n+1}^{\phantom{n+1}2}=\frac{2qV}{m}+v_n^{\phantom{n}2},\quad n\in\mathbb{N}.\]
+\[v_n=\sqrt{n}v_1=\sqrt{\frac{2nqV}{m}},\quad n\in\mathbb{N}.\]
+\[r_1=\frac{mv_0}{qB}=\frac{\sqrt{2mqV}}{qB}.\]
+\[r_n=\frac{mv_n}{qB}=\frac{1}{B}\sqrt{\frac{2nVm}{q}},\quad n\in\mathbb{N}.\]
+\subsection{電流天平（Current balance）}
+測量小物品的電流天平通常由一上有線圈的絕緣板與提供均勻強磁場的螺線管組成。板上一側用於置待測物，旁有調節板高低的螺絲用於歸零教正；中有支點；另一測上有 U 型電路，測量時插入螺線管；中有一垂直於板的指針。測量時供電給螺線管與線圈，調整供電使線圈產生向下的力，與待測物受重力達力矩平衡，測量此時線圈與螺線管電流。若僅一安培計可用則串聯螺線管與線圈。理想情況下螺線管的磁場垂直重力場，且量值垂直於其上電流，支點無摩擦。
+
+令待測物與線圈有效力臂$a$、$b$（一般電流天平通常$a=b$），待測物質量$m$，重力加速度量值$g$，U 型線圈垂直磁場長度$l$、電流強度$I$，螺線管提供均勻磁場量值$B$。平衡時：
+\[mga=IlBb.\]
+故待測物質量正比於螺線管電流與 U 型線圈的乘積。
+\subsection{電動機/馬達（(Electric) motor）}
+電動機的主要功能是將電能轉換成機械能。其基本結構包括：
+\begin{itemize}
+\item 定子（Stator）/場磁鐵：靜止的部分，內部有磁鐵或電磁鐵，產生固定的磁場。
+\item 轉子（Rotor）/電樞（Armature）：旋轉的部分，內部有繞組，轉軸垂直磁場，從外部輸入電流予之，使受定子的磁場的勞侖茲力而轉動。
+\item 換向器/整流子（Commutator）：在直流或異步交流電動機中使用的裝置，通常由銅片和絕緣材料構成，能夠使轉子繞組在轉動時與輸入電流的外部導線接觸方向不斷反轉。對於直流電動機一般為兩半圓開口環（Split rings）。
+\item 集電（滑）環（Slip rings）：同步交流電動機中輸入電流的裝置，一般為兩圓形環。
+\item 電刷（Brushes）：與換向器或集電滑環接觸的刷子，通常由碳或銅構成，將電流自外部傳輸到轉子。
+\end{itemize}
+同步交流電動機，令輸入交流電電流$I$、端電壓$V$、最大瞬時電流$I_m$、最大瞬時端電壓$V_m$、方均根電流$I_{rms}=\frac{I_m}{\sqrt{2}}$、方均根端電壓$V_{rms}=\frac{V_m}{\sqrt{2}}$、電壓相對於電流無相位角差、輸入功率$P_e$、磁場$\mathbf{B}$量值$B$、線圈面$\mathbf{S}$、$S=|\mathbf{S}|$、匝數$N$、內電阻$R$、無電抗、與動生電動勢抵銷的電動勢（即負動生電動勢）$\mathcal{E}$、輸出功率$P_m$、力矩$\boldsymbol{\tau}$、力矩量值$\tau$、旋轉角頻率$\boldsymbol{\omega}$、角頻率量值$\omega$、初始相位角$\varphi$、能量傳遞效率$\eta$：
+\[\begin{aligned}
+I=&I_m\sin(\omega t+\varphi)\\
+V=&V_m\sin(\omega t+\varphi)\\
+P_e=&IV=I_mV_m\sin^2(\omega t+\varphi)\\
+\langle P_e\rangle=&\frac{I_mV_m}{2}=I_{rms}V_{rms}\\
+\boldsymbol{\tau}=&NI\mathbf{S}\times\mathbf{B}=NISB\sin(\omega t+\varphi)\\
+P_m=&\boldsymbol{\tau}\cdot\boldsymbol{\omega}=\omega NISB\sin(\omega t+\varphi)=\mathcal{E}I\\
+\langle P_m\rangle=&\frac{\omega NI_mSB}{2}\\
+\mathcal{E}=&V-IR=(V_m-I_mR)\sin(\omega t+\varphi)=\omega NSB\sin(\omega t+\varphi)\\
+V_m-I_mR=&\omega NSB\\
+\eta=&\frac{P_m}{P_e}=\frac{\langle P_m\rangle}{\langle P_e\rangle}=\frac{\mathcal{E}}{V}=\frac{\omega NSB}{V_m}=\frac{V_m-I_mR}{V_m}=\frac{V_{rms}-I_{rms}R}{V_{rms}}
+\end{aligned}\]
+
+
+\section{物質的電磁性質（Electromagnetic Properties of Matter）}
+\subsection{電介質/介電質（Dielectric (medium))與相對電容率}
+電介質/介電質指的是可以被外加電場極化但不導電的物質。所有物質（真空除外）均具有大於1的相對電容率。
+\subsection{崩潰電壓（Breakdown voltage）}
+使某一絕緣介質在一段時間內成為導體所需加入的電壓的最低值。
+\subsection{鐵電性（Ferroelectricity）}
+指的是某些材料在無外加電場時具有自發極化（spontaneous polarization），且該極化方向在施加足夠強的外加電場時可以翻轉（switchability）。鐵不具有鐵電性，\ce{BaTiO3}、\ce{LiTaO3} 具有鐵電性。具有鐵電性的物質較少。
+\subsection{壓電性（Piezoelectricity）}
+\begin{itemize}
+\item 正壓電效應：施加物理壓力，使壓電材料機械變形，沿壓力方向縮短，並發生晶格變形，導致電偶極矩變化，使材料在相對的表面上產生電位差。
+\item 負壓電效應：在表面施加電位差，壓電材料的晶格變形以使電偶極矩改變以響應電位差，導致材料機械變形，沿電場方向伸長。
+\end{itemize}
+同一壓電材料，電位差與伸縮量的比值在正壓電效應與負壓電效應中相同。
+\subsection{撓曲電性（Flexoelectricity）}
+\begin{itemize}
+\item 正撓曲電效應：施加應變梯度（strain gradient），即不同處的物理壓力不均勻，使撓曲電材料機械變形，導致晶格變形與電偶極矩變化，使材料在相對的表面上產生電位差。
+\item 負撓曲電效應：在表面施加電位差，撓曲電材料的晶格變形以使電偶極矩改變以響應電位差，導致材料發生不均勻機械變形。
+\end{itemize}
+同一撓曲電材料，電位差與變形梯度的比值在正撓曲電效應與負撓曲電效應中相同。撓曲電效應主要在奈米尺度下較為顯著。
+\subsection{磁鐵（Magnet）}
+指能夠產生持久磁場的材料。
+\subsection{磁性（magnetism）}
+指物質對外加磁場的響應。
+\subsubsection{硬磁鐵（Hard magnet）/永久磁鐵（Permanent magnet）}
+當無外加磁場時仍具有磁性的磁鐵。
+\subsubsection{軟磁鐵（Soft magnet）/暫時磁鐵（Temporary magnet）}
+當無外加磁場時不具有磁性的磁鐵。
+\subsection{磁性物質}
+存在特定條件使其具有磁性的物質，即具有非零磁化率。具有非零磁化率的物質較少。物質的磁性來自於磁性原子本身的磁矩與磁性原子的電子之間的交換作用。
+\subsection{磁性原子本身的磁矩}
+\subsubsection{電子自旋磁矩（Spin Magnetic Moment）}
+電子自旋（spin）的角動量產生的磁矩$\mu_S$：
+\[\mu_S=g_s\frac{-e}{2m_e}S=-g_ss\mu_B\]
+其中：
+\begin{itemize}
+\item 自旋 g 因子（spin g-factor）：$g_s\approx 2$
+\item 基本電荷：$e$
+\item 電子質量：$m_e$
+\item 電子自旋角動量：$S$，$|S|=\frac{\hbar}{2}$
+\item 自旋量子數（spin quantum number）：$s=\frac{S}{\hbar}=\pm\frac{1}{2}$
+\item 玻爾磁子（Bohr magneton）：$\mu_B=\frac{e\hbar}{2m_e}$
+\end{itemize}
+\subsubsection{電子軌道磁矩（Orbital Magnetic Moment）}
+電子在原子核周圍繞行運動產生的磁矩$\mu_L$：
+\[\mu_L=-g_L\frac{e}{2m_e}L=-g_L\sqrt{l(l+1)}\mu_B.\]
+其在$z$軸的分量為：
+\[\mu_{Lz}=-g_Lm_L\mu_B.\]
+其中：
+\begin{itemize}
+\item 軌道 g 因子（orbital g-factor）：$g_L=1$
+\item 電子軌道運動角動量：$L=\sqrt{l(l+1)}\hbar$
+\item 電子軌道運動角動量$z$軸分量：$L_z$
+\item 角量子數（azimuthal quantum number）：$l$，為小於主量子數（main quantum number）的正整數
+\item 磁量子數（magnetic quantum number）：$m_L=\frac{L_z}{\hbar}$，為絕對值小於等於角量子數的整數
+\end{itemize}
+\subsubsection{自旋-軌道耦合（Spin-Orbit Coupling）}
+電子自旋與其軌道運動磁矩的疊加，其總磁矩的$\mu$為：
+\[\mu=-g_J\frac{e}{2m}J=-g_J\mu_Bj.\]
+其中：
+\begin{itemize}
+\item 朗德 g 因子（Landé g-factor）：$g_J$
+\[g_J=g_L\frac{j(j+1)-s(s+1)+l(l+1)}{2j(j+1)}+g_s\frac{j(j+1)+s(s+1)-l(l+1)}{2j(j+1)}.\]
+當$g_L=1$、$g_s=2$：
+\[g_J=1+\frac{j(j+1)+s(s+1)-l(l+1)}{2j(j+1)}.\]
+\item 電子總角動量：$J$
+\item 總角動量量子數（total angular momentum）：$j=s+l$
+\end{itemize}
+\subsubsection{原子核具有的磁矩}
+極小，通常可忽略。
+\subsection{磁性原子的電子之間的交換作用（Exchange Interaction）}
+部分物質的電子之間的量子力學交換作用會使自旋排列有特定規則，產生磁性。
+\subsubsection{反磁性/逆磁性/抗磁性（Diamagnetism）}
+指的是某些材料在無外加磁場時有零磁矩；在有外加磁場時呈現磁矩，且該磁矩方向與外磁場之點積為負，即磁化率為負，由拉莫爾反磁效應（Larmor Diamagnetism）產生。拉莫爾反磁效應指當施加外磁場時電子的軌道磁矩會產生抵抗外磁場的微小變化。所有物質都具有反磁性效應，但反磁性通常極小，一般磁化係數量值在 $10^{-5}$ 量級，故若同時具有順磁性則反磁性通常被掩蓋。
+\subsubsection{順磁性（Paramagnetism）}
+指的是某些材料在無外加磁場時有零磁矩；在有外加磁場時呈現磁矩，且該磁矩方向與外磁場之點積為正，即磁化率為正，一般磁化係數量值在 $10^{-5}\sim 10^{-3}$ 量級。其成因有：
+\begin{itemize}
+\item 未成對電子的磁矩：當施加非零外加磁場時，未成對電子的磁矩會趨向與磁場方向對齊（部分電子沿磁場方向，部分電子反向，但沿磁場方向的數量略多），導致淨磁化。
+\item 玻爾-范佛磁性（Bohr-Van Vleck Paramagnetism）：在某些分子中，即使沒有未成對電子，外磁場仍可能影響電子軌道，使其自旋與磁場產生相互作用。主要發生在具有填充電子殼層但可透過量子躍遷產生磁矩的材料中。
+\end{itemize}
+順磁性物質可用於超低溫冷凍技術，通過外加磁場使其粒子排列有序而降低熵，再於絕熱下移去磁場，系統熵不變。
+\subsubsection{鐵磁性（Ferromagnetism）/強磁性}
+指的是某些材料相鄰電子自旋呈相同方向排列，使其在無外加磁場時可以具有自發磁化（spontaneous magnetization），且該磁化方向在施加足夠強的外加磁場時可以翻轉（switchability），且翻轉後的磁矩方向與外磁場之點積為正。
+
+磁域/磁田/磁疇（Magnetic domain）指鐵磁性物質的一小區域的磁原子經交換作用成群向同一方向排列，其邊界稱磁田壁（domain wall）。未經磁化時各磁田磁矩方向散亂分布，無淨巨觀磁矩；磁化過程中，發生磁田壁移動，與外加磁場同向的磁田變大，其餘方向的磁田變小；足夠強的外加磁場可以產生磁田旋轉，直到所有磁田轉到與外加磁場同向，稱磁化飽和狀態；磁化過的鐵磁性物質即使外加磁場移除仍保有磁矩，稱自發磁矩；若欲去除自發磁矩，可使用反向弱磁場使其淨磁矩變弱。
+
+\ce{Fe}、\ce{Co}、\ce{Ni} 具有鐵磁性。具有鐵磁性的物質較具有鐵電性的物質多。
+\subsubsection{反鐵磁性（Antiferromagnetism）/反強磁性}
+指的是某些材料的相鄰電子自旋呈相反方向排列且大小相等，使其始終具有零或小磁矩。\ce{Mn}、\ce{NiO} 具有反鐵磁性。
+\subsubsection{亞鐵磁性（Ferrimagnetism）}
+指的是某些材料的相鄰電子自旋呈相反方向排列且大小不同，使其在無外加磁場時可以具有自發磁化（spontaneous magnetization），且該磁化方向在施加足夠強的外加磁場時可以翻轉（switchability），且翻轉後的磁矩方向與外磁場之點積為正。其表現類似於鐵磁性，但磁化係數較小。\ce{Fe3O4} 具有亞鐵磁性。
+\sssc{居禮溫度（Curie temperature）}
+指的是某些材料在一定溫度以下呈現鐵磁性或亞鐵磁性，在該溫度以上則否，該溫度稱居禮溫度。
+\sssc{奈爾溫度（Néel temperature）}
+指的是某些材料在一定溫度以下呈現反鐵磁性，在該溫度以上則否，該溫度稱奈爾溫度。
+\sssc{遲滯現象（Hysteresis）/滯後現象}
+指的是具有鐵電性、壓電性、撓曲電性、鐵磁性、反鐵磁性、亞鐵磁性、鐵彈性（Ferroelasticity）等的材料的狀態對其歷史具有依賴性，在外在改變時具有對原先狀態的記憶性。
+\sssc{超順磁性（Superparamagnetism）}
+出現在鐵磁性或亞鐵磁性物質的奈米粒子中的磁性形式，磁化可以在溫度的影響下隨機翻轉方向，兩次翻轉之間的典型時間稱為尼爾弛豫時間（Néel relaxation time），在沒有外部磁場的情況下，當測量超順磁性奈米粒子磁化強度的時間遠長於尼爾弛豫時間時，它們的磁化強度平均為零。磁各向異性愈強，出現超順磁性效應的臨界體積就愈小。
+\sssc{超導體（Superconductor）}
+電阻為零、完全抗磁性的材料。
+\sssc{臨界溫度（Critical temperature）}
+超導體材料在臨界溫度以上不再是超導體。現有的超導體臨界溫度溫度都在 -100°C 以下，如\ce{YBa2Cu3O7}是92 K。
+
+
+\section{地磁（Earth's Magnetic Field）}
+\subsection{地磁（場）（Earth's magnetic field/Geomagnetic field）}
+\subsubsection{可能成因}
+地核溫度遠高於鐵和鎳的居禮溫度，鐵、鎳失去鐵磁性。一般認為，地球液態外核乃富含鐵之導電流體，受熱能供給形成對流，再因地球自轉感應出地磁。一般認為，地核熱能主要源自於放射性元素衰變。
+\subsubsection{自然存磁性/天然剩餘磁性/天然剩磁（Natural remanent magnetization）}
+是岩石或沉積物的永久磁力，保留了礦物在岩漿中結晶時或沉積物在沉積時的地球磁場方向的記錄。
+\subsubsection{地磁極}
+地球表面地球磁場方向垂直向下的點稱地磁 S 極/地磁北極（Geomagnetic north pole），約在加拿大西北方與地理北極相距約 1000 公里處；地球表面地球磁場方向垂直向上的點稱地磁 N 極/地磁南極（Geomagnetic south pole），約在澳洲南方與地理南極相距約 2860 公里處。地磁軸與地軸約夾 11°。地表地磁場大小約 \scinote{5}{-5} 特斯拉，愈近地磁極愈大，兩極約 \scinote{6}{-5} 特斯拉。
+\subsubsection{磁偏角（Magnetic declination/variation）}
+測量地至地磁北極射線相對於測量地至地理北極射線的夾角$\theta$，東為正，因地而異，略與緯度正相關。赤道磁偏角最大處約 11°，臺北約 -3°至-4°。
+\subsubsection{磁傾角（Magnetic dip/inclination） }
+地磁磁場與地平線的夾角$\varphi$，向下為正，略為愈接近地磁北極愈正、愈接近地磁南極愈負、地磁赤道為零、地磁北極為 90°、地磁南極為 -90°。臺北磁傾角約 37°。
+\subsection{磁層（Magnetosphere）}
+當太陽風與具有發達磁場的行星（例如地球、木星或土星）相交時，粒子會因洛倫茲力而偏轉。這個區域被稱為磁層，使粒子繞著行星飛行，而不是轟擊大氣層或表面。磁層在面向太陽的一側大致呈弓狀突起，地球者半徑約為地球的半徑十倍，另一側則拉出一條長尾跡，地球者半徑約為地球的半徑千倍。
+\subsubsection{磁層頂（Magnetopause）}
+磁層的外邊界。
+\subsubsection{艏震波/弓形震波/弓形衝擊波（Bow shock）}
+是太陽風與行星的磁層頂相遇處形成的震波。
+\subsubsection{磁鞘（Magnetosheath）}
+介於弓形衝擊波面與磁層頂間的區域。
+\subsection{范艾倫輻射帶（Van Allen radiation belt）}
+是一個高能帶電粒子的區域，其中大部分粒子來自太陽風，少部分來自宇宙射線，被行星的磁層捕獲並環繞在該行星周圍。地球有兩層這樣的環帶，有時可以臨時創建其它的，內范艾倫輻射帶通常在地球上空從0.2到2個地球半徑的高度，外范艾倫輻射帶通常在地球上空3到10個地球半徑的高度，其中主要由高能（0.1–10MeV）電子組成。
+\sssc{帶電粒子受地磁運動}
+帶電粒子射入地磁場，若其速度垂直磁場則行等速率迴旋運動，若其速度有平行磁場的分量則行螺旋運動靠近地磁極，且由於地磁愈近兩極愈大，故其運動軌跡曲率半徑漸減。由於帶電粒子向兩磁極集中，故極光好發於兩磁極附近。
+\sssc{極光（Aurora）}
+地球上的極光是由於來自范艾倫輻射帶的帶電高能粒子被地磁場導引帶進地球大氣層，並與大氣電離層中的原子碰撞導致電子向外躍遷，並在向內躍遷時造成發光現象。好發於太陽發生磁暴時。一般來說，氧放出綠色或褐紅色，氮放出藍色、紫色或紅色。
+
+
+\section{電磁感應（Electromagnetic Induction）}
+\subsection{簡史}
+\begin{itemize}
+\item 1831年，法拉第發現當通過某導體的磁場變動時會在其上產生感應電流。
+\item 1833年，冷次提出當線圈與磁鐵間有相對運動，線圈感應電流方向是使線圈所生磁場能抗拒該相對運動。
+\item 1845年，諾曼提出感應電動勢。
+\item 1847年，亥姆霍茲提出冷次定律是能量守恆定律的必然結果。
+\item 1855年，馬克士威提出法拉第電磁感應定律的數學形式。
+\end{itemize}
+\subsection{冷次定律（Lenz's law）}
+由於磁通量改變而產生的感應電流，所產生的磁通量總是抗拒磁通量的改變。
+\subsection{感應電流（Induced current）}
+感應電動勢產生的電流。
+\subsection{馬克士威第三方程（Maxwell's third equation）–法拉第電磁感應定律（Faraday's law of electromagnetic induction）}
+描述變動磁場產生電場/磁動生電/電磁感應。
+\subsubsection{法拉第電磁感應定律–微分形式}
+\[\nabla \times \mathbf{E} = -\pdv{\mathbf{B}}{t}.\]
+電場扣除無旋的靜電場後的部分稱感應電場（Induced electric field），由磁場變化所引起。
+\subsubsection{法拉第電磁感應定律–積分形式}
+對於封閉路徑$\mathbf{l}=\partial\mathbf{S}$，通過$S$之磁通量$\Phi_B$變化時，會產生感應電動勢（Induced electromotive force）$\mathcal{E}$，即感應電場沿$\mathbf{l}$的封閉曲線積分（以正電荷逆時針繞曲面正方向會獲得電位能者為正），使有電荷載子處產生自由電流：
+\[\mathcal{E}=\oint_{l}\mathbf{E}\cdot\mathrm{d}\mathbf{l}=-\frac{\partial}{\partial t}\iint_S\mathbf{B}\cdot\mathrm{d}\mathbf{S}=-\dv{\Phi_B}{t}.\]
+\subsection{磁場變化產生電流}
+\subsubsection{法拉第實驗}
+\begin{itemize}
+\item 將繞有線圈的鐵棒放在兩夾一角度的條形磁鐵棒的兩同極磁極間，兩磁鐵棒之張合頻率與感應電流（為同頻率交流電）之方均根電流呈正比。
+\item 將軟鐵環繞上二線圈，一線圈通電或斷開的瞬間，另一線圈上產生感應電流。
+\end{itemize}
+\subsubsection{電吉他}
+電吉他上有一小段磁化琴弦，旁放置線圈，磁化琴弦振動時線圈的磁通量改變，產生感應電動勢，可將琴弦振動轉換成電流訊號，再接往放大器放大。
+\subsubsection{電磁感應拋射實驗}
+電磁鐵裝置上方套一金屬環，電磁鐵接通時產生磁場，金屬環上發生電磁感應，使兩者相斥，金屬環拋射出。
+\subsection{動生電動勢（Motional electromotive force）}
+\subsubsection{弗萊明右手法則（Fleming's right-hand rule）}
+右手拇指、食指、中指垂直，一導體在右手食指所指方向的磁場中向右手拇指所指方向移動，則產生右手中指方向之動生電動勢。
+\subsubsection{動生電動勢}
+動生電動勢指電荷載子流體域（下稱導體）與磁場相對移動所產生的電動勢，可以用勞侖茲力解釋，也可以用感應電動勢解釋。令導體兩端點定向連線$\mathbf{l}$，相對磁場移動速度$\mathbf{v}$，動生電動勢$\mathcal{E}$（以正電荷自$\mathbf{l}$始點移至其終點會獲得電位能為正）為：
+\[\mathcal{E}=\int_{l}\left(\mathbf{v}\times\mathbf{B}\right)\cdot\mathrm{d}\mathbf{l}.\]
+\subsubsection{勞侖茲力解釋}
+電荷載子在磁場$\mathbf{B}$中以速度$\mathbf{v}$移動時，所受磁場力等效於電場：
+\[\mathbf{E}=\mathbf{v}\times\mathbf{B}\]
+動生電動勢即：
+\[\mathcal{E}=\int_l\mathbf{v}\times\mathbf{B}\cdot\mathrm{d}\mathbf{l}\]
+\subsubsection{感應電動勢解釋}
+取包含導體$\mathbf{l}$的封閉曲線使得其逆時針圍繞一定向曲面$S$，令$\mathbf{S}=\iint_S\,\mathrm{d}\mb{S}$：
+\[\dv{\mathbf{S}}{t}=\mathbf{v}\times\mathbf{l}.\]
+磁通量時變率：
+\[\dv{\Phi_B}{t}=\mathbf{B}\cdot\dv{\mathbf{S}}{t}=(\mathbf{v}\times\mathbf{l})\cdot\mathbf{B}=(\mathbf{B}\times\mathbf{v})\cdot\mathbf{l}.\]
+\[\mathcal{E}=-\dv{\Phi_B}{t}=\int_{l}\left(\mathbf{v}\times\mathbf{B}\right)\cdot\mathrm{d}\mathbf{l}.\]
+等效感應電場：
+\[\mathbf{E}=\mathbf{v}\times\mathbf{B}\]
+\subsubsection{動生電動勢與感動電場的相對性}
+電荷載子與磁場相對運動產生的動生電動勢與電場與慣性參考系的選取無關，符合相對性。
+\subsubsection{法拉第弔詭（Faraday paradox）}
+一個導體圓盤放在垂直於圓盤平面的均勻磁場中，測量圓盤的中心和邊緣之間的電壓，當圓盤轉動時，應測量到動生電動勢減去電流乘以內電阻，若將整個裝置（磁場產生裝置和圓盤）同步旋轉，仍然可以測得相同的電壓，可用勞侖茲力解釋，或用磁場不隨磁場產生裝置轉動解釋，仍然符合動生電動勢與感動電場的相對性。
+\subsubsection{穩態}
+當電荷載子分布不均時，會產生一靜電場$\mathbf{E}$。當正負電荷分離至$\mathbf{E}$產生的電動勢恰與動生電動勢抵銷：
+\[\mathcal{E}=-\int_l\mathbf{E}\cdot\mathrm{d}\mathbf{l}\]
+即勞侖茲力電場力項與磁場力項抵銷：
+\[\mathbf{E}=-\mathbf{v}\times\mathbf{B}\]
+時，則不再分離，達到穩態。
+\subsection{霍爾效應（Hall effect）}
+當導體有電流通過且在磁場中，電荷載子受動生電動勢偏向一邊，繼而產生電位差，最終電荷載子產生的靜電場$\mathbf{E}$產生的電場力與磁場力平衡達到穩態，使後來的電流可順利通過而非聚集，此時的電位差稱霍爾電壓（Hall voltage）。
+
+令磁場中導體$\mathbf{l}$，電荷載子漂移速度$\mathbf{v}_d$，霍爾電壓$V_H$為：
+\[V_H=\int_{l}\mathbf{E}\cdot\mathrm{d}\mathbf{l}=-\int_{l}\mathbf{v}_d\times\mathbf{B}\cdot\mathrm{d}\mathbf{l}.\]
+\subsubsection{金屬}
+金屬的電荷載子為自由電子，帶電荷$-e$，令其自由電子體積密度$n$，其霍爾電壓：
+\[V_H=\int_{l}\frac{\mathbf{J}\times\mathbf{B}}{ne}\cdot\mathrm{d}\mathbf{l}.\]
+對於電流密度垂直於磁場者，令感應電場量值$E$、磁場量值$B$、截面積$A$、電流$I$：
+\[V_H=E l=\frac{IB l}{neA}.\]
+\subsubsection{半導體}
+半導體的電荷載子為帶電荷$-e$的自由電子與帶電荷$e$的電洞，受磁力向相反方向聚集。電荷載子體積密度本徵半導體（Intrinsic semiconductors）約 $10^{16}$ m$^{-3}$ 級別、摻雜半導體（Extrinsic semiconductors）約 $10^{18}$ m$^{-3}$ 至 $10^{20}$ m$^{-3}$ 級別、金屬約 $10^{28}$ m$^{-3}$ 至 $10^{29}$ m$^{-3}$ 級別，半導體的電荷載子濃度小於金屬。本徵半導體電子與電洞濃度相當，可能使霍爾電壓相抵銷。摻雜半導體由主要載子主導霍爾電壓，因濃度小於金屬而使霍爾電壓大於金屬。
+\subsection{證明電磁感應是能量守恆的結果}
+令一導體$\mathbf{l}$（無論是否為一迴路且無論是否帶淨電荷，但質量線密度不隨時間改變），其中$\mathrm{d}\mathbf{l}$以$\mathbf{v}$宏觀運動並受非磁力$\mathrm{d}\mathbf{F}$（包含電場力，非零淨電荷處受之），令其對導體宏觀功率$P$：
+\[P=\int_l\mathrm{d}\mathbf{F}\cdot\mathbf{v}\,\mathrm{d}\mathbf{l}\]
+令電場$\mathbf{E}$；導體宏觀動能時變率$K$；電功率$E$，則：
+\[P=K+E\]
+對於電荷載子密度不變，即符合克希荷夫定則，令總電動勢$\mathcal{E}$；電流$I$：
+\[\int_lI\mathbf{E}\cdot\mathrm{d}\mathbf{l}=I\int_l\mathbf{E}\cdot\mathrm{d}\mathbf{l}\]
+即：
+\[P=K+\mathcal{E}I\]
+\begin{proof}\mbox{}\\
+\begin{itemize}
+\item 電荷載子速度平行$\mathrm{d}\mathbf{l}$的分量產生磁力，該磁力對導體做功功率與$P$之和為$K$。
+\item 電荷載子速度垂直$\mathrm{d}\mathbf{l}$的分量產生磁力，該磁力與電場平行$\mathrm{d}\mathbf{l}$的分量和對該電荷載子之功率為該點電功率。
+\item 考慮電荷載子所受總磁場做功為零，故：
+\[P=K+E\]
+\item 對於電荷載子密度不變：
+\[\begin{aligned}
+E&=I\int_l\mathbf{E}\cdot\mathrm{d}\mathbf{l}+I\int_l((\mathrm{d}\mathbf{l}\times\mathbf{B})\cdot\mathbf{v})\\
+&=I\int_l\mathbf{E}\cdot\mathrm{d}\mathbf{l}-I\int_l\mathbf{B}\cdot(\mathbf{v}\times\mathrm{d}\mathbf{l})\\
+&=\mathcal{E}I
+\end{aligned}\]
+\end{itemize}
+\end{proof}
+\subsection{動生電動勢產生電流}
+\subsubsection{渦電流（Eddy current）}
+導體板受電磁感應形成漩渦狀的感應電流，並產生阻尼效應。當垂直導體面磁矩$\mathbf{m}$物相對導體以速度$\mathbf{v}$移動，導體上：
+\begin{itemize}
+\item 磁矩物投影處電流方向約為$\mathbf{m}\times\mathbf{v}$。
+\item 磁矩物前方（$\mathbf{v}$方向）產生順時針繞$\mathbf{m}$感應渦電流，產生的磁場約與$\mathbf{m}$反向，導體受到磁矩物的總力約與$\mathbf{v}$同向，傾向於使相對運動停止。
+\item 磁矩物後方（$-\mathbf{v}$方向）產生逆時針繞$\mathbf{m}$感應渦電流，產生的磁場約與$\mathbf{m}$同向，導體受到磁矩物的總力約與$\mathbf{v}$同向，傾向於使相對運動停止。
+\end{itemize}
+\subsubsection{渦電流剎車（Eddy current brake, ECB）}
+輪軸上一圓盤，欲剎車時，在圓盤一側施加磁場，產生阻尼效應，達到平穩剎車。
+\subsubsection{法拉第圓盤單極發電機（Faraday disk homopolar generator）}
+金屬圓盤在磁場中，內電極放在圓盤的中心，外電極放在圓盤的邊緣，均透過滑環或碳刷與圓盤接觸，受外力轉動時輸出直流電。
+\subsubsection{動圈式麥克風（Moving coil microphone）}
+一可自由振動的短線圈連結膜片，套在一個圓柱形強磁鐵上，其中心軸為N極、外圍為S極，磁場垂直於導線。當膜片振動線圈，線圈受動生電動勢輸出交流電，其振動頻率為輸出交流電之頻率。
+\subsection{發電機（Electric generator）}
+發電機的主要功能是將機械能轉換成電能。其基本結構包括：
+\begin{itemize}
+\item 定子（Stator）/場磁鐵：靜止的部分，內部有磁鐵或電磁鐵，產生固定的磁場。
+\item 轉子（Rotor）/電樞（Armature）：旋轉的部分，內部有繞組，轉軸垂直磁場，被外力轉動，受電磁感應產生感動電流輸出予外部。單組線圈產生的交流電電壓和電流同相。
+\item 換向器/整流子（Commutator）：在直流或異步交流發電機中使用的裝置，通常由銅片和絕緣材料構成，能夠使轉子繞組在轉動時與輸出電流的外部導線接觸方向不斷反轉。對於直流發電機一般為兩半圓開口環（Split rings）。
+\item 集電（滑）環（Slip rings）：同步交流發電機中輸入電流的裝置，一般為兩圓形環。
+\item 電刷（Brushes）：與換向器或集電滑環接觸的刷子，通常由碳或銅構成，將電流自轉子傳輸到外部。
+\end{itemize}
+同步交流發電機，令輸出交流電電流$I$、端電壓$V$、最大瞬時電流$I_m$、最大瞬時端電壓$V_m$、方均根電流$I_{rms}=\frac{I_m}{\sqrt{2}}$、方均根電壓$V_{rms}=\frac{V_m}{\sqrt{2}}$、電壓相對於電流無相位角差、輸出功率$P_e$、磁場$\mathbf{B}$量值$B$、線圈面$\mathbf{S}$、$S=|\mathbf{S}|$、匝數$N$、內電阻$R$、無電抗、動生電動勢$\mathcal{E}$、輸入功率$P_m$、力矩$\boldsymbol{\tau}$、力矩量值$\tau$、旋轉角頻率$\boldsymbol{\omega}$、角頻率量值$\omega$、初始相位角$\varphi$、能量傳遞效率$\eta$：
+\[\begin{aligned}
+\boldsymbol{\tau}=&NI\mathbf{S}\times\mathbf{B}=NISB\sin(\omega t+\varphi)\\
+\mathcal{E}=&V+IR=(V_m+I_mR)\sin(\omega t+\varphi)=\omega NSB\sin(\omega t+\varphi)\\
+P_m=&\boldsymbol{\tau}\cdot\boldsymbol{\omega}=\omega NISB\sin(\omega t+\varphi)=\mathcal{E}I\\
+V_m+I_mR=&\omega NSB\\
+\langle P_m\rangle=&\frac{\omega NI_mSB}{2}\\
+I=&I_m\sin(\omega t+\varphi)\\
+V=&V_m\sin(\omega t+\varphi)\\
+P_e=&IV=I_mV_m\sin^2(\omega t+\varphi)\\
+\langle P_e\rangle=&\frac{I_mV_m}{2}=I_{rms}V_{rms}\\
+\eta=&\frac{P_e}{P_m}=\frac{\langle P_e\rangle}{\langle P_m\rangle}=\frac{V}{\mathcal{E}}=\frac{V_m}{\omega NSB}=\frac{V_m}{V_m+I_mR}=\frac{V_{rms}}{V_{rms}+I_{rms}R}
+\end{aligned}\]
+\subsection{變壓器（Transformer）}
+變壓器是一種被動元件，可將電能從一個電路傳輸到其他電路且電壓不同。變壓器由一磁芯（magnetic core）上纏繞輸入交流電的主/初級線圈（Primary coil）與輸出交流電的一或多個副/次級線圈（Secondary coil）組成，各線圈間互不導通。副線圈匝數大於主線圈為升壓變壓器，副線圈匝數小於主線圈為降壓變壓器。副線圈可由中間抽頭（tapped），可視為兩個副線圈串聯，可用於整流器中。下以一主線圈、一副線圈為例。
+\subsubsection{主線圈}
+輸入端電壓$V_p$加上感應電動勢$\mathcal{E}_p$（負值，因與端電壓反向）等於其電流$I_p$乘以其電阻$R_p$加上等效鐵損電路的電流$I_{cp}$乘以其電阻$R_{cp}$：
+\[V_p+\mathcal{E}_p=I_pR_p+I_{cp}R_{cp}\]
+截面磁通量$\Phi_p$、匝數$N_p$：
+\[\mathcal{E}_p=-N_p\dv{\Phi_p}{t}\]
+輸入功率：
+\[P_p=V_p(I_p+I_{cp})\]
+輸出功率：
+\[P_{ep}=-\mathcal{E}_pI_p\]
+銅損：
+\[P_{hp}=I_p^{\phantom{p}2}R_p\]
+鐵損：
+\[P_{cp}=I_{cp}^{\phantom{cp}2}R_{cp}\]
+\subsubsection{副線圈}
+感應電動勢$\mathcal{E}_s$等於其輸出端電壓$V_s$加上其電流$I_s$乘以其電阻$R_s$加上等效鐵損電路的電流$I_{cs}$乘以其電阻$R_{cs}$：
+\[\mathcal{E}_s=V_s+I_sR_s+I_{cs}R_{cs}\]
+截面磁通量$\Phi_s$、匝數$N_s$：
+\[\mathcal{E}_s=-N_s\dv{\Phi_s}{t}\]
+輸入功率：
+\[P_s=\mathcal{E}_s(I_s+I_{cs})\]
+輸出功率：
+\[P_{es}=V_sI_s\]
+銅損：
+\[P_{hs}=I_s^{\phantom{s}2}R_s\]
+鐵損：
+\[P_{cs}=I_{cs}^{\phantom{cs}2}R_{cs}\]
+\subsubsection{漏磁通（Leakage magnet flux）}
+電感耦合係數$k_c<1$有漏磁通，可能影響鐵損，其餘則可用串聯漏感$L_I$進行等效。
+
+提高磁芯的磁導率、使用環狀磁芯、減少線圈間距等可以增加互感，降低漏磁通。
+\subsubsection{渦電流損耗（Eddy-current loss）}
+磁芯的渦電流的熱損耗，略正比於磁芯垂直磁場的投影面積，屬於鐵損的一部分，可以等效於與線圈並聯的鐵損電路中，表現為降低線圈的電流。
+
+分片鐵芯/層壓鐵芯（laminated iron core）有助於減少渦電流的能量損失。
+\subsubsection{磁滯損耗（Hysteresis Loss）}
+磁芯的磁化強度改變時的熱損耗，屬於鐵損的一部分，會增加線圈的等效電阻，可以等效於與線圈並聯的鐵損電路中，表現為降低線圈的電流。
+
+減少輸入電流（即增加輸入電壓）可以減少磁滯損耗。
+\subsubsection{理想變壓器}
+$k=1$、無銅損、無鐵損，線圈的磁通量變化率比值等於匝數比值等於感應電動勢量值比值等於端電壓量值比值等於倒數電流比值。
+\subsection{電磁爐（Induction cooker）}
+電磁爐的主要功能是將電能轉換成熱能，加熱金屬鍋具。其基本結構包括：
+\begin{itemize}
+\item 電磁線圈（Induction coil）：電磁爐的核心部分，通常位於爐面下方，由銅線繞製而成。當交流電流通過這些線圈時，會產生變化的磁場。
+\item 爐面（Cooktop）：通常由玻璃陶瓷製成，能夠承受高溫並且易於清潔。爐面上有一個或多個加熱區域，覆蓋在電磁線圈上方。
+\item 控制面板（Control Panel）：用於設定加熱功率、時間等，電磁爐會根據設定調節電磁線圈的電流。
+\item 冷卻系統（Cooling System）：包括風扇和散熱片，用於散熱以防止電磁線圈過熱。
+\item 溫度感測器（Temperature Sensor）：用於監測爐面的溫度或鍋具的溫度，並將信息傳送給控制系統，以調整加熱功率。
+\item 金屬鍋具：金屬材料在電磁線圈形成變動磁場中產生渦電流，渦電流在鍋具內發生電流熱效應而加熱之。
+\end{itemize}
+\subsection{基布爾秤（Kibble balance）/瓦特天平（Watt balance）}
+基布爾秤主要由以下幾個部分組成：
+\begin{itemize}
+\item 懸掛系統與天平臂：待測物被懸掛在一個等壁天平的一端，另一端連接電磁線圈。天平必須有高穩定性與低摩擦的支點。
+\item 線圈與均勻磁場：線圈位於一個均勻的強磁場中，常使用強力永久磁鐵（如釹鐵硼磁鐵）或電磁鐵來提供。
+\item 光學干涉儀：測量線圈的速度。
+\item 電壓與電流計：使用約瑟夫森效應（Josephson effect）測量電壓，量子霍爾效應（Quantum Hall effect, QHE）測量電流。
+\end{itemize}
+基布爾秤有兩種測量模式：
+\begin{itemize}
+\item 力平衡模式/靜態模式：即電流天平。待測物質量$m$，重力加速度量值$g$，均勻磁場量值$B$，線圈垂直磁場有效長度$l$、施加電流$I$、線圈不移動：
+\[mg=I l B.\]
+\item 速度模式/動態模式：待測物質量$m$，重力加速度量值$g$，均勻磁場量值$B$，線圈垂直磁場有效長度$l$、線圈不施加電流、線圈在磁場中以速率$v$垂直磁場移動、產生動生電動勢$\mathcal{E}$：
+\[\mathcal{E}=vB l.\]
+\end{itemize}
+由於磁場量值較難直接測量，故以速度模式/動態模式測量不確定度較小的電壓$V$（以知動生電動勢）與速率$v$，得到$B l$並代入力平衡模式/靜態模式中使用，使力平衡模式/靜態模式僅需測量不確定度較小的電流，聯立得：
+\[mg = \frac{\mathcal{E} I}{v}.\]
+基布爾秤的發展促成了 2019 年國際單位制（SI）的重新定義，將公斤單位改為基於普朗克常數的物理量，而不再依賴國際公斤原器。
+\subsection{非侵入式的神經影像技術}
+\subsubsection{腦波（Brain wave）}
+大腦中的神經元（neuron）通過動作電位（action potential）傳遞訊號，並在突觸後電位（postsynaptic potential）影響下，產生局部電流，當大量神經元同步活躍時，誘發微弱的電場變化與磁場，並改變腦中磁矩排列。
+\bct\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{波形類型} & \textbf{頻率範圍} & \textbf{主要功能與狀態} \\\hline
+δ 波 & 0.5-4 Hz & 深度睡眠、昏迷\\\hline
+θ 波 & 4-8 Hz & 睡夢、冥想、創意\\\hline
+α 波 & 8-13 Hz & 放鬆、休息\\\hline
+β 波 & 13-30 Hz & 專注、思考\\\hline
+γ 波 & >30 Hz & 高階認知、記憶\\\hline
+\end{tabular}
+\end{table}\FB\ect
+\subsubsection{腦電圖/腦電波儀（Electroencephalography, EEG）}
+EEG 通常使用國際 10-20 系統來安裝電極（例如 Fp1、Fp2、O1、O2 等），電極偵測來自大腦皮質的電位變化，通常範圍為微伏特級別。接著訊號放大如低通濾波（去除肌肉活動雜訊）、高通濾波（去除直流漂移）與帶阻濾波（去除 50/60 Hz 電力噪音）。
+\subsubsection{腦磁圖/腦磁波儀（Magnetoencephalography, MEG）}
+MEG 主要利用超導量子干涉儀（SQUID, Superconducting Quantum Interference Device）來檢測這些極微弱的磁場變化。SQUID 具有極高的磁場靈敏度，可以偵測到 10$^{-15}$ 特斯拉級別的磁場變化，比地磁場（約 50 微特斯拉）還要小上百億倍，會感應來自神經元電流的磁場，並轉換為可分析的電訊號，再透過數學模型（如最小平方誤差法或貝葉斯方法）來反推訊號來源，確定大腦活動的位置和時間模式。
+\subsubsection{磁振造影（Magnetic Resonance Imaging, MRI）}
+MRI 是一種非侵入式的醫學影像技術，主要利用核磁共振現象（Nuclear Magnetic Resonance, NMR）來產生人體內部的高解析度影像，主要涉及強磁場、射頻脈衝（RF Pulse）、氫原子核自旋磁矩共振來重建影像。
+\begin{itemize}
+\item 拉莫爾頻率：人體內約 70\% 是水，其中氫原子自旋（spin）磁矩在強磁場中會沿磁場方向排列，並呈現拉莫爾進動，即繞著磁場軸旋轉，其頻率稱為拉莫爾頻率，等於磁通量密度乘以氫核的磁旋比，後者約為 42.58 MHz/T。
+\item 射頻脈衝（Radio Frequency Pulse, RF Pulse）：當向組織發送與拉莫爾頻率匹配的射頻脈衝時，氫質子的磁矩會吸收能量，並從磁場方向偏轉。當 RF 脈衝關閉後，質子會逐漸回到原來的平衡狀態，釋放出射頻訊號，這個過程稱為弛豫（relaxation）。
+\item 弛豫時間（Relaxation Time）：MRI 主要依靠縱向弛豫時間$T_1$與橫向弛豫時間$T_2$來形成影像，前者代表質子回復到靜磁場方向的過程，後者代表質子相互干擾導致橫向磁化消失的過程。
+\item 梯度磁場（Gradient Magnetic Field）：通過額外施加梯度磁場，讓不同區域的拉莫爾頻率稍有變化，這樣可以利用傅立葉變換（Fourier Transform, FT）將接收到的訊號轉換為影像。
+\end{itemize}
+加權影像：
+\begin{itemize}
+\item $T_1$加權影像：脂肪亮，水暗，適合觀察解剖結構。
+\item $T_2$加權影像：水亮，脂肪暗，適合檢測水腫、腦脊液、病變區域。
+\item 質子密度影像（PDW）：強調質子濃度，組織對比較低。
+\end{itemize}
+應用：
+\begin{itemize}
+\item 功能性磁振造影（fMRI） 用於研究大腦活動，透過血氧水平變化（BOLD）來觀察神經活動。
+\item 磁振血管造影（Magnetic Resonance Angiography, MRA） 用於檢測血管狹窄或阻塞。
+\end{itemize}
+
+
+\section{電路學二（Electric Circuit II）}
+\subsection{檢流計（Galvanometer）}
+\subsubsection{滿標偏轉（Full-Scale Deflection）}
+使指針偏轉至刻度盤最末端（滿刻度）。滿標偏轉所需的最小所測物理量可代表儀器的靈敏度與量程。檢流計與安培計的滿標偏轉所需電流稱滿標電流，檢流計與伏特計的滿標偏轉所需電壓稱滿標電壓。
+\subsubsection{檢流計}
+\tb{結構：}
+\begin{itemize}
+\item 固定磁場：通常由永久磁鐵產生，提供穩定且均勻的磁場，使線圈在其中轉動。
+\item 可轉動線圈：線圈通常繞在輕質的骨架上並固定在旋轉軸上，無電流時線圈面與固定磁場方向平行。當電流通過線圈時，會受到磁場作用產生力矩，使線圈轉動，帶動指針轉動。
+\item 游絲彈簧或扭力帶：用來提供與線圈轉動方向相反的力矩，平衡電磁力矩，使指針能穩定在某一位置。
+\item 指針和刻度盤：指針連接在旋轉軸上，隨著線圈的轉動指向刻度盤上的數值，始終與線圈面垂直，顯示電流大小。
+\item 保險絲或無熔絲開關：避免電流過大而使線圈燒壞。
+\end{itemize}
+\tb{工作原理：}當電流強度$I$逆時針通過檢流計內均勻磁場$\mathbf{B}$中的$n$匝平面可轉動線圈$\partial\mathbf{S}$時，線圈受到磁力作用產生力矩$\boldsymbol{\tau}$，沿著旋轉軸轉動，即：
+\[\boldsymbol{\tau} = nI\mathbf{S}\times\mathbf{B}\]
+當線圈轉動時，連接在旋轉軸上的游絲彈簧或扭力帶會產生回復力矩，等於偏轉角度乘以扭轉係數，與勞侖茲力提供的力矩平衡，使指針穩定於某一位置，且其偏轉角度正比於電流。
+\tb{使用須知：}
+\begin{itemize}
+\item 一般電阻小，串聯可視為不影響電流。
+\item 一般滿標電流與滿標電壓（滿標電流乘以檢流計電阻）均甚小。
+\item 須串連電阻器以免燒壞。
+\item 一般指針刻度中央為零，兩側表不同方向的電流。
+\end{itemize}
+\subsubsection{（微）電流計/安培計（Amperemeter）}
+\tb{結構與工作原理：}以檢流計與電阻製作安培計時，將檢流計並聯低電阻。若檢流計線圈電阻$R_G$、滿標電流$I_G$，欲使安培計滿標電流$I_A=nI_G$時，需並聯阻值$R_P$的低電阻。分流入$R_P$電阻的電流$I_P=I-I_G=(n-1)I_G$，檢流計兩端電位差即其滿標電壓$V_G=I_GR_G$等於$R_P$電阻兩端電位差$(n-1)I_GR_P$，故：
+\[R_P=\frac{R_G}{n-1}.\]
+安培計總電阻值$R_A$即：
+\[R_A=\frac{1}{\frac{1}{R_G}+\frac{1}{R_P}}=\frac{R_G}{n}.\]
+\tb{使用須知：}
+\begin{itemize}
+\item 一般電阻小，在數歐姆以下，串聯可視為不影響電流。
+\item 須串連電阻器以免燒壞。
+\item 一般分正負極，正極接高電位，負極接低電位。
+\item 使用前（含換檔位後）須調整歸零鈕使指針歸零。
+\item 檔位表示最大可測量值。有不同測量範圍者應由大而小測量直到到達大於測量值的最小檔位。
+\end{itemize}
+\subsubsection{電壓計/伏特計（Voltmeter）}
+\tb{結構與工作原理：}以檢流計與電阻製作伏特計時，將檢流計串聯高電阻。若檢流計線圈電阻$R_G$、滿標電壓$V_G$，欲使伏特計滿標電壓$V_V=nV_G$時，需串聯阻值$R_S$的高電阻。$R_S$電阻的兩端電位差$V_S=(n-1)V_G$，$R_S$電阻與檢流計電流相同，故：
+\[R_S=(n-1)R_G.\]
+伏特計總電阻值$R_V$即：
+\[R_V=R_G+R_s=nR_G.\]
+\tb{使用須知：}
+\begin{itemize}
+\item 一般電阻極大，在數十萬歐姆以上，並聯可視為不影響電流。
+\item 無須串連電阻器。
+\item 一般分正負極，正極接高電位，負極接低電位。
+\item 使用前（含換檔位後）須調整歸零鈕使指針歸零。
+\item 檔位表示最大可測量值。有不同測量範圍者應由大而小測量直到到達大於測量值的最小檔位。
+\end{itemize}
+\subsection{伏安法測電阻}
+利用待測電阻並聯伏特計與串聯安培計再以兩者測量值的比值求得電阻的方法。
+\subsubsection{高電阻法/內接安培計}
+待測電阻與安培計串聯，其外再並聯伏特計，伏特計測得的電壓為安培計測得的電流乘以待測電阻與安培計電阻之和，測量值為待測電阻加上安培計電阻，用於測量高電阻。
+\subsubsection{低電阻法/外接安培計}
+待測電阻並聯伏特計，其外再與安培計串聯，安培計測得的電流為伏特計測得的電壓除以待測電阻加上伏特計測得的電壓除以伏特計電阻，測量值的倒數為待測電阻與伏特計電阻的倒數和，用於測量低電阻。
+\subsubsection{以高與低電阻法準確測量}
+以相同的端電壓的電源以高與低電阻法分別測量並聯立兩者，得待測電阻與安培計電阻。
+\subsubsection{相對誤差}
+待測電阻$R$、安培計電阻$R_A$、伏特計電阻$R_V$，則：
+\begin{itemize}
+\item 高電阻法相對誤差$\frac{R_A}{R}$
+\item 低電阻法相對誤差$\frac{-R}{R+R_V}$
+\item 當$R=\frac{R_A+\sqrt{R_A^{\phantom{A}2}+4R_AR_V}}{2}$時兩者相對誤差相等，當$R>\frac{R_A+\sqrt{R_A^{\phantom{A}2}+4R_AR_V}}{2}$時高電阻法相對誤差較小，當$R<\frac{R_A+\sqrt{R_A^{\phantom{A}2}+4R_AR_V}}{2}$時低電阻法相對誤差較小。
+\item 令$R_V\gg R_A$，則當$R=\sqrt{R_AR_V}$時兩者相對誤差相等，當$R>\sqrt{R_AR_V}$時高電阻法相對誤差較小，當$R<\sqrt{R_AR_V}$時低電阻法相對誤差較小。
+\end{itemize}
+\subsection{惠司同電橋（Wheatstone Bridge）}
+由 Samuel Hunter Christie 在 1833 年發明，並由 Charles Wheatstone 在 1843 年改進與推廣，以後者命名。  
+
+惠司同電橋由四個電阻 \( R_1, R_2, R_3, R_x \) 組成菱形電路，兩對角線分別有檢流計（galvanometer）與電源。其基本結構如下： 
+\begin{center}
+\begin{circuitikz} 
+\draw
+(0,0) to[R=$R_1$] (2,2) to[R=$R_2$] (4,0)
+(0,0) to[R=$R_3$] (2,-2) to[R=$R_x$] (4,0) 
+(0,0) -- (0,-4) to[V] (4,-4) -- (4,0)
+(2,2) to[generic, o-o, l=$G$] (2,-2);
+\end{circuitikz}
+\end{center}
+當電橋達到平衡，即檢流計 G 無電流，則滿足以下關係式：
+\[
+\frac{R_1}{R_2} = \frac{R_3}{R_x}
+\]
+惠司同電橋高精度、低誤差，可用於精密電阻測量，即利用三個已知電阻，測量未知電阻的阻值，或當其中一個電阻是應變計時，用來測量應變變化等，測量時可將其中一個電阻使用可變電阻，或使用中間可滑動抽頭的電阻桿的一側至抽頭作為$R_1$、另一側至抽頭作為$R_3$。
+\subsection{三用電表（Multimeter）}
+\subsubsection{直流電流}
+\begin{itemize}
+\item 轉鈕轉至 DCA，依電壓大小選取檔位。
+\item 與待測電路串聯。
+\item 負極探針插於 COM 接頭。
+\item 多正極接頭者測量大電流或未知電流則正極探針插於 10A 接頭，測量小電流則正極插於 mA 接頭。
+\item 單正極接頭者正極探針插於正極接頭。
+\end{itemize}
+\subsubsection{直流電壓}
+\begin{itemize}
+\item 轉鈕轉至 DCV，依電壓大小選取檔位。
+\item 與待測電路並聯。
+\item 負極探針插於 COM 接頭。
+\item 多正極接頭者正極探針插於 V/Ω 接頭。
+\item 單正極接頭者正極探針插於正極接頭。
+\end{itemize}
+\subsubsection{交流電壓}
+\begin{itemize}
+\item 轉鈕轉至 ACV，依方均根電壓大小選取檔位。
+\item 與待測電路並聯。
+\item 負極探針插於 COM 接頭。
+\item 多正極接頭者正極探針插於 V/Ω 接頭。
+\item 單正極接頭者正極探針插於正極接頭。
+\item 測量值為方均根電壓。
+\end{itemize}
+\subsubsection{電阻}
+\begin{itemize}
+\item 轉鈕轉至 Ω，依電阻大小選取檔位。
+\item 兩探針單獨連待測物，不可將待測物接於電路中測量。
+\item 負極探針插於 COM 接頭。
+\item 多正極接頭者正極探針插於 V/Ω 接頭。
+\item 單正極接頭者正極探針插於正極接頭。
+\item 可用電阻檔位測量是否斷路，若測量值為無限大表示斷路，空氣電阻視為無限大。部分設有蜂鳴器或 LED 燈檔位，轉至之時，通路則蜂鳴器響起或 LED 燈亮，斷路則蜂鳴器無聲或 LED 燈暗。
+\end{itemize}
+\subsubsection{使用須知}
+\begin{itemize}
+\item 數位者部分使用前須開機，使用後須關機。
+\item 使用前（含換檔位後）須調整歸零鈕使指針歸零，其中電阻以兩探針相接觸為零，其餘以兩探針均不接觸外電路為零。
+\item 數位者檔位所示數值表示最大可測量值，測量值除以指針刻度的倍率一般為最大可測量值的二十分之一倍。
+\item 指針者檔位所示數值一般表示測量值除以指針刻度的倍率，最大可測量值一般為該檔位下滿刻度表示之值。
+\item 有不同最大可測量值之檔位者應由大而小測量直到測量值大於下一更小檔位的最大可測量值或到達最小最大可測量值檔位。
+\item 使用完畢後宜切換至交流電壓最高檔位，以防他人不慎接通 220 V 交流電源致損壞。
+\end{itemize}
+\subsection{電容（(Electric) capacitance）與電容器（Capacitor）}
+\subsubsection{電容}
+電容衡量系統儲存自由電荷之能力，令端電壓$V$時，某系統可儲存的最大自由電荷量為$q$，則定義其電容$C$為：
+\[C=\frac{q}{V}.\]
+存有能量：
+\[\frac{CV^2}{2}\]
+\subsubsection{電容器}
+電容器一般由兩片導電金屬板，稱極板，構成，中間用絕緣的介電質隔開，以直流電充電和放電，充滿後形成斷路，通交流電則交替充放電，因此能夠導通並具備一定的阻抗。
+\begin{itemize}
+\item 極性電容：一者接地，不接地端帶電，接地端則否。
+\item 浮動電容：均不接地，儲等量異性電。
+\end{itemize}
+介電質電容率$\varepsilon$，在電場$\mathbf{E}$中增加極化密度$\mathbf{P}$：
+\[\mathbf{P}=(\varepsilon-\varepsilon_0)\mathbf{E}\]
+產生在極板表面產生束縛電荷，令極板法向量$\hat{n}$定向為與電場點積不為負、表面束縛電荷密度$\sigma_b$：
+\[\sigma_b = \mathbf{P}\cdot\hat{n}.\]
+令表面電荷密度$\sigma$，自由電荷密度$\sigma_f$：
+\[\sigma_f=\sigma+\sigma_b\]
+極板$S$在給定輸出電壓（額定電壓內）下可以放出的電量$q$（即自由電荷）為：
+\[q=\iint_S\sigma_f\,\mathrm{d}S.\]
+對於線性極化的介電質，$q$與直流供電端電壓$V$（額定電壓內）正比，即電容$C$不隨電壓改變。
+\subsubsection{平板電容器（Parallel plate capacitor）}
+平板電容器由兩片平行導電金屬平板構成，中間用絕緣的介電質隔開。令其兩極板面積$\mb{S}$定向為與電場點積不為負，內表面相距$d$，介電質電容率$\varepsilon$，儲存有自由電荷$q$，忽略邊緣場效應，則：
+\begin{itemize}
+\item 兩極板間電場為：
+\[\mathbf{E}=\frac{q}{S\varepsilon}\hat{\mathbf{S}}\]
+\item 兩極板電位差$V$為：
+\[V=\int_0^d\frac{q}{S\varepsilon}\,\mathrm{d}r=\frac{qd}{S\varepsilon}\]
+\item 電容為：
+\[C = \frac{q}{V} = \frac{S\varepsilon}{d}\]
+\end{itemize}
+\subsubsection{球形電容器（Spherical capacitor）}
+球形電容器由兩同心平行導電金屬球殼構成，中間用絕緣的介電質隔開，其中內球殼不接地，外球殼接地或否。令其內球殼外表面半徑$r_1$，外球殼內表面半徑$r_2$，介電質電容率$\varepsilon$，儲存有自由電荷$q$（內球殼電位高於外球殼為正），則：
+\begin{itemize}
+\item 距球心$r$（$r_1\leq r\leq r_2$）的電場為：
+\[\mathbf{E} = \frac{q\hat{\mathbf{r}}}{4\pi\varepsilon r^2}\]
+\item 兩極板電位差為：
+\[V=\int_{r_1}^{r_2}\frac{q}{4\pi\varepsilon r^2}\,\mathrm{d}r=\qty(-\frac{q}{4\pi\varepsilon r})\big\vert_{r_1}^{r_2}=\frac{q}{4\pi\varepsilon}\left(\frac{1}{r_1}-\frac{1}{r_2}\right)\]
+\item 電容為：
+\[C = \frac{q}{V}=\frac{4\pi\varepsilon r_1r_2}{r_2-r_1}\]
+\end{itemize}
+若將外球移除，變成單獨帶電球，則電容$C$為：
+\[C = \lim_{r_2\to\infty}\frac{4\pi\varepsilon r_1r_2}{r_2-r_1}=4\pi\varepsilon r_1\]
+\subsubsection{電容式觸控螢幕（Capacitive touchscreen）}
+螢幕表面覆蓋一層透明的導電材料（如氧化銦錫，ITO），當手指、摻入石墨的手套或其他導體接觸螢幕時，會改變該點附近的電場分布，感應器陣列檢測到電場變化，透過運算轉換為觸控位置。電容式觸控是現今智慧型手機和平板電腦最常用者。
+\subsection{電感器（inductor）與電感（(Electric) inductance）}
+\subsubsection{自感（Self-inductance）/電感（(Electric) inductance）}
+電感衡量系統抵抗電流的能力，自感$L$定義為單位端電流變化$\dv{I}{t}$使其在自身迴路產生的反向電動勢$\mathcal{E}$，即：
+\[\mathcal{E}=L\dv{I}{t}.\]
+
+存有能量：
+\[\frac{LI^2}{2}\]
+\subsubsection{互感（Mutual-inductance）}
+某電路元件的互感$M$定義為單位電流變化$\dv{I}{t}$使其在另一迴路產生的電動勢$\mathcal{E}$，即：
+\[\mathcal{E}=M\dv{I}{t}.\]
+
+兩迴路互相之互感相同。
+\subsubsection{紐曼公式（Neumann formula）}
+令兩迴路$l_1$、$l_2$上電路元位置分別為$\mb{r_1}$、$\mb{r_2}$，其互相之互感$M$服從：
+\[M=\frac{\mu_0}{4\pi}\oint_{l_1}\oint_{l_2}\frac{\dd\mb{l_1}\cdot\dd\mb{l_2}}{|\mb{r_2}-\mb{r_1}|}\]
+\subsubsection{電感耦合係數（Inductive coupling factor）}
+令$M$為兩迴路之互感，$L_p$、$L_s$為其個別的自感，定義其電感耦合係數$k_c$為：
+\[k_c=\frac{M}{\sqrt{L_pL_s}}\]
+\subsubsection{漏（電）感（Leakage inductance）}
+漏感$L_l$定義為自感乘以$1-k_c$，可以等效為一有該值自感與零互感的電感器串聯於迴路中。
+
+存有能量：
+\[\frac{L_lI^2}{2}\]
+\subsubsection{並聯電感器}
+並聯燈泡與電感器，通電後瞬間電感產生負向的電動勢，給予燈泡正向電流而特別亮；斷電後瞬間電感產生正向的電動勢，給予燈泡負向電流而亮。
+\subsubsection{串聯電感器}
+串聯燈泡與電感器，通電後瞬間電感產生負向的電動勢，給予燈泡負向電流而暗；斷電後瞬間電感產生正向的電動勢，給予燈泡正向電流而亮。
+\subsubsection{電感器}
+螺線管因為電磁感應，在電流改變時會產生磁場變化，因此產生感應電動勢與感應電場，方向為抵抗電流改變，可以作為電感器。
+
+理想電感器面積$S$、匝數$N$、長度$l$、電流$I$時有均勻磁場：
+\[B=\frac{\mu_0NI}{l}\]
+則其自感為：
+\[L=\frac{\mu_0N^2S}{l}\]
+\subsection{（電）阻抗（(Electric) impedance）}
+\subsubsection{容抗（(Electric) capacitive reactance）}
+某電路元件在角頻率$\omega$的交流電下的電容為$C$，則其容抗$X_C$定義為：
+\[X_C=\frac{1}{\omega C}\]
+亦有定義為以上定義之相反數者，即容抗為負值，此不用。
+\subsubsection{感抗（(Electric) inductive reactance）}
+某電路元件在角頻率$\omega$的交流電下的電感為$L$，則其感抗$X_{L}$定義為：
+\[X_{L}=\omega L\]
+\subsubsection{電抗（(Electric) reactance）}
+\[X=X_L-X_C\]
+電壓相對於電流的相位角差$\theta$：當電路有淨感抗（即$X>0$）時$\theta>0$；當電路有淨容抗（即$X<0$）時$\theta<0$。
+\subsubsection{（電）阻抗（(Electric) impedance）}
+表示為複數時，實部定義為電阻、虛部定義為電抗；表示為二維向量且使用笛卡爾座標時，第一分量定義為電阻、第二分量定義為電抗。
+\subsection{RLC 與 LC 諧振電路（Resonant circuit）}
+\subsubsection{常電壓串聯 RLC 與 LC 電路}
+常電壓$V$直流電源、電阻$R$、電感$L$、電容$C$串聯。
+\[RI(t)+L\dv{I(t)}{t}+\frac{1}{C}\int _{-\infty}^tI(\tau)\,\mathrm{d}\tau=V\]
+\[\dv[2]{I(t)}{t}+\frac{R}{L}\dv{I(t)}{t}+\frac{1}{LC}I(t)=0\]
+定義奈培頻率（neper frequency）/衰減量（attenuation）$\alpha=\frac{R}{2L}$與角共振頻率（angular resonance frequency）$\omega_0=\frac{1}{\sqrt{LC}}$。
+\[\dv[2]{I(t)}{t}+2\alpha\dv{I(t)}{t}+\omega_0^{\phantom{0}2}I(t)=0\]
+定義阻尼係數（damping factor）$\zeta$：
+\[\zeta=\frac{\alpha}{\omega_0}=\frac{R}{2}\sqrt{\frac{C}{L}}\]
+特徵根：
+\[s_1=-\omega_0\zeta+\omega_0\sqrt{\zeta^2-1}\]
+\[s_2=-\omega_0\zeta-\omega_0\sqrt{\zeta^2-1}\]
+過阻尼響應（Overdamped response）（$\zeta>1$）的$I(t)$通解為：
+\[I(t)=A_1e^{-\omega_0\left(\zeta+\sqrt{\zeta^2-1}\right)t}+A_2e^{-\omega_0\left(\zeta-\sqrt{\zeta^2-1}\right)t}\]
+臨界阻尼響應（Critically damped response）（$\zeta=1$）的$I(t)$通解為：
+\[I(t)=A_1e^{-\omega_0\zeta t}+A_2e^{-\omega_0\zeta t}\]
+欠阻尼響應（Underdamped response）（$0<\zeta<1$）的$I(t)$通解為：
+\[I(t)=A_1e^{-\omega_0\zeta t}\cos\left(\omega_0\sqrt{1-\zeta^2}t\right)+A_2e^{-\omega_0\zeta t}\sin\left(\omega_0\sqrt{1-\zeta^2}t\right)\]
+無阻尼響應（Undamped response）（$\zeta=0$即$R=0$）的$I(t)$通解為：
+\[I(t)=A_1\cos\left(\omega_0t\right)+A_2\sin\left(\omega_0t\right)\]
+\subsubsection{常電流並聯 RLC 與 LC 電路}
+常電流$I$直流電源、電阻$R$、電感$L$、電容$C$串聯。
+\[\frac{1}{R}V(t)+C\dv{V(t)}{t}+\frac{1}{L}\int _{-\infty}^tV(\tau)\,\mathrm{d}\tau=I\]
+\[\dv[2]{V(t)}{t}+\frac{1}{RC}\dv{V(t)}{t}+\frac{1}{LC}V(t)=0\]
+定義奈培頻率（neper frequency）/衰減量（attenuation）$\alpha=\frac{1}{2RC}$與角共振頻率（angular resonance frequency）$\omega_0=\frac{1}{\sqrt{LC}}$。
+\[\dv[2]{V(t)}{t}+2\alpha\dv{V(t)}{t}+\omega_0^{\phantom{0}2}V(t)=0\]
+定義阻尼係數（damping factor）$\zeta$：
+\[\zeta=\frac{\alpha}{\omega_0}=\frac{1}{2R}\sqrt{\frac{L}{C}}\]
+特徵根：
+\[s_1=-\omega_0\zeta+\omega_0\sqrt{\zeta^2-1}\]
+\[s_2=-\omega_0\zeta-\omega_0\sqrt{\zeta^2-1}\]
+過阻尼響應（Overdamped response）（$\zeta>1$）的$V(t)$通解為：
+\[V(t)=A_1e^{-\omega_0\left(\zeta+\sqrt{\zeta^2-1}\right)t}+A_2e^{-\omega_0\left(\zeta-\sqrt{\zeta^2-1}\right)t}\]
+臨界阻尼響應（Critically damped response）（$\zeta=1$）的$V(t)$通解為：
+\[V(t)=A_1e^{-\omega_0\zeta t}+A_2e^{-\omega_0\zeta t}\]
+欠阻尼響應（Underdamped response）（$0<\zeta<1$）的$V(t)$通解為：
+\[V(t)=A_1e^{-\omega_0\zeta t}\cos\left(\omega_0\sqrt{1-\zeta^2}t\right)+A_2e^{-\omega_0\zeta t}\sin\left(\omega_0\sqrt{1-\zeta^2}t\right)\]
+無阻尼響應（Undamped response）（$\zeta=0$即$R=0$）的$V(t)$通解為：
+\[V(t)=A_1\cos\left(\omega_0t\right)+A_2\sin\left(\omega_0t\right)\]
+\subsubsection{無線電發射器（Transmitter）}
+在 RLC 阻尼振盪電爐的電感旁置另一電感，該電感兩側經匹配網路（matching network）各通向一金屬導線，稱天線（Antenna），是無線電發射器的原理，匹配網路與天線有多種，常見天線如：
+\begin{itemize}
+\item 偶極天線（Dipole Antenna）：一對等長的金屬導線，全向（Omnidirectional）發射。
+\item 單極天線（Monopole Antenna）：一條垂直金屬導線，另一端接地，全向發射。
+\item 環形天線（Loop Antenna）：閉合單匝或多匝金屬環，全向發射。
+\item 角錐天線（Horn Antenna）：金屬角錐，向欲發射方向擴大成喇叭狀，方向發射。
+\end{itemize}
+\ssc{二極體（Diode）}
+指一方向高電阻（理想上不導通）、另一方向低電阻（理想上零電阻），使電流只能單向通過的電路元件。
+\ssc{整流器（Rectifier）}
+將交流電轉換為直流電的電路元件。
+\sssc{半波整流（Half-wave rectification）}
+在單相交流電需要一個二極體：
+\bct\bfH\ctr\icg[width=0.9\textwidth]{Halfwave.rectifier.en.svg.png}\caption{Wdwd. 2011. Halfwave rectifier. Wikipedia. https://en.m.wikipedia.org/wiki/File:Halfwave.rectifier.en.svg.}\ef\FB\ect
+\sssc{全波整流（Full-wave rectification）}
+需要兩個二極體和一個中心抽頭（center-tapped）變壓器：
+\bct\bfH\ctr\icg[width=0.9\textwidth]{Fullwave.rectifier.en.svg.png}\caption{Wdwd. 2011. Fullwave rectifier. Wikipedia. https://en.m.wikipedia.org/wiki/File:Fullwave.rectifier.en.svg.}\ef\FB\ect
+或是四個二極體的格雷茨橋式整流器（Graetz bridge rectifier）/二極體電橋（Diode bridge）：
+\bct\bfH\ctr\icg[width=0.9\textwidth]{Gratz.rectifier.en.svg.png}\caption{Wdwd. 2011. Grätz (bridge) rectifier. Wikipedia. https://en.m.wikipedia.org/wiki/File:Gratz.rectifier.en.svg}\ef\FB\ect
+
+
+
+\section{電磁場的勢與能量（Potential and Energy of Electromagnetic Field）}
+\subsection{電位（Electric potential）/電純量勢（Electric scalar potential）/純量勢（Scalar potential）與磁向量勢（Magnetic vector potential）/向量勢（Vector potential）定義}
+電純量勢$\phi$與磁向量勢$\mathbf{A}$服從：
+\[ \nabla \times \mathbf{A} = \mathbf{B}\]
+\[\mathbf{E} = - \nabla \phi - \pdv{\mathbf{A} }{t}.\]
+\subsection{規範固定（Gauge fixing）/規範選擇（Choosing a gauge）}
+規範固定，或稱規範選擇，表示處理場變數中冗餘自由度的數學過程。
+\subsubsection{庫侖規範（Coulomb gauge）/Transverse gauge}
+\[ \nabla \cdot \mathbf{A} = 0\]
+\subsubsection{勞侖茲規範（Lorenz guage）}
+\[\nabla \cdot \mathbf{A} + \frac{1}{c^2} \pdv{\phi}{t} = 0\]
+\subsubsection{達朗貝爾算符（d'Alembert operator）}
+定義達朗貝爾算符$\square$為：
+\[\square = \frac{\partial^2}{\partial t^2} - \nabla^2\]
+\subsection{勞侖茲規範下的馬克士威方程組}
+\[\square \phi = \frac{\rho}{\varepsilon_0}.\]
+\[\square \mathbf{A} = \mu_0 \mathbf{J}.\]
+\subsection{庫侖規範下磁矩的磁向量勢}
+位於原點磁矩$\mathbf{m}$的磁偶極子在$\mathbf{r}$產生的磁場$\mathbf{B}$為：
+\[\mathbf{B}=\frac{\mu_0}{4\pi}\frac{3\hat{\mathbf{r}}\left(\hat{\mathbf{r}}\cdot\mathbf{m}\right)-\mathbf{m}}{|\mathbf{r}|^3}.\]
+等價於其在$\mathbf{r}$產生的磁向量勢$\mathbf{A}$（庫侖規範）為：
+\[\mathbf{A} = \frac{\mu_0}{4\pi} \frac{\mathbf{m} \times \hat{\mathbf{r}}}{|\mathbf{r}|^2},\]
+\begin{proof}
+\[\begin{aligned}
+\mathbf{B}=&\nabla\times\mathbf{A}\\
+=&\frac{\mu_0}{4\pi}\nabla\times\frac{\mathbf{m}\times\mathbf{r}}{|\mathbf{r}|^3}\\
+=&\frac{\mu_0}{4\pi}\left(\frac{\nabla\times(\mathbf{m}\times\mathbf{r})}{|\mathbf{r}|^3}-\frac{(\nabla|\mathbf{r}|^3)\times(\mathbf{m}\times\mathbf{r})}{|\mathbf{r}|^6}\right)\\
+=&\frac{\mu_0}{4\pi}\left(\frac{2\mathbf{m}}{|\mathbf{r}|^3}-\frac{3\mathbf{r}\times(\mathbf{m}\times\mathbf{r})}{|\mathbf{r}|^5}\right)\\
+=&\frac{\mu_0}{4\pi}\left(\frac{2\mathbf{m}}{|\mathbf{r}|^3}-\frac{3\left(|\mathbf{r}|^2\mathbf{m}-(\mathbf{r}\cdot\mathbf{m})\mathbf{r}\right)}{|\mathbf{r}|^5}\right)\\
+=&\frac{\mu_0}{4\pi}\frac{3\hat{\mathbf{r}}\left(\hat{\mathbf{r}}\cdot\mathbf{m}\right)-\mathbf{m}}{|\mathbf{r}|^3}
+\end{aligned}\]
+\end{proof}
+\subsection{電磁場的能量與坡印廷定理（Poynting's theorem）}
+\subsubsection{電磁場的能量}
+定義電磁場的能量密度$u$：
+\[u=\frac{1}{2}(\mathbf{E}\cdot\mathbf{D}+\mathbf{B}\cdot\mathbf{H})=\frac{\varepsilon}{2}|\mathbf{E}|^2+\frac{1}{2\mu}|\mathbf{B}|^2.\]
+\subsubsection{坡印廷定理–微分形式}
+對於線性磁化、線性極化、各向同性、非色散材料：
+\[-\pdv{u}{t}=\nabla\cdot(\mathbf{E}\times\mathbf{H})+\mathbf{J}_f\cdot\mathbf{E}.\]
+其中$\mathbf{E}\times\mathbf{H}$稱坡印廷向量（Poynting vector）
+\begin{proof}
+\[\begin{aligned}
+\pdv{u}{t}&=\pdv{t}\frac{1}{2}(\mathbf{E}\cdot\mathbf{D}+\mathbf{B}\cdot\mathbf{H})\\
+&=\mb{E}\cdot\pdv{D}{t}+\mb{H}\cdot\pdv{\mb{B}}{t}\\
+&=\mb{E}\cdot(\nabla\times\mathbf{H})-\mb{E}\cdot\mathbf{J}_f-\mb{H}\cdot\nabla \times \mathbf{E}
+&=-\nabla\cdot(\mathbf{E}\times\mathbf{H})-\mathbf{J}_f\cdot\mathbf{E}
+\end{aligned}\]
+\end{proof}
+\subsubsection{坡印廷定理–積分形式}
+對於線性磁化、線性極化、各向同性、非色散材料，令$S=\partial V$：
+\[\dv{t}\int_Vu\,\dd V=\oiint_S(\mathbf{E}\times\mathbf{H})\cdot\dd\mathbf{S}+\int_V\mathbf{J}_f\cdot\mathbf{E}\,\dd V\]
+
+
+\section{電磁波（Electromagnetic Waves）}
+\subsection{簡史}
+\begin{itemize}
+\item 1865年，馬克士威修正安培定律，提出馬克士威方程，並據之預測電磁波的存在及其速度與實驗測得之光速相同，故推測光是電磁波。
+\item 1887年，赫茲（Heinrich R. Hertz）火花隙實驗證實電磁波的存在，後測得電磁波速為光速與具有反射、折射、干涉、繞射現象。
+\item 1896年，馬可尼（Guglielmo Marconi）發明火花隙發射器（Spark Gap Transmitter）。
+\item 1901年，馬可尼以火花隙發射器首次達成跨大西洋無線電報傳輸。
+\end{itemize}
+\subsection{火花隙（Spark gap）}
+\subsubsection{火花隙}
+其組成為兩個導體構成的電極，兩者之間有一間隙，間隙中可含有氣體，如空氣。當兩導體之間的電位差高於間隙氣體的崩潰電壓，此時氣體會發生游離，而兩導體間會發生電火花，而使其電阻大幅下降。
+\subsubsection{赫茲火花隙實驗}
+載交流高壓電感應線圈連接到一對金屬球組成的火花隙，火花隙產生火花並產生電磁波。約一公尺外置一接收器，接收器為一較小的帶火花隙環形導體。當電磁波從發射器傳到接收器時，環形導體內部感應出電流，使開口處產生微小的火花，表示電磁波的存在。此實驗證明電磁波的存在與可以在空間中傳播，驗證了馬克士威的預測。
+\subsubsection{火花隙發射器（Spark gap transmitter）}
+載交流高壓電（通常數千伏）感應線圈連接到一對金屬球組成的火花隙，火花隙旁置 LC 諧振電路以濾出所需頻率的電磁波，諧振電路連接天線，以進行遠距離通信。是一種早期無線電發射設備，效率低且頻譜汙染嚴重。
+\subsection{方程}
+\subsubsection{非齊次電磁波方程（Inhomogeneous electromagnetic wave equation）電流密度形式}
+根據法拉第電磁感應定律與安培–馬克士威定律：
+\[\begin{aligned}
+& \nabla\times\qty(\nabla\times\mathbf{E})\\
+=& \nabla\times\qty(-\pdv{\mathbf{B}}{t})\\
+=& -\pdv{t}\qty(\nabla\times\mathbf{B})\\
+=& -\pdv{t}\qty(\mu_0\varepsilon_0\pdv{\mathbf{E}}{t}+\mu_0\mathbf{J})\\
+=& -\mu_0\varepsilon_0\pdv[2]{\mathbf{E}}{t}-\mu_0\pdv{\mathbf{J}}{t}\\
+& \nabla\times\qty(\nabla\times\mathbf{B})\\
+=& \nabla\times\qty(\mu_0\varepsilon_0\pdv{\mathbf{E}}{t}+\mu_0\mathbf{J})\\
+=& \mu_0\varepsilon_0\pdv{t}\qty(\nabla\times\mathbf{E})+\mu_0\nabla\times\mathbf{J}\\
+=& \mu_0\varepsilon_0\pdv{t}\qty(-\pdv{\mathbf{B}}{t})+\mu_0\nabla\times\mathbf{J}\\
+=& -\mu_0\varepsilon_0\pdv[2]{\mathbf{B}}{t}+\mu_0\nabla\times\mathbf{J}
+\end{aligned}\]
+對於任意三維向量場$\mathbf{F}$：
+\[\nabla\times\left(\nabla\times\mathbf{F}\right)=\nabla\left(\nabla\cdot\mathbf{F}\right)-\nabla^2\mathbf{F}\]
+根據高斯定律與高斯磁定律：
+\[\nabla\cdot\mathbf{E}=\frac{\rho}{\varepsilon_0}.\]
+\[\nabla\cdot\mathbf{B}=0.\]
+得：
+\[\begin{aligned}
+& \qty(\frac{1}{\mu_0\varepsilon_0}\nabla^2-\pdv[2]{t})\mathbf{E}=\frac{1}{\varepsilon_0}\nabla\rho+\frac{1}{\varepsilon_0}\pdv{\mathbf{J}}{t}\\
+& \qty(\frac{1}{\mu_0\varepsilon_0}\nabla^2-\pdv[2]{t})\mathbf{B}=-\frac{1}{\varepsilon_0}\nabla\times\mathbf{J}
+\end{aligned}\]
+\subsubsection{非齊次電磁波方程自由電流密度形式}
+根據法拉第電磁感應定律與安培–馬克士威定律：
+\[\begin{aligned}
+& \nabla\times\qty(\nabla\times\mathbf{E})\\
+=& \nabla\times\qty(-\pdv{\mathbf{B}}{t})\\
+=& -\pdv{t}\qty(\nabla\times\mathbf{B})\\
+=& -\mu\pdv{t}\qty(\nabla\times\mathbf{H})\\
+=& -\mu\qty(\pdv{\mathbf{J}_f}{t}+ \pdv[2]{\mathbf{D}}{t})\\
+=& -\mu\pdv[2]{\mathbf{D}}{t}-\mu\pdv{\mathbf{J}_f}{t}\\
+=& -\mu\varepsilon\pdv[2]{\mathbf{E}}{t}-\mu\pdv{\mathbf{J}_f}{t}\\
+& \nabla\times\qty(\nabla\times\mathbf{B})\\
+=& \mu\nabla\times\qty(\nabla\times\mathbf{H})\\
+=& \mu\nabla\times\pdv{\mathbf{D}}{t}+\mu\nabla\times\mathbf{J}_f\\
+=& -\mu\varepsilon\pdv[2]{\mathbf{B}}{t}+\mu\nabla\times\mathbf{J}_f\\
+\end{aligned}\]
+對於任意三維向量場$\mathbf{F}$：
+\[\nabla\times\left(\nabla\times\mathbf{F}\right)=\nabla\left(\nabla\cdot\mathbf{F}\right)-\nabla^2\mathbf{F}\]
+根據高斯定律與高斯磁定律：
+\[\nabla\cdot\mathbf{E}=\frac{\rho}{\varepsilon_0}.\]
+\[\nabla\cdot\mathbf{B}=0.\]
+得：
+\[\begin{aligned}
+& \qty(\frac{1}{\mu\varepsilon}\nabla^2-\pdv[2]{t})\mathbf{E}=\frac{1}{\varepsilon}\nabla\rho+\frac{1}{\varepsilon}\pdv{\mathbf{J}_f}{t}\\
+& \qty(\frac{1}{\mu\varepsilon}\nabla^2-\pdv[2]{t})\mathbf{B}=-\frac{1}{\varepsilon}\nabla\times\mathbf{J}_f
+\end{aligned}\]
+\subsubsection{齊次電磁波方程（Homogeneous electromagnetic wave equation）真空形式}
+無電荷密度、無電流密度下：
+\[\begin{aligned}
+& \qty(\frac{1}{\mu_0\varepsilon_0}\nabla^2-\pdv[2]{t})\mathbf{E}=0\\
+& \qty(\frac{1}{\mu_0\varepsilon_0}\nabla^2-\pdv[2]{t})\mathbf{B}=0
+\end{aligned}\]
+波速為真空光速：
+\[c=\frac{1}{\sqrt{\mu_0\varepsilon_0}}.\]
+電場與磁場關係為：
+\[\begin{aligned}
+&\nabla\times\mathbf{E}=\pdv{\mathbf{B}}{t}\\
+&c^2\nabla\times\mathbf{B}=\pdv{\mathbf{E}}{t}
+\end{aligned}\]
+\subsubsection{齊次電磁波方程一般形式}
+無電荷密度、無自由電流密度下：
+\[\begin{aligned}
+& \qty(\frac{1}{\mu\varepsilon}\nabla^2-\pdv[2]{t})\mathbf{E}=0\\
+& \qty(\frac{1}{\mu\varepsilon}\nabla^2-\pdv[2]{t})\mathbf{B}=0
+\end{aligned}\]
+波速為：
+\[v=\frac{1}{\sqrt{\mu\varepsilon}}.\]
+電場與磁場關係為：
+\[\begin{aligned}
+&\nabla\times\mathbf{E}=\pdv{\mathbf{B}}{t}\\
+&v^2\nabla\times\mathbf{B}=\pdv{\mathbf{E}}{t}
+\end{aligned}\]
+\subsubsection{平面波（Plane wave）解}
+令電場有向振幅$\mathbf{E}_0$、磁場有向振幅$\mathbf{B}_0$，$\mb{k}$、$\mb{E}$、$\mb{B}$互相垂直，齊次電磁波方程的解為：
+\[\begin{aligned}
+&\mathbf{E}(\mathbf{r},t)=\mathbf{E}_0\sin(\mathbf{k}\cdot\mathbf{r}-\omega t+\varphi)\\
+&\mathbf{B}(\mathbf{r},t)=\mathbf{B}_0\sin(\mathbf{k}\cdot\mathbf{r}-\omega t+\varphi)\\
+&|\mb{E}|=|\mb{B}||\mb{v}|\\
+&\mathbf{E}=-\frac{\mathbf{k}\times\mathbf{B}}{\omega}=-\frac{\mb{v}\times\mb{B}}{|\mb{v}|^2}\\
+&\frac{\mathbf{k}}{\omega}=\frac{1}{\mb{v}}=\frac{\mathbf{E}\times\mathbf{B}}{\abs{\mathbf{B}}^2}
+\end{aligned}\]
+\subsubsection{參數關係}
+\[\begin{aligned}
+\omega &= 2\pi \nu \\
+\mathbf{k} &= \frac{2\pi}{\lambda}\hat{\mathbf{v}} \\
+k &= \abs{\mathbf{k}} \\
+\mathbf{v} &= \nu \lambda \hat{\mathbf{v}} = \frac{\omega}{\mathbf{k}}\\
+n &= \frac{c}{v} = c\mu\varepsilon\\
+\mathbf{v}_g &= \pdv{\omega}{\mathbf{k}} \\
+&= \frac{c}{n+\omega\cdot \pdv{n}{\omega}} \\
+&= \mathbf{v}\qty(1+\frac{\lambda}{n} \pdv{n}{\lambda}) \\
+&= \mathbf{v}+\lambda \pdv{\mathbf{v}}{\lambda} \\
+&= \mathbf{v}+\mathbf{k} \cdot\pdv{\mathbf{v}}{\mathbf{k}}
+\end{aligned}\]
+\subsubsection{解釋}
+\bit
+\item 電荷加速運動，即電流變化時，會在空間中產生電磁波。
+\item 電磁波為橫波。
+\item 折射率為$n=\frac{c}{v}=\sqrt{\frac{\mu\varepsilon}{\mu_0\varepsilon_0}}$，對於一些物質，不同頻率的電磁波會不同程度地改變$\mu$和/或$\varepsilon$，使折射率和波長有關，產生色散現象。
+\eit
+\ssc{能量}
+\subsubsection{能量密度}
+\bma
+u&=\frac{\varepsilon}{2}|\mathbf{E}|^2+\frac{1}{2\mu}|\mathbf{B}|^2\\
+&=\varepsilon|\mb{E}|^2\\
+&=\varepsilon|\mathbf{E}_0|^2\sin^2(\mathbf{k}\cdot\mathbf{r}-\omega t+\varphi)
+\eam
+平均能量密度：
+\bma
+\langle u\rangle&=\frac{\omega}{2\pi}\varepsilon|\mathbf{E}_0|^2\int_0^{\frac{2\pi}{\omega}}\sin^2(\mathbf{k}\cdot\mathbf{r}-\omega t+\varphi)\,\mathrm{d}t\\
+&=\frac{\varepsilon|\mathbf{E}_0|^2}{2}
+\eam
+\sssc{輻射通量（Radiant flux）/輻射功率（Radiant power）/光度（Luminosity）}
+電磁波的功率。定向表面$S$的輻射通量$\Phi_e$為坡印廷向量的面積積分，即：
+\[\Phi_e=\iint_S(\mathbf{E}\times\mathbf{H})\cdot\mathrm{d}\mathbf{S}\]
+\sssc{頻率光譜通量（Spectral flux in frequency）}
+\[\Phi_{\nu}=\pdv{\Phi_e}{\nu}\]
+\sssc{波長光譜通量（Spectral flux in wavelength）}
+\[\Phi_{\lambda}=\pdv{\Phi_e}{\lambda}\]
+\sssc{輻射強度（Radiant intensity）}
+輻射強度$I_e$為每立體角（Solid angle）的輻射通量。
+\sssc{頻率光譜強度（Spectral intensity in frequency）}
+頻率光譜強度$I_{\nu}$為每立體角（Solid angle）的頻率光譜通量。
+\sssc{波長光譜強度（Spectral intensity in wavelength）}
+波長光譜強度$I_{\lambda}$為每立體角（Solid angle）的波長光譜通量。
+\sssc{輻照度（Irradiance）、輻射出射度/輻出度（Radiant exitance）與光強度（Light intensity）}
+\bit
+\item 輻照度：指單位面積射入輻射通量。
+\item 輻射出射度：指單位面積射出輻射通量。
+\item 光強度：指電磁波垂直波向量截面上單位面積的輻射通量，即該面的輻照度與輻出度。
+\eit
+\sssc{頻率光譜輻照度（Spectral irradiance in frequency）與頻率光譜出射度（Spectral exitance in frequency）}
+\[M_{\nu}=\pdv{M_e}{\nu}\]
+\sssc{波長光譜輻照度（Spectral irradiance in wavelength）與波長光譜出射度（Spectral exitance in wavelength）}
+\[M_{\lambda}=\pdv{M_e}{\lambda}\]
+\sssc{輻射率（Radiance）}
+令立體角$\Omega$、$A\cos\theta$為表面$A$在垂直輻射面的投影面積：
+\[L_e=\frac{\partial^2\Phi_e}{\partial\Omega\partial(A\cos\theta)}\]
+\sssc{光壓/輻射壓（Radiation pressure）}
+一光在一單位法向量$\hat{n}$的表面（等效）反射，令$M_e$為入射光強度乘以入射角餘弦值的平方加上反射光強度乘以反射角餘弦值的平方（餘弦值的平方來自輻照度與輻出度分別為入射與反射光強度乘以入射與反射角餘弦值，與入射光與反射光單位波向量垂直表面分量），即輻出度加上輻照度再乘以入射角餘弦值，令光速$v$，則光壓$p$服從：
+\[p=\frac{M_e}{v}\]
+或用坡印廷向量表示：
+\[p=\frac{\langle(\mathbf{E}\times\mathbf{H})\cdot\hat{n}\rangle}{v}\]
+\subsection{電磁（波）屏蔽效應/法拉第籠（Faraday cage）}
+由於電荷載子受電磁波會產生感應電流，感應電流產生感應電磁波，而與原電磁波產生破壞性干涉，故導體包圍的區域無法接受外部電磁波或發送電磁波到外部，此效應稱電磁（波）屏蔽效應，受到靜電屏蔽效應與電磁波屏蔽效應的區域稱法拉第籠。
+
+即使導體不完全封閉某區域，仍可達到一定電磁波屏蔽效果。
+
+法拉第籠中物件無法與外部進行電場、電流與電磁傳輸，常用於交通工具艙、實驗裝置、監獄、電子元件容器、電纜、通訊屏蔽容器、電梯、RFID 竊取（RFID skimming）容器等。
+\subsection{電磁波頻譜（Electromagnetic spectrum）}
+\bct
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{名稱} & \textbf{頻率範圍} & \textbf{波長範圍} & \textbf{能量範圍} \\
+\hline
+γ 射線 & 300 EHz - 30 EHz & 1 pm - 10 pm & 1.24 MeV - 124 keV \\
+\hline
+硬 X 射線（HX） & 30 EHz - 3 EHz & 10 pm - 100 pm & 124 keV - 12.4 keV \\
+\hline
+軟 X 射線（SX） & 3 EHz - 30 PHz & 100 pm - 10 nm & 12.4 keV - 124 eV \\
+\hline
+極端紫外線（EUV） & 30 PHz - 3 PHz & 10 nm - 100 nm & 124 eV - 12.4 eV \\
+\hline
+近紫外線（NUV） & 3 PHz - 790 THz & 100 nm - 380 nm & 12.4 eV - 3.26 eV \\
+\hline
+可見光紫色（Violet） & 790 THz - 670 THz & 380 nm - 450 nm & 3.26 eV - 2.75 eV \\
+\hline
+可見光藍色（Blue） & 670 THz - 620 THz & 450 nm - 485 nm & 2.75 eV - 2.56 eV \\
+\hline
+可見光青色（Cyan） & 620 THz - 600 THz & 485 nm - 500 nm & 2.56 eV - 2.48 eV \\
+\hline
+可見光綠色（Green） & 600 THz - 530 THz & 500 nm - 565 nm & 2.48 eV - 2.19 eV \\
+\hline
+可見光黃色（Yellow） & 530 THz - 510 THz & 565 nm - 590 nm & 2.19 eV - 2.1 eV \\
+\hline
+可見光橘色（Orange） & 510 THz - 480 THz & 590 nm - 625 nm & 2.1 eV - 1.98 eV \\
+\hline
+可見光紅色（Red） & 480 THz - 400 THz & 625 nm - 750 nm & 1.98 eV - 1.65 eV \\
+\hline
+近紅外線（NIR） & 400 THz - 30 THz & 750 nm - 10 μm & 1.65 eV - 124 meV \\
+\hline
+中紅外線（MIR） & 30 THz - 3 THz & 10 μm - 100 μm & 124 meV - 12.4 meV \\
+\hline
+遠紅外線（FIR） & 3 THz - 300 GHz & 100 μm - 1 mm & 12.4 meV - 1.24 meV \\
+\hline
+極高頻（EHF） 微波 & 300 GHz - 30 GHz & 1 mm - 10 mm & 1.24 meV - 124 μeV \\
+\hline
+超高頻（SHF） 微波 & 30 GHz - 3 GHz & 10 mm - 100 mm & 124 μeV - 12.4 μeV \\
+\hline
+特高頻（UHF） 微波 & 3 GHz - 300 MHz & 100 mm - 1 m & 12.4 μeV - 1.24 μeV \\
+\hline
+甚高頻（VHF） 無線電波 & 300 MHz - 30 MHz & 1 m - 10 m & 1.24 μeV - 124 neV \\
+\hline
+高頻（HF） 無線電波 & 30 MHz - 3 MHz & 10 m - 100 m & 124 neV - 12.4 neV \\
+\hline
+中頻（MF） 無線電波 & 3 MHz - 300 kHz & 100 m - 1 km & 12.4 neV - 1.24 neV \\
+\hline
+低頻（LF） 無線電波 & 300 kHz - 30 kHz & 1 km - 10 km & 1.24 neV - 124 peV \\
+\hline
+甚低頻（VLF） 無線電波 & 30 kHz - 3 kHz & 10 km - 100 km & 124 peV - 12.4 peV \\
+\hline
+特低頻（ULF） 無線電波 & 3 kHz - 300 Hz & 100 km - 1 Mm & 12.4 peV - 1.24 peV \\
+\hline
+超低頻（SLF） 無線電波 & 300 Hz - 30 Hz & 1 Mm - 10 Mm & 1.24 peV - 124 feV \\
+\hline
+極低頻（ELF） 無線電波 & 30 Hz - 3 Hz & 10 Mm - 100 Mm & 124 feV - 12.4 feV \\
+\hline
+\end{tabular}
+\end{table}\FB\ect
+\subsection{游離輻射（ionizing radiation）}
+游離輻射指能量足夠高而可以打斷化學鍵的射線，游離輻射如 X 射線，非游離輻射如無線電波。
+\subsection{各波段電磁波的產生與應用}
+\subsubsection{無線電波}
+通常由振盪電路產生，並以天線發射和接收。
+
+應用振幅調變/調幅（Amplitude Modulation, AM）、頻率調變/調頻（Frequency Modulation, FM）、相位調變/調相（Phase Modulation, PM）等技術，狹窄頻帶的無線電波即可傳遞資訊。是無線通訊、廣播、雷達、國防系統、無線射頻辨識系統（Radio frequency identification, RFID）最主要的頻段。被劃分成許多頻道以免彼此干擾。
+\subsubsection{微波}
+通常由真空電子管產生。常用於Wi-Fi、微波爐。
+
+全球行動通訊系統（Global System for Mobile Communications, GSM）是當前應用最為廣泛的行動電話標準，依頻率（MHz）包含 GSM 450、GSM 800、GSM 850、GSM 1800、GSM 1900 頻段，其中 GSM 900 和 GSM 1800 頻段最常用。波長較長者較不易繞射，較適用於郊區通訊，如 GSM 900；波長較短者較易繞射，較適用於都會區通訊，如 GSM 1800。
+
+消費者 Wi-Fi 網路有三種常見頻帶：2.4 GHz、5 GHz 和 6 GHz。
+\subsubsection{紅外線}
+室溫附近物體放出的熱輻射大致處於紅外線，吸收的輻射熱亦以紅外線為主，以旋轉或振動等方式吸收。故紅外線常用於遙控器、熱感攝影、偵測等。
+\subsubsection{可見光}
+人類眼睛可見的頻帶。
+\subsubsection{紫外線}
+高溫物體如氣體放電管、太陽等可放出之。可協助皮膚製造維生素 D。長時間曝露可殺死微生物，故常用於消毒、殺菌，但也會造成皮膚曬傷、細胞病變的等。常用於鈔票防偽辨識。
+\subsubsection{X 射線}
+\bit
+\item 發現初期多使用陰極射線管的陰極射線高速撞擊金屬靶產生 X 射線；現代則通常以將金屬燈絲加熱放出電子，再經高電壓（一萬伏特以上）加速，撞上金屬靶產生 X 射線，其中金屬靶通常用鎢，因其耐高溫。
+\item X 射線繞射：X 射線波長遠小於一般人造狹縫的寬度，但與一般晶格與分子構造長度相近，故晶體相當於立體光柵，稱晶體光柵，常用 X 射線繞射現象研究晶格、分子等結構。
+\item 非破壞性檢驗：可利用 X 射線的穿透性檢視材料內部的缺陷或裂隙，或利用兩束能量不同的 X 射線在安檢中辨識不同材質經電腦分析標上偽色（pseudo-coloring），一般來說不可穿透物呈黑色、含金屬物呈綠色、低分子有機物呈橘色、無機物或高密度物質呈藍色。
+\item 放射治療（Radiation therapy）：X 光攝影可用來診斷生物體內異常，X 射線的高能量可用於破壞組織。
+\bit
+\item X 光攝影/照片（X-ray）：X 射線穿透力強，可穿透生物組織、布料、紙張等，但無法穿透金屬板與骨骼，由身體組織對其吸收率不同，可用 X 射線拍攝身體內部結構，通常使用鎢靶的制動輻射。
+\item 電腦斷層攝影（Computed tomography, CT）：拍攝多個角度的 X 光照片經電腦運算整合成立體圖像。
+\item 電腦刀（CyberKnife）：是 Accuray 生產的一種放射治療設備，利用電腦計算光子運動途徑，使不同高能 X 射線光束最終集中在腫瘤上以破壞之，且分散光子通過路徑以降低經過組織的傷害。
+\eit
+\eit
+\subsubsection{伽瑪射線}
+通常由核反應放出。能量足以殺死細胞，故用於腫瘤治療等放射性醫療。
+\subsection{微波加熱（Microwave Heating）}
+國際上規定家用微波爐的微波為 12 cm，即 2.45 GHz。微波加熱的原理為，極性分子（如水分子）受電場作用會朝特定方向排列，微波的電場方向不斷改變，使極性分子的方向跟著以相同頻率振盪，振盪中分子間相互摩擦，從而加熱。微波易穿透絕緣物體，故加熱在食物內外同時發生。微波爐門上的金屬網格略在1至2毫米，比微波波長短很多，故多數微波會被反射回爐中，而可見光則多可通過。
+\subsection{無線射頻辨識系統（Radio frequency identification, RFID）}
+\begin{itemize}
+\item RFID 標籤（Tag）：附著在物品上的裝置，內含負責儲存資料與處理通訊的晶片（Integrated Circuit, IC）。根據供電方式可分為：
+\begin{itemize}
+\item 被動式（Passive）：無內建電池，靠讀取器發出的電磁波讓 RFID 標籤中的線圈產生感應電流供電，並回應訊號，成本低、壽命長，但讀取距離較短（通常在幾公分到數公尺）。
+\item 主動式（Active）：內建電池，可主動發送訊號，讀取距離較遠（數十公尺以上），適用於物流或大型設備追蹤。
+\item 半主動式（Semi-passive）：內建電池但不主動發射，仍需讀取器激活，適用於感測器應用。
+\end{itemize}
+\item RFID 讀取器（Reader）：具有發射器（Transmitter），負責發射特定頻率的無線電波以喚醒標籤，與接收器（Receiver）：負責接收標籤的回應訊號並解碼。
+\item 後端系統（Backend System）：負責儲存、分析 RFID 讀取器收集到的數據。
+\end{itemize}
+RFID 使用的電磁波頻率愈大，適用距離愈大：
+\begin{itemize}
+\item 低頻（LF）：短距離（10公分內），常用於動物識別晶片、門禁卡等。
+\item 中頻（MF）至高頻（HF）：中距離（1公尺內），常用於電子票證、電子支付等。
+\item 近場通訊（Near-field communications, NFC）：利用 13.56 MHz 的電磁波以 106 kbit/s、212 kbit/s 或 424 kbit/s 傳遞資料的 RFID 系統。
+\item 微波：遠距離，物流、交通、倉儲管理、 GPS 追蹤等。
+\end{itemize}
+\end{document}

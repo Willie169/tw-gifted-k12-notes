@@ -1,0 +1,377 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{遞迴}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{遞迴（Recurrence）}
+\subsection{遞迴關係（Recurrence relation）}
+\begin{itemize}
+\item \tb{遞迴關係（Recurrence relation）}：一個數列中一項與其前數項的關係。
+\item \tb{遞迴數列}：給定某些項（稱初始值）與遞迴關係使可以求出此數列的任意項的數列。
+\item \tb{遞迴（定義）式}：遞迴數列的初始值與遞迴關係的表達式。
+\item \tb{常係數線性遞迴數列}：形如：
+\[<a_n>\colon a_n=\sum_{i=1}^k c_i \cdot a_{n-i} + f(n),\quad n>k\]
+的數列稱$k$階常係數線性遞迴數列。若初使條件：$a_1, a_2, a_3, \ldots, a_k$及$f(n)$已知，則$<a_n>$即被唯一確定。對於$f(n)=0$，稱$k$階常係數線性齊次遞迴數列，否則，稱$k$階常係數線性非齊次遞迴數列。
+\end{itemize}
+\subsection{特徵方程式（Characteristic function）}
+定義：對一個給定$k$階常係數線性遞迴數列：
+\[<a_n>: a_n=\sum_{i=1}^k c_i \cdot a_{n-i} + f(n)\]
+，其特徵方程式為$x^k-\sum_{i=1}^k c_i \cdot x^{k-i}=0$，特證方程式的根稱其特徵根。
+\begin{itemize}
+\item 若一個給定$k$階常係數線性齊次遞迴數列$<a_n>$有$a$相異特徵根$q_1, q_2, q_3, \ldots, q_a$，其中第$i$個根（$1\leq i\leq a$）為$m_i$重根，則$<a_n>$之一般式為：
+\[a_n=\sum_{i=1}^{a} \left( \sum_{j=1}^{m_i} \left(A_{i,j}\cdot n^{j-1}\right) \cdot q_i^{\phantom{i}n} \right)\]
+\item 若給定一個$k$階常係數線性非齊次遞迴數列：
+\[<a_n>: a_n=\sum_{i=1}^k c_i \cdot a_{n-i} + f(n)\]
+則令：
+\[a_n = a'_n+a''_n \]
+使得$<a'_n>$為$k$階常係數線性齊次遞迴數列，$<a''_n>$為$k$階常係數線性非齊次遞迴數列且一次項同$<a'_n>$且$f(n)$項同$<a_n>$。
+\[a''_n = g(n),\quad\deg(g(n))\leq \deg(f(n))\]
+解出$k$階常係數線性非齊次遞迴數列$<a'_n>$與$g(n)$ ，即可解出$<a_n>$。
+\end{itemize}
+\subsection{生成函數（Generating function）}
+\subsubsection{生成函數（Generating function）}
+\begin{itemize}
+\item 有限數列$<a_n>_{n=0}^m: a_0, a_1, a_2, \ldots, a_m$之生成函數為$f(x)=\sum_{n=0}^m a_n x^n$。
+\item 無窮數列$<a_n>_{n=0}^\infty: a_0, a_1, a_2, \ldots, a_n, \ldots$之生成函數為$f(x)=\sum_{n=0}^\infty a_n x^n$。
+\item 數列唯一確定若且唯若生成函數唯一確定。
+\end{itemize}
+\subsubsection{指數生成函數（Exponential generating function）}
+\begin{itemize}
+\item 有限數列$<a_n>_{n=0}^m: a_0, a_1, a_2, \ldots, a_m$之指數生成函數為$f^{(e)}(x)=\sum_{n=0}^m \frac{a_n x^n}{n!}$。
+\item 無窮數列$<a_n>_{n=0}^\infty: a_0, a_1, a_2, \ldots, a_n, \ldots$之指數生成函數為$f^{(e)}(x)=\sum_{n=0}^\infty \frac{a_n x^n}{n!}$。
+\item 數列唯一確定若且唯若指數生成函數唯一確定。
+\end{itemize}
+\subsubsection{自遞迴式解生成函數的方法}
+對一個給定$k$階常係數線性遞迴數列$<a_n>: a_n=\sum_{i=1}^k c_i \cdot a_{n-i} + f(n)$，$a_1, a_2, a_3, \ldots, a_k$已知，則假設一$a_0$使$a_k-\sum_{i=1}^{k-1} c_i a_i=0$，以$f(x)-\sum_{i=1}^{k-1} c_i x^i f(x)$解$f(x)$。
+\subsubsection{自生成函數解一般式的方法}
+對一個給定生成函數$f(x)=\frac{h(x)}{g(x)}$，將其因式分解為$c\cdot(g_1(x))^{d_1}\cdot(g_2(x))^{d_2}\cdot(g_3(x))^{d_3}\cdot\ldots\cdot(g_m(x))^{d_m}$，其中$c$、$d_i$、$m$為常數，所有$g_i(x)$均不相同且最高次項係數皆為$1$，接著假設$f(x)=\sum_{i=1}^m \frac{A_i\circ g_i(x)}{(g_i(x))^{d_i}}$，其中$\deg(A_i(x))=d_i-1$，最後解出所有$A_i(x)$即可得出一般式。
+\subsubsection{使用遞迴關係構造模型時常用公式}
+\[
+\begin{aligned}
+(1+x)^{-s} =& \sum_{n=0}^{\infty}\binom{-s}{n}x^n = \sum_{n=0}^{\infty}(-1)^n\binom{s+n-1}{n}x^n,\quad |x|<1\\
+\sum_{k=0}^{n}x^k =& \frac{1-x^{n+1}}{1-x},\quad x\neq 1\\
+\sum_{k=0}^{n}kx^k =& \frac{x(1-(n+1)x^n+nx^{n+1})}{(1-x)^2},\quad x\neq 1\\
+e^x =& \sum_{n=0}^{\infty} \frac{x^n}{n!} \\
+\frac{e^x+e^{-x}}{2} =& \sum_{n=0}^{\infty} \frac{x^{2n}}{(2n)!}\quad\text{（懸鍊線）} \\
+\end{aligned}
+\]
+\subsection{使用遞迴關係構造模型舉隅}
+\subsubsection{費波那契數列（Successione di Fibonacci）}
+遞迴式：
+\[
+\begin{cases}
+a_0 &= 0 \\
+a_1 &= 1 \\
+a_n &= a_{n-1}+a_{n-2},\quad n>1
+\end{cases}
+\]
+一般式：
+\[
+a_n = \frac{1}{\sqrt{5}} \cdot \left(\frac{1+\sqrt{5}}{2}\right)^n - \frac{1}{\sqrt{5}} \cdot \left(\frac{1-\sqrt{5}}{2}\right)^n
+\]
+\begin{proof}\mbox{}\\
+以假設等比數列法自遞迴式解一般式：令有$\alpha\geq\beta$使得：
+\[a_n-\alpha a_{n-1} = \beta (a_{n-1}-\alpha a_{n-2}) \]
+\[a_n = (\alpha+\beta)a_{n-1}-\alpha\beta a_{n-2} = a_{n-1}+a_{n-2} \]
+\bma
+\alpha &= \frac{1+\sqrt{5}}{2} \\
+\beta &= \frac{1-\sqrt{5}}{2} \\
+b_n &\coloneq a_n-\alpha a_{n-1},\quad\text{（$b_1$不存在）} \\
+b_2 &= \frac{1+\sqrt{5}}{2} \\
+c_n &\coloneq a_n-\beta a_{n-1},\quad\text{（$c_1$不存在）} \\
+c_2 &= \frac{1-\sqrt{5}}{2} \\
+\Rightarrow a_n-\alpha a_{n-1} &= \beta (a_{n-1}-\alpha a_{n-2}) \\
+&= \beta^{n-1} \quad\boxed{1} \\
+a_n-\beta a_{n-1} &= \alpha (a_{n-1}-\beta a_{n-2}) \\
+&= \alpha^{n-1} \quad\boxed{2} \\
+&\boxed{1} \cdot \beta - \boxed{2} \cdot \alpha \\
+\Rightarrow a_n &= \frac{\beta^n-\alpha^n}{\beta-\alpha} \\
+&= \frac{1}{\sqrt{5}} \cdot \left(\frac{1+\sqrt{5}}{2}\right)^n - \frac{1}{\sqrt{5}} \cdot \left(\frac{1-\sqrt{5}}{2}\right)^n
+\end{aligned}
+\]
+以特徵方程式自遞迴式解一般式：
+\[x^2-x-1=0 \]
+\[x= \frac{1\pm \sqrt{5}}{2} \]
+\[ a_n = k_1 \cdot \left(\frac{1+\sqrt{5}}{2}\right)^n + k_2 \cdot \left(\frac{1-\sqrt{5}}{2}\right)^n \]
+\bma
+a_0 &= k_1 + k_2 = 0 \\
+a_1 &= k_1 \cdot \frac{1+\sqrt{5}}{2} + k_2 \cdot \frac{1-\sqrt{5}}{2} = 1 \\
+\Rightarrow a_n &= \frac{1}{\sqrt{5}} \cdot \left(\frac{1+\sqrt{5}}{2}\right)^n - \frac{1}{\sqrt{5}} \cdot \left(\frac{1-\sqrt{5}}{2}\right)^n
+\end{aligned}
+\]
+以生成函數自遞迴式解一般式：
+\[
+\begin{aligned}
+f(x) &\coloneq a_0+a_1x+a_2x^2+a_3x^3+\ldots \\
+x\cdot f(x) &= a_0x+a_1x^2+a_2x^3+a_3x^4+\ldots \\
+x^2\cdot f(x) &= a_0x^2+a_1x^3+a_2x^4+a_3x^5+\ldots \\
+\Rightarrow f(x)-a_0-a_1x &= (x\cdot f(x)-a_0x)+x^2\cdot f(x) \\
+\Rightarrow f(x)-x &= x\cdot f(x)+x^2\cdot f(x) \\
+f(x) &= \frac{-x}{x^2+x-1} 
+\eam
+令$\alpha\geq\beta$使得：
+\[f(x) = \frac{A}{x-\alpha}+\frac{B}{x-\beta} \]
+\[(x-\alpha)(x-\beta) = x^2+x-1 \]
+\bma
+\alpha &= \frac{-1+\sqrt{5}}{2} \\
+\beta &= \frac{-1-\sqrt{5}}{2} \\
+A &= -\frac{1}{\sqrt{5}}\alpha \\
+B &= \frac{1}{\sqrt{5}}\beta \\
+\Rightarrow f(x) &= -\frac{1}{\sqrt{5}}\cdot\frac{\alpha}{x-\alpha}+\frac{1}{\sqrt{5}}\cdot\frac{\beta}{x-\beta} \\
+&= \frac{1}{\sqrt{5}}\cdot\frac{1}{1-\frac{x}{\alpha}}-\frac{1}{\sqrt{5}}\cdot\frac{1}{1-\frac{x}{\beta}} \\
+&= \frac{1}{\sqrt{5}}\cdot\sum_{i=0}^\infty (\frac{x}{\alpha})^i-\frac{1}{\sqrt{5}}\cdot\sum_{i=0}^\infty (\frac{x}{\beta})^i \\
+\Rightarrow a_n &= \frac{1}{\sqrt{5}} \cdot \left(\frac{1}{\alpha}\right)^n - \frac{1}{\sqrt{5}} \cdot \left(\frac{1}{\beta}\right)^n \\
+&= \frac{1}{\sqrt{5}} \cdot \left(\frac{1+\sqrt{5}}{2}\right)^n - \frac{1}{\sqrt{5}} \cdot \left(\frac{1-\sqrt{5}}{2}\right)^n
+\end{aligned}
+\]
+\end{proof}
+\subsubsection{正整係數線性方程式在限制條件下非負整數解組數生成函數通式}
+設：數列$\langle a_n\rangle$定義為給定方程式$\sum_{i=1}^r c_i x_i=n$在給定限制條件：
+\[r,c_i\in\mathbb{N}\land n\in\mathbb{N}_0\land x_i\in D_i\subseteq\mathbb{N}_0\]
+下的解的組數。
+
+生成函數：
+\[\prod_{i=1}^r \left(\sum_{\frac{j}{c_i}\in D_i} x^j\right)\]
+\subsubsection{河內塔（Tower of Hanoi）}
+有三根桿子A、B、C，A桿上有$n$個 ($n>0$) 穿孔圓盤，盤的尺寸由下到上依次變小。$<a_n>$為按每次只能移動一個圓盤且大盤不能疊在小盤上的規則將所有圓盤移至C桿之方法數。 
+
+遞迴式：
+\[
+\begin{cases}
+a_1 &= 1 \\
+a_n &= 2a_{n-1}+1,\quad n>1
+\end{cases}
+\]
+一般式：
+\[
+\begin{cases}
+a_1 &= 1 \\
+a_n &= 2^{n-1}-1,\quad n>1
+\end{cases}
+\]
+\begin{proof}\mbox{}\\
+以觀察法及數學歸納法自遞迴式解一般式：
+\[
+\begin{aligned}
+a_1 &= 1 \\
+a_n &= 2a_{n-1}+1 \\
+&= 2(2a_{n-2}+1)+1 \\
+&= 2^2a_{n-2}+2+1 \\
+&= 2^2(2a_{n-3}+1)+2+1 \\
+&= 2^3a_{n-3}+2^2+2+1 \\
+& \vdots \\
+&= 2^{n-1}a_1+\sum_{i=0}^{n-2} 2^i \\
+&= 2^{n-1}-1 \\
+a_2 &= 2^{2-1}-1 = 1 \\
+\text{設\protect\ }n &= k\text{\protect\ 時成立，則\protect\ }n = k+1\text{\protect\ 時：} \\
+a_{k+1} &= 2(2^{k-1}-1)+1 = 2^{k}-1,\quad\text{亦成立。} \\
+\end{aligned}
+\]
+由數學歸納法，得證。
+\end{proof}
+\subsection{題目節選}
+\subsubsection{二階常係數線性非齊次遞迴數列一}
+題：已知遞迴式：
+\[
+\begin{cases}
+a_1 &= 1 \\
+a_n &= 2a_{n-1}+1,\quad n>1
+\end{cases}
+\]
+求一般式。
+
+答：\(a_n = 2^{n}-1\)
+\begin{proof}\mbox{}\\
+以特徵方程式自遞迴式解一般式，令：
+\[
+\begin{cases}
+a_n = a'_n+a''_n \\
+a'_n = 2\cdot a'_{n-1} \Rightarrow a'_n = k\cdot 2^{n-1} \\
+a''_n = 2\cdot a''_{n-1}+1 = c
+\end{cases}
+\]
+\[
+\begin{aligned}
+c &= 2c+1 \\
+\Rightarrow c &= -1 \\
+\Rightarrow a_n &= k\cdot 2^{n-1}-1 \\
+a_1 &= k\cdot 2^{1-1}-1 \\
+&= 1 \\
+\Rightarrow k &= 2 \\
+\Rightarrow a_n &= 2^{n}-1
+\end{aligned}
+\]
+\end{proof}
+\subsubsection{二階常係數線性非齊次遞迴數列二}
+題：已知遞迴式：
+\[
+\begin{cases}
+a_1 &= 1 \\
+a_{n} &= 2a_{n-1} + 2n,\quad n>1
+\end{cases}
+\]
+求一般式。
+
+答：$a_n = 2^{n+1}-n-2$
+\begin{proof}\mbox{}\\
+以特徵方程式自遞迴式解一般式，令：
+\[
+\begin{cases}
+a_n = a'_n+a''_n \\
+a'_n = 2\cdot a'_{n-1} \Rightarrow a'_n = k\cdot 2^{n-1}\\
+a''_n = 2\cdot a''_{n-1}+n = cn+d
+\end{cases}
+\]
+\[
+\begin{aligned}
+cn+d &= 2(c(n-1)+d)+n \\
+\Rightarrow c &= -1 \\
+d &= -2 \\
+\Rightarrow a_n &= k\cdot 2^{n-1}-n-2 \\
+a_1 &= k\cdot 2^{1-1}-1-2 \\
+&= 1 \\
+\Rightarrow k &= 4 \\
+\Rightarrow a_n &= 2^{n+1}-n-2
+\end{aligned}
+\]
+\end{proof}
+\subsubsection{二階常係數線性非齊次遞迴數列三}
+題：一運動會，共$n$天，共發出獎牌$m$枚，對於所有小於$n$的正整數$i$，第$i$日發出的獎牌數為$i$加上剩下獎牌數的$\frac{1}{7}$，第$n$日發出$n$枚獎牌，求$n$、$m$。
+
+答：$n=6$；$m=36$
+\begin{proof}\mbox{}\\
+令第$i$天末剩餘$a_i$枚獎牌，得遞迴關係式：
+\[\begin{cases}
+a_0 = m \\
+a_i = a_{i-1}-i-\frac{a_{i-1}-i}{7} = \frac{6}{7}\cdot(a_{i-1}-i),\quad i>0
+\end{cases}\]
+令：
+\[\begin{cases}
+a_i = a'_{i}+a''_{i} \\
+a'_{i} = \frac{6}{7}\cdot a'_{i-1} \\
+a''_{i} = ci+d
+\end{cases}\]
+將初始條件代入：
+\[\begin{aligned}
+a_0 &= m \\
+a_1 &= \frac{6}{7}\cdot (m-1) \\
+a_2 &= \frac{36m-120}{49}
+\end{aligned}\]
+解得：
+\[\begin{cases}
+a'_{0} = m-36 \\
+c = -6 \\
+d = 36
+\end{cases}\]
+故：
+\[a_i=(m-36)\cdot (\frac{6}{7})^i-6i+36\]
+將$a_{n-1}=n$代入：
+\[\begin{aligned}
+n &= (m-36)\cdot (\frac{6}{7})^{n-1}-6(n-1)+36 \\
+(n-6)\cdot 7^n &= (\frac{m}{6}-6)\cdot 6^n \\
+m &= 6((n-6)\cdot(\frac{6}{7})^n+6)
+\end{aligned}\]
+\[\begin{aligned}
+\because\quad & m \in \mathbb{N} \\
+\therefore\quad & (n-6)\cdot(\frac{6}{7})^n > -6 \\
+& (n-6)\cdot(\frac{6}{7})^n \in \mathbb{N} \\
+& 6^{n-1} \left| (n-6) \right. \\
+\because\quad & n > 0 \\
+\therefore\quad & 6^{n-1} \in \mathbb{N} \\
+\end{aligned}\]
+\[\begin{aligned}
+& \dv{}{n}(n-6) = 1 \\
+& \dv{}{n}(6^{n-1}) = \ln(6) \cdot 6^{n-1} \\
+& \text{當$0<n\leq 6$，一一代入，得僅有$n=6$、$m=36$為一解，其餘不合。} \\
+& \text{當$n > 6$：} \\
+& (n-6) > 6^{n-1} \\
+& \dv{}{n}(n-6) \geq \frac{d}{dn}(6^{n-1}) \\
+& \text{當$n=7$，} 6^{n-1} = 36 \text{，不合，故$n\geq 6$均不合。}
+\end{aligned}\]
+\end{proof}
+\subsubsection{生成函數一}
+題：設$a_n$為方程式$2x_1+3x_2+4x_3+5x_4=n$的非負整數解數，求其生成函數。
+
+答：
+\[\frac{1}{(1-x^2)(1-x^3)(1-x^4)(1-x^5)}\]
+\begin{proof}
+\[
+\begin{aligned}
+& (1+x^2+x^4+x^6+\ldots)(1+x^3+x^6+x^9+\ldots)(1+x^4+x^8+x^{12}+\ldots)(1+x^5+x^{10}+x^{15}+\ldots) \\
+=& \frac{1}{(1-x^2)(1-x^3)(1-x^4)(1-x^5)}
+\end{aligned}
+\]
+\end{proof}
+\subsubsection{生成函數二}
+題：設$a_n$為紅球、黃球、綠球、藍球共$n$個中，紅球有偶數個、黃球有奇數個、綠球至多$4$個且藍球至少$1$個的方法數，求其生成函數。
+
+答：
+\[\frac{x^2(1-x^5)}{(1-x^2)^2(1-x)^2}\]
+\begin{proof}
+\[
+\begin{aligned}
+& (1+x^2+x^4+x^6+\ldots)(x+x^3+x^5+x^7+)(1+x+x^2+x^3+x^4)(x+x^2+x^3+x^4+\ldots) \\
+=& \frac{x^2(1-x^5)}{(1-x^2)^2(1-x)^2}
+\end{aligned}
+\]
+\end{proof}
+\subsubsection{生成函數解一般式一}
+題：已知$<a_n>$之生成函數$f(x)=\frac{2x^2}{1-2x)^2(1+x)}$，求$<a_n>$之一般式。
+
+答：
+\[
+a_n = \left(\frac{n}{3}-\frac{2}{9}\right)2^n+\frac{2}{9}(-1)^n
+\]
+\begin{proof}
+\[
+\begin{aligned}
+f(x) &\coloneq \frac{A(1-2x)+B}{(1-2x)^2}+\frac{C}{1+x} \\
+\Rightarrow A &= -\frac{5}{9} \\
+B &= \frac{1}{3} \\
+C &= \frac{2}{9} \\
+f(x) &= \frac{-\frac{5}{9}}{1-2x}+\frac{\frac{1}{3}}{(1-2x)^2}+\frac{\frac{2}{9}}{1+x} \\
+&= \sum_{k=0}^\infty \left(-\frac{5}{9}\cdot 2^k+\frac{1}{3}(k+1)2^k+\frac{2}{9}(-1)^k\right)x^k \\
+\Rightarrow a_n &= \left(\frac{n}{3}-\frac{2}{9}\right)2^n+\frac{2}{9}(-1)^n
+\end{aligned}
+\]
+\end{proof}
+\subsubsection{指數生成函數一}
+題：今有三個$a$、二個$b$、一個$c$，任選$3$、$2$、$1$個排列之方法數各為若干？
+
+答：$19, 8, 3$
+\begin{proof}
+\[
+\begin{aligned}
+f^{(e)}(x) &\coloneq (1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!})(1+\frac{x}{1!}+\frac{x^2}{2!})(1+\frac{x}{1!}) \\
+&= 1+3\cdot\frac{x}{1!}+8\cdot\frac{x^2}{2!}+19\cdot\frac{x^3}{3!}
+\end{aligned}
+\]
+\end{proof}
+\subsubsection{指數生成函數二}
+題：設
+\[a_n=\left|\left\{k\middle|\text{\ $k$為$n$位正整數且滿足每位皆為奇數且$3$、$5$皆出現偶數次}\right\}\right|\]
+，求其一般式。
+
+答：
+\[a_n= \frac{5^n+2\cdot 3^n+1}{4} \]
+\begin{proof}
+\[
+\begin{aligned}
+f^{\left(e\right)}\left(x\right) &\coloneq \left(1+\frac{x^2}{2!}+\frac{x^4}{4!}+\ldots\right)^2\cdot\left(1+\frac{x}{1!}+\frac{x^2}{2!}+\ldots\right)^3 \\
+&= \left(\frac{e^x+e^{-x}}{2}\right)^2\cdot e^{3x} \\
+&= \frac{e^{5x}+2e^{3x}+e^x}{4} \\
+&= \frac{1}{4}\left(\sum_{n=0}^\infty 5^n\cdot \frac{x^n}{n!}+2\sum_{n=0}^\infty 3^n\cdot \frac{x^n}{n!}+\sum_{n=0}^\infty \frac{x^n}{n!}\right) \\
+&= \sum_{n=0}^\infty \frac{5^n+2\cdot 3^n+1}{4}\cdot \frac{x^n}{n!} \\
+\therefore\quad a_n &= \frac{5^n+2\cdot 3^n+1}{4}
+\end{aligned}
+\]
+\end{proof}
+\end{document}

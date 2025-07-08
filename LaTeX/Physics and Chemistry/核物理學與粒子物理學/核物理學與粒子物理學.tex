@@ -1,0 +1,600 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{核物理學與粒子物理學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\section{核物理學（Nuclear physics）與粒子物理學（Particle Physics）}
+真空光速$c=299792458$ m/s；道耳頓 u；電子質量$m_e$；質子質量$m_p$；中子質量$m_n$。
+\subsection{粒子（Particles）}
+\sssc{標準模型（Standard Model, SM）}
+\begin{longtable}[c]{|p{0.2\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+\hline
+\textbf{粒子} & \textbf{種類} & \textbf{世代（Generations）} & \textbf{反粒子（Antiparticles）} & \textbf{色（Colors）} & \textbf{總計} \\\hline\endhead
+\tb{夸克（Quark）} & 2 & 3 & 成對 & 3 & 36 \\\hline
+\tb{輕子（Lepton）} & 2 & 3 & 成對 & 無色 & 12 \\\hline
+\tb{膠子（Gluon）}$g$ & 1 & 1 & 自身 & 8 & 8 \\\hline
+\tb{W 玻色子（W boson）}$W$ & 1 & 1 & 成對 & 無色 & 2 \\\hline
+\tb{Z 玻色子（Z boson）}$Z$  & 1 & 1 & 自身 & 無色 & 1 \\\hline
+\tb{光子（Photon）γ}  & 1 & 1 & 自身 & 無色 & 1 \\\hline
+\tb{希格斯玻色子（Higgs boson）$H$} & 1 & 1 & 自身 & 無色 & 1 \\\hline
+總計 & & & & & 61 \\\hline
+\end{longtable}\FB
+\sssc{夸克（Quark）}
+分為三代，包含正三分之二基本電荷的\tb{上（Up, u）}、\tb{魅（Charm, c）}、\tb{頂（Top, t）}夸克，與負三分之一基本電荷的\tb{下（Down, d）}、\tb{奇（Strange, s）}、\tb{底（Bottom, b）}夸克，共六\tb{味（Flavor）}，每一味夸克都具有紅、綠及藍三種色的版本。夸克之反粒子為反夸克。自旋二分之一。
+\bit
+\item \tb{強子（Hadron）}：夸克或反夸克通過強作用力綑綁在一起的複合粒子。
+\item \tb{重子（Baryon）}：由三個夸克或三個反夸克組成的複合粒子，自旋總是半整數。
+\eit
+\sssc{色（Color）}
+\bit
+\item \tb{色荷（Color charge）}：強交互作用中一種類似電磁交互作用中電荷的荷，存在於夸克與膠子。夸克帶有一紅或藍或綠色荷、反夸克帶有一反紅或反藍或反綠色荷、膠子帶有一對色荷，其一為紅或藍或綠，另一為反紅或反藍或反綠色荷。
+\item \tb{色禁閉（Color confinement）}：指夸克和膠子無法以單獨的形式存在於自然界，其中對於夸克又稱\tb{夸克禁閉（Quark confinement）}。
+\eit
+\sssc{輕子（Lepton）}
+不參與強交互作用、自旋為1/2的基本粒子。包括：
+\bit
+\item 帶負或正基本電荷的：\tb{電子（Electron）}$e^-$、\tb{正電子（Positron）}$e^+$、\tb{緲子（Muon）}$\mu^-$、\tb{反緲子（Antimuon）}$\mu^+$、\tb{陶子（Tauon）}$\tau^-$、\tb{反陶子（Antitauon）}$\tau^+$；
+\item 與電中性的\tb{微中子（Neutrino）}與\tb{反微中子（Antineutrino）}：\tb{電子微中子}$\nu_e$、\tb{反電子微中子}$\overline{\nu}_e$、\tb{緲子微中子}$\nu_\mu$、\tb{反緲子微中子}$\overline{\nu}_\mu$、\tb{陶子微中子}$\nu_\tau$、\tb{反陶子微中子}$\overline{\nu}_\tau$，這些粒子不帶電，質量極小（原先包立提出時以為沒有質量，實驗測出有但極小），有二分之一的自旋，不參與強交互作用，參與弱交互作用。
+\eit
+\sssc{費米子（Fermion）}
+具有二分之奇數自旋量子數的粒子，包含所有夸克與輕子與任何由奇數個夸克或輕子組成的複合粒子。
+\sssc{玻色子（Boson）}
+不是費米子的基本粒子。
+\bit
+\item \tb{規範玻色子（Gauge boson）}：作為交互作用媒介的玻色子。標準模型中的規範玻色子包含膠子，強交互作用的媒介、光子，作為電磁交互作用的媒介、W 玻色子與 Z 玻色子，作為弱交互作用的媒介。
+\item \tb{純量玻色子（Scalar boson）}：自旋為零的玻色子，如希格斯玻玻色子。
+\end{itemize}
+\sssc{電子（Electron）}
+$^0_{-1}e$。
+\[m_e\approx\scinote{9.1093837139}{-31}\text{\ kg}\approx5.485799090442×10^{-4}\text{\ u}\approx0.51099895069\text{\ MeV/}c^2\]
+電子荷質比\scinote{1.75882000838}{11} C/kg、質荷比\scinote{5.68563011130}{-12} kg/C。
+\sssc{質子（Proton, p）}
+$^1_1p$，二個上夸克與一個下夸克組成的粒子。
+\[m_p\approx 1.67262192596\times 10^{-27}\text{\ kg}\approx 1.0072764665790\text{\ u}\approx938.27208943\tx{\ MeV}/c^2\approx 1836.15267342m_e\]
+質子荷質比$\approx$\scinote{9.57883314294}{7} C/kg、質荷比$\approx$\scinote{1.04396849290}{-8} kg/C。
+\sssc{中子（Neutron, n）}
+$^1_0n$，一個上夸克與二個下夸克組成的粒子。
+\[m_n\approx1.67492750057\times 10^{-27}\text{\ kg}\approx1.00866491606\text{\ u}\approx939.56542194\tx{\ MeV}/c^2\approx1838.68366201m_e\]
+
+\subsection{原子核（Atomic nucleus）}
+\sssc{核種（Nuclide）}
+一核種為一類質量數 A 、原子序 Z 與能階（Energy level）均相同的原子。
+\sssc{符號表示法}
+$^{A}_{Z}\text{X}$，其中 X 為該原子核所屬元素或費米子之符號，$A$為核子數，$Z$為電荷數，如氦核$^4_2$He或$^4_2$α、正電子$^0_1e$、反微中子$^0_0\ol{\nu}$。
+\sssc{核反應（Nuclear reaction）}
+反應前後發生核種改變的反應，如放射性衰變、核分裂、核融合、人工核轉換，遵守核子數守恆、核電荷守恆、電荷數守恆、質量數守恆、質能守恆、動量守恆、角動量守恆。
+\sssc{原子核尺寸}
+原子核直徑約 1.7 fm 至 11.7 fm，密度約 \scinote{2}{17} kg/m$^3$。元素週期表上原子之原子核中，氫核最小，直徑約 1.7 fm；氦核次之，直徑約 1.9 fm；鈾核直徑約 7.4 fm。
+
+令原子核半徑$R$、質量數$A$，$R_0=
+\approx 1.2$ fm：
+\[R\approx R_0A^{\frac{1}{3}}\]
+即原子核體積略與質量數正比。
+
+
+\subsection{自然界的四種基本交互作用（Four basic interactions in nature）}
+力（Force）或交互作用（Interaction）指粒子間發生的造成粒子狀態改變的作用。
+\subsubsection{強力（Strong force）/強交互作用（Strong interaction）/強核力（Strong nuclear force）/核力（Nuclear force）}
+強子間的交互作用力，將夸克或反夸克結合成強子、將核子結合成原子核，作用範圍小，具飽和性，即一個核子僅與鄰近幾個核子發生作用。一般質子或中子裡，大部份的質能是以強交互作用場能量的形式存在，夸克只提供了1\%的質能。湯川秀樹提出介子（meson）理論，指出強力以介子為媒介存在，後被證實。
+\sssc{穩定原子核質子數和中子數關係}
+\bctf\icg[width=0.6\tw]{883.png}\cpt{Napy1kenobi \& Sjlegg, 2009.}\efct
+穩定原子核因為強核力方能穩定存在。令質子數$Z$，中子數$N$：
+\begin{itemize}
+\item $Z<20$: $N\approx Z$
+\item $Z>20$: $N>Z$，因為原子核內靜電排斥力增加，需要更多中子增加強核力。
+\item 元素週期表上原子量除 $_{27}$Co>$_{28}$Ni、$_{18}$Ar>$_{19}$K、$_{52}$Te>$_{53}$I 外，隨原子序增加而增加。
+\end{itemize}
+\subsubsection{弱力（Weak force）/弱交互作用（Weak interaction）/弱核力（Weak nuclear force）}
+弱力是由玻色子的發射或吸收所造成的，非接觸力，作用範圍較強力小。這種發射中最有名的是  β  衰變。弱力於 1934 由費米，以解釋 β 衰變。
+\subsubsection{電弱交互作用（Electroweak interaction）}
+是電磁力與弱交互作用的統一描述，而這兩種作用都是自然界中四種已知基本力。雖然在日常的低能量情況下，電磁作用與弱作用存在很大的差異，然而在超過統一溫度，即數量級在100 GeV的情況下，這兩種作用力會統合成單一的電弱作用力。
+\sssc{比較}
+\begin{longtable}[c]{|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+\hline
+基本交互作用 & 兩質子相距 2$\times 10^{-15}$ m 時相對於強核力的強度 & 作用範圍 (m) & 提出者\\\hline
+強力 & $1$ & $[0, \approx 10^{-15}]$ & 1935年湯川秀樹\\\hline
+電磁力 & $\approx 10^{-2}$ & $[0, \infty]$ & 19世紀勞侖茲（Lorentz）、馬克思威（Maxwell）等\\\hline
+弱力 & $\approx 10^{-13}$ & $[0, \approx 10^{-18}]$ & 1934年費米（Fermi）\\\hline
+重力 & $\approx 10^{-38}$ & $[0, \infty]$ & 1687年牛頓（Newton）\\\hline
+\end{longtable}\FB
+ 
+\subsection{核（Nuclear）/放射性（Radioactive）衰變/蛻變（decay or disintegration）}
+自發自一個核種轉變成另一個核種，質量減少並轉換成能量。
+\sssc{簡史}
+\bit
+\item 1896：貝克勒（Henri Becquerel）發現鈾鹽可發出使底片感光的射線，是首次發現天然放射性，獲1903年諾貝爾物理獎。
+\item 1897：瑪麗亞•居里（Maria Curie）與皮耶•居里（Pierre Curie）夫婦發現釷具有放射性。
+\item 1898：居里夫婦發現釙和鐳，發現鐳之天然放射性約為鈾之一百萬倍，且有兩種不同射線，即後由拉塞福命名為 α 射線與 β 射線，共同獲1903年獲諾貝爾物理獎。
+\item 1899：拉塞福（Ernest Rutherford, 1st Baron Rutherford of Nelson）讓放射性元素衰變放出之射線通過磁場分離出帶正電和負電的射線，並命名之為 α 射線與 β 射線。
+\item 1900：維拉得（Paul Ulrich Villard）發現一種穿透力強且不受電磁場偏折的射線，後由拉塞福命名為 γ 射線。
+\eit
+\sssc{α 射線、β 射線、γ 射線與中子束比較表}
+\begin{longtable}[c]{|p{0.1\textwidth}|p{0.15\textwidth}|p{0.17\textwidth}|p{0.19\textwidth}|p{0.19\textwidth}|}
+\hline
+&  α 射線 &  β 射線 & γ 射線 & 中子束 \\\hline\endhead
+本體 & $^4_2$He & 電子或正電子 & 波長小於0.01奈米的電磁波 & 中子 \\\hline
+電荷 & +2e & -e 或 +e & 0 & 0 \\\hline
+靜止質量 & $\approx4.0015062$ u & $\approx0.0005486$ u & 0 & $\approx1.008665$ u \\\hline
+速度 & 通常 $\leq$0.1$c$ & 通常 0.4-0.9$c$ & $c$ & 通常 $\leq$0.1$c$ \\\hline
+能量 & 通常最小 & 通常次之 & 通常最大 & 通常最小\\\hline
+游離能力 & 強 & 中，約 α 射線百分之一 & 弱，約 β 射線百分之一 & 無\\\hline
+感光能力 & 弱 & 中 & 強 & 無 \\\hline
+穿透能力 & 弱，紙片可屏蔽，空氣中約5公分 & 中，約 α 射線百倍，1毫米金屬板可屏蔽 & 強，約 β 射線百倍，可穿透1毫米鉛板，厚金屬或混凝土牆可屏蔽 & 可穿透1毫米鉛板，富含氫者可屏蔽，如混凝土、石蠟、水 \\\hline
+產生 & α 衰變 & β 衰變 & γ 衰變、核融合、制動輻射、成對湮滅 & 人工核轉換、核分裂 \\\hline
+\end{longtable}\FloatBarrier
+\subsubsection{母核（Parent nucleus）與子核（Daughter necleus）}
+\begin{itemize}
+\item \tb{母核（Parent nucleus）}：衰變前的放射性原子核。
+\item \tb{子核（Daughter necleus）}：衰變後的原子核，可能有或沒有放射性。
+\eit
+\sssc{自發衰變（Spontaneous decay）}
+指原子核因質子間靜電排斥力強大而強力不足而不安定，故自發發生衰變反應。
+\sssc{放射性元素（Radioactive element）}
+\bit
+\item \tb{放射性原子核}：指不穩定而會自發衰變的核種，並稱其具（天然）放射性。一個元素其原子核屬放射性原子核者稱放射性同位素，否則稱穩定同位素。
+\item \tb{放射性元素}：指無穩定同位素之元素。元素週期表上者包含 Tc、Pm 與原子序大於 82 的所有元素。自然存在者包含 Ra、Ac、Th、Pa、U。
+\item \tb{超鈾元素（Transuranium elements）}：原子序大於92的元素，目前皆為人工合成。
+\eit
+
+元素週期表上元素半衰期在 10$^{15}$ 秒以上的放射性核種有：
+\begin{longtable}[c]{|p{0.25\tw}|p{0.25\tw}|p{0.25\tw}|}
+\hline
+核種 & 半衰期（年） & 半衰期（秒）\\\hline
+$_{41}^{92}$Nb & 34.724 M & 1.0958 P \\\hline
+$_{94}^{244}$Pu & 81.33 M & 2.567 P \\\hline
+$_{62}^{146}$Sm & 92.026 M & 2.9041 P \\\hline
+$_{92}^{235}$U & 703.8  M & 22.21 P \\\hline
+$_{19}^{40}$K & 1.251 G & 39.5 P \\\hline
+$_{92}^{238}$U & 4.468 G & 141.0 P \\\hline
+$_{71}^{176}$Lu & 37.64 G & 1.188 E \\\hline
+$_{75}^{187}$Re & 41.22 G & 1.301 E \\\hline
+$_{37}^{87}$Rb & 49.72 G & 1.569 E \\\hline
+$_{57}^{138}$La & 102.1 G & 3.22 E \\\hline
+$_{62}^{147}$Sm & 106.1 G & 3.35 E \\\hline
+$_{78}^{190}$Pt & 483 G & 15.2 E \\\hline
+$_{76}^{184}$Os & 11.2 T & 350 E \\\hline
+$_{64}^{152}$Gd & 108 T & 3.4 Z \\\hline
+$_{49}^{115}$In & 441 T & 13.9 Z \\\hline
+$_{76}^{186}$Os & 2.002 P & 63.2 Z \\\hline
+$_{60}^{144}$Nd & 2.292 P & 72.3 Z \\\hline
+$_{62}^{148}$Sm & 7.005 P & 221.1 Z \\\hline
+$_{48}^{113}$Cd & 7.7 P & 240 Z \\\hline
+$_{72}^{174}$Hf & 70 P & 2.2 Y \\\hline
+$_{23}^{50}$V & 140 P & 4.4 Y \\\hline
+$_{74}^{180}$W & 1.801 E & 56.8 Y \\\hline
+$_{63}^{151}$Eu & 5.004 E & 157.9 Y \\\hline
+$_{42}^{100}$Mo & 7.804 E & 246.3 Y \\\hline
+$_{60}^{150}$Nd & 7.905 E & 249.5 Y \\\hline
+$_{52}^{130}$Te & 8.806 E & 277.9 Y \\\hline
+$_{40}^{96}$Zr & 20 E & 630 Y \\\hline
+$_{83}^{209}$Bi & 20.1 E & 630 Y \\\hline
+$_{20}^{48}$Ca & 23.01 E & 726 Y \\\hline
+$_{48}^{116}$Cd & 31.02 E & 979 Y \\\hline
+$_{34}^{82}$Se & 97.5 E & 3.08 R \\\hline
+$_{56}^{130}$Ba & 1.2 Z & 38 R \\\hline
+$_{32}^{76}$Ge & 1.8 Z & 57 R \\\hline
+$_{54}^{136}$Xe & 2.165 Z & 68.3 R \\\hline
+$_{36}^{78}$Kr & 9.2 Z & 290 R \\\hline
+$_{54}^{124}$Xe & 18 Z & 570 R \\\hline
+$_{52}^{129}$Te & 2.2 Y & 69 Q \\\hline
+\end{longtable}\FB
+\sssc{α 衰變}
+母核原子序減2、質量數減4為子核。
+\sssc{β$^-$ 衰變}
+\[n \rightarrow p + e^- + \ol{\nu_e}\]
+β 衰變的一種，中子轉變成質子並放出電子（稱 β 粒子或 β$^-$ 粒子，該射線稱 β 射線或 β$^-$ 射線）與電子反微中子。母核原子序加1、質量數不變為子核。自由中子自發發生，半衰期約611.0秒，其餘中子的同位素（即原子序為零）極短。常見，故有時又稱 β 衰變。如 K-40 衰變為 Ca-40。
+\sssc{β$^+$ 衰變}
+\[p \rightarrow n + e^+ + \nu_e\]
+β 衰變的一種，中子轉變成質子並放出正電子（稱 β 粒子或 β$^+$ 粒子，該射線稱 β 射線或 β$^+$ 射線）與電子微中子。母核原子序減1、質量數不變為子核。自由質子不自發發生，核內質子可能發生，如 C-11 衰變為 B-11。
+\sssc{電子捕獲（Electron capture, EC）β 衰變/逆 β$^-$ 衰變}
+\[p + e^- \rightarrow n + \nu_e\]
+β 衰變的一種，質子吸收電子轉變成中子與電子微中子。母核原子序減1、質量數不變為子核。如 K-40 衰變為 Ar-40。
+\sssc{反微中子與微中子解決 β 衰變的角動量與能量守恆}
+反微中子與微中子提出前，β 衰變中測得 β 粒子的動能不是定值違背了理論預測，又 β 衰變角動量不受恆（差1/2自旋），故1930年包立提出有一沒有電荷、沒有質量、自旋為1/2的粒子被釋放，1933年費米命名之為微中子，1956年被實驗證實，但測得有極微小質量，小於電子質量的百萬分之一。
+\sssc{γ 衰變}
+γ 衰變為激發態（excited state）原子核放出 γ 射線躍遷到較低能量狀態的衰變，母核與子核之原子序和質量數均相同，但能階不同，損失微小質量轉換為 γ 射線的能量。α 衰變或 β 衰變後的子核通常處於不穩定激發態，故 α 衰變與 β 衰變通常伴隨著 γ 衰變。
+
+原子核躍遷（如 γ 衰變）的能量可達 MeV 量級，故為 γ 射線範圍；電子躍遷的能量僅約 eV 量級，故為紫外光以下能量範圍。
+
+激發態原子核通常在元素符號右上角加上星號，如$^{137}$Ba$^*$。
+\sssc{原子核激發態（excited state）的亞/介穩（定）（metastable）（激發）態}
+指原子核激發態中處於能量局部極小值者，因為要到達更低能量狀態需要跨越能量障壁故半衰期較長。
+
+亞穩態原子核通常在原子量右加上 m，如$^{99\tx{m}}$Tc、Tc-99m。
+\sssc{衰變鏈（Decay chain）}
+一些原子核經衰變後之子核仍會自發衰變，需經過多次衰變才能形成穩定的原子核，稱此過程為衰變鏈。
+\sssc{衰變反應}
+衰變的發生是一種機率性的過程，無法預測哪一個原子核、哪一個時刻會發生衰變，每一次的衰變都是獨立事件，其機率是其半衰期屬於原子核本身的特性，不受相（phase）、化學結合狀態、內能、壓力、地點等影響，故統計上放射性原子核的放射線強度僅依賴於實際所含放射性原子核密度。
+\sssc{半衰期/半生期（Half-life）}
+母核數量減少一半所需的時間，常以$\tau$或$T_{1/2}$表示，可用於放射性元素定年法（Radiative dating）。
+\sssc{一些放射性核種的半衰期}
+\begin{longtable}[c]{|c|c|c|c|}
+\hline
+母核 & 子核 & 衰變形式（不計 γ 衰變） & 半衰期\\\hline\endhead
+鉀-40 & 氬-40 & 電子捕獲 & \scinote{1.25}{9} 年 \\\hline
+銣-87 & 鍶-87 & β$^-$ & \scinote{4.97}{10} 年\\\hline
+碳-14 & 氮-14 & β$^-$ & $5730$ 年 \\\hline
+鈷-60 & 鎳-60 & β$^-$ & $5.27$ 年 \\\hline
+碘-131 & 氙-131 & β$^-$ & $8.04$ 日\\\hline
+鉑-190 & 鋨-186 & α & \scinote{6.50}{11} 年\\\hline
+鐳-226 & 氡-222 & α & $1600$ 年\\\hline
+鈾-238 & 釷-234 & α & \scinote{4.468}{8} 年\\\hline
+鈾-235 & 釷-231 & α & \scinote{7.04}{8} 年\\\hline
+自由中子 & 質子 &  β$^-$  & $615$ 秒\\\hline
+\end{longtable}\FB
+\sssc{生物化石碳-14定年的原理}
+\bit
+\item 地球大氣中僅有少量放射性的碳-14，大部分碳為穩定的碳-12，濃度比值約\scinote{1.3}{-12}。
+\item 碳-14會自發經 β$^-$ 衰變變為氮-14。
+\item 宇宙射線在穿過大氣層時，中子轟擊空氣中的氮-14，使發生核分裂，產生碳-14和氫-1。
+\item 碳-14衰變與氮-14核分裂達平衡，使大氣中兩者濃度比值維持一定。
+\item 生物體存活時因不斷與外界交換故碳同位素濃度比值同大氣。
+\item 生物體死亡後，碳-14衰變並不再補充，碳-12則不變，故碳-14與碳-12濃度比值下降，可以之定年。
+\eit
+\sssc{放射性活度（Specific activity）/放射性強度}
+$R$，指原子核衰變的頻率，等於母核數$N$乘以衰變常數（Decay constant）$\lambda$，後者代表每個母核單位時間發生衰變的機率。放射性活度的常用單位為居里（Curie, Ci），即一克鐳的衰變頻率，約 3.7$\times 10^{10}$ Hz，或貝克勒（Becquerel, Bq），等於赫茲。
+\subsubsection{放射性衰變定律}
+起始於$N_0$個母核的衰變的放射性活度$R$服從：
+\[R=-\dv{N}{t}=\lambda N\]
+解得：
+\[N=N_0e^{-\lambda t}\]
+
+半衰期$\tau$為：
+\[\tau=\frac{\ln(2)}{\lambda}\approx\frac{0.693}{\lambda}\]
+
+平均壽命（Mean life）$\langle t\rangle$為：
+\[\begin{aligned}
+\langle t\rangle&= \frac{-\int_{\infty}^0t\cdot N(t)\,\mathrm{d}t}{N_0}\\
+&= -\lambda\int_{\infty}^0te^{-\lambda t}\,\mathrm{d}t\\
+&= -\left(e^{-\lambda t}\left(t-\frac{1}{\lambda}\right)\right)\big\vert^0_{\infty}\\
+&= \frac{1}{\lambda}
+\eam
+\sssc{分支比（Branching ratio）/分支分數（Branching fraction）}
+對於有個具有多種衰變分支（branches）的母核，某分支的分支比為該種子核產生速率除以母核消耗速率。如 K-40 β$^-$ 衰變為 Ca-40 的分支比約 89.3\%，EC 為 Ar-40 的分支比約 10.7\%，β$^+$ 衰變為 Ar-40 的分支比接近零可忽略；C-11 β$^+$ 衰變為 B-11 的分支比約 99.8\%，EC 為 B-11 的分支比約 0.2\%。
+\sssc{衰變鏈的系列}
+衰變鏈分為四個系列：
+\bit
+\item 釷系：放射性原子核質量數為四的倍數者屬之，止於鉛-208，長壽母核種為釷-232。自然界存在。
+\item 錼系：放射性原子核質量數除以四餘一，止於鉍-209，長壽母核種為錼-237。自然界罕見。
+\item 鈾系：放射性原子核質量數除以四餘二者屬之，止於鉛-206，長壽母核種為鈾-238。自然界存在。
+\item 錒系：放射性原子核質量數除以四餘三者屬之，止於鉛-207，長壽母核種為鈾-235。自然界存在。
+\eit
+\subsubsection{釷-232（Thorium-232, Th-232）的衰變鏈}
+\begin{enumerate}
+\item Th-232 $\rightarrow$ Ra-228（經 α 衰變，半衰期：1.405億年）
+\item Ra-228 $\rightarrow$ Ac-228（經 β 衰變，半衰期：5.75年）
+\item Ac-228 $\rightarrow$ Th-228（經 β 衰變，半衰期：6.15小時）
+\item Th-228 $\rightarrow$ Ra-224（經 α 衰變，半衰期：1.91年）
+\item Ra-224 $\rightarrow$ Rn-220（經 α 衰變，半衰期：3.66天）
+\item Rn-220 $\rightarrow$ Po-216（經 α 衰變，半衰期：55.6秒）
+\item Po-216 $\rightarrow$ Pb-212（經 α 衰變，半衰期：0.145秒）
+\item Pb-212 $\rightarrow$ Bi-212（經 β 衰變，半衰期：10.64小時）
+\item[\textbullet] 64\%：
+\begin{enumerate}[start=9]
+\item Bi-212 $\rightarrow$ Tl-208（經 β 衰變，半衰期：61分鐘）
+\item Tl-208 $\rightarrow$ Pb-208（經 β 衰變，半衰期：3.05分鐘）
+\end{enumerate}
+\item[\textbullet] 36\%：
+\begin{enumerate}[start=9]
+\item Bi-212 $\rightarrow$ Po-212（經 α 衰變，半衰期：61分鐘，36\%）
+\item Po-212 $\rightarrow$ Pb-208（經 α 衰變，半衰期：0.3微秒）
+\end{enumerate}
+\item[\textbullet] Pb-208（穩定）
+\end{enumerate}
+\subsubsection{錼-237（Neptunium-237, Np-237）的衰變鏈}
+\begin{enumerate}
+\item Np-237 $\rightarrow$ Pa-233（經 α 衰變，半衰期：2,144萬年）
+\item Pa-233 $\rightarrow$ U-233（經 β 衰變，半衰期：27天）
+\item U-233 $\rightarrow$ Th-229（經 α 衰變，半衰期：15.68萬年）
+\item Th-229 $\rightarrow$ Ra-225（經 α 衰變，半衰期：7,340年）
+\item Ra-225 $\rightarrow$ Ac-225（經 β 衰變，半衰期：14.9天）
+\item Ac-225 $\rightarrow$ Fr-221（經 α 衰變，半衰期：10.0天）
+\item Fr-221 $\rightarrow$ At-217（經 α 衰變，半衰期：4.8分鐘）
+\item At-217 $\rightarrow$ Bi-213（經 β 衰變，半衰期：32.3毫秒）
+\item Bi-213 $\rightarrow$ Po-213（經 α 衰變，半衰期：45.6分鐘）
+\item Po-213 $\rightarrow$ Pb-209（經 α 衰變，半衰期：4.2微秒）
+\item Pb-209 $\rightarrow$ Bi-209（經 β 衰變，半衰期：3.25小時）
+\item Bi-209（穩定）
+\end{enumerate}
+\subsubsection{鈾-238（Uranium-238, U-238）的衰變鏈}
+\begin{enumerate}
+\item U-238 $\rightarrow$ Th-234（經 α 衰變，半衰期：4.468億年）
+\item Th-234 $\rightarrow$ Pa-234（經 β 衰變，半衰期：24.1天）
+\item Pa-234m $\rightarrow$ U-234（經 β 衰變，半衰期：1.17分鐘）
+\item U-234 $\rightarrow$ Th-230（經 α 衰變，半衰期：24.5萬年）
+\item Th-230 $\rightarrow$ Ra-226（經 α 衰變，半衰期：7,538年）
+\item Ra-226 $\rightarrow$ Rn-222（經 α 衰變，半衰期：1,600年）
+\item Rn-222 $\rightarrow$ Po-218（經 α 衰變，半衰期：3.825天）
+\item Po-218 $\rightarrow$ Pb-214（經 α 衰變，半衰期：3.1分鐘）
+\item Pb-214 $\rightarrow$ Bi-214（經 β 衰變，半衰期：26.8分鐘）
+\item Bi-214 $\rightarrow$ Po-214（經 β 衰變，半衰期：19.9分鐘）
+\item Po-214 $\rightarrow$ Pb-210（經 α 衰變，半衰期：164微秒）
+\item Pb-210 $\rightarrow$ Bi-210（經 β 衰變，半衰期：22.3年）
+\item Bi-210 $\rightarrow$ Po-210（經 β 衰變，半衰期：5天）
+\item Po-210 $\rightarrow$ Pb-206（經 α 衰變，半衰期：138.4天）
+\item[\textbullet] Pb-206（穩定）
+\end{enumerate}
+\subsubsection{鈾-235（Uranium-235, U-235）的衰變鏈}
+鈾-235是今核電廠主要燃料。
+\begin{enumerate}
+\item U-235 $\rightarrow$ Th-231（經 α 衰變，半衰期：7.04億年）
+\item Th-231 $\rightarrow$ Pa-231（經 β 衰變，半衰期：25.52小時）
+\item Pa-231 $\rightarrow$ Ac-227（經 β 衰變，半衰期：3.28萬年）
+\item Ac-227 $\rightarrow$ Th-227（經 β 衰變，半衰期：21.77年）
+\item Th-227 $\rightarrow$ Ra-223（經 α 衰變，半衰期：18.68天）
+\item Ra-223 $\rightarrow$ Rn-219（經 α 衰變，半衰期：11.43天）
+\item Rn-219 $\rightarrow$ Po-215（經 α 衰變，半衰期：3.96秒）
+\item Po-215 $\rightarrow$ Pb-211（經 α 衰變，半衰期：1.78毫秒）
+\item Pb-211 $\rightarrow$ Bi-211（經 β 衰變，半衰期：36.1分鐘）
+\item Bi-211 $\rightarrow$ Tl-207（經 α 衰變，半衰期：2.14分鐘）
+\item Tl-207 $\rightarrow$ Pb-207（經 β 衰變，半衰期：4.77分鐘）
+\item[\textbullet] Pb-207（穩定）
+\end{enumerate}
+\subsubsection{鈾-239（Uranium-239, Pu-239）的衰變鏈}
+\begin{enumerate}
+\item U-239 $\rightarrow$ Np-239（經 β 衰變，半衰期：23.45分鐘）
+\item Np-239 $\rightarrow$ Pu-239（經 β 衰變，半衰期：2.36天）
+\item Pu-239 $\rightarrow$ U-235（經 α 衰變，半衰期：24,110年）
+\item[\textbullet] 進入鈾-235的衰變鏈。
+\end{enumerate}
+\subsubsection{鈾-233（Uranium-233, U-233）的衰變鏈}
+\begin{enumerate}
+\item U-233 $\rightarrow$ Th-229（經 α 衰變，半衰期：159,200年）
+\item[\textbullet] 進入錼-237的衰變鏈
+\end{enumerate}
+\subsubsection{鈾-232（Uranium-232, U-232）}
+\begin{enumerate}
+\item U-232 $\rightarrow$ Th-228（經 α 衰變，半衰期：68.9年）
+\item[\textbullet] 進入釷-232的衰變鏈。
+\end{enumerate}
+\subsubsection{生物游離輻射曝露的影響}
+生物曝露於游離輻射時，會游離體內分子、改變生化反應、抑制細胞生成、加速細胞凋亡、造成基因突變等，生物具有一定自我修復能力，故較低劑量不會表現出危害，但過高劑量使無法修復會引起局部或全身病變甚至死亡。
+
+\bit
+\item 體外防護容易程度：α 射線 >  β 射線 > γ 射線
+\item 進入體內損害程度：α 射線 >  β 射線 > γ 射線
+\eit
+\subsubsection{生物游離輻射曝露的劑量}
+西弗（Sievert, Sv）：衡量輻射曝露等效劑量之單位，每公斤生物組織吸收一焦耳輻射能稱一西弗。生物輻射曝露的常用單位為毫西弗（mSv）
+
+常見游離輻射曝露之劑量：
+\bit
+\item 口腔 X 光攝影：0.01 mSv/次。
+\item 中華民國核電廠界外年劑量法規限值 0.5 mSv/yr。
+\item 乳房 X 光攝影：0.7 mSv/次。
+\item 臺灣人接受天然背景輻射劑量：1.6 mSv/yr。
+\item 腸胃道鋇劑攝影：8 mSv/次。
+\item 冠狀動脈電腦斷層掃描（CT Coronary Angiogram）：16 mSv/次。
+\item 輻射工作人員年劑量限值：20 mSv/yr。
+\item 全身一次急性曝露造成噁心、嘔吐：1000$\sim$2000 mSv。
+\item 鈷 60 遠隔治療（Co-60 Teletherapy）：2000 mSv。
+\item 全身一次急性曝露致死：6000 mSv。
+\item 癌症放射治療總劑量：20000$\sim$100000 mSv。
+\eit
+
+人體受不同劑量游離輻射曝露的通常影響程度：
+\bit
+\item 0-250 mSv：無顯著傷害。
+\item 250-500 mSv：血液變化，無顯著傷害。
+\item 500-1000 mSv：血球變化，疲勞感，有傷害。
+\item 1000-2000 mSv：組織變化，可能全身無力感，顯著傷害。
+\item 2000-4000 mSv：組織變化，全身無力感，可能昏厥，顯著傷害，體弱者可能死亡。
+\item 4000-6000 mSv：組織變化，昏厥，顯著傷害，約百分之五十致死。
+\item 6000 mSv 以上：組織變化，昏厥，顯著傷害，極可能致死。
+\eit
+\sssc{核衰變放射源游離空氣的煙霧偵測器}
+兩塊金屬片極板分別接上電池的兩極，相不接觸，放射性核種（通常是鋂-241）放出游離輻射游離煙霧偵測器中與外界相通的空氣，帶負電的電子與帶正電的離子分別被兩極板吸引，安培計測得電流。當煙霧進入時，塵粒吸附游離的粒子使質量變重，安培計測得電流減弱，觸發警報。此種煙霧偵測器最常見，另一種較少見者為光電效應煙霧偵測器。
+
+
+\subsection{（成對）毀滅/對消/（成對）湮滅（(pair) annihilation）}
+正反基本粒子相互作用，該二粒子消失並生成其他基本粒子，質量減少並轉換成能量。
+\sssc{電子–正電子湮滅（Electron–positron annihilation）/電子對湮滅}
+低能量時由電磁交互作用主導，產生兩個光子，電子與正電子的全部靜止質量和動能轉換為光子的能量，屬 γ 射線：
+\[^0_{-1}e + ^0_1e \to 2\gamma\]
+
+此反應極常見，如香蕉約每75分鐘由於 K-40 β$^+$ 衰變為 Ar-40 釋出一個正電子，並立即與鄰近的電子成對湮滅。
+
+\subsection{人工核轉換/核嬗（shàn）變（Artificial nuclear transmutation）}
+人工自一個核種轉變成另一個核種，質量減少並轉換成能量。
+\sssc{質子的發現}
+1919年，拉塞福在真空室中以 α 粒子轟擊氮原子核，發現一種帶有與電子等量異性電荷、質量遠大於電子的粒子，次年發現即氫-1核，命名為質子：
+\[^4_2\mathrm{He} + ^{14}_7\mathrm{N} \rightarrow ^{17}_8\mathrm{O} + ^1_1p\]
+是史上首次人工核反應，也是史上首次用人工方法改變核種。
+\sssc{中子的發現}
+\[^4_2\mathrm{He} + ^9_4\mathrm{Be} \rightarrow ^{12}_6\mathrm{C} + ^1_0n\]
+\bit
+\item 1920年，拉塞福預測原子核中還有一種不帶電且質量與質子相近的粒子，稱中子。
+\item 1931年，波特發現釙發出的 α 射線落在鈹、硼或鋰上會產生一種穿透力極強且不受電場影響的射線。
+\item 同年，居里夫婦重做該實驗，並以之入射在石蠟板上發現其放出質子，以為該射線是 γ 射線。
+\item 1932年，查兌克在真空室中以 α 粒子轟擊鈹原子核，產生比 γ 射線穿透力更強且不受電場影響的高能中子束，確認原子核由質子和中子兩種核子組成。
+\eit
+\sssc{居里夫婦發現人工誘發放射性（Artificial induced radioactivity）}
+1934年，居里夫婦以 α 粒子轟擊鋁-27得磷-31並快速放出中子變成磷-30：
+\[^4_2\mathrm{He} + ^{27}_{13}\mathrm{Al} \rightarrow ^{31}_{15}\mathrm{P}^* \rightarrow ^{30}_{15}\mathrm{P} + ^1_0n\]
+磷-30 會行 β$^+$ 衰變，是首次人工產生放射性元素，稱人工誘發放射性（Artificial induced radioactivity）：
+\[^{30}_{15}\mathrm{P} \rightarrow ^{30}_{14}\mathrm{Si} + ^0_{-1}e + ^0_0\nu\]
+人工誘發放射性可用於醫學、生物、工業等，共同獲1935年諾貝爾化學獎。
+\sssc{費米的中子轟擊原子核實驗}
+1932年，費米（Enrico Fermi）以中子轟擊各原子序的原子核，發現其會進入不穩定激發態後經 β 衰變轉變成原子序多一的原子核。
+\sssc{鉛核轉換為金}
+1980年，西博格（Glenn T. Seaborg）在加速器內轟擊鉛-209 β 衰變得到的鉍-209使核轉變為金-197，惟成本遠超過產物價值。
+
+\subsection{中子作為核反應彈體}
+\sssc{與帶正電粒子相比}
+中子不帶電，不會被帶正電的原子核散射，故深入原子核時所需能量要比質子、α 粒子少，因而不需要1930年代尚不存在的粒子加速器即可誘發核反應。
+\sssc{慢中子/熱中子}
+約等於室溫下的氣體分子的速率，能量約40電子伏特。比高能量的快中子（例如核分裂釋出的中子）轟擊原子誘發核反應（核分裂或人工核轉換）更有效。
+
+1934年，費米團隊發現在木質工作臺上進行中子轟擊原子核誘發核反應之實驗比在大理石工作臺上更為順利，費米故以石蠟實驗，分別用一般中子與經石蠟層減速的中子轟擊了銀原子，發現後者人工誘發放射性的效果是前者的百餘倍，並發現將減速介質換成水亦有類似效果，故提出與氫原子碰撞後的慢中子更易誘發核反應。費米後並以慢中子轟擊鈾製得原子序93的錼，是首次製得超鈾元素，獲1938年諾貝爾物理獎。
+
+\subsection{核分裂（Nuclear fission）}
+一個原子核分裂成兩個或多個較輕的原子核，質量減少並轉換成能量。
+\subsubsection{核分裂反應}
+\bit
+\item 反應物：中子轟擊原子核，原子核捕捉（capture）一個中子，發生核分裂反應。
+\item 產物：核分裂時，分裂成兩個原子核，並放出快中子，產物每次並不相同，可觀察到在質量數-產量比例圖有兩個高峰的分布。
+\bctf\icg[width=0.8\tw]{fission.png}\cpt{JWB, 2008.}\efct
+\item 釋放能量：核分裂反應後總質量減少，服從愛因斯坦質能互換公式$E=(\Delta m)c^2$轉換成能量。
+\item \tb{連鎖/鏈鎖反應（Chian reaction）}：核分裂產生的中子可被核捕獲再次參與其他核分裂反應，使核分裂可持續不斷地進行。
+\item \tb{臨界質量（Critical mass）}：足以持續核分裂鏈鎖反應的最小質量。
+\eit
+\sssc{U-235 與 Pu-239}
+天然鈾礦含有約 99.3\% 的 U-238 與約 0.7\% 的 U-235。U-238 受中子撞擊不會核分裂，而會吸收中子，形成 U-239 的激發態，而後 β 衰變成 Np-239，再 β 衰變成 Pu-239：
+\[^1_0n + ^{238}_{92}\tx{U} \to ^{239}_{92}\tx{U}^* \to ^{239}_{93}\tx{Np} + ^0_{-1}e + ^0_1\ol{\nu}\]
+\[^{239}_{93}\tx{Np} \to ^{239}_{94}\tx{Pu} + ^0_{-1}e + ^0_1\ol{\nu}\]
+
+Pu-239 和 U-238 化學性質不同，較易分離；U-235 和 U-238 化學性質相同，僅密度稍微不同，較難分離。U-235 是最常用的核分裂材料，常用於核電廠、原子彈（Atomic bomb）等；Pu-239 是次常用的核分裂材料，常用於原子彈等。
+\sssc{氣體擴散法（Gaseous diffusion）濃縮鈾}
+用氟將鈾礦氧化成 \ce{UF6(g)}，再使通過氣體擴散器，其中有多孔膜，輸入流進入膜內，膜內壓力高於膜外，依據格雷姆定律（Graham's Law），$^{235}$UF$_6$ 通過孔隙的速率約是 $^{238}$UF$_6$ 的 1.004 倍，故通過膜者較不通過膜者有較高 $^{235}$UF$_6$ 濃度，反覆為之可濃縮 $^{235}$UF$_6$。此法已被認為過時。
+\sssc{氣體離心法（Gas centrifuge）濃縮鈾}
+用氟將鈾礦氧化成 \ce{UF6(g)}，再使進入高速旋轉的氣體離心機，密度較大的 $^{238}$UF$_6$ 在外，密度較小的 $^{235}$UF$_6$ 在外，通過級聯氣體離心機，每臺離心機接收一個輸入流並將重組分和輕組分分別輸出至較輕方向和較重方向的下一臺氣體離心機，由此在兩方向最後一臺離心機可分別收集較純的 $^{235}$UF$_6$ 和 $^{238}$UF$_6$。此法消耗的能量遠低於氣體擴散法。
+\subsubsection{U-235 的核分裂}
+U-235 核分裂主要反應如：
+\[^{235}_{92}\tx{U}+^1_0n\rightarrow ^{143}_{56}\tx{Ba}+^{90}_{36}\tx{Kr}+3^1_0n\]
+\[^{235}_{92}\tx{U}+^1_0n\rightarrow ^{141}_{56}\tx{Ba}+^{92}_{36}\tx{Kr}+3^1_0n\]
+\[^{235}_{92}\tx{U}+^1_0n\rightarrow ^{144}_{55}\tx{Cs}+^{90}_{37}\tx{Rb}+2^1_0n\]
+\[^{235}_{92}\tx{U}+^1_0n\rightarrow ^{144}_{54}\tx{Xe}+^{92}_{38}\tx{Sr}+2^1_0n\]
+總質量減少而轉換為動能，產生原子核又各經幾次 β、γ 衰變才變成穩定的原子核。
+
+以第一個反應為例，各粒子質量：
+\bit
+\item $^{235}_{92}\tx{U}$：235.043924 u
+\item $^1_0n$：1.008665 u
+\item $^{143}_{56}\tx{Ba}$：142.920483 u
+\item $^{90}_{36}\tx{Kr}$：89.919528
+\eit
+各粒子質量：
+\bit
+\item $^{235}_{92}\tx{U}$：235.043924 u
+\item $^1_0n$：1.008665 u
+\item $^{143}_{56}\tx{Ba}$：142.920483 u
+\item $^{90}_{36}\tx{Kr}$：89.919528
+\eit
+質量減少 $\Delta m\approx$0.186583 u，約 0.0790\%，放出的能量為：
+\[E=(\Delta m)c^2\approx 173.80\tx{\ MeV}\approx\scinote{2.7846}{-11}\tx{\ J}\]
+每公斤 U-235 約釋放 \scinote{7.1345}{13} J 的能量，約是煤炭的 2 M 倍，其中約有百分之二十被中子、γ 射線、反微中子等帶走而無法利用。
+\sssc{原子彈（Atomic bomb）}
+理論上濃度 20\% 以上的 U-235 即可製成原子彈，現實際多使用濃度 90\% 以上。
+
+簡史：
+\bit
+\item 1941年，美國在國防研究委員會（National Defense Research Committee, NDRC）支持下展開研究；康普頓與費米算出 U-235 的臨界質量。
+\item 1942年，費米在美國芝加哥大學足球場看臺下的板球場內建造史上首座核反應爐——芝加哥1號堆（Chicago Pile-1, CP-1），封裝在一個立方體二氧化碳氣球內，由45000個石墨磚塊19000塊鈾金屬和氧化鈾構成，第一層完全由石墨塊構成，而後不含鈾的層與含鈾的兩層交替出現，沒有輻射屏蔽或冷卻系統，於1942年12月2日產生可控的鈾分裂連鎖反應，產生 Pu-239，最初輸出功率為0.5瓦特，證實受控核分裂的可行性。
+\item 1942年，美國為贏得第二次世界大戰，羅斯福總統徵集科學精英，開始曼哈頓計畫（Manhattan Project），研發 U-235 和 Pu-239 原子彈。
+\item 1945年6月16日，美國奧本海默、班布里奇、費米等在新墨西哥州索科羅縣（Socorro, New Mexico）的托立尼提沙漠（the Jornada del Muerto desert）進行三位一體（Trinity）核試驗，是史上首次核爆炸。
+\item 1945年8月6日，美國在日本廣島（Hiroshima）投下濃縮鈾槍式（Enriched uranium gun-type）的小男孩（Little Boy）原子彈，濃度約 80\%。
+\item 1945年8月9日，美國在日本長崎（Nagasaki）投下鈽內爆式（Plutonium implosion-type）的胖子（Fat Man）原子彈。
+\eit
+\subsubsection{核電廠（Nuclear power plant, NPP）}
+核電廠的主要元件有：
+\bit
+\item 反應器（Reactor）/原子爐：內含核燃料、中子減速劑、控制棒、冷卻劑。
+\item 核燃料（Nuclear fuel）/燃料棒（Fuel rods）：通常是 3\% 至 5\% U-235。
+\item 中子減速劑（Neutron moderator）：重水或石墨，使快中子變成慢中子。
+\item 控制棒（Control rods）：通常是硼酸鹽棒或鎘棒，可吸收中子，以控制反應速率。
+\item 飼水泵（bòng）/鍋爐給水泵（Boiler feedwater pump）：將水打入反應器。
+\item 冷卻劑（Coolant）：水，吸熱蒸發後前往蒸氣渦輪發電機。
+\item 蒸氣渦輪發電機：水蒸氣推動渦輪機，帶動發電機發電。
+\item 海水抽水站：抽冷海水給冷卻塔使用。
+\item 冷卻塔（Cooling tower）/凝結器：用海水冷卻發電後的水蒸氣，廢熱隨海水排回海洋，水蒸氣冷卻凝結成水後，由飼水泵打入反應器再次受熱。
+\item 核反應堆安全殼（Containment building）：封閉核反應器的鋼筋、混凝土或鉛結構。
+\eit
+
+\subsection{核融合（Nuclear fusion）}
+兩個原子核融合成一個更重的原子核，質量減少並轉換成能量。
+\subsubsection{核融合反應的條件}
+\bit
+\item 輕核：太陽及以下能量環境通常為氕（piē）（protium）$^1_1$\rmH、氘（dāo）（deuterium）$^2_1$\rmH/D、氚（chuān）（tritium）$^3_1$\rmH/T、$^3_2$\tx{He}等輕核。
+\item 高溫：$10^9$ K 以上的高溫，使電漿中的原子核（此溫度電子全數游離）有足夠動能得以克服電斥力。因為核融合需要此種高溫，故稱熱核反應。若欲人工重現太陽的核融合反應約需要 \scinote{5}{9} K 以上的高溫。
+\item 高壓：足夠大的粒子密度，使碰撞機率增加。
+\item 時間：足夠長的拘束時間。
+\eit
+\sssc{氘與氚的核融合}
+\[^2_1\tx{H} + ^3_1\tx{H} \to ^4_2\tx{He} + ^1_0n\]
+各粒子質量：
+\bit
+\item $^2_1\tx{H}$：2.014102 u
+\item $^3_1\tx{H}$：3.016050 u
+\item $^4_2\tx{He}$：4.002603 u
+\item $^1_0n$：1.008665 u
+\eit
+質量減少 $\Delta m\approx$0.018884 u，約 0.3754\%，放出的能量為：
+\[E=(\Delta m)c^2\approx 17.59\tx{\ MeV}\approx\scinote{2.818}{-12}\tx{\ J}\]
+每公斤反應物約釋放 \scinote{3.3737}{14} J 的能量，約是煤炭的 10 M 倍、U-235 核分裂的 4 倍。
+\subsubsection{質子-質子鏈反應（proton-proton chain, p-p chain）}
+\ben
+\item 兩個氕核融合成一個氘核並放出一個正電子和一個微中子：
+\[2^1_1\tx{H}\ra ^2_1\tx{H}+^0_1e+^0_0\nu\]
+\item 一個氘核和一個氕核核融合成一個 He-3 核並放出 γ 射線：
+\[^2_1\tx{H}+^1_1\tx{H}\ra^3_2\tx{He}+\gamma\]
+\item 兩個 He-3 核核融合成一個 He-4 核並放出兩個質子：
+\[2^3_2\tx{He}\ra^4_2\tx{He}+2^1_1\tx{H}\]
+\een
+淨反應為逆 β 衰變：
+\[4^1_1\tx{H}\ra^4_2He+2^0_1e+2^0_0\nu+2\gamma\]
+放出能量約26.7MeV$\approx4.27\times 10^{-12}$ J。
+
+質子-質子鏈反應在太陽及以下質量的恆星占主導地位。
+
+太陽表面溫度約6000 K但內部溫度可達15 MK以上，每日約消耗5.13$\times 10^{16}$ kg的氫融合成氦，放出約3.4$\times 10^31$ J的能量，功率約3.9$\times 10^{29}$ W，每秒約有五十兆個微中子穿過一個人體，但微中子與其他物質交互作用極弱。
+
+1938年，貝特（Hans Albrecht Bethe）提出關於恆星核融合的理論，指出恆星的能量來自其內部的核融合反應。
+\subsubsection{碳氮氧循環（CNO cycle）/貝斯-魏茨澤克循環（Bethe-Weizsäcker cycle）}
+碳氮氧-I 分支反應式：
+\[^12\rmC + ^1\rmH\ra^13\rmN + \gamma+1.95 \tx{MeV}\]
+\[^13\rmN\ra^13\rmC + e^+ + \nu+2.22 \tx{MeV}\]
+\[^13\rmC + ^1\rmH\ra^14\rmN + \gamma+7.54 \tx{MeV}\]
+\[^14\rmN + ^1\rmH\ra^15\rmO +\gamma+7.35 \tx{MeV}\]
+\[^15\rmO\ra^15\rmN + e^+ + \nu+2.75 \tx{MeV}\]
+\[^15\rmN + ^1\rmH\ra^12\rmC + ^4\rmHe+4.96 \tx{MeV}\]
+這個循環的淨效應是4個質子成為一個α粒子、2個正電子（和電子湮滅，以γ射線的形式釋放出能量）和2個攜帶著部分能量逃逸出恆星的電子微中子。
+
+碳氮氧-I 分支是碳氮氧循環的主要分支，具有$^17\rmF$與$^17\rmO$的碳氮氧-II 次之，較重的恆星還有碳氮氧-III和碳氮氧-IV分支及氧氟循環。
+
+碳氮氧循環在質量大於太陽的恆星中占主導地位。太陽只有1.7\%的氦-4核是經由碳氮氧循環的過程產生的。
+\subsubsection{氫彈（Hydrogen bomb）}
+氫彈是由內藏小型原子彈開啟無控制的核融合反應，其威力可達投於廣島的原子彈之千倍，故被稱為超級炸彈（super bomb）。
+
+\[2^2_1\tx{H} \ra ^3_1\tx{H} + ^1_1\tx{H} + \scinote{7.5}{7}\tx{kJ/mol}\]
+\[^2_1\tx{H} + ^3_1\tx{H} \ra ^4_2\tx{He} + ^1_0n + \scinote{1.7}{9}\tx{kJ/mol}\]
+
+1952年11月1日，美國在太平洋的埃內韋塔克環礁伊魯吉拉伯島（the island of Elugelab in Enewetak Atoll）進行常春藤麥克（Ivy Mike）氫彈試爆，釋放的能量約相當於投於廣島的原子彈的五百倍，整個珊瑚島礁汽化消失。
+\subsubsection{核融合能源（Fusion power）}
+核融合無輻射汙染，碳排放亦遠低於燃燒化石燃料，目前主要嘗試氘核和氚核核融合成$^4_2$He 核與中子的可控核融合，所需核燃料氘和氚只需從海水提煉，且不會發生核分裂失控時災難性的爐心熔解，若無法控制使電漿狀態不穩定核融合隨即停止，故是極為乾淨且安全的能源，但目前仍無成功的商用方案。目前核融合實驗大致可分兩類：
+\bit
+\item 用電磁鐵產生的強磁場將高溫電漿集中在一個環型的空間內，目前仍難以維持穩定的淨輸出能量，最著名的計畫是由中國、歐盟、印度、日本、俄羅斯、韓國和美國七個成員國建造於法國的國際熱核融合實驗反應爐（International Thermonuclear Experimental Reactor, ITER）。
+\item 用多束高能量雷射光照射氘、氚組成的球狀燃料球，外部因瞬間加熱而等離子化，往內部爆炸產生核融合，重大計畫如美國的國家點火設施（National Ignition Facility）。
+\eit
+
+\subsection{原子核的束縛能/結合能（Binding energy, B.E.）}
+\subsubsection{原子核的束縛能/結合能（Binding energy, B.E.）}
+原子核內受有強力束縛，將所有核子分開所需加入的最小能量稱該原子核的束縛能$E$，該加入的能量轉換為系統質量的增加，令分離後的核子總質量減去穩定原子核質量 $\Delta m$，即形成穩定原子核的質量虧損（mass defect）：
+\[E=(\Delta m)c^2\]
+
+設穩定中性$^{A}_{Z}\rmX$原子之質量$m_{\rmX}$、原子核束縛能$E$、$N=A-Z$，氫原子之質量$m_{\rmH}$，中子之質量$m_n$，真空光速$c$，則：
+\[m_{\rmX}=Zm_{\rmH}+Nm_n-A\frac{E}{c^2}\]
+其中$\rmZ m_{\rmH}$與$m_{\rmX}$均有$Z$個電子質量。
+
+以$^4_2\tx{He}$為例，反應式：
+\[^4_2\tx{He} \to 2 ^1_1p+2^1_0n+E\]
+各粒子質量：
+\bit
+\item $^1_1\tx{H}$：1.007825 u
+\item $^4_2\tx{He}$：4.002603 u
+\item $^1_0n$：1.008665 u
+\eit
+故：
+\[E=(2\times 1.007825+2\times 1.008665-4.002604)\text{\ u\ }c^2=0.030376\text{\ u\ }c^2=28.295065\text{\ MeV}\]
+\subsubsection{（核子）束縛能/結合能（Binding energy, Eb）}
+指原子核的束縛能除以其質量數。如$^4_2\rm{He}$的核子束縛能為 $7.073766\tx{\ MeV}$。
+
+若每個原子核中兩個核子之間的束縛能均同，則原子核束縛能應正比於$\frac{A(A-1)}{2}$，故核子束縛能與質量數完全正相關，但實際上強力作用距離短，較遠的核子間交互作用和為斥力，故核子束縛能-質量數曲線在$^{56}$Fe的 8.75 MeV 附近達到最大後開始緩降，到$^{238}$U時為 7.6 MeV。因此，略以質量數62為界，以下核融合放能、核分裂吸能，以上核融合吸能、核分裂放能，這解釋了為何恆星核融合產生鐵後開始降溫，進而無法抵抗自身重力。
+\end{document}

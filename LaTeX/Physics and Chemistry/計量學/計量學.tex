@@ -1,0 +1,164 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{計量學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\sct{計量學（Metrology）}
+\ssc{國際單位制/SI 制（Système International d'Unités, International System of Units, SI）}
+國際單位制由一組七個定義常數（defining constants）以及七個相應的基本單位（base units）、導出單位（derived units）和一組十進位制乘數前綴，基本單位基於定義常數定義，導出單位則由基本單位的冪的乘積構成。
+\sssc{簡史}
+\bit
+\item 源於法國大革命期間所採用的十進制單位系統——公制/米制（Système métrique, metric system）。
+\item 1875年，簽訂米制公約（Convention du Mètre, Metre Convention），建立國際度量衡局（Bureau international des poids et mesures, International Bureau of Weights and Measures, BIPM）、國際度量衡大會（Conférence générale des poids et mesures, General Conference on Weights and Measures, CGPM）與國際度量衡委員會（Comité international des poids et mesures, International Committee for Weights and Measures, CIPM）。
+\item 1948年，第九屆國際計量大會（CGPM）委託進行一項研究，評估科學、技術和教育界的測量需求，並「為所有遵守《米制公約》的國家製定一個適用的單一計量單位體系提出建議」。
+\item 1954年，第十屆國際度量衡大會基於公尺/米-公斤-秒單位制（metre, kilogram, second system of units, MKS system of units）決定建立國際單位制/SI 制（Système International d'Unités, International System of Units, SI）。
+\item 1960年，第十一屆國際度量衡大會通過採納國際單位制，其中，依賴國際公斤原器（International Prototype of the Kilogram）定義的公斤是唯一一個依賴人造實物定義的國際單位制基本單位。
+\item 2018年，第二十六屆國際度量衡大會上通過採納重新定義公斤的提案，並於2019年5月開始生效。至此，SI 制的定義方式成為固定七個常數的值，使得無論是基本單位或導出單位，都可以直接從定義常數建構出來。
+\eit
+\sssc{（物理）量（(Physical) quantity）}
+物理量或數量是材料或系統可以透過測量來量化的性質。
+\sssc{SI 定義常數（SI defining constants）}
+定義常數的不確定度被定義為零。
+\begin{longtable}[c]{|p{0.15\tw}|p{0.35\tw}|p{0.3\tw}|}
+\hline
+Symbol & Defining constant & Exact value \\\hline\endhead
+$\Delta\nu_{\mathrm{Cs}}$ & hyperfine transition frequency of $^{133}$Cs ($^{133}$Cs 的超精細躍遷頻率) & $9192631770$ Hz \\\hline
+$c$ & speed of light in vacuum (真空光速) & $299792458$ m/s \\\hline
+$h$ & Planck constant (普朗克常數) & \scinote{6.62607015}{-34} J s \\\hline
+$e$ & elementary charge (基本電荷) & \scinote{1.602176634}{-19} C \\\hline
+$k$ (or $k_B$) & Boltzmann constant (波茲曼常數) & \scinote{1.380649}{-23} J/K \\\hline
+$N_A$ (or $N_0$) & Avogadro constant (亞佛加厥常數) & \scinote{6.02214076}{23} mol$^{-1}$ \\\hline
+$K_{cd}$ & luminous efficacy of monochromatic radiation source at $540$ THz ($540$ THz 單色輻射源的發光效率) & $683$ lm/W \\\hline
+\end{longtable}\FB
+\sssc{SI 基本單位（SI base units）}
+\begin{longtable}[c]{|p{0.13\tw}|p{0.08\tw}|p{0.1\tw}|p{0.15\tw}|p{0.08\tw}|p{0.26\tw}|}
+\hline
+Unit name & Unit symbol & Dimension (因次/量綱) symbol & Quantity name & Typical symbol & Definition \\\hline\endhead
+second (秒) & s & $\mathsf{T}$ & time (時間) & $t$ & The duration of 9192631770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium-133 atom. \\\hline
+metre/meter (公尺/米) & m & $\mathsf{L}$ & length (長度) & $l$, $x$, $r$, $d$, $\ell$, $L$, $D$ etc. & The distance travelled by light in vacuum in $\frac{1}{299792458}$⁠ second. \\\hline
+kilogram (公斤) & kg & $\mathsf{M}$ & mass (質量) & $m$ & The kilogram is defined by setting the Planck constant $h$ to \scinote{6.62607015}{-34} kg m$^2$ s$^{-1}$. \\\hline
+ampere (安培) & A & $\mathsf{I}$ & electric current (電流) & $I$ & The flow of ⁠$\frac{1}{\scinote{1.602176634}{-19}}$⁠ times the elementary charge e per second. \\\hline
+kelvin (克耳文) & K & $\upTheta$ & thermodynamic temperature (熱力學溫度) & $T$ & The kelvin is defined by setting the Boltzmann constant $k$ to \scinote{1.380649}{-23} kg m$^2$ s$^{-2}$ K$^{-1}$. \\\hline
+mole (莫耳) & mol & $\mathsf{N}$ & amount of substance (物量) & $n$ & The amount of substance of \scinote{6.02214076}{23} elementary entities. \\\hline
+candela (燭光) & cd & $\mathsf{J}$ & luminous intensity (發光強度) & $I_{\mathrm{v}}$ & The luminous intensity, in a given direction, of a source that emits monochromatic radiation of frequency \scinote{5.4}{14} s$^{-1}$ and that has a radiant intensity in that direction of $\frac{1}{683}$ kg m$^2$ s$^{-3}$ sr$^{-1}$. \\\hline
+\end{longtable}\FB
+\sssc{因次/量綱（Dimension）}
+表示物理量與基本物理量，即時間$\mathsf{T}$、長度$\mathsf{L}$、質量$\mathsf{M}$、電流$\mathsf{I}$、熱力學溫度$\upTheta$、物量$\mathsf{N}$和發光強度$\mathsf{J}$，的關係。物理量$q$的因次，記作$[q]$，如：$[\text{power}]=\mathsf{M} \mathsf{L}^2\mathsf{T}^{-3}$。
+\sssc{SI 導出/派生單位（SI derived units）}
+The 22 SI derived units with special names and symbols are:
+\begin{longtable}[c]{|p{0.3\tw}|p{0.15\tw}|p{0.2\tw}|p{0.15\tw}|}
+\hline
+Name & Symbol & Quantity & In SI base units \\\hline\endhead
+radian (弧度/弳（度）) & rad & angle (角度) & 1 \\\hline
+steradian or square radian (球面度/立弳) & sr & solid angle (立體角) & 1 \\\hline
+hertz (赫茲) & Hz & frequency (頻率) & s$^{-1}$ \\\hline
+newton (牛頓) & N & force (力) & kg m s$^{-2}$ \\\hline
+pascal (帕斯卡/帕) & Pa & pressure (壓力) & kg m$^{-1}$ s$^{-2}$ \\\hline
+joule (焦耳) & J & energy (能量), work (功), heat (焓) & kg m$^2$ s$^{-2}$ \\\hline
+watt (瓦特/瓦) & W & power (功率), radiant flux (輻射通量) & kg m$^2$ s$^{-3}$ \\\hline
+coulomb (庫侖) & C & electric charge (電荷) & s A \\\hline
+volt (伏特) & V & electric potential difference (電位差), voltage (電壓) & kg m$^2$ s$^{-3}$ A$^{-1}$ \\\hline
+farad (法拉) & F & capacitance (電容) & kg$^{-1}$ m$^{-2}$ s$^4$ A$^2$ \\\hline
+ohm (歐姆) & Ω & electrical resistance (電阻) & kg m$^2$ s$^{-3}$ A$^{-2}$ \\\hline
+siemens (西門子) & S & electrical conductance (電導率) & kg$^{-1}$ m$^{-2}$ s$^3$ A$^2$ \\\hline
+weber (韋伯) & Wb & magnetic flux (磁通量) & kg m$^2$ s$^{-2}$ A$^{-1}$ \\\hline
+tesla (特斯拉) & T & magnetic flux density (磁通量密度) & kg s$^{-2}$ A$^{-1}$ \\\hline
+henry (亨利) & H & inductance (電感) & kg m$^2$ s$^{-2}$ A$^{-2}$ \\\hline
+degree Celsius (攝氏度) & °C & Celsius temperature (攝氏溫度) & $x$°C = ($x$+273.15) K \\\hline
+lumen (流明) & lm & luminous flux (光通量) & cd sr \\\hline
+lux (勒克斯) & lx & illuminance (照度) & cd sr m$^{-2}$ \\\hline
+becquerel (貝克勒) & Bq & specific activity (放射性活度) & s$^{-1}$ \\\hline
+gray & Gy & absorbed dose (吸收劑量), kerma (比釋動能) & m$^2$ s$^{-2}$ \\\hline
+sievert (西弗) & Sv & equivalent dose (等效劑量) & m$^2$ s$^{-2}$ \\\hline
+katal (開特) & kat & catalytic activity (催化活度/活性/活力) & mol s$^{-1}$ \\\hline
+\end{longtable}\FB
+\sssc{SI 前綴（SI prefixes）}
+\begin{longtable}[c]{|p{0.15\tw}|p{0.15\tw}|p{0.15\tw}|}
+\hline
+Name & Symbol & Base 10 \\\hline\endhead
+quetta & Q & $10^{30}$ \\\hline
+ronna & R & $10^{27}$ \\\hline
+yotta & Y & $10^{24}$ \\\hline
+zetta & Z & $10^{21}$ \\\hline
+exa & E & $10^{18}$ \\\hline
+peta & P & $10^{15}$ \\\hline
+tera & T & $10^{12}$ \\\hline
+giga & G & $10^{9}$ \\\hline
+mega & M & $10^{6}$ \\\hline
+kilo & k & $10^{3}$ \\\hline
+hecto & h & $10^{2}$ \\\hline
+deca & da & $10^{1}$ \\\hline
+deci & d & $10^{-1}$ \\\hline
+centi & c & $10^{-2}$ \\\hline
+milli & m & $10^{-3}$ \\\hline
+micro & μ (or u) & $10^{-6}$ \\\hline
+nano & n & $10^{-9}$ \\\hline
+pico & p & $10^{-12}$ \\\hline
+femto & f & $10^{-15}$ \\\hline
+atto & a & $10^{-18}$ \\\hline
+zepto & z & $10^{-21}$ \\\hline
+yocto & y & $10^{-24}$ \\\hline
+ronto & r & $10^{-27}$ \\\hline
+quecto & q & $10^{-30}$ \\\hline
+\end{longtable}\FB
+\ssc{數據記錄}
+\sssc{準確值與測量值}
+非顯示數字之儀器，在測量儀器最小刻度內測得者稱準確值，後加一位目測估計的數字稱估計值，兩者合稱測量值，記錄時使用測量值，平均值最低位數同測量值。儀器顯示數字之儀器，測量值無須加估計值，但記錄平均值時較測量值多留一位作為估計值。
+\sssc{有效數字（Significant figures, significant digits, or sig figs）}
+有效數字最小為某位又稱精確到某位。一個值中：
+\begin{itemize}
+\item 所有非零數字都是有效的。
+\item 非零數字間的零都是有效的。
+\item 前綴零（最前一個非零數字前的零）始終無效。
+\item 對於需要小數點的數，後綴零（最後一個非零數字後的零）是有效的。
+\item 對於不需要小數點的數，後綴零可能有效也可能無效。需要根據額外的符號或訊息決定，一般用最後一位有效數字上或下畫線表示，對於精確到個位者或用加小數點表示。
+\item 對於科學記號，尾數均有效。
+\item 兩數據相乘除，有效數字修約至少者。
+\end{itemize}
+\sssc{測量不確定度（Measurement uncertainty）}
+一組$n$個數據$X=\{x_1,x_2,\ldots,x_n\}$，令四捨五入至其平均值最低位數的函數為$R\colon\mathbb{R}\to\mathbb{R}$、無條件進位至其平均值最低位數的函數為$r\colon\mathbb{R}\to\mathbb{R}$：
+\begin{itemize}
+\item \tb{平均值} $\mu$：
+\[\mu=R\qty(\frac{\sum_{i=1}^nx_i}{n})\]
+\item \tb{樣本標準差} $\tx{SD}$：
+\[\tx{SD}=r\qty(\sqrt{\frac{\sum_{i=1}^n\qty(x_i-\mu)^2}{n-1}})\]
+\item \tb{A 類不確定度（Type A evaluation of uncertainty）} $u_A$：
+\[u_A=r\qty(\sqrt{\frac{\sum_{i=1}^n\qty(x_i-\mu)^2}{n(n-1)}})\]
+\item \tb{B 類不確定度（Type B evaluation of uncertainty）} $u_B$：
+\[u_B=r\qty(\text{儀器最小刻度} \cdot \frac{1}{2\sqrt{3}})\]
+\item \tb{（組合/合成）不確定度} $u$：
+\[u=r\qty(\sqrt{u_A^{\pht{A}2}+u_B^{\pht{B}2}})\]
+\item 記錄為：$\mu\pm u$
+\eit
+
+\tb{傳播}：兩組數據，令值分別為$x$、$y$，不確定度分別為$u_x$、$u_y$，無條件進位至平均值最低位數的函數為$r\colon\mathbb{R}\to\mathbb{R}$，兩數據經運算後得到之新數據平均值$\mu$、不確定度$u$：
+\bit
+\item 兩數據相加減，令四捨五入至使得最低位數與$x$、$y$中有效數字最低位數較前者之有效數字最低位數相同的函數為$R\colon\mathbb{R}\to\mathbb{R}$：
+\[\mu=R(x\pm y)\]
+\[u=r(u_x+u_y)\]
+\item 兩數據相乘，令四捨五入至使得有效數字個數與$x$、$y$中有效數字較少者之有效數字個數相同的函數為$R\colon\mathbb{R}\to\mathbb{R}$：
+\[\mu=R(xy)\]
+\[u=r\qty(|xy|\sqrt{\qty(\frac{u_x}{x})^2+\qty(\frac{u_y}{y})^2})=r\qty(\sqrt{(yu_x)^2+(xu_y)^2})\]
+\item 兩數據相除，令四捨五入至使得有效數字個數與$x$、$y$中有效數字較少者之有效數字個數相同的函數為$R\colon\mathbb{R}\to\mathbb{R}$：
+\[\mu=R\qty(\frac{x}{y})\]
+\[u=r\qty(\frac{|x|}{|y|}\sqrt{\qty(\frac{u_x}{x})^2+\qty(\frac{u_y}{y})^2})=r\qty(\frac{1}{y^2}\sqrt{(yu_x)^2+(xu_y)^2})\]
+\item 記錄為：$\mu\pm u$
+\eit
+
+\tb{相對不確定度}：不確定度除以平均值，無因次，常用百分比表示。
+\sssc{誤差（Error）}
+\begin{itemize}
+\item \tb{系統誤差（Systematic error）}：在不同次相同觀測中總是發生且值相同的誤差，為固有的因素產生的，理論上可通過一定手段消除。一組數據中與平均值相去太多個標準差者可能因為該次觀測與他次不同而有特定較大系統誤差，宜剔除後重新進行數據處理。
+\item \tb{隨機誤差（Random error）}：可能在不同次相同觀測中不同的誤差，通常服從常態分布。源自於熱運動之隨機誤差最常見，可通過降低溫度降低。
+\item \tb{準確（Accuracy）}：觀測值愈接近預測值/理論值（如有）愈準確，是對系統誤差的描述。
+\item \tb{精確（Precision）}：不確定度愈小愈精確，是對隨機誤差的描述。
+\eit
+\end{document}

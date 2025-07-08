@@ -1,0 +1,61 @@
+\documentclass[a4paper,12pt]{article}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\newcounter{ZhRenew}
+\setcounter{ZhRenew}{1}
+\newcounter{SectionLanguage}
+\setcounter{SectionLanguage}{1}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{流體力學}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\sct{流體力學（Fluid Mechanics）}
+\ssc{符號約定}
+\begin{itemize}
+\item $t$：時間
+\item $\mathbf{v}$：流速場
+\item $\rho$：密度
+\item $V$：控制體積
+\item $M$：流體分子分子量
+\item $n$：流體分子分子數
+\item $p$：壓力
+\item $R$：理想氣體常數
+\item $T$：絕對溫度
+\item $u$：每個流體分子的平均內能
+\item $\frac{\mathrm{D}}{\mathrm{D}t}$：物質導數（Material derivative）/隨質導數（Substantial derivative）
+\item $\mathscr{R}$：雷諾數（Reynolds number）
+\item $\eta$：黏滯性係數/動力黏度（Kinematic viscosity）
+\end{itemize}
+\ssc{物質導數（Material derivative）/隨質導數（Substantial derivative）}
+對於任意場$\mb{y}$，其物質導數$\frac{\mathrm{D}\mb{y}}{\mathrm{D}t}$定義為：
+\[\frac{\mathrm{D}\mb{y}}{\mathrm{D}t}=\pdv{\mb{y}}{t}+\mathbf{v}\cdot(\nabla \mb{y}).\]
+\ssc{連續性方程（Continuity equation）/質量守恆}
+\[\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf{v})=0\]
+\ssc{納維-斯托克斯方程式（Navier–Stokes equations）/動量守恆}
+\[\rho\frac{\partial\mathbf{v}}{\partial t}+\rho(\mathbf{v}\cdot\nabla)\mathbf{v}=-\nabla p\]
+\ssc{狀態方程式（Equation of state）}
+描述流體的熱力學狀態，形式為：
+\[f(p,V,T)=0\]
+例如理想氣體方程式為：
+\[pV-nRT=0\]
+\ssc{歐拉方程式（Euler equations）}
+對於零黏度、零導熱率的流體：
+\[\begin{aligned}
+\frac{\mathrm{D}\rho}{\mathrm{D}t}&=-\rho\nabla\cdot\mathbf {v}\\
+\frac{\mathrm{D}\mathbf{v}}{\mathrm{D}t}&=-\frac{\nabla p}{\rho}+\frac{\partial\mathbf{v}}{\partial t}\\
+\frac{\mathrm{D}u}{\mathrm{D}t}&=-\frac{p}{\rho}\nabla\cdot\mathbf{v}
+\end{aligned}\]
+\ssc{不可壓縮約束}
+對於不可壓縮的流體：
+\[\frac{\mathrm{D}\rho}{\mathrm{D}t}=0\]
+\[\frac{\mathrm{D}u}{\mathrm{D}t}=0\]
+\[\nabla\cdot\mathbf{v}=0\]
+\ssc{雷諾數（Reynolds number）}
+密度$\rho$、黏滯性係數/動力黏度$\eta$、特徵長度$L$、特徵速率$v$，雷諾數$\mathscr{R}$定義為：
+\[\mathscr{R}=\frac{\rho\eta L}{v}\]
+\ssc{斯托克定律（Stokes' law）}
+雷諾數極小而可忽略、動力黏度$\eta$的液體中，半徑$a$、速度$\mb{v}$的小球，受阻力$\mb{F}$為：
+\[\mb{F}=-6\pi\eta a\mb{v}\]
+\end{document}

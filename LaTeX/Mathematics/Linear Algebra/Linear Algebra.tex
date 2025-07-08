@@ -1,0 +1,897 @@
+\documentclass[a4paper,12pt]{report}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+\input{/usr/share/latex-toolkit/template.tex}
+\begin{document}
+\title{Linear Algebra}
+\author{沈威宇}
+\date{\temtoday}
+\titletocdoc
+\chapter{Linear Algebra (線性代數)}
+\sct{Definitions}
+\ssc{General}
+\sssc{Vector space (向量空間)}
+A vector space over a field $F$ is a non-empty set $V$ together with a binary operation and a binary function that satisfy the eight axioms listed below. In this context, the elements of $V$ are commonly called vectors, and the elements of $F$ are called scalars.
+
+The binary operation, called vector addition or simply addition assigns to any two vectors $v$ and $w$ in $V$ a third vector in $V$ which is commonly written as $v + w$, and called the sum of these two vectors.
+
+The binary function, called scalar multiplication, assigns to any scalar $a$ in $F$ and any vector $v$ in $V$ another vector in $V$, which is denoted $av$.
+
+To have a vector space, the eight following axioms must be satisfied for every $u$, $v$ and $w$ in $V$, and $a$ and $b$ in $F$.
+\begin{enumerate}
+\item Associativity of vector addition: $u + (v + w) = (u + v) + w$.
+\item Commutativity of vector addition: $u + v = v + u$.
+\item Identity element of vector addition: There exists an element $ 0 \in V$, called the zero vector, such that $\forall v\in V\colon v+ 0=v$.
+\item Inverse elements of vector addition: $\forall v\in V\colon \exists$ an element $-v\in V$, called the additive inverse of $v$, such that $v + (−v) = 0$.
+\item Compatibility of scalar multiplication with field multiplication: $a(bv) = (ab)v$.
+\item Identity element of scalar multiplication: $1v = v$, where 1 denotes the multiplicative identity in $F$.
+\item Distributivity of scalar multiplication with respect to vector addition: $a(u + v) = au + av$.
+\item Distributivity of scalar multiplication with respect to field addition: $(a + b)v = av + bv$.
+\end{enumerate}
+When the scalar field is the real numbers, the vector space is called a real vector space, and when the scalar field is the complex numbers, the vector space is called a complex vector space. These two cases are the most common ones, but vector spaces with scalars in an arbitrary field $F$ are also commonly considered. Such a vector space is called an $F$-vector space or a vector space over $F$.
+\sssc{Affine space (仿射空間)}
+An affine space is a point set $A$ together with a vector space $\ora{A}$, and a transitive and free action of the additive group of $\ora{A}$ on the set $A$. The vector space $\ora{A}$ is said to be associated to the affine space, and its elements are called vectors, translations, or sometimes free vectors.
+
+Explicitly, the definition above means that the action is a mapping, generally denoted as an addition,
+\[\begin{aligned}
+& A\times\ora{A}\to A\\
+& (a,v)\;\mapsto a+v
+\end{aligned}\]
+that has the following properties.
+\begin{enumerate}
+\item Right identity: \[\forall a\in A\colon a+0=a,\quad\tx{where $ 0$ is the zero vector in $\ora{A}$}\]
+\item Associativity: \[\forall v,w\in \ora{A},\forall a\in A,\;(a+v)+w=a+(v+w)\]
+\item Free and transitive action: \[\forall a\in A\colon \tx{the mapping }\ora{A}\to A\colon v\mapsto a+v\tx{ is a bijection.}\]
+\item Existence of one-to-one translations \[\forall v\in \ora{A} \colon \tx{the mapping }\ora{A}\to A\colon v\mapsto a+v\tx{ is a bijection.}\]
+\end{enumerate}
+\sssc{Linear independence (線性獨立)}
+For a set of vectors \(\{\mathbf{v}_1,\mathbf{v}_2, \dots, \mathbf{v}_n\}\), if the equation:
+\[\sum_{i=1}^nc_i\mathbf{v}_i = 0 \]
+is true only if all coefficients \(c_1,c_2, \dots,c_n\) are zero, then the set of vectors is linearly independent.
+\sssc{Linear map (線性映射)}
+A map $T\colon V\to W$ between vector spaces $V$ and $W$ over field $F$ is linear if
+\[\forall a,b\in F,v,w\in V\colon T(av+bw)=aT(v)+bT(w).\]
+The zero vector always maps to the zero vector under a linear transformation.
+\sssc{Linear transformation (線性變換)}
+A linear transformation is a bijection from an vector space onto itself that is an linear map. l
+\sssc{Invertible map (可逆映射)}
+A map $T\colon V\to W$ is Invertible if and only if it is bijective. The unique inverse of $T$, called $T^{-1}$, is defined to be:
+\[T^{-1}\colon W\to V;\,\forall v\in V\colon T(v)\mapsto v=T^{-1}(T(v)).\]
+\sssc{Basis (基)}
+The basis of a vector space $X$ over a field $F$ is a set of linearly independent vectors $\mathbf{v}=\{v_1,v_2,\dots\}\subseteq X$ such that for any vector $\mathbf{P}\in X$, there exists a unique coefficient vector $(c_1,c_2, \dots)\subseteq F$ such that:
+\[\sum_{i=1}c_iv_i=\mathbf{P}.\]
+\sssc{Dimension (維度)}
+The dimension of a vector space is defined as the cardinality of a basis of it.
+
+The $n$-dimensional vector space over field $F$ is usually written as $F^n$.
+\sssc{Bilinear form (雙線性形式)}
+Let $V$ be a vector space of dimension $n$ over a field $\mathbb{K}$. A map $B\colon V\times V\rightarrow \mathbb{K}$ is a bilinear form on the space if:
+\begin{enumerate}
+\item $\forall u,v,w\in V\colon B(u+v,w)=B(u,w)+B(v,w)$.
+\item $\forall u,v\in V,\lambda\in \mathbb{K}\colon B(\lambda u,v)=\lambda B(u,v)$.
+\item $\forall u,v,w\in V\colon B(u,v+w)=B(u,v)+B(u,w)$.
+\item $\forall u,v\in V,\lambda\in \mathbb{K}\colon B(u,\lambda v)=\lambda B(u,v)$.
+\end{enumerate}
+\sssc{Symmetric bilinear form (對稱雙線性形式)}
+Let $V$ be a vector space of dimension $n$ over a field $\mathbb{K}$. A map $B\colon V\times V\rightarrow \mathbb{K}$ is a symmetric bilinear form on the space if:
+\begin{enumerate}
+\item $\forall u,v\in V\colon B(u,v)=B(v,u)$.
+\item $\forall u,v,w\in V\colon B(u+v,w)=B(u,w)+B(v,w)$.
+\item $\forall u,v\in V,\lambda\in \mathbb{K}\colon B(\lambda u,v)=\lambda B(u,v)$.
+\end{enumerate}
+\sssc{Topological vector space (TVS) (拓樸向量空間)}
+A topological vector space $X$ is a vector space over a topological field $\mathbb{K}$, such that vector addition $X\times X\to X$ and scalar multiplication $\mathbb{K}\times X \to X$ are continuous functions.
+\sssc{Functional (泛函)}
+A functional is a function from a vector space into the field of real or complex numbers.
+\sssc{Seminorm (半範數)}
+Given a vector space $X$ over a ordered field $F$, a seminorm on $X$ is a real-valued function $p\colon X\to\mathbb{R}$ with the following conditions, where $|s|$ denotes the usual absolute value of a scalar $s$:
+\begin{enumerate}
+\item Subadditivity/Triangle inequality:\[\forall x,y\in X\colon p(x+y)\leq p(x)+p(y).\]
+\item Absolute homogeneity: \[\forall s\in\mathbb{R},x\in X\colon p(sx)=|s|p(x).\]
+\end{enumerate}
+These conditions implies that:
+\begin{enumerate}
+\item Non-negativity: $\forall x\in X\colon p(x)\geq 0$.
+\item $p(0)=0$.
+\end{enumerate}
+\sssc{Norm (範數/模長)}
+A norm on $X$ is a seminorm $p\colon X\to\mathbb{R}$ with the following properties:
+\begin{itemize}
+\item Positive definiteness/Positiveness/Point-separating: \[\forall x\in X\colon p(x)=0\implies x=0\]
+\end{itemize}
+A vector $x$ such that $p(x)=1$ is called an unit vector.
+\sssc{Sublinear function (亞線性函數) or quasi-seminorm (準半範數)}
+Let $p\colon X\to\mathbb{R}$ be a function on a vector space $X$ over the field $\mathbb{K}$, which is either $\mathbb{R}$ or $\mathbb{C}$. $p$ is called a sublinear function or quasi-seminorm if it satisfies the following conditions:
+\begin{enumerate}
+\item Subadditivity/Triangle inequality:\[\forall x,y\in X\colon p(x+y)\leq p(x)+p(y).\]
+\item Nonnegative homogeneity: \[\forall x\in X,r\geq 0\colon p(rx)=rp(x).\]
+\end{enumerate}
+\sssc{Absolutely continuous function (絕對連續函數)}
+Function $f\colon I\subseteq\mathbb{R}\to\mathbb{R}$ is absolutely continuous on $I$ if for every positive number $\varepsilon$, there is a positive number $\delta$ such that, for every finite sequence of pairwise disjoint sub-intervals $(x_k,y_k)$ of $I$ with $x_k<y_k\in I$ and cardinality $N$,
+\[\sum_{k=1}^N(y_k-x_k)<\delta\implies\sum_{k=1}^N|f(y_k)-f(x_k)|<\varepsilon.\]
+The collection of all absolutely continuous functions on $I$ is denoted $\operatorname {AC} (I)$.
+\sssc{Bounded linear operator (有界線性運算子)}
+A bounded linear operator is a linear transformation $L\colon X\to Y$ between topological vector spaces (TVSs) $X$ and $Y$ that maps bounded subsets of $X$ to bounded subsets of $Y$. If $X$ and $Y$ are normed vector spaces, then $L$ is bounded if and only if there exists some $M>0$ such that:
+\[\forall x\in X\colon \|Lx\|_Y\leq M\|x\|_X.\]
+The smallest such $M$ is called the operator norm of $L$ and denoted by $\|L\|$. A bounded operator between normed spaces is continuous and vice versa.
+\sssc{Hahn–Banach theorem (哈恩-巴拿赫定理)}
+Let $p\colon X\to\mathbb{R}$ be a sublinear functional on a vector space $X$ over the field $\mathbb{K}$, which is either $\mathbb{R}$ or $\mathbb{C}$. If $f\colon M\to\mathbb{K}$ is a linear functional on a vector subspace $M$ such that
+\[\forall m\in M\colon f(m)\leq p(m),\]
+then there exists a linear functional $F\colon X\to\mathbb{K}$ such that
+\[\forall m\in M\colon F(m)=f(m),\]
+\[\forall x\in X\colon F(x)\leq p(x).\]
+\sssc{p-norm (p-範數)}
+The $p$-norm of a $n$-dimensional vector $x=((x_i)_{i=1}^n)$ is defined to be
+\[\|x\|_p=\qty(\sum_{i=1}^n|x_i|^p)^{\frac{1}{p}},\quad p\in\mathbb{N}_{\infty},\]
+where the $\infty$-norm is
+\[\|x\|_{\infty}=\max_{i=1}^n|x_i|.\]
+The 1-norm is also called Manhattan norm (曼哈頓範數); the 2-norm is also called Euclidean norm (歐幾里德範數).
+\sssc{Locally convex topological vector space (LCTVS) or locally convex space}
+A locally convex topological vector space (LCTVS) $(X,\mathcal{T}$ is a TVS whose topology is generated by a family of seminorms $P$ on it such that:
+\[\bigcap_{p\in P}\{x\colon p(x)=0\}=\{0\}\]
+That is, $\mathcal{T}$ is generated by a basis $\{U_{\epsilon,x}\}_{\epsilon\in\mathbb{R}_{\geq 0},x\in X}$ of neighborhoods defined to be:
+\[U_{\epsilon,0}=\{y\in X\colon \forall p\in P\colon p(y)<\epsilon\}.\]
+\[U_{\epsilon,x}=\{y\in X\colon y-x\in U_{\epsilon,0}\}.\]
+This definition implies that a LCTVS is necessarily a Hausdorff space (T2 space).
+\sssc{Dot product (點積)}
+The dot product of two vectors $\mathbf{a}=(a_1,a_2,\dots,a_n)$ and $\mathbf{b}=(b_1,b_2,\dots,b_n)$ is defined as:
+\[\mathbf{a}\cdot\mathbf{b}=\sum_{i=1}^n a_ib_i.\]
+\sssc{Inner product space (內積空間)}
+A bar over an expression representing a scalar denotes the complex conjugate of this scalar.
+
+An inner product space is a vector space $V$ over the field $F$ together with an inner product, that is, a map
+\[\langle \cdot ,\cdot \rangle \colon V\times V\to F\]
+that satisfies the following three properties for all vectors $x,y,z\in V$ and all scalars $a,b\in F$.
+\bit
+\item Conjugate symmetry: 
+\[\langle x,y\rangle =\ol{\langle y,x\rangle }.\]
+This implies that $\langle x,x\rangle$ is a real number.
+\item Linearity in the first argument:
+\[ \langle ax+by,z\rangle =a\langle x,z\rangle +b\langle y,z\rangle .\]
+\item Positive-definiteness: if $x$ is not zero, then$\langle x,x\rangle >0$.
+\eit
+\sssc{Orthonormal basis (正交基)}
+An orthonormal basis for an inner product space $V$ with finite dimension is a basis for $V$ such that for $e,f$ in it:
+\[\langle e,f \rangle = \begin{cases}1, & \text{if } e=f,\\0, & \text{if } e\neq f.\end{cases}\]
+\sssc{Euclidean vector space (歐幾里德向量空間)}
+A Euclidean vector space $E$ is a finite-dimensional vector space over the real numbers equipped with an inner product 
+\[\langle \cdot ,\cdot \rangle \colon E\times E\to\mathbb{R},\]
+and a norm $\|\cdot\|$ defined as:
+\[\|v\|=\sqrt{\langle v,v\rangle},\]
+and a metric, called the Euclidean distance $d(\cdot,\cdot)\colon E\times E\to\mathbb{R}$, defined as:
+\[d(v,w)=\|v-w\|.\]
+\sssc{Manifold (流形)}
+Let $M$ be a Hausdorff space. If for any $x\in M$, there exists a neighborhood $U_x$ of $x$ that is homeomorphic to some open set of the $m$-dimensional Euclidean space, then $M$ is called an $m$-dimensional manifold.
+\sssc{Coordinate system (座標系統)}
+A coordinate system is a system that uses one or more numbers, or coordinates, to uniquely determine the points on a manifold.
+\sssc{Cartesian coordinate system (笛卡爾座標系統)}
+The Cartesian coordinate system is a coordinate system in a Euclidean vector space $E$ determined by an orthogonal basis of unit vectors such that the inner product of two vectors in $E$ equals to the dot product of them, and that the norm of $E$ is 2-norm.
+\sssc{Balanced set (平衡集), circled set, or disk set}
+Let $X$ be a vector space over a field $\mathbb{K}$ with an absolute value function $|\cdot |$. A subset $S$ of $X$ is called a balanced set or balanced if:
+\[\forall a\in\mathbb{K}\text{ s.t. }|a|\leq 1\colon aS\subseteq S.\]
+\sssc{Well-defined (定義良好)/Unambiguous (不模糊的)}
+A well-defined expression or unambiguous expression is an expression whose definition assigns it a unique interpretation or value. Otherwise, the expression is said to be not well defined, ill defined or ambiguous.
+\sssc{Affine map (仿射映射)}
+Given two affine spaces $A$ and $B$ whose associated vector spaces are $\mathscr{A}$ and $\mathscr{B}$, an affine map from $A$ to $B$ is a map $f\colon A\to B$ such that
+\[\begin{aligned}
+&\mathscr{f}\colon\mathscr{A}\to\mathscr{B}\\
+&b-a\mapsto f(b)-f(a)
+\end{aligned}\]
+is a well-defined linear map.
+\sssc{Affine transformation (仿射變換)}
+An affine transformation is a bijection from an affine space onto itself that is an affine map.
+\sssc{Tagent space (切空間)}
+Suppose that $M$ is a $C^k$ differentiable $n$-dimensional manifold (with smoothness $k\geq 1$) and that $x\in M$. Pick a coordinate chart $\varphi\colon U\to\mathbb{R}^n$, where $U$ is an open subset of $M$ containing $x$. Suppose further that two curves $\gamma_1,\gamma_2\colon (-1,1)\to M$ with $\gamma_1(0)=\gamma_2(0)=x$ are given such that both $\varphi\circ\gamma_1,\varphi\circ\gamma_2\colon (-1,1)\to\mathbb{R}^n$ are differentiable. We call these differentiable curves initialized at $x$. Then $\gamma_1$ and $\gamma_2$ are said to be equivalent at $0$ if and only if the derivatives of $\varphi\circ\gamma_1$ and $\varphi\circ\gamma_2$ at $0$ coincide. This defines an equivalence relation on the set of all differentiable curves initialized at $x$, and equivalence classes of such curves are called tangent vectors (切向量) of $M$ at $x$. The tangent space of $M$ at $x$, denoted by $T_xM$, is then defined as the set of all tangent vectors at $x$, which does not depend on the choice of coordinate chart $\varphi$.
+\sssc{Tagent bundle (切叢)}
+A tangent bundle $TM$ of a smooth manifold $M$ is defined to be
+\[TM=\{(x,v)\colon x\in M\land v\in T_xM\},\]
+where $T_xM$ is the tangent space at $x$.
+\sssc{Von Neumann bounded or bounded}
+Suppose $X$ is a topological vector space (TVS) over a field $\mathbb{K}$. A subset $B$ of $X$ is called von Neumann bounded (or bounded) in $X$ if for every neighborhood $V$ of the origin, there exists a real $r>0$ such that $B\subseteq sV$ for all scalars $s$ satisfying $|s|\geq r$.
+\sssc{Convex set (凸集)}
+Let $S$ be a vector space or an affine space over some ordered field. A subset $C$ of $S$ is convex if, for all $x$ and $y$ in $C$, the line segment connecting $x$ and $y$ is included in $C$.
+\sssc{(Algebraic) dual (vector) space (對偶空間)}
+Given any vector space $V$ over a field $F$, the dual space $V^*$ is defined as the set of all linear maps $\varphi\colon V\to F$. The dual space $V^*$ itself thus becomes a vector space over $F$ when equipped with an addition and scalar multiplication satisfying:
+\[\begin{aligned}
+&\forall\varphi ,\psi \in V^*,x\in V,a\in F:\\
+&(\varphi+\psi)(x)=\varphi (x)+\psi (x)\\
+&(a\varphi )(x)=a\left(\varphi (x)\right)
+\end{aligned}\]
+\sssc{Orthogonal complement (正交補)}
+An orthogonal complement of a subspace $W$ of a vector space $V$ equipped with a bilinear form $B$ is the set $W^{\perp }$ of all vectors in $V$ that are orthogonal to every vector in $W$, of which $v\in V$ is orthogonal to $w\in V$ if and only if $B(v,w)=0$.
+\sssc{Normal space (法空間)}
+Suppose that $M$ is a $C^k$ differentiable $n$-dimensional manifold (with smoothness $k\geq 1$) in a vector space $V$ equipped with a bilinear form $B$ and that $x\in M$. The normal space of $M$ at $x$, denoted by $N_xM$, is defined as the orthogonal complement of the tangent space of $M$ at $x$. A vector $v\in N_xM$ such that $B(v,v)\neq 0$ is called a normal vector (法向量) of $M$ at $x$.
+\sssc{Euclidean affine space (歐幾里德仿射空間) or Euclidean space (歐幾里得空間)}
+A Euclidean space, also known as Euclidean affine space, is an affine space over $\mathbb{R}$ such that the associated vector space is a Euclidean vector space.
+
+A Euclidean space is equipped with a metric, called the Euclidean distance $d(\cdot,\cdot)\colon E\times E\to\mathbb{R}$, defined as:
+\[d(v,w)=\|v-w\|.\]
+\sssc{Affine hull (仿射包)}
+An affine combination is a linear combination of points where all coefficients sum up to 1.
+
+The affine hull $\operatorname{aff} (S)$ of a set of points $S$ in a Euclidean space is the smallest affine space that contains all the points in $S$, namely, the set of all affine combinations of the points in $S$, i.e.:
+\[\operatorname{aff}(S)=\left\{\sum _{i=1}^k\alpha _ix_i\colon k>0,x_i\in S,\alpha _i\in\mathbb{R},\sum _{i=1}^k\alpha _i=1\right\}\]
+\sssc{Convex hull (凸包)}
+A convex combination is a linear combination of points where all coefficients are non-negative and sum up to 1.
+
+The convex hull $\operatorname{conv} (S)$ of a set of points $S$ in a Euclidean space is the smallest convex set that contains all the points in $S$, namely, the set of all convex combinations of points in $S$, i.e.:
+\[\operatorname{conv}(S)=\left\{\sum _{i=1}^k\alpha _ix_i\colon k>0,x_i\in S,\alpha _i\in [0,1],\sum _{i=1}^k\alpha _i=1\right\}\]
+\sssc{Curvilinear coordinate}
+A curvilinear coordinate is a coordinate system for Euclidean space such that there exists an invertible map from a Cartesian coordinate system to it.
+\sssc{Projection (投影)}
+A projection on a subset $U$ of a vector space $V$ is a linear operator $P\colon V\to U$ such that $P^2=P$. The property $P^2=P$ is called idempotency (冪等性).
+\sssc{Orthographic projection (正射影)}
+An orthographic on a subset $U$ of a vector space $V$ is a projection $P\colon V\to U$  such that 
+\[ \forall v\in V\colon v - P(v)\in U^*\]
+where $U^*$ is the orthogonal complement of \( U \).
+\sssc{Hilbert space (希爾伯特空間)}
+A Hilbert space is a real or complex inner product space that is also a complete metric space with respect to the distance function induced by the inner product.
+\sssc{Principal angles (主夾角) betweens subspaces}
+Let $V$ be an inner product space. Given two subspaces $U,W$ with $\dim(U)=k\leq\dim(W)=m$, there exists then a sequence of $k$ angles $0\leq\theta_1\leq\theta_2\leq\ldots\leq\theta_k\leq\frac{\pi}{2}$ called the principal angles between $U$ and $W$, the first one defined as
+\[\theta_1\coloneq\min\left\{\arccos\left(\frac{|\langle u,w\rangle|}{\|u\|\|w\|}\right)\middle |u\in U\land w\in W\right\}=\angle(u_1\in U,w_1\in W),\]
+The vectors $u_1$ and $w_1$ are the corresponding principal vectors.
+
+The other principal angles and vectors are then defined recursively via
+\[\theta_i\coloneq\min\left\{\arccos\left(\frac{|\langle u,w\rangle|}{\|u\|\|w\|}\right)\middle |u\in U\land w\in W\land \forall j\in\mathbb{N}\land j<i\colon\langle u_i,u_j\rangle=\langle w_i,w_j\rangle=0\right\}=\angle(u_i\in U,w_i\in W).\]
+\sssc{Lattice points (格子點)}
+In a Euclidean vector space, vectors whose components are all integers are called lattice points.
+\sssc{Flat (平面) or affine subspace (仿射子空間)}
+A flat or an affine subspace of an affine space is a subspace of it that is an affine space.
+\sssc{Direction space}
+The direction space of an affine subspace is the tangent space of it at any point on it. (Note that the tangent spaces of it at any two points on it are the same.)
+\sssc{Parallel (平行)}
+Two non-zero vectors $u,v$ in a vector space over field $F$ are called to be parallel if there exists a scalar $x\in F$ such that $xu=v$, denoted as $u\parallel v$.
+
+Two affine subspaces are called to be parallel if the direction spaces of them $D,E$ satisfies:
+\[D\subseteq E\lor E\subseteq D,\]
+denoted as $D\parallel E$.
+\ssc{Two-Dimensional Vector Space}
+\sssc{Quadrant (象限)}
+\RNum{1}(+, +), \RNum{2}(-, +), \RNum{3}(-, -), \RNum{4}(+, -).
+\ssc{Three-Dimensional Vector Space}
+\sssc{Right-hand rule (右手定則)}
+In a right-handed Cartesian coordinate system, if you point the thumb of your right hand in the positive $x$-axis direction and your index finger in the positive $y$-axis direction, then your middle finger (extended perpendicularly from the palm) will point in the positive $z$-axis direction. If not specified otherwise, right-handed Cartesian coordinate system is usually used.
+\sssc{Octant (卦限)}
+\RNum{1}(+, +, +), \RNum{2}(-, +, +), \RNum{3}(-, -, +), \RNum{4}(+, -, +), \RNum{5}(+, +, -), \RNum{6}(-, +, -), \RNum{7}(-, -, -), \RNum{8}(+, -, -).
+\sssc{Cross product (叉積), external product (外積), or vector product (向量積)}
+The cross product of vector $\mathbf{a}=(a_1,a_2,a_3)$ and $\mathbf{b}=(b_1,b_2,b_3)$ is defined as:
+\[\mathbf{a}\times\mathbf{b}=\det\begin{pmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\a_1 & a_2 & a_3\\b_1 & b_2 & b_3\end{pmatrix},\]
+where $\mb{i}=(1,0,0)$, $\mb{j}=(0,1,0)$, $\mb{k}=(0,0,1)$.
+
+Properties:
+\bit
+\item Self cross product is the zero vector:
+\[\mb{a}\times\mb{a}=\mb{0}.\]
+\item Anticommutative law (反交換律):
+\[\mathbf{a}\times\mathbf{b}=-\mathbf{b}\times\mathbf{a}.\]
+\item Distributive over addition and substraction:
+\[\mb{a}\times(\mb{b}\pm\mb{c})=\mb{a}\times\mb{b}\pm\mb{a}\times\mb{c}.\]
+\item Commutative and associative over scalar multiplication:
+\[(r\mb{a})\times\mb{b}=a\times(r\mb{b})=r(\mb{a}\times\mb{b}).\]
+\item Triple product identity (三重積恆等式)/Jacobi identity (雅可比恆等式):
+\[\mathbf{A}\times(\mathbf{B}\times\mathbf{C})+\mathbf{B}\times(\mathbf{C}\times\mathbf{A})+\mathbf{C}\times(\mathbf{A}\times\mathbf{B})=0.\]
+\[\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})=\mathbf{B}\cdot(\mathbf{C}\times\mathbf{A})=\mathbf{C}\cdot(\mathbf{A}\times\mathbf{B})=\det\begin{pmatrix}\mathbf{A}\\\mathbf{B}\\\mathbf{C}\end{pmatrix}\]
+\[(\mathbf{A}\times\mathbf{B})\times\mathbf{C}=(\mathbf{A}\cdot\mathbf{C})\mathbf{B}-(\mathbf{B}\cdot\mathbf{C})\mathbf{A}.\]
+\eit
+
+
+\section{Matrix (矩陣)}
+\subsection{Matrix}
+A matrix is a rectangular array of numbers (or other mathematical objects), called the entries (元或元素) of the matrix. Most commonly, a matrix over a field $F$ is a rectangular array of elements of $F$.
+\sssc{Size}
+The size of a matrix is defined by the number of rows (zh-hant: 列/zh-hans: 行) and columns (zh-hant: 行/zh-hans: 列) it contains. A matrix with $m$ rows and $n$ columns is called an $m\times n$ matrix, or $m$-by-$n$ matrix, where $m$ and $n$ are called its dimensions (階). A matrix with the same number of rows and columns $n$ is called a $n$ square matrix (方陣). A matrix with an infinite number of rows or/and columns is called an infinite matrix.
+
+The set of all $m\times n$ matrices over $\mathbb{F}$ is commonly denoted as $\mathbb{F}^{m\times n}$.
+\sssc{Notation}
+The entry in the $i$-th row and $j$-th column, called the $i,j$th entry (第$i,j$元) or $ij$th entry (第$ij$元), is commonly denoted as $a_{i,j}$ or $a_{ij}$.
+
+An $m\times n$ matrix $\mathbf{A}$ is commonly denoted as:
+\[\mathbf{A}=\begin{bmatrix}a_{11} & a_{12} & \ldots & a_{1n}\\a_{21} & a_{22} & \ldots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{m1} & a_{m2} & \ldots & a_{mn}\end{bmatrix},\]
+\[\mathbf{A}=\begin{pmatrix}a_{11} & a_{12} & \ldots & a_{1n}\\a_{21} & a_{22} & \ldots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{m1} & a_{m2} & \ldots & a_{mn}\end{pmatrix},\]
+\[\mathbf{A}=[a_{ij}]_{1\leq i\leq m,1\leq j\leq n},\]
+\[\mathbf{A}=(a_{ij})_{1\leq i\leq m,1\leq j\leq n},\]
+\[\mathbf{A}=[a_{ij}]_{m\times n},\]
+or
+\[\mathbf{A}=(a_{ij})_{m\times n}.\]
+
+The $i,i$th entries are called diagonal entries (對角線元).
+
+A matrix with only one row is called a row matrix or row vector, and a matrix with only one column is called a column matrix or column vector.
+
+The $i$th row of the matrix $\mathbf{A}$ is commonly denoted as $\mathbf{A}_{i,:}$, and the $j$th column is commonly denoted as $\mathbf{A}_{:,j}$.
+
+The matrix formed by merging two matrices $\mathbf{A}$ and $\mathbf{B}$ with the same number of rows left and right is denoted as:
+\[\begin{bmatrix}\mathbf{A} & \mathbf{B}\end{bmatrix}\]
+or
+\[\begin{pmatrix}\mathbf{A} & \mathbf{B}\end{pmatrix}\]
+
+The matrix formed by merging two matrices $\mathbf{A}$ and $\mathbf{B}$ with the same number of columns up and down is denoted as:
+\[\begin{bmatrix}\mathbf{A} \\ \mathbf{B}\end{bmatrix}\]
+or
+\[\begin{pmatrix}\mathbf{A} \\ \mathbf{B}\end{pmatrix}\]
+\ssc{Matrix equality}
+We say that two matrices $\mathbf{A}=[a_{ij}]_{m\times n}$ and $\mathbf{B}=[b_{ij}]_{m\times n}$ are equal if 
+\[\forall 1\leq i\leq m,1\leq j\leq n\colon a_{ij}=b_{ij}.\]
+\subsection{Basic operations}
+\subsubsection{Matrix addition}
+The sum of two $m\times n$ matrices $\mathbf{A}$ and $\mathbf{B}$ is calculated entrywise.
+\subsubsection{Scalar multiplication}
+The product $c\mathbf{A}$ of a scalar $c$ is calculated by multiplying every entry of $\mathbf{A}$ by $c$.
+\subsubsection{Substraction}
+The substraction of two $m\times n$ matrices $\mathbf{A}$ and $\mathbf{B}$ is defined as $\mathbf{A}-\mathbf{B}=\mathbf{A}+(-1)\mathbf{B}$.
+\sssc{Matrix multiplication (矩陣乘法)}
+Multiplication of two matrices is defined only if the number of columns of the left matrix is the same as the number of rows of the right matrix. The matrix product $\mathbf{A}\mathbf{B}$ of an $m\times n$ matrix $\mathbf{A}$ and $n\times p$ matrix $\mathbf{B}$ is the $m\times p$ matrix whose $ij$th entry is the dot product of the $i$th row of $\mathbf{A}$ and the $j$th column of $\mathbf{B}$.
+\sssc{Positive integer exponent}
+Given a square matrix $\mathbf{A}$ and a positive integer $n$, $\mathbf{A}^n$ is defined as $\prod_{i=1}^n\mathbf{A}$.
+\subsubsection{Zero matrix (零矩陣)}
+A zero matrix $\mathbf{O}$ over a field $F$ is a matrix of which all entries are the additive identity of $F$, that is, let $m\times n$ zero matrix over $F$ be $\mathbf{O}_{m\times n}$, for any matrices $\mathbf{A}_{m\times n}$ and $\mathbf{B}_{n\times p}$ over $F$, it satisfies:
+\[\begin{aligned}
+&\mathbf{A}_{m\times n}+\mathbf{O}_{m\times n}=\mathbf{A}_{m\times n}\\
+\mathbf{A}_{m\times n}-\mathbf{A}_{m\times n}=\mathbf{O}_{m\times n}\\
+&\mathbf{O}_{m\times n}\mathbf{B}_{n\times p}=\mathbf{O}_{m\times p}\\
+&\mathbf{A}_{m\times n}\mathbf{O}_{n\times p}=\mathbf{O}_{m\times p}
+\end{aligned}\]
+\subsubsection{Identity matrix (單位矩陣)}
+An identity matrix $\mathbf{I}$ over a field $F$ is a square matrix of which all diagonal entries are the multiplicative identity of $F$ and all off-diagonal entries are the multiplicative absorbing element $0_F$ of $F$ (i.e. $\forall x\in F\colon x\times 0_F=0_F$), that is, let $n\times n$ identity matrix over $F$ be $\mathbf{I}_n$, for any $m\times n$ matrices $\mathbf{A}$ over $F$, it satisfies:
+\[\mathbf{A}\mathbf{I}_n=\mathbf{I}_m\mathbf{A}=\mathbf{A}\]
+\sssc{Kronecker product (克羅內克積)}
+If $\mathbf{A}$ is an $m\times n$ matrix and $\mathbf{B}$ is a $p\times q$ matrix, then the Kronecker product $\mathbf{A}\otimes\mathbf{B}$ is the $pm\times qn$ block matrix:
+\[(\mathbf{A}\otimes\mathbf{B})_{i,j}=a_{\lceil i/p\rceil ,\lceil j/q\rceil }b_{(i-1)\mod p+1,(j-1)\mod q+1}\]
+\sssc{Hadamard product (哈達瑪乘積), Schur product (舒爾乘積), elementwise product, or entrywise product (逐項乘積)}
+For two $m\times n$ matrices $\mb{A}$ and $\mb{B}$, the Hadamard product $ \mb{A}\odot \mb{B}$ or $\mb{A}\circ \mb{B}$ is an $m\times n$ matrix defined as:
+\[(\mb{A}\odot \mb{B})_{ij}=(\mb{A})_{ij}(\mb{B})_{ij}.\]
+\sssc{Property}
+For scalars $r$ and $s$, matrices $A$, $B$, $C$, $D$, zero matrix $O$, and identity matrix $I$, assuming that all of the following operations hold, $\neq$ means not necessarily equals:
+\[A+B=B+A\]
+\[A+(B+C)=(A+B)+C\]
+\[r(A+B)=rA+rB\]
+\[rA+sA=(r+s)A\]
+\[(rs)A=r(sA)=s(rA)\]
+\[(AB)C=A(BC)\]
+\[r(AB)=(rA)B=A(rB)\]
+\[A(B+C)=AB+AC\]
+\[(A+B)C=AC+BC\]
+\[(A+B)(C+D)=AC+AD+BC+BD\]
+\[AB\neq BA\]
+\[(AB=AC\land A\neq O)\nRightarrow B=C\]
+\[A^2=O\nRightarrow A=O\]
+\[AB=O\nRightarrow(A=O\lor B=O)\]
+\[A^2=I\iff A=A^{-1}\nRightarrow A=\pm I\]
+\[AB=I\nRightarrow(\exists r\in\mathbb{R}\colon A=rI\land B=\frac{I}{r})\]
+\[AB=B\nRightarrow A=I\]
+\[ACB=ADB\nRightarrow C=D\]
+\[A\odot B=B\odot A\]
+\[A\odot(B\odot C)=(A\odot B)\odot C\]
+\[A\odot(B+C)=A\odot B+A\odot C\]
+\sssc{Zero exponent}
+Given an $n\times n$ matrix $\mathbf{A}$ and $n\times n$ identity matrix $\mathbf{I}$, $\mathbf{A}^0$ is defined as $\mathbf{I}$.
+\subsection{Matrix row and column operations}
+\sssc{Row operations (zh-hant: 列/zh-hans: 行運算)}
+Including:
+\bit
+\item Row addition (zh-hant: 列/zh-hans: 行相加): Adding a row to another.
+\item Row multiplication (zh-hant: 列/zh-hans: 行加倍): Multiplying all entries of a row by a non-zero constant.
+\item Row switching (zh-hant: 列/zh-hans: 行交換): Interchanging two rows of a matrix.
+\eit
+If one matrix can be transformed to another through a sequence of row operations, the two matrices are called row-equivalent.
+\sssc{(General) row echelon form (（廣義）zh-hant: 列/zh-hans: 行階梯形式)}
+A matrix is in row echelon form if:
+\bit
+\item All rows having only zero entries are at the bottom.
+\item The leading entry, that is, the left-most non-zero entry, of every non-zero row is on the right of the leading entry of every row above.
+\item Some texts add the condition that the leading coefficient must be 1.
+\eit
+\sssc{Column operations (zh-hant: 行/zh-hans: 列運算)}
+Including:
+\bit
+\item Column addition (zh-hant: 行/zh-hans: 列相加): Adding a column to another.
+\item Column multiplication (zh-hant: 行/zh-hans: 列加倍): Multiplying all entries of a column by a non-zero constant.
+\item Column switching (zh-hant: 行/zh-hans: 列交換): Interchanging two columns of a matrix.
+\eit
+If one matrix can be transformed to another through a sequence of column operations, the two matrices are called column-equivalent.
+\sssc{Transpose (轉置)}
+The transpose of an $m\times n$ matrix $\mathbf{A}$ is the $n\times m$ matrix $\mathbf{A}^\top$:
+\[(\mathbf{A}^\top)_{i,j}=a_{j,i}\]
+\sssc{Symmetric matrix (對稱矩陣)}
+$\mathbf{A}$ is called a symmetric matrix if $\mathbf{A}=\mathbf{A}^\top$.
+\sssc{Skew-symmetric matrix/antisymmetric matrix (反對稱矩陣)}
+$\mathbf{A}$ is called a skew-symmetric matrix or an antisymmetric matrix if $\mathbf{A}=-\mathbf{A}^\top$.
+\sssc{Transpose identities}
+\[\qty(\sum_{i=1}^n\mathbf{A}_i)^\top=\sum_{i=1}^n\mathbf{A}_i^{\phantom{i}\top}\]
+\[\qty(\prod_{i=1}^n\mathbf{A}_i)^\top=\prod_{i=1}^n\mathbf{A}_{n-i+1}^{\phantom{n-i+1}\top}\]
+\sssc{Conjugate transpose (共軛轉置)/Hermitian conjugate (埃爾米特共軛)/Hermitian transpose (埃爾米特轉置)}
+The conjugate transpose of an $m\times n$ matrix $\mathbf{A}$ is the $n\times m$ matrix $\mathbf{A}*$:
+\[(\mathbf{A}^*)_{i,j}=\ol{a_{j,i}}\]
+\ssc{Cofactor matrix, adjugate matrix, determinant, and inverse}
+Let $\mathbf{M}_{ij}$ of $\mathbf{A}$ be the determinant of the submatrix of $\mathbf{A}$ without the $i$th row and $j$th column.
+\sssc{Determinant (行列式或判別式)}
+The determinant of a $1\times 1$ matrix is the only element of it; the determinant of an $n\times n$ matrix $\mathbf{A}$, denoted $\det(\mathbf{A})$ or 
+\[\begin{vmatrix}a_{11} & a_{12} & \ldots & a_{1n}\\a_{21} & a_{22} & \ldots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{n1} & a_{n2} & \ldots & a_{nn}\end{vmatrix},\]
+is
+\[\det(\mathbf{A})=\sum_{i=1}^na_{ij}(-1)^{i+j}\mathbf{M}_{ij}\quad j\leq n\in\mathbb{N}\]
+\[\det(\mathbf{A})=\sum_{j=1}^na_{ij}(-1)^{i+j}\mathbf{M}_{ij}\quad i\leq n\in\mathbb{N}\]
+\sssc{Determinant identities}
+Let $\mathbf{A}$ and $\mathbf{A}_i$ be square matrices.
+\[\det\qty(\sum_{i=1}^n\mathbf{A}_i)=\sum_{i=1}^n\det\qty(\mathbf{A}_i)\]
+\[\det\qty(\prod_{i=1}^n\mathbf{A}_i)=\prod_{i=1}^n\det\qty(\mathbf{A}_i)\]
+\[\det(\mathbf{A})\neq 0\implies\det(\mathbf{A}^n)\neq 0\]
+\sssc{Cofactor matrix (餘因子矩陣)}
+The cofactor matrix of an $n\times n$ matrix $\mathbf{A}$ is the $n\times n$ matrix $\mathrm{cof}(\mathbf{A})$:
+\[[\mathrm{cof}(\mathbf{A})]_{ij}=\left((-1)^{i+j}\mathbf{M}_{ij}\right)\]
+\sssc{Adjugate matrix (伴隨矩陣)/classical adjoint (經典伴隨矩陣)}
+The adjugate matrix or classical adjoint matrix of an $n\times n$ matrix $\mathbf{A}$ is the $n\times n$ matrix $\mathrm{adj}(\mathbf{A})$:
+\[\mathrm{adj}(\mathbf{A})=\mathrm{cof}(\mathbf{A})^\top\]
+\sssc{Inverse (反方陣、逆方陣、反矩陣或逆矩陣), multiplicative inverse (乘法反方陣), or reciprocal}
+The inverse of an $n\times n$ matrix $\mathbf{A}$ is an $n\times n$ matrix $\mathbf{A}^{-1}$ such that:
+\[\mathbf{A}\mathbf{A}^{-1}=\mathbf{A}^{-1}\mathbf{A}=\mathbf{I}\]
+\sssc{Negative integer exponent}
+Given an invertible matrix $\mathbf{A}$ and a negative integer $n$, $\mathbf{A}^n$ is defined as $(\mathbf{A}^{-1})^n$.
+\sssc{Invertible matrix (可逆矩陣), orthogonal matrix (正交矩陣), orthonormal matrix (正則矩陣), non-singular matrix (非奇異矩陣), or non-degenerate matrix (非退化矩陣)}
+An invertible matrix, orthogonal matrix, orthonormal matrix, non-singular matrix, or non-degenerate matrix is a matrix such that its inverse exists.
+
+Let $\mathbf{A}$ be an $n\times n$ matrix, the following prepositions are equivalent to "$\mathbf{A}$ is an invertible matrix":
+\[\begin{aligned}
+&\exists\mathbf{A}^{-1}\\
+&\exists\qty(\mathbf{A}^\top)^{-1}\\
+&\exists\qty(\mathbf{A}^\top\mathbf{A})^{-1}\\
+&\operatorname{rank}(\mathbf{A})=n\\
+&\mathbf{A}\text{存在非零的特徵值}
+\end{aligned}\]
+\sssc{Non-invertible matrix (不可逆矩陣), non-orthogonal matrix (非正交矩陣), non-orthonormal matrix (非正則矩陣), singular matrix (奇異矩陣), or degenerate matrix (退化矩陣)}
+An non-invertible matrix, non-orthogonal matrix, non-orthonormal matrix, singular matrix, or degenerate matrix is a matrix that is not an invertible matrix.
+\sssc{Inverse of a two-by-two matrix}
+For an invertible $2\times 2$ matrix $\mathbf{A}$:
+\[\mathbf{A}=\begin{bmatrix}a & b \\c & d\end{bmatrix}\implies\mathbf{A}^{-1}=
+\frac{1}{\det\qty(\mathbf{A})}\begin{bmatrix}d & -b \\-c & a\end{bmatrix}\]
+\sssc{Computing inverse with row operations}
+Let $\mathbf{A}$ be an $n\times n$ matrix and $\mathbf{I}$ be the $n\times n$ identity matrix. If $\begin{pmatrix}\mathbf{A} & \mathbf{I}\end{pmatrix}$ can become $\begin{pmatrix}\mathbf{I} & \mathbf{B}\end{pmatrix}$ after row operations, then
+\[\mathbf{B}=\mathbf{A}^{-1}\]
+\sssc{Unitary matrix (么正矩陣或酉矩陣)}
+An unitary matrix is a square matrix whose inverse equals to its conjugate transpose.
+\sssc{Determinant property}
+\bit
+\item When a row (or column) is added to another, the determinant remains unchanged.
+\item When all entries of a row (or column) is multiplied by a real number $n$, the determinant is multiplied by $n$.
+\item When two rows (or columns) are swapped, the determinant is multiplied by $-1$.
+\item Given matrix $\mb{A}$ and its inverse $\mb{A}^{-1}$, $\det(\mb{A}^{-1})=\frac{1}{\det(\mb{A})}$.
+\eit
+\sssc{Inverse identities}
+Let $\mathbf{A}$ and $\mb{A}_i$ be invertible matrices, $\mathbf{B}$ be a matrix of the same size of $\mathbf{A}$.
+\[\mathbf{A}^{-1}=\frac{\mathrm{adj}\qty(\mathbf{A})}{\det\qty(\mathbf{A})}\]
+\[\qty(\mathbf{A}^\top)^{-1}=\qty(\mathbf{A}^{-1})^\top\]
+\[\qty(\prod_{i=1}^n\mathbf{A}_i)^{-1}=\prod_{i=1}^n\qty(\mathbf{A}_{n-i+1})^{-1}\]
+\[(\mathbf{A}^{-1}\mathbf{B}\mathbf{A})^n=\mathbf{A}^{-1}\mathbf{B}^n\mathbf{A},\quad n\in\mathbb{N}\]
+\sssc{Vandermonde matrix (范德蒙矩陣)}
+A Vandermonde matrix $\mathbf{V}$ is:
+\[V_{i,j}=\alpha_i^{\pht{i}j-1}\]
+An $n\times n$ Vandermonde matrix $\mathbf{V}$ satisfies:
+\[\det(V)=\prod _{1\leq i<j\leq n}(\alpha _{j}-\alpha _{i})\]
+\subsection{Diagonal matrix (對角矩陣)}
+\sssc{Diagonal matrix}
+A diagonal matrix over a field $F$ is a square matrix over $F$ of which all non-diagonal entries are the additive identity of $F$.
+\sssc{Diagonal matrix identities}
+If:
+\[\mathbf{D} = \begin{bmatrix}
+d_1 & 0 & \cdots & 0 \\
+0 & d_2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & d_n
+\end{bmatrix}\]
+where all $d_i\neq 0$, then:
+\[\mathbf{D}^{-1} = \begin{bmatrix}
+\frac{1}{d_1} & 0 & \cdots & 0 \\
+0 & \frac{1}{d_2} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \frac{1}{d_n}\end{bmatrix}\]
+
+Let $\mathbf{E}$, $\mathbf{F}$ be two $n\times n$ diagonal matrices:
+\[\mathbf{E}\mathbf{F}=[e_{ij}f_{ij}]_{1\leq i,j\leq n}\]
+\ssc{System of Linear Equations (線性方程組)}
+\sssc{System of equations (方程組)}
+\begin{itemize}
+\item\tb{Consistent system (相容方程組)}: A system of equations is considered consistent if it has at least one solution.
+\item\tb{Inconsistent/contradictory system (相容方程組)}: A system of equations is considered inconsistent or contradictory if it has no solution.
+\item\tb{Dependent system (相依方程組)}: A consistent system of equations is considered dependent if it has infinite solutions.
+\item\tb{Independent system (獨立方程組)}: A consistent system of equations is considered independent if it has finite solutions.
+\end{itemize}
+\sssc{Linear Equation (線性方程)}
+A linear equation is an equation that may be put in the from:
+\[\sum_{k=1}^na_kx_k=c,\]
+where $a_k$ and $c$ are called coefficients.
+
+If $c=0$, the linear equation is called a homogeneous linear equation; otherwise, it is called a heterogeneous linear equation.
+\sssc{System of Linear Equations (線性方程組)}
+A system of linear equations is a collection of two or more linear equations involving the same tuple of variables.
+\sssc{Coefficient matrix (係數矩陣)}
+The coefficients of a system of linear equations written as a matrix, with one row for each equation.
+\sssc{Augmented matrix (增廣矩陣)}
+Coefficient matrix with the constants on the right side of the equal signs of a system of linear equations augmented to the last column of the matrix.
+\sssc{Gaussian Elimination (高斯消去法) or row reduction (zh-hant: 列/zh-hans: 行簡化)}
+An algorithm to solve a system of linear equations by using row operations to modify its argumented matrix to row echelon form. Two systems of linear equations have the same solution if and only if their augmented matrices are row-equivalent.
+\sssc{Cramer Rule or Cramer formula (克拉瑪公式)}
+Given a system of linear equations that can be written in the form:
+\[\mathbf{A}\mathbf{X}=\mathbf{C}\]
+where $\mathbf{A}$ is an $n\times n$ coefficient matrix, $\mathbf{X}$ is a variable matrix:
+\[\mathbf{X}=\begin{pmatrix}x_1, x_2, x_3, \ldots, x_n\end{pmatrix}^\top,\]
+and $\mathbf{C}$ is a coefficient matrix:
+\[\mathbf{C}=\begin{pmatrix}c_1, c_2, c_3, \ldots, c_n\end{pmatrix}^\top.\]
+Let \(\mathbf{A}_i\) be $\mathbf{A}$ with the \(i\)th column replaced by \(\mathbf{C}\). The solution to the system of linear equations is given by:
+\[\begin{cases}
+x_i=\frac{\det\qty(\mathbf{A}_i)}{\det\qty(\mathbf{A})},\quad\det\qty(\mathbf{A})\neq 0\\
+\text{inconsistent},\quad\det\qty(\mathbf{A})=0\land\bigvee_{i=1}^n\det\qty(\mathbf{A}_i)\neq 0\\
+\text{dependent},\quad\det\qty(\mathbf{A})=0\land\bigvee_{i=1}^n\det\qty(\mathbf{A}_i)=0
+\end{cases}\]
+where $x_i=\frac{\det\qty(\mathbf{A}_i)}{\det\qty(\mathbf{A})}$ can be geometrically viewed as the volume of the parallelogram formed by the column vectors of $\mathbf{A}_i$ divided by the volume of the parallelogram formed by the column vectors of $\mathbf{A}$.
+
+Particularly, when $\mathbf{C}$ is a zero matrix, that is,
+\[\mathbf{A}\mathbf{X}=\mathbf{0},\]
+the solution to the system of linear equations is given by:
+\[\begin{cases}
+x_i=0,\quad\det\qty(\mathbf{A})\neq 0\\
+\tx{dependent},\quad\det\qty(\mathbf{A})=0
+\end{cases}\]
+\section{Linear Subspace (線性子空間)}
+\ssc{Linear subspace}
+A linear subspace of a vector space $V$ over a field $\mathbb{K}$ is a nonempty subset $W$ of $V$ such that, 
+\[\forall w_1,w_2\in W,a,b\in\mathbb{K}:\,aw_1+bw_2\in W.\]
+\ssc{Four fundamental subspaces of a matrix (矩陣的四大子空間)}
+The four fundamental subspaces of a matrix are the row space, column space, null space, and left null space.
+\ssc{Column space (zh-hant: 行/zh-hans: 列空間)}
+The column space of $\mathbf{A}$, denoted as \(\operatorname{Col}(\mathbf{A})\) or $\mathrm{\mathbf{C}}(\mathbf{A})$, is defined as the set of all linear combinations of the column vectors of $\mathbf{A}$.
+\ssc{Row space (zh-hant: 列/zh-hans: 行空間)}
+The row space of $\mathbf{A}$ is defined as the set of all linear combinations of the row vectors of $\mathbf{A}$, that is, $\operatorname{Col}(\mathbf{A}^{\top})$.
+\ssc{Null space (零空間), kernel (核), or kernel space (核空間)}
+The kernel of a linear map $L:\,V\to W$, denoted as $\ker(L)$ or $\mathrm{Null}(L)$, is defined as:
+\[\ker(L)=\{v\in V:\,L(v)=0\}.\]
+
+$\dim(\ker(\mathbf{A}))$ is called nullity (零化度).
+\ssc{Left null space (左零空間), left kernel (左核), or left kernel space (左核空間)}
+The left null space of a linear map $L:\,V\to W$ is defined as $\ker(L^{-1})$.
+\subsection{Image space (像空間) or range (值域)}
+The image space of a linear map $T\colon V\to W$, denoted as $\operatorname{im}(T)$
+\[\operatorname{im}(T)=\{T(v):\,v\in V\}.\]
+\ssc{Cokernel (餘核)}
+The cokernel of a linear map $T\colon V\to W$, denoted as $\operatorname{coker}(T)$
+\[\operatorname{coker}(T)=W\setminus\operatorname{im}(T).\]
+\subsection{Constant rank theorem (常秩定理)}
+For any matrix $\mathbf{A}$:  \[\dim(\operatorname{Col}(\mathbf{A}))=\dim(\operatorname{Col}(\mathbf{A}^\top))\]
+\begin{proof}\mbox{}\\
+Let $\mathbf{A}$ be an $m\times n$ matrix, $r=\dim\qty(\operatorname{Col}\qty(\mathbf{A}))$, $ c_{1},c_{2},\ldots ,c_{r}$ be a basis of $\operatorname{Col}(\mathbf{A})$, matrix $\mathbf{C}=[c_{1},c_{2},\ldots ,c_{r}]$, and $r\times n$ matrix $\mathbf{R}$ such that $\mathbf{A}=\mathbf{C}\mathbf{R}$. 
+
+Since:
+\[\operatorname{Col}(\mathbf{A}^\top)\subseteq\operatorname{Col}(\mathbf{R}^\top),\]
+\[\dim(\operatorname{Col}(\mathbf{A}^\top))\leq\dim(\operatorname{Col}(\mathbf{R}^\top))\]
+
+Because there are only $r$ rows in $\mathbf{R}$,
+\[\dim(\operatorname{Col}(\mathbf{R}^\top))\leq\dim(\operatorname{Col}(\mathbf{A}))\]
+
+Similarly, we can obtain that
+\[\dim(\operatorname{Col}(\mathbf{A}))\leq\dim(\operatorname{Col}(\mathbf{R}^\top))\leq\dim(\operatorname{Col}(\mathbf{A}^\top)).\]
+
+Therefore,
+\[\dim(\operatorname{Col}(\mathbf{A}))=\dim(\operatorname{Col}(\mathbf{R}^\top))=\dim(\operatorname{Col}(\mathbf{A}^\top)).\]
+\end{proof}
+\subsection{Rank (秩)}
+If $ \mathbf{A} $ is an \( m \times n \) matrix, then the rank of \( \mathbf{A} \), denoted as \( \operatorname{rank}(\mathbf{A}) \) or $\operatorname{rk}(\mathbf{A})$, is the maximum number of linearly independent columns (or rows) in \( \mathbf{A} \), namely:
+\[\text{rank}(\mathbf{A})=\dim(\operatorname{Col}(\mathbf{A}))\]
+\subsection{Rank-nullity theorem (秩—零化度定理)}
+For any $n\times n$ matrix $\mathbf{A}$:
+\[\text{rank}(\mathbf{A}) + \dim(\ker(\mathbf{A})) = n\]
+\begin{proof}\mbox{}\\
+Let \(\mathbf{A}\) be an \(m \times n\) matrix with \(r\) linearly independent columns (i.e., \(\text{rank}(\mathbf{A}) = r\)). We will show that there exists a set of \(n - r\) linearly independent solutions to the homogeneous system \(\mathbf{Ax} = \mathbf{0}\).
+
+To do this, we will produce an \(n \times (n-r)\) matrix \(\mathbf{X}\) whose columns form a basis of the null space of \(\mathbf{A}\).
+
+Without loss of generality, assume that the first \(r\) columns of \(\mathbf{A}\) are linearly independent. So, we can write
+\[\mathbf{A} = \begin{pmatrix} \mathbf{A}_1 & \mathbf{A}_2\end{pmatrix},\]
+where
+\begin{itemize}
+\item \(\mathbf{A}_1\) is an \(m \times r\) matrix with \(r\) linearly independent column vectors, and
+\item \(\mathbf{A}_2\) is an \(m \times (n-r)\) matrix such that each of its \(n-r\) columns is a linear combination of the columns of \(\mathbf{A}_1\).
+\end{itemize}
+
+This means that \(\mathbf{A}_2 = \mathbf{A}_1\mathbf{B}\) for some \(r \times (n-r)\) matrix \(\mathbf{B}\), and hence,
+\[\mathbf{A} = \begin{pmatrix} \mathbf{A}_1 & \mathbf{A}_1\mathbf{B}\end{pmatrix}.\]
+
+Let
+\[\mathbf{X} = \begin{pmatrix} -\mathbf{B} \\ \mathbf{I}_{n-r} \end{pmatrix},\]
+where \(\mathbf{I}_{n-r}\) is the \((n-r) \times (n-r)\) identity matrix. So, \(\mathbf{X}\) is an \(n \times (n-r)\) matrix such that
+\[\mathbf{A}\mathbf{X} = \begin{pmatrix}\mathbf{A}_1 & \mathbf{A}_1\mathbf{B} \end{pmatrix}\begin{pmatrix} -\mathbf{B} \\ \mathbf{I}_{n-r} \end{pmatrix} = -\mathbf{A}_1\mathbf{B} + \mathbf{A}_1\mathbf{B} = \mathbf{0}_{m \times (n-r)}.\]
+
+Therefore, each of the \(n-r\) columns of \(\mathbf{X}\) are particular solutions of \(\mathbf{Ax} = \mathbf{0}_{\mathbb{F}^m}\).
+
+Furthermore, the \(n-r\) columns of \(\mathbf{X}\) are linearly independent because \(\mathbf{Xu} = \mathbf{0}_{\mathbb{F}^n}\) will imply \(\mathbf{u} = \mathbf{0}_{\mathbb{F}^{n-r}}\) for \(\mathbf{u} \in \mathbb{F}^{n-r}\):
+\[\mathbf{X}\mathbf{u} = \mathbf{0}_{\mathbb{F}^n} \implies \begin{pmatrix}
+-\mathbf{B} \\
+ \mathbf{I}_{n-r}
+\end{pmatrix}\mathbf{u} = \mathbf{0}_{\mathbb{F}^n} \implies \begin{pmatrix}
+-\mathbf{B}\mathbf{u} \\
+ \mathbf{u}
+\end{pmatrix} = \begin{pmatrix}
+\mathbf{0}_{\mathbb{F}^r} \\
+ \mathbf{0}_{\mathbb{F}^{n-r}}
+\end{pmatrix} \implies \mathbf{u} = \mathbf{0}_{\mathbb{F}^{n-r}}.\]
+
+Therefore, the column vectors of \(\mathbf{X}\) constitute a set of \(n-r\) linearly independent solutions for \(\mathbf{Ax} = \mathbf{0}_{\mathbb{F}^m}\).
+
+We next prove that any solution of \(\mathbf{Ax} = \mathbf{0}_{\mathbb{F}^m}\) must be a linear combination of the columns of \(\mathbf{X}\).
+
+Let
+\[\mathbf{u} = \begin{pmatrix}
+ \mathbf{u}_1 \\
+ \mathbf{u}_2
+\end{pmatrix} \in \mathbb{F}^n\]
+be any vector such that \(\mathbf{Au} = \mathbf{0}_{\mathbb{F}^m}\). Since the columns of \(\mathbf{A}_1\) are linearly independent, \(\mathbf{A}_1\mathbf{x} = \mathbf{0}_{\mathbb{F}^m}\) implies \(\mathbf{x} = \mathbf{0}_{\mathbb{F}^r}\).
+
+Therefore,
+\[\begin{aligned}
+& \mathbf{A}\mathbf{u} = \mathbf{0}_{\mathbb{F}^m} \\
+\implies & \begin{pmatrix}\mathbf{A}_1 & \mathbf{A}_1\mathbf{B}\end{pmatrix} \begin{pmatrix} \mathbf{u}_1 \\ \mathbf{u}_2 \end{pmatrix} = \mathbf{A}_1\mathbf{u}_1 + \mathbf{A}_1\mathbf{B}\mathbf{u}_2 = \mathbf{A}_1(\mathbf{u}_1 + \mathbf{B}\mathbf{u}_2) = \mathbf{0}_{\mathbb{F}^m} \\
+\implies & \mathbf{u}_1 + \mathbf{B}\mathbf{u}_2  = \mathbf{0}_{\mathbb{F}^r} \\
+\implies & \mathbf{u}_1  =  -\mathbf{B}\mathbf{u}_2\\
+\implies & \mathbf{u} = \begin{pmatrix} \mathbf{u}_1 \\ \mathbf{u}_2 \end{pmatrix} = \begin{pmatrix} -\mathbf{B} \\ \mathbf{I}_{n-r} \end{pmatrix}\mathbf{u}_2 = \mathbf{X}\mathbf{u}_2.
+\end{aligned}\]
+
+This proves that any vector \(\mathbf{u}\) that is a solution of \(\mathbf{Ax} = \mathbf{0}\) must be a linear combination of the \(n-r\) special solutions given by the columns of \(\mathbf{X}\). And we have already seen that the columns of \(\mathbf{X}\) are linearly independent. Hence, the columns of \(\mathbf{X}\) constitute a basis for the null space of \(\mathbf{A}\). Therefore, the nullity of \(\mathbf{A}\) is \(n - r\). Since \(r\) equals the rank of \(\mathbf{A}\), it follows that \(\text{rank}(\mathbf{A}) + \ker(\mathbf{A}) = n\). This concludes our proof.
+\end{proof}
+\subsection{Full rank (滿秩) and rank deficiency (秩虧)}
+For an $m\times n$ matrix $\mb{A}$, if
+\[\text{rank}(\mathbf{A}) = \min(m, n)\]
+$\mathbf{A}$ is called to have full rank; otherwise it is called to be rank-deficient (欠秩或秩虧的).
+
+The rank deficiency of a $m\times n$ matrix $\mb{A}$ is defined as
+\[\min(m, n)-\text{rank}(\mathbf{A}) \]
+\ssc{Property of rank}
+\bit
+\item For any $m\times n$ matrix $\mb{A}$:
+\[\text{rank}(\mathbf{A}) \leq \min(m, n)\]
+\item A square matrix is invertible if and only if it has full rank.
+\item A matrix is a zero matrix if and only if its rank is zero.
+\end{itemize}
+\section{Matrix Analysis (矩陣分析)}
+\subsection{Eigenvector or characteristic vector (特徵向量) and characteristic polynomial (特徵多項式)}
+\subsubsection{Eigenvector or characteristic vector (特徵向量) and eigenvalue (本徵值、固有值、特徵值或特徵根)}
+Given a linear transformation $L\colon V\to V$, an eigenvector of it is defined as the vector $v\in V$ such that:
+\[\mathbf{A}v = \lambda v,\]
+where $\lambda$ is a scalar, which is called the eigenvalue of $\mb{A}$ or the eigenvalue of $v$.
+\subsubsection{Characteristic polynomial}
+For an $n\times n$ matrix $\mathbf{A}$, the characteristic polynomial of it is defined as
+\[p_{\mathbf{A}}(\lambda):=\det(\lambda \mathbf{I}_{n}-\mathbf{A}),\]
+where $\lambda$ is a scalar variable.
+
+A scalar $\lambda$ is an eigenvalue of $\mb{A}$ if and only if
+\[p_\mathbf{A}(\lambda)=0.\]
+\sssc{Property}
+\bit
+\item The number of distinct eigenvalues of a square matrix is less than or equal to the number of linearly independent eigenvectors.
+\item The number of distinct eigenvalues of a $n\times n$ matrix is less than or equal to $n$.
+\item The algebraic multiplicity of a root $\lambda$ of the characteristic polynomial of a square matrix is greater than or equal to the number of linearly independent eigenvectors of it whose eigenvalue is $\lambda$.
+\end{itemize}
+\subsubsection{Cayley–Hamilton theorem (凱萊–哈密頓定理)}
+For a square matrix $\mathbf{A}$ and its characteristic polynomial $p_\mathbf{A}$, the Cayley–Hamilton theorem states that:
+\[p_\mathbf{A}(\mathbf{A})=0\]
+\sssc{Diagonalization (對角化)}
+The diagonalization of an $n\times n$ matrix $\mb{A}$ is the construction of an $n\times n$ matrix $\mb{P}$ and an $n\times n$ diagonal matrix $\mb{D}$ such that:
+\[\mathbf{A}=\mathbf{P}^{-1}\mathbf{D}\mathbf{P}\]
+
+An $n\times n$ matrix can be diagonalized if it has $n$ distinct eigenvalues.
+
+The steps of the diagonalization of an $n\times n$ matrix $\mathbf{A}$ is as follows:
+\begin{enumerate}
+\item For each eigenvalue $\lambda$ of the matrix $\mathbf{A}$, solve the eigenvector $v$:
+\[(\mathbf{A} - \lambda \mathbf{I})\mathbf{v} = 0.\]
+\item Compose matrix \( \mathbf{P} \) with each eigenvector of $\mb{A}$ as a row.
+\end{enumerate}
+
+Common application:
+\[\mathbf{A}^n=(\mathbf{P}^{-1}\mathbf{D}\mathbf{P})^n=\mathbf{P}^{-1}\mathbf{D}^n\mathbf{P}\]
+
+\subsection{Generalized Definition of Inverse}
+\subsubsection{One-sided inverse (單邊逆)}
+\begin{itemize}
+\item Right inverse (右逆): For any $n\times m$ matrix $A$ with rank $\mathrm {rank}(A)=n$, there exists an $m\times n$ matrix $A_{\mathrm {R} }^{-1}$, called the right inverse of $\mb{A}$, such that
+\[AA_{\mathrm {R} }^{-1}=I_{n},\]
+where $I_{n}$ is the $n\times n$ identity matrix.
+\item Left inverse (左逆): For any $n\times m$ matrix $A$ with rank $\mathrm {rank}(A)=m$, there exists an $m\times n$ matrix $A_{\mathrm {L} }^{-1}$, called the left inverse of $\mb{A}$, such that
+\[A_{\mathrm {L} }^{-1}A=I_{m},\]
+where $I_{m}$ is the $m\times m$ identity matrix.
+\end{itemize}
+
+Properties:
+\bit
+\item A matrix doesn't necessarily have a right inverse and doesn't necessarily have a left inverse.
+\item A square matrix has a right inverse if and only if it has left inverse if and only if it is invertible.
+\item For any invertible matrix, there exists only one right inverse and one left inverse, which are its multiplicative inverse.
+\eit
+\subsubsection{Generalized inverse or g-inverse (廣義逆)}
+A matrix $A^{\mathrm {g} }\in \mathbb {C} ^{n\times m}$ is a generalized inverse of a matrix $A\in \mathbb {C} ^{m\times n}$ if:
+\[AA^{\mathrm {g} }A=A.\]
+
+Properties:
+\bit
+\item For all matrices, there exists at least one generalized inverse, but it's not necessarily unique.
+\item For any invertible matrix, there exists only one generalized inverse, which is its multiplicative inverse.
+\eit
+\subsubsection{Reflexive generalized inverse (自反廣義逆)}
+A reflexive generalized inverse of a matrix $\mathbf{A}$ is defined as a matrix $\mathbf{A}^g$ such that:
+\[\mathbf{A}\mathbf{A}^g\mathbf{A}=\mathbf{A}\]
+\[\mathbf{A}^g\mathbf{A}\mathbf{A}^g=\mathbf{A}^g\]
+
+Properties:
+\bit
+\item For all matrices, there exists at least one reflexive generalized inverse, but it's not necessarily unique.
+\item For any invertible matrix, there exists only one reflexive generalized inverse, which is its multiplicative inverse.
+\eit
+\subsubsection{Moore–Penrose inverse (摩爾—彭若斯廣義逆) or pseudoinverse (偽逆或擬反)}
+A Moore–Penrose inverse of a matrix $\mathbf{A}$ is defined as a matrix $\mathbf{A}^+$ such that:
+\[\mathbf{A}\mathbf{A}^+\mathbf{A}=\mathbf{A}\]
+\[\mathbf{A}^+\mathbf{A}\mathbf{A}^+=\mathbf{A}^+\]
+\[\left(\mathbf{A}\mathbf{A}^{+}\right)^{*}=\mathbf{A}\mathbf{A}^{+}\]
+\[\left(\mathbf{A}^+\mathbf{A}\right)^{*}=\mathbf{A}^+\mathbf{A}\]
+
+Properties:
+\bit
+\item For all matrices, there exists only one Moore–Penrose inverse.
+\item For any invertible matrix, there exists only one Moore–Penrose inverse, which is its multiplicative inverse.
+\eit
+\sct{Common Transformation Matrices}
+\ssc{Transformation matrices in two-dimensional space}
+\sssc{Degenerate matrices}
+Degenerate to 1 dimension ($(a\lor b)\land (d\lor e)\neq 0$):
+\[\begin{bmatrix}a & b\\ca & cb\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix}=\begin{bmatrix}ax+by \\ c(ax+by)\end{bmatrix}\]
+\[\begin{bmatrix}0 & 0\\d & e\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix}=\begin{bmatrix}0 \\ dx+ey\end{bmatrix}\]
+Degenerate to 0 dimension:
+\[\begin{bmatrix}0 & 0\\0 & 0\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix}=\begin{bmatrix}0 \\ 0\end{bmatrix}\]
+\sssc{Stretching (伸縮/縮放/拉伸)}
+A stretch is a linear transformation which enlarges all distances in a particular direction by a constant factor $k$ but does not affect distances in the perpendicular direction. (Note that if $k > 1$, then this really is a "stretch"; if $k < 1$, it is technically a "compression", but we still call it a stretch. Also, if $k = 1$, then the transformation is an identity, i.e. it has no effect
+)
+
+The matrix associated with a stretch by a factor $h$ along the $x$-axis and a factor $k$ along the $y$-axis is given by:
+\[\begin{bmatrix}
+h & 0 \\
+0 & k
+\end{bmatrix}\]
+\sssc{Shearing (推移)}
+A shearing in the $x$-direction dependent on the $y$ coordination by a factor $k$ is given by:
+\[\begin{bmatrix}
+1 & k \\
+0 & 1
+\end{bmatrix}\]
+A shearing in the $y$-direction dependent on the $x$ coordination by a factor $k$ is given by:
+\[\begin{bmatrix}
+1 & 0 \\
+k & 1
+\end{bmatrix}\]
+\sssc{Rotation (旋轉)}
+A rotation by an angle $\theta$ counterclockwise about the origin is given by:
+\[\begin{bmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta)
+\end{bmatrix}\]
+\sssc{Reflection (鏡射/反射)}
+A reflection about a line that passes the original and with $(a,b)=\sqrt{a^2+b^2}(\cos\theta,\sin\theta)$ being a vector in the direction of it is given by:
+\[\begin{bmatrix}
+\cos(2\theta) & \sin(2\theta) \\
+\sin(2\theta) & -\cos(2\theta)
+\end{bmatrix}=
+\frac{1}{a^2+b^2}\begin{bmatrix}
+a^2-b^2 & 2ab \\
+2ab & b^2-a^2
+\end{bmatrix}\]
+\sssc{Orthogona projection (正射影)}
+An orthogonal projection about a line that passes the original and with $(a,b)=\sqrt{a^2+b^2}(\cos\theta,\sin\theta)$ being a vector in the direction of it is given by:
+\[\begin{bmatrix}
+\cos^2(\theta) & \cos(\theta)\sin(\theta) \\
+\cos(\theta)\sin(\theta) & \sin^2(\theta)
+\end{bmatrix}=
+\frac{1}{a^2+b^2}\begin{bmatrix}
+a^2 & ab \\
+ab & b^2
+\end{bmatrix}\]
+\sssc{Exmaple 1}
+\textbf{Question:} The cricle $\mathrm{C}: x^2+y^2=1$ is transformed by $\mathbf{A}=\begin{bmatrix}2&0\\0&3\end{bmatrix}$ to obtain a new curve $\mathrm{C}'$. Find the equation of $\mathrm{C}'$ and its area.
+
+\textbf{Answer:} 
+\[\begin{bmatrix}x'\\y'\end{bmatrix}=\mathbf{A}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}2x\\3y\end{bmatrix}\]
+\[\begin{cases}x'=2x\\y'=3y\end{cases}\Rightarrow \begin{cases}x=\frac{x'}{2}\\y=\frac{y'}{3}\end{cases}\]
+\[\qty(\frac{x'}{2})^2+\qty(\frac{y'}{3})^2=1\Rightarrow \frac{x'^2}{4}+\frac{y'^2}{9}=1\]
+\[\mathrm{C}'\colon\frac{x'^2}{4}+\frac{y'^2}{9}=1\]
+The area of $\mathrm{C}'$ is $\pi \cdot 2 \cdot 3 = 6\pi$. Since $\det(\mathbf{A}) = 6$, and the area of $\mathrm{C}$ is $\pi$, the area of $\mathrm{C}'$ equals $\det(\mathbf{A})$ multiplied by the area of $\mathrm{C}$.
+\sssc{Exmaple 2}
+\textbf{Question:} The line $\mathbf{L}: 4x - 3y = 5$ is transformed in the $x$-direction dependent on the $y$ coordination by twice and then in the $y$-direction dependent on the $x$ coordination by negative theee times to obtain a new line $\mathbf{L}'$. Find the equation of $\mathbf{L}'$.
+
+\textbf{Answer:} 
+\[\mathbf{A}=\begin{bmatrix}1&2\\-3&1\end{bmatrix}\]
+\[\mathbf{A}^{-1}=\frac{1}{7}\begin{bmatrix}1&-2\\3&1\end{bmatrix}\]
+\[\begin{bmatrix}x\\y\end{bmatrix}=\mathbf{A}^{-1}\begin{bmatrix}x'\\y'\end{bmatrix}=\begin{bmatrix}\frac{x'-2y'}{7}\\ \frac{3x'+y'}{7}\end{bmatrix}\]
+\[\mathbf{L}': 4\frac{x-2y}{7}+3\frac{3x+y}{7}=5\]
+\[\mathbf{L}': 5x+11y+35=0\]
+\sssc{Example 3}
+\textbf{Question:} Reflect the point $\mathrm{P}(5, 2)$ over the line $\mathbf{M}: x - y + 1 = 0$ to obtain a new point $\mathrm{Q}$. Find $\mathrm{Q}$.
+
+\textbf{Answer:} 
+
+Shift one unit to the right: $\mathbf{M}$ becomes $\mathbf{M}':x - y = 0$ and $\mathrm{C}$ becomes $\mathrm{C}'(6, 2)$.
+
+The reflection matrix is: 
+\[\mathbf{A} = \begin{bmatrix} 0 & 1 \ 1 & 0 \end{bmatrix}\]
+\[\mathrm{D}' = \mathbf{A} \mathrm{C}' = (2, 6)\]
+
+Shift one unit to the left: $\mathrm{D}(1, 6)$
+\sssc{Example 4}
+\textbf{Question:} The line $x+y-2=0$ is transformed by $\mathbf{A}=\begin{bmatrix}a&b\\1&2\end{bmatrix}\in\mathbb{R}^{2\times 2}$ to obtain a new line $2x+3y-4=0$. Find $a$ and $b$.
+
+\textbf{Answer:} 
+\[\mathbf{A}\begin{bmatrix}x\\ -x+2\end{bmatrix}=\begin{bmatrix}x'\\ \frac{-2x'+4}{3}\end{bmatrix}\]
+\[x-2x+4=\frac{-2x'+4}{3}\]
+\[x'=\frac{3}{2}x-4\]
+\[ax-bx-2b=x'=\frac{3}{2}x-4\]
+\[(a, b)=(-\frac{1}{2}, -2)\]
+\ssc{Transformation matrices in three-dimensional space}
+\sssc{Stretching (伸縮/縮放/拉伸)}
+The matrix associated with a stretch by a factor $h$ along the $x$-axis, a factor $k$ along the $y$-axis, and a factor $w$ along the $z$-axis is given by:
+\[\begin{bmatrix}
+h & 0 & 0 \\
+0 & k & 0 \\
+0 & 0 & w
+\end{bmatrix}\]
+\sssc{Shearing (推移)}
+A shearing in the $x$-direction dependent on the $y$ coordination by a factor $k$ is given by:
+\[\begin{bmatrix}
+1 & k & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}\]
+A shearing in the $x$-direction dependent on the $z$ coordination by a factor $k$ is given by:
+\[\begin{bmatrix}
+1 & 0 & k \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}\]
+A shearing in the $y$-direction dependent on the $x$ coordination by a factor $k$ is given by:
+\[\begin{bmatrix}
+1 & 0 & 0 \\
+k & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}\]
+A shearing in the $y$-direction dependent on the $z$ coordination by a factor $k$ is given by:
+\[\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & k \\
+0 & 0 & 1
+\end{bmatrix}\]
+A shearing in the $z$-direction dependent on the $x$ coordination by a factor $k$ is given by:
+\[\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+k & 0 & 1
+\end{bmatrix}\]
+A shearing in the $z$-direction dependent on the $y$ coordination by a factor $k$ is given by:
+\[\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & k & 1
+\end{bmatrix}\]
+\sssc{Rotation (旋轉)}
+A rotation by an angle $\theta$ counterclockwise about a line that passes the original and with $(a,b,c)$ being a vector in the direction of it is given by:
+\[\frac{1}{a^2+b^2+c^2}\begin{bmatrix}
+a^2(1-\cos\theta)+\cos\theta & ab(1-\cos\theta)-c\sin\theta & ac(1-\cos\theta )+b\sin\theta\\
+bc(1-\cos\theta )+c\sin\theta & b^2(1-\cos\theta )+\cos\theta & bc(1-\cos\theta )-a\sin\theta\\
+ac(1-\cos\theta )-b\sin\theta & bc(1-\cos\theta )+a\sin\theta & c^2(1-\cos\theta )+\cos\theta \end{bmatrix}\]
+\sssc{Reflection (鏡射/反射)}
+A reflection about a plane $ax+by+cz=0$ is given by:
+\[\mathbf{I}-\frac{1}{a^2+b^2+c^2}\begin{bmatrix}
+2a^2 & 2ab & 2ac \\
+2ab & 2b^2 & 2bc \\
+2ac & 2bc & 2c^2
+\end{bmatrix},\]
+where $\mathbf{I}$ is the $3\times 3$ identity matrix.
+\sssc{Orthogona projection (正射影)}
+An orthogonal projection about a plane $ax+by+cz=0$ is given by:
+\[\mathbf{I}-\frac{1}{a^2 + b^2 + c^2}\begin{bmatrix}
+a^2 & ab & ac \\
+ab & b^2 & bc \\
+ac & bc & c^2
+\end{bmatrix}\]
+where $\mathbf{I}$ is the $3\times 3$ identity matrix.
+\end{document}
