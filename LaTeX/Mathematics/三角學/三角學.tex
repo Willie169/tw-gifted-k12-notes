@@ -120,9 +120,9 @@ $\frac{4\pi}{10}$ & 72° & $\frac{\sqrt{10+2\sqrt{5}}}{4}$ & $\frac{\sqrt{5}-1}{
 \end{center}
 \bit
 \item 名稱：左側三者為正；右側三者為餘；上面二者為弦；中間二者為切；下面二者為割。
-\item 餘角關係：以鉛直軸為對稱軸，位於線對稱位置的三角比為餘角關系，即對於銳角$\theta$，左$(\theta)=$右$\qty(\frac{\pi}{2}-\theta)$。
-\item 倒數關係：三條通過中心點的連線為倒數關係，其兩端之三角比互為倒數，相乘為1。
-\item 商數關係：六邊形周上，連續三個頂點形成的連線，其兩端之三角比相乘等於中間之三角比。
+\item 餘角關係：以鉛直軸為對稱軸，位於線對稱位置者為餘角關系，即對於銳角$\theta$，左$(\theta)=$右$\qty(\frac{\pi}{2}-\theta)$。
+\item 倒數關係：三條通過中心點的連線為倒數關係，其兩端者互為倒數，相乘為1。
+\item 商數關係：六邊形周上，連續三個頂點形成的連線，其兩端者相乘等於中間者。
 \item 平方關係：圖中有三個倒正三角形，其在上方兩頂點之二者之平方和等於在下方頂點者。
 \eit
 \ssc{奇變偶不變，正負看象限}
@@ -272,7 +272,7 @@ $\operatorname{atan2}(y,x)$在$x>0$時返還$\tan(\theta)=\frac{y}{x}$在$(-\fra
 \[\cos^2\theta=\frac{1}{1+\tan^2\theta}=1-\sin^2\theta\]
 \[\tan^2\theta=\frac{1-\cos^2\theta}{\cos^2\theta}=\frac{\sin^2\theta}{1-\sin^2\theta}\]
 \sssc{三角形內角正切公式}
-\[\alpha+\beta+\gamma=\pi\iff\tan\alpha+\tan\beta+\tan\gamma=\tan\alpha\cdot\tan\beta\cdot\tan\gamma\]
+\[\qty(\alpha+\beta+\gamma=\pi+2k\pi,\quad k\in\mathbb{Z})\iff\qty(\tan\alpha+\tan\beta+\tan\gamma=\tan\alpha\cdot\tan\beta\cdot\tan\gamma)\]
 \sssc{正餘弦函數疊合}
 \[\qty(a\sin\theta +b\cos\theta)^2\leq a^2+b^2,\quad a,b\in\mathbb{R}\]
 \bma
@@ -346,8 +346,8 @@ $f(t)=0$的根為：
 \[\sum_{k=1}^{n-1}\cot^2\frac{\pi k}{n}=\sum_{k=1}^{n-1}\csc^2\frac{\pi k}{n}-n+1=\frac{n^2-3n+2}{3}\]
 \end{proof}
 \ssc{三角形公式定理}
-令圖形體積（或面積、長度）之代號同其自身。今有一三角形$\Delta ABC$，其中：$\angle A$、$\angle B$、$\angle C$的對邊長分別為$a$、$b$、$c$；$\angle A$、$\angle B$、$\angle C$又記作$A$、$B$、$C$；外接圓$O$圓心$O$即外心（Circumcenter）、半徑$R$；內接圓$I$圓心$I$即內心（Incenter）、半徑$r$；重心（Centroid）$G$；垂心（Orthocenter）$H$；$\angle A$、$\angle B$、$\angle C$的對邊中點分別為$M_a$、$M_b$、$M_c$；$A$在$\olra{BC}$的垂足為$h_a$，$B$在$\olra{CA}$的垂足為$h_b$，$C$在$\olra{AB}$的垂足為$h_c$；$s=\frac{1}{2}\qty(a+b+c)$；$\angle A$、$\angle B$、$\angle C$的角平分線與對邊之交點分別為$\mathscr{B}_a$、$\mathscr{B}_b$、$\mathscr{B}_c$；九點圓$\mathscr{O}$圓心$\mathscr{O}$、半徑$\mathscr{R}$；與$A$、$B$、$C$的兩鄰邊延長線與對邊皆相切的旁切圓分別為$E_a$、$E_b$、$E_c$，其圓心（旁心）各同其圓名。
-\sssc{勾股/畢氏/商高定理}
+令圖形體積（或面積、長度）之代號同其自身。今有一三角形$\Delta ABC$，其中：$\angle A$、$\angle B$、$\angle C$的對邊長分別為$a$、$b$、$c$；$\angle A$、$\angle B$、$\angle C$又記作$A$、$B$、$C$；重心$G$；外接圓$O$圓心$O$即外心、半徑$R$；內接圓$I$圓心$I$即內心、半徑$r$；垂心$H$；$\angle A$、$\angle B$、$\angle C$的對邊中點分別為$M_a$、$M_b$、$M_c$；$A$在$\olra{BC}$的垂足為$h_a$，$B$在$\olra{CA}$的垂足為$h_b$，$C$在$\olra{AB}$的垂足為$h_c$；$s=\frac{1}{2}\qty(a+b+c)$；$\angle A$、$\angle B$、$\angle C$的角平分線與對邊之交點分別為$\mathscr{B}_a$、$\mathscr{B}_b$、$\mathscr{B}_c$；九點圓$\mathscr{O}$圓心$\mathscr{O}$、半徑$\mathscr{R}$；與$A$、$B$、$C$的兩鄰邊延長線與對邊皆相切的旁切圓分別為$E_a$、$E_b$、$E_c$，其圓心（旁心）各同其圓名。
+\sssc{勾股/商高/畢氏定理（Pythagorean theorem or Pythagoras' theorem）}
 \[(\angle C=90^\circ)\iff (a^2+b^2=c^2)\]
 \begin{proof}\mbox{}\\
 趙爽勾股圓方圖證明法：
@@ -382,17 +382,17 @@ $SSA$型的討論：若已知$a$、$b$、$\angle A$：
 \item $a>b$: 唯一解
 \end{itemize}
 \end{itemize}
-\sssc{九點圓與歐拉線}
+\sssc{九點圓（Nine-point circle）/歐拉圓（Euler's circle）/費爾巴哈圓（Feuerbach circle）與歐拉線（Euler line）}
 \bit
-\item $M_a,M_b,M_c,h_a,h_b,h_c,\frac{A+H}{2},\frac{B+H}{2},\frac{B+H}{2}$必共圓，該圓稱九點圓。
+\item $M_a,M_b,M_c,h_a,h_b,h_c,\frac{A+H}{2},\frac{B+H}{2},\frac{B+H}{2}$必共圓，該圓稱九點圓（Nine-point circle）、歐拉圓（Euler's circle）或費爾巴哈圓（Feuerbach circle）。
 \item 九點圓圓周$\mathscr{O}$與圓心$\mathscr{O}$均符合：
 \[\mathscr{O}=\frac{O+H}{2}\]
-\item 歐拉線：$\mathscr{O},O,G,H$共線，該線稱歐拉線。
+\item $\mathscr{O},O,G,H$必共線，該線稱歐拉線（Euler line）。
 \item $\Delta ABC$ 是等腰三角形 $\iff I$ 在歐拉線上。
 \item 費爾巴哈定理（Feuerbach's theorem）：九點圓與三個旁切圓均外切，與內切圓內切（內切圓在內）。
+\item \[\mathscr{R}=\frac{R}{2}\]
 \eit
-\[\mathscr{O}=\frac{O}{2}\]
-\sssc{正弦定理}
+\sssc{正弦定理（Law of sines）}
 \[\frac{\sin A}{a}=\frac{\sin B}{b}\]
 \begin{proof}
 \[\sin A=\frac{\overline{Ch_c}}{a}\]
@@ -406,7 +406,7 @@ $SSA$型的討論：若已知$a$、$b$、$\angle A$：
 \[\text{凸四邊形面積=$\frac{1}{2}$對角線相乘$\times\sin$兩對角線夾角}\]
 \sssc{投影定理}
 \[a=b\cos C+c\cos B\]
-\sssc{餘弦定理}
+\sssc{餘弦定理（Law of cosines）}
 \[a^2=b^2+c^2-2bc\cos A\]
 \begin{proof}\mbox{}\\
 根據投影定理：
@@ -434,25 +434,26 @@ $SSA$型的討論：若已知$a$、$b$、$\angle A$：
 &= \frac{1}{2}\sqrt{\ol{AB}^2\ol{AC}^2-\qty(\ora{AB}\cdot \ora{AC})^2}\\
 &= \frac{1}{2}\abs{\abs{\ora{AB}\times \ora{AC}}}
 \eam
-\sssc{重心相關定理}
+\sssc{重心（Centroid）相關定理}
 \[G\tx{\ 為三中線交點}\]
 \[\ora{AG}=2\ora{GM_A}\]
 \[G=\frac{A+B+C}{3}\]
 \[\ora{GA}+\ora{GB}+\ora{GC}=\ora{0}\]
 \[\Delta GAB=\Delta GAC=\Delta GBC\]
-\sssc{外心相關定理}
+\sssc{外心（Circumcenter）相關定理}
 \[\ol{OA}=\ol{OB}=\ol{OC}=R\]
 \[O=\frac{a^2A+b^2B+c^2C}{a^2+b^2+c^2}\]
 \[O\tx{\ 為三邊中垂線交點}\]
 \[\Delta OAB : \Delta OBC : \Delta OCA = \sin 2C : \sin 2A : \sin 2B\]
 \[ \ora{AO}\cdot \ora{AB} = \frac{1}{2}\ol{AB}^2 \]
 \[\frac{1}{2}\angle AOB = \angle C\lor\pi -\angle C\]
-\sssc{內心相關定理}
+\sssc{內心（Incenter）相關定理}
 \[I\tx{\ 與三邊均相切}\]
 \[I\tx{\ 為三角角平分線交點}\]
 \[I=\frac{aA+bB+cC}{a+b+c}\]
 \[a\ora{IA}+b\ora{IB}+c\ora{IC}=\ora{0}\]
-\sssc{垂心相關定理}
+\[\Delta IAB : \Delta IBC : \Delta ICA = c : a : b\]
+\sssc{垂心（Orthocenter）相關定理}
 \[H\tx{\ 為三高交點}\]
 \[H=\frac{\tan A\cdot A+\tan B\cdot B+\tan C\cdot C}{\tan A+\tan B+\tan C}\]
 \[ \ora{AH}\cdot\ora{AB}=\ora{AH}\cdot\ora{AC}=\ora{AB}\cdot\ora{AC}=\frac{1}{2}\qty(\ora{AC}^2+\ora{AB}^2-\ora{BC}^2)\]
@@ -472,8 +473,8 @@ $SSA$型的討論：若已知$a$、$b$、$\angle A$：
 口訣：頂分頂分頂分頂
 \sssc{孟氏定理（Menelaus' theorem）}
 \bma
-& \text{一直線與${\displaystyle \Delta ABC}$的邊$BC$、$CA$、$AB$或其延長線分別交於$L$、$M$、$N$：}\\
-& \iff \frac {\overline {AN}}{\overline {NB}}\cdot \frac {\overline {BL}}{\overline {LC}}\cdot \frac {\overline {CM}}{\overline {MA}}=1 \implies L\tx{、}M\tx{、}N\tx{中有一或三數個點不在 }\Delta ABC\tx{\ 邊上}
+& \text{一直線與${\displaystyle \Delta ABC}$的邊$BC$、$CA$、$AB$或其延長線分別交於$L$、$M$、$N$}\\
+& \iff \frac {\overline {AN}}{\overline {NB}}\cdot \frac {\overline {BL}}{\overline {LC}}\cdot \frac {\overline {CM}}{\overline {MA}}=1 \implies L\tx{、}M\tx{、}N\tx{中有一或三個點不在 }\Delta ABC\tx{\ 邊上}
 \eam
 口訣：頂分頂分頂分頂
 \sssc{角平分線定理}
@@ -485,21 +486,19 @@ $SSA$型的討論：若已知$a$、$b$、$\angle A$：
 \[\angle CAE =\pi-\angle BAE \Leftrightarrow {\frac {EB}{EC}}={\frac {AB}{AC}}\]
 \sssc{角平分線長定理}
 \[\ol{A\mathscr{B}_a}=\frac{bc\sin A}{\qty(b+c)\sin\qty(\frac{A}{2})}\]
+\ssc{其他圖形公式定理}
 \sssc{多邊形內角和公式}
 任二邊不相交於該二邊之頂點（如有）以外之處的$n$邊形，其內角和為$(n-2)\pi$。
-\sssc{四面體內接球半徑定理}
-\[\tx{內接球半徑}=\frac{3\cdot\tx{體積}}{\tx{表面積}}\]
-\sssc{正四面體各公式}
-正四面體A-BCD邊長 $a$，高 $h$，表面積 $A$，體積 $V$，外接球半徑 $R$，內接球半徑 $r$，$\olra{AB}$與$\olra{CD}$距離 $s$，重心 $\frac{A+B+C+D}{4}$與$A$的距離 $g$：
-\[h=\frac{\sqrt{6}}{3}a\]
-\[A=\sqrt{3}a^2\]
-\[V=\frac{\sqrt{2}}{12}a^3\]
-\[R=\frac{\sqrt{6}}{4}a\]
-\[r=\frac{\sqrt{6}}{12}a\]
-\[s=\frac{\sqrt{2}}{2}a\]
-\[g=\frac{\sqrt{6}}{4}a\]
-\sssc{圓內接四邊形對角線公式}
-一圓內接四邊形$ABCD$，$\ol{AB}=a$、$\ol{BC}=c$、$\ol{CD}=c$、$\ol{DA}=d$：
+\sssc{圓內二弦夾角公式}
+圓心$O$之圓內二弦$\ol{AB}$、$\ol{CD}$交於$E$，則：
+\[\angle AEC=\frac{1}{2}\qty(\angle AOC+\angle BOD)\]
+當$B=D=E$：
+\[\angle AEC=\frac{1}{2}\angle AOC\]
+當$B=D=E$且$\ol{AC}$為一直徑：
+\[\angle AEC=\frac{\pi}{2}\]
+\sssc{圓內接四邊形公式}
+一圓內接四邊形$ABCD$，$\ol{AB}=a$、$\ol{BC}=b$、$\ol{CD}=c$、$\ol{DA}=d$：
+\[\angle A+\angle C=\pi\]
 \[\ol{AC}^2=\frac{\qty(ac+bd)\qty(ad+bc)}{ab+cd}\]
 \[\ol{BD}^2=\frac{\qty(ac+bd)\qty(ad+cd)}{ad+bc}\]
 \[\ol{AC}\cdot\ol{BD}=ac+bd\]
@@ -512,4 +511,15 @@ $SSA$型的討論：若已知$a$、$b$、$\angle A$：
 \[\cos c = \cos a \cos b + \sin a \sin b \cos C\]
 第二球面餘弦定律/角度餘弦定律：
 \[\cos C = - \cos A \cos B + \sin A \sin B \cos c\]
+\sssc{四面體內接球半徑定理}
+\[\tx{內接球半徑}=\frac{3\cdot\tx{體積}}{\tx{表面積}}\]
+\sssc{正四面體各公式}
+正四面體A-BCD邊長 $a$，高 $h$，表面積 $A$，體積 $V$，外接球半徑 $R$，內接球半徑 $r$，$\olra{AB}$與$\olra{CD}$距離 $s$，重心 $\frac{A+B+C+D}{4}$與$A$的距離 $g$：
+\[h=\frac{\sqrt{6}}{3}a\]
+\[A=\sqrt{3}a^2\]
+\[V=\frac{\sqrt{2}}{12}a^3\]
+\[R=\frac{\sqrt{6}}{4}a\]
+\[r=\frac{\sqrt{6}}{12}a\]
+\[s=\frac{\sqrt{2}}{2}a\]
+\[g=\frac{\sqrt{6}}{4}a\]
 \end{document}
