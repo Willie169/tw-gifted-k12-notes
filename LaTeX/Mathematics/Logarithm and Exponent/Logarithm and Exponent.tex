@@ -96,6 +96,17 @@ The Taylor expansion of the exponential function $ka^x$ at $x=b$ is
 \[ka^x=\sum_{n=0}^{\infty}\frac{ka^b(\ln a)^n}{n!}(x-b)^n.\]
 \sssc{Inverse}
 For any $a>0\land a\neq 1\land b\neq 0$, the logarithmic function $k\log_a\left(\frac{x}{b}\right)$ and the exponential function $ba^{\frac{x}{k}}$ are inverses of each other, that is, they are symmetric about $y=x$.
+\sssc{Tangent}
+In the $xy$ plane, $a=e^{\qty(e^{-1})}$ if and only if $y=a^x$ and $y=x$ are tangent if and only if $y=\log_ax$ and $y=x$ are tangent if and only if $y=a^x$ and $y=\log_ax$ are tangent. When $a=e^{\qty(e^{-1})}$, $y=a^x$, $y=a^x$, and $y=x$ are tangent at $(e,e)$, and any two of them do not meet at any point other than $(e,e)$.
+\begin{proof}
+\[\dv{a^x}{x}=\ln(a)a^x=1\]
+\[x=a^x=\frac{1}{\ln(a)}\]
+\[a^{\frac{1}{\ln(a)}}=\frac{1}{\ln(a)}\]
+\[\ln(a)\frac{1}{\ln(a)}=1=-\ln\qty(\ln(a))\]
+\[a=e^{\qty(e^{-1})}\]
+\end{proof}
+\sssc{Self-power function}
+\[\arg\min(x^x)=\frac{1}{e},\quad\min(x^x)=\qty(e^{-1})^{\qty(e^{-1})}\]
 \ssc{Values}
 \[\log 2\approx 0.3010,\quad\log e\approx 0.4343,\quad\log 3\approx 0.4771,\quad\log\pi\approx 0.4971,\quad\log 4\approx 0.6021,\quad\log 5\approx 0.6990,\]
 \[\log 6\approx 0.7782,\quad\log 7\approx 0.8451,\quad\log 8\approx 0.9031,\quad\log 9\approx 0.9542,\quad\log 11\approx 1.0414,\quad\log 12\approx 1.0792.\]
@@ -111,5 +122,5 @@ For any $a>0\land a\neq 1\land b\neq 0$, the logarithmic function $k\log_a\left(
 \[\langle a_n=n^2\rangle_{n=31}^{40}=961,1024,1089,1156,1225,1296,1369,1444,1521,1600.\]
 \[\langle a_n=n^{-1}\rangle_{n=1}^{15}=1,0.5,0.\ol{3},0.25,0.2,0.1\ol{6},0.\ol{142857},0.125,0.\ol{1},0.1,0.\ol{09},0.08\ol{3},0.\ol{076923},0.0\ol{714285},0.0\ol{6}.\]
 \[\frac{1}{\sqrt{2}}\approx 0.7071,\quad\frac{1}{\sqrt{3}}\approx 0.5774,\quad\frac{1}{\sqrt{5}}\approx 0.4772,\quad\frac{1}{2\sqrt{2}}\approx 0.3536,\quad\frac{1}{2\sqrt{3}}\approx 0.2887,\quad\frac{1}{2\sqrt{5}}\approx 0.2236.\]
-\[\arg\min(x^x)=\frac{1}{e}\approx 0.3680,\quad\min(x^x)=\qty(e^{-1})^{\qty(e^{-1})}\approx 0.6922,\quad e^e\approx 15.1543.\]
+\[e\approx 2.7183,\quad\frac{1}{e}\approx 0.3680,\quad e^e\approx 15.1543,\quad e^{\qty(e^{-1})}\approx 1.4447,\quad \qty(e^{-1})^e\approx 0.0660,\quad\qty(e^{-1})^{\qty(e^{-1})}\approx 0.6922.\]
 \end{document}
